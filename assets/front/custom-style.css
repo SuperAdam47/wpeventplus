@@ -1,0 +1,364 @@
+@font-face {
+font-family:RobotoLight;
+src:url(../RobotoLight/Roboto-Light-webfont.eot?#iefix) format(embedded-opentype), url(../RobotoLight/Roboto-Light-webfont.woff2) format(woff2), url(../RobotoLight/Roboto-Light-webfont.woff) format(woff), url(../RobotoLight/Roboto-Light-webfont.ttf) format(truetype), url(../RobotoLight/Roboto-Light-webfont.svg#RobotoLight) format(svg);
+font-weight:400;
+font-style:normal;
+}
+
+span.socialNoImg {
+float:left;
+margin-right:8px;
+}
+
+.evrplus_addcal {
+font-weight:400;
+font-size:15px;
+border-radius:0;
+width:231px;
+display:block;
+position:relative;
+right:50px;
+margin:2px 15px 2px 2px;
+padding:10px 0;
+}
+
+.evrplus_social_container {
+width:100%;
+position:absolute;
+top:8px;
+padding:0 10px;
+}
+
+.evrplus_addToCalendar {
+display:block;
+float:right;
+width:200px;
+text-decoration:none;
+}
+
+.evrplus_addToCalendar:hover {
+text-decoration:none;
+}
+
+.evrplus_addcal_icon_add_calendar:before {
+line-height:30px;
+}
+
+.evrplus_addcal_icon_add_calendar {
+z-index:999;
+position:relative;
+right:50px;
+}
+
+.evrplus_social_Links {
+width:50px;
+height:40px;
+float:none;
+display:block;
+margin-bottom:9px;
+}
+
+.evrplus_social_Links a {
+display:block;
+width:100%;
+height:100%;
+}
+
+.evrplus_social_Links a.evrplus_socialtwitter {
+background-color:#00ACED;
+}
+
+.evrplus_social_Links a.evrplus_socialfacebook {
+background-color:#3b5998;
+}
+
+.evrplus_tw_icon:before,.evrplus_fb_icon:before {
+float:none;
+line-height:40px;
+margin:0;
+}
+
+#details > h2 {
+color:#666;
+font-size:26px;
+font-weight:100;
+text-align:center;
+border-bottom:1px solid #cdcdcd;
+font-family:RobotoLight;
+margin:0;
+padding:20px 0;
+}
+
+.event_date_border,.locationAddressBorder {
+border-right:1px solid #cdcdcd;
+}
+
+.event_date_container,.event_time_container {
+padding-top:25px;
+padding-bottom:25px;
+display:table;
+margin:0 auto;
+}
+
+.event_dateTime_container {
+border-bottom:1px solid #cdcdcd;
+overflow:hidden;
+}
+
+#details .event_dateTime_container p {
+font-size:18px;
+font-family:RobotoLight;
+}
+
+.event_date_container .dashiconsText {
+margin-left:28px;
+}
+
+#details p {
+color:#666;
+}
+
+#details #evrplus_pop_map {
+width:100%;
+height:220px;
+float:none;
+margin-left:0;
+}
+
+#details #evrplus_pop_address {
+width:100%;
+padding:25px 0;
+}
+
+#details #evrplus_pop_address h3 {
+margin-top:0;
+margin-bottom:17px;
+}
+
+#evrplus_pop_address > p {
+padding:0 23px;
+}
+
+#details #evrplus_pop_address .locationTitle {
+font-size:20px;
+font-weight:100!important;
+color:#666;
+margin-left:21px;
+font-family:RobotoLight;
+}
+
+#details #evrplus_pop_address .dashicons-location:before {
+line-height:22px;
+color:#666;
+}
+
+#details #evrplus_pop_address p,#details #evrplus_pop_price p {
+font-weight:100!important;
+color:#1b1b1b;
+}
+
+.LocationDetailsContainer {
+overflow:hidden;
+border-bottom:1px solid #cdcdcd;
+}
+
+#details {
+overflow:hidden;
+border-radius:7px;
+margin:0!important;
+}
+
+.evrplus_Image_single {
+position:relative;
+}
+
+.evrplus_thumbnail_single {
+float:left;
+margin-right:25px;
+}
+
+.evrplus_thumbnail_container {
+border-bottom:1px solid #cdcdcd;
+min-height:220px;
+padding:20px 25px 20px 25px;
+}
+
+#details #evrplus_pop_price h3 {
+margin:0 0 10px;
+}
+
+#details #evrplus_pop_price h3 u {
+color:#a6a6a6;
+font-family:RobotoLight!important;
+}
+
+#details #evrplusRegForm {
+width:100%;
+margin-left:0;
+display:none;
+padding:0 15px;
+}
+
+#details #evrplusRegForm ul {
+padding:0;
+}
+
+#details #evrplusRegForm input[type="text"],#details #evrplusRegForm textarea {
+border:1px solid #cdcdcd;
+box-shadow:none;
+}
+
+#details #evrplusRegForm input[type="text"].altTextField {
+margin-bottom:15px!important;
+}
+
+#details .registerForm {
+padding-top:15px;
+}
+
+.extenal_link_reg {
+background:#5BA4A4;
+border-radius:5px;
+color:#FFF!important;
+border:0;
+cursor:pointer;
+display:block;
+width:100px;
+text-align:center;
+margin:0 auto;
+padding:5px;
+}
+
+input.register_now_button[type="button"],input.register_now_button[type="button"]:hover {
+background:url(../images/popup-register-button-icon.png) no-repeat scroll 17px center #5BA4A4;
+border-radius:5px;
+color:#FFF;
+border:none;
+cursor:pointer;
+display:block;
+margin:0 auto;
+}
+
+#evrplus_pop_foot input.more_info_button {
+background:#5BA4A4;
+border-radius:5px;
+color:#FFF;
+border:none;
+cursor:pointer;
+display:block;
+position:relative;
+top:50px;
+left:160px;
+font-size:16px;
+margin:0 auto;
+padding:8px 15px 8px 20px !important;
+}
+
+#evrplus_pop_price p:first-child {
+margin-top:26px;
+}
+
+#evrplus_pop_price p {
+padding:5px 23px;
+}
+
+#details .reg_fees_select {
+color:#FFF;
+margin-bottom:27px;
+}
+
+#details .redCountdownDemo {
+width:400px;
+margin:15px auto;
+}
+
+.evrplus_regform {
+width:92%;
+}
+
+#details .redCountdownDays,#details .redCountdownHours,#details .redCountdownMinutes,#details .redCountdownSeconds {
+background:#fff;
+border-radius:50%;
+}
+
+#details .regform_buttons {
+margin-left:150px;
+margin-top:15px;
+}
+
+.calendar-date-switcher select {
+color:#000;
+}
+
+#evrplus_pop_price .dashicons,.dashicons-before::before {
+float:left!important;
+color:#666!important;
+}
+
+#evrplus_pop_price .event_fee {
+color:#666!important;
+float:left;
+font-family:RobotoLight;
+font-size:20px;
+font-weight:100!important;
+margin-left:0;
+padding-left:0;
+}
+
+.event_dateTime_container .dashiconsText {
+font-family:RobotoLight;
+font-size:18px;
+color:#666;
+}
+
+.evrplus_social_content,.event_date_container .dashicons,#details #evrplus_pop_address .dashicons {
+float:left;
+}
+
+.event_map_border,#details .evrplus_counter {
+border-bottom:1px solid #cdcdcd;
+}
+
+@media max-width 767px{
+.event_date_border,.locationAddressBorder {
+border-right:0;
+}
+
+.evrplus_thumbnail_single {
+display:block;
+float:none;
+margin:0 auto 15px;
+}
+
+.locationAddressBorder {
+overflow:hidden;
+}
+}
+
+@media max-width 480px{
+#details .redCountdownDemo {
+width:100%;
+}
+
+.evrplus_social_container {
+position:static;
+}
+
+.evrplus_addToCalendar {
+float:none;
+margin:15px auto;
+}
+
+.evrplus_social_content {
+float:none;
+display:table;
+margin:0 auto;
+}
+}
+
+@media only screen and max-width 320px{
+#details img {
+width:100%!important;
+margin-top:0;
+}
+}

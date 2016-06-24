@@ -1,0 +1,162 @@
+<?php
+
+/** Plugin Name: WP EventsPlus
+ * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
+ * Version: 1.6.1
+ * Author: wpeventsplus.com
+ * Author URI: http://wpeventsplus.com/
+ * License: GPL2
+ * Text Domain: evrplus_language
+ */
+if (!defined('ABSPATH')) {
+    exit; //block direct access
+}
+
+define('EVENT_PLUS_FRAMEWORK_NAMESPACE', 'eplus');
+define('EVENT_PLUS_FRAMEWORK_FOLDER', 'eventplus');
+define('EVENT_PLUS_URI_KEY', 'eplus_uri');
+define('EVENT_PLUS_SITE_URL', get_bloginfo('url') . '/');
+define('EVENT_PLUS_URL_DOMAIN', get_option('siteurl') . '/');
+define('EVENT_PLUS_ADMIN_URL', EVENT_PLUS_SITE_URL . 'wp-admin/admin.php');
+define('EVENT_PLUS_WP_CONTENT_PATH', ABSPATH . 'wp-content' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_UPLOAD_PATH', EVENT_PLUS_WP_CONTENT_PATH . 'uploads' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_WP_UPLOAD_URL', EVENT_PLUS_SITE_URL . 'wp-content/uploads/');
+define('EVENT_PLUS_PLUGIN_PATH', rtrim(plugin_dir_path(__FILE__), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__file__)) . "/");
+define('EVENT_PLUS_PUBLIC_URL', EVENT_PLUS_PLUGIN_URL . "public/");
+define('EVENT_PLUS_PLUGIN_FRAMEWORK_PATH', EVENT_PLUS_PLUGIN_PATH . EVENT_PLUS_FRAMEWORK_FOLDER . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_APP_PATH', EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'app' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_APP_CONTROLLERS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'controllers' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_APP_VIEWS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'views' . DIRECTORY_SEPARATOR);
+define("EVR_PLUGINPATH", "/" . plugin_basename(dirname(__file__)) . "/");
+define("EVR_PLUGINFULLURL", WP_PLUGIN_URL . EVR_PLUGINPATH);
+
+require_once EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'base.php';
+
+EventPlus::init();
+
+require_once EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'functions.php';
+
+class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
+
+    protected $_plugin_title = 'Events+';
+    protected $_plugin_version = '1.6.1';
+    protected $_plugin_slug = 'eventplus';
+    protected $oApp = null;
+
+    function _init() {
+
+        EventPlus::setPlugin($this);
+
+        if (is_admin() == false) {
+            ob_start();
+        }
+
+        $oEventPlusCore = EventPlus::factory('Core', array(
+                    'mode' => 'development'
+        ));
+
+        $oRegistry = EventPlus::factory('Registry');
+        $oRegistry->set('core', $oEventPlusCore);
+        $oRegistry->set('db', EventPlus::factory('WordPress_Database'));
+        $oRegistry->set('url', EventPlus::factory('Url', array(
+                    'site_url' => EVENT_PLUS_SITE_URL,
+                    'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
+                    'assets_url' => $this->getUrl() . 'assets/',
+                    'menu_slug' => $this->getSlug(),
+        )));
+
+        $oFlashMessage = EventPlus::factory('Flash_Message');
+        $oFlashMessage->setKey('eventplus_admin_flash_messages');
+        $oRegistry->set('flash', $oFlashMessage);
+
+        if (is_admin()) {
+            add_action('admin_notices', array($oFlashMessage, 'render'));
+        }
+
+        EventPlus::set('registry', $oRegistry);
+
+        $this->oApp = EventPlus::factory('Helpers_App');
+
+        $this->addCommonActions();
+        $this->registerShortcodes();
+        $this->addFilters();
+    }
+
+    private function addCommonActions() {
+        $this->add_action('init', $this->oApp, 'eventPlusInit');
+        $this->add_action('widgets_init', $this, 'registerWidgets');
+    }
+
+    private function addFilters() {
+
+        $oFilters = new EventPlus_Filters();
+        $this->add_filter('the_content', $oFilters, 'grid_the_content_filter');
+        $this->add_filter('the_content', $oFilters, 'upcoming_event_list');
+        $this->add_filter('the_content', $oFilters, 'evrplus_content_replace');
+        $this->add_filter('the_content', $oFilters, 'evrplus_calendar_replace');
+        $this->add_filter('page_template', $oFilters, 'wpa3396_page_template');
+
+
+        add_filter('the_content', 'evrplus_calendar_replace');
+        add_filter('the_content', 'evrplus_mini_cal_calendar_replace');
+    }
+
+    private function registerShortcodes() {
+
+        $oShortCodes = new EventPlus_ShortCodes();
+        add_shortcode('EVR_CUSTOM_ATTENDEE', array($oShortCodes, 'attendeeDetails'));
+        add_shortcode('eventsplus_grid', array($oShortCodes, 'eventGrid'));
+        add_shortcode('eventsplus_payment', array($oShortCodes, 'paymentPage'));
+        add_shortcode('eventsplus_attendee', array($oShortCodes, 'attendeeShort'));
+        add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
+        add_shortcode('eventsplus_single', array($oShortCodes, 'singleEvent'));
+    }
+
+    function initAdmin() {
+        $this->add_action('init', $this->oApp, 'adminInit');
+        $this->add_action('admin_init', $this->oApp, 'dataExport');
+        $this->add_action('admin_menu', $this->oApp, 'registerAdminMenu');
+        $this->add_action('wp_dashboard_setup', $this->oApp, 'dashboardWidget');
+        $this->add_filter('plugin_action_links', $this, 'actionLinks', 10, 2);
+        $this->add_action('admin_footer', $this->oApp, 'insert_footer_wpse_51023');
+    }
+
+    function initFront() {
+        $this->add_action('wp_head', $this, 'pluginInfo');
+        $this->add_action('init', $this->oApp, 'frontInit');
+    }
+
+    function registerWidgets() {
+        register_widget('EventPlus_Widgets_Events');
+    }
+
+    function pluginInfo() {
+        echo '<!--WPEventPlus ' . $this->_plugin_version . '-->';
+    }
+
+    function actionLinks($links, $file) {
+
+        $this_plugin = plugin_basename($this->_plugin_file);
+
+        if ($file == $this_plugin) {
+            $links = EventPlus::dispatch('admin_widgets/quick_links', array(
+                        'links' => $links
+            ));
+        }
+
+        return $links;
+    }
+
+    function activate() {
+        require_once (EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . "install.php"); //holds functions that install options and databases
+        evrplus_install();
+    }
+
+    function deactivate() {
+        
+    }
+
+}
+
+new EventPlus_Plugin(__FILE__);
