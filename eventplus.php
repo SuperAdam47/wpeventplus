@@ -60,10 +60,10 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $oRegistry->set('core', $oEventPlusCore);
         $oRegistry->set('db', EventPlus::factory('WordPress_Database'));
         $oRegistry->set('url', EventPlus::factory('Url', array(
-                    'site_url' => EVENT_PLUS_SITE_URL,
-                    'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
-                    'assets_url' => $this->getUrl() . 'assets/',
-                    'menu_slug' => $this->getSlug(),
+                'site_url' => EVENT_PLUS_SITE_URL,
+                'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
+                'assets_url' => $this->getUrl() . 'assets/',
+                'menu_slug' => $this->getSlug(),
         )));
 
         $oFlashMessage = EventPlus::factory('Flash_Message');
