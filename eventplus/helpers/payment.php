@@ -141,7 +141,7 @@ class EventPlus_Helpers_Payment {
                 $p->add_field('zip', $zip);
                 
                 if ($company_options['pay_msg'] != "") {
-                    echo stripslashes($company_options['pay_msg']);
+                    //echo stripslashes($company_options['pay_msg']);
                 } else {
                     _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
                 }
@@ -306,7 +306,7 @@ class EventPlus_Helpers_Payment {
             }
             
             if ($company_options['pay_msg'] != "") {
-                echo stripslashes($company_options['pay_msg']);
+                //echo stripslashes($company_options['pay_msg']);
             } else {
                 _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
             }
@@ -374,7 +374,7 @@ class EventPlus_Helpers_Payment {
         if ($company_options['payment_vendor'] == "GOOGLE") {
             // Print the Order Verification to the screen.
             if ($company_options['pay_msg'] != "") {
-                echo $company_options['pay_msg'];
+                //echo $company_options['pay_msg'];
             } else {
                 _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
             }
@@ -428,7 +428,7 @@ class EventPlus_Helpers_Payment {
         if ($company_options['payment_vendor'] == "MONSTER") {
             // Print the Order Verification to the screen.
             if ($company_options['pay_msg'] != "") {
-                echo $company_options['pay_msg'];
+                //echo $company_options['pay_msg'];
             } else {
                 _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
             }
