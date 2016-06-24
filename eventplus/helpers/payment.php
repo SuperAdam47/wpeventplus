@@ -74,12 +74,13 @@ class EventPlus_Helpers_Payment {
         }
         
         if ($company_options['payment_vendor'] == "" || $company_options['payment_vendor'] == "NONE") {
-// Print the Order Verification to the screen.
+            // Print the Order Verification to the screen.
             if ($company_options['pay_msg'] != "") {
-                echo stripslashes($company_options['pay_msg']);
+                //echo stripslashes($company_options['pay_msg']);
             } else {
                 _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
             }
+            
             echo '<br/>';
             echo "Reference " . $event_name . " ID: " . $event_id . "<br/>";
             echo '<br/>';
