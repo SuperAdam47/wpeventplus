@@ -112,10 +112,9 @@ if ($title) {
         100% { transform: rotate(0deg)  skewY(0deg); }
     }
 </style>
-<ul style="max-width: 500px;  border: 1px solid #cdcdcd; border-radius:4px; padding:0;">
-<?php
-    echo $events_list;
-?></ul>
+<ul style="max-width: 500px;  border: 1px solid #cdcdcd; border-radius:2px; padding:0;">
     <?php
+    echo $events_list;
+    ?></ul>
+<?php
 echo $after_widget;
-    

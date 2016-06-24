@@ -15,7 +15,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $viewParams = $this->_invokeArgs;
         $viewParams['events_list'] = $events_list;
         
-         $output = $this->oView->View('front/widgets/events',$viewParams);  
+        $output = $this->oView->View('front/widgets/events',$viewParams);  
         
         $this->setResponse($output);
     }
@@ -31,15 +31,14 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         if (intval($record_limit) > 20)
             $record_limit = '20';
         
-        if ($record_category != '0')
+        if ($record_category != '0' && $record_category > 0)
             $category_query = " AND category_id LIKE '%:\"$record_category\"%' ";
         
-        $company_options = get_option('evr_company_settings');
         $orderby = $company_options['order_event_list'];
         
         $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() $category_query ORDER BY str_to_date(start_date, '%Y-%m-%e') " . $orderby . " LIMIT 0," . $record_limit;
         $rows = $wpdb->get_results($sql);
-        
+     
         if ($rows) {
             $count = 1;
             foreach ($rows as $event) {
@@ -61,27 +60,34 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                                     </div>
                                 </div>
                                 <div style="width: 60%;display: inline-block;margin-top: 0;margin-left: 5%;">
-                                    <h3><a style="color:#666; font-size: 15px; margin-bottom: 0; text-decoration: none;" href="' . add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), evrplus_permalink($company_options['evrplus_page_id'])) . '">{EVENT_NAME}</a></h3>
+                                    <h3><a style="color:#666; font-size: 15px; margin-bottom: 0; text-decoration: none;" href="{EVENT_URL}">{EVENT_NAME}</a></h3>
                                     <p style="color:#999; font-size: 12px;  line-height: 15px; margin-top: 0; font-size: 12px;">{EVENT_DESC}</p>
                                 </div>
                             </div>
-                        </li>
-							';
+                        </li>';
                 } else {
                     $codeToReturn .= $record_template;
                 }
+                
+          
+                $event_url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), get_permalink(get_page_by_path('evrplus_registration')));
+           
+                        
                 $event_name = stripslashes($event->event_name);
                 $event_desc = stripslashes($event->event_desc);
                 $codeToReturn = str_replace("\r\n", '', $codeToReturn);
-                $codeToReturn = str_replace("{EVENT_URL}", evrplus_permalink_prefix() . 'page_id=' . $company_options['evrplus_page_id'] . '&action=evrplusegister&event_id=' . $event->id, $codeToReturn);
+                $codeToReturn = str_replace("{EVENT_URL}", $event_url, $codeToReturn);
+                
                 $codeToReturn = str_replace("{EVENT_ID}", $event->id, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_NAME}", evrplus_truncateWords(stripslashes($event->event_name), 8, ""), $codeToReturn);
                 $desc = stripslashes($event->event_desc);
+                
                 if (str_word_count($desc, 0) > $event_desc_count) {
                     $words = str_word_count($desc, 2);
                     $pos = array_keys($words);
                     $desc = substr($desc, 0, 225) . '...';
                 }
+                
                 $codeToReturn = str_replace("{EVENT_DESC}", html_entity_decode($desc), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_LOC}", stripslashes($event->event_location), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_ADDRESS}", stripslashes($event->event_address), $codeToReturn);
@@ -112,6 +118,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 $count++;
             }
         }
+        
         return $codeToReturn;
     }
 
