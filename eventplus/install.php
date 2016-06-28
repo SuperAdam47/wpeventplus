@@ -828,4 +828,3 @@ function evrplus_generator() {
     $installed_date = strtotime('now');
     update_option('evr_date_installed', $installed_date);
 }
-?>
