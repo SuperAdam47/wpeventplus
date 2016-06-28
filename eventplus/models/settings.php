@@ -2,9 +2,10 @@
 
 class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
 
-    function getSettings() {
+    static function getSettings() {
         return  get_option('evr_company_settings');
     }
+    
     function saveSettings($params) {
         if ($params['company_name'] != "") {
             $company_options = get_option('evrplus_company_settings');

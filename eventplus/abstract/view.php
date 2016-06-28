@@ -57,7 +57,7 @@ abstract class EventPlus_Abstract_View {
         $path = $this->getViewFile($view_name);
   
         $this->global_vars['evrplus_date_format'] = EventPlus_Helpers_Funx::getDateFormat();
-        $this->global_vars['company_options'] = get_option('evr_company_settings');
+        $this->global_vars['company_options'] = EventPlus_Models_Settings::getSettings();
         $this->global_vars['wpdb'] = $this->getWp();
 
         // Import the view variables to local namespace

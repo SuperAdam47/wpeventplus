@@ -22,7 +22,7 @@ $stripeEmail = $_POST['stripeEmail'];
 $stripeTokenType = $_POST['stripeTokenType'];
 
 $price = $amount * 100;
-$company_options = get_option('evr_company_settings');
+$company_options = EventPlus_Models_Settings::getSettings();
 $stripeurl = $company_options['stripereturn_url'];
 
 

@@ -141,7 +141,7 @@ function evrplus_mini_cal_display_calendar($c_month, $c_year) {
         $calendar_body .= '</select><input type="submit" value="' . __('Go', 'evrplus_language') . '" /></form></td></tr>';
     }
     //added to make calendar match large calendar
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     $cal_head_clr = $company_options['evrplus_cal_head'];
     $cal_head_txt_clr = $company_options['cal_head_txt_clr'];
     $cal_use_cat = $company_options['evrplus_cal_use_cat'];
@@ -236,7 +236,7 @@ function evrplus_mini_cal_show_events($events) {
 
 function evrplus_mini_cal_show_event($event) {
     global $wpdb;
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     $show_cat = "true";
     if ($show_cat == 'true') {
         $cat_array = unserialize($event->category_id);

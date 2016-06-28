@@ -36,7 +36,7 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
         );
 
         $response = $this->oView->View('admin/settings', array(
-            'company_options' => $this->_model->getSettings(),
+            'company_options' => EventPlus_Models_Settings::getSettings(),
             'tabs' => $tabs,
         ));
 

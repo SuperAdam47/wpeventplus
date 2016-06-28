@@ -622,7 +622,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     }
 
     function fetchEventsByDate($date) {
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         if ($company_options['order_event_list'] == 'DESC') {
             $events = $this->getWpDb()->get_results("SELECT * FROM " . $this->_table . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('".  esc_sql($date)."', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('".  esc_sql($date)."', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p') DESC");
         } else {

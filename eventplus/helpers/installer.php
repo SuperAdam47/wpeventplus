@@ -34,7 +34,7 @@ class EventPlus_Helpers_Installer {
             }
         }
 
-        if (!get_option('evr_company_settings')) {
+        if (!EventPlus_Models_Settings::getSettings()) {
             $this->evrplus_reg_page();
         }
 
@@ -439,7 +439,7 @@ class EventPlus_Helpers_Installer {
 // Company Table Copy Table, Replace Data, Add Colulmns        
         //
         $old_organization_tbl = $this->db->getDb()->prefix . "events_organization";
-        if (($this->db->getDb()->get_var("SHOW TABLES LIKE '$old_organization_tbl'") == $old_organization_tbl) && (get_option('evr_company_settings') == "")) {
+        if (($this->db->getDb()->get_var("SHOW TABLES LIKE '$old_organization_tbl'") == $old_organization_tbl) && (EventPlus_Models_Settings::getSettings() == "")) {
             $ER_org_data = $this->db->getDb()->get_row($this->db->getDb()->prepare("SELECT * FROM " . $old_organization_tbl . " WHERE id=%d", 1), ARRAY_A) or die(mysqli_error());
             $company_options['company'] = $ER_org_data['organization'];
             $company_options['company_street1'] = $ER_org_data['organization_street1'];

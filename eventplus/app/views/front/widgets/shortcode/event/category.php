@@ -128,7 +128,7 @@ $start_date = $end_date = '';
                     $date_format = "M j, Y";
                     $time_start = $row['start_time'];
                     $time_end = $row['end_time'];
-                    if ($opt = get_option('evr_company_settings')) {
+                    if ($opt = EventPlus_Models_Settings::getSettings()) {
                         if (isset($opt['date_format']) && $opt['date_format'] == 'eur')
                             $date_format = "j M Y";
                         if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {

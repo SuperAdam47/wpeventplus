@@ -5,7 +5,7 @@ class EventPlus_Helpers_Payment {
     static function evrplus_registration_payment($passed_event_id, $passed_attendee_id) {
         global $wpdb;
         
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         
         if (is_numeric($passed_event_id)) {
             $event_id = $passed_event_id;
@@ -484,7 +484,7 @@ class EventPlus_Helpers_Payment {
     static function evrplus_registration_donation($passed_event_id, $passed_attendee_id) {
 
         global $wpdb;
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         if (is_numeric($passed_event_id)) {
             $event_id = $passed_event_id;
         } else {

@@ -35,7 +35,7 @@ function evrplus_calendar_replace($content) {
 function evrplus_display_calendar($cat = null) {
     global $wpdb, $week_no;
 
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
 
     $cal_head_clr = $company_options['evrplus_cal_head'];
     $cal_head_txt_clr = $company_options['cal_head_txt_clr'];
@@ -246,7 +246,7 @@ function evrplus_display_calendar($cat = null) {
         $calendar_body .= '</tr>';
     }
 
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     $cal_use_cat = $company_options['evrplus_cal_use_cat'];
     if ($cal_use_cat == 'Y') {
         $sql = "SELECT * FROM " . get_option('evr_category') . " ORDER BY id ASC";
@@ -311,7 +311,7 @@ function evrplus_show_non_events($events) {
 
 function evrplus_show_event($event, $day = 0) {
     global $wpdb;
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
 
     $cal_head_clr = $company_options['evrplus_cal_head'];
 
@@ -384,7 +384,7 @@ function evrplus_show_event($event, $day = 0) {
 
     global $wpdb, $evrplus_date_format, $noImage;
     $curdate = date("Y-m-j");
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id = $event_id";
     $rows = $wpdb->get_results($sql);
 
@@ -487,7 +487,7 @@ function evrplus_colorbox_cal_content($events) {
    
     
     #retrieve company and configuration settings
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
 
     if ($events) {
 
@@ -598,7 +598,7 @@ function evrplus_colorbox_cal_content($events) {
 
 function evrplus_show_non_event($event) {
     global $wpdb;
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     $cal_head_clr = $company_options['evrplus_cal_head'];
     $cal_head_txt_clr = $company_options['cal_head_txt_clr'];
     $cal_use_cat = $company_options['evrplus_cal_use_cat'];
@@ -655,7 +655,7 @@ function evrplus_fetch_events($y, $m, $d, $cat = null) {
     $arr_events = array();
     $date = $y . '-' . $m . '-' . $d;
 
-    $company_options = get_option('evr_company_settings');
+    $company_options = EventPlus_Models_Settings::getSettings();
     if ($company_options['order_event_list'] == 'DESC') {
         $events = $wpdb->get_results("SELECT * FROM " . get_option('evr_event') . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('$date', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('$date', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p') DESC");
     } else {

@@ -2,6 +2,11 @@
 
 class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
+    const AUTHORIZE = 'AUTHORIZE';
+    const PAYPAL = 'PAYPAL';
+    const STRIPE = 'STRIPEACTIVE';
+    const OFFLINE = 'NONE';
+ 
     function __construct() {
         parent::__construct();
 
@@ -17,7 +22,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     }
 
     function getPayments($payer_id) {
-        $sql3 = "SELECT * FROM " . $this->_table . " WHERE payer_id='".(int)$payer_id."' ";
+        $sql3 = "SELECT * FROM " . $this->_table . " WHERE payer_id='" . (int) $payer_id . "' ";
         return $this->getWpDb()->get_results($sql3, ARRAY_A);
     }
 
@@ -98,7 +103,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
             if ($send_payment_rec == "Y") {
 
-                $company_options = get_option('evr_company_settings');
+                $company_options = EventPlus_Models_Settings::getSettings();
 
                 $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id ='$payer_id'";
                 //$result = mysql_query ( $sql );
@@ -265,7 +270,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
             if ($send_payment_rec == "Y") {
 
-                $company_options = get_option('evr_company_settings');
+                $company_options = EventPlus_Models_Settings::getSettings();
 
                 $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id ='$payer_id'";
                 //$result = mysql_query ( $sql );
@@ -347,7 +352,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
                     $balance_due = $attendee->payment - $payment_recieved;
                     if ($balance_due >= '.01') {
                         //echo $attendee->fname." ".$attendee->lname." owes ".$balance_due."<br/>";
-                        $company_options = get_option('evr_company_settings');
+                        $company_options = EventPlus_Models_Settings::getSettings();
 
                         $payment_link = EventPlus_Helpers_Event::permalink($company_options['return_url']) . "id=" . $attendee->id . "&fname=" . $attendee->fname;
 
@@ -406,7 +411,17 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     }
 
     function wp_mail($email, $subject, $email_body, $headers) {
-        //wop_mail($email, $subject, html_entity_decode($email_body), $headers);
+        wp_mail($email, $subject, html_entity_decode($email_body), $headers);
+    }
+
+    static function getPaymentMethods() {
+        $paymentMethods = array();
+        $paymentMethods[self::AUTHORIZE] = 'Authorize.net';
+        $paymentMethods[self::PAYPAL] = 'PayPal';
+        $paymentMethods[self::STRIPE] = 'Stripe';
+        $paymentMethods[self::OFFLINE] = 'Offline Payment';
+        
+        return $paymentMethods;
     }
 
 }

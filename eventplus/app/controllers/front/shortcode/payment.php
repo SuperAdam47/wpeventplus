@@ -61,7 +61,7 @@ class eplus_front_shortcode_payment_controller extends EventPlus_Abstract_Contro
             $viewParams['rowAttendee'] = $rowAttendee;
             $viewParams['rowEvent'] = $rowEvent;
             $viewParams['payments'] = $payments;
-            $viewParams['company_options'] = get_option('evr_company_settings');
+            $viewParams['company_options'] = EventPlus_Models_Settings::getSettings();
 
 
             $output = $this->oView->View('front/widgets/events', $viewParams);

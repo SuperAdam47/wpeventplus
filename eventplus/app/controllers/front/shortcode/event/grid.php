@@ -30,7 +30,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $load_new_events = $this->_invokeArgs['load_new_events'];
         $custom = $this->_invokeArgs['custom'];
         
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
 
 	$orderby = $company_options['order_event_list'];
         

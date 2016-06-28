@@ -91,7 +91,7 @@ if (is_object($row)) {
         $coord_pay_msg = stripslashes($row->coord_pay_msg);
         $reg_form_defaults = unserialize($row->reg_form_defaults);
 
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         $time_format = $company_options['time_format'];
         $date_format = $company_options['date_format'];
         unset($company_options);

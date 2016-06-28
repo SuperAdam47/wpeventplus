@@ -25,7 +25,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $wpdb = EventPlus::getRegistry()->db->getDb();
         
         $curdate = date("Y-m-d");
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         $category_query = '';
         
         if (intval($record_limit) > 20)

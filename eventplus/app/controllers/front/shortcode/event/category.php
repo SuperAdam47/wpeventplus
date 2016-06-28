@@ -29,7 +29,7 @@ class eplus_front_shortcode_event_category_controller extends EventPlus_Abstract
         $viewParams['curdate'] = $curdate;
         $viewParams['events'] = $events;
         $viewParams['categoryRow'] = $categoryRow;
-        $viewParams['company_options'] = get_option('evr_company_settings');
+        $viewParams['company_options'] = EventPlus_Models_Settings::getSettings();
       
         $output = $this->oView->View('front/widgets/shortcode/event/category',$viewParams);  
          

@@ -5,7 +5,7 @@ $month_no = $end_month_no = '01';
 #Clear start date and end date fields to ensure no carry over data 
 $start_date = $end_date = '';
 #retrieve company and configuration settings
-$company_options = get_option('evr_company_settings');
+$company_options = EventPlus_Models_Settings::getSettings();
 
 $curdate = date("Y-m-j");
 

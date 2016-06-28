@@ -19,7 +19,7 @@ class EventPlus_Helpers_Funx {
     static function getDateFormat() {
         $evrplus_date_format = self::$evrplus_date_format;
 
-        if ($opt = get_option('evr_company_settings')) {
+        if ($opt = EventPlus_Models_Settings::getSettings()) {
             if (isset($opt['date_format']) and $opt['date_format'] == 'eur')
                 $evrplus_date_format = "l, j M Y";
         }

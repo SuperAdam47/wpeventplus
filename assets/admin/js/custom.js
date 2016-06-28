@@ -1,3 +1,1 @@
-$(document).ready(function(){
-    alert('ttsst');
- });
+$(document).ready(function(){    alert('ttsst');    });

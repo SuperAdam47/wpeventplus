@@ -35,7 +35,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
         $params = $this->_request->getParams();
         
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         $params['company_options'] = $company_options;
         $params['limit_str'] = $limit_str;
 

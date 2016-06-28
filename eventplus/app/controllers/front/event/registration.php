@@ -18,7 +18,7 @@ class eplus_front_event_registration_controller extends EventPlus_Abstract_Contr
 
     function before() {
         
-        $this->company_options = get_option('evr_company_settings');
+        $this->company_options = EventPlus_Models_Settings::getSettings();
 
         if (isset($_REQUEST['event_id']) && is_numeric($_REQUEST['event_id'])) {
             $this->event_id = (int) $_REQUEST['event_id'];

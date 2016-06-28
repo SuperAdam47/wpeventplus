@@ -11,7 +11,7 @@ class eplus_front_event_parts_paypal_controller extends EventPlus_Abstract_Contr
         global $wpdb;
         
         $today = date("m-d-Y");
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         $events_attendee_tbl = get_option('evr_attendee');
 
         $id = $_REQUEST['id']; //This is the id of the registrant
@@ -197,7 +197,7 @@ class eplus_front_event_parts_paypal_controller extends EventPlus_Abstract_Contr
     }
 
     protected function sandboxIpn($id) {
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
 
         $email_subject = $company_options['payment_subj'];
         $email_body = $company_options['payment_message'];

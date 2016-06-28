@@ -4,7 +4,7 @@ class EventPlus_Models_Dashboard extends EventPlus_Abstract_Model {
 
     function getEvents($limit) {
 
-        $company_options = get_option('evr_company_settings');
+        $company_options = EventPlus_Models_Settings::getSettings();
         $orderby = $company_options['order_event_list'];
         $sql = "SELECT * FROM " . get_option('evr_event') . " where str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e')" . $orderby . " LIMIT " . (int) $limit;
         $events = $this->getResults($sql);
