@@ -19,8 +19,7 @@ function evrplus_table_upgrade($evrplus_new_tbl, $evrplus_old_tbl) {
     }
 }
 
-//function to install plugin - load tables and wp_options
-
+/*function to install plugin - load tables and wp_options*/
 function evrplus_install() {
     global $evrplus_date_format, $evrplus_ver, $wpdb, $cur_build, $table_message;
     $table_message = '';
@@ -36,7 +35,7 @@ function evrplus_install() {
             update_option($option_name, $newvalue);
         }
     }
-    if (!EventPlus_Models_Settings::getSettings()) {
+    if (!get_option('evr_company_settings')) {
         evrplus_reg_page();
     }
     evrplus_attendee_db();
@@ -69,7 +68,6 @@ function evrplus_install() {
         wp_insert_post($my_post);
     }
 }
-
 function evrplus_upgrade_tables() {
     global $wpdb;
     $upgrade_version = "0.31";
@@ -430,7 +428,7 @@ function evrplus_upgrade_tables() {
 // Company Table Copy Table, Replace Data, Add Colulmns        
     //
         $old_organization_tbl = $wpdb->prefix . "events_organization";
-    if (($wpdb->get_var("SHOW TABLES LIKE '$old_organization_tbl'") == $old_organization_tbl) && (EventPlus_Models_Settings::getSettings() == "")) {
+    if (($wpdb->get_var("SHOW TABLES LIKE '$old_organization_tbl'") == $old_organization_tbl) && (get_option('evr_company_settings') == "")) {
         $ER_org_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM " . $old_organization_tbl . " WHERE id=%d", 1), ARRAY_A) or die(mysqli_error());
         $company_options['company'] = $ER_org_data['organization'];
         $company_options['company_street1'] = $ER_org_data['organization_street1'];
@@ -466,7 +464,6 @@ function evrplus_upgrade_tables() {
         update_option('evr_company_settings', $company_options);
     }
 }
-
 function evrplus_reg_page() {
 // Create post object
     $my_post = array(
@@ -480,7 +477,6 @@ function evrplus_reg_page() {
 // Insert the post into the database
     wp_insert_post($my_post);
 }
-
 function evrplus_attendee_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -534,7 +530,6 @@ function evrplus_attendee_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
-
 function evrplus_category_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -567,7 +562,6 @@ function evrplus_category_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
-
 function evrplus_event_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -661,7 +655,6 @@ function evrplus_event_db() {
 		  ;";
     $wpdb->query($sql_alter);
 }
-
 function evrplus_cost_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -699,7 +692,6 @@ function evrplus_cost_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
-
 function evrplus_payment_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -764,7 +756,6 @@ function evrplus_payment_db() {
         $wpdb->query($sql);
     }
 }
-
 function evrplus_question_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -798,7 +789,6 @@ PRIMARY KEY id (id)
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
-
 //
 //Create the table for the answers for the questions
 function evrplus_answer_db() {
@@ -829,7 +819,6 @@ function evrplus_answer_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
-
 function evrplus_generator() {
     global $evrplus_date_format, $evrplus_ver, $wpdb;
     $guid = md5(uniqid(mt_rand(), true));
@@ -839,3 +828,4 @@ function evrplus_generator() {
     $installed_date = strtotime('now');
     update_option('evr_date_installed', $installed_date);
 }
+?>
