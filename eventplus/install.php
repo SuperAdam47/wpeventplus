@@ -19,7 +19,7 @@ function evrplus_table_upgrade($evrplus_new_tbl, $evrplus_old_tbl) {
     }
 }
 
-//function to install plugin - load tables and wp_options
+/*function to install plugin - load tables and wp_options*/
 function evrplus_install() {
     global $evrplus_date_format, $evrplus_ver, $wpdb, $cur_build, $table_message;
     $table_message = '';
