@@ -9,8 +9,8 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $record_category = $this->_invokeArgs['event_category_id']; // Defaults to 0 (All)
         $event_template = $this->_invokeArgs['event_template'];
     
-        
-        $events_list = $this->makeEventsList($record_limit, $record_category, $event_template, $event_desc_count);
+   
+        $events_list = $this->makeEventsList($record_limit,$event_desc_count, $record_category, $event_template);
         
         $viewParams = $this->_invokeArgs;
         $viewParams['events_list'] = $events_list;
@@ -20,7 +20,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $this->setResponse($output);
     }
 
-    protected function makeEventsList($record_limit = '5', $record_category = '0', $record_template = '', $event_desc_count) {
+    protected function makeEventsList($record_limit = '5',$event_desc_count, $record_category = '0', $record_template = '') {
         
         $wpdb = EventPlus::getRegistry()->db->getDb();
         
@@ -82,10 +82,8 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 $codeToReturn = str_replace("{EVENT_NAME}", evrplus_truncateWords(stripslashes($event->event_name), 8, ""), $codeToReturn);
                 $desc = stripslashes($event->event_desc);
                 
-                if (str_word_count($desc, 0) > $event_desc_count) {
-                    $words = str_word_count($desc, 2);
-                    $pos = array_keys($words);
-                    $desc = substr($desc, 0, 225) . '...';
+                if (strlen($desc) > $event_desc_count) {
+                    $desc = substr($desc, 0, $event_desc_count) . '...';
                 }
                 
                 $codeToReturn = str_replace("{EVENT_DESC}", html_entity_decode($desc), $codeToReturn);

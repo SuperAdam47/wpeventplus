@@ -4,6 +4,7 @@ if ($title) {
     echo $before_title . $title . $after_title;
 }
 ?>
+
 <style type="text/css">
     .timing
     {
@@ -30,8 +31,8 @@ if ($title) {
         width: 60px;
         height: 60px;
         background-color: #fff;
-        margin: 1em auto;
-        border-radius: 0.6em;
+        margin: 0.5em auto;
+        border-radius: 0.4em;
         box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
         overflow: hidden;
         -webkit-backface-visibility: hidden;
@@ -57,20 +58,21 @@ if ($title) {
         background-color: #999999;
         border-bottom: 1px dashed #999999;
         box-shadow: 0 2px 0 #999999;
+        font-size: 13px;
     }
     .timing time.icon em
     {
         position: absolute;
         bottom: 0.3em;
         color: #999999;
-        font-size: 10px;
+        font-size: 9px;
     }
     .timing time.icon span
     {
         width: 100%;
         font-size: 15px;
         letter-spacing: -0.05em;
-        padding-top: 24px;
+        padding-top: 25px !important;
         color: #2f2f2f;
     }
     .timing time.icon:hover, time.icon:focus
