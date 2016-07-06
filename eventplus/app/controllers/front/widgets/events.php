@@ -45,7 +45,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 if ($record_template == '') {
                     $codeToReturn .= '
                         <li style="list-style: none;  border-top: 1px solid #cdcdcd;padding: 0 5px; margin-left: 0;padding-bottom: 23px; background-color: ' . ( ($count % 2 == 0) ? '#F5F5F5' : '#FFF' ) . ';">
-                            <div style=" width: 100%;">
+                             <div style="clear:both; width: 100%;">
                                 <div style="width: 30%; float: left; ">
                                     <div class="timing">
                                         <div class="time-cont">
