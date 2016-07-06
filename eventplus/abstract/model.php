@@ -227,7 +227,7 @@ abstract class EventPlus_Abstract_Model {
      * @param type $table
      * @return Array 
      */
-    public function getOne($column, $value, $pk_column = null, $table = null, $column = '*') {
+    public function getOne($value, $pk_column = null, $table = null, $column = '*') {
         $r = $this->Data($value, $pk_column, $table, $column);
 
         return isset($r[$column]) ? $r[$column] : null;
