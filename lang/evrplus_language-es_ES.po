@@ -1,0 +1,1783 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EVR 1.06\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-18 22:40-0800\n"
+"PO-Revision-Date: Wed Apr 06 2016 02:43:16 GMT-0400 (Hora estÃ¡ndar oeste, "
+"SudamÃ©rica)\n"
+"Last-Translator: Admin <paladin.salvatierra@gmail.com>\n"
+"Language-Team: consultant@avdude.com\n"
+"Language: Spanish (Spain)\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Loco-Source-Locale: es_ES\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-Basepath: D:/PluginDevelopment/Anna/evrplus\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Loco-Target-Locale: es_ES\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-SearchPath-0: ."
+
+msgid " . . .Now returning you to Question Management . . "
+msgstr ". . . Volviendo a Gestión de Pregunta . . ."
+
+msgid " . . .Now returning you to Question Managment . . "
+msgstr ". . . Volviendo a Gestión de Pregunta . . ."
+
+msgid " . . .Now returning you to attendee list . . "
+msgstr ". . .Regresanado a la lista de asistentes. ."
+
+msgid " . . .Now returning you to event list . . "
+msgstr ". . .Ahora que volver a la lista de eventos. ."
+
+msgid " . . .Now returning you to the payment section . . "
+msgstr ". . . Regresando a la sección de pago . . ."
+
+msgid " attendes registered for this event.  The event cannot be deleted."
+msgstr "attendes registradas para este evento. El evento no se puede eliminar."
+
+msgid " has been updated!"
+msgstr "¡ha sido actualizado!"
+
+msgid "# Attendees"
+msgstr "#Asistentes"
+
+msgid "# People"
+msgstr "# de Personas"
+
+msgid "(For your logo on PayPal page)"
+msgstr "(Para su logo en la página de PayPal)"
+
+msgid "(used for cancelled payments)"
+msgstr "(utilizado para los pagos cancelados)"
+
+msgid "(used for testing/debug)"
+msgstr "(utilizado para la prueba / debug)"
+
+msgid "(used to process payments)"
+msgstr "(utilizado para procesar pagos)"
+
+msgid ""
+"*Payments could take several days to post to this page. Please check back in "
+"several days if you made a payment and your payment is not showing at this "
+"time."
+msgstr ""
+"* Los pagos podrían tardar varios días para publicar en esta página. Por "
+"favor revisa en unos días si usted hizo un pago y su pago no está mostrando "
+"en este momento."
+
+msgid ". . .Now returning you to event list . . "
+msgstr ". . .Ahora volver a la lista de eventos. ."
+
+msgid "ACTIVE"
+msgstr "ACTIVO"
+
+msgid "ACTIVE EVENT"
+msgstr "EVENTO ACTIVO"
+
+msgid "ADD EVENT"
+msgstr "AÑADIR EVENTO"
+
+msgid "ADD NEW CATEGORY"
+msgstr "ADD NEW CATÉGORIE"
+
+msgid "ADD NEW COST/TICKET"
+msgstr "AÑADIR NUEVO COSTO / TICKET"
+
+msgid "ADD NEW EVENT"
+msgstr "AÑADIR NUEVO EVENTO"
+
+msgid "ADD NEW QUESTION"
+msgstr "AÑADIR NUEVA PREGUNTA"
+
+msgid "ADD QUESTION"
+msgstr "AÑADIR PREGUNTA"
+
+msgid "AMOUNT"
+msgstr "CANTIDAD"
+
+msgid "APR"
+msgstr "ABR"
+
+msgid "AUG"
+msgstr "AGO"
+
+msgid "AVAILABILITY TIMES OF COST/ITEM"
+msgstr "TIEMPOS DE DISPONIBILIDAD DE COSTO / TEMA"
+
+msgid "AVAILABLE SEATS"
+msgstr "ASIENTOS DISPONIBLES"
+
+msgid "Action"
+msgstr "Acción "
+
+msgid "Active Events"
+msgstr "Eventos Activos"
+
+msgid "Add A Category"
+msgstr "Agregar Categoría "
+
+msgid "Add Attendee:"
+msgstr "Agregar Asistente:"
+
+msgid "Add Category"
+msgstr "Añadir Categoría "
+
+msgid "Add Event Cost/Item for "
+msgstr "Añadir Evento Costo / artículo para"
+
+msgid "Add Payment"
+msgstr "Añadir Pago"
+
+msgid "Add Payment:"
+msgstr "Añadir Pago:"
+
+msgid "Add to your calendar"
+msgstr "Descargar a Calendario"
+
+msgid "Address"
+msgstr "Dirección "
+
+msgid "All"
+msgstr "Todas"
+
+msgid "All location information must be complete for Google Map feature to work."
+msgstr ""
+"Toda la información de ubicación debe ser completa para Google Map "
+"característica funcione."
+
+msgid "Amount"
+msgstr "Cantidad"
+
+msgid "Amount Paid"
+msgstr "Cantidad Pagada"
+
+msgid "Answer Table Name:"
+msgstr "Nombre d la Tabla Respuestas:"
+
+msgid "Answer Table Version:"
+msgstr "Versión de la Tabla Respuesta:"
+
+msgid "Apply Changes"
+msgstr "Aplicar Cambios"
+
+msgid "Apr"
+msgstr "Abr"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "Are you sure you want to copy"
+msgstr "¿Seguro que desea copiar?"
+
+msgid "Are you sure you want to delete"
+msgstr "¿Está seguro que desea eliminar?"
+
+msgid "Are you sure you want to delete category?"
+msgstr "¿Seguro que quieres eliminar la categoría?"
+
+msgid "Are you using an external registration?"
+msgstr "¿Está utilizando un registro externo?"
+
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
+"    Your information has been placed on our waiting list.  \n"
+"    The waiting list is on a first come, first serve basis.  \n"
+"    You will be notified by email should a seat become available."
+msgstr ""
+"En este momento, se han tomado todos los asientos para el evento. \n"
+"     Su información ha sido colocado en la lista de espera. \n"
+"     La lista de espera es en un primer llegado, primer servido base. \n"
+"     Se le notificará por correo electrónico debe ser un asiento disponible."
+
+msgid ""
+"At this time, all seats for the event have been taken.  Your information has "
+"been placed on our waiting list.  The waiting list is on a first come, first "
+"serve basis.  You will be notified by email should a seat become available."
+msgstr ""
+"En este momento, se han tomado todos los asientos para el evento. Su "
+"información ha sido colocado en la lista de espera. La lista de espera es en "
+"un primer llegado, primer servido base. Se le notificará por correo "
+"electrónico debe ser un asiento disponible."
+
+msgid "Attendee"
+msgstr "asistente"
+
+msgid "Attendee Management"
+msgstr "Gestión de asistentes"
+
+msgid "Attendee Name"
+msgstr "Nombre de asistentes"
+
+msgid "Attendee Name:"
+msgstr "Nombre de asistentes:"
+
+msgid "Attendee Table Name:"
+msgstr "Asistentes Nombre de la tabla:"
+
+msgid "Attendee Table Version:"
+msgstr "Version Nombre de la tabla:"
+
+msgid "Attendees"
+msgstr "Asistentes"
+
+msgid "Attention"
+msgstr "Atención"
+
+msgid "Aug"
+msgstr "Ago"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "Authorized.Net Txn Key"
+msgstr "Authorized.Net Txn clave"
+
+msgid "Available Seats"
+msgstr "Asientos disponibles"
+
+msgid "Available items/cost per registration/order?"
+msgstr "¿Disponible artículos / costo por registro / orden?"
+
+msgid "BACK"
+msgstr "VOLVER"
+
+msgid "Balance Owed:"
+msgstr "Balance Adeudado:"
+
+msgid "CONFIRMED"
+msgstr "Confirmado"
+
+msgid "Calender"
+msgstr "Calendario"
+
+msgid "Cancel Return URL"
+msgstr "Cancelar Return URL"
+
+msgid "Cancelation"
+msgstr "Cancelación "
+
+msgid "Cash"
+msgstr "Efectivo"
+
+msgid "Category Description"
+msgstr "Descripción de la Categoría "
+
+msgid "Category Management"
+msgstr "Gestión por Categorías"
+
+msgid "Category Name"
+msgstr "Nombre de la categoría "
+
+msgid "Category Table Name:"
+msgstr "Nombre de la Tabla Categoría:"
+
+msgid "Category Table Version:"
+msgstr "Versión de la Tabla Categoría:"
+
+msgid "Check"
+msgstr "Cheque"
+
+msgid "Choose the date format for your events:"
+msgstr "Elije el formato de fecha para eventos:"
+
+msgid "Choose the time format for your events:"
+msgstr "Elije el formato de hora para eventos:"
+
+msgid "City"
+msgstr "Ciudad"
+
+msgid "Company & Plugin Settings"
+msgstr "Compania y Programas Ajustes"
+
+msgid "Company City:"
+msgstr "Ciudad:"
+
+msgid "Company Information"
+msgstr "Información de la Empresa"
+
+msgid "Company Name:"
+msgstr "Nombre de la Empresa:"
+
+msgid "Company Postal Code:"
+msgstr "Empresa Código Postal:"
+
+msgid "Company State:"
+msgstr "Empresa Estado:"
+
+msgid "Company Street 1:"
+msgstr "Empresa Calle 1:"
+
+msgid "Company Street 2:"
+msgstr "Empresa Calle 2:"
+
+msgid "Company details saved"
+msgstr "Detalles de la compañía guardados"
+
+msgid "Confirmation Mail"
+msgstr "Correo de Confirmación"
+
+msgid "Confirmation eMail"
+msgstr "Confirmación del email"
+
+msgid "Confirmed"
+msgstr "Confirmado"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Cost Table Name:"
+msgstr "Nombre de la Tabla Costo:"
+
+msgid "Cost Table Version:"
+msgstr "Versión de la Tabla Costo:"
+
+msgid "Currency Format:"
+msgstr "Formato de moneda:"
+
+msgid "Current Categories"
+msgstr "Categorías actuales"
+
+msgid "Custom Confirmation Email"
+msgstr "Confirmación Custom Email"
+
+msgid "Custom Currency"
+msgstr "moneda personalizada"
+
+msgid "Custom Questions"
+msgstr "Preguntas Personalizadas"
+
+msgid "DEC"
+msgstr "DIC"
+
+msgid "DELETE"
+msgstr "BORRAR"
+
+msgid "Data Table Information"
+msgstr "Datos Información Tabla"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Days"
+msgstr "días"
+
+msgid "Dec"
+msgstr "Dic"
+
+msgid "December"
+msgstr "Diciembre"
+
+msgid "Default Registration Information (Name and Email Required)"
+msgstr "Información de registro predeterminado (Nombre y Email Obligatorio)"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Delete All"
+msgstr "Eliminar todos"
+
+msgid "Deposit"
+msgstr "Deposito "
+
+msgid "Description"
+msgstr "Descripción "
+
+msgid "Description of Cost"
+msgstr "Descripción del Costo"
+
+msgid "Detailed Event Description"
+msgstr "Descripción detallada del Evento"
+
+msgid "Discount"
+msgstr "Descuento"
+
+msgid "Display Description"
+msgstr "Mostrar Descripción "
+
+msgid "Display description on registration form page? "
+msgstr "¿Mostrar descripción en la página formulario de inscripción?"
+
+msgid "Do you want to display the category description on the events page?"
+msgstr "¿Quieres mostrar la descripción de la categoría en la página de eventos?"
+
+msgid "Do you want to display the event description on the events page?"
+msgstr "¿Quieres mostrar la descripción del evento en la página de eventos?"
+
+msgid "Do you want to send a payment received notice to the payer?"
+msgstr "¿Desea enviar un pago recibido notificación al deudor?"
+
+msgid "Do you want to send a revised payment received notice to the payer?"
+msgstr "¿Desea enviar un pago revisado recibido notificación al pagador?"
+
+msgid "Do you want to use a custom email for this event?"
+msgstr "¿Quieres utilizar un correo electrónico personalizado para este evento?"
+
+msgid "Donation"
+msgstr "Donación "
+
+msgid "Drag Line Up or Down to ReArrange."
+msgstr "Arrastre la línea hacia arriba o abajo para reorganizar."
+
+msgid "Drop Down"
+msgstr "Campo desplegable "
+
+msgid "EDIT"
+msgstr "EDITAR"
+
+msgid "EDIT QUESTION"
+msgstr "EDITAR PREGUNTA"
+
+msgid "ERROR: Invalid Security Code."
+msgstr "ERROR: Código de seguridad no es válido."
+
+msgid "EVENT VENUE"
+msgstr "LUGAR DEL EVENTO"
+
+msgid "EXPIRED"
+msgstr "MUERTO"
+
+msgid "EXPIRED EVENT"
+msgstr "EVENTO EXPIRED"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit Attendee:"
+msgstr "Editar Asistente."
+
+msgid "Edit Category"
+msgstr "Editar Categoría "
+
+msgid "Edit Event Cost/Item for "
+msgstr "Editar Costo del evento / artículo para"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email Address"
+msgstr "Correo Electronico"
+
+msgid "Email Address:"
+msgstr "Dirección de correo electrónico:"
+
+msgid "Email Settings - Confirmation Email"
+msgstr "Configuración de correo electrónico - correo electrónico de confirmación"
+
+msgid "Email format not correct!"
+msgstr "¡Formato de Correo no corrige!"
+
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+msgid "End Time"
+msgstr "Fecha de finalización"
+
+msgid "Enter coupon code for discount"
+msgstr "Introduce el código de cupón de descuento"
+
+msgid "Enter coupon code for discount off primary registration?"
+msgstr "Introduce el código de cupón de descuento en la inscripción primaria?"
+
+msgid "Enter the name of the business or facility where the event is being held"
+msgstr "Introduzca el nombre de la empresa o institución donde se realizó el evento"
+
+msgid ""
+"Enter the number of available seats at your event venue. Leave blank if "
+"their is no limit on registrations."
+msgstr ""
+"Introduce el número de plazas disponibles en su lugar de celebración de "
+"eventos. Dejar en blanco si es que no hay límite en las inscripciones."
+
+msgid "Enter the security code as it is shown (required)"
+msgstr "Introduzca el código de seguridad como se muestra (requerido)"
+
+msgid ""
+"Enter the text for the confirmation email.  This email will be sent in text "
+"format.  See User Manual for data tags."
+msgstr ""
+"Introduzca el texto para el correo electrónico de confirmación. Este correo "
+"electrónico será enviado en formato de texto. Vea el Manual del usuario para "
+"las etiquetas de datos."
+
+msgid "Enter the url hyperlink to another webpage or website external registration"
+msgstr ""
+"Introduzca el hipervínculo url a otra página web o sitio web de registro "
+"externo"
+
+msgid ""
+"Enter the url hyperlink to another webpage or website with more event "
+"information"
+msgstr ""
+"Introduzca el hipervínculo url a otra página web o sitio web con más "
+"información del evento"
+
+msgid ""
+"Enter the url of an image you wish displayed above the registration form.  "
+"The image should be no wider than 450."
+msgstr ""
+"Introduce la URL de la imagen que desea se muestra arriba del formulario de "
+"inscripción. La imagen no debe ser mayor de 450."
+
+msgid ""
+"Enter the url to an image you would like displayed next to the event in the "
+"event listings. Size should be 150 x112"
+msgstr ""
+"Introduzca el url de la imagen que quieres que aparezcan al lado del evento "
+"en las listas de eventos. Tamaño debe ser de 150 x112"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Event Categories"
+msgstr "Categorías de eventos"
+
+msgid "Event Credit"
+msgstr "Crédito al evento "
+
+msgid "Event Date/Time"
+msgstr "Fecha / Hora del evento"
+
+msgid "Event Description"
+msgstr "Descripción del evento"
+
+msgid "Event Fees"
+msgstr "Honorarios de eventos"
+
+msgid "Event Full"
+msgstr "Evento completo"
+
+msgid "Event ID"
+msgstr "Evento ID"
+
+msgid "Event Items:"
+msgstr "Los productos de este Evento:"
+
+msgid "Event Listing Options"
+msgstr "Evento Opciones de listado"
+
+msgid "Event Location"
+msgstr "Lugar del evento"
+
+msgid "Event Location/Venue"
+msgstr "Evento Ubicación / Lugar"
+
+msgid "Event Management"
+msgstr "Gestión de Eventos"
+
+msgid "Event Name"
+msgstr "Nombre de evento"
+
+msgid "Event Name / Total Cost:"
+msgstr "Nombre del Evento / Costo Total:"
+
+msgid "Event Name/Title "
+msgstr "Nombre del evento / Título"
+
+msgid "Event Options"
+msgstr "Opciones de Eventos"
+
+msgid "Event Question Management"
+msgstr "Gestión Pregunta por Evento"
+
+msgid "Event Questions"
+msgstr "Preguntas de eventos"
+
+msgid "Event Registration Plugin - Current Information"
+msgstr "Evento Registro Plugin - Información actual"
+
+msgid "Event Seating Capacity"
+msgstr "Evento capacidad de asientos"
+
+msgid "Event Table Name:"
+msgstr "Nombre de la Tabla Eventos:"
+
+msgid "Event Table Version:"
+msgstr "Version de la tabla Eventos:"
+
+msgid "Event Venue"
+msgstr "Lugar del evento"
+
+msgid "Events"
+msgstr "Eventos"
+
+msgid "External registration URL"
+msgstr "URL de matrícula externo"
+
+msgid "FEB"
+msgstr "FEB"
+
+msgid "FREE"
+msgstr "Gratuito"
+
+msgid "Feb"
+msgstr "Feb"
+
+msgid "February"
+msgstr "Febrero"
+
+msgid "Fees/Items"
+msgstr "Honorarios / Artículos"
+
+msgid "First Name"
+msgstr "Nombre"
+
+msgid "Free"
+msgstr "gratis"
+
+msgid "Fri"
+msgstr "Vier"
+
+msgid "Friday"
+msgstr "viernes"
+
+msgid "Full Payment"
+msgstr "Pago Todo"
+
+msgid "GET"
+msgstr "CONSIGA"
+
+msgid "GO"
+msgstr "IR"
+
+msgid "General Settings"
+msgstr "Configuración General"
+
+msgid "Go"
+msgstr "IR"
+
+msgid "Header Image URL"
+msgstr "URL de la imagen"
+
+msgid "Hours"
+msgstr "horas"
+
+msgid "I accept the terms and conditions"
+msgstr "Acepto los Términos y Condiciones"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "ITEM QUANTITY"
+msgstr "CANTIDAD ARTÍCULO"
+
+msgid "Identifier"
+msgstr "Identificador "
+
+msgid ""
+"If you have send mail option enabled in the company settings, you can "
+"override the default mail by creating a custom mail for this event."
+msgstr ""
+"Si usted tiene la opción de enviar electrónico habilitada en la "
+"configuración de la empresa, puede anular el correo por defecto al crear un "
+"correo personalizado para este evento."
+
+msgid ""
+"If you want the description to display under the event title on the "
+"registration form, select yes."
+msgstr ""
+"Si desea que la descripción para mostrar bajo el nombre del evento en el "
+"formulario de registro, seleccione sí."
+
+msgid ""
+"If you will accept checks or cash, usually when accepting payment at "
+"event/on-site"
+msgstr ""
+"Si va a aceptar cheques o dinero en efectivo, por lo general cuando se "
+"acepta el pago en caso de / en las instalaciones"
+
+msgid ""
+"If you will accept checks or cash, usually when accepting payment at "
+"event/on-site."
+msgstr ""
+"Si va a aceptar cheques o dinero en efectivo, por lo general cuando se "
+"aceptan los pagos en caso de / en las instalaciones."
+
+msgid "Image URL"
+msgstr "URL de la imagen"
+
+msgid "Item Quantity"
+msgstr "artículo Cantidad"
+
+msgid "Item Sales Begin:"
+msgstr "Inicio articulos de venta:"
+
+msgid "Item Sales End:"
+msgstr "Punto de venta final:"
+
+msgid "Item/Cost Value"
+msgstr "Artículo / Valor Costo"
+
+msgid "JAN"
+msgstr "ENE"
+
+msgid "JUL"
+msgstr "JULIO"
+
+msgid "JUN"
+msgstr "JUN"
+
+msgid "Jan"
+msgstr "Ene"
+
+msgid "January"
+msgstr "Enero"
+
+msgid "Jul"
+msgstr "Jul"
+
+msgid "July"
+msgstr "Julio"
+
+msgid "Jun"
+msgstr "Jun"
+
+msgid "June"
+msgstr "Junio"
+
+msgid "LATEST ATTENDEES"
+msgstr "Asistentes Recientes"
+
+msgid "LATEST CATEGORIES"
+msgstr "ÚLTIMAS CATEGORÍAS"
+
+msgid "LATEST EVENTS"
+msgstr "ÚLTIMOS ACONTECIMIENTOS"
+
+msgid "LATEST PAYMENTS"
+msgstr "ÚLTIMOS PAGOS"
+
+msgid "Last Name"
+msgstr "Apellido"
+
+msgid "Lets get your plugin setup!"
+msgstr "Lets get votre configuration de plugin !"
+
+msgid "Location / City"
+msgstr "Lugar / Ciudad"
+
+msgid "MAKE A DONATION"
+msgstr "HAZ UNA DONACIÓN"
+
+msgid "MAR"
+msgstr "MAR"
+
+msgid "MAY"
+msgstr "MAY"
+
+msgid "MORE INFO"
+msgstr "Más Información"
+
+msgid "Main page"
+msgstr "página principal"
+
+msgid "Make A Donation to Events Registration"
+msgstr "Hacer una donación a eventos de registro"
+
+msgid "Manage"
+msgstr "Administrar"
+
+msgid "Manage Categories"
+msgstr "Administrar categorías"
+
+msgid "Manage Events"
+msgstr "Gestionar Eventos"
+
+msgid "Mar"
+msgstr "Mar"
+
+msgid "March"
+msgstr "Marzo"
+
+msgid "May"
+msgstr "Mayo"
+
+msgid "Meal or Food"
+msgstr "Comida o Alimentos"
+
+msgid "Merchandise"
+msgstr "Mercancía"
+
+msgid "Minutes"
+msgstr "Minutos"
+
+msgid "Modification"
+msgstr "Modificación "
+
+msgid "Mon"
+msgstr "Lunes"
+
+msgid "Monday"
+msgstr "lunes"
+
+msgid "Month"
+msgstr "Mes"
+
+msgid "More Info URL"
+msgstr "Más Info URL"
+
+msgid "Multiple"
+msgstr "Multiple"
+
+msgid "NOV"
+msgstr "NOV"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Name "
+msgstr "Nombre "
+
+msgid "Name / Location, City"
+msgstr "Nombre / Ubicación , Ciudad"
+
+msgid "Name of Cost/Item"
+msgstr "Nombre de Costo / artículo"
+
+msgid "No"
+msgstr "No"
+
+msgid "No "
+msgstr "No"
+
+msgid "No Custom Questions"
+msgstr "No hay Preguntas Personalizadas "
+
+msgid "No Fees Have Been Setup For This Event!"
+msgstr "¡Sin comisiones ha configurado Has estado para este evento!"
+
+msgid "No Payments Found!"
+msgstr "No hay pagos encontrado!"
+
+msgid "No Payments Received!"
+msgstr "No hay pagos recibidos!"
+
+msgid "No Record Found!"
+msgstr "Ningún registro encontrado!"
+
+msgid "Notify URL"
+msgstr "Notificar URL"
+
+msgid "Nov"
+msgstr "Nov"
+
+msgid "November"
+msgstr "Noviembre"
+
+msgid "Now adding extra question responses."
+msgstr "Añadiendo respuestas a las preguntas adicionales."
+
+msgid "Now taking you back . . ."
+msgstr "Ahora que le hará volver. . ."
+
+msgid "Number of Attendees:"
+msgstr "Número de Asistentes"
+
+msgid "OCT"
+msgstr "OCTUBRE"
+
+msgid "Oct"
+msgstr "Octubre"
+
+msgid "October"
+msgstr "Octubre"
+
+msgid "Online Payment ID"
+msgstr "Identificación de Pago en Línea"
+
+msgid "Online Payment Vendor:"
+msgstr "Pago a proveedores en línea:"
+
+msgid "Online/Credit Card"
+msgstr "En Linea/Tarjeta de Credito "
+
+msgid "Open Seats"
+msgstr "Asientos Disponibles"
+
+msgid "Optional"
+msgstr "Opcional"
+
+msgid "Options"
+msgstr "Opciones"
+
+msgid "Order Detail"
+msgstr "Detalle de la Orden"
+
+msgid "Order Details:"
+msgstr "Detalles de pedidos:"
+
+msgid "Outstanding"
+msgstr "Excepcional"
+
+msgid "PAY NOW"
+msgstr "PAGAR AHORA"
+
+msgid "PAYER"
+msgstr "PAGADOR"
+
+msgid "POST"
+msgstr "POST"
+
+msgid "POST PAYMENT"
+msgstr "PAGO DESPUÉS "
+
+msgid "Page Settings"
+msgstr "Configuración de página"
+
+msgid "Partial Payment"
+msgstr "Pago parcial"
+
+msgid "Payer"
+msgstr "Pagador"
+
+msgid "Payment"
+msgstr "Pago"
+
+msgid "Payment Button Text"
+msgstr "Botón de pago de texto"
+
+msgid "Payment Confirmation Settings - Confirmation Email"
+msgstr "Ajustes Pago Confirmación - Confirmación Email"
+
+msgid "Payment Management"
+msgstr "Gestión de pagos"
+
+msgid "Payment Message Subject"
+msgstr "Pago Asunto del mensaje"
+
+msgid "Payment Method"
+msgstr "Método de Pago "
+
+msgid "Payment Page for"
+msgstr "Página de pago para"
+
+msgid "Payment Received Date"
+msgstr "Fecha del Pago Recibido"
+
+msgid "Payment Received Notification sent."
+msgstr "Pago recibió la notificación enviada."
+
+msgid "Payment Settings"
+msgstr "Configuración de pagos"
+
+msgid "Payment Table Name:"
+msgstr "Nombre de la Tabla Pago:"
+
+msgid "Payment Table Version:"
+msgstr "Versión de la Tabla Pago:"
+
+msgid "Payment Type"
+msgstr "Tipo de Pago"
+
+msgid "Payments"
+msgstr "pagos"
+
+msgid "Payments Received:"
+msgstr "Pagos recibidos:"
+
+msgid "Phone"
+msgstr "Teléfono "
+
+msgid "Phone Number"
+msgstr "Número de Teléfono "
+
+msgid "Phone Number</label>"
+msgstr "Número de teléfono </ label>"
+
+msgid ""
+"Please check your email for payment information. Click the link provided in "
+"the registration confirmation."
+msgstr ""
+"Por favor revise su correo electrónico para la información de pago. Haga "
+"clic en el enlace que aparece en la confirmación de la inscripción."
+
+msgid ""
+"Please enter the amount using 2 decimal point (i.e. 10.00) for the "
+"registration cost.  Use minus symbol before for discount amounts (i.e. -5."
+"00)."
+msgstr ""
+"Por favor ingrese la cantidad utilizando 2 punto decimal (es decir, 10.00) "
+"por el costo de inscripción. ¿Utilice el símbolo menos delante de los "
+"importes de descuento (es decir, -5,00)."
+
+msgid "Please enter your address."
+msgstr "Introduzca su dirección."
+
+msgid "Please enter your city."
+msgstr "Por favor ingrese su ciudad."
+
+msgid "Please enter your first name."
+msgstr "Introduzca su nombre."
+
+msgid "Please enter your last name."
+msgstr "Introduzca su apellido"
+
+msgid "Please enter your phone number."
+msgstr "Por favor, introduzca su número de teléfono."
+
+msgid "Please enter your state."
+msgstr "Por favor ingrese su estado"
+
+msgid "Please enter your zip/postal code."
+msgstr "Por favor, ingrese su código postal / postal."
+
+msgid "Please make sure you complete each section before submitting!"
+msgstr "¡Por favor, asegúrese de completar cada sección antes de enviar!"
+
+msgid "Please provide the first and last name of each person:"
+msgstr "Por favor provea el nombre y apellido de cada asistente"
+
+msgid "Please provide your information to be placed on the waiting list."
+msgstr "Por favor proporcione su información para ser colocado en la lista de espera."
+
+msgid "Please select a question to edit!"
+msgstr "Por favor seleccione una pregunta de editar!"
+
+msgid "Please select no for event pricing setup, select yes for free event"
+msgstr ""
+"Por favor seleccione no para la configuración de precios para el evento, "
+"seleccione sí para evento gratuito"
+
+msgid ""
+"Please select the Donate button to be taken to our payment vendor's site for "
+"online-donations."
+msgstr ""
+"Por favor seleccione el botón Donar al ser llevado al sitio de nuestro "
+"proveedor de pago para el personal de las donaciones en línea."
+
+msgid ""
+"Please select the Pay Now button to be taken to our payment vendor's site "
+"for online-payment."
+msgstr ""
+"Por favor, seleccione el botón Pagar ahora que deben adoptarse para el sitio "
+"de nuestro proveedor de pago de pago en línea."
+
+msgid "Please select the country in which the currency format will be used"
+msgstr "Por favor seleccione el país en el que se utilizará el formato de moneda"
+
+msgid "Please use correct format for your phone number."
+msgstr "Por favor, use formato correcto para su número de teléfono."
+
+msgid "Please verify your registration details:"
+msgstr "Por favor verifica la información de registro:"
+
+msgid "Postal Code"
+msgstr "Código Postal"
+
+msgid "Postal/Zip Code"
+msgstr "Código Postal / Zip"
+
+msgid "Postcode"
+msgstr "Código postal"
+
+msgid "Primary Contact email:"
+msgstr "Primaria Email de contacto:"
+
+msgid "Primary contact email:"
+msgstr "Email de contacto primario:"
+
+msgid "Provide a description of the cost/ticket."
+msgstr "Proporcione una descripción de la relación costo / ticket."
+
+msgid ""
+"Provide a detailed description of the event, include key details other than "
+"when and where. Do not use any html code. This is a text only display. \n"
+"To create new display lines just press Enter."
+msgstr ""
+"Proporcionar una descripción detallada del evento, incluir detalles claves "
+"distintas de cuando y donde. No utilice ningún código html. Este es un texto "
+"único de visualización.\n"
+"Para crear nuevas líneas de la pantalla sólo tiene que pulsar Intro."
+
+msgid "Provide a short Unique ID for this event. i.e. BOB001"
+msgstr "Proporcione un ID único corto para este evento. es decir BOB001"
+
+msgid ""
+"Provide the number of available item/cost types per registration form. If it "
+"is a REG item, available seats will impact overall amount available. Leave "
+"blank if no limit."
+msgstr ""
+"Proporcione el número de tipos de artículo / costo disponibles por el "
+"formulario de inscripción. Si se trata de un elemento REG, asientos "
+"disponibles se impactan cantidad total disponible. Dejar en blanco si no hay "
+"límite."
+
+msgid "QUESTION"
+msgstr "PREGUNTA"
+
+msgid "Question"
+msgstr "Pregunta "
+
+msgid "Question Table Name:"
+msgstr "Nombre de la tabla preguntas:"
+
+msgid "Question Table Version:"
+msgstr "Versión de la tabla preguntas: "
+
+msgid "Questions"
+msgstr "Preguntas"
+
+msgid "REGISTER"
+msgstr "REGISTRO"
+
+msgid "REGISTRATION FEES"
+msgstr "CUOTAS DE INSCRIPCIÓN"
+
+msgid "REQUIRED"
+msgstr "REQUERIDO"
+
+msgid "RESPONSES"
+msgstr "RESPUESTAS"
+
+msgid "ReOrder Event Items/Cost for display:"
+msgstr "Artículos ReOrder eventos / Costo para la exhibición:"
+
+msgid "ReOrder Event Questions for display order:"
+msgstr "Re ordenar Preguntas de eventos para el orden de visualización:"
+
+msgid "Recurring"
+msgstr "Periódico"
+
+msgid "Recurring event"
+msgstr "evento recurrente"
+
+msgid "Refund"
+msgstr "Reembolso"
+
+msgid "Registering Name:"
+msgstr "Nombre de Registro"
+
+msgid "Registration"
+msgstr "Registrar"
+
+msgid "Registration Attendee"
+msgstr "Registro de asistente"
+
+msgid "Registration Fees"
+msgstr "Tarifas de Inscripción"
+
+msgid "Registration Fields"
+msgstr "Campos de Registro"
+
+msgid "Registration TOTAL"
+msgstr "Inscripción total"
+
+msgid "Registration, however, is not complete until we have received your payment."
+msgstr "El registro, sin embargo, no es completa hasta que hayamos recibido su pago."
+
+msgid "Registrations will be placed on the wait list!"
+msgstr "¡Las inscripciones serán colocados en la lista de espera!"
+
+msgid "Reports"
+msgstr "Informes"
+
+msgid "Required"
+msgstr "Requerido"
+
+msgid "Reset"
+msgstr "Reiniciar"
+
+msgid "Return Method:"
+msgstr "Volver Método:"
+
+msgid "SELECT ANOTHER EVENT"
+msgstr "SELECCIONE OTRO EVENTO"
+
+msgid "SEND"
+msgstr "ENVIAR"
+
+msgid "SEP"
+msgstr "sep"
+
+msgid "SUBMIT"
+msgstr "ENVIAR"
+
+msgid "Sales"
+msgstr "Ventas"
+
+msgid "Sat"
+msgstr "Sábado"
+
+msgid "Saturday"
+msgstr "sábado"
+
+msgid "Save Options"
+msgstr "Opciones de guardado"
+
+msgid "Search By Title"
+msgstr "Buscar por Título"
+
+msgid "Seats"
+msgstr "asientos"
+
+msgid "Secondary Contact emails(Separated By Commas[,]):"
+msgstr "Contacto correos electrónicos secundarias ( separados por comas [ , ] ) :"
+
+msgid "Seconds"
+msgstr "Segundos"
+
+msgid "Select A Different Event"
+msgstr "Seleccione un evento diferente"
+
+msgid "Select An Event"
+msgstr "Seleccionar un Evento"
+
+msgid "Select Another Event"
+msgstr "Seleccione Otro Evento"
+
+msgid ""
+"Select a Item/Cost category.  Note that category REG is used for attendance "
+"count, all others are not included in attendance count."
+msgstr ""
+"Seleccione una categoría de artículo / Costo. Tenga en cuenta que la "
+"categoría REG se utiliza para el recuento de asistencia, todos los demás no "
+"se incluyen en el recuento de la asistencia."
+
+msgid "Select one or many categories for an event"
+msgstr "Seleccione una o varias categorías de un evento"
+
+msgid ""
+"Select the default fields for the registration form.  Note that name and "
+"email or not optional"
+msgstr ""
+"Seleccione los campos por defecto para el formulario de inscripción. Tenga "
+"en cuenta que el nombre y la dirección de correo electrónico o no opcional"
+
+msgid "Selections"
+msgstr "Selecciones"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Sep"
+msgstr "septiembre"
+
+msgid "Sept"
+msgstr "sept"
+
+msgid "September"
+msgstr "Septiembre"
+
+msgid "ShortCode"
+msgstr "Código corto"
+
+msgid "Shortcode"
+msgstr "Shortcode"
+
+msgid "Single"
+msgstr "Individual "
+
+msgid "Sort By"
+msgstr "Ordenar por"
+
+msgid "Start Date"
+msgstr "Fecha Inicial"
+
+msgid "Start Time"
+msgstr "Hora de inicio"
+
+msgid "State"
+msgstr "Estado"
+
+msgid "State or Province"
+msgstr "Estado o Provincia"
+
+msgid "State/Province"
+msgstr "Estado/Provincia"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Street"
+msgstr "Calle"
+
+msgid "Street Address"
+msgstr "Dirección"
+
+msgid "Street/PO Address"
+msgstr "Calle / Dirección"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Submit New Event"
+msgstr "Enviar Nuevo Evento"
+
+msgid "Sun"
+msgstr "Sol"
+
+msgid "Sunday"
+msgstr "Domingo "
+
+msgid "TIME:"
+msgstr "ss"
+
+msgid "TOTAL ATTENDEES"
+msgstr "ASISTENTES TOTALES"
+
+msgid "TOTAL CATEGORIES"
+msgstr "Total Rubros"
+
+msgid "TOTAL EVENTS"
+msgstr "EVENTOS TOTALES"
+
+msgid "TOTAL PAYMENTS"
+msgstr "PAGOS TOTALES"
+
+msgid "TYPE"
+msgstr "TIPO"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Text Area"
+msgstr "Área de texto "
+
+msgid "Thank You"
+msgstr "Gracias"
+
+msgid "Thank you for registering for"
+msgstr "Gracias por registrarse para"
+
+msgid "The Event details saved for "
+msgstr "Los detalles de sucesos guardados para"
+
+msgid "The Question has been deleted. Returning to Question Management."
+msgstr "La pregunta ha sido eliminado. Volviendo a la pregunta de Gestión."
+
+msgid "The attendee extra questions responses have been added."
+msgstr "e han añadido las respuestas de los asistentes preguntas adicionales."
+
+msgid "The attendee has been added."
+msgstr "El asistente se ha añadido."
+
+msgid "The attendee information has been successfully deleted from the event."
+msgstr "La información de los asistentes ha sido borrado con éxito del evento."
+
+msgid "The category has been added."
+msgstr "La categoría fue agregada "
+
+msgid "The category has been successfully deleted."
+msgstr "La categoría se ha eliminado correctamente."
+
+msgid "The category has been updated."
+msgstr "La categoría se ha actualizado."
+
+msgid "The category was not saved."
+msgstr "La categoría no se salvo"
+
+msgid "The category was not updated."
+msgstr "La categoría no se actualizó."
+
+msgid "The cost "
+msgstr "El costo"
+
+msgid "The cost item/ has been deleted."
+msgstr "El elemento de coste / ha sido eliminado."
+
+msgid ""
+"The coupon code information has been updated.  You will now be returned to "
+"the Event Pricing Page"
+msgstr ""
+"La información del código de cupón ha sido actualizado. Ahora se vuelve a la "
+"página de Precios Evento"
+
+msgid "The event "
+msgstr "El evento"
+
+msgid ""
+"The event cost/ticket item has been added.  You will now be taken back to "
+"the Event Pricing Page"
+msgstr ""
+"El elemento de coste / boleto del acontecimiento ha sido añadido. Ahora será "
+"llevado de regreso a la página de Precios Evento"
+
+msgid ""
+"The event cost/ticket item has been updated.  You will now be taken back to "
+"the Event Pricing Page"
+msgstr ""
+"La partida de gastos / entradas de eventos se ha actualizado. Ahora será "
+"llevado de regreso a la página de Precios Evento"
+
+msgid "The event has been deleted."
+msgstr "El evento ha sido eliminado."
+
+msgid "The following fields need to be completed before you can submit."
+msgstr "Los siguientes campos deben completarse antes de que pueda presentar."
+
+msgid "The payment has been added."
+msgstr "El pago ha sido añadido"
+
+msgid "The payment has been successfully deleted from the attendee."
+msgstr "El pago se ha eliminado correctamente del asistente."
+
+msgid "The payment has been updated."
+msgstr "El pago se ha actualizado."
+
+msgid "The question has been added."
+msgstr "Se ha añadido la pregunta."
+
+msgid "There are currently "
+msgstr "Actualmente hay"
+
+msgid "There was an error in your submission, please try again."
+msgstr "Hubo un error en su presentación, por favor intente de nuevo."
+
+msgid ""
+"There was an error in your submission, please try again. The attendee was "
+"not saved!"
+msgstr ""
+"Hubo un error en su petición, por favor intente de nuevo. El asistente no se "
+"salvó!"
+
+msgid ""
+"There was an error in your submission, please try again. The cost was not "
+"saved!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El costo no "
+"se ha guardado!"
+
+msgid ""
+"There was an error in your submission, please try again. The coupon code "
+"changes were not saved!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. No se han "
+"guardado los cambios en el código de cupón!"
+
+msgid ""
+"There was an error in your submission, please try again. The event "
+"cost/ticket item was not saved!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El elemento "
+"de coste / boleto del acontecimiento no se ha guardado!"
+
+msgid ""
+"There was an error in your submission, please try again. The event "
+"cost/ticket item was not updated!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El elemento "
+"de coste / boleto del acontecimiento no se ha actualizado!"
+
+msgid ""
+"There was an error in your submission, please try again. The event was not "
+"deleted!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El evento no "
+"se ha suprimido!"
+
+msgid ""
+"There was an error in your submission, please try again. The event was not "
+"saved!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El evento no "
+"se salvó!"
+
+msgid ""
+"There was an error in your submission, please try again. The event was not "
+"updated!"
+msgstr ""
+"¡Hubo un error en su presentación, por favor intente de nuevo. El evento no "
+"fue actualizado!"
+
+msgid ""
+"There was an error in your submission, please try again. The payment was not "
+"saved!"
+msgstr ""
+"Hubo un error en su presentación, por favor intente de nuevo. El pago no se "
+"salvó!"
+
+msgid ""
+"There was an error in your submission, please try again. The payment was not "
+"updated!"
+msgstr ""
+"Hubo un error en su presentación, por favor intente de nuevo. El pago no se "
+"actualizo!"
+
+msgid ""
+"There was an error in your submission, please try again. The question was "
+"not saved!"
+msgstr ""
+"Hubo un error en su presentación, por favor intente de nuevo. La pregunta no "
+"se salvó!"
+
+msgid "These settings must be configured for the plugin to function correctly."
+msgstr "Estos ajustes deben configurarse para que el plugin funciona correctamente."
+
+msgid "This event has reached registration capacity."
+msgstr "Este evento ha llegado a su capacidad máxima de registro."
+
+msgid "This resource requires a Javascript enabled browser."
+msgstr "Este recurso requiere un navegador habilitado para JavaScript."
+
+msgid "Thu"
+msgstr "Jueves"
+
+msgid "Thumbnail Image URL"
+msgstr "Miniatura URL de la imagen"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "To make payment or view your payment information go to"
+msgstr "Para realizar el pago, o ver la información de pago vaya a"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Total Cost:"
+msgstr "Coste total:"
+
+msgid "Total Outstanding Payment Due*:"
+msgstr "Total cantidad pendiente de pago *:"
+
+msgid "Total Payment Due*:"
+msgstr "Pago Total Adeudado *:"
+
+msgid "Transaction ID"
+msgstr "ID de la Transacción "
+
+msgid "Tue"
+msgstr "Martes"
+
+msgid "Tuesday"
+msgstr "martes"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Type your confirmation message below"
+msgstr "Escriba su mensaje de confirmación debajo"
+
+msgid "UPDATE COST/TICKET"
+msgstr "ACTUALIZAR COSTO / TICKET"
+
+msgid "UPDATE PAYMENT"
+msgstr "ACTUALIZAR EVENTO "
+
+msgid "UPDATE QUESTION"
+msgstr "ACTUALIZAR PREGUNTA"
+
+msgid "Unique Category Identifier"
+msgstr "Identificador Único de la Categoría"
+
+msgid "Unique Event Identifier"
+msgstr "Único Identificador de eventos"
+
+msgid "Unique ID For Category"
+msgstr "ID único para la categoria"
+
+msgid "Unlimited"
+msgstr "Ilimitado"
+
+msgid "Update Category"
+msgstr "Actualizar categoría "
+
+msgid "Update Event"
+msgstr "Actualizar Evento"
+
+msgid "Use Captcha on registration form?"
+msgstr "¿Utilice Captcha en el formulario de inscripción?"
+
+msgid "Use Google Maps On Registration Page"
+msgstr "Utilice Google Maps en página de registro"
+
+msgid "Use PayPal Sandbox"
+msgstr "Utilice PayPal Sandbox"
+
+msgid "Use a concise but descriptive name."
+msgstr "Utilice un nombre conciso pero descriptivo."
+
+msgid "VALUE/COST"
+msgstr "VALOR / COSTO"
+
+msgid "View Al"
+msgstr "Ver todo"
+
+msgid "View All"
+msgstr "Ver todo"
+
+msgid "View Attendee:"
+msgstr "Vista de asistentes:"
+
+msgid "View Payments"
+msgstr "Ver Pagos"
+
+msgid "View Payments:"
+msgstr "Ver Pagos:"
+
+msgid "Wed"
+msgstr "Mier"
+
+msgid "Wednesday"
+msgstr "miércoles"
+
+msgid "What type of Item/Cost is this?"
+msgstr "¿Qué tipo de artículo / costo es esto?"
+
+msgid "What type of Registration?"
+msgstr "¿Qué tipo de registro?"
+
+msgid "Will this be a free item?"
+msgstr "¿Será este un tema libre?"
+
+msgid "Will this event run indefinitely?"
+msgstr "¿funcionará este evento indefinidamente?"
+
+msgid "Will you accept checks/cash for this event? "
+msgstr "¿Va a aceptar cheques / efectivo para este evento?"
+
+msgid "Will you accept donations?"
+msgstr "¿Va a aceptar donaciones?"
+
+msgid "Workshop"
+msgstr "Taller"
+
+msgid "YEAR"
+msgstr "AÑO"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "You are registering for"
+msgstr "Usted está registrando por"
+
+msgid ""
+"You can point your register now button to an external registration site/page "
+"by selecting yes and entering the url!"
+msgstr ""
+"¡Puede apuntar su registro ahora botón para un sitio / página de registro "
+"externo seleccionando sí e introduciendo la url!"
+
+msgid ""
+"You may pay online or by check.  If you are paying by check, please mail "
+"your check today to:"
+msgstr ""
+"Usted puede pagar en línea o por cheque. Si usted está pagando con cheque, "
+"por favor envíe su cheque hoy:"
+
+msgid "You must select at least one item!"
+msgstr "Debes seleccionar al menos una inscripción"
+
+msgid "You're information has been received."
+msgstr "Tu información ha sido recibida."
+
+msgid "Your information has been received."
+msgstr "Su información ha sido recibida."
+
+msgid "Zip or Postal Code"
+msgstr "CP o Código Postal"
+
+msgid "Zip/Postal Code"
+msgstr "Código Postal/Zip "
+
+msgid "apr"
+msgstr "abr"
+
+msgid "april"
+msgstr "abril"
+
+msgid "aug"
+msgstr "ago"
+
+msgid "august"
+msgstr "agosto"
+
+msgid "change"
+msgstr "cambiar"
+
+msgid "dec"
+msgstr "dic"
+
+msgid "december"
+msgstr "diciembre"
+
+msgid "event"
+msgstr "evento"
+
+msgid "feb"
+msgstr "feb"
+
+msgid "february"
+msgstr "febrero"
+
+msgid "for event"
+msgstr "para el evento"
+
+msgid "free"
+msgstr "gratis"
+
+msgid "go"
+msgstr "IR"
+
+msgid "grow"
+msgstr "crecer"
+
+msgid "has been added."
+msgstr "se ha agregado."
+
+msgid "jan"
+msgstr "Ene"
+
+msgid "january"
+msgstr "Enero"
+
+msgid "jul"
+msgstr "jul"
+
+msgid "july"
+msgstr "julio"
+
+msgid "jun"
+msgstr "jun"
+
+msgid "june"
+msgstr "junio"
+
+msgid "mar"
+msgstr "mar"
+
+msgid "march"
+msgstr "marzo"
+
+msgid "may"
+msgstr "may"
+
+msgid "nov"
+msgstr "nov"
+
+msgid "november"
+msgstr "noviembre"
+
+msgid "oct"
+msgstr "oct"
+
+msgid "october"
+msgstr "octubre"
+
+msgid "person(s)."
+msgstr "persona(s)"
+
+msgid "progress"
+msgstr "progreso"
+
+msgid "seats"
+msgstr "asientos"
+
+msgid "sep"
+msgstr "sep"
+
+msgid "sept"
+msgstr "sep"
+
+msgid "september"
+msgstr "septiembre"
