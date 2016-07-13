@@ -2512,6 +2512,11 @@ msgstr ""
 msgid "Please go back and select an item!"
 msgstr ""
 
+msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
+msgstr ""
+
+
+
 
 
 
