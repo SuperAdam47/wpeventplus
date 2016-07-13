@@ -218,7 +218,7 @@ $posted_data = array('lname' => $lname, 'fname' => $fname, 'address' => $address
 #Begin display of confirmation form
 echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/validate.js.php') . '"></script>';
 echo '<p align="left"><strong>' . __('Please verify your registration details:', 'evrplus_language') . '</strong></p>';
-echo '<table width="95%" border="0"><tr><td><strong>' . __('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
+echo '<table width="95%" border="0"><tr><td><strong>' . _e('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
 
 $eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment ;
 
