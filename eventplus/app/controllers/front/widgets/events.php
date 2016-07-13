@@ -45,7 +45,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 if ($record_template == '') {
                     $codeToReturn .= '
                         <li style="list-style: none;  border-top: 1px solid #cdcdcd;padding: 0 5px; margin-left: 0;padding-bottom: 23px; background-color: ' . ( ($count % 2 == 0) ? '#F5F5F5' : '#FFF' ) . ';">
-                            <div style=" width: 100%;">
+                             <div style="clear:both; width: 100%;">
                                 <div style="width: 30%; float: left; ">
                                     <div class="timing">
                                         <div class="time-cont">
@@ -70,7 +70,13 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 }
                 
           
-                $event_url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), get_permalink(get_page_by_path('evrplus_registration')));
+                $post_id = (int)$company_options['evrplus_page_id'];
+                $permaLink = get_permalink(get_page_by_path('evrplus_registration'));
+                if($post_id > 0){
+                    $permaLink = get_permalink($post_id);
+                }
+                
+                $event_url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), $permaLink);
            
                         
                 $event_name = stripslashes($event->event_name);

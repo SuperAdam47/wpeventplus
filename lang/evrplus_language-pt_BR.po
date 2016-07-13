@@ -1,0 +1,2695 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EVR 1.06\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-01-18 22:40-0800\n"
+"PO-Revision-Date: 2016-03-02 01:15+0530\n"
+"Last-Translator: David Fleming <consultant@avdude.com>\n"
+"Language-Team: consultant@avdude.com\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Loco-Source-Locale: es_ES\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: D:/PluginDevelopment/Anna/evrplus\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Loco-Target-Locale: en_GB\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: evrplus_admin_questions.php:422
+msgid "Drag Line Up or Down to ReArrange."
+msgstr "Arraste a linha para cima ou para baixo para reorganizar."
+
+#: evrplus_admin_questions.php:427
+msgid "REQUIRED"
+msgstr "REQUERIDO "
+
+#: evrplus_admin_questions.php:431
+msgid "TYPE"
+msgstr "TIPO "
+
+#: evrplus_admin_questions.php:432
+msgid "QUESTION"
+msgstr "PERGUNTA"
+
+#: evrplus_admin_questions.php:433
+msgid "RESPONSES"
+msgstr "RESPOSTAS"
+
+#. Text in echo
+#: eventsplus/evrplus_company.php:581
+msgid "Choose the date format for your events:"
+msgstr "Escolha o formato de data para os seus eventos:"
+
+#. Text in echo
+#: eventsplus/evrplus_company.php:590
+msgid "Choose the time format for your events:"
+msgstr "Escolha o formato do tempo para os seus eventos:"
+
+#. Text in echo
+#: eventsplus/event/evrplus_event_new.php:412
+#: eventsplus/event/evrplus_event_edit.php:535
+msgid "Will this event run indefinitely?"
+msgstr "Será que este evento funcionar indefinidamente?"
+
+#: evrplus_admin_questions.php:446 evrplus_event.php:2584
+msgid "Apply Changes"
+msgstr "Aplicar alterações"
+
+#: evrplus_admin_questions.php:476
+msgid "The Question has been deleted. Returning to Question Management."
+msgstr "A questão foi apagado. Voltando à questão da gestão."
+
+#: evrplus_admin_questions.php:504
+msgid "SELECT ANOTHER EVENT"
+msgstr "Selecionar outro evento"
+
+#: evrplus_company.php:43
+msgid "Company details saved"
+msgstr "Detalhes da empresa economizou"
+
+#: evrplus_company.php:51
+msgid "Company & Plugin Settings"
+msgstr "Programas e configurações Empresa"
+
+#: evrplus_company.php:59
+msgid "Make A Donation to Events Registration"
+msgstr "Doe para registrar eventos"
+
+#: evrplus_company.php:69 evrplus_company.php:110
+msgid "Company Information"
+msgstr "Informações sobre a empresa"
+
+#: evrplus_company.php:77
+msgid "Company Name:"
+msgstr "Nome da empresa:"
+
+#: evrplus_company.php:81
+msgid "Company Street 1:"
+msgstr "Empresa Rua 1:"
+
+#: evrplus_company.php:85
+msgid "Company Street 2:"
+msgstr "Empresa Rua 2:"
+
+#: evrplus_company.php:89
+msgid "Company City:"
+msgstr "Cidade:"
+
+#: evrplus_company.php:93
+msgid "Company State:"
+msgstr "Situação da Empresa:"
+
+#: evrplus_company.php:97
+msgid "Company Postal Code:"
+msgstr "Empresa Código Postal: "
+
+#: evrplus_company.php:115
+msgid "Use Captcha on registration form?"
+msgstr "Utilizar CAPTCHA no formulário de inscrição?"
+
+#: evrplus_company.php:127
+msgid "Payment Settings"
+msgstr "Configurações de pagamento"
+
+#: evrplus_company.php:132
+msgid "Online Payment Vendor:"
+msgstr "Provedores de pagamento on-line:"
+
+#: evrplus_company.php:148
+msgid "Online Payment ID"
+msgstr "ID online Pagamento"
+
+#: evrplus_company.php:152
+msgid "Authorized.Net Txn Key"
+msgstr "Authorized.Net chave Txn"
+
+#: evrplus_company.php:156
+msgid "Payment Button Text"
+msgstr "Texto do botão de pagamento"
+
+#: evrplus_company.php:157
+msgid "PAY NOW"
+msgstr "PAGAR AGORA"
+
+#: evrplus_company.php:160
+msgid "Currency Format:"
+msgstr "Formato de moeda:"
+
+#: evrplus_company.php:184
+msgid "Will you accept donations?"
+msgstr "Você vai aceitar doações?"
+
+#: evrplus_company.php:192
+msgid "Image URL"
+msgstr "URL da imagem"
+
+#: evrplus_company.php:192
+msgid "(For your logo on PayPal page)"
+msgstr "(Para seu logotipo na página do PayPal)"
+
+#: evrplus_company.php:208
+msgid "Cancel Return URL"
+msgstr "Cancelar Retorno URL"
+
+#: evrplus_company.php:208
+msgid "(used for cancelled payments)"
+msgstr "(Usado para pagamentos cancelados)"
+
+#: evrplus_company.php:212
+msgid "Notify URL"
+msgstr "Relatório de URL"
+
+#: evrplus_company.php:212
+msgid "(used to process payments)"
+msgstr "(usado para processar os pagamentos)"
+
+#: evrplus_company.php:216
+msgid "Return Method:"
+msgstr "Voltar Método:"
+
+#: evrplus_company.php:219 evrplus_company.php:222
+msgid "GET"
+msgstr "GET"
+
+#: evrplus_company.php:220 evrplus_company.php:223
+msgid "POST"
+msgstr "POST "
+
+#: evrplus_company.php:227
+msgid "Use PayPal Sandbox"
+msgstr "Use o PayPal Sandbox"
+
+#: evrplus_company.php:227
+msgid "(used for testing/debug)"
+msgstr "(Usado para teste / debug)"
+
+#: evrplus_company.php:239
+msgid "Page Settings"
+msgstr "Configuração da Página"
+
+#: evrplus_company.php:245
+msgid "Attention"
+msgstr "Atenção"
+
+#: evrplus_company.php:246
+msgid "These settings must be configured for the plugin to function correctly."
+msgstr "Estas definições devem ser configurados para o plugin para funcionar corretamente."
+
+#: evrplus_company.php:251 evrplus_company.php:260
+msgid "Main page"
+msgstr "Página principal"
+
+#: evrplus_company.php:280
+msgid "Email Settings - Confirmation Email"
+msgstr "Configuração de e-mail - e-mail de confirmação"
+
+#: evrplus_company.php:313
+msgid "Payment Confirmation Settings - Confirmation Email"
+msgstr "Confirmação Ajustes Pagamento - Confirmação Email"
+
+#: evrplus_company.php:318
+msgid "Payment Message Subject"
+msgstr "Mensagem de pagamento, sujeito"
+
+#: evrplus_company.php:332
+msgid "Save Options"
+msgstr "Salvar opções"
+
+#: evrplus_content.php:19 evrplus_content.php:20
+msgid "Please check your email for payment information. Click the link provided in the registration confirmation."
+msgstr "Por favor, verifique seu e-mail para informações de pagamento. Clique no link de confirmação da inscrição."
+
+#: evrplus_content.php:83 evrplus_registration.php:1694
+msgid "Payment Page for"
+msgstr "Pagamento página para"
+
+#: evrplus_content.php:83 evrplus_registration.php:1694
+msgid "for event"
+msgstr "Para o caso"
+
+#: evrplus_content.php:123 evrplus_registration.php:1734
+msgid "Payments Received:"
+msgstr "Pagamentos recebidos:"
+
+#: evrplus_content.php:126 evrplus_registration.php:1737
+msgid "Payment"
+msgstr "Pagamento"
+
+#: evrplus_content.php:132 evrplus_registration.php:1743
+msgid "Total Outstanding Payment Due*:"
+msgstr "Montante total em dívida *:"
+
+#: evrplus_content.php:141 evrplus_registration.php:1752
+msgid "Total Payment Due*:"
+msgstr "* O pagamento total por:"
+
+#: evrplus_content.php:146 evrplus_registration.php:1757
+msgid "*Payments could take several days to post to this page. Please check back in several days if you made a payment and your payment is not showing at this time."
+msgstr "* Os pagamentos podem levar vários dias para publicar nesta página. Por favor, volte em alguns dias, se você fez um pagamento e seu pagamento não está mostrando no momento."
+
+#: evrplus_event.php:100 evrplus_event.php:1851 evrplus_event.php:2544
+msgid "Event Management"
+msgstr "Gestão de Eventos"
+
+#: evrplus_event.php:230
+msgid "Fees/Items"
+msgstr "Taxas / ingressos"
+
+#: evrplus_event.php:237
+msgid "Questions"
+msgstr "Perguntas"
+
+#: evrplus_event.php:252
+msgid "Edit"
+msgstr "Editar "
+
+#: evrplus_event.php:259
+msgid "Copy"
+msgstr "Cópia"
+
+#: evrplus_event.php:259
+msgid "Are you sure you want to copy"
+msgstr "Tem certeza de que deseja copiar?"
+
+#: evrplus_event.php:266
+msgid "Delete"
+msgstr "Excluir"
+
+#: evrplus_event.php:266
+msgid "Are you sure you want to delete"
+msgstr "Tem certeza de que deseja excluir?"
+
+#: evrplus_event.php:488
+msgid "ADD EVENT"
+msgstr "Adicionar evento"
+
+#: evrplus_event.php:594
+msgid "ADD NEW EVENT"
+msgstr "Adicionar Novo Evento"
+
+#: evrplus_event.php:596 evrplus_event.php:1162
+msgid "Event Description"
+msgstr "Descrição do Evento"
+
+#: evrplus_event.php:597 evrplus_event.php:1163
+msgid "Event Venue"
+msgstr "Venue"
+
+#: evrplus_event.php:598 evrplus_event.php:1164
+msgid "Event Date/Time"
+msgstr "Data / Hora"
+
+#: evrplus_event.php:599 evrplus_event.php:1165
+msgid "Options"
+msgstr "Opções"
+
+#: evrplus_event.php:600 evrplus_event.php:1166
+msgid "Confirmation Mail"
+msgstr "Mensagem"
+
+#: evrplus_event.php:609 evrplus_event.php:1176 evrplus_event.php:2104
+#: evrplus_event.php:2239
+msgid "Use a concise but descriptive name."
+msgstr "Use um nome conciso, mas descritivo."
+
+#: evrplus_event.php:610 evrplus_event.php:1177
+msgid "Event Name/Title "
+msgstr "Nome do Evento / Título"
+
+#: evrplus_event.php:618 evrplus_event.php:1185
+msgid "Unique Event Identifier"
+msgstr "Único evento Identificador"
+
+#: evrplus_event.php:626 evrplus_event.php:1193
+msgid "If you want the description to display under the event title on the registration form, select yes."
+msgstr "Se você deseja exibir a descrição sob o nome do evento no formulário de inscrição, selecione sim."
+
+#: evrplus_event.php:627 evrplus_event.php:1194
+msgid "Display description on registration form page? "
+msgstr "Mostrar corresponde descrição na ficha de inscrição página?"
+
+#: evrplus_event.php:634 evrplus_event.php:1201
+msgid ""
+"Provide a detailed description of the event, include key details other than when and where. Do not use any html code. This is a text only display. \n"
+"To create new display lines just press Enter."
+msgstr ""
+"Forneça uma descrição detalhada do evento, incluir outros do que quando e onde detalhes importantes. Não use qualquer código html. Este é um texto único display.  \n"
+"Para criar novas linhas de exibir apenas pressione Enter."
+
+#: evrplus_event.php:636 evrplus_event.php:1203
+msgid "Detailed Event Description"
+msgstr "Descrição Detalhada do Evento"
+
+#: evrplus_event.php:655 evrplus_event.php:1222
+msgid "Select one or many categories for an event"
+msgstr "Selecione uma ou mais categorias de um evento"
+
+#: evrplus_event.php:656 evrplus_event.php:1223
+msgid "Events Plus"
+msgstr "Além disso eventos"
+
+#: evrplus_event.php:656 evrplus_event.php:1223 eventsplus/Dashboard.php:1339
+msgid "General Settings"
+msgstr "Configurações"
+
+#: evrplus_event.php:656 evrplus_event.php:1223 eventsplus/Dashboard.php:1343
+msgid "Manage Events"
+msgstr "Gerenciar Eventos"
+
+#: evrplus_event.php:656 evrplus_event.php:1223 eventsplus/Dashboard.php:1345
+msgid "Registration Fields"
+msgstr "Cadastramento Campos"
+
+#: evrplus_event.php:656 evrplus_event.php:1223
+msgid "Event Categories"
+msgstr "Categorías de eventos "
+
+#: evrplus_event.php:676 evrplus_event.php:1248
+msgid "EVENT VENUE"
+msgstr "LOCAL"
+
+#: evrplus_event.php:680 evrplus_event.php:1252
+msgid "Enter the number of available seats at your event venue. Leave blank if their is no limit on registrations."
+msgstr "Digite o número de vagas disponíveis em seu local de eventos. Deixe em branco se não houver limite para inscrições."
+
+#: evrplus_event.php:681 evrplus_event.php:1253
+msgid "Event Seating Capacity"
+msgstr "Capacidade de assentos Evento"
+
+#: evrplus_event.php:689 evrplus_event.php:1261
+msgid "Enter the name of the business or facility where the event is being held"
+msgstr "Digite o nome da empresa ou instituição onde foi realizado o evento"
+
+#: evrplus_event.php:690 evrplus_event.php:1262
+msgid "Event Location/Venue"
+msgstr "Local do Evento / Local"
+
+#: evrplus_event.php:698 evrplus_event.php:1270
+msgid "Street"
+msgstr "Rua"
+
+#: evrplus_event.php:709 evrplus_event.php:1281 evrplus_registration.php:588
+msgid "State"
+msgstr "Estado "
+
+#: evrplus_event.php:713 evrplus_event.php:1285
+msgid "Postcode"
+msgstr "Código postal "
+
+#: evrplus_event.php:721 evrplus_event.php:1293
+msgid "All location information must be complete for Google Map feature to work."
+msgstr "Todas as informações devem ser localização completa para o recurso Google Map ao trabalho."
+
+#: evrplus_event.php:722 evrplus_event.php:1294
+msgid "Use Google Maps On Registration Page"
+msgstr "Use o Google Maps na página de registo"
+
+#: evrplus_event.php:740 evrplus_event.php:1314
+msgid "Start Time"
+msgstr "Hora de inicio "
+
+#: evrplus_event.php:747 evrplus_event.php:1323
+msgid "End Date"
+msgstr "Data de conclusão"
+
+#: evrplus_event.php:748 evrplus_event.php:1324
+msgid "End Time"
+msgstr "Tempo de Conclusão"
+
+#: evrplus_event.php:762 evrplus_event.php:1339
+msgid "If you will accept checks or cash, usually when accepting payment at event/on-site."
+msgstr "Escolha Sim se você aceitar dinheiro. Selecione Não, se o evento é gratuito."
+
+#: evrplus_event.php:763 evrplus_event.php:1340
+msgid "Will you accept checks/cash for this event? "
+msgstr "Você vai aceitar cheques / dinheiro para este evento?"
+
+#: evrplus_event.php:765 evrplus_event.php:1342
+msgid "No "
+msgstr "Não"
+
+#: evrplus_event.php:773 evrplus_event.php:1350
+msgid "You can point your register now button to an external registration site/page by selecting yes and entering the url!"
+msgstr "Você pode redirecionar os usuários para um site externo para se registrar para o seu evento"
+
+#: evrplus_event.php:774 evrplus_event.php:1351
+msgid "Are you using an external registration?"
+msgstr "Você está usando um registro externo?"
+
+#: evrplus_event.php:781 evrplus_event.php:1358
+msgid "Enter the url hyperlink to another webpage or website external registration"
+msgstr "Digite a URL para outra página ou site com mais informações sobre o evento."
+
+#: evrplus_event.php:782 evrplus_event.php:1359
+msgid "External registration URL"
+msgstr "URL de registo externo"
+
+#: evrplus_event.php:790 evrplus_event.php:1367
+msgid "Select the default fields for the registration form.  Note that name and email or not optional"
+msgstr "Selecione os campos padrão para o formulário de inscrição. Note que o nome e endereço de e-mail ou não opcional"
+
+#: evrplus_event.php:791 evrplus_event.php:1368
+msgid "Default Registration Information (Name and Email Required)"
+msgstr "Informações de registro padrão (nome e e-mail obrigatório)"
+
+#: evrplus_event.php:796 evrplus_event.php:1373
+msgid "Street Address"
+msgstr "Endereço da Rua"
+
+#: evrplus_event.php:798 evrplus_event.php:1375
+msgid "State or Province"
+msgstr "Estado ou Província"
+
+#: evrplus_event.php:799 evrplus_event.php:1376
+msgid "Zip or Postal Code"
+msgstr "CEP ou código postal"
+
+#: evrplus_event.php:800 evrplus_event.php:1377
+msgid "Phone Number</label>"
+msgstr "Número de telefone </ label>"
+
+#: evrplus_event.php:814 evrplus_event.php:1391
+msgid "Event Listing Options"
+msgstr "Evento Opções de Listagem"
+
+#: evrplus_event.php:814 evrplus_event.php:1391
+msgid "Optional"
+msgstr "Opcional "
+
+#: evrplus_event.php:818 evrplus_event.php:1395
+msgid "Enter the url hyperlink to another webpage or website with more event information"
+msgstr "Digite o hyperlink url para outra página web ou web site com mais informações sobre o evento"
+
+#: evrplus_event.php:819 evrplus_event.php:1396
+msgid "More Info URL"
+msgstr "More Info URL"
+
+#: evrplus_event.php:826 evrplus_event.php:1403
+msgid "Enter the url to an image you would like displayed next to the event in the event listings. Size should be 150 x112"
+msgstr "Digite a URL da imagem que você quer que apareça ao lado do evento nas listas de eventos. O tamanho deve ser de 150 x112"
+
+#: evrplus_event.php:827 evrplus_event.php:1404
+msgid "Thumbnail Image URL"
+msgstr "Miniatura URL da imagem"
+
+#: evrplus_event.php:832 evrplus_event.php:1409
+msgid "Enter the url of an image you wish displayed above the registration form.  The image should be no wider than 450."
+msgstr "Digite o URL de uma imagem que você deseja exibido acima do formulário de inscrição. A imagem não deve ser maior do que 450."
+
+#: evrplus_event.php:833 evrplus_event.php:1410
+msgid "Header Image URL"
+msgstr "URL da imagem"
+
+#: evrplus_event.php:839 evrplus_event.php:1416
+msgid "Confirmation eMail"
+msgstr "E-mail de confirmação"
+
+#: evrplus_event.php:840
+msgid "If you will accept checks or cash, usually when accepting payment at event/on-site"
+msgstr "Se você aceitar cheques ou dinheiro, geralmente quando o pagamento é aceito em caso de / no local"
+
+#: evrplus_event.php:841 evrplus_event.php:1418
+msgid "Do you want to use a custom email for this event?"
+msgstr "Quer usar um e-mail personalizado para o evento?"
+
+#: evrplus_event.php:846 evrplus_event.php:1423
+msgid "Enter the text for the confirmation email. This email will be sent in text format. See User Manual for data tags"
+msgstr "Digite o texto para o e-mail de confirmação. Este e-mail será enviado em formato de texto. Consulte os rótulos de dados."
+
+#: evrplus_event.php:847 evrplus_event.php:1424
+msgid "Custom Confirmation Email"
+msgstr "Confirmação personalizado Email"
+
+#: evrplus_event.php:860
+msgid "Submit New Event"
+msgstr "Enviar Novo Evento"
+
+#: evrplus_event.php:865 evrplus_event.php:1436
+msgid "Please make sure you complete each section before submitting!"
+msgstr "Por favor, certifique-se de completar cada seção antes de enviar!"
+
+#: evrplus_event.php:965 evrplus_event.php:1641
+msgid "The event "
+msgstr "O evento"
+
+#: evrplus_event.php:965 evrplus_event.php:1641 evrplus_event.php:1667
+msgid "has been added."
+msgstr "foi adicionado."
+
+#: evrplus_event.php:966 evrplus_event.php:969 evrplus_event.php:1538
+#: evrplus_event.php:1542 evrplus_event.php:1573 evrplus_event.php:1676
+#: evrplus_event.php:1679
+msgid " . . .Now returning you to event list . . "
+msgstr ". . .Agora Para retornar à lista de eventos. ."
+
+#: evrplus_event.php:968 evrplus_event.php:1678
+msgid "There was an error in your submission, please try again. The event was not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O evento não foi poupado!"
+
+#: evrplus_event.php:1417
+msgid "If you have send mail option enabled in the company settings, you can override the default mail by creating a custom mail for this event."
+msgstr "Se você tiver a opção habilitada nas configurações de e-mail da empresa de transporte, você pode substituir o padrão criando um e-mail e-mail personalizado do evento."
+
+#: evrplus_event.php:1431
+msgid "Update Event"
+msgstr "Atualização evento"
+
+#: evrplus_event.php:1537
+msgid "The Event details saved for "
+msgstr "Detalhes de eventos salvos para"
+
+#: evrplus_event.php:1537
+msgid " has been updated!"
+msgstr "Foi atualizado!"
+
+#: evrplus_event.php:1541
+msgid "There was an error in your submission, please try again. The event was not updated!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O evento não foi atualizado!"
+
+#: evrplus_event.php:1558
+msgid "There are currently "
+msgstr "Existem actualmente"
+
+#: evrplus_event.php:1559
+msgid " attendes registered for this event.  The event cannot be deleted."
+msgstr "attendes registrado para esse evento. O evento não pode ser excluído."
+
+#: evrplus_event.php:1560
+msgid ". . .Now returning you to event list . . "
+msgstr ". . .agora Voltar à lista de eventos. ."
+
+#: evrplus_event.php:1568
+msgid "The event has been deleted."
+msgstr "O evento foi excluído."
+
+#: evrplus_event.php:1572
+msgid "There was an error in your submission, please try again. The event was not deleted!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O evento não foi excluída!"
+
+#: evrplus_event.php:1667
+msgid "The cost "
+msgstr "Custo"
+
+#: evrplus_event.php:1669
+msgid "There was an error in your submission, please try again. The cost was not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O custo não foi salvo!"
+
+#: evrplus_event.php:1862
+msgid "Event Items:"
+msgstr "Os produtos deste evento:"
+
+#: evrplus_event.php:2090
+msgid "Add Event Cost/Item for "
+msgstr "Adicionar Evento Custo / article"
+
+#: evrplus_event.php:2093 evrplus_event.php:2204
+msgid "Select a Item/Cost category.  Note that category REG is used for attendance count, all others are not included in attendance count."
+msgstr "Selecione uma categoria de item / Custo. Note-se que a categoria REG é usado para contagem de atendimento, todos os outros não estão incluídos na contagem de presenças."
+
+#: evrplus_event.php:2094 evrplus_event.php:2205
+msgid "What type of Item/Cost is this?"
+msgstr "Que tipo de item / custo é isso?"
+
+#: evrplus_event.php:2096 evrplus_event.php:2210 evrplus_event.php:2231
+msgid "Registration Attendee"
+msgstr "Assistente de Registro"
+
+#: evrplus_event.php:2097 evrplus_event.php:2214 evrplus_event.php:2232
+msgid "Merchandise"
+msgstr "Mercadoria"
+
+#: evrplus_event.php:2098 evrplus_event.php:2218 evrplus_event.php:2233
+msgid "Discount"
+msgstr "Discount"
+
+#: evrplus_event.php:2099 evrplus_event.php:2222 evrplus_event.php:2234
+msgid "Workshop"
+msgstr "Oficina"
+
+#: evrplus_event.php:2100 evrplus_event.php:2226 evrplus_event.php:2235
+msgid "Meal or Food"
+msgstr "Alimento ou"
+
+#: evrplus_event.php:2104 evrplus_event.php:2239
+msgid "Name of Cost/Item"
+msgstr "Nome de Custo / Item"
+
+#: evrplus_event.php:2108 evrplus_event.php:2243
+msgid "Provide a description of the cost/ticket."
+msgstr "Forneça uma descrição da relação custo / ingressos."
+
+#: evrplus_event.php:2108 evrplus_event.php:2243
+msgid "Description of Cost"
+msgstr "Descrição do Custo"
+
+#: evrplus_event.php:2112 evrplus_event.php:2247
+msgid "Provide the number of available item/cost types per registration form. If it is a REG item, available seats will impact overall amount available. Leave blank if no limit."
+msgstr "Fornecer o número do item tipos / custo disponível para o formulário de inscrição. Se houver um elemento assentos quantidade total disponível REG está disponível impacto. Deixe em branco se não há limite."
+
+#: evrplus_event.php:2112 evrplus_event.php:2247
+msgid "Available items/cost per registration/order?"
+msgstr "Os itens disponíveis / custo por registro / pedido?"
+
+#: evrplus_event.php:2116 evrplus_event.php:2251
+msgid "VALUE/COST"
+msgstr "VALOR / CUSTO"
+
+#: evrplus_event.php:2119 evrplus_event.php:2254
+msgid "Will this be a free item?"
+msgstr "Será que vai ser um evento gratuito?"
+
+#: evrplus_event.php:2124 evrplus_event.php:2274
+msgid "Please select the country in which the currency format will be used"
+msgstr "Por favor, selecione o país onde você vai usar o formato de moeda"
+
+#: evrplus_event.php:2124 evrplus_event.php:2274
+msgid "Custom Currency"
+msgstr "moeda personalizado"
+
+#: evrplus_event.php:2148 evrplus_event.php:2298
+msgid "Please enter the amount using 2 decimal point (i.e. 10.00) for the registration cost.  Use minus symbol before for discount amounts (i.e. -5.00)."
+msgstr "Por favor insira o número usando duas casas decimais (ou seja, 10,00) para o custo de inscrição. ¿Use um sinal de menos na frente dos valores de desconto (ou seja, -5,00)."
+
+#: evrplus_event.php:2149 evrplus_event.php:2299
+msgid "Item/Cost Value"
+msgstr "Artigo / Valor Custo"
+
+#: evrplus_event.php:2154 evrplus_event.php:2304
+msgid "Availability Times of Cost/Item"
+msgstr "DISPONIBILIDADE DE HORÁRIOS CUSTO / UNIT"
+
+#: evrplus_event.php:2165
+msgid "ADD NEW COST/TICKET"
+msgstr "ADICIONAR NOVO CUSTO / INGRESSOS"
+
+#: evrplus_event.php:2201
+msgid "Edit Event Cost/Item for "
+msgstr "Editar evento Custo / article"
+
+#: evrplus_event.php:2315
+msgid "UPDATE COST/TICKET"
+msgstr "Atualize o custo / ingressos"
+
+#: evrplus_event.php:2365
+msgid "The event cost/ticket item has been updated.  You will now be taken back to the Event Pricing Page"
+msgstr "O item de despesa / bilhete do evento foi atualizado. Você será levado de volta para a página de eventos de moeda"
+
+#: evrplus_event.php:2369
+msgid "There was an error in your submission, please try again. The event cost/ticket item was not updated!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O elemento de custo / bilhete do evento não foi atualizado!"
+
+#: evrplus_event.php:2371 evrplus_event.php:2430
+msgid "Now taking you back . . ."
+msgstr "Agora levá-lo de volta. . ."
+
+#: evrplus_event.php:2387
+msgid "The cost item/ has been deleted."
+msgstr "O elemento de custo / foi eliminado."
+
+#: evrplus_event.php:2424
+msgid "The event cost/ticket item has been added.  You will now be taken back to the Event Pricing Page"
+msgstr "Foi acrescentado o elemento de custo / bilhete do evento. Você será levado de volta para a página de eventos de moeda"
+
+#: evrplus_event.php:2428
+msgid "There was an error in your submission, please try again. The event cost/ticket item was not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O elemento de custo / bilhete do evento não foi salvo!"
+
+#: evrplus_event.php:2457
+msgid "The coupon code information has been updated.  You will now be returned to the Event Pricing Page"
+msgstr "A informação código de cupom foi atualizado. Agora, ele retorna para a página de Preços Evento"
+
+#: evrplus_event.php:2460
+msgid "There was an error in your submission, please try again. The coupon code changes were not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. Nenhuma alteração foi salva no código de cupom!"
+
+#: evrplus_event.php:2551
+msgid "ReOrder Event Items/Cost for display:"
+msgstr "Modificar a ordem dos bilhetes no formulário:"
+
+#: evrplus_event.php:2576
+msgid "Item Sales Begin:"
+msgstr "Artigos Home vendas:"
+
+#: evrplus_event.php:2576
+msgid "Item Sales End:"
+msgstr "Ponto final de venda:"
+
+#: evrplus_registration.php:574
+msgid "Street/PO Address"
+msgstr "Rua / Endereço"
+
+#: evrplus_registration.php:595
+msgid "Postal/Zip Code"
+msgstr "Postal Code / Zip"
+
+#: evrplus_registration.php:622
+msgid "Enter coupon code for discount"
+msgstr "Digite o Código de Cupom de desconto"
+
+#: evrplus_registration.php:642 eventsplus/public/evrplus_public-form.php:412
+msgid "Registration Fees"
+msgstr "TAXAS DE INSCRIÇÃO"
+
+#: evrplus_registration.php:695
+msgid "Registration TOTAL"
+msgstr "total de matrículas"
+
+#: evrplus_registration.php:703
+msgid "No Fees Have Been Setup For This Event!"
+msgstr "Não há comissão foi definido para este evento!"
+
+#: evrplus_registration.php:705
+msgid "Registrations will be placed on the wait list!"
+msgstr "As inscrições serão colocados na lista de espera!"
+
+#: evrplus_registration.php:811
+msgid "Enter the security code as it is shown (required)"
+msgstr "Digite o código de segurança, como mostrado (obrigatório)"
+
+#: evrplus_registration.php:813
+msgid "This resource requires a Javascript enabled browser."
+msgstr "Este recurso requer um navegador habilitado Javascript."
+
+#: evrplus_registration.php:951
+msgid "Please enter your first name."
+msgstr "Digite seu nome."
+
+#: evrplus_registration.php:954
+msgid "Please enter your last name."
+msgstr "Digite seu sobrenome"
+
+#: evrplus_registration.php:959
+msgid "Email format not correct!"
+msgstr "Formato de e-mail não corrigir!"
+
+#: evrplus_registration.php:963
+msgid "Please enter your phone number."
+msgstr "Digite seu número de telefone."
+
+#: evrplus_registration.php:967
+msgid "Please use correct format for your phone number."
+msgstr "Utilize correto para o seu formato de número de telefone."
+
+#: evrplus_registration.php:974
+msgid "Please enter your address."
+msgstr "Insira o seu endereço."
+
+#: evrplus_registration.php:979
+msgid "Please enter your city."
+msgstr "Por favor, indique sua cidade."
+
+#: evrplus_registration.php:983
+msgid "Please enter your state."
+msgstr "Digite seu estado"
+
+#: evrplus_registration.php:989
+msgid "Please enter your zip/postal code."
+msgstr "Digite seu zip / código postal."
+
+#: evrplus_registration.php:1048
+msgid "ERROR: Invalid Security Code."
+msgstr "ERRO: Código de segurança é inválido."
+
+#: evrplus_registration.php:1052
+msgid "The following fields need to be completed before you can submit."
+msgstr "Os seguintes campos devem ser preenchidos antes de enviar."
+
+#: evrplus_registration.php:1169
+msgid "There was an error in your submission, please try again."
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente."
+
+#: evrplus_registration.php:1176
+msgid "You're information has been received."
+msgstr "Suas informações foram recebidas."
+
+#: evrplus_registration.php:1272
+msgid "Thank you for registering for"
+msgstr "Obrigado por registrar para"
+
+#: evrplus_registration.php:1272
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
+"    Your information has been placed on our waiting list.  \n"
+"    The waiting list is on a first come, first serve basis.  \n"
+"    You will be notified by email should a seat become available."
+msgstr ""
+"Neste momento, todos os assentos para o evento foram tomadas.\n"
+"      Suas informações, foi colocado na lista de espera. \n"
+"     A lista de espera está em um primeiro a chegar, primeiro a servir base. \n"
+"     Você será avisado por e-mail Torne-Se um assento disponível."
+
+#: evrplus_registration.php:1275
+msgid "Thank You"
+msgstr "Obrigado"
+
+#: evrplus_registration.php:1293
+msgid "At this time, all seats for the event have been taken.  Your information has been placed on our waiting list.  The waiting list is on a first come, first serve basis.  You will be notified by email should a seat become available."
+msgstr "Neste momento, temos tido todos os lugares para o evento. Sua informação foi colocado na lista de espera. A lista de espera está em um primeiro a chegar, primeiro a ser servido. Você será notificado por e-mail deve ser um lugar disponível."
+
+#: evrplus_registration.php:1298
+msgid "Registration, however, is not complete until we have received your payment."
+msgstr "O registro, no entanto, não está completo até que recebemos o seu pagamento."
+
+#: evrplus_registration.php:1301
+msgid "You may pay online or by check.  If you are paying by check, please mail your check today to:"
+msgstr "Você pode pagar on-line ou através de cheque. Se você está pagando por cheque, por favor, envie o seu cheque hoje:"
+
+#: evrplus_registration.php:1308
+msgid "Please select the Pay Now button to be taken to our payment vendor's site for online-payment."
+msgstr "Por favor, selecione o botão Pagar agora a ser levado para o local do nosso provedor de pagamento de pagamento online."
+
+#: evrplus_admin_payments.php:473 evrplus_admin_payments.php:653
+#: evrplus_admin_payments.php:662
+msgid "Partial Payment"
+msgstr "Pagamento parcial"
+
+#: evrplus_admin_payments.php:474 evrplus_admin_payments.php:654
+#: evrplus_admin_payments.php:663
+msgid "Deposit"
+msgstr "Garantia"
+
+#: evrplus_admin_payments.php:475 evrplus_admin_payments.php:655
+#: evrplus_admin_payments.php:664
+msgid "Donation"
+msgstr "doação"
+
+#: evrplus_admin_payments.php:476 evrplus_admin_payments.php:656
+#: evrplus_admin_payments.php:665
+msgid "Modification"
+msgstr "Modificação"
+
+#: evrplus_admin_payments.php:477 evrplus_admin_payments.php:657
+#: evrplus_admin_payments.php:666
+msgid "Cancelation"
+msgstr "Cancelamento"
+
+#: evrplus_admin_payments.php:478 evrplus_admin_payments.php:658
+#: evrplus_admin_payments.php:667
+msgid "Refund"
+msgstr "Reembolso"
+
+#: evrplus_admin_payments.php:481 evrplus_admin_payments.php:670
+msgid "Payment Method"
+msgstr "Método de pagamento"
+
+#: evrplus_admin_payments.php:482 evrplus_admin_payments.php:672
+#: evrplus_admin_payments.php:677
+msgid "Online/Credit Card"
+msgstr "Cartão Online / Crédito"
+
+#: evrplus_admin_payments.php:483 evrplus_admin_payments.php:673
+#: evrplus_admin_payments.php:678
+msgid "Check"
+msgstr "Verifique"
+
+#: evrplus_admin_payments.php:484 evrplus_admin_payments.php:674
+#: evrplus_admin_payments.php:679
+msgid "Cash"
+msgstr "Caixa"
+
+#: evrplus_admin_payments.php:485 evrplus_admin_payments.php:675
+#: evrplus_admin_payments.php:680
+msgid "Event Credit"
+msgstr "Evento de Crédito"
+
+#: evrplus_admin_payments.php:487 evrplus_admin_payments.php:682
+msgid "Transaction ID"
+msgstr "Transaction ID"
+
+#: evrplus_admin_payments.php:492
+msgid "Do you want to send a payment received notice to the payer?"
+msgstr "Quer enviar um pagamento recebido notificação do devedor?"
+
+#: evrplus_admin_payments.php:519
+msgid "POST PAYMENT"
+msgstr "Adicionar Pagamento"
+
+#: evrplus_admin_payments.php:687
+msgid "Do you want to send a revised payment received notice to the payer?"
+msgstr "Quer enviar um pagamento revisado recebido notificação ao contribuinte?"
+
+#: evrplus_admin_payments.php:714
+msgid "UPDATE PAYMENT"
+msgstr "Evento de atualização"
+
+#: evrplus_admin_payments.php:790
+msgid "The payment has been added."
+msgstr "Foi adicionado pagamento"
+
+#: evrplus_admin_payments.php:793
+msgid "There was an error in your submission, please try again. The payment was not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O pagamento não será salvo!"
+
+#: evrplus_admin_payments.php:794 evrplus_admin_payments.php:914
+msgid " . . .Now returning you to the payment section . . "
+msgstr ". . . Voltando para a seção de pagamento. . ."
+
+#: evrplus_admin_payments.php:825 evrplus_admin_payments.php:945
+msgid "To make payment or view your payment information go to"
+msgstr "Para pagar, ou ver informações de pagamento ir para"
+
+#: evrplus_admin_payments.php:836 evrplus_admin_payments.php:956
+msgid "Payment Received Notification sent."
+msgstr "Pagamento recebido notificação enviada."
+
+#: evrplus_admin_payments.php:910
+msgid "The payment has been updated."
+msgstr "O pagamento foi atualizada."
+
+#: evrplus_admin_payments.php:913
+msgid "There was an error in your submission, please try again. The payment was not updated!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. O pagamento não será atualizado!"
+
+#: evrplus_admin_questions.php:66
+msgid "The question has been added."
+msgstr "Adicionado a questão."
+
+#: evrplus_admin_questions.php:67
+msgid " . . .Now returning you to Question Managment . . "
+msgstr ". . . Voltando à Pergunte Management. . ."
+
+#: evrplus_admin_questions.php:69
+msgid "There was an error in your submission, please try again. The question was not saved!"
+msgstr "Houve um erro em sua apresentação, por favor, tente novamente. A questão não foi poupado!"
+
+#: evrplus_admin_questions.php:70
+msgid " . . .Now returning you to Question Management . . "
+msgstr ". . . Voltando à Pergunte Management. . ."
+
+#: evrplus_admin_questions.php:82
+msgid "Event Questions"
+msgstr "Perguntas Evento"
+
+#: evrplus_admin_questions.php:89
+msgid "Select An Event"
+msgstr "Selecione um evento"
+
+#: evrplus_admin_questions.php:129 evrplus_admin_questions.php:137
+#: evrplus_event.php:734 evrplus_event.php:1306
+msgid "Start Date"
+msgstr "Data Inicial"
+
+#: evrplus_admin_questions.php:130 evrplus_admin_questions.php:138
+msgid "Event"
+msgstr "Evento"
+
+#: evrplus_admin_questions.php:132 evrplus_admin_questions.php:140
+msgid "Custom Questions"
+msgstr "Perguntas personalizados"
+
+#: evrplus_admin_questions.php:173
+msgid "No Custom Questions"
+msgstr "Nenhumas perguntas feitas sob encomenda"
+
+#: evrplus_admin_questions.php:211
+msgid "ADD NEW QUESTION"
+msgstr "Criar nova questão"
+
+#: evrplus_admin_questions.php:218 evrplus_admin_questions.php:290
+msgid "Question"
+msgstr "Peça"
+
+#: evrplus_admin_questions.php:223 evrplus_admin_questions.php:295
+msgid "Type"
+msgstr "Tipo "
+
+#: evrplus_admin_questions.php:225 evrplus_admin_questions.php:298
+msgid "Text"
+msgstr "Texto "
+
+#: evrplus_admin_questions.php:226 evrplus_admin_questions.php:299
+msgid "Text Area"
+msgstr "Área de texto  "
+
+#: evrplus_admin_questions.php:227 evrplus_admin_questions.php:300
+msgid "Single"
+msgstr "Individual  "
+
+#: evrplus_admin_questions.php:228 evrplus_admin_questions.php:301
+msgid "Multiple"
+msgstr "Multiple"
+
+#: evrplus_admin_questions.php:229 evrplus_admin_questions.php:302
+msgid "Drop Down"
+msgstr "Suspenso"
+
+#: evrplus_admin_questions.php:234 evrplus_admin_questions.php:307
+msgid "Selections"
+msgstr "Equipes"
+
+#: evrplus_admin_questions.php:239 evrplus_admin_questions.php:312
+msgid "Required"
+msgstr "Necessário"
+
+#: evrplus_admin_questions.php:252
+msgid "ADD QUESTION"
+msgstr "Adicionar pergunta"
+
+#: evrplus_admin_questions.php:279
+msgid "EDIT QUESTION"
+msgstr "EDIT PERGUNTA"
+
+#: evrplus_admin_questions.php:327
+msgid "UPDATE QUESTION"
+msgstr "ATUALIZAÇÃO PERGUNTA"
+
+#: evrplus_admin_questions.php:335
+msgid "Please select a question to edit!"
+msgstr "Por favor seleccione uma questão para editar!"
+
+#: evrplus_admin_questions.php:401
+msgid "Event Question Management"
+msgstr "Perguntado por Gestão de Eventos"
+
+#: evrplus_admin_questions.php:408
+msgid "ReOrder Event Questions for display order:"
+msgstr "Perguntas Re ordenação de eventos para mostrar ordem:"
+
+#: evrplus_admin_attendee.php:54
+msgid "The attendee information has been successfully deleted from the event."
+msgstr "As informações participante foi excluído evento com sucesso."
+
+#: evrplus_admin_attendee.php:84 evrplus_admin_attendee.php:367#:
+#: evrplus_admin_attendee.php:861 evrplus_admin_attendee.php:1238
+msgid "Attendee Management"
+msgstr "Gestão de Participantes"
+
+#: evrplus_admin_attendee.php:91#: evrplus_admin_attendee.php:1242
+msgid "Add Attendee:"
+msgstr "Adicionar Assistente:"
+
+#: evrplus_admin_attendee.php:96 evrplus_admin_attendee.php:379
+#: evrplus_registration.php:550
+msgid "First Name"
+msgstr "Nome"
+
+#: evrplus_admin_attendee.php:97 evrplus_admin_attendee.php:380
+#: evrplus_registration.php:555
+msgid "Last Name"
+msgstr "Sobrenome"
+
+#: evrplus_admin_attendee.php:98 evrplus_admin_attendee.php:381
+#: evrplus_registration.php:560
+msgid "Email Address"
+msgstr "Endereço de email"
+
+#: evrplus_admin_attendee.php:100 evrplus_admin_attendee.php:383
+#: evrplus_registration.php:567
+msgid "Phone Number"
+msgstr "Número de telefone"
+
+#: evrplus_admin_attendee.php:103 evrplus_admin_attendee.php:386
+msgid "Address"
+msgstr "Endereço da Rua"
+
+#: evrplus_admin_attendee.php:106 evrplus_admin_attendee.php:389
+#: evrplus_event.php:706 evrplus_event.php:797 evrplus_event.php:1278
+#: evrplus_event.php:1374 evrplus_registration.php:581
+msgid "City"
+msgstr "Cidade"
+
+#: evrplus_admin_attendee.php:109 evrplus_admin_attendee.php:392
+msgid "State/Province"
+msgstr "Estado / Província"
+
+#: evrplus_admin_attendee.php:112 evrplus_admin_attendee.php:395
+msgid "Zip/Postal Code"
+msgstr "Postal Code / Zip"
+
+#: evrplus_admin_attendee.php:115 evrplus_admin_attendee.php:398
+msgid "Enter coupon code for discount off primary registration?"
+msgstr "Digite o código do cupom em escolarização primária?"
+
+#: evrplus_admin_attendee.php:197 evrplus_admin_attendee.php:478
+#: evrplus_registration.php:713
+msgid "This event has reached registration capacity."
+msgstr "Este evento atingiu sua capacidade máxima de inscrição."
+
+#: evrplus_admin_attendee.php:199 evrplus_admin_attendee.php:480
+#: evrplus_registration.php:715
+msgid "Please provide your information to be placed on the waiting list."
+msgstr "Por favor, forneça suas informações para ser colocado na lista de espera."
+
+#: evrplus_admin_attendee.php:300 evrplus_admin_attendee.php:582
+msgid "SUBMIT"
+msgstr "ENVIAR "
+
+#: evrplus_admin_attendee.php:374
+msgid "Edit Attendee:"
+msgstr "Assistente de Edição."
+
+#: evrplus_admin_attendee.php:429
+msgid "What type of Registration?"
+msgstr "Que tipo de registro?"
+
+#: evrplus_admin_attendee.php:667 evrplus_admin_attendee.php:792
+msgid "The attendee has been added."
+msgstr "O assistente foi adicionado."
+
+#: evrplus_admin_attendee.php:670 evrplus_admin_attendee.php:795
+msgid "There was an error in your submission, please try again. The attendee was not saved!"
+msgstr "Houve um erro no seu pedido, por favor, tente novamente. O assistente não foi poupado!"
+
+#: evrplus_admin_attendee.php:671 evrplus_admin_attendee.php:715
+#: evrplus_admin_attendee.php:796 evrplus_admin_attendee.php:844
+msgid " . . .Now returning you to attendee list . . "
+msgstr ". . .Regresanado Para a lista de participantes. ."
+
+#: evrplus_admin_attendee.php:682 evrplus_admin_attendee.php:807
+msgid "Now adding extra question responses."
+msgstr "Adicionando respostas a perguntas adicionais."
+
+#: evrplus_admin_attendee.php:711 evrplus_admin_attendee.php:840
+msgid "The attendee extra questions responses have been added."
+msgstr "foram adicionados e as respostas dos participantes perguntas adicionais."
+
+#: evrplus_admin_attendee.php:868 evrplus_event.php:108
+msgid "Active Events"
+msgstr "Activo Eventos"
+
+#: evrplus_admin_attendee.php:1246
+msgid "Select Another Event"
+msgstr "Selecione um outro evento"
+
+#: evrplus_admin_attendee.php:1256
+msgid "View Attendee:"
+msgstr "Vista de participantes:"
+
+#: evrplus_admin_attendee.php:1261 evrplus_admin_attendee.php:1264
+#: evrplus_admin_payments.php:307 evrplus_admin_payments.php:310
+msgid "# People"
+msgstr "Número de pessoas"
+
+#: evrplus_admin_attendee.php:1261 evrplus_admin_attendee.php:1264
+#: evrplus_admin_payments.php:307 evrplus_admin_payments.php:310
+msgid "Name"
+msgstr "Nome"
+
+#: evrplus_admin_attendee.php:1261 evrplus_admin_attendee.php:1264
+msgid "Email"
+msgstr "Email "
+
+#: evrplus_admin_attendee.php:1261 evrplus_admin_attendee.php:1264
+msgid "Phone"
+msgstr "Telefone"
+
+#: evrplus_admin_attendee.php:1261 evrplus_admin_attendee.php:1264
+#: evrplus_admin_category.php:336 evrplus_admin_category.php:346
+#: evrplus_admin_payments.php:307 evrplus_admin_payments.php:310
+msgid "Action"
+msgstr "Ação"
+
+#: evrplus_admin_category.php:12
+msgid "Category Management"
+msgstr "Gestão de Categorias"
+
+#: evrplus_admin_category.php:25
+msgid "Manage Categories"
+msgstr "Gerenciar Categorias"
+
+#: evrplus_admin_category.php:35
+msgid "Add A Category"
+msgstr "Adicionar categoria"
+
+#: evrplus_admin_category.php:42 evrplus_admin_category.php:164
+msgid "Category Name"
+msgstr "Nome da categoria"
+
+#: evrplus_admin_category.php:43
+msgid "Unique ID For Category"
+msgstr "Unique ID para a categoria"
+
+#: evrplus_admin_category.php:44
+msgid "Do you want to display the category description on the events page?"
+msgstr "Quer mostrar a descrição da categoria no evento página?"
+
+#: evrplus_admin_category.php:45 evrplus_admin_category.php:168
+#: evrplus_admin_payments.php:493 evrplus_admin_payments.php:688
+#: evrplus_company.php:116 evrplus_company.php:228 evrplus_event.php:628
+#: evrplus_event.php:725 evrplus_event.php:764 evrplus_event.php:775
+#: evrplus_event.php:842 evrplus_event.php:1195 evrplus_event.php:1297
+#: evrplus_event.php:1341 evrplus_event.php:1352 evrplus_event.php:1419
+msgid "Yes"
+msgstr "Sim"
+
+#: evrplus_admin_category.php:46 evrplus_admin_category.php:169
+#: evrplus_admin_payments.php:494 evrplus_admin_payments.php:689
+#: evrplus_company.php:117 evrplus_company.php:229 evrplus_event.php:629
+#: evrplus_event.php:726 evrplus_event.php:776 evrplus_event.php:843
+#: evrplus_event.php:1196 evrplus_event.php:1298 evrplus_event.php:1353
+#: evrplus_event.php:1420
+msgid "No"
+msgstr "Não"
+
+#: evrplus_admin_category.php:47 evrplus_admin_category.php:171
+msgid "Category Description"
+msgstr "Categoria Descrição"
+
+#: evrplus_admin_category.php:127
+msgid "Add Category"
+msgstr "Adicionar categoria"
+
+#: evrplus_admin_category.php:157
+msgid "Edit Category"
+msgstr "Editar categoria"
+
+#: evrplus_admin_category.php:165
+msgid "Unique Category Identifier"
+msgstr "Original Categoria Identificador"
+
+#: evrplus_admin_category.php:167
+msgid "Do you want to display the event description on the events page?"
+msgstr "Quer mostrar a descrição do evento na página de eventos?"
+
+#: evrplus_admin_category.php:256
+msgid "Update Category"
+msgstr "categoria atualização"
+
+#: evrplus_admin_category.php:278
+msgid "The category has been added."
+msgstr "A categoria foi adicionada"
+
+#: evrplus_admin_category.php:280
+msgid "The category was not saved."
+msgstr "Categoria não é seguro"
+
+#: evrplus_admin_category.php:303
+msgid "The category has been updated."
+msgstr "A categoria foi atualizada."
+
+#: evrplus_admin_category.php:305
+msgid "The category was not updated."
+msgstr "Esta categoria foi atualizada."
+
+#: evrplus_admin_category.php:318
+msgid "The category has been successfully deleted."
+msgstr "A categoria foi excluído com sucesso."
+
+#: evrplus_admin_category.php:325
+msgid "Current Categories"
+msgstr "Atuais Categorias"
+
+#: evrplus_admin_category.php:330 evrplus_admin_category.php:340
+msgid "ID"
+msgstr "ID "
+
+#: evrplus_admin_category.php:331 evrplus_admin_category.php:341
+msgid "Name "
+msgstr "Nome"
+
+#: evrplus_admin_category.php:332 evrplus_admin_category.php:342
+msgid "Identifier"
+msgstr "Identificador"
+
+#: evrplus_admin_category.php:333 evrplus_admin_category.php:343
+#: evrplus_admin_questions.php:131 evrplus_admin_questions.php:139
+msgid "Description"
+msgstr "Descrição"
+
+#: evrplus_admin_category.php:334 evrplus_admin_category.php:344
+msgid "Display Description"
+msgstr "Mostrar descrição"
+
+#: evrplus_admin_category.php:335 evrplus_admin_category.php:345
+msgid "Shortcode"
+msgstr "Shortcode "
+
+#: evrplus_admin_category.php:370 evrplus_admin_questions.php:422
+#: evrplus_event.php:1160
+msgid "EDIT"
+msgstr "EDIT"
+
+#: evrplus_admin_category.php:371
+msgid "Are you sure you want to delete category?"
+msgstr "Tem certeza que deseja excluir a categoria?"
+
+#: evrplus_admin_category.php:371 evrplus_admin_questions.php:423
+msgid "DELETE"
+msgstr "LIMPAR"
+
+#: evrplus_admin_category.php:375
+msgid "No Record Found!"
+msgstr "Nenhum registro encontrado!"
+
+#: evrplus_admin_export.php:233 evrplus_admin_payments.php:354
+#: evrplus_content.php:139 evrplus_registration.php:1750
+msgid "No Payments Received!"
+msgstr "Nenhum pagamento recebido!"
+
+#: evrplus_admin_menu.php:30
+msgid "Event Registration Plugin - Current Information"
+msgstr "Evento de Registro Plugin - Informações atuais"
+
+#: evrplus_admin_menu.php:38
+msgid "Data Table Information"
+msgstr "Dados da Tabela de Informação"
+
+#: evrplus_admin_menu.php:42
+msgid "Attendee Table Name:"
+msgstr "Participantes Nome da tabela:"
+
+#: evrplus_admin_menu.php:45
+msgid "Attendee Table Version:"
+msgstr "Nome da versão da tabela:"
+
+#: evrplus_admin_menu.php:49
+msgid "Event Table Name:"
+msgstr "Nome da tabela Eventos:"
+
+#: evrplus_admin_menu.php:52
+msgid "Event Table Version:"
+msgstr "Versão da tabela de Eventos:"
+
+#: evrplus_admin_menu.php:56
+msgid "Question Table Name:"
+msgstr "Nome da tabela de perguntas:"
+
+#: evrplus_admin_menu.php:59
+msgid "Question Table Version:"
+msgstr "Versão da tabela de perguntas:"
+
+#: evrplus_admin_menu.php:63
+msgid "Answer Table Name:"
+msgstr "D Nome da Tabela Respostas:"
+
+#: evrplus_admin_menu.php:66
+msgid "Answer Table Version:"
+msgstr "Versão da Tabela A."
+
+#: evrplus_admin_menu.php:70
+msgid "Category Table Name:"
+msgstr "Tabela Nome da categoria:"
+
+#: evrplus_admin_menu.php:73
+msgid "Category Table Version:"
+msgstr "Versão da tabela Categoria:"
+
+#: evrplus_admin_menu.php:77
+msgid "Cost Table Name:"
+msgstr "Nome da tabela de custos:"
+
+#: evrplus_admin_menu.php:80
+msgid "Cost Table Version:"
+msgstr "Custo versão da tabela:"
+
+#: evrplus_admin_menu.php:84
+msgid "Payment Table Name:"
+msgstr "Nome da tabela de pagamento:"
+
+#: evrplus_admin_menu.php:87
+msgid "Payment Table Version:"
+msgstr "Tabela Versão de pagamento:"
+
+#: evrplus_admin_payments.php:53
+msgid "The payment has been successfully deleted from the attendee."
+msgstr "O pagamento é removido com sucesso a partir do assistente."
+
+#: evrplus_admin_payments.php:70 evrplus_admin_payments.php:257
+#: evrplus_admin_payments.php:453 evrplus_admin_payments.php:632
+msgid "Payment Management"
+msgstr "Gestão de Pagamentos"
+
+#: evrplus_admin_payments.php:77
+msgid "Events"
+msgstr "Eventos "
+
+#: evrplus_admin_payments.php:202 evrplus_admin_payments.php:307
+#: evrplus_admin_payments.php:310
+msgid "Payments"
+msgstr "pagamentos"
+
+#: evrplus_admin_payments.php:259
+msgid "Select A Different Event"
+msgstr "Selecione um evento diferente"
+
+#: evrplus_admin_payments.php:307 evrplus_admin_payments.php:310
+#: eventsplus/public/evrplus_public-form.php:472
+msgid "Total"
+msgstr "Total "
+
+#: evrplus_admin_payments.php:307 evrplus_admin_payments.php:310
+msgid "Order Detail"
+msgstr "Detalhe Order"
+
+#: evrplus_admin_payments.php:364
+msgid "Add Payment"
+msgstr "Adicionar Pagamento"
+
+#: evrplus_admin_payments.php:460 evrplus_admin_payments.php:639
+msgid "Add Payment:"
+msgstr "Adicionar Pagamento:"
+
+#: evrplus_admin_payments.php:460 evrplus_admin_payments.php:639
+msgid "Balance Owed:"
+msgstr "Saldo devedor:"
+
+#: evrplus_admin_payments.php:468 evrplus_admin_payments.php:647
+msgid "Payment Received Date"
+msgstr "Data de Pagamento Recebido"
+
+#: evrplus_admin_payments.php:469 evrplus_admin_payments.php:648
+msgid "Amount Paid"
+msgstr "Valor pago"
+
+#: evrplus_admin_payments.php:470 evrplus_admin_payments.php:649
+msgid "Payment Type"
+msgstr "Tipo de pagamento"
+
+#: evrplus_admin_payments.php:472 evrplus_admin_payments.php:652
+#: evrplus_admin_payments.php:661
+msgid "Full Payment"
+msgstr "O pagamento total"
+
+#: evrplus_admin_menu.php:23
+msgid "Settings"
+msgstr "configurações"
+
+#: evrplus_admin_menu.php:26
+msgid "Categories"
+msgstr "Categorias"
+
+#: evrplus_admin_menu.php:30 eventsplus/public/evrplus_public-form.php:301
+msgid "Registration"
+msgstr "registros"
+
+#: evrplus_content.php:30
+msgid "Contact"
+msgstr "contato"
+
+#: evrplus_content.php:30
+msgid "Page Config"
+msgstr "Defina"
+
+#: evrplus_content.php:30
+msgid "Waitlist"
+msgstr "espere"
+
+#: evrplus_content.php:30
+msgid "Confirmation"
+msgstr "Confirme"
+
+#: evrplus_content.php:30
+msgid "Calendar"
+msgstr "Calendário"
+
+#: evrplus_content.php:30
+msgid "Tax"
+msgstr "Imposto"
+
+#: evrplus_content.php:30
+msgid "Done"
+msgstr "Terminado "
+
+#: evrplus_content.php:30
+msgid "Event Registration Configuration Settings"
+msgstr "Definições de configuração de eventos"
+
+#: evrplus_content.php:30
+msgid "Step 1"
+msgstr "Passo 1"
+
+#: evrplus_content.php:30
+msgid "Step 2"
+msgstr "Passo 2"
+
+#: evrplus_content.php:30
+msgid "Step 3"
+msgstr "Passo 3"
+
+#: evrplus_content.php:30
+msgid "Step 4"
+msgstr "Passo 4"
+
+#: evrplus_content.php:30
+msgid "Step 5"
+msgstr "Passo 5"
+
+#: evrplus_content.php:30
+msgid "Step 6"
+msgstr "Passo 6"
+
+#: evrplus_content.php:30
+msgid "Step 7"
+msgstr "Passo 7"
+
+#: evrplus_content.php:30
+msgid "Step 8"
+msgstr "Passo 8"
+
+#: evrplus_content.php:30
+msgid "Your Company Name"
+msgstr "Nome da sua empresa"
+
+#: evrplus_content.php:30
+msgid "Street Address 2"
+msgstr "Endereço alternativo"
+
+#: evrplus_content.php:30
+msgid "Postal Code"
+msgstr "Código Postal "
+
+#: evrplus_content.php:30
+msgid "Contact Information"
+msgstr "Informações de contato"
+
+#: evrplus_content.php:30
+msgid "Payment Information"
+msgstr "Informações de Pagamento"
+
+#: evrplus_content.php:30
+msgid "Payment Message on Confirmation Screen"
+msgstr "Pagamento Confirmação de Mensagem"
+
+#: evrplus_content.php:30
+msgid "Paypal Email"
+msgstr "Correio PayPal"
+
+#: evrplus_content.php:30
+msgid "Will you accept checks/cash?"
+msgstr "Eficaz aceitar?"
+
+#: evrplus_content.php:30
+msgid "Advanced"
+msgstr "Avançado"
+
+#: evrplus_content.php:30
+msgid "For Paypal Users Only"
+msgstr "Apenas para usuários do PayPal"
+
+#: evrplus_content.php:30
+msgid "page you setup for cancelled payment"
+msgstr "Página criada para usuários que cancelarem seu pagamento"
+
+#: evrplus_content.php:30
+msgid "Captcha Integration"
+msgstr "A integração de Captcha"
+
+#: evrplus_content.php:30
+msgid "CSS Overrides for registration form?"
+msgstr "Use CSS para a sua própria forma?"
+
+#: evrplus_content.php:30
+msgid "Help"
+msgstr "Ajuda"
+
+#: evrplus_content.php:30
+msgid "Select Currency"
+msgstr "Escolha Coin"
+
+#: evrplus_content.php:30
+msgid "Choose Pages"
+msgstr "Escolha Pages"
+
+#: evrplus_content.php:30
+msgid "Main registration page"
+msgstr "Registro da Página"
+
+#: evrplus_content.php:30
+msgid "Return URL for Payments"
+msgstr "Página Retorno pagar depois"
+
+#: evrplus_content.php:30
+msgid "This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden from navigation, if desired"
+msgstr "Esta página deve conter o código EVRREGIS {} para exibir o formulário de inscrição."
+
+#: evrplus_content.php:30
+msgid "This page should be hidden and will contain the EVR_PAYMENT payment shortcode.&nbsp; This page should be hidden from navigation"
+msgstr "Esta página deve ser escondido e deve conter o código [eventsplus_pagamento]. A página deve ser escondido de navegação."
+
+#: evrplus_content.php:30
+msgid "Email Confirmation"
+msgstr "Confirmação Mensagem"
+
+#: evrplus_content.php:30
+msgid "Do you want to send Registration Confirmation emails?"
+msgstr "Quer enviar um e-mail para cada pessoa que se registra?"
+
+#: evrplus_content.php:30
+msgid "(This option must be enable to send custom mails in events)"
+msgstr "(Essa opção deve estar habilitado para enviar e-mails personalizados para cada evento.)"
+
+#: evrplus_content.php:30
+msgid "Example"
+msgstr "exemplo"
+
+#: evrplus_content.php:30
+msgid "Email Body"
+msgstr "Email Content"
+
+#: evrplus_content.php:30
+msgid "Sample Mail Send"
+msgstr "Mostra como você pode usar os códigos"
+
+#: evrplus_content.php:30
+msgid "***This is an automated response - Do Not Reply***"
+msgstr "*** Esta é uma resposta automática - Não responda a este e-mail ***"
+
+#: evrplus_content.php:30
+msgid "Thank you [fname] [lname] for registering for [event]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]"
+msgstr "Obrigado [arq] [lname] para registrar para o nosso [evento] evento. Espero que você vai encontrar este evento informativo e agradável. Se você tiver alguma dúvida, entre em contato com [contato]."
+
+#: evrplus_content.php:30
+msgid "If you have not done so already, please submit your payment in the amount of [cost]"
+msgstr "Se você não tiver feito isso, por favor, envie o seu pagamento, no valor de [custo]"
+
+#: evrplus_content.php:30
+msgid "Your unique registration ID is: [id]"
+msgstr "O seu número de registro único de identificação é: [id]"
+
+#: evrplus_content.php:30
+msgid "Click here to review your payment information [payment_url]"
+msgstr "Clique aqui para rever as informações de pagamento [pagamento_url]"
+
+#: evrplus_content.php:30
+msgid "Do you want to send Payment Confirmation emails?"
+msgstr "Quer enviar e-mail de confirmação de pagamentos?"
+
+#: evrplus_content.php:30
+msgid "(This option must be enable to send payment confrimation emails)"
+msgstr "(Essa opção deve estar habilitado para enviar e-mails de confirmação para receber pagamentos)"
+
+#: evrplus_content.php:30
+msgid "Payment Confirmation Email Settings"
+msgstr "E-mail para confirmação de pagamento"
+
+#: evrplus_content.php:30
+msgid "Subject"
+msgstr "Assunto"
+
+#: evrplus_content.php:30
+msgid "Payment Confirmations"
+msgstr "As confirmações de pagamento"
+
+#: evrplus_content.php:30
+msgid "For customized payment confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
+msgstr "Para enviar e-mails personalizados para receber pagamentos, estas etiquetas podem ser colocadas no formulário de correio electrónicos e extrair dados do banco de dados para incluir no e-mail"
+
+#: evrplus_content.php:30
+msgid "Sample Payment Mail Send"
+msgstr "Enviar Shows Correio de Pagamento"
+
+#: evrplus_content.php:30
+msgid "Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) for [event_name]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]."
+msgstr "Obrigado [arq] [lnome] para o seu pagamento recente, no valor de [amnt_pd] ([txn_id]) em [EVENT_NOME]. Espero que você vai encontrar este evento informativo e agradável. Se você tiver alguma dúvida, entre em contato com [contato]."
+
+#: evrplus_content.php:30
+msgid "Wait list Message"
+msgstr "Mensagem para lista de espera"
+
+#: evrplus_content.php:30
+msgid "Email Settings"
+msgstr "Configurações de e-mail"
+
+#: evrplus_content.php:30
+msgid "For customized wait list emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
+msgstr "Personlizados Para enviar e-mails para a lista de espera, as seguintes tags podem ser colocadas no formulário de correio electrónicos e extrair dados do banco de dados para incluir no e-mail."
+
+#: evrplus_content.php:30
+msgid "[fname], [lname], [evento]"
+msgstr "[Fnome], [lnome], [evento]"
+
+#: evrplus_content.php:30
+msgid "Thank you [fname] [lname] for your interest in registering for [event]"
+msgstr "Obrigado [arq] [lnome] pelo seu interesse em se inscrever para [evento]"
+
+#: evrplus_content.php:30
+msgid "At this time, all seats for the event have been taken"
+msgstr "Neste momento, temos tido todos os lugares para o evento. Sua informação foi colocado na lista de espera. A lista de espera é baseado na ordem de chegada."
+
+#: evrplus_content.php:30
+msgid "You will be notified by email with directions for completing registration and payment should a seat become available"
+msgstr "Quando um assento estiver disponível, você será notificado via e-mail com as instruções para o preenchimento do formulário de inscrição e pagamento."
+
+#: evrplus_content.php:30
+msgid "Waitlist Email Body"
+msgstr "Esperando o conteúdo correio"
+
+#: evrplus_content.php:30
+msgid "Choose calendar colors"
+msgstr "Escolha as cores Calendar"
+
+#: evrplus_content.php:30
+msgid "Calendar Settings"
+msgstr "Configurações do calendário"
+
+#: evrplus_content.php:30
+msgid "Start Day of Week"
+msgstr "Primeiro dia da semana"
+
+#: evrplus_content.php:30
+msgid "Monday"
+msgstr "segunda-feira"
+
+#: evrplus_content.php:30
+msgid "Sunday"
+msgstr "Domingo "
+
+#: evrplus_content.php:30
+msgid "Do you want to use Category color coding?"
+msgstr "Você quer usar cores nas categorias?"
+
+#: evrplus_content.php:30
+msgid "Select color for Calendar Display"
+msgstr "Escolha as cores do calendário"
+
+#: evrplus_content.php:30
+msgid "Click on each field to display the color picker. Click again to close it"
+msgstr "Clique no campo para mostrar Color Picker. Clique novamente para fechar."
+
+#: evrplus_content.php:30
+msgid "Date Picker"
+msgstr "Date Picker"
+
+#: evrplus_content.php:30
+msgid "Do you want to use the Date selector?"
+msgstr "Você quer usar o selecionador de data?"
+
+#: evrplus_content.php:30
+msgid "Calendar Date Selector Background Color"
+msgstr "Cor de fundo do selecionador de data"
+
+#: evrplus_content.php:30
+msgid "Selector Text Color"
+msgstr "Texto data Color Picker"
+
+#: evrplus_content.php:30
+msgid "White"
+msgstr "Branco"
+
+#: evrplus_content.php:30
+msgid "Black"
+msgstr "Preto"
+
+#: evrplus_content.php:30
+msgid "Current Day Color"
+msgstr "Cor do dia corrente"
+
+#: evrplus_content.php:30
+msgid "Current Day Background Color"
+msgstr "Cor de fundo do dia corrente"
+
+#: evrplus_content.php:30
+msgid "Calendar Header"
+msgstr "Manchete Calendar"
+
+#: evrplus_content.php:30
+msgid "Calendar Day Header Background Color"
+msgstr "Encabeçamento da cor"
+
+#: evrplus_content.php:30
+msgid "Tax Configuration"
+msgstr "Configurações Fiscais"
+
+#: evrplus_content.php:30
+msgid "Do you want to charge sales tax"
+msgstr "Você pretende recolher um imposto"
+
+#: evrplus_content.php:30
+msgid "(This option must be enable to charge sales tax)"
+msgstr "(Esta opção deve ser ativada a fim de recolher um imposto)"
+
+#: evrplus_content.php:30
+msgid "Sales Tax Rate:"
+msgstr "Taxa de imposto:"
+
+#: evrplus_content.php:30
+msgid "(must be decimal, i.e. .085 )"
+msgstr "(Deve estar em decimal, por exemplo. 0,085)"
+
+#: evrplus_content.php:30
+msgid "Current Day Text Color"
+msgstr "Cor de texto do dia atual"
+
+#: evrplus_content.php:30
+msgid "Congratulations"
+msgstr "Parabéns"
+
+#: evrplus_content.php:30
+msgid "You have setup your company information. Please click the"
+msgstr "Você configurou informações de sua empresa. Por favor,"
+
+#: evrplus_content.php:30
+msgid "UPDATE COMPANY SETTINGS"
+msgstr "clique no botão Configurações de Atualização"
+
+#: evrplus_content.php:30
+msgid "button, below the tabs"
+msgstr "localizado abaixo das abas"
+
+#: evrplus_content.php:30
+msgid "Update Configuration Settings"
+msgstr "Configurações de Atualização"
+
+#: evrplus_content.php:30
+msgid "Category Text Color"
+msgstr "Cor do texto"
+
+#: evrplus_content.php:30
+msgid "Category Background Color"
+msgstr "Categoria Cor"
+
+#: evrplus_content.php:30
+msgid "Event Fees"
+msgstr "Pauta Eventos"
+
+#: evrplus_content.php:30
+msgid "Form Fields"
+msgstr "Campos Adicionais"
+
+#: evrplus_content.php:30
+msgid "Edit Event"
+msgstr "Editar evento"
+
+#: evrplus_content.php:30
+msgid "Copy Event"
+msgstr "Evento clone"
+
+#: evrplus_content.php:30
+msgid "Delete Event"
+msgstr "excluir Evento"
+
+#: evrplus_content.php:30
+msgid "Registration/Ticket Types"
+msgstr "Preços e Bilhetes"
+
+#: evrplus_content.php:30
+msgid "Add tickets to set pricing for your event (Adult, Child, VIP, etc.)"
+msgstr "Adicionando entradas ao preço de seu evento (adultos, crianças, VIP, etc)"
+
+#: evrplus_content.php:30
+msgid "Price"
+msgstr "Preço"
+
+#: evrplus_content.php:30
+msgid "Start"
+msgstr "Iniciado"
+
+#: evrplus_content.php:30
+msgid "End"
+msgstr "Termina "
+
+#: evrplus_content.php:30
+msgid "Actions"
+msgstr "Ações"
+
+#: evrplus_content.php:30
+msgid "ADD COST/ITEM"
+msgstr "Criar ticket e Preços"
+
+#: evrplus_content.php:30
+msgid "RE-ARRANGE ITEMS"
+msgstr "Gerenciar Tickets"
+
+#: evrplus_content.php:30
+msgid "Coupon Code"
+msgstr "Cupons e códigos"
+
+#: evrplus_content.php:30
+msgid "Do you want to use a coupon code for this event?"
+msgstr "Você quer usar um código de desconto para este evento?"
+
+#: evrplus_content.php:30
+msgid "A coupon code is a promotional code you can tie to your event. The code is valid for a discount off the total registration cost"
+msgstr "Um código de cupom é um código promocional que você pode usar para seu evento. O código é válido por um desconto do custo total da inscrição"
+
+#: evrplus_content.php:30
+msgid "Enter the Code"
+msgstr "Digite o código"
+
+#: evrplus_content.php:30
+msgid "This should be a one word code with no spaces or extra characters. Recommend ALL CAPS"
+msgstr "Esta deve ser uma palavra de código, sem espaços ou símbolos adicionais. recomendamos MAIÚSCULAS"
+
+#: evrplus_content.php:30
+msgid "Discount amount for Coupon Code"
+msgstr "Quantidade código de cupom de desconto"
+
+#: evrplus_content.php:30
+msgid "Enter the amount with two decimal places.&nbsp;You MUST put a - sign before the value, otherwise this will add to the total during calculations. i.e. -10.00"
+msgstr "Digite o valor para duas casas decimais. Você deve colocar um sinal - antes do valor, caso contrário, isso vai adicionar ao total durante os cálculos. Exemplo -10,00 (adicionar símbolo menos)"
+
+#: evrplus_content.php:30
+msgid "UPDATE COUPON CODE"
+msgstr "Atualização Código de Cupom"
+
+#: evrplus_content.php:30
+msgid "Select a Item/Cost category. Note that category REG is used for attendance count, all others are not included in attendance count"
+msgstr "Selecionar categoria de entrada. Note-se que a categoria denominada REG é usado para contar os participantes, todos os outros não estão incluídos na contagem de presenças."
+
+#: evrplus_content.php:30
+msgid "Provide a description of the cost/ticket"
+msgstr "Fornece uma descrição do bilhete"
+
+#: evrplus_content.php:30
+msgid "Provide the number of available item/cost types per registration form. If it is a REG item, available seats will impact overall amount available. Leave blank if no limit (system will default to 25)."
+msgstr "Fornecer o número de tipos de ingressos disponíveis para cada formulário. Se houver um elemento REG assentos disponíveis terão impacto no valor total disponível. Deixe em branco se não há limite. (O sistema será o padrão 25)"
+
+#: evrplus_content.php:30
+msgid "Value/Cost"
+msgstr "Valor do Bilhete"
+
+#: evrplus_content.php:30
+msgid "Please select no for event pricing setup, select yes for free event"
+msgstr "Por favor, selecione NO para a fixação dos preços para os eventos, selecione SIM para evento gratuito."
+
+#: evrplus_content.php:30
+msgid "Please enter the amount using 2 decimal point (i.e. 10.00) for the registration cost.&nbsp; Use minus symbol before for discount amounts (i.e. -5.00)"
+msgstr "Por favor insira o número usando duas casas decimais (por exemplo,. 10.00)"
+
+#: evrplus_content.php:30
+msgid "January"
+msgstr "Janeiro"
+
+#: evrplus_content.php:30
+msgid "February"
+msgstr "Fevereiro"
+
+#: evrplus_content.php:30
+msgid "March"
+msgstr "Março"
+
+#: evrplus_content.php:30
+msgid "April"
+msgstr "Abril"
+
+#: evrplus_content.php:30
+msgid "May"
+msgstr "Maio"
+
+#: evrplus_content.php:30
+msgid "June"
+msgstr "Junho"
+
+#: evrplus_content.php:30
+msgid "July"
+msgstr "Julho"
+
+#: evrplus_content.php:30
+msgid "August"
+msgstr "Agosto "
+
+#: evrplus_content.php:30
+msgid "September"
+msgstr "Setembro"
+
+#: evrplus_content.php:30
+msgid "October"
+msgstr "Outubro"
+
+#: evrplus_content.php:30
+msgid "November"
+msgstr "Novembro"
+
+#: evrplus_content.php:30
+msgid "December"
+msgstr "Dezembro"
+
+#: evrplus_content.php:30
+msgid "Field Question"
+msgstr "Peça"
+
+#: evrplus_content.php:30
+msgid "Choose a title for your custom field do you have pets? How did you hear about us?etc"
+msgstr "escolher um título para sua pergunta personalizado. Por exemplo: Você tem animais de estimação? Como você ficou sabendo sobre nós? etc"
+
+#: evrplus_content.php:30
+msgid "Field Type"
+msgstr "Tipo de campo"
+
+#: evrplus_content.php:30
+msgid "Choose the type of field you would like your visitor to fill out:text, textarea, single radio button, multiple radio buttons and dropdown"
+msgstr "escolher o tipo de campo que deseja preencher usuários: texto de linha única, área de texto, um botão de opção, botão de opções de vários, e pop."
+
+#: evrplus_content.php:30
+msgid "Field option(for multiple radio and dropdown)"
+msgstr "Campo Opção (para rádio pop múltipla)"
+
+#: evrplus_content.php:30
+msgid "Create the choices for the visitor separated by comma i.e google, yahoo, bing etc."
+msgstr "Criar opções para os visitantes, separados por vírgulas: Google, Bing, Yahoo, etc"
+
+#: evrplus_content.php:30
+msgid "Do You want this field to be mandatory?"
+msgstr "Você quer que este campo obrigatório?"
+
+#: evrplus_content.php:30
+msgid "Comments"
+msgstr "comentários"
+
+#: evrplus_content.php:30
+msgid "Definitions of the fields that you can create for your registration form"
+msgstr "Definições de campos que você pode criar para o seu formulário de inscrição"
+
+#: evrplus_content.php:30
+msgid "This is generally what I would call short answer questions, typically consisting of a single sentence. Where the registering person would type in their response. You do not need to put anything in the Selections field for this question type."
+msgstr "Este é geralmente o que eu chamaria de perguntas de resposta curta, geralmente composto de uma única frase. Sempre que a pessoa registro escreveu em sua resposta."
+
+#: evrplus_content.php:30
+msgid "This is similar to the Text, except you are looking more for an paragraph/multiple sentence response. You do not need to put anything in the Selections field for this question type."
+msgstr "Isto é semelhante ao texto, a diferença é que você pode adicionar muito mais texto no campo."
+
+#: evrplus_content.php:30
+msgid "This will provide radio button answers where the registering person will select one of several options. Yes/No, True/False are good examples of this type of question. Basically a multiple choice question with one possible choice. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: True, False etc."
+msgstr "Isto irá fornecer vários botões que os dados irão selecionar uma das várias opções. Sim / Não, Verdadeiro / Falso são bons exemplos deste tipo de questão. Basicamente uma questão de múltipla escolha com uma opção possível. Entrando esta questão terá de fornecer a lista de opções que aparecem. Decisões separadas por uma vírgula: verdadeiro, falso, etc"
+
+#: evrplus_content.php:30
+msgid "This is similar to Single Type questions but gives them the option of selecting several of the choices instead of just selecting one item. Basically a multiple choice question with several  possible choices. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: Newspaper, Web, A Friend, Billboard etc."
+msgstr "Este tipo é semelhante a perguntas simples, mas dá-lhes a opção de selecionar várias opções, em vez de simplesmente selecionar um item. Basicamente uma questão de múltipla escolha com várias opções possíveis. Entrando esta questão terá de fornecer a lista de opções que aparecem. Decisões separadas por uma vírgula: Jornal, Web, amigo, etc"
+
+#: evrplus_content.php:30
+msgid "This question type is similar in nature to the Single, exept instead of providing the choices in radio buttons, it provides them in a drop down box. This is handy if you have a lot of choices the person needs to choose from, it prevents them from taking up a lot space on your registration form."
+msgstr "Este tipo de pergunta é semelhante ao indivíduo, exepto em vez de proporcionar opções de botões de rádio, que são colocadas na caixa de queda natureza. Isso é útil se você tem muitas opções para escolher as necessidades pessoa, impedindo-os ocupar muito espaço em seu formulário de inscrição."
+
+#: evrplus_content.php:30
+msgid "Do not provide answer choices that have a comma in the response"
+msgstr "Não fornecer opções de resposta que tem uma vírgula na resposta"
+
+#: evrplus_content.php:30
+msgid "People"
+msgstr "Pessoas"
+
+#: evrplus_content.php:30
+msgid "Registered Name"
+msgstr "Nome"
+
+#: evrplus_content.php:30
+msgid "Add Attendee"
+msgstr "Assistente para adicionar"
+
+#: evrplus_content.php:30
+msgid "ACTIVE EVENT"
+msgstr "Evento ativa"
+
+#: evrplus_content.php:30
+msgid "EXPIRED EVENT"
+msgstr "Evento expirado"
+
+#: evrplus_content.php:30
+msgid "Use a concise but descriptive name"
+msgstr "usar um nome conciso, mas descritivo"
+
+#: evrplus_content.php:30
+msgid "Provide a short Unique ID for this event. i.e. BOB001"
+msgstr "Forneça uma breve mas único nome para este evento. Exemplo: EVENTOUNO, EVENTODOS, etc"
+
+#: evrplus_content.php:30
+msgid "If you want the description to display under the event title on the registration form, select yes"
+msgstr "Se você quiser que a descrição seja apresentada sob o título do evento na ficha de inscrição, selecione Sim."
+
+#: evrplus_content.php:30
+msgid "Provide a detailed description of the event, include key details other than when and where. Do not use any html code. This is a text only display To create new display lines just press Enter"
+msgstr "Forneça uma descrição detalhada do evento, incluindo detalhes importantes para além de quando e onde. Não use qualquer código html. Este é um texto de exibição única. Para criar novas linhas da tela apenas pressione Enter."
+
+#: evrplus_content.php:30 eventsplus/evrplus_event_edit.php:
+msgid "Event Options"
+msgstr "Opções"
+
+#: evrplus_content.php:30
+msgid "Choose your event venue"
+msgstr "Escolha o local do evento"
+
+#: evrplus_content.php:30
+msgid "Enter the number of available seats at your event venue. Leave blank if their is no limit on registrations"
+msgstr "Digite o número de assentos disponíveis no local. Deixe em branco se não houver assentos limite."
+
+#: evrplus_content.php:30
+msgid "All location information must be complete for Google Map feature to work"
+msgstr "Todas as informações devem ser completas localização google map para o trabalho."
+
+#: evrplus_content.php:30
+msgid "Choose Event's Time"
+msgstr "Escolha a hora do evento"
+
+#: evrplus_content.php:30
+msgid "Recurrence Period"
+msgstr "Período de Retorno"
+
+#: evrplus_content.php:30
+msgid "Select Period"
+msgstr "Selecione o período"
+
+#: evrplus_content.php:30
+msgid "Weekly"
+msgstr "Weekly"
+
+#: evrplus_content.php:30
+msgid "Monthly"
+msgstr "Mensal"
+
+#: evrplus_content.php:30
+msgid "Yearly"
+msgstr "Anual "
+
+#: evrplus_content.php:30
+msgid "Repeat number of times"
+msgstr "Número de vezes para repetir"
+
+#: evrplus_content.php:30
+msgid "Enter the number of times you want the event to occur."
+msgstr "Digite o número de vezes que deseja que o evento ocorra"
+
+#: evrplus_content.php:30
+msgid "Gaps per repeat"
+msgstr "Repita Gaps"
+
+#: evrplus_content.php:30
+msgid "Enter the repetition period"
+msgstr "Digite o período de repetição"
+
+#: evrplus_content.php:30
+msgid "Close Registration on"
+msgstr "Feche a oportunidade de registrar"
+
+#: evrplus_content.php:30
+msgid "Start of Event"
+msgstr "No início do evento"
+
+#: evrplus_content.php:30
+msgid "End of Event"
+msgstr "No encerramento do evento"
+
+#: evrplus_content.php:30
+msgid "Do you want the event to be recurring?"
+msgstr "Você quer que o evento a ser recorrente?"
+
+#: evrplus_content.php:30
+msgid "Choose Event Options"
+msgstr "Escolha as opções de evento"
+
+#: evrplus_content.php:30
+msgid "Default Registration Information"
+msgstr "Informações de Registro Padrão"
+
+#: evrplus_content.php:30
+msgid "Choose the fields you would like visitors to fill out when registering for your event. Note that name and email are mandatory."
+msgstr "Escolha os campos que você deseja que os usuários preencher quando se inscrever para o seu evento. Note que o nome e e-mail são obrigatórios."
+
+#: evrplus_content.php:30
+msgid "Wait List"
+msgstr "Lista de Espera "
+
+#: evrplus_content.php:30
+msgid "Standard"
+msgstr "Normal "
+
+#: evrplus_content.php:30
+msgid "Update Attendees"
+msgstr "Assistentes de atualização"
+
+#: evrplus_content.php:30
+msgid "Sales"
+msgstr "Vendas"
+
+#: evrplus_content.php:30
+msgid "Outstanding"
+msgstr "Slope"
+
+#: evrplus_content.php:30
+msgid "Email Payment Reminders"
+msgstr "Enviar avisos de pagamento"
+
+#: evrplus_Calendar.php:30
+msgid "Month"
+msgstr "Mês"
+
+#: evrplus_Calendar.php:30
+msgid "Year"
+msgstr "Ano"
+
+#: evrplus_Calendar.php:30
+msgid "Go"
+msgstr "Vá"
+
+#: evrplus_Calendar.php:30
+msgid "jan"
+msgstr "Jan."
+
+#: evrplus_Calendar.php:30
+msgid "feb"
+msgstr "fev."
+
+#: evrplus_Calendar.php:30
+msgid "mar"
+msgstr "mar."
+
+#: evrplus_Calendar.php:30
+msgid "apr"
+msgstr "abr."
+
+#: evrplus_Calendar.php:30
+msgid "may"
+msgstr "maio."
+
+#: evrplus_Calendar.php:30
+msgid "jun"
+msgstr "jun."
+
+#: evrplus_Calendar.php:30
+msgid "jul"
+msgstr "jul."
+
+#: evrplus_Calendar.php:30
+msgid "aug"
+msgstr "ago."
+
+#: evrplus_Calendar.php:30
+msgid "sept"
+msgstr "set."
+
+#: evrplus_Calendar.php:30
+msgid "oct"
+msgstr "out."
+
+#: evrplus_Calendar.php:30
+msgid "nov"
+msgstr "nov."
+
+#: evrplus_Calendar.php:30
+msgid "dec"
+msgstr "dez."
+
+#: evrplus_Calendar.php:30
+msgid "Mon"
+msgstr "Mon"
+
+#: evrplus_Calendar.php:30
+msgid "Tue"
+msgstr "Mar"
+
+#: evrplus_Calendar.php:30
+msgid "Wed"
+msgstr "Mie "
+
+#: evrplus_Calendar.php:30
+msgid "Thu"
+msgstr "Qui"
+
+#: evrplus_Calendar.php:30
+msgid "Fri"
+msgstr "Vie "
+
+#: evrplus_Calendar.php:30
+msgid "Sat"
+msgstr "Sat"
+
+#: evrplus_Calendar.php:30
+msgid "Sun"
+msgstr "Dom "
+
+#: evrplus_Calendar.php:30
+msgid "Event Full"
+msgstr "Evento completa"
+
+#: evrplus_Calendar.php:30
+msgid "Seats"
+msgstr "Assentos"
+
+#: evrplus_Calendar.php:30
+msgid "Time"
+msgstr "Tempo"
+
+#: evrplus_Calendar.php:30
+msgid "Location"
+msgstr "Localização"
+
+#: evrplus_Calendar.php:30
+msgid "Tweet"
+msgstr "Tweet"
+
+#: evrplus_Calendar.php:30
+msgid "Share"
+msgstr "Compartilhar"
+
+#: evrplus_Calendar.php:30 eventsplus/public/evrplus_public-form.php:76
+msgid "Add to your calendar"
+msgstr "Adicione ao seu calendário"
+
+#: evrplus_Calendar.php:30
+msgid "Show/Hide Details"
+msgstr "Mostrar / Ocultar detalhes"
+
+#. Text in echo
+#: eventsplus/public/evrplus_public-form.php:509
+msgid "I accept the terms and conditions"
+msgstr "Eu aceito os termos e condições"
+
+#. Text in function
+#: eventsplus/public/evrplus_public-form.php:303
+msgid "MORE INFO"
+msgstr "MAIS INFORMAÇÕES"
+
+#. Text in function
+#: eventsplus/public/evrplus_public-form.php:414
+msgid "You must select at least one item!"
+msgstr "Você deve selecionar pelo menos um item!"
+
+# #####################
+msgid "Please verify your registration details:"
+msgstr "S'il vous plaît vérifier les détails de votre inscription:"
+
+msgid "Registering Name:"
+msgstr "Obrigado por registrar para"
+
+msgid "Number of Attendees:"
+msgstr "Número de participantes"
+
+msgid "Event Name / Total Cost:"
+msgstr "Nome de Custo / Item"
+
+msgid "You are registering for"
+msgstr "Obrigado por registrar para"
+
+msgid "person(s)."
+msgstr "personne (s)."
+
+msgid "Please provide the first and last name of each person:"
+msgstr "S'il vous plaît fournir le nom et le prénom de chaque personne:"
+
+msgid "Open Seats"
+msgstr "Assentos"
+
+msgid "FREE"
+msgstr "gratuit"
+
+msgid "Saturday"
+msgstr "sábado"
+
+msgid "Tuesday"
+msgstr "martes"
+
+msgid "Wednesday"
+msgstr "miércoles"
+
+msgid "Thursday"
+msgstr "quinta-feira"
+
+msgid "Friday"
+msgstr "viernes"
+
+msgid "Order Details:"
+msgstr "Detalhes do pedido:"
+
+msgid "Total Cost:"
+msgstr "usto total:"
+
+msgid "Your information has been received."
+msgstr "Sua informação tem-se recebido."
+
+msgid "CONFIRMED"
+msgstr "CONFIRMADO"
+
+msgid "BACK"
+msgstr "VOLTAR"
+
+msgid "Confirmed"
+msgstr "confirmado"
+
+msgid "Email Address:"
+msgstr "E-mail:"
+
+msgid "Attendee Name:"
+msgstr "Nome participante:"
+
+msgid "SEND"
+msgstr "ENVIAR"
+
+msgid "Send"
+msgstr "enviar"
+
+msgid "Postal Code:"
+msgstr "Código postal:"
+
+msgid "Primary Contact email:"
+msgstr "Contato Principal e-mail :"
+
+msgid "Secondary Contact emails(Separated By Commas[,]):"
+msgstr "Contato E-mails secundários ( separadas por vírgula [,] ) :"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Reset"
+msgstr "repor"
+
+msgid "Time:"
+msgstr "Tempo:"
+
+msgid "REGISTER"
+msgstr "CADASTRO"
+
+msgid "Lets get your plugin setup!"
+msgstr "Permite obter a sua configuração plug-in !"
+
+msgid "ADD NEW CATEGORY"
+msgstr "Add New Category"
+
+msgid "Event ID"
+msgstr "evento ID"
+
+msgid "ShortCode"
+msgstr "Código curto"
+
+msgid "Status"
+msgstr "estatuto"
+
+msgid "Estado"
+msgstr ""
+
+msgid "Manage"
+msgstr "gerir os"
+
+msgid "ACTIVE"
+msgstr "ACTIVE"
+
+msgid "# Attendees"
+msgstr "# Os participantes"
+
+msgid "Reports"
+msgstr "relatórios"
+
+msgid "Name / Location, City"
+msgstr "Nome / Localização , Cidade"
+
+msgid "EXPIRED"
+msgstr "EXPIRADO"
+
+msgid "View All"
+msgstr "Ver tudo"
+
+msgid "Delete All"
+msgstr "apagar tudo"
+
+msgid "Sort By"
+msgstr "Ordenar por"
+
+msgid "Date"
+msgstr "Encontro"
+
+msgid "Location / City"
+msgstr "Localização / Cidade"
+
+msgid "View Payments"
+msgstr "Veja Pagamentos"
+
+msgid "free"
+msgstr "livre"
+
+msgid "Free"
+msgstr "Livre"
+
+msgid "TOTAL PAYMENTS"
+msgstr "TOTAL DE PAGAMENTOS"
+
+msgid "TOTAL EVENTS"
+msgstr "EVENTOS TOTAL"
+
+msgid "TOTAL CATEGORIES"
+msgstr "Rubricas totais"
+
+msgid "TOTAL ATTENDEES"
+msgstr "PARTICIPANTES TOTAL"
+
+msgid "progress"
+msgstr "progresso"
+
+msgid "change"
+msgstr "alterar"
+
+msgid "grow"
+msgstr "crescer"
+
+msgid "LATEST EVENTS"
+msgstr "Últimos eventos"
+
+msgid "LATEST PAYMENTS"
+msgstr "ÚLTIMOS PAGAMENTOS"
+
+msgid "LATEST ATTENDEES"
+msgstr "ÚLTIMOS PARTICIPANTES"
+
+msgid "LATEST CATEGORIES"
+msgstr "Últimas categorias"
+
+msgid "AVAILABLE SEATS"
+msgstr "assentos disponíveis"
+
+msgid "PAYER"
+msgstr "PAGADOR"
+
+msgid "AMOUNT"
+msgstr "QUANTIDADE"
+
+msgid "ITEM QUANTITY"
+msgstr "ITEM QUANTIDADE"
+
+msgid "EVENT NAME"
+msgstr "NOME DO EVENTO"
+
+msgid "Event Name"
+msgstr "Nome do evento"
+
+msgid "Available Seats"
+msgstr "Assentos disponíveis"
+
+msgid "Payer"
+msgstr "Pagador"
+
+msgid "Amount"
+msgstr "Quantidade"
+
+msgid "Item Quantity"
+msgstr "item Quantidade"
+
+msgid "Attendee Name"
+msgstr "Nome participante"
+
+msgid "Recurring event"
+msgstr "evento recorrente"
+
+msgid "Days"
+msgstr "Dias"
+
+msgid "Hours"
+msgstr "horas"
+
+msgid "Minutes"
+msgstr "Minutos"
+
+msgid "Seconds"
+msgstr "segundos"
+
+msgid "No Payments Found!"
+msgstr "Nenhum pagamento Encontrado !"
+
+msgid "Event Location"
+msgstr "Local do evento"
+
+msgid "Attendee"
+msgstr "participante"
+
+msgid "MAKE A DONATION"
+msgstr "FAZER UMA DOAÇÃO"
+
+msgid "Please select the Donate button to be taken to our payment vendor's site for online-donations."
+msgstr "Por favor, selecione o botão Doações para ser levado para o site do nosso fornecedor para pagamento on-line -doações ."
+
+msgid "Please update fee dates!"
+msgstr "Actualize as datas de fadas!"
+
+msgid "Company Address"
+msgstr "Endereço da Empresa"
+
+msgid "All"
+msgstr "tudo"
+
+msgid "Search By Title"
+msgstr "Pesquisa por título"
+
+msgid "Jan"
+msgstr "John"
+
+msgid "Feb"
+msgstr "fevereiro"
+
+msgid "Mar"
+msgstr "estragar"
+
+msgid "Apr"
+msgstr "abril"
+
+msgid "Jun"
+msgstr "junho"
+
+msgid "Jul"
+msgstr "julho"
+
+msgid "Aug"
+msgstr "agosto"
+
+msgid "Sept"
+msgstr "setembro"
+
+msgid "Sep"
+msgstr "setembro"
+
+msgid "Oct"
+msgstr "outubro"
+
+msgid "Nov"
+msgstr "novembro"
+
+msgid "Dec"
+msgstr "dezembro"
+
+msgid "YEAR"
+msgstr "ANO"
+
+msgid "january"
+msgstr "janeiro"
+
+msgid "february"
+msgstr "fevereiro"
+
+msgid "march"
+msgstr "marcha"
+
+msgid "april"
+msgstr "abril"
+
+msgid "june"
+msgstr "Junho"
+
+msgid "july"
+msgstr "Julho"
+
+msgid "august"
+msgstr "Agosto"
+
+msgid "september"
+msgstr "setembro"
+
+msgid "october"
+msgstr "outubro"
+
+msgid "november"
+msgstr "novembro"
+
+msgid "december"
+msgstr "dezembro"
+
+msgid "seats"
+msgstr "assentos"
+
+msgid "Type your confirmation message below"
+msgstr "Digite sua mensagem de confirmação abaixo"
+
+msgid "You must select at least one registration item."
+msgstr "Você deve selecionar pelo menos um item de registo."
+
+msgid "Please go back and select an item!"
+msgstr "Por favor, volte e selecione um item!"
