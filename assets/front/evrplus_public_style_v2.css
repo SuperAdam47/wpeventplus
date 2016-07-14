@@ -980,7 +980,7 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 
 .timing .eve-sap {
     position: relative;
-    top: 50px;
+    top: 20px;
     float: left;
     padding: 0 15px;
     font-size: 50px;
