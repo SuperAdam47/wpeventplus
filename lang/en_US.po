@@ -2515,6 +2515,10 @@ msgstr ""
 msgid "Do you wish to disable registration for this event?"
 msgstr ""
 
+msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
+msgstr ""
+
+
 
 
 

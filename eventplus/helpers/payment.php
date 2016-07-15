@@ -85,7 +85,7 @@ class EventPlus_Helpers_Payment {
             echo "Reference " . $event_name . " ID: " . $event_id . "<br/>";
             echo '<br/>';
             echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e(' Event Name/Cost:', 'evrplus_language');
+            _e('Event Name/Cost:', 'evrplus_language');
             echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
             _e('Attendee Name:', 'evrplus_language');
             echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
@@ -152,7 +152,7 @@ class EventPlus_Helpers_Payment {
                 
                 echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p>'
                         . '<table width="95%" border="0"><tr><td><strong>';
-                _e(' Event Name/Cost:', 'evrplus_language');
+                _e('Event Name/Cost:', 'evrplus_language');
                 echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr>'
                         . '<tr><td><strong>';
                 _e('Attendee Name:', 'evrplus_language');
@@ -220,7 +220,7 @@ class EventPlus_Helpers_Payment {
                 $p->submit_paypal_post1($pay_now); // submit the fields to paypal
                 
                 echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-                _e(' Event Name/Cost:', 'evrplus_language');
+                _e('Event Name/Cost:', 'evrplus_language');
                 echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
                 _e('Attendee Name:', 'evrplus_language');
                 echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
@@ -315,7 +315,7 @@ class EventPlus_Helpers_Payment {
             
             // Print the Order Verification to the screen.
             echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e(' Event Name/Cost:', 'evrplus_language');
+            _e('Event Name/Cost:', 'evrplus_language');
             echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
             _e('Attendee Name:', 'evrplus_language');
             echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
@@ -381,7 +381,7 @@ class EventPlus_Helpers_Payment {
             echo '<br/>';
             // Print the Order Verification to the screen.
             echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e(' Event Name/Cost:', 'evrplus_language');
+            _e('Event Name/Cost:', 'evrplus_language');
             echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
             _e('Attendee Name:', 'evrplus_language');
             echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
@@ -435,7 +435,7 @@ class EventPlus_Helpers_Payment {
             echo '<br/>';
             // Print the Order Verification to the screen.
             echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e(' Event Name/Cost:', 'evrplus_language');
+            _e('Event Name/Cost:', 'evrplus_language');
             echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
             _e('Attendee Name:', 'evrplus_language');
             echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
@@ -581,7 +581,7 @@ class EventPlus_Helpers_Payment {
                 
                 // Print the Order Verification to the screen.
                 echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-                _e(' Event Name/Cost:', 'evrplus_language');
+                _e('Event Name/Cost:', 'evrplus_language');
                 echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
                 _e('Attendee Name:', 'evrplus_language');
                 echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';

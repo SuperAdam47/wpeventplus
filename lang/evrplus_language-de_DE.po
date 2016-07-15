@@ -2041,3 +2041,13 @@ msgstr "Bitte gehen Sie zurück und auswählen!"
 
 msgid "Do you wish to disable registration for this event?"
 msgstr ""
+
+msgid "Event Name/Cost:"
+msgstr "Event Name / Kosten"
+
+msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
+msgstr "Um online zu bezahlen, wählen Sie bitte die Schaltfläche Zahlung an unseren Zahlungs Anbieter-Site getroffen werden."
+
+msgid "A confirmation email has been sent to:"
+msgstr "Eine Bestätigungsmail wurde gesendet an:"
+
