@@ -7,6 +7,7 @@ abstract class EventPlus_Abstract_Plugin {
 
     protected $_plugin_title = '';
     protected $_plugin_version = '';
+    protected $_build_version = '';
     protected $_plugin_slug = '';
     
     /**
@@ -134,11 +135,19 @@ abstract class EventPlus_Abstract_Plugin {
     
     
     /**
-     * Plugin Title
+     * Plugin Version
      * @return (string) 
      */
     function getVersion() {
         return $this->_plugin_version;
+    }
+    
+    /**
+     * Plugin Build Version
+     * @return (string) 
+     */
+    function getBuildVersion() {
+        return $this->_build_version;
     }
     
     /**

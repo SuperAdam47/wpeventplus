@@ -14,33 +14,20 @@ if (!defined('ABSPATH')) {
 
 define('EVENT_PLUS_FRAMEWORK_NAMESPACE', 'eplus');
 define('EVENT_PLUS_FRAMEWORK_FOLDER', 'eventplus');
-define('EVENT_PLUS_URI_KEY', 'eplus_uri');
-define('EVENT_PLUS_SITE_URL', get_bloginfo('url') . '/');
-define('EVENT_PLUS_URL_DOMAIN', get_option('siteurl') . '/');
-define('EVENT_PLUS_ADMIN_URL', EVENT_PLUS_SITE_URL . 'wp-admin/admin.php');
-define('EVENT_PLUS_WP_CONTENT_PATH', ABSPATH . 'wp-content' . DIRECTORY_SEPARATOR);
-define('EVENT_PLUS_UPLOAD_PATH', EVENT_PLUS_WP_CONTENT_PATH . 'uploads' . DIRECTORY_SEPARATOR);
-define('EVENT_PLUS_WP_UPLOAD_URL', EVENT_PLUS_SITE_URL . 'wp-content/uploads/');
+define("EVR_PLUGINPATH", "/" . plugin_basename(dirname(__file__)) . "/");
 define('EVENT_PLUS_PLUGIN_PATH', rtrim(plugin_dir_path(__FILE__), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR);
 define('EVENT_PLUS_PLUGIN_URL', WP_PLUGIN_URL . '/' . plugin_basename(dirname(__file__)) . "/");
-define('EVENT_PLUS_PUBLIC_URL', EVENT_PLUS_PLUGIN_URL . "public/");
 define('EVENT_PLUS_PLUGIN_FRAMEWORK_PATH', EVENT_PLUS_PLUGIN_PATH . EVENT_PLUS_FRAMEWORK_FOLDER . DIRECTORY_SEPARATOR);
-define('EVENT_PLUS_PLUGIN_APP_PATH', EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'app' . DIRECTORY_SEPARATOR);
-define('EVENT_PLUS_PLUGIN_APP_CONTROLLERS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'controllers' . DIRECTORY_SEPARATOR);
-define('EVENT_PLUS_PLUGIN_APP_VIEWS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'views' . DIRECTORY_SEPARATOR);
-define("EVR_PLUGINPATH", "/" . plugin_basename(dirname(__file__)) . "/");
-define("EVR_PLUGINFULLURL", WP_PLUGIN_URL . EVR_PLUGINPATH);
 
 require_once EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'base.php';
 
 EventPlus::init();
 
-require_once EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'functions.php';
-
 class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     protected $_plugin_title = 'Events+';
-    protected $_plugin_version = '2.0';
+    protected $_build_version = '6.00.32';
+    protected $_plugin_version = '2.0.1';
     protected $_plugin_slug = 'eventplus';
     protected $oApp = null;
 

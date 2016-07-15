@@ -7,10 +7,37 @@ class EventPlus_Helpers_App {
 
         $file = EventPlus::getPlugin()->getFile();
         load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($file)) . '/lang/');
-
+        
         EventPlus::factory('Helpers_Assets')->init();
+        
+        $this->doUpgrade();
     }
 
+    protected function doUpgrade() {
+        $oldBuildVersion = get_option('eventplus_build_version');
+        
+ 
+        if($oldBuildVersion === false){
+             EventPlus_Helpers_Funx::updateBuildVersion(get_option('evr_event_version'));
+        }
+   
+        
+        $currentBuildVersion = EventPlus::getPlugin()->getBuildVersion();
+        
+        
+        if ($oldBuildVersion < $currentBuildVersion) {
+
+            if($oldBuildVersion == '6.00.31'){
+                $sql = "ALTER TABLE `".get_option('evr_event')."` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
+                $q = EventPlus::getRegistry()->get('db')->query($sql);
+                if($q){
+                   EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
+                  
+                }
+            }
+        }
+    }
+    
     function adminInit() {
         EventPlus::factory('Helpers_Assets_Admin')->init();
     }

@@ -30,6 +30,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function addEvent($params) {
 
         $event_name = esc_html($params['event_name']);
+        $disable_event_reg = strtoupper($params['disable_event_reg']);
         $event_identifier = esc_html($params['event_identifier']);
         $display_desc = 'Y';  // Y or N
         $event_desc = esc_html($params['event_desc']);
@@ -77,7 +78,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $outside_reg = $params['outside_reg'];  // Yor N
         $external_site = $params['external_site'];
 
-
+        
         if (!empty($params['reg_form_defaults'])) {
             $reg_form_defaults = serialize($params['reg_form_defaults']);
         } else {
@@ -174,6 +175,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $sqlData = array(
             'event_name' => "$event_name",
+            'disable_event_reg' => "$disable_event_reg",
             'event_desc' => "$event_desc",
             'location_list' => "$location_list",
             'event_location' => "$event_location",
@@ -221,7 +223,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             'term_c' => "$term_c",
             'term_desc' => "$term_desc");
 
-        $sqlFormat = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
+        $sqlFormat = array('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
@@ -247,6 +249,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $event_id = (int) $params['id'];
 
         $event_name = esc_html($params['event_name']);
+        $disable_event_reg = strtoupper($params['disable_event_reg']);
         $event_identifier = esc_html($params['event_identifier']);
         $display_desc = 'Y';  // Y or N
         $event_desc = esc_html($params['event_desc']);
@@ -361,6 +364,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $sql = array(
             'event_name' => $event_name,
+            'disable_event_reg' => "$disable_event_reg",
             'event_desc' => $event_desc,
             'location_list' => $location_list,
             'event_location' => $event_location,

@@ -59,6 +59,7 @@ if (is_object($row)) {
         $allow_checks = $row->allow_checks;
         $counter_checks = $row->counter_checks;
         $outside_reg = $row->outside_reg;  // Yor N
+        $disable_event_reg = $row->disable_event_reg;  // Y or N
         $external_site = $row->external_site;
         $reg_form_defaults = unserialize($row->reg_form_defaults);
         $more_info = $row->more_info;

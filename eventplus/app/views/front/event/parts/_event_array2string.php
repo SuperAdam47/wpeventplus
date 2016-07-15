@@ -107,6 +107,7 @@ $end_time = $event->end_time;
 $allow_checks = $event->allow_checks;
 $counter_checks = $event->counter_checks;
 $outside_reg = $event->outside_reg; /*Y or N*/
+$disable_event_reg = $event->disable_event_reg; /*Y or N*/
 $external_site = $event->external_site;
 $more_info = $event->more_info;
 $image_link = $event->image_link;

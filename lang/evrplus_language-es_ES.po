@@ -1781,3 +1781,6 @@ msgstr "sep"
 
 msgid "september"
 msgstr "septiembre"
+
+msgid "Do you wish to disable registration for this event?"
+msgstr ""

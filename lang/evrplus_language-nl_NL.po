@@ -2288,3 +2288,6 @@ msgstr "U moet minstens één registratie te selecteren."
 
 msgid "Please go back and select an item!"
 msgstr "Ga terug en selecteer een item!"
+
+msgid "Do you wish to disable registration for this event?"
+msgstr ""

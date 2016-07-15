@@ -2705,3 +2705,6 @@ msgstr "Vous devez sélectionner au moins un élément d'enregistrement."
 
 msgid "Please go back and select an item!"
 msgstr "S'il vous plaît revenir en arrière et choisir un article!"
+
+msgid "Do you wish to disable registration for this event?"
+msgstr ""

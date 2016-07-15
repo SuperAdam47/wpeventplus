@@ -1,5 +1,19 @@
 <?php
 
+define('EVENT_PLUS_URI_KEY', 'eplus_uri');
+define('EVENT_PLUS_SITE_URL', get_bloginfo('url') . '/');
+define('EVENT_PLUS_URL_DOMAIN', get_option('siteurl') . '/');
+define('EVENT_PLUS_ADMIN_URL', EVENT_PLUS_SITE_URL . 'wp-admin/admin.php');
+define('EVENT_PLUS_WP_CONTENT_PATH', ABSPATH . 'wp-content' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_UPLOAD_PATH', EVENT_PLUS_WP_CONTENT_PATH . 'uploads' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_WP_UPLOAD_URL', EVENT_PLUS_SITE_URL . 'wp-content/uploads/');
+define('EVENT_PLUS_PUBLIC_URL', EVENT_PLUS_PLUGIN_URL . "public/");
+define('EVENT_PLUS_PLUGIN_APP_PATH', EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'app' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_APP_CONTROLLERS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'controllers' . DIRECTORY_SEPARATOR);
+define('EVENT_PLUS_PLUGIN_APP_VIEWS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'views' . DIRECTORY_SEPARATOR);
+define("EVR_PLUGINFULLURL", WP_PLUGIN_URL . EVR_PLUGINPATH);
+
+
 class EventPlus {
 
     private static $blockedVars = array('plugin');
@@ -51,6 +65,7 @@ class EventPlus {
 
     static function init() {
         spl_autoload_register(array('EventPlus', 'AutoLoad'));
+        require_once EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . 'functions.php';
     }
 
     /**

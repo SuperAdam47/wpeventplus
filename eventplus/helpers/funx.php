@@ -8,6 +8,23 @@ class EventPlus_Helpers_Funx {
         return EventPlus::getPlugin()->getVersion();
     }
     
+    static function getBuildVersion() {
+        return EventPlus::getPlugin()->getBuildVersion();
+    }
+    
+    static function getOldBuildVersion() {
+        $oldBuildVersion = get_option('eventplus_build_version');
+   
+        return $oldBuildVersion;
+    }
+    
+    static function updateBuildVersion($version) {
+        update_option('eventplus_build_version', $version);
+    }
+    
+    
+    
+    
     static function assetUrl($uri_path){
          if($uri_path == ''){
             return EventPlus::getRegistry()->url->getAssetsUrl();

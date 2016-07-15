@@ -22,6 +22,7 @@
                 ?> /><label for="y2"><?php _e('No ', 'evrplus_language'); ?></label>
 
                 </p>
+                
                 <div class="cl2">
                     <p>
                         <label class="tooltip" >
@@ -38,6 +39,7 @@
                     ?>  /><label for="w2"><?php _e('No', 'evrplus_language'); ?> 
                     </label></p>
                 </div>
+                
                 <div class="cl2">  
                     <p>
 
@@ -46,6 +48,27 @@
                     <input class= "title" id="external_site" name="external_site" type="text" value="<?php echo $external_site; ?>"/>
                     </p>
                 </div>
+                
+                <div class="cl2">
+                    <p>
+                        <label class="tooltip">
+                            <?php _e('Do you wish to disable registration for this event?', 'evrplus_language'); ?>
+                        </label> 
+                    <br/>
+                    <input type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_yes" value="Y" <?php
+                    if ($disable_event_reg == "Y") {
+                        echo "checked";
+                    }
+                    ?>/> <label for="disable_event_reg_yes"><?php _e('Yes', 'evrplus_language'); ?> </label>
+                    <input  type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_no" value="N" <?php
+                    if ($disable_event_reg == "N") {
+                        echo "checked";
+                    };
+                    ?>  /><label for="disable_event_reg_no"><?php _e('No', 'evrplus_language'); ?> 
+                    </label></p>
+                </div>
+                
+                <br style="clear:both;" />
                 <p>
 
                     <label class="tooltip" >

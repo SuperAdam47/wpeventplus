@@ -2512,6 +2512,10 @@ msgstr ""
 msgid "Please go back and select an item!"
 msgstr ""
 
+msgid "Do you wish to disable registration for this event?"
+msgstr ""
+
+
 
 
 

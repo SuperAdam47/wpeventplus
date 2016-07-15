@@ -1,4 +1,5 @@
 <?php
+
 /*
  * @author Events Plus
  * @copyright 2016
@@ -6,6 +7,7 @@
 
 $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
 $evrplus_ver = EventPlus_Helpers_Funx::getVersion();
+$cur_build = EventPlus_Helpers_Funx::getBuildVersion();
 
 function EVR_Offset($dt, $year_offset = '', $month_offset = '', $day_offset = '') {
     return ($dt == '0000-00-00') ? '' : date("Y-m-d", mktime(0, 0, 0, substr($dt, 5, 2) + $month_offset, substr($dt, 8, 2) + $day_offset, substr($dt, 0, 4) + $year_offset));
@@ -19,11 +21,11 @@ function evrplus_table_upgrade($evrplus_new_tbl, $evrplus_old_tbl) {
     }
 }
 
-/*function to install plugin - load tables and wp_options*/
+/* function to install plugin - load tables and wp_options */
+
 function evrplus_install() {
     global $evrplus_date_format, $evrplus_ver, $wpdb, $cur_build, $table_message;
     $table_message = '';
-    $cur_build = "6.00.31";
     $old_event_tbl = $wpdb->prefix . "events_detail";
     $old_db_version = get_option('events_detail_tbl_version');
     if ((get_option('evr_was_upgraded') != "Y") && ($old_db_version < $cur_build)) {
@@ -35,9 +37,11 @@ function evrplus_install() {
             update_option($option_name, $newvalue);
         }
     }
+
     if (!get_option('evr_company_settings')) {
         evrplus_reg_page();
     }
+
     evrplus_attendee_db();
     evrplus_category_db();
     evrplus_question_db();
@@ -67,7 +71,10 @@ function evrplus_install() {
         // Insert the post into the database
         wp_insert_post($my_post);
     }
+    
+    EventPlus_Helpers_Funx::updateBuildVersion($cur_build);
 }
+
 function evrplus_upgrade_tables() {
     global $wpdb;
     $upgrade_version = "0.31";
@@ -92,8 +99,8 @@ function evrplus_upgrade_tables() {
     //change column names from values to keys for identifcation 
     $field_names = array_flip($fields);
     $value = "num_people";
-    -
-            $sql = "ALTER TABLE " . $new_attendee_tbl . " ADD num_people varchar(45) COLLATE utf8_general_ci NULL;";
+
+    $sql = "ALTER TABLE " . $new_attendee_tbl . " ADD num_people varchar(45) COLLATE utf8_general_ci NULL;";
     if (!array_key_exists($value, $field_names)) {
         $wpdb->query($sql);
     }
@@ -464,6 +471,7 @@ function evrplus_upgrade_tables() {
         update_option('evr_company_settings', $company_options);
     }
 }
+
 function evrplus_reg_page() {
 // Create post object
     $my_post = array(
@@ -477,6 +485,7 @@ function evrplus_reg_page() {
 // Insert the post into the database
     wp_insert_post($my_post);
 }
+
 function evrplus_attendee_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -530,6 +539,7 @@ function evrplus_attendee_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
+
 function evrplus_category_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -562,6 +572,7 @@ function evrplus_category_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
+
 function evrplus_event_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -655,6 +666,7 @@ function evrplus_event_db() {
 		  ;";
     $wpdb->query($sql_alter);
 }
+
 function evrplus_cost_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -692,6 +704,7 @@ function evrplus_cost_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
+
 function evrplus_payment_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -756,6 +769,7 @@ function evrplus_payment_db() {
         $wpdb->query($sql);
     }
 }
+
 function evrplus_question_db() {
     //Define global variables
     global $wpdb, $cur_build, $table_message;
@@ -789,6 +803,7 @@ PRIMARY KEY id (id)
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
+
 //
 //Create the table for the answers for the questions
 function evrplus_answer_db() {
@@ -819,6 +834,7 @@ function evrplus_answer_db() {
         $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
     }
 }
+
 function evrplus_generator() {
     global $evrplus_date_format, $evrplus_ver, $wpdb;
     $guid = md5(uniqid(mt_rand(), true));
