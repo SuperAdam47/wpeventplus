@@ -293,12 +293,7 @@ if ($rows) {
             <!--End Show/Hide Event Details -->
             <!--Begin registration form scripts -->
             <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
-            <?php if ($company_options['captcha'] == 'Y') { ?>
-                <script type="text/javascript"> var imgdir = "<?php echo $cap_url; ?>";</script>
-                <script type="text/javascript" src="<?php echo $this->assetUrl('scripts/public/captcha.js.php'); ?>"></script>
-                <?php
-            }
-
+            <?php 
             if ($company_options['captcha'] == 'Y') {
                 $captcha = "Y";
             } else {
@@ -590,9 +585,18 @@ if ($rows) {
                             <?php } ?>
                             <br />
                             <?php if ($company_options['captcha'] == 'Y') { ?>
-                                <p><?php _e('Enter the security code as it is shown (required)', 'evrplus_language'); ?></p>
-                                <script type="text/javascript">sjcap("altTextField");</script>
-                                <noscript><p>[<?php _e('This resource requires a Javascript enabled browser.', 'evrplus_language'); ?>]</p></noscript>
+                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+									<script>								
+									jQuery(document).ready(function(){
+										jQuery("#mySubmit").click(function(){
+											if (grecaptcha.getResponse() == ""){
+											alert("Please fill the captcha !");
+											return false;
+											}
+										});
+									});								
+									</script>
+							   <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key'];?>"></div>
                                 <?php
                             }
                             ?>
