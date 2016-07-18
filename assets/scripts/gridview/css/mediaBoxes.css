@@ -809,3 +809,7 @@
   .my-mfp-slide-bottom.mfp-removing.mfp-bg {
     opacity: 0;
   }
+  
+   .media-box-thumbnail-container > img { 
+   margin-bottom: auto !important;
+   }
