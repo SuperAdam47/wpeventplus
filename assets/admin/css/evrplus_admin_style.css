@@ -26473,6 +26473,7 @@ Transparent Button
 	    border-radius: 5px;
 	    color: white;
 	    padding: 5px 30px;
+		float:left;
 	}
 	span.cat_3 {
 	    background: none repeat scroll 0 0 #70aca0;
