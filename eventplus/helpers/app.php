@@ -14,27 +14,27 @@ class EventPlus_Helpers_App {
     }
 
     protected function doUpgrade() {
-        $oldBuildVersion = get_option('eventplus_build_version');
-        
- 
-        if($oldBuildVersion === false){
-             EventPlus_Helpers_Funx::updateBuildVersion(get_option('evr_event_version'));
-        }
-   
+        $oldBuildVersion = EventPlus_Helpers_Funx::getOldBuildVersion();
         
         $currentBuildVersion = EventPlus::getPlugin()->getBuildVersion();
         
         
-        if ($oldBuildVersion < $currentBuildVersion) {
+        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion) {
 
-            if($oldBuildVersion == '6.00.31'){
-                $sql = "ALTER TABLE `".get_option('evr_event')."` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
-                $q = EventPlus::getRegistry()->get('db')->query($sql);
-                if($q){
-                   EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
-                  
+            if($oldBuildVersion <= '6.00.31'){
+                
+                $wpDb = EventPlus::getRegistry()->get('db');
+                $checkCol = "SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'wp_evr_event' AND COLUMN_NAME = 'disable_event_reg' ";
+                $colExists = (count($wpDb->get_results($checkCol, ARRAY_N)) > 0 );
+                
+                if($colExists == 0){
+
+                    $sql = "ALTER TABLE `".get_option('evr_event')."` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
+                    $q = EventPlus::getRegistry()->get('db')->query($sql);
                 }
             }
+            
+            EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
         }
     }
     

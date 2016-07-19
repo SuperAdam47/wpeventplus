@@ -583,6 +583,7 @@ function evrplus_event_db() {
     $sql = "CREATE TABLE " . $table_name . " (
           id MEDIUMINT NOT NULL AUTO_INCREMENT,
           event_name VARCHAR(100) DEFAULT NULL,
+          disable_event_reg enum('Y','N') NOT NULL DEFAULT 'N',
           event_desc TEXT DEFAULT NULL,
           location_list VARCHAR(4) DEFAULT NULL,
           event_location VARCHAR(300) DEFAULT NULL,

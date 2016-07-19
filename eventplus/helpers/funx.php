@@ -7,29 +7,29 @@ class EventPlus_Helpers_Funx {
     static function getVersion() {
         return EventPlus::getPlugin()->getVersion();
     }
-    
+
     static function getBuildVersion() {
         return EventPlus::getPlugin()->getBuildVersion();
     }
-    
+
     static function getOldBuildVersion() {
         $oldBuildVersion = get_option('eventplus_build_version');
-   
+        if ($oldBuildVersion === false) {
+            $oldBuildVersion = get_option('evr_event_version');
+        }
+
         return $oldBuildVersion;
     }
-    
+
     static function updateBuildVersion($version) {
         update_option('eventplus_build_version', $version);
     }
-    
-    
-    
-    
-    static function assetUrl($uri_path){
-         if($uri_path == ''){
+
+    static function assetUrl($uri_path) {
+        if ($uri_path == '') {
             return EventPlus::getRegistry()->url->getAssetsUrl();
-        }else{
-             return EventPlus::getRegistry()->url->getAssetsUrl() . $uri_path;
+        } else {
+            return EventPlus::getRegistry()->url->getAssetsUrl() . $uri_path;
         }
     }
 
@@ -43,7 +43,7 @@ class EventPlus_Helpers_Funx {
 
         return $evrplus_date_format;
     }
-    
+
     static function dateSelector($inName, $useDate = 0) {
         $str = '';
         /* create array so we can name months */

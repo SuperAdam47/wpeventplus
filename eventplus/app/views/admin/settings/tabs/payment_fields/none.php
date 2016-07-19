@@ -1,0 +1,32 @@
+<p>
+    <label for="checka">
+        <?php _e('Will you accept checks/cash?', 'evrplus_language'); ?>
+    </label>
+    <br />
+<div class="styled">
+    <select name = 'checks' class="regular-select">
+        <!--<option value="<?php echo $company_options['checks']; ?>"><?php echo $company_options['checks']; ?> </option>-->
+        <option value="Yes" <?php if ($company_options['checks'] == 'Yes') echo ' selected'; ?>>
+            <?php _e('Yes', 'evrplus_language'); ?>
+        </option>
+        <option value="No" <?php if ($company_options['checks'] == 'No') echo ' selected'; ?>>
+            <?php _e('No', 'evrplus_language'); ?>
+        </option>
+    </select>
+</div>
+</p>
+<p>
+    <label for="accept_donations">
+        <?php _e('Will you accept donations?', 'evrplus_language'); ?>
+    </label>
+    <br />
+<div class="styled">
+    <select name = 'donations' class="regular-select">
+        <!--<option value="<?php echo $company_options['donations']; ?>"><?php echo $company_options['donations']; ?> </option>-->
+        <option value="Yes" <?php if ($company_options['donations'] == 'Yes') echo ' selected'; ?>>
+            <?php _e('Yes', 'evrplus_language'); ?>
+        </option>
+        <option value="No" <?php if ($company_options['donations'] == 'No') echo ' selected'; ?>>No</option>
+    </select>
+</div>
+</p>
