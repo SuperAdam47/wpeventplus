@@ -54,8 +54,7 @@ if (count($rows)):
                         $defaultImage = $this->assetUrl('images/calendar-icon.png');
                         ?>
                         <div class="media-box-image">
-                            <div data-width="320" data-height="<?php echo ($ordered == 'yes') ? '400' : $height; ?>" 
-                                data-thumbnail="<?php echo ($event->image_link) ? $event->image_link : $defaultImage; ?>">
+                            <div data-thumbnail="<?php echo ($event->image_link) ? $event->image_link : $defaultImage; ?>">
                             </div>
                             <div class="thumbnail-overlay">
                                 <a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">

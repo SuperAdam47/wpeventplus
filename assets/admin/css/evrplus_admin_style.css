@@ -26473,6 +26473,7 @@ Transparent Button
 	    border-radius: 5px;
 	    color: white;
 	    padding: 5px 30px;
+		float:left;
 	}
 	span.cat_3 {
 	    background: none repeat scroll 0 0 #70aca0;
@@ -41289,3 +41290,18 @@ Transparent Button
 		 font-weight: 600 !Important;
 		 font-size:14px !Important;
     }	
+	
+	.google_captcha > label {
+    margin-bottom: 12px;
+	width: 100%;
+	float:left;
+	}
+
+	.google_captcha {
+		margin-bottom: 18px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.google_captcha > input {
+		width: 100% !important;
+	}

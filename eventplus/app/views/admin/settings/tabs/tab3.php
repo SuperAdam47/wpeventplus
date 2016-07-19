@@ -26,6 +26,17 @@
                     <?php _e('No', 'evrplus_language'); ?>
                 </label>
             </div>
+			
+			<div class="google_captcha">
+				<label for="captcha">
+                    <?php _e('Google Captcha site Key?', 'evrplus_language'); ?>
+                </label>
+				
+                <input name="captcha_key" id="captcha_key" type="text" value="<?php
+                if (!empty($company_options['captcha_key'])) { echo $company_options['captcha_key']; } ?>" />	
+            				
+			</div>
+			
             <div class="padding">
                 <label class="bhelp" for="form_css">
                     <?php _e('CSS Overrides for registration form?', 'evrplus_language'); ?>
