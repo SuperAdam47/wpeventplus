@@ -15,6 +15,7 @@
     </select>
 </div>
 </p>
+
 <p>
     <label for="accept_donations">
         <?php _e('Will you accept donations?', 'evrplus_language'); ?>

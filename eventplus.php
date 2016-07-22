@@ -32,12 +32,14 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     protected $oApp = null;
 
     function _init() {
-
+        
         EventPlus::setPlugin($this);
-
+        
         if (is_admin() == false) {
             ob_start();
         }
+        
+        $this->add_action( 'plugins_loaded', $this, 'i8ln');
 
         $oEventPlusCore = EventPlus::factory('Core', array(
                     'mode' => 'development'
@@ -56,7 +58,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $oFlashMessage = EventPlus::factory('Flash_Message');
         $oFlashMessage->setKey('eventplus_admin_flash_messages');
         $oRegistry->set('flash', $oFlashMessage);
-
+        
+        
+        
         if (is_admin()) {
             add_action('admin_notices', array($oFlashMessage, 'render'));
         }
@@ -70,6 +74,10 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->addFilters();
     }
 
+    function i8ln() {
+        load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($this->getFile())) . '/lang/');    
+    }
+    
     private function addCommonActions() {
         $this->add_action('init', $this->oApp, 'eventPlusInit');
         $this->add_action('widgets_init', $this, 'registerWidgets');

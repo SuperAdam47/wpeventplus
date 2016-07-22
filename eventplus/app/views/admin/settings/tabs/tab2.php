@@ -75,7 +75,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
 
                         </table>
 
-                        <div id="tab_<?php echo strtolower($methodKey) ?>" style="<?php echo $tabStyleCss; ?>">
+                        <div id="tab_<?php echo strtolower($methodKey) ?>" style="padding: 10px; <?php echo $tabStyleCss; ?>">
                             <td colspan="2">
                                 <?php include('payment_fields/' . strtolower($methodKey) . '.php'); ?>
                             </td>
@@ -108,6 +108,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                 oSelf.addClass('btn-primary');
                 oSelf.removeClass('btn-danger');
                 oPaymentTab.show();
+                oPaymentTab.focus();
             }
 
 

@@ -13,7 +13,6 @@ define('EVENT_PLUS_PLUGIN_APP_CONTROLLERS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'c
 define('EVENT_PLUS_PLUGIN_APP_VIEWS_PATH', EVENT_PLUS_PLUGIN_APP_PATH . 'views' . DIRECTORY_SEPARATOR);
 define("EVR_PLUGINFULLURL", WP_PLUGIN_URL . EVR_PLUGINPATH);
 
-
 class EventPlus {
 
     private static $blockedVars = array('plugin');
@@ -22,7 +21,6 @@ class EventPlus {
 
     static function factory($class_name, $params = array()) {
         $class_name = 'EventPlus_' . ucwords($class_name);
-        $key = md5($class_name);
 
         return new $class_name($params);
     }
@@ -39,7 +37,6 @@ class EventPlus {
      * @return EventPlus_Abstract_Plugin
      */
     static function getPlugin() {
-
         if (is_object(self::$vars['plugin'])) {
             return self::$vars['plugin'];
         } else {
@@ -74,8 +71,7 @@ class EventPlus {
      */
     static function AutoLoad($class) {
 
-        $class_name = strtolower($class);
-        $class_name = str_replace('_', DIRECTORY_SEPARATOR, $class_name);
+        $class_name = str_replace('_', DIRECTORY_SEPARATOR, strtolower($class));
         $filename = strtolower($class_name) . '.php';
 
         $file = EVENT_PLUS_PLUGIN_PATH . $filename;
@@ -99,7 +95,6 @@ class EventPlus {
 
     public static function dispatch($uri, array $invokeParams = array()) {
 
-        
         $oDispatcher = EventPlus::factory('Dispatcher')
                 ->setControllerDirectory(EVENT_PLUS_PLUGIN_APP_CONTROLLERS_PATH)
                 ->setViewDirectory(EVENT_PLUS_PLUGIN_APP_VIEWS_PATH);
@@ -111,7 +106,6 @@ class EventPlus {
         $oResponse = EventPlus::factory('Http_Response');
         $oRequest->setHttpResponse($oResponse);
 
-        
         $oFront = EventPlus::factory('Front_Controller')
                 ->setUriKey(EVENT_PLUS_URI_KEY)
                 ->setRequest($oRequest)
@@ -121,5 +115,4 @@ class EventPlus {
 
         return $oFront->getResponse();
     }
-
 }

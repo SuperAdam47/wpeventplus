@@ -5,9 +5,6 @@ class EventPlus_Helpers_App {
     function eventPlusInit() {
         $this->doOputputBufer();
 
-        $file = EventPlus::getPlugin()->getFile();
-        load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($file)) . '/lang/');
-        
         EventPlus::factory('Helpers_Assets')->init();
         
         $this->doUpgrade();
