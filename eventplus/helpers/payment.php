@@ -354,17 +354,21 @@ class EventPlus_Helpers_Payment {
                 foreach ($payments as $p => $paymentRow) {
                     
                     $metaPayment = $oModels_Payments->getMethodMeta($paymentRow['txn_type']);
-                    $paymentMethod = $paymentRow['txn_type'];
+                    $paymentTitleStr = $paymentRow['txn_type'];
                     
                     if(isset($metaPayment['title'])){
-                        $paymentMethod = $metaPayment['title'];
+                        $paymentTitleStr = $metaPayment['title'];
+                    }
+               
+                    if($metaPayment['logo'] != ''){
+                        $paymentTitleStr = "<img src='".EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $metaPayment['logo']."' alt='".$metaPayment['title']."' />";
                     }
                     
                     echo '<tr>'
                     . '<td>'.__("Transaction Id", 'evrplus_language').'</td><td>' . $paymentRow['txn_id'] . '</td>'
                     . '</tr>';
                     echo '<tr>'
-                    . '<td>'.__("Payment Method", 'evrplus_language').'</td><td>' . $paymentMethod . '</td>'
+                    . '<td>'.__("Payment Method", 'evrplus_language').'</td><td>' . $paymentTitleStr . '</td>'
                     . '</tr>';
                 }
             }
