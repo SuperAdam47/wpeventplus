@@ -168,10 +168,13 @@ class EventPlus_Helpers_Payment {
             $paymentOptions = $this->getPaymentOptions();
 
             if (count($paymentOptions) > 0) {
+                echo __("Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site", 'evrplus_language');
                 echo '<table width="95%" cellspacing="0" cellpadding="2" border="0">
                 <tbody>
                 <tr>
-                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Payment Methods', 'evrplus_language') . '</font></b></td>
+                  <td bgcolor="black" colspan="2">
+                    <b><font color="white">' . __('Payment Methods', 'evrplus_language') . '</font></b>
+                </td>
                 </tr>';
 
                 $oPaymentMethods = new EventPlus_Models_Payments();

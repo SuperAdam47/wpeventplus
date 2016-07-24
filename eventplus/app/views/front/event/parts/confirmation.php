@@ -114,7 +114,7 @@ if ($reg_form['payment'] > 0) {
 
         _e("Registration, however, is not complete until we have received your payment.", 'evrplus_language');
     } elseif ($reg_form['payment_status'] == EventPlus_Models_Payments::PAYMENT_SUCCESS) {
-        _e("Congratulations! Transaction has been completed but payment has been received. Thank you for your payment.", 'evrplus_language');
+        _e("Congratulations! Transaction has been completed and payment has been received. Thank you for your payment.", 'evrplus_language');
     } elseif ($reg_form['payment_status'] == EventPlus_Models_Payments::PAYMENT_FAILED) {
 
         if (isset($company_options['info_recieved']) && ($company_options['info_recieved'] != '')) {
@@ -135,7 +135,7 @@ if ($reg_form['payment'] > 0) {
 // If Accept Donations is yes and Event Fees are 0, then make Donation Offer
 if (($company_options['donations'] == "Yes") && (($reg_form['payment'] < 1) || ($reg_form['payment'] == "")) && ($reg_form['reg_type'] != "WAIT")) {
 
-    _e("While there is no fee for this event, we gladly accept donations.", 'evrplus_language');
+    /*_e("While there is no fee for this event, we gladly accept donations.", 'evrplus_language');
     echo "<br/>";
 
     if ($company_options['checks'] == "Yes") {
@@ -150,7 +150,8 @@ if (($company_options['donations'] == "Yes") && (($reg_form['payment'] < 1) || (
         _e("Reference: Donation - ", 'evrplus_language');
         echo "<b>" . $event_name . "</b><br/><br/>";
     }
-
+    */
+    
     //_e("Please select the Donate button to be taken to our payment vendor's site for online-donations.", 'evrplus_language');
     //echo "<hr/>";
     //EventPlus_Helpers_Payment::evrplus_registration_donation($event_id, $reg_id);
