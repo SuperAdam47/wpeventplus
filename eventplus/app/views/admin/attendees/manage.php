@@ -67,7 +67,12 @@ $event_id = $oEvent->id;
                     . "<td>" . $attendee->email . "</td><td>" . $attendee->phone . "</td>";
                     ?>
                 <td>
-                    <?php $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending'; ?>
+                    <?php 
+                    $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending'; 
+                    if($payment_status == 'Pending' && intVal($attendee->payment) === intVal($attendee->amount_pd)){
+                        $payment_status = "Success";
+                    }
+                    ?>
                     <?php if ($payment_status == 'success'): ?>
                         <span class='label  label-success'><?php echo ucfirst($payment_status); ?></span>
                     <?php else: ?>
