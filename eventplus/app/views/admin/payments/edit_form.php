@@ -73,7 +73,7 @@ foreach ($result as $row) {
 
 
 
-$sql2 = "SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payer_id='$attendee_id'";
+$sql2 = "SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payment_status = 'success' AND payer_id='$attendee_id'";
 $result2 = $this->wpDb()->get_results($sql2, ARRAY_A);
 foreach ($result2 as $row) {
     $total_paid = $row['SUM(mc_gross)'];
@@ -229,7 +229,11 @@ if ($payment > "0") {
                                         echo "<input type='hidden' name='action' value='update_payment'>";
                                         ?>
                                 </ul>
-                                </hr><p class="att" id="uyt"><input class="satt" type="submit" name="Submit" value="<?php _e('UPDATE PAYMENT', 'evrplus_language'); ?>"></p>
+                                <?php 
+
+                                if(EventPlus_Models_Payments::isValidMethod($txn_type) == false): ?>
+                                    <hr/><p class="att" id="uyt"><input class="satt" type="submit" name="Submit" value="<?php _e('UPDATE PAYMENT', 'evrplus_language'); ?>"></p>
+                                <?php endif; ?>
                                 </form>
 
                                 </p>

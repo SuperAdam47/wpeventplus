@@ -148,7 +148,30 @@ class eplus_admin_payments_controller extends EventPlus_Abstract_Controller {
         $response = $this->oView->loadLayout('admin/layouts/payments', 'admin/payments/edit_form', array(
             'row' => $row,
             'payment_id' => $payment_id,
-            'form_heading' => __("Add Payment", 'evrplus_language'),
+            'form_heading' => __("Update Payment", 'evrplus_language'),
+        ));
+
+
+        $this->setResponse($response);
+    }
+    
+    function action_view() {
+
+        $payment_id = intVal($this->_request->getParam('id'));
+        $row = $this->_model->getData($payment_id);
+
+
+        if ($row === false) {
+            $this->setErrorMessage(__("Payment record doesn't exist.", 'evrplus_language'));
+            $this->redirect($this->adminUrl('admin_payments'));
+            return false;
+        }
+
+     
+        $response = $this->oView->loadLayout('admin/layouts/payments', 'admin/payments/details', array(
+            'row' => $row,
+            'payment_id' => $payment_id,
+            'form_heading' => __("Payment Details", 'evrplus_language'),
         ));
 
 

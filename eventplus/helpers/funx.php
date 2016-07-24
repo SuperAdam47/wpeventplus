@@ -151,4 +151,5 @@ class EventPlus_Helpers_Funx {
         return $string;
     }
 
+  
 }

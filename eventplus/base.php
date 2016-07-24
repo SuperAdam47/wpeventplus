@@ -55,7 +55,7 @@ class EventPlus {
     static function get($key) {
         return self::$vars[$key];
     }
-    
+
     static function getRegistry() {
         return self::$vars['registry'];
     }
@@ -115,4 +115,15 @@ class EventPlus {
 
         return $oFront->getResponse();
     }
+
+    static function dump($var, $exit = true) {
+        echo '<pre>';
+        print_r($var);
+        echo'</pre>';
+
+        if ($exit) {
+            exit;
+        }
+    }
+
 }

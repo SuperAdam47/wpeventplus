@@ -15,8 +15,8 @@
     <input class="regular-text" type="text" value="<?php echo $company_options['publishable_key']; ?>" size="60" name="publishable_key">
 </p>
 <?php /* * ****************stripe return url ****** */ ?>
-<p>
-    <label for="payment_vendor_id">
+<p style="display:none;">
+    <label for="stripereturn_url">
         <?php _e('Stripe Return Url', 'evrplus_language'); ?>
     </label>
     <br />

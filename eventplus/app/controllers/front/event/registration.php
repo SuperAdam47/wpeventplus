@@ -8,10 +8,9 @@ class eplus_front_event_registration_controller extends EventPlus_Abstract_Contr
     private $actions = array(
         'evrplusegister' => 'register',
         'confirm' => 'confirm',
-        'post' => 'processConfirmation',
-        'show_confirm_mess' => 'showConfirmation',
+        'post' => 'post',
+        'confirmation' => 'confirmation',
         'pay' => 'returnToPay',
-        'paypal_txn' => 'paypalTxn',
         'key' => 'processKey',
         'default' => 'defaultAction',
     );
@@ -63,12 +62,12 @@ class eplus_front_event_registration_controller extends EventPlus_Abstract_Contr
         $this->setResponse($output);
     }
 
-    protected function processConfirmation() {
-        $output = EventPlus::dispatch('front_event_parts_process/index');
+    protected function post() {
+        $output = EventPlus::dispatch('front_event_parts_post/index');
         $this->setResponse($output);
     }
 
-    protected function showConfirmation() {
+    protected function confirmation() {
         $output = EventPlus::dispatch('front_event_parts_confirmation/index');
         $this->setResponse($output);
     }
@@ -85,15 +84,6 @@ class eplus_front_event_registration_controller extends EventPlus_Abstract_Contr
         $str .= get_option('siteurl') . " -coordmodule- " . get_option('plug-evrplus_coord-activate');
 
         $this->setResponse($str);
-    }
-
-    protected function paypalTxn() {
-        if ($this->company_options['payment_vendor'] == "PAYPAL") {
-            $output = EventPlus::dispatch('front_event_parts_paypal/ipn');
-            $this->setResponse($output);
-        } else {
-            $this->setResponse(__('IPN is only available with PAYPAL with this version of Event Reigstration', 'evrplus_language'));
-        }
     }
 
     protected function defaultAction() {

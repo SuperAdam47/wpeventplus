@@ -22,7 +22,8 @@ class EventPlus_Helpers_Assets {
 
         wp_register_script('evrplus_redcountdown', plugins_url('/assets/js/jquery.redcountdown.min.js', $file), array('jquery'), '1.0.0', 'all');
 
-        wp_register_script('evrplus_public_script', plugins_url('/assets/front/evrplus_public_script.js', $file), array(), '1.0.0', 'all');
+        wp_register_script('evrplus_public_script', plugins_url('/assets/front/evrplus_public_script.js', $file), array(), time(), 'all');
+
 
         wp_register_script('evrplus_public_easing', plugins_url('/assets/scripts/fancybox/jquery.easing-1.3.pack.js', $file), array(), '1.0.0', 'all');
 

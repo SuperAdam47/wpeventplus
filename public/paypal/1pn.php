@@ -1,0 +1,33 @@
+<?php
+
+$varDirectoryPath = dirname(__FILE__);
+
+$varDirectoryPath = str_replace('wp-content\plugins\wpeventplus\public\paypal', '', $varDirectoryPath);
+$varDirectoryPath = str_replace('wp-content/plugins/wpeventplus/public/paypal', '', $varDirectoryPath);
+
+include_once($varDirectoryPath . 'wp-load.php');
+include_once($varDirectoryPath . 'wp-config.php');
+include_once($varDirectoryPath . 'wp-includes/wp-db.php');
+
+global $wpdb;
+
+if (isset($_REQUEST['eventplus_token']) == false) {
+    wp_die("Invalid paypal request.");
+}
+
+$eventplus_token = $_REQUEST['eventplus_token'];
+
+$company_options = EventPlus_Models_Settings::getSettings();
+
+$sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE token = '" . esc_sql($eventplus_token) . "' LIMIT 1";
+$attendeeRow = $wpdb->get_row($sql, ARRAY_A);
+
+$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $attendeeRow['event_id'] . " LIMIT 1";
+$eventRow = $wpdb->get_row($sql, ARRAY_A);
+if ($eventRow['id'] <= 0) {
+    wp_die(__("Invalid request", 'evrplus_language'));
+}
+
+$event_id = $eventRow['id'];
+
+$output = EventPlus::dispatch('front_event_parts_paypal/ipn');

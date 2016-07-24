@@ -1,9 +1,21 @@
 <?php
 
 class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
-
+    
+    protected static $cache = null;
+    
     static function getSettings() {
-        return  get_option('evr_company_settings');
+        
+        if(self::$cache === null){
+            self::$cache =  get_option('evr_company_settings');
+        }
+        
+        return self::$cache;
+    }
+   
+    static function getPaymentMethods() {
+        $companyOptions = self::getSettings();
+        return (array) $companyOptions['payment_vendor'];
     }
     
     function saveSettings($params) {
@@ -44,6 +56,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['cancel_return'] = $params['cancel_return'];
             $company_options['return_method'] = $params['return_method'];
             $company_options['use_sandbox'] = $params['use_sandbox'];
+            $company_options['paypal_pdt_token'] = $params['paypal_pdt_token'];
             $company_options['image_url'] = $params['image_url'];
             $company_options['admin_message'] = ($params['admin_message']);
             $company_options['pay_confirm'] = $params['pay_confirm'];
@@ -51,7 +64,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['payment_message'] = ($params['payment_message']);
             $company_options['c_message'] = ($params['c_message']);
             $company_options['captcha'] = $params['captcha'];
-			$company_options['captcha_key'] = $params['captcha_key'];
+            $company_options['captcha_key'] = $params['captcha_key'];
             $company_options['event_pop'] = $params['event_pop'];
             $company_options['form_css'] = $params['form_css'];
             $start_of_week = $params['start_of_week'];

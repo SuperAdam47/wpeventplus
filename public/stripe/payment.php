@@ -1,4 +1,5 @@
 <?php
+
 $varDirectoryPath = dirname(__FILE__);
 
 $varDirectoryPath = str_replace('wp-content\plugins\wpeventplus\public\stripe', '', $varDirectoryPath);
@@ -11,77 +12,89 @@ include_once($varDirectoryPath . 'wp-includes/wp-db.php');
 
 global $wpdb;
 
-if(isset($_POST['stripeToken']) == false){
+if (isset($_POST['stripeToken']) == false) {
     die("Invalid request.");
 }
 
 $stripeToken = $_POST['stripeToken'];
 $amount = $_POST['amount'];
-$event_id = $_POST['event_id'];
+$eventplus_token = $_POST['token'];
 $stripeEmail = $_POST['stripeEmail'];
 $stripeTokenType = $_POST['stripeTokenType'];
 
 $price = $amount * 100;
 $company_options = EventPlus_Models_Settings::getSettings();
-$stripeurl = $company_options['stripereturn_url'];
 
+$isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
+if ($isPending === false) {
+    wp_die(__("Couldn't proceed! registration already processed.", 'evrplus_language'));
+    return;
+}
+
+$sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE token = '" . esc_sql($eventplus_token) . "' LIMIT 1";
+$attendeeRow = $wpdb->get_row($sql, ARRAY_A);
+
+$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $attendeeRow['event_id'] . " LIMIT 1";
+$eventRow = $wpdb->get_row($sql, ARRAY_A);
+if ($eventRow['id'] <= 0 || trim($company_options['secret_key']) == '') {
+    wp_die(__("Invalid request - Payment couldn't be processed.", 'evrplus_language'));
+}
+
+$event_id = $eventRow['id'];
+
+$payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+$amountPaid = 0;
+$txn_id = '';
+$payment_date = date('Y-m-d G:i:s', time());
 
 try {
-    
-    require_once('Stripe/lib/Stripe.php');
-    Stripe::setApiKey($company_options['secret_key']); //Replace with your Secret Key
 
-    $charge = Stripe_Charge::create(array(
+    require_once('Stripe/lib/Stripe.php');
+    Stripe::setApiKey($company_options['secret_key']);
+
+    $oCharge = Stripe_Charge::create(array(
                 "amount" => $price,
                 "currency" => "usd",
                 "card" => $stripeToken,
-                "description" => "Demo Transaction"
+                "description" => '[' . $eventRow['id'] . '] ' . $eventRow['event_name'] . '  - Payment',
+                "metadata" => array("registration_id" => $attendeeRow['id'])
     ));
 
+    $stripeToken = $_POST['stripeToken'];
+    $stripeTokenType = $_POST['stripeTokenType'];
+    $stripeEmail = $_POST['stripeEmail'];
 
-    //header('Location:  .$stripeurl.');
-    //send the file, this line will be reached if no error was thrown above
-    echo "<h1>Your payment has been completed.</h1>";
-    //you can send the file to this email:
-    //echo $_POST['stripeEmail'];
-    ?>
-    <style>
-        td {border:1px solid #d1d1d1; padding:8px;}
-    </style>
-    <table width="40%" cellspacing="0" cellpadding="0" border="0" >
-        <tbody>
-            <tr><td cellpadding="0" cellspacing="0"><strong>StripeToken:</strong></td><td><?php echo $_POST['stripeToken']; ?></td></tr>
-            <tr><td><strong>StripeTokenType:</strong></td><td><?php echo $_POST['stripeTokenType']; ?></td></tr>
-            <tr><td><strong>StripeEmail:</strong></td><td><?php echo $_POST['stripeEmail']; ?></td>
-            <tr><td><strong>Stripeamount:</strong></td><td><?php echo $amount; ?></td>
-            </tr>
-        </tbody>
-    </table>
+    $txn_id = $oCharge->id;
 
-
-    <?php
-} catch (Stripe_CardError $e) {
-    
-}
-
-//catch the errors in any way you like
-catch (Stripe_InvalidRequestError $e) {
-    // Invalid parameters were supplied to Stripe's API
-} catch (Stripe_AuthenticationError $e) {
-    // Authentication with Stripe's API failed
-    // (maybe you changed API keys recently)
-} catch (Stripe_ApiConnectionError $e) {
-    // Network communication with Stripe failed
-} catch (Stripe_Error $e) {
-
-    // Display a very generic error to the user, and maybe send
-    // yourself an email
+    if ($oCharge->paid == true) {
+        $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
+        $amountPaid = $amount;
+    }
 } catch (Exception $e) {
 
-    // Something else happened, completely unrelated to Stripe
+    $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+    $amountPaid = 0;
 }
-//echo "INSERT INTO wp_evr_payment (event_id,stripeTokenType,stripeEmail,stripeamount,stripeToken) VALUES($event_id,$stripeTokenType,$stripeEmail,$amount,$stripeToken)"; die;
-$q = $wpdb->query("INSERT INTO wp_evr_payment (event_id,stripeTokenType,stripeEmail,stripeamount,stripeToken) VALUES($event_id,'$stripeTokenType','$stripeEmail',$amount,'$stripeToken')");
 
-echo'<script>window.location.href="' . $stripeurl . '?event_id=' . $event_id . '";</script>';
-?>
+$wpdb->query($wpdb->prepare("UPDATE " . get_option('evr_attendee') . " SET payment_status = '" . esc_sql($payment_status) . "', amount_pd = '" . esc_sql($amountPaid) . "', payment_date = '" . esc_sql($payment_date) . "' WHERE id = %d", $attendeeRow['id']));
+
+$sqlParams = array(
+    'payer_id' => $attendeeRow['id'],
+    'event_id' => $event_id,
+    'payment_date' => $payment_date,
+    'payer_email' => $stripeEmail,
+    'txn_id' => $txn_id,
+    'mc_gross' => $amountPaid,
+    'payment_type' => 'full',
+    'payment_status' => $payment_status,
+    'txn_type' => EventPlus_Models_Payments::STRIPE
+);
+
+
+$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+$wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
+
+$urlToGo = evrplus_permalink($company_options['return_url']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
+echo'<script>window.location.href="' . $urlToGo . '";</script>';
+exit;
+

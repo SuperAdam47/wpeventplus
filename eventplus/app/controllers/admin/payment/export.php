@@ -57,7 +57,7 @@ class eplus_admin_payment_export_controller extends EventPlus_Abstract_Controlle
                     . $s . $participant["quantity"]
                     . $s . $participant["payment"];
 
-            $sql2 = "SELECT SUM(mc_gross) FROM " . $this->tables['evrplus_payment'] . " WHERE payer_id='" . (int) $participant["id"] . "'";
+            $sql2 = "SELECT SUM(mc_gross) FROM " . $this->tables['evrplus_payment'] . " WHERE payment_status = 'success' AND payer_id='" . (int) $participant["id"] . "'";
             $payments = $this->oModelAttendees->getWpDb()->get_results($sql2, ARRAY_A);
             foreach ($payments as $row) {
 
@@ -76,7 +76,7 @@ class eplus_admin_payment_export_controller extends EventPlus_Abstract_Controlle
                 }
                 $output .= $s;
                 $output .= "||";
-                $sql = "SELECT * from " . $this->tables['evrplus_payment'] . " WHERE payer_id ='" . (int) $participant["id"] . "'";
+                $sql = "SELECT * from " . $this->tables['evrplus_payment'] . " WHERE payment_status = 'success' AND payer_id ='" . (int) $participant["id"] . "'";
                 $result = $this->oModelAttendees->getWpDb()->get_results($sql, ARRAY_A);
                 foreach ($result as $payment) {
                     $output .= $payment["mc_currency"] . " " . $payment["mc_gross"] . " " . $payment["txn_type"] . " " . $payment["txn_id"] . " (" . $payment["payment_date"] . ")" . "||";

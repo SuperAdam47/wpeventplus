@@ -39,19 +39,19 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         $oEvent = $this->_invokeArgs['oEvent'];
         $this->event_id = $this->_invokeArgs['event_id'];
 
-   
+
         if ($type == 'csv') {
             $this->doCsv();
         }
-        
+
         if ($type == 'xls') {
             $this->doXLS();
         }
     }
 
     private function doXLS() {
-        
-        
+
+
         $today = date("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
@@ -60,7 +60,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         $st = "";
         $et = "\t";
         $s = $et . $st;
-        $basic_header = array('Reg ID', 'Reg Date', 'Type', 'Last Name', 'First Name', 'Attendees', 'Email', 'Address', 'City', 'State', 'Zip', 'Phone', 'Co Name', 'Co Address', 'Co City', 'Co State/Prov', 'Co Postal', 'Num People', 'Payment', 'Tickets');
+        $basic_header = array('Reg ID', 'Reg Date', 'Payment Status', 'Type', 'Last Name', 'First Name', 'Attendees', 'Email', 'Address', 'City', 'State', 'Zip', 'Phone', 'Co Name', 'Co Address', 'Co City', 'Co State/Prov', 'Co Postal', 'Num People', 'Payment', 'Tickets');
 
         $question_sequence = array();
         $questions = $this->oModelQuestions->getByEventId($this->event_id);
@@ -74,16 +74,23 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         header("Content-Disposition: attachment; filename=" . $filename);
         header("Pragma: no-cache");
         header("Expires: 0");
-        
+
         $csv_output = implode($s, $basic_header) . $et . "\r\n";
         $participants = $this->oModelAttendees->getByEventId($this->event_id);
 
         foreach ($participants as $participant) {
+
+            $paymentStatus = $participant["payment_status"];
+            if ($paymentStatus == '' || $paymentStatus == null) {
+                $paymentStatus = 'Pending';
+            }
+
             $csv_output .= $participant["id"]
-            . $s . $participant["date"]
-            . $s . $participant["reg_type"]
-            . $s . $participant["lname"]
-            . $s . $participant["fname"];
+                    . $s . $participant["date"]
+                    . $s . $paymentStatus
+                    . $s . $participant["reg_type"]
+                    . $s . $participant["lname"]
+                    . $s . $participant["fname"];
             $attendee_array = unserialize($participant["attendees"]);
             if (count($attendee_array) > "0") {
                 $attendee_names = '"';
@@ -95,20 +102,20 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
                 $attendee_names .='"';
             }
             $csv_output .= $s . $attendee_names
-            . $s . $participant["email"]
-            . $s . $participant["address"]
-            . $s . $participant["city"]
-            . $s . $participant["state"]
-            . $s . $participant["zip"]
-            . $s . $participant["phone"]
-            . $s . $participant["company"]
-            . $s . $participant["co_address"]
-            . $s . $participant["co_city"]
-            . $s . $participant["co_state"]
-            . $s . $participant["co_zip"]
-            . $s . $participant["quantity"]
-            . $s . $participant["payment"]
-            . $s;
+                    . $s . $participant["email"]
+                    . $s . $participant["address"]
+                    . $s . $participant["city"]
+                    . $s . $participant["state"]
+                    . $s . $participant["zip"]
+                    . $s . $participant["phone"]
+                    . $s . $participant["company"]
+                    . $s . $participant["co_address"]
+                    . $s . $participant["co_city"]
+                    . $s . $participant["co_state"]
+                    . $s . $participant["co_zip"]
+                    . $s . $participant["quantity"]
+                    . $s . $participant["payment"]
+                    . $s;
 
             $ticket_order = unserialize($participant["tickets"]);
             $row_count = count($ticket_order);
@@ -127,14 +134,14 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
             }
             $csv_output .= $et . "\r\n";
         }
-        
+
         print $csv_output;
         exit;
     }
 
     private function doCsv() {
-        
-        
+
+
         $today = date("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
@@ -143,7 +150,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         $st = "";
         $et = ",";
         $s = $et . $st;
-        $basic_header = array('Reg ID', 'Reg Date', 'Type', 'Last Name', 'First Name', 'Attendees', 'Email', 'Address', 'City', 'State', 'Zip', 'Phone', 'Co Name', 'Co Address', 'Co City', 'Co State/Prov', 'Co Postal', 'Num People', 'Payment', 'Tickets');
+        $basic_header = array('Reg ID', 'Reg Date', 'Payment Status', 'Type', 'Last Name', 'First Name', 'Attendees', 'Email', 'Address', 'City', 'State', 'Zip', 'Phone', 'Co Name', 'Co Address', 'Co City', 'Co State/Prov', 'Co Postal', 'Num People', 'Payment', 'Tickets');
 
         $question_sequence = array();
         $questions = $this->oModelQuestions->getByEventId($this->event_id);
@@ -161,11 +168,18 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         $participants = $this->oModelAttendees->getByEventId($this->event_id);
 
         foreach ($participants as $participant) {
+
+            $paymentStatus = $participant["payment_status"];
+            if ($paymentStatus == '' || $paymentStatus == null) {
+                $paymentStatus = 'Pending';
+            }
+
             $csv_output .= $participant["id"]
-            . $s . $participant["date"]
-            . $s . $participant["reg_type"]
-            . $s . $participant["lname"]
-            . $s . $participant["fname"];
+                    . $s . $participant["date"]
+                    . $s . $paymentStatus
+                    . $s . $participant["reg_type"]
+                    . $s . $participant["lname"]
+                    . $s . $participant["fname"];
             $attendee_array = unserialize($participant["attendees"]);
             if (count($attendee_array) > "0") {
                 $attendee_names = '"';
@@ -176,21 +190,24 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
                 } while ($i < count($attendee_array));
                 $attendee_names .='"';
             }
+
+
+
             $csv_output .= $s . $attendee_names
-            . $s . $participant["email"]
-            . $s . $participant["address"]
-            . $s . $participant["city"]
-            . $s . $participant["state"]
-            . $s . $participant["zip"]
-            . $s . $participant["phone"]
-            . $s . $participant["company"]
-            . $s . $participant["co_address"]
-            . $s . $participant["co_city"]
-            . $s . $participant["co_state"]
-            . $s . $participant["co_zip"]
-            . $s . $participant["quantity"]
-            . $s . $participant["payment"]
-            . $s;
+                    . $s . $participant["email"]
+                    . $s . $participant["address"]
+                    . $s . $participant["city"]
+                    . $s . $participant["state"]
+                    . $s . $participant["zip"]
+                    . $s . $participant["phone"]
+                    . $s . $participant["company"]
+                    . $s . $participant["co_address"]
+                    . $s . $participant["co_city"]
+                    . $s . $participant["co_state"]
+                    . $s . $participant["co_zip"]
+                    . $s . $participant["quantity"]
+                    . $s . $participant["payment"]
+                    . $s;
 
             $ticket_order = unserialize($participant["tickets"]);
             $row_count = count($ticket_order);
@@ -209,7 +226,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
             }
             $csv_output .= $et . "\r\n";
         }
-        
+
         print $csv_output;
         exit;
     }

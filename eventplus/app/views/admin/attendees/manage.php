@@ -37,6 +37,7 @@ $event_id = $oEvent->id;
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
                 <th><?php _e('Email', 'evrplus_language'); ?></th>
                 <th><?php _e('Phone', 'evrplus_language'); ?></th>
+                <th><?php _e('Payment Status', 'evrplus_language'); ?></th>
                 <th><?php _e('Action', 'evrplus_language'); ?></th>
             </tr>
         </thead>
@@ -66,12 +67,24 @@ $event_id = $oEvent->id;
                     . "<td>" . $attendee->email . "</td><td>" . $attendee->phone . "</td>";
                     ?>
                 <td>
-                    <a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('Edit', 'evrplus_language'); ?></a>
+                    <?php $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending'; ?>
+                    <?php if ($payment_status == 'success'): ?>
+                        <span class='label  label-success'><?php echo ucfirst($payment_status); ?></span>
+                    <?php else: ?>
+                        <span class='label label-warning'><?php echo $payment_status; ?></span>
+                    <?php endif; ?>
+                </td>
+                <td>    
+                    <?php if ($payment_status != 'success'): ?>
+                        <a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('Edit', 'evrplus_language'); ?></a>
+                    <?php endif; ?>
                     <a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('View', 'evrplus_language'); ?></a>
                     <br style="clear:both;" /><br />
-                    <a id="delete_button" href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
-                       onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a>
 
+                    <?php if ($payment_status != 'success'): ?>
+                        <a id="delete_button" href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
+                           onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a>
+                       <?php endif; ?>
                 </td>
 
                 <?php

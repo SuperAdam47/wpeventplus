@@ -1,4 +1,4 @@
-<?php 
+<?php
 $total_items = count($rows);
 ?>
 <div class="padding">
@@ -23,7 +23,7 @@ $total_items = count($rows);
     <table class="widefat">
         <thead>
             <tr>
-                <th><?php _e('Start Date', 'evrplus_language');  ?></th>
+                <th><?php _e('Start Date', 'evrplus_language'); ?></th>
                 <th><?php _e('Event ID', 'evrplus_language'); ?></th>
                 <th><?php _e('Name', 'evrplus_language'); ?></th>
                 <th><?php _e('ShortCode', 'evrplus_language'); ?></th>
@@ -35,7 +35,7 @@ $total_items = count($rows);
         </thead>
         <tbody>
             <?php
-            if ($total_items) { 
+            if ($total_items) {
                 foreach ($rows as $event) {
                     $event_id = (int) $event->id;
                     $event_name = stripslashes($event->event_name);
@@ -64,7 +64,7 @@ $total_items = count($rows);
                     $end_date = $event->end_date;
                     $event_close = $event->close;
                     $close_dt = $event->close;
-                    $number_attendees = $this->wpDb()->get_var($this->wpDb()->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id= %d", $event_id));
+                    $number_attendees = EventPlus_Models_Attendees::numberOfSuccessfulAttendees($event_id);
                     if ($number_attendees == '' || $number_attendees == 0) {
                         $number_attendees = '0';
                     }
@@ -81,11 +81,11 @@ $total_items = count($rows);
                         $stp = DATE("Y-m-d H:i", STRTOTIME($end_date));
                         $expiration_date = strtotime($stp);
                     }
-                    
+
                     $close_dt = $end_date . " " . $end_time;
-                    
+
                     $today = strtotime($current_dt);
-                    if(strtotime($close_dt)){
+                    if (strtotime($close_dt)) {
                         $dateTime = new DateTime($close_dt);
                         $expiration_date = $dateTime->format("U");
                     }
@@ -93,7 +93,7 @@ $total_items = count($rows);
                         $active_event = '<span class="event_ex">' . __('EXPIRED', 'evrplus_language') . '</span>';
                     } else {
                         $active_event = '<span class="event_ac">' . __('ACTIVE', 'evrplus_language') . '</span>';
-                    } 
+                    }
                     ?>
                     <tr>
                         <td style="white-space: nowrap;"><?php echo $start_date; ?></td>
@@ -101,7 +101,7 @@ $total_items = count($rows);
                         <td>
                             <a href="<?php echo EventPlus::factory('Helpers_Event')->permalink($company_options['evrplus_page_id']) . "action=evrplusegister&event_id=" . $event_id ?>" target="_blank"><?php echo EventPlus_Helpers_Funx::truncateWords($event_name, 8, "..."); ?></a>
                             <br />
-                            <?php echo $event_location; ?><?php echo ", " . $event_city;  ?>
+                            <?php echo $event_location; ?><?php echo ", " . $event_city; ?>
                         </td>
                         <td style="white-space: nowrap;">[eventsplus_single event_id="<?php echo $event_id; ?>"] </td>
                         <td><?php echo $active_event; ?></td>
@@ -131,7 +131,8 @@ $total_items = count($rows);
                                     <a class="edit_button" href="<?php echo $this->adminUrl('admin_payments', array('event_id' => $event_id)) ?>"><?php _e('Payments', 'evrplus_language'); ?></a>
                                 </div>
                             </div>
-                        </td><td>
+                        </td>
+                        <td>
                             <div style="float:left; margin-right:10px;">
                                 <div class="edit_button_icon">
                                     <a href="<?php echo $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id)) ?>" class="edit_button"><?php _e('Edit', 'evrplus_language'); ?></a>
@@ -154,8 +155,8 @@ $total_items = count($rows);
                         </td>
                     </tr>
 
-                    <?php 
-                } 
+                    <?php
+                }
             } else {
                 ?>
                 <tr>
@@ -168,9 +169,8 @@ $total_items = count($rows);
         <div class='tablenav-pages'>
             <?php
             if ($total_items > 0) {
-                echo $p->show(); 
+                echo $p->show();
             }  // Echo out the list of paging.  
-            
             ?>
         </div>
     </div>

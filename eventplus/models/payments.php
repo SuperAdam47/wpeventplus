@@ -6,12 +6,27 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     const PAYPAL = 'PAYPAL';
     const STRIPE = 'STRIPEACTIVE';
     const OFFLINE = 'NONE';
- 
+    
+    const PAYMENT_FAILED = 'failed';
+    const PAYMENT_SUCCESS = 'success';
+    
+    private $methodMeta = array();
+
     function __construct() {
         parent::__construct();
 
         $this->_table = get_option('evr_payment');
+        
+        $this->methodMeta[self::AUTHORIZE] = array('title' => __('Authorize.net', 'evrplus_language'), 'logo' => 'authnet.png');
+        $this->methodMeta[self::PAYPAL] = array('title' => __('PayPal', 'evrplus_language'), 'logo' => 'paypal.png');
+        $this->methodMeta[self::STRIPE] = array('title' => __('Stripe', 'evrplus_language'), 'logo' => 'stripe.png');
+        $this->methodMeta[self::OFFLINE] = array('title' => __('Payment Offline', 'evrplus_language'), 'logo' => '');
     }
+    
+    function getMethodMeta($method){
+        return $this->methodMeta[$method];
+    }
+    
 
     function getTotalRecords($event_id) {
         $sql = "SELECT count(1) as totRecords FROM " . $this->_table . " WHERE event_id = '" . (int) $event_id . "' LIMIT 1";
@@ -37,6 +52,26 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         }
     }
 
+    function updateAttendeeStatus($payer_id) {
+        
+        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id = '" . (int) $payer_id . "' LIMIT 1";
+        $attendeeRow = $this->wpDb()->get_row($sql, ARRAY_A);
+
+        $sql = "SELECT SUM(mc_gross) as totPaid FROM " . get_option('evr_payment') . " WHERE payment_status = 'success' AND payer_id='".(int)$payer_id."' LIMIT 1";
+        $totPaymentRow = $this->wpDb()->get_row($sql, ARRAY_A);
+        
+        $total_paid = $totPaymentRow['totPaid'];
+        $orderTotal = $attendeeRow['payment'];
+        
+        $balance = ($orderTotal - $total_paid);
+        
+        if($balance <= 0){
+            $payment_date = date('Y-m-d G:i:s', time());
+            $this->getWpDb()->query($this->getWpDb()->prepare("UPDATE " . get_option('evr_attendee') . " SET payment_status = 'success', amount_pd = '" . esc_sql($total_paid) . "', payment_date = '" . esc_sql($payment_date) . "' WHERE id = %d", $attendeeRow['id']));
+        }
+        
+    }
+    
     function addPayment($params, $oEvent) {
         $wpdb = $this->getWpDb();
 
@@ -72,7 +107,10 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         $payer_business_name = $params['payer_business_name'];
         $pending_reason = $params['pending_reason'];
         $reason_code = $params['reason_code'];
-
+        
+        if($amount_pd > 0){
+            $payment_status = 'success';
+        }
 
         $send_payment_rec = $params['send_payment_rec'];
 
@@ -81,7 +119,8 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
             'payment_type' => $payment_type, 'memo' => "$memo", 'item_name' => $item_name, 'item_number' => $item_number,
             'quantity' => $quantity, 'mc_gross' => $mc_gross, 'mc_currency' => "$mc_currency", 'address_name' => "$address_name",
             'address_street' => $address_street, 'address_city' => $address_city, 'address_state' => $address_state, 'address_zip' => $address_zip,
-            'address_country' => $address_country, 'address_status' => $address_status, 'payer_business_name' => $payer_business_name, 'payment_status' => "$payment_status",
+            'address_country' => $address_country, 'address_status' => $address_status, 'payer_business_name' => $payer_business_name, 
+            'payment_status' => "$payment_status",
             'pending_reason' => $pending_reason, 'reason_code' => $reason_code, 'txn_type' => $txn_type);
 
         $payment_dtl = array('payer_id' => $payer_id, 'event_id' => $event_id, 'payment_date' => $payment_date, 'txn_id' => $txn_id,
@@ -100,7 +139,9 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
 
         if ($wpdb->insert(get_option('evr_payment'), $sql, $sql_data)) {
-
+            
+            $this->updateAttendeeStatus($payer_id);
+            
             if ($send_payment_rec == "Y") {
 
                 $company_options = EventPlus_Models_Settings::getSettings();
@@ -115,8 +156,6 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
                 $event_dtl = $wpdb->get_results($sql, ARRAY_A);
 
                 //get return URL
-
-                $oEventHelper = new EventPlus_Helpers_Event();
 
                 $payment_link = EventPlus_Helpers_Event::permalink($company_options['return_url']) . "id=" . $payment_dtl['payer_id'] . "&fname=" . $payment_dtl['first_name'];
 
@@ -219,6 +258,11 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         } else {
             $amount_pd = $params['payment_gross'];
         }
+        
+        if($amount_pd > 0){
+            $payment_status = 'success';
+        }
+
         $mc_gross = $amount_pd;
         $address_name = $params['address_name'];
         $address_street = $params['address_street'];
@@ -230,7 +274,6 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         $payer_business_name = $params['payer_business_name'];
         $pending_reason = $params['pending_reason'];
         $reason_code = $params['reason_code'];
-
 
         $send_payment_rec = $params['send_payment_rec'];
 
@@ -261,11 +304,14 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
 
         if ($wpdb->update(get_option('evr_payment'), $sql, $update_id, $sql_data, array('%d')) === false) {
-
+            
             $this->setMessage(__('There was an error in your submission, please try again. The payment was not updated!', 'evrplus_language'));
 
             return false;
         } else {
+            
+            $this->updateAttendeeStatus($payer_id);
+            
             $this->setMessage(__('The payment has been updated.', 'evrplus_language'));
 
             if ($send_payment_rec == "Y") {
@@ -344,11 +390,12 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
             $curdate = date("Y-m-d");
             $wpdb = $this->getWpDb();
 
-            $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE event_id='" . (int) $event_id . "'";
+            $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE payment > 0 AND payment_status is NULL AND event_id='" . (int) $event_id . "'";
             $attendees = $wpdb->get_results($sql);
+   
             foreach ($attendees as $attendee) {
                 if ($attendee->payment >= '.01') {
-                    $payment_recieved = $wpdb->get_var($wpdb->prepare("SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payer_id= %d", $attendee->id));
+                    $payment_recieved = $wpdb->get_var($wpdb->prepare("SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payment_sttus = 'success' AND payer_id= %d", $attendee->id));
                     $balance_due = $attendee->payment - $payment_recieved;
                     if ($balance_due >= '.01') {
                         //echo $attendee->fname." ".$attendee->lname." owes ".$balance_due."<br/>";
@@ -411,7 +458,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     }
 
     function wp_mail($email, $subject, $email_body, $headers) {
-        wp_mail($email, $subject, html_entity_decode($email_body), $headers);
+        return wp_mail($email, $subject, html_entity_decode($email_body), $headers);
     }
 
     static function getPaymentMethods() {
@@ -422,6 +469,22 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         $paymentMethods[self::OFFLINE] = 'Offline Payment';
         
         return $paymentMethods;
+    }
+    
+    static function isValidMethod($key) {
+        $paymentMethods = self::getPaymentMethods();
+        
+        return (isset($paymentMethods[$key]));
+    }
+    
+    static function isActive($method){
+        $payment_methods = EventPlus_Models_Settings::getPaymentMethods();
+        
+        if(in_array($method, (array)$payment_methods)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

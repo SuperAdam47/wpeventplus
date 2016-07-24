@@ -8,6 +8,11 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
         $this->_table = get_option('evr_attendee');
     }
     
+    function numberOfSuccessfulAttendees($event_id) {
+        global $wpdb;
+        return $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id= %d LIMIT 1", $event_id));
+    }
+    
     function getTotalAttendees($event_id) {
         $sql = "SELECT count(1) as totRecords FROM " . $this->_table . " WHERE event_id = '" . (int) $event_id . "' LIMIT 1";
 
@@ -231,6 +236,13 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
             $data = $this->getWpDb()->get_results("SELECT * FROM " . get_option('evr_attendee') . " WHERE id=" . (int) $reg_id, ARRAY_A);
         }
         
+        return $data;
+    }
+    
+    function getDataByPlainToken($token){
+        $attendee_sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE token='".  esc_sql($token)."' LIMIT 1";
+        $data = $this->getWpDb()->get_results($attendee_sql, ARRAY_A);
+
         return $data;
     }
 }

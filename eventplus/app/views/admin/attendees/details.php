@@ -81,7 +81,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                             <li><div class="pass1"><label for="zip"><b><?php _e('Zip/Postal Code', 'evrplus_language'); ?>: </b></label> <?php echo $zip; ?></div></li>
                                         <?php } ?>       
                                         <?php if ($use_coupon == "Y") { ?>
-                                            <li><div class="pass1"><label for="coupon"><b><?php _e('Enter coupon code', 'evrplus_language'); ?>: </b></label> <?php echo $coupon; ?></div></li>
+                                            <li><div class="pass1"><label for="coupon"><b><?php _e('Coupon code', 'evrplus_language'); ?>: </b></label> <?php echo (trim($coupon) != '') ? $coupon : 'N/A'; ?></div></li>
                                         <?php } ?>
                                         <?php
                                         $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id = $event_id";

@@ -105,7 +105,7 @@ $payment = $total_due;
 if ($company_options['pay_now'] != "") {
     $pay_now = $company_options['pay_now'];
 } else {
-    $pay_now = "PAY NOW";
+    $pay_now = _e('Pay Now');
 }
 
 if ($company_options['payment_vendor'] == "PAYPAL") {

@@ -34,6 +34,8 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     function _init() {
         
         EventPlus::setPlugin($this);
+        EventPlus_Cookie::$expiration = time() + 10 * 365 * 24 * 60 * 60; /*10 years*/
+  
         
         if (is_admin() == false) {
             ob_start();
@@ -58,8 +60,6 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $oFlashMessage = EventPlus::factory('Flash_Message');
         $oFlashMessage->setKey('eventplus_admin_flash_messages');
         $oRegistry->set('flash', $oFlashMessage);
-        
-        
         
         if (is_admin()) {
             add_action('admin_notices', array($oFlashMessage, 'render'));

@@ -2,506 +2,395 @@
 
 class EventPlus_Helpers_Payment {
 
-    static function evrplus_registration_payment($passed_event_id, $passed_attendee_id) {
+    private $companyOptions = null;
+    private $event_id = 0;
+    private $attendee_id = 0;
+    private $eventRow = array();
+    private $attendeeRow = array();
+    private $returnUrl = '';
+    private $cancelReturnUrl = '';
+
+    function __construct($event_id, $attendee_id) {
+
         global $wpdb;
-        
-        $company_options = EventPlus_Models_Settings::getSettings();
-        
-        if (is_numeric($passed_event_id)) {
-            $event_id = $passed_event_id;
-        } else {
-            $event_id = "0";
-            _e('Failure - please retry!', 'evrplus_language');
-            return;
-        }
-        
-        if (is_numeric($passed_attendee_id)) {
-            $attendee_id = $passed_attendee_id;
-        } else {
-            $attendee_id = "0";
-            _e('Failure - please retry!', 'evrplus_language');
-            return;
-        }
-        
-        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int)$event_id;
-        $result = $wpdb->get_results($sql, ARRAY_A);
-        foreach ($result as $row) {
-            $event_id = $row['id'];
-            $event_name = stripslashes($row['event_name']);
-            $event_location = $row['event_location'];
-            $event_address = $row['event_address'];
-            $event_city = $row['event_city'];
-            $event_postal = $row['event_postal'];
-            $reg_limit = $row['reg_limit'];
-            $start_time = $row['start_time'];
-            $end_time = $row['end_time'];
-            $start_date = $row['start_date'];
-            $end_date = $row['end_date'];
-            $use_coupon = $row['use_coupon'];
-            $coupon_code = $row['coupon_code'];
-            $coupon_code_price = $row['coupon_code_price'];
-        }
-        
-        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id=" . (int)$attendee_id;
-        $result = $wpdb->get_results($sql, ARRAY_A);
-        
-        foreach ($result as $row) {
-            $attendee_id = $row['id'];
-            $lname = $row ['lname'];
-            $fname = $row ['fname'];
-            $address = $row ['address'];
-            $city = $row ['city'];
-            $state = $row ['state'];
-            $zip = $row ['zip'];
-            $email = $row ['email'];
-            $phone = $row ['phone'];
-            $quantity = $row ['quantity'];
-            $date = $row ['date'];
-            $reg_type = $row['reg_type'];
-            $ticket_order = unserialize($row['tickets']);
-            $tax = $row['tax'];
-            $payment = $row['payment'];
-            $event_id = $row['event_id'];
-            $coupon = $row['coupon'];
-            $attendee_name = $fname . " " . $lname;
-        }
-        
-        //Get Payment Info
-        if ($company_options['pay_now'] != "") {
-            $pay_now = $company_options['pay_now'];
-        } else {
-            $pay_now = "PAY NOW";
-        }
-        
-        if ($company_options['payment_vendor'] == "" || $company_options['payment_vendor'] == "NONE") {
-            // Print the Order Verification to the screen.
-            if ($company_options['pay_msg'] != "") {
-                //echo stripslashes($company_options['pay_msg']);
-            } else {
-                _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-            }
-            
-            echo '<br/>';
-            echo "Reference " . $event_name . " ID: " . $event_id . "<br/>";
-            echo '<br/>';
-            echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e('Event Name/Cost:', 'evrplus_language');
-            echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
-            _e('Attendee Name:', 'evrplus_language');
-            echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-            _e('Email Address:', 'evrplus_language');
-            echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-            _e('Number of Attendees:', 'evrplus_language');
-            echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>';
-            _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
-            $row_count = count($ticket_order);
-            for ($row = 0; $row < $row_count; $row++) {
-                if ($ticket_order[$row]['ItemQty'] >= "1") {
-                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                }
-            }
-            echo '</td></tr>';
-            if ($company_options['use_sales_tax'] == "Y") {
-                echo '<tr><td></td><td>';
-                _e('Sales Tax  ', 'evrplus_language');
-                echo ':  ' . $tax;
-                echo '</td></tr>';
-            }
-            echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-            echo '<td>' . $ticket_order[0]['ItemCurrency'] . " " . '<strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-        }
-//Paypal 
-        if ($company_options['payment_vendor'] == "PAYPAL") {
-            $p = new EventPlus_Vendor_Paypal(); // initiate an instance of the class
-            if ($company_options['use_sandbox'] == "Y") {
-                $p->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; // testing paypal url
-                echo '<h3 style="color:#ff0000;" title="' . __('Payments will not be processed', 'evrplus_language') . '">' . __('Sandbox Mode Is Active', 'evrplus_language') . '</h3>';
-            } else {
-                $p->paypal_url = 'https://www.paypal.com/cgi-bin/webscr'; // paypal url
-            }
-            
-            if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
-                $p->add_field('business', $company_options['payment_vendor_id']);
-                $p->add_field('return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                $p->add_field('cancel_return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                $p->add_field('notify_url', evrplus_permalink($company_options['evrplus_page_id']) . 'id=' . $attendee_id . '&event_id=' . $event_id . '&action=paypal_txn');
-                $p->add_field('item_name', $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity);
-                $p->add_field('amount', $payment);
-                $p->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
-                
-                //Post variables
-                $p->add_field('first_name', $fname);
-                $p->add_field('last_name', $lname);
-                $p->add_field('email', $email);
-                $p->add_field('address1', $address);
-                $p->add_field('city', $city);
-                $p->add_field('state', $state);
-                $p->add_field('zip', $zip);
-                
-                if ($company_options['pay_msg'] != "") {
-                    //echo stripslashes($company_options['pay_msg']);
-                } else {
-                    _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-                }
-                
-                echo '<br/>';
-                
-                $p->submit_paypal_post($pay_now); // submit the fields to paypal
-                
-                echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p>'
-                        . '<table width="95%" border="0"><tr><td><strong>';
-                _e('Event Name/Cost:', 'evrplus_language');
-                echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr>'
-                        . '<tr><td><strong>';
-                _e('Attendee Name:', 'evrplus_language');
-                echo '</strong></td><td>' . $attendee_name . '</td></tr>'
-                        . '<tr><td><strong>';
-                _e('Email Address:', 'evrplus_language');
-                echo '</strong></td><td>' . $email . '</td></tr>'
-                        . '<tr><td><strong>';
-                _e('Number of Attendees:', 'evrplus_language');
-                echo '</strong></td><td>' . $quantity . '</td></tr>'
-                        . '<tr><td><strong>';
-                _e('Order Details:', 'evrplus_language');
-                echo '</strong></td><td>';
-                
-                $row_count = count($ticket_order);
-                for ($row = 0; $row < $row_count; $row++) {
-                    if ($ticket_order[$row]['ItemQty'] >= "1") {
-                        echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                        $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                    }
-                }
-                echo '</td></tr>';
-                
-                if ($company_options['use_sales_tax'] == "Y") {
-                    echo '<tr><td></td><td>';
-                    _e('Sales Tax  ', 'evrplus_language');
-                    echo ':  ' . $tax;
-                    echo '</td></tr>';
-                }
-                
-                echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-                echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-                if ($company_options['use_sandbox'] == "Y") {
-                    $p->dump_fields(); // for debugging, output a table of all the fields
-                }
-            }
-        }
-        
-        //End Paypal Section
-        if ($company_options['payment_vendor'] == "STRIPEACTIVE") {//get_option('evr_stripe') == 'STRIPEACTIVE' && $company_options['payment_vendor']!='PAYPAL'){
-            $p = new EventPlus_Vendor_Paypal(); // initiate an instance of the class
-            
 
-            if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
-                $p->add_field('business', $company_options['payment_vendor_id']);
-                $p->add_field('return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                $p->add_field('cancel_return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                //$p->add_field('notify_url', evrplus_permalink($company_options['evrplus_page_id']) . 'id=' . $attendee_id . '&event_id=' . $event_id . '&action=paypal_txn');
-                $p->add_field('item_name', $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity);
-                $p->add_field('amount', $payment);
-                $p->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
-                //Post variables
-                $p->add_field('first_name', $fname);
-                $p->add_field('last_name', $lname);
-                $p->add_field('email', $email);
-                $p->add_field('address1', $address);
-                $p->add_field('city', $city);
-                $p->add_field('state', $state);
-                $p->add_field('zip', $zip);
-                
-                _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-                
-                echo '<br/>';
-                
-                $p->submit_paypal_post1($pay_now); // submit the fields to paypal
-                
-                echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-                _e('Event Name/Cost:', 'evrplus_language');
-                echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
-                _e('Attendee Name:', 'evrplus_language');
-                echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-                _e('Email Address:', 'evrplus_language');
-                echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-                _e('Number of Attendees:', 'evrplus_language');
-                echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>';
-                _e('Order Details:', 'evrplus_language');
-                echo '</strong></td><td>';
-                
-                $row_count = count($ticket_order);
-                for ($row = 0; $row < $row_count; $row++) {
-                    if ($ticket_order[$row]['ItemQty'] >= "1") {
-                        echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                        $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                    }
-                }
-                
-                echo '</td></tr>';
-                if ($company_options['use_sales_tax'] == "Y") {
-                    echo '<tr><td></td><td>';
-                    _e('Sales Tax  ', 'evrplus_language');
-                    echo ':  ' . $tax;
-                    echo '</td></tr>';
-                }
-                
-                echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-                echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-              
-            }
+        $this->companyOptions = EventPlus_Models_Settings::getSettings();
+        $this->event_id = $event_id;
+        $this->attendee_id = $attendee_id;
 
-//echo get_option('evr_stripe'); die;
-        }
-//END STRIPE
-//Authorize.Net Payment Section
-        
-        if ($company_options['payment_vendor'] == "AUTHORIZE") {
-//Authorize.Net Payment 
-            // This sample code requires the mhash library for PHP versions older than
-            // 5.1.2 - http://hmhash.sourceforge.net/
-            // the parameters for the payment can be configured here
-            // the API Login ID and Transaction Key must be replaced with valid values
-            //$loginID		= $company_options['authorize_id'];
-            //$transactionKey = $company_options['authorize_key'];
-            $amount = $payment;
-            $description = $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity;
-            $label = $pay_now; // The is the label on the 'submit' button
-            // By default, this sample code is designed to post to our test server for
-            // developer accounts: https://test.authorize.net/gateway/transact.dll
-            // for real accounts (even in test mode), please make sure that you are
-            // posting to: https://secure.authorize.net/gateway/transact.dll
-            
-            $loginID = $company_options['authorize_id'];
-            $transactionKey = $company_options['authorize_key'];
-             $url = "https://secure.authorize.net/gateway/transact.dll";
-            $testMode = "false";
-             
-            if ($company_options['use_authorize_sandbox'] == "Y") {
-            $url = "https://test.authorize.net/gateway/transact.dll";
-                $testMode = "true";
-            }
-            
-            // If an amount or description were posted to this page, the defaults are overidden
-            if ($_REQUEST["amount"]) {
-                $amount = $_REQUEST["amount"];
-            }
-            if ($_REQUEST["description"]) {
-                $description = $_REQUEST["description"];
-            }
-            // an invoice is generated using the date and time
-            $invoice = date(YmdHis);
-            // a sequence number is randomly generated
-            $sequence = rand(1, 1000);
-            // a timestamp is generated
-            $timeStamp = time();
-            // The following lines generate the SIM fingerprint.  PHP versions 5.1.2 and
-            // newer have the necessary hmac function built in.  For older versions, it
-            // will try to use the mhash library.
-            if (phpversion() >= '5.1.2') {
-                $fingerprint = hash_hmac("md5", $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey);
-            } else {
-                $fingerprint = bin2hex(mhash(MHASH_MD5, $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey));
-            }
-            
-            if ($company_options['pay_msg'] != "") {
-                //echo stripslashes($company_options['pay_msg']);
-            } else {
-                _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-            }
-            
-            echo '<br/>';
-            
-            // Print the Order Verification to the screen.
-            echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e('Event Name/Cost:', 'evrplus_language');
-            echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
-            _e('Attendee Name:', 'evrplus_language');
-            echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-            _e('Email Address:', 'evrplus_language');
-            echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-            _e('Number of Attendees:', 'evrplus_language');
-            echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>';
-            _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
-            $row_count = count($ticket_order);
-            for ($row = 0; $row < $row_count; $row++) {
-                if ($ticket_order[$row]['ItemQty'] >= "1") {
-                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                }
-            }
-            echo '</td></tr>';
-            
-            if ($company_options['use_sales_tax'] == "Y") {
-                echo '<tr><td></td><td>';
-                _e('Sales Tax  ', 'evrplus_language');
-                echo ':  ' . $tax;
-                echo '</td></tr>';
-            }
-            
-            echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-            echo '<td>' . $ticket_order[0]['ItemCurrency'] . '<strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-            $ipn_url = evrplus_permalink($company_options['evrplus_page_id']) . 'id=' . $attendee_id . '&event_id=' . $event_id . '&action=authorize_txn';
-            
-            // Create the HTML form containing necessary SIM post values
-            echo "<FORM method='post' action='$url' >";
-            // Additional fields can be added here as outlined in the SIM integration guide
-            // at: http://developer.authorize.net
-            echo "	<INPUT type='hidden' name='x_login' value='$loginID' />";
-            if ($price == "0") {
-                echo "Enter Amount $<INPUT type='text' name='x_amount' value='10.00' />";
-            } else {
-                echo "	<INPUT type='hidden' name='x_amount' value='$amount' />";
-            }
-            
-            echo "	<INPUT type='hidden' name='x_description' value='$description' />";
-            echo "	<INPUT type='hidden' name='x_invoice_num' value='$invoice' />";
-            echo "	<INPUT type='hidden' name='x_fp_sequence' value='$sequence' />";
-            echo "	<INPUT type='hidden' name='x_fp_timestamp' value='$timeStamp' />";
-            echo "	<INPUT type='hidden' name='x_fp_hash' value='$fingerprint' />";
-            echo "	<INPUT type='hidden' name='x_test_request' value='$testMode' />";
-            echo "	<INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />";
-            echo "	<INPUT type='hidden' name='x_Relay_URL' value='$ipn_url' />";
-            echo "	<input type='submit' value='$label' />";
-            echo "</FORM>";
-// This is the end of the code generating the "submit payment" button.    -->
-        }
-//End Authorize.Net Section 
-//
-//GooglePay Payment Section
-        if ($company_options['payment_vendor'] == "GOOGLE") {
-            // Print the Order Verification to the screen.
-            if ($company_options['pay_msg'] != "") {
-                //echo $company_options['pay_msg'];
-            } else {
-                _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-            }
-            echo '<br/>';
-            // Print the Order Verification to the screen.
-            echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e('Event Name/Cost:', 'evrplus_language');
-            echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
-            _e('Attendee Name:', 'evrplus_language');
-            echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-            _e('Email Address:', 'evrplus_language');
-            echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-            _e('Number of Attendees:', 'evrplus_language');
-            echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>';
-            _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
-            $row_count = count($ticket_order);
-            for ($row = 0; $row < $row_count; $row++) {
-                if ($ticket_order[$row]['ItemQty'] >= "1") {
-                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                }
-            }
-            echo '</td></tr>';
-            
-            if ($company_options['use_sales_tax'] == "Y") {
-                echo '<tr><td></td><td>';
-                _e('Sales Tax  ', 'evrplus_language');
-                echo ':  ' . $tax;
-                echo '</td></tr>';
-            }
-            echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-            echo '<td>' . $ticket_order[0]['ItemCurrency'] . '<strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-            // Create the HTML Payment Button
-            //Google Payment Button
-            ?>
-            <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/<?php echo $company_options['payment_vendor_id']; ?>" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
-                <input name="item_name_1" type="hidden" value="<?php echo $event_name . "-" . $attendee_name; ?>"/>
-                <input name="item_description_1" type="hidden" value="<?php echo $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity; ?>"/>
-                <input name="item_quantity_1" type="hidden" value="1"/>
-                <input name="item_price_1" type="hidden" value="<?php echo $payment; ?>"/>
-                <input name="item_currency_1" type="hidden" value="<?php echo $ticket_order[0]['ItemCurrency']; ?>"/>
-                <input name="_charset_" type="hidden" value="utf-8"/>
-                <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=<?php echo $company_options['payment_vendor_id']; ?>&amp;w=117&amp;h=48&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image"/>
-            </form>
-            <?php
-        }
-//End Google Pay Section
-//
-//Begin Monster Pay Section
-        if ($company_options['payment_vendor'] == "MONSTER") {
-            // Print the Order Verification to the screen.
-            if ($company_options['pay_msg'] != "") {
-                //echo $company_options['pay_msg'];
-            } else {
-                _e("To pay online, please select the Payment button to be taken to our payment vendor's site.", 'evrplus_language');
-            }
-            echo '<br/>';
-            // Print the Order Verification to the screen.
-            echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
-            _e('Event Name/Cost:', 'evrplus_language');
-            echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
-            _e('Attendee Name:', 'evrplus_language');
-            echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-            _e('Email Address:', 'evrplus_language');
-            echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-            _e('Number of Attendees:', 'evrplus_language');
-            echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>';
-            _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
-            $row_count = count($ticket_order);
-            for ($row = 0; $row < $row_count; $row++) {
-                if ($ticket_order[$row]['ItemQty'] >= "1") {
-                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
-                }
-            }
-            echo '</td></tr>';
-            if ($company_options['use_sales_tax'] == "Y") {
-                echo '<tr><td></td><td>';
-                _e('Sales Tax  ', 'evrplus_language');
-                echo ':  ' . $tax;
-                echo '</td></tr>';
-            }
-            echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-            echo '<td>' . $ticket_order[0]['ItemCurrency'] . '<strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-//End Verification
-//Display Payment Button
-            ?>    
-            <form action="https://www.monsterpay.com/secure/index.cfm" method="POST" enctype="APPLICATION/X-WWW-FORM-URLENCODED" target="_BLANK">
-                <input type="hidden" name="ButtonAction" value="buynow">
-                <input type="hidden" name="MerchantIdentifier" value="<?php echo $company_options['payment_vendor_id']; ?>">
-                <input type="hidden" name="LIDDesc" value="<?php echo $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity; ?>">
-                <input type="hidden" name="LIDSKU" value="<?php echo $event_name . "-" . $attendee_name; ?>">
-                <input type="hidden" name="LIDPrice" value="<?php echo $payment; ?>">
-                <input type="hidden" name="LIDQty" value="1">
-                <input type="hidden" name="CurrencyAlphaCode" value="<?php echo $ticket_order[0]['ItemCurrency']; ?>">
-                <input type="hidden" name="ShippingRequired" value="0">
-                <input type="hidden" name="MerchRef" value="">
-                <input type="submit" value="<?php echo $pay_now; ?>" style="background-color: #DCDCDC; font-family: Arial; font-size: 11px; color: #000000; font-weight: bold; border: 1px groove #000000;">
-            </form> 
-            <?php
-        }
-//End Monster Pay Section
+        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $event_id . " LIMIT 1";
+        $this->eventRow = $wpdb->get_row($sql, ARRAY_A);
+
+        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE event_id = '" . $event_id . "' AND id=" . (int) $attendee_id . " LIMIT 1";
+        $this->attendeeRow = $wpdb->get_row($sql, ARRAY_A);
+
+        $this->returnUrl = evrplus_permalink($this->companyOptions['return_url']) . '&action=return&eventplus_token=' . $this->attendeeRow['token'];
+        $this->cancelReturnUrl = evrplus_permalink($this->companyOptions['return_url']) . '&action=cancel&eventplus_token=' . $this->attendeeRow['token'];
     }
 
-    static function evrplus_registration_donation($passed_event_id, $passed_attendee_id) {
+    /**
+     * Get All active/applicable payment methods
+     * @return array
+     */
+    private function getPaymentOptions() {
+
+        $payment_methods = EventPlus_Models_Settings::getPaymentMethods();
+
+        foreach ($payment_methods as $index => $payment_method) {
+            if ($payment_method == EventPlus_Models_Payments::OFFLINE) {
+
+                $isCheckApplicable = strtolower($this->companyOptions['checks']) == 'yes';
+
+                $isDonationApplicable = (strtolower($this->companyOptions['donations']) == "yes") && intVal($this->attendeeRow['payment']) <= 0 && $this->attendeeRow['reg_type'] != "WAIT";
+
+                if ($isCheckApplicable == false && $isDonationApplicable == false) {
+                    unset($payment_methods[$index]);
+                }
+            }
+
+            if ($payment_method == EventPlus_Models_Payments::PAYPAL) {
+                if (EventPlus::factory('Validate')->email($this->companyOptions['payment_vendor_id']) == false) {
+                    unset($payment_methods[$index]);
+                }
+            }
+
+            if ($payment_method == EventPlus_Models_Payments::STRIPE) {
+                if (trim($this->companyOptions['secret_key']) == '' || trim($this->companyOptions['publishable_key']) == '') {
+                    unset($payment_methods[$index]);
+                }
+            }
+
+            if ($payment_method == EventPlus_Models_Payments::AUTHORIZE) {
+                if (trim($this->companyOptions['authorize_id']) == '' || trim($this->companyOptions['authorize_key']) == '') {
+                    unset($payment_methods[$index]);
+                }
+            }
+        }
+
+        return $payment_methods;
+    }
+
+    function evrplus_registration_payment() {
+
+        $event_id = $this->event_id;
+
+        if ($this->eventRow['id'] <= 0) {
+            _e('Invalid event - please retry!', 'evrplus_language');
+            return;
+        }
+
+        $attendee_id = $this->attendee_id;
+
+        if ($this->attendeeRow['id'] <= 0) {
+            _e('Invalid registration - please retry!', 'evrplus_language');
+            return;
+        }
+
+
+        $event_name = stripslashes($this->eventRow['event_name']);
+        $event_location = $this->eventRow['event_location'];
+        $event_address = $this->eventRow['event_address'];
+        $event_city = $this->eventRow['event_city'];
+        $event_postal = $this->eventRow['event_postal'];
+        $reg_limit = $this->eventRow['reg_limit'];
+        $start_time = $this->eventRow['start_time'];
+        $end_time = $this->eventRow['end_time'];
+        $start_date = $this->eventRow['start_date'];
+        $end_date = $this->eventRow['end_date'];
+        $use_coupon = $this->eventRow['use_coupon'];
+        $coupon_code = $this->eventRow['coupon_code'];
+        $coupon_code_price = $this->eventRow['coupon_code_price'];
+
+
+        $lname = $this->attendeeRow ['lname'];
+        $fname = $this->attendeeRow ['fname'];
+        $address = $this->attendeeRow ['address'];
+        $city = $this->attendeeRow ['city'];
+        $state = $this->attendeeRow ['state'];
+        $zip = $this->attendeeRow ['zip'];
+        $email = $this->attendeeRow ['email'];
+        $phone = $this->attendeeRow ['phone'];
+        $quantity = $this->attendeeRow ['quantity'];
+        $date = $this->attendeeRow ['date'];
+        $reg_type = $this->attendeeRow['reg_type'];
+        $ticket_order = unserialize($this->attendeeRow['tickets']);
+     
+        $tax = $this->attendeeRow['tax'];
+        $payment = $this->attendeeRow['payment'];
+        $coupon = $this->attendeeRow['coupon'];
+        $token = $this->attendeeRow['token'];
+        $attendee_name = $fname . " " . $lname;
+
+        // Print the Order Verification to the screen.
+
+        echo '<table width="95%" border="0">'
+                . '<tr>
+                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Order details', 'evrplus_language') . '</font></b></td>
+                </tr>'
+        . '<tr><td><strong>';
+        _e('Event Name/Cost:', 'evrplus_language');
+        echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
+        _e('Attendee Name:', 'evrplus_language');
+        echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
+        _e('Email Address:', 'evrplus_language');
+        echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
+        _e('Number of Attendees:', 'evrplus_language');
+        echo '</strong></td><td>' . $quantity . '</td></tr>';
+        $row_count = count($ticket_order);
+        
+        if($row_count > 0){
+            echo '<tr><td><strong>';
+        _e('Order Details:', 'evrplus_language');
+        echo '</strong></td><td>';
+        
+            for ($row = 0; $row < $row_count; $row++) {
+                if ($ticket_order[$row]['ItemQty'] >= "1") {
+                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
+                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
+                }
+            }
+        }
+        echo '</td></tr>';
+
+        if ($this->companyOptions['use_sales_tax'] == "Y") {
+            echo '<tr><td></td><td>';
+            _e('Sales Tax  ', 'evrplus_language');
+            echo ':  ' . $tax;
+            echo '</td></tr>';
+        }
+
+        echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
+        echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td></tr></table>';
+
+
+        if ($this->attendeeRow['payment_status'] == '' || $this->attendeeRow['payment_status'] == null) {
+
+            $paymentOptions = $this->getPaymentOptions();
+
+            if (count($paymentOptions) > 0) {
+                echo '<table width="95%" cellspacing="0" cellpadding="2" border="0">
+                <tbody>
+                <tr>
+                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Payment Methods', 'evrplus_language') . '</font></b></td>
+                </tr>';
+
+                $oPaymentMethods = new EventPlus_Models_Payments();
+                foreach ($paymentOptions as $pi => $paymentOption) {
+
+                    $paymentMethodMeta = $oPaymentMethods->getMethodMeta($paymentOption);
+                    
+                    $paymentTitleStr = $paymentMethodMeta['title'];
+                    if($paymentMethodMeta['logo'] != ''){
+                        $paymentTitleStr = "<img src='".EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $paymentMethodMeta['logo']."' alt='".$paymentMethodMeta['title']."' />";
+                    }
+                    
+                    if ($paymentOption == EventPlus_Models_Payments::STRIPE) {
+
+                        if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
+
+                            $oStripe = new EventPlus_Payments_Stripe(); // initiate an instance of the class
+
+                            $oStripe->add_field('stripe_process_url', EVENT_PLUS_PUBLIC_URL . 'stripe/payment.php');
+                            $oStripe->add_field('amount', $payment);
+                            $oStripe->add_field('token', $token);
+                            $oStripe->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
+
+
+                            echo'<tr>
+                            <td><b>' . $paymentTitleStr . '</b></td>
+                            <td>' . $oStripe->submit() . '</td>
+                          </tr>';
+                        }
+                    }
+
+                    if ($paymentOption == EventPlus_Models_Payments::OFFLINE) {
+                        if (strtolower($this->companyOptions['checks']) == "yes") {
+                            echo'<tr>
+                            <td valign="top"><b>' . $paymentTitleStr . '</b></td>
+                            <td>';
+                       
+                            echo " <a href='#' class='offline--details-toggle' title='View Details'>(" . __("View Details", 'evrplus_language') . ")</a>";
+                            
+                             echo'<div id="evplus--offline-details" style="display:none;">';
+                            _e("Please mail your check to:", 'evrplus_language');
+                            echo "<p>" .
+                            stripslashes($this->companyOptions['company']) . "<br />" .
+                            $this->companyOptions['company_street1'] . "<br />";
+                            if ($this->companyOptions['company_street2'] != "") {
+                                echo $this->companyOptions['company_street2'] . "<br />";
+                            }
+                            echo $this->companyOptions['company_city'] . " " . $this->companyOptions['company_state'] . " " . $this->companyOptions['company_postal'] . "</p>";
+
+                            echo '</div></td>'
+                            . '</tr>';
+                        }
+                    }
+
+                    if ($paymentOption == EventPlus_Models_Payments::PAYPAL) {
+
+                        if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
+                            $oPayPal = new EventPlus_Payments_Paypal();
+                            
+                            $returnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/re7urn.php?eventplus_token=' . $this->attendeeRow['token'];
+                            $cancelUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/canc3l.php?eventplus_token=' . $this->attendeeRow['token'];
+                            $ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
+                            
+                            $oPayPal->add_field('business', $this->companyOptions['payment_vendor_id']);
+                            $oPayPal->add_field('return', $returnUrl);
+                            $oPayPal->add_field('cancel_return', $cancelUrl);
+                            $oPayPal->add_field('notify_url', $ipnUrl);
+                            $oPayPal->add_field('item_name', $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity);
+                            $oPayPal->add_field('amount', $payment);
+                            $oPayPal->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
+
+                            //Post variables
+                            $oPayPal->add_field('first_name', $fname);
+                            $oPayPal->add_field('last_name', $lname);
+                            $oPayPal->add_field('email', $email);
+                            $oPayPal->add_field('address1', $address);
+                            $oPayPal->add_field('city', $city);
+                            $oPayPal->add_field('state', $state);
+                            $oPayPal->add_field('zip', $zip);
+
+                            $sandboxStr = '';
+                            if ($this->companyOptions['use_sandbox'] == "Y") {
+                                $sandboxStr .= " " . __("Sandbox Mode", 'evrplus_language') . "  <a href='#' class='paypal--sandbox-toggle' title='View Sandbox Details'>(" . __("View Details", 'evrplus_language') . ")</a>";
+                            }
+
+                            echo'<tr>
+                            <td><b>' . $paymentTitleStr . '</b></td>
+                            <td>' . $oPayPal->submit() . $sandboxStr . ' </td>
+                          </tr>';
+
+                            if ($this->companyOptions['use_sandbox'] == "Y") {
+                                echo'<tr id="evplus--sandbox" style="display:none;">
+                                <td colspan=2>' . $oPayPal->dump_fields(false) . ' </td>
+                              </tr>';
+                            }
+                        }
+                    }
+
+                    if ($paymentOption == EventPlus_Models_Payments::AUTHORIZE) {
+                        $amount = $payment;
+                        $description = $event_name . ' | Reg. ID: ' . $attendee_id . ' | Total Registrants: ' . $quantity;
+                        $label = __('Pay Now', 'evrplus_language'); // The is the label on the 'submit' button
+
+                        $loginID = $this->companyOptions['authorize_id'];
+                        $transactionKey = $this->companyOptions['authorize_key'];
+                        $url = "https://secure.authorize.net/gateway/transact.dll";
+                        $testMode = "false";
+
+                        if ($this->companyOptions['use_authorize_sandbox'] == "Y") {
+                            $url = "https://test.authorize.net/gateway/transact.dll";
+                            $testMode = "true";
+                        }
+
+                        // an invoice is generated using the date and time
+                        $invoice = $attendee_id . '-' . date('YmdHis', time());
+                        // a sequence number is randomly generated
+                        $sequence = rand(1, 1000);
+                        // a timestamp is generated
+                        $timeStamp = time();
+                        // The following lines generate the SIM fingerprint.  PHP versions 5.1.2 and
+                        // newer have the necessary hmac function built in.  For older versions, it
+                        // will try to use the mhash library.
+                        if (phpversion() >= '5.1.2') {
+                            $fingerprint = hash_hmac("md5", $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey);
+                        } else {
+                            $fingerprint = bin2hex(mhash(MHASH_MD5, $loginID . "^" . $sequence . "^" . $timeStamp . "^" . $amount . "^", $transactionKey));
+                        }
+
+                        $ipn_url = EVENT_PLUS_PUBLIC_URL . 'authorize/payment.php';
+
+                        echo'<tr>
+                            <td><b>' . $paymentTitleStr . '</b></td>
+                            <td>';
+
+                        // Create the HTML form containing necessary SIM post values
+                        echo "<FORM method='post' action='$url' >";
+                        // Additional fields can be added here as outlined in the SIM integration guide
+                        // at: http://developer.authorize.net
+                        echo "	<INPUT type='hidden' name='x_login' value='$loginID' />";
+
+                        echo "	<INPUT type='hidden' name='x_amount' value='$amount' />";
+
+
+                        echo "	<INPUT type='hidden' name='x_description' value='$description' />";
+                        echo "	<INPUT type='hidden' name='x_invoice_num' value='$invoice' />";
+                        echo "	<INPUT type='hidden' name='x_fp_sequence' value='$sequence' />";
+                        echo "	<INPUT type='hidden' name='x_fp_timestamp' value='$timeStamp' />";
+                        echo "	<INPUT type='hidden' name='x_fp_hash' value='$fingerprint' />";
+                        echo "	<INPUT type='hidden' name='x_test_request' value='$testMode' />";
+                        echo "	<INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />";
+                        echo "	<INPUT type='hidden' name='x_Relay_URL' value='$ipn_url' />";
+                        echo "	<input type='submit' value='$label' />";
+                        echo "</FORM>";
+                        echo '</td>
+                          </tr>';
+                    }
+                }
+
+                echo'</tbody>';
+                echo'</table>';
+            }
+        } else {
+
+     
+            echo '<table width="95%" border="0">';
+            echo '<tr>
+                  <td bgcolor="black" colspan="2"><b><font color="white">'.__("Payment Details", 'evrplus_language').'</font></b></td>
+                </tr>';
+            echo '<tr>'
+            . '<td>Payment Status</td><td>' . ucfirst($this->attendeeRow['payment_status']) . '</td>'
+            . '</tr>';
+
+            $oModels_Payments = new EventPlus_Models_Payments();
+            $payments = $oModels_Payments->getPayments($this->attendeeRow['id']);
+
+            if (count($payments)) {
+                foreach ($payments as $p => $paymentRow) {
+                    
+                    $metaPayment = $oModels_Payments->getMethodMeta($paymentRow['txn_type']);
+                    $paymentMethod = $paymentRow['txn_type'];
+                    
+                    if(isset($metaPayment['title'])){
+                        $paymentMethod = $metaPayment['title'];
+                    }
+                    
+                    echo '<tr>'
+                    . '<td>'.__("Transaction Id", 'evrplus_language').'</td><td>' . $paymentRow['txn_id'] . '</td>'
+                    . '</tr>';
+                    echo '<tr>'
+                    . '<td>'.__("Payment Method", 'evrplus_language').'</td><td>' . $paymentMethod . '</td>'
+                    . '</tr>';
+                }
+            }
+            echo '</table>';
+        }
+    }
+
+    static function evrplus_registration_donation() {
 
         global $wpdb;
-        $company_options = EventPlus_Models_Settings::getSettings();
-        if (is_numeric($passed_event_id)) {
-            $event_id = $passed_event_id;
+
+        $this->companyOptions = EventPlus_Models_Settings::getSettings();
+        if (is_numeric($this->event_id)) {
+            $event_id = $this->event_id;
         } else {
             $event_id = "0";
             echo "Failure - please retry!";
             exit;
         }
-        if (is_numeric($passed_attendee_id)) {
-            $attendee_id = $passed_attendee_id;
+        if (is_numeric($this->attendee_id)) {
+            $attendee_id = $this->attendee_id;
         } else {
             $attendee_id = "0";
             echo "Failure - please retry!";
             exit;
         }
-        
+
         //Get Event Info
-        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int)$event_id;
+        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $event_id;
         $result = $wpdb->get_results($sql, ARRAY_A);
 
         foreach ($result as $row) {
@@ -521,51 +410,52 @@ class EventPlus_Helpers_Payment {
             $coupon_code = $row['coupon_code'];
             $coupon_code_price = $row['coupon_code_price'];
         }
-        
+
         //Get Attendee Info
-        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id=" .(int) $attendee_id;
-        $result = $wpdb->get_results($sql, ARRAY_A);
-        foreach ($result as $row) {
-            $attendee_id = $row['id'];
-            $lname = $row ['lname'];
-            $fname = $row ['fname'];
-            $address = $row ['address'];
-            $city = $row ['city'];
-            $state = $row ['state'];
-            $zip = $row ['zip'];
-            $email = $row ['email'];
-            $phone = $row ['phone'];
-            $quantity = $row ['quantity'];
-            $date = $row ['date'];
-            $reg_type = $row['reg_type'];
-            $ticket_order = unserialize($row['tickets']);
-            $payment = $row['payment'];
-            $event_id = $row['event_id'];
-            $coupon = $row['coupon'];
-            $attendee_name = $fname . " " . $lname;
-        }
+        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id=" . (int) $attendee_id . "' LIMIT 1";
+        $row = $wpdb->get_row($sql, ARRAY_A);
+        $attendee_id = $row['id'];
+        $lname = $row ['lname'];
+        $fname = $row ['fname'];
+        $address = $row ['address'];
+        $city = $row ['city'];
+        $state = $row ['state'];
+        $zip = $row ['zip'];
+        $email = $row ['email'];
+        $phone = $row ['phone'];
+        $quantity = $row ['quantity'];
+        $date = $row ['date'];
+        $reg_type = $row['reg_type'];
+        $ticket_order = unserialize($row['tickets']);
+        $payment = $row['payment'];
+        $event_id = $row['event_id'];
+        $coupon = $row['coupon'];
+        $attendee_name = $fname . " " . $lname;
+
 //Get Donate Info
-        if ($company_options['donations'] == "Yes") {
+        if ($this->companyOptions['donations'] == "Yes") {
             $pay_now = "MAKE A DONATION";
-        } elseif ($company_options['pay_now'] != "") {
-            $pay_now = $company_options['pay_now'];
+        } elseif ($this->companyOptions['pay_now'] != "") {
+            $pay_now = $this->companyOptions['pay_now'];
         } else {
-            $pay_now = "PAY NOW";
+            $pay_now = "";
         }
 //Paypal 
-        if ($company_options['payment_vendor'] == "PAYPAL") {
-            $p = new EventPlus_Vendor_Paypal(); // initiate an instance of the class
-            if ($company_options['use_sandbox'] == "Y") {
+        if ($this->companyOptions['payment_vendor'] == "PAYPAL") {
+
+            $p = new EventPlus_Payments_Paypal(); // initiate an instance of the class
+            if ($this->companyOptions['use_sandbox'] == "Y") {
                 $p->paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'; // testing paypal url
                 echo "<h3 style=\"color:#ff0000;\" title=\"Payments will not be processed\">Sandbox Mode Is Active</h3>";
             } else {
                 $p->paypal_url = 'https://www.paypal.com/cgi-bin/webscr'; // paypal url
             }
-            if (($payment == "0.00" || $payment == "0" || $payment == "" || $payment == " ") && ($company_options['donations'] == "Yes")) {
-                $p->add_field('business', $company_options['payment_vendor_id']);
-                $p->add_field('return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                $p->add_field('cancel_return', evrplus_permalink($company_options['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
-                $p->add_field('notify_url', evrplus_permalink($company_options['evrplus_page_id']) . 'id=' . $attendee_id . '&event_id=' . $event_id . '&action=paypal_txn');
+
+            if (($payment == "0.00" || $payment == "0" || $payment == "" || $payment == " ") && ($this->companyOptions['donations'] == "Yes")) {
+                $p->add_field('business', $this->companyOptions['payment_vendor_id']);
+                $p->add_field('return', evrplus_permalink($this->companyOptions['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
+                $p->add_field('cancel_return', evrplus_permalink($this->companyOptions['return_url']) . '&id=' . $attendee_id . '&fname=' . $fname);
+                $p->add_field('notify_url', evrplus_permalink($this->companyOptions['evrplus_page_id']) . 'id=' . $attendee_id . '&event_id=' . $event_id . '&action=paypal_txn');
                 $p->add_field('cmd', '_donations');
                 $p->add_field('item_name', 'Donation - ' . $event_name);
                 $p->add_field('no_note', '0');
@@ -578,7 +468,7 @@ class EventPlus_Helpers_Payment {
                 $p->add_field('city', $city);
                 $p->add_field('state', $state);
                 $p->add_field('zip', $zip);
-                
+
                 // Print the Order Verification to the screen.
                 echo '<p align="left"><strong>' . __('Order details:', 'evrplus_language') . '</strong></p><table width="95%" border="0"><tr><td><strong>';
                 _e('Event Name/Cost:', 'evrplus_language');
@@ -598,20 +488,20 @@ class EventPlus_Helpers_Payment {
                         $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
                     }
                 }
-                
+
                 echo '</td></tr>';
-                if ($company_options['use_sales_tax'] == "Y") {
+                if ($this->companyOptions['use_sales_tax'] == "Y") {
                     echo '<tr><td></td><td>';
                     _e('Sales Tax  ', 'evrplus_language');
                     echo ':  ' . $tax;
                     echo '</td></tr>';
                 }
-                
+
                 echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
                 echo '<td>' . $ticket_order[0]['ItemCurrency'] . '<strong>' . number_format($payment, 2) . '</strong></td></tr></table><br />';
-                $p->submit_paypal_post($pay_now); // submit the fields to paypal
-                
-                if ($company_options['use_sandbox'] == "Y") {
+                $p->submit(); // submit the fields to paypal
+
+                if ($this->companyOptions['use_sandbox'] == "Y") {
                     $p->dump_fields(); // for debugging, output a table of all the fields
                 }
             }

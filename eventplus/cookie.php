@@ -5,12 +5,12 @@ class EventPlus_Cookie {
     /**
      * @var  string  Magic salt to add to the cookie
      */
-    public static $salt = NULL;
+    public static $salt = 'plusevent';
 
     /**
      * @var  integer  Number of seconds before the cookie expires
      */
-    public static $expiration = 0;
+    public static $expiration = WPEVENT_PLUS_COOKIE_EXPIRY;
 
     /**
      * @var  string  Restrict the path that the cookie is available to
@@ -30,7 +30,7 @@ class EventPlus_Cookie {
     /**
      * @var  boolean  Only transmit cookies over HTTP, disabling Javascript access
      */
-    public static $httponly = FALSE;
+    public static $httponly = TRUE;
 
     /**
      * Gets the value of a signed cookie. Cookies without signatures will not

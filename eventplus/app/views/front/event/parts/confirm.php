@@ -1,15 +1,21 @@
 <?php
-
-$_SESSION['token'] = md5(session_id() . time());
-
 $num_people = 0;
 $item_order = array();
 
 $passed_event_id = (int)$_POST['event_id'];
-if (is_numeric($passed_event_id) && $passed_event_id > 0) {
+$event_id = 0;
+if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['eventplus_token']) && strlen($_POST['eventplus_token']) == 32)) {
     $event_id = $passed_event_id;
 } else {
     _e('Failure - please retry!', 'evrplus_language');
+    return;
+}
+
+$eventplus_token = $_POST['eventplus_token'];
+
+$isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
+if($isPending === false){
+      _e("Couldn't proceed! registration already processed.", 'evrplus_language');
     return;
 }
 
@@ -141,16 +147,12 @@ foreach ($result as $row) {
 }
 
 if ($reg_type == "WAIT") {
-    $quantity = "1";
+    $quantity = 1;
 } else {
     $quantity = $num_people;
 }
 
 $ticket_data = serialize($item_order);
-
-$reg_id = $wpdb->get_var("SELECT LAST_INSERT_ID()");
-$token = $wpdb->get_var("SELECT token FROM " . get_option('evr_attendee') . " WHERE id= '".(int)$reg_id."'");
-setcookie('evr_token', $token, time() + 60 * 60 * 10, '/');
 
 $qanda = array();
 $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '".(int)$event_id."'");
@@ -317,9 +319,9 @@ if ($count <= 0) {
     echo '<input type="hidden" name="reg_form" value="' . $form_post . '" />';
     echo '<input type="hidden" name="questions" value="' . $question_post . '" />';
     echo '<input type="hidden" name="action" value="post"/>';
-    echo '<input type="hidden" name="token" value="' . $_SESSION['token'] . '" />';
+    echo '<input type="hidden" name="eventplus_token" value="' . $eventplus_token . '" />';
     echo '<input type="hidden" name="event_id" value="' . $event_id . '" />';
-    echo '<input type="hidden" name="reg_id" value="' . $reg_id . '" />';
+
     echo '<div style="margin-left: 150px;">';
     echo '<input type="submit" name="mySubmit" id="mySubmit" value="' . __('Confirmed', 'evrplus_language') . '" /></div>';
 }

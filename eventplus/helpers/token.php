@@ -1,0 +1,85 @@
+<?php
+
+class EventPlus_Helpers_Token {
+
+    private static $pendingTokenRow = array();
+    
+    static function generate($event_id) {
+        $request = EventPlus::factory('Request');
+        return md5(time() . rand(0, 200) . $event_id . $request->getUserAgent() . $request->getClientIp());
+    }
+
+    static function get($event_id) {
+        return EventPlus_Cookie::get('eplus_reg_token_' . $event_id);
+    }
+
+    static function set($event_id, $token) {
+        return EventPlus_Cookie::set('eplus_reg_token_' . $event_id, $token);
+    }
+
+    static function isValid($event_id) {
+        return (self::get($event_id) != '');
+    }
+    
+    static function isValidFormat($token) {
+        return (strlen($token) == 32);
+    }
+
+    static function getPendingRow() {
+        return self::$pendingTokenRow;
+    }
+    
+    static function setPendingRow($row) {
+        self::$pendingTokenRow = $row;
+    }
+
+    static function doToken($event_id) {
+        
+        $isValid = self::isValid($event_id);
+
+        if ($isValid === false) {
+            $token = self::generate($event_id);
+            self::set($event_id, $token);
+        } else {
+            $token = self::get($event_id);
+            
+            if(self::isPending($token) === false){
+                $token = self::generate($event_id);
+                self::set($event_id, $token);
+            }else{
+                self::setPendingRow(self::getDataByToken($token));
+            }
+        }
+
+        return $token;
+    }
+
+    static function isPending($token) {
+        
+        $tokenRow = self::getDataByToken($token, true);
+
+        if ($tokenRow['payment_status'] == '' || $tokenRow['payment_status'] == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    protected static $dataCache = array();
+    static function getDataByToken($token, $cache = true) {
+        global $wpdb;
+        
+        $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE token  = '" . esc_sql($token) . "' LIMIT 1";
+        
+        if($cache == false && isset(self::$dataCache[$token])){
+           return $wpdb->get_row($sql, ARRAY_A);
+        }
+        
+        if(isset(self::$dataCache[$token]) == false){
+            self::$dataCache[$token] = $wpdb->get_row("SELECT * FROM " . get_option('evr_attendee') . " WHERE token  = '" . esc_sql($token) . "' LIMIT 1", ARRAY_A);
+        }
+        
+        return self::$dataCache[$token];
+    }
+
+}

@@ -1,0 +1,105 @@
+<?php
+
+$varDirectoryPath = dirname(__FILE__);
+
+$varDirectoryPath = str_replace('wp-content\plugins\wpeventplus\public\paypal', '', $varDirectoryPath);
+$varDirectoryPath = str_replace('wp-content/plugins/wpeventplus/public/paypal', '', $varDirectoryPath);
+
+include_once($varDirectoryPath . 'wp-load.php');
+include_once($varDirectoryPath . 'wp-config.php');
+include_once($varDirectoryPath . 'wp-includes/wp-db.php');
+
+global $wpdb;
+
+
+if (isset($_REQUEST['eventplus_token']) == false) {
+    wp_die("Invalid paypal request.");
+}
+
+$oPayPal = new EventPlus_Payments_Paypal();
+
+$eventplus_token = $_REQUEST['eventplus_token'];
+$isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
+if ($isPending === false) {
+    wp_die(__("Couldn't proceed! registration already processed.", 'evrplus_language'));
+    return;
+}
+
+$company_options = EventPlus_Models_Settings::getSettings();
+
+$sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE token = '" . esc_sql($eventplus_token) . "' LIMIT 1";
+$attendeeRow = $wpdb->get_row($sql, ARRAY_A);
+
+$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $attendeeRow['event_id'] . " LIMIT 1";
+$eventRow = $wpdb->get_row($sql, ARRAY_A);
+if ($eventRow['id'] <= 0 || $oPayPal->isValid() == false) {
+    wp_die(__("Invalid request", 'evrplus_language'));
+}
+
+$event_id = $eventRow['id'];
+
+$payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+$amountPaid = 0;
+$txn_id = '';
+$payment_date = date('Y-m-d G:i:s', time());
+$first_name = '';
+$last_name = '';
+$payer_email = '';
+$mc_gross = 0;
+$mc_currency = '';
+
+
+$pdtData = $oPayPal->validatePdt($_REQUEST['tx'], $company_options['paypal_pdt_token']);
+
+$txn_data = array_merge($_REQUEST, $pdtData);
+
+if (isset($txn_data['txn_id'])) {
+    $txn_id = $txn_data['txn_id'];
+    $first_name = $txn_data['first_name'];
+    $last_name = $txn_data['last_name'];
+    $payer_email = $txn_data['payer_email'];
+    $mc_gross = $txn_data['mc_gross'];
+    $mc_currency = $txn_data['mc_currency'];
+}
+
+$pdt_payment_status = strtoupper($txn_data['payment_status']);
+
+if ($pdt_payment_status == 'FAIL') {
+    $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+} else if ($pdt_payment_status == clsAbstractStatusCodes::COMPLETED) {
+
+    $business = urldecode($txn_data['business']);
+
+    if ($business != trim($company_options['payment_vendor_id'])) {
+        $payment_status = clsAbstractStatusCodes::FAILED;
+    } else {
+        $payment_status = clsAbstractStatusCodes::COMPLETED;
+        $amountPaid = $attendeeRow['payment'];
+    }
+}
+
+$wpdb->query($wpdb->prepare("UPDATE " . get_option('evr_attendee') . " SET payment_status = '" . esc_sql($payment_status) . "', amount_pd = '" . esc_sql($amountPaid) . "', payment_date = '" . esc_sql($payment_date) . "' WHERE id = %d", $attendeeRow['id']));
+
+$sqlParams = array(
+    'payer_id' => $attendeeRow['id'],
+    'event_id' => $event_id,
+    'payment_date' => $payment_date,
+    'first_name' => $first_name,
+    'last_name' => $last_name,
+    'payer_email' => $payer_email,
+    'txn_id' => $txn_id,
+    'mc_gross' => $mc_gross,
+    'mc_currency' => $mc_currency,
+    'payment_type' => 'full',
+    'payment_status' => $payment_status,
+    'txn_type' => EventPlus_Models_Payments::PAYPAL
+);
+
+
+$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+$wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
+
+$urlToGo = evrplus_permalink($company_options['return_url']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
+echo'<script>window.location.href="' . $urlToGo . '";</script>';
+exit;
+

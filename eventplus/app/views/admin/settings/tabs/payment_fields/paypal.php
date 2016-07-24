@@ -1,6 +1,6 @@
 <p>
     <label for="use_sandbox">
-         <?php _e('Use PayPal Sandbox', 'evrplus_language'); ?>
+        <?php _e('Use PayPal Sandbox', 'evrplus_language'); ?>
         <font size="-6">
         <?php _e('(used for testing/debug)', 'evrplus_language'); ?>
         </font>
@@ -27,76 +27,28 @@
     <input type="text" name="payment_vendor_id" value="<?php echo $company_options['payment_vendor_id']; ?>" class="regular-text" maxlength="93"  size="10" />
 </p>
 <p>
-    <label for="pay_now">
-        <?php _e('Payment Button Text', 'evrplus_language'); ?>
+    <label for="paypal_pdt_token">
+        <?php _e('PDT Auth Token:', 'evrplus_language'); ?>
+        <font size="-6">(Please fill in and system will then be able to process payment status (Pending/Failed/Completed etc))</font>
+        <br />
+        <a target="_blank" href="https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/paymentdatatransfer/">How to activate</a>
     </label>
     <br />
-    <input type="text" name="pay_now" value="<?php
-    if ($company_options['pay_now'] != "") {
-        echo $company_options['pay_now'];
-    } else {
-        _e('PAY NOW');
-    }
-    ?>" class="regular-text" />
+    <input type="text" name="paypal_pdt_token" value="<?php echo $company_options['paypal_pdt_token']; ?>" class="regular-text" maxlength="120"  size="10" />
+
+    <br />
+<p>Follow these steps to configure your account for PDT:</p>
+<ol>
+    <li>Log in to your PayPal account.</li>
+    <li>Click the <strong>Profile</strong> subtab.</li>
+    <li>Click <strong>Website Payment Preferences</strong> in the Seller Preferences column.</li>
+    <li>Under Auto Return for Website Payments, click the <strong>On</strong> radio button.</li>
+    <li>For the Return URL, enter the URL on your site that will receive the transaction ID posted by PayPal after a customer payment.</li>
+    <li>Under Payment Data Transfer, click the <strong>On</strong> radio button.</li>
+    <li>Click <strong>Save</strong>.</li>
+    <li>Click <strong>Website Payment Preferences</strong> in the Seller Preferences column.</li>
+    <li>Scroll down to the Payment Data Transfer section of the page to view your PDT identity token.</li>
+</ol>
 </p>
 
-<div class="form-table">
-    <h2 class="stephead"><?php echo _e('Advanced', 'evrplus_language'); ?></h2>
-    <p>
-        <label for="image_url">
-            <?php _e('Image URL', 'evrplus_language'); ?>
-            <br />
-            <font size="-6">
-            <?php _e('(For your logo on PayPal page)', 'evrplus_language'); ?>
-            </font></label>
-        <br />
-        <input type="text" name="image_url" value="<?php echo $company_options['image_url']; ?>" class="regular-text" />
-    </p>
-    <?php
-    /* //comment out this and uncomment the other for IPN support! ?>
-      <input type="hidden" value="" name="cancel_return">
-      <input type="hidden" value="" name="notify_url">
-      <input type="hidden" value="" name="return_method">
-      <input type="hidden" value="" name="use_sandbox">
-      <?php */
-    //Uncomment this code if you use Paypal IPN Support  
-    ?>
-    <p>
-        <label for="cancel_return">
-            <?php _e('Cancel Return URL', 'evrplus_language'); ?>
-            <br />
-            <font size="-6">
-            <?php _e('(page you setup for cancelled payment)', 'evrplus_language'); ?>
-            </font></label>
-        <br />
-        <input type="text" name="cancel_return" value="<?php echo $company_options['cancel_return']; ?>" class="regular-text" />
-    </p>
-    <p>
-        <label for="notify_url">
-            <?php _e('Notify URL', 'evrplus_language'); ?>
-            <br />
-            <font size="-6">
-            <?php _e('(used to process payments)', 'evrplus_language'); ?>
-            </font></label>
-        <br />
-        <input type="text" name="notify_url" value="<?php echo $company_options['notify_url']; ?>" class="regular-text" />
-    </p>
-    <div class="abc">
-        <label for="return_method">
-            <?php _e('Return Method:', 'evrplus_language'); ?>
-        </label>
-        <br />
-        <div class="styled">
-            <select name = "return_method" class="regular-select">
-                <option value="1" <?php if ($company_options['return_method'] == "1") echo ' selected'; ?>>
-                    <?php _e('GET'); ?>
-                </option>
-                <option value="2" <?php if ($company_options['return_method'] == "2") echo ' selected'; ?>>
-                    <?php _e('POST'); ?>
-                </option>
-            </select>
-        </div>
-    </div>
-    
-</div>
 <br style="clear:both;" />

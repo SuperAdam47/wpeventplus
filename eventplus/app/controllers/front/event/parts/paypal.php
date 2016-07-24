@@ -148,6 +148,12 @@ class eplus_front_event_parts_paypal_controller extends EventPlus_Abstract_Contr
                     }
                     wp_mail($coord_email, $subject, $body, $headers);
                 } else {
+                    
+                    if ($send_coord == "Y") {
+                        $contact = $coord_email;
+                    } else {
+                        $contact = $company_options['company_email'];
+                    }
 
                     $subject = 'Instant Payment Notification - Failure';
                     $body = "An instant payment notification was received but not posted!\n";
@@ -310,7 +316,6 @@ class eplus_front_event_parts_paypal_controller extends EventPlus_Abstract_Contr
             $f_name = $row['fname'];
             $l_name = $row['lname'];
         }
-
 
         if ($wpdb->insert(get_option('evr_payment'), $sql, $sql_data)) {
             $headers = "From: " . $company_options['company'] . " <" . $company_options['company_email'] . ">\r\n";

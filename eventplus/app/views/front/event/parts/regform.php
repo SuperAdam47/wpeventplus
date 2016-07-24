@@ -322,7 +322,11 @@ if ($rows) {
                     ?>
                 </p>
             </div>
-            <?php if ($disable_event_reg != 'Y'): ?>
+            <?php
+            if ($disable_event_reg != 'Y'):
+                $eventplus_token = EventPlus_Helpers_Token::doToken($event_id);
+                $pendingTokenRow = EventPlus_Helpers_Token::getPendingRow();
+                ?>
                 <div class="registerForm">
                     <?php
                     if ($outside_reg == "Y")
@@ -331,9 +335,12 @@ if ($rows) {
                         echo '<input id="eventplus_register_btn" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
                         ?>
                     <!--Custom styles from company settings for form--> 
-                    <style>
-        <?php echo $company_options['form_css']; ?>
-                    </style>
+
+                    <?php if ($company_options['form_css'] != ''): ?>
+                        <style>
+                        *<?php echo $company_options['form_css']; ?>
+                        </style>
+                    <?php endif; ?>
                     <div id="evrplusRegForm">
                         <?php
                         //$current_dt= date('Y-m-d H:i a',current_time('timestamp',0));
@@ -366,51 +373,51 @@ if ($rows) {
                             return validateForm(this)">
                                 <ul>
                                     <?php
-                                    evrplus_generate_frm_defaults('fname', __('First Name', 'evrplus_language'));
-                                    evrplus_generate_frm_defaults('lname', __('Last Name', 'evrplus_language'));
-                                    evrplus_generate_frm_defaults('email', __('Email Address', 'evrplus_language'));
+                                    evrplus_generate_frm_defaults('fname', __('First Name', 'evrplus_language'), $pendingTokenRow['fname']);
+                                    evrplus_generate_frm_defaults('lname', __('Last Name', 'evrplus_language'), $pendingTokenRow['lname']);
+                                    evrplus_generate_frm_defaults('email', __('Email Address', 'evrplus_language'), $pendingTokenRow['email']);
                                     if ($inc_phone == "Y") {
-                                        evrplus_generate_frm_defaults('phone', __('Phone Number', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('phone', __('Phone Number', 'evrplus_language'), $pendingTokenRow['phone']);
                                     }
                                     if ($inc_address == "Y") {
-                                        evrplus_generate_frm_defaults('address', __('Street/PO Address', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('address', __('Street/PO Address', 'evrplus_language'), $pendingTokenRow['address']);
                                     }
                                     if ($inc_city == "Y") {
-                                        evrplus_generate_frm_defaults('city', __('City', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('city', __('City', 'evrplus_language', $pendingTokenRow['city']));
                                     }
                                     if ($inc_country == "Y") {
-                                        evrplus_generate_frm_defaults('country', __('Country', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('country', __('Country', 'evrplus_language'), $pendingTokenRow['country']);
                                     }
                                     if ($inc_state == "Y") {
-                                        evrplus_generate_frm_defaults('state', __('State', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('state', __('State', 'evrplus_language'), $pendingTokenRow['state']);
                                     }
                                     if ($inc_zip == "Y") {
-                                        evrplus_generate_frm_defaults('zip', __('Postal/Zip Code', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('zip', __('Postal/Zip Code', 'evrplus_language'), $pendingTokenRow['zip']);
                                     }
                                     if ($inc_comp == "Y") {
-                                        evrplus_generate_frm_defaults('company', __('Company Name', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('company', __('Company Name', 'evrplus_language'), $pendingTokenRow['company']);
                                     }
                                     if ($inc_coadd == "Y") {
-                                        evrplus_generate_frm_defaults('co_address', __('Company Address', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('co_address', __('Company Address', 'evrplus_language'), $pendingTokenRow['co_address']);
                                     }
                                     if ($inc_cocity == "Y") {
-                                        evrplus_generate_frm_defaults('co_city', __('Company City', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('co_city', __('Company City', 'evrplus_language'), $pendingTokenRow['co_city']);
                                     }
                                     if ($inc_costate == "Y") {
-                                        evrplus_generate_frm_defaults('co_state', __('Company State/Province', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('co_state', __('Company State/Province', 'evrplus_language'), $pendingTokenRow['co_state']);
                                     }
                                     if ($inc_copostal == "Y") {
-                                        evrplus_generate_frm_defaults('co_zip', __('Company Postal Code', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('co_zip', __('Company Postal Code', 'evrplus_language'), $pendingTokenRow['co_zip']);
                                     }
                                     if ($inc_cophone == "Y") {
-                                        evrplus_generate_frm_defaults('co_phone', __('Company Phone', 'evrplus_language'));
+                                        evrplus_generate_frm_defaults('co_phone', __('Company Phone', 'evrplus_language'), $pendingTokenRow['co_phone']);
                                     }
                                     ?>
                                     <!--End Default Questions -->
                                     <!--Begin Custom Questions -->
                                     <?php
                                     //Additional Questions
-                                    $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '$event_id' order by sequence");
+                                    $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
                                     if ($questions) {
                                         foreach ($questions as $question) {
                                             $title = '';
@@ -438,7 +445,7 @@ if ($rows) {
                                 #See how many seats are left available
                                 $available = evrplus_get_open_seats($event->id, $event->reg_limit);
                                 #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
-                                if ($available >= "1") {
+                                if ($available >= 1) {
                                     $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . $event_id . " ORDER BY sequence ASC";
                                     $rows = $wpdb->get_results($sql);
                                     if ($rows) {
@@ -464,14 +471,15 @@ if ($rows) {
                                                 ?>
                                                 <input type="hidden" name="reg_type" value="RGLR"/>
                                                 <div align="left">
-                                                    <label for="cost" title ="<?php echo $fee->item_description; ?>" ><select style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
-                                                                                                                              onChange="<?php
-                                                                                                                              if ($company_options['use_sales_tax'] == "Y") {
-                                                                                                                                  echo 'CalculateTotalTax(this.form)';
-                                                                                                                              } else {
-                                                                                                                                  echo 'CalculateTotal(this.form)';
-                                                                                                                              }
-                                                                                                                              ?>">
+                                                    <label for="cost" title ="<?php echo $fee->item_description; ?>" >
+                                                        <select style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
+                                                                onChange="<?php
+                                                                if ($company_options['use_sales_tax'] == "Y") {
+                                                                    echo 'CalculateTotalTax(this.form)';
+                                                                } else {
+                                                                    echo 'CalculateTotal(this.form)';
+                                                                }
+                                                                ?>">
                                                             <option value="0">0</option>
                                                             <?php
                                                             #Begin generation of DropDown Box - Options
@@ -525,7 +533,7 @@ if ($rows) {
                                             ?>
                                             <p class="reg_fees_update">  <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?>
                                                 <?php _e('Please update fee dates!', 'evrplus_language'); ?></p>
-                                            <?php #if no fees set hidden reg type to WAIT ?>
+                                            <?php #if no fees set hidden reg type to WAIT  ?>
                                             <input type="hidden" name="reg_type" value="WAIT" />
                                         <?php } ?>
                                         <br />
@@ -586,7 +594,7 @@ if ($rows) {
                                 <?php } ?>
                                 <br />
                                 <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != "") { ?>
-                                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
+                                    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
                                     <script type="text/javascript">
                                         jQuery(document).ready(function () {
                                             jQuery("#mySubmit").click(function () {
@@ -609,6 +617,7 @@ if ($rows) {
                                 ?>
                                 <input type="hidden" name="action" value="confirm"/>
                                 <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
+                                <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
                                 <div  class="regform_buttons">
                                     <input type="submit" name="mySubmit" id="mySubmit" disabled="true" value="<?php _e('Submit', 'evrplus_language'); ?>" />
                                     <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
