@@ -3,21 +3,21 @@
 class eplus_front_shortcode_attendees_list_controller extends EventPlus_Abstract_Controller {
 
     function index() {
-        
+
         $event_id = $this->_invokeArgs['event_id'];
         $custom = $this->_invokeArgs['custom'];
         $record_template = $this->_invokeArgs['template'];
-        
+
         global $wpdb;
 
         if ($record_template == '') {
 
             $codeToReturn .= '<table>';
         }
-        
+
         $oAttendee = new EventPlus_Models_Attendees();
-        $attendees = $oAttendee->getRecords($event_id);
-        
+        $attendees = $oAttendee->getRecords(array('event_id' => $event_id, 'payment_status' => EventPlus_Models_Payments::PAYMENT_SUCCESS));
+
         if ($attendees) {
 
             foreach ($attendees as $attendee) {
@@ -46,7 +46,9 @@ class eplus_front_shortcode_attendees_list_controller extends EventPlus_Abstract
 
                 if ($tickets) {
 
-                    foreach ($tickets as $ticket) {}
+                    foreach ($tickets as $ticket) {
+                        
+                    }
                 }
 
                 #Retrieve custom questions and responses  
@@ -78,35 +80,22 @@ class eplus_front_shortcode_attendees_list_controller extends EventPlus_Abstract
                 #Begin to replace tags with data
 
                 $codeToReturn = str_replace("\r\n", ' ', $codeToReturn);
-
                 $codeToReturn = str_replace("{FIRST}", stripslashes($attendee->fname), $codeToReturn);
-
                 $codeToReturn = str_replace("{LAST}", stripslashes($attendee->lname), $codeToReturn);
-
                 $codeToReturn = str_replace("{NAME}", stripslashes($attendee->fname) . ' ' . stripslashes($attendee->lname), $codeToReturn);
-
                 $codeToReturn = str_replace("{ADDRESS}", stripslashes($attendee->address), $codeToReturn);
-
                 $codeToReturn = str_replace("{CITY}", stripslashes($attendee->city), $codeToReturn);
-
                 $codeToReturn = str_replace("{STATE}", stripslashes($attendee->state), $codeToReturn);
-
                 $codeToReturn = str_replace("{ZIP}", stripslashes($attendee->zip), $codeToReturn);
-
                 $codeToReturn = str_replace("{EMAIL}", stripslashes($attendee->email), $codeToReturn);
-
                 $codeToReturn = str_replace("{PHONE}", stripslashes($attendee->phone), $codeToReturn);
-
                 $codeToReturn = str_replace("{COUNT}", stripslashes($attendee->quantity), $codeToReturn);
-
                 $codeToReturn = str_replace("{TYPE}", stripslashes($attendee->reg_type), $codeToReturn);
-
                 $codeToReturn = str_replace("{DATE}", stripslashes($attendee->date), $codeToReturn);
-
                 $codeToReturn = str_replace("{ATTENDEES}", $guest_list, $codeToReturn);
-
                 $codeToReturn = str_replace("{QA}", $responses, $codeToReturn);
             }
+
             #Close table is not a custom template
 
             if ($record_template == '') {

@@ -71,7 +71,7 @@ $sqlParams = array(
 $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 $wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
 
-$urlToGo = evrplus_permalink($company_options['return_url']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
+$urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
 echo'<script>window.location.href="' . $urlToGo . '";</script>';
 exit;
 

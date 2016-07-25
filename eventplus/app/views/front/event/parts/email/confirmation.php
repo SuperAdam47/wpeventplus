@@ -1,6 +1,6 @@
 <?php
 
-$payment_link = evrplus_permalink($company_options['return_url']) . "?action=confirmation&eventplus_token=" . $eventplus_token . "&event_id=" . $event_id;
+$payment_link = evrplus_permalink($company_options['evrplus_page_id']) . "?action=confirmation&eventplus_token=" . $eventplus_token . "&event_id=" . $event_id;
 
 //Send Confirmation Email   
 //Select the default message

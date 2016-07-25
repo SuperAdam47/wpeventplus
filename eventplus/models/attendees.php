@@ -199,6 +199,10 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
             $sql .= " AND event_id = '" . (int) $params['event_id'] . "'";
         }
 
+        if ($params['payment_status']) {
+            $sql .= " AND payment_status = '" . esc_sql($params['payment_status']) . "'";
+        }
+
         $sql .= ' ORDER BY id DESC ';
 
         if ($params['limit_str'] != '') {

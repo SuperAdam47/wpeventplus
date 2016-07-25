@@ -32,7 +32,7 @@ if ($eventRow['id'] <= 0) {
 $event_id = $eventRow['id'];
 
 
-$returnUrl = evrplus_permalink($company_options['return_url']) . "?action=confirmation&eventplus_token=" . $eventplus_token . "&event_id=" . $event_id;
+$returnUrl = evrplus_permalink($company_options['evrplus_page_id']) . "?action=confirmation&eventplus_token=" . $eventplus_token . "&event_id=" . $event_id;
 
 echo'<script>window.location.href="' . $returnUrl . '";</script>';
 exit;

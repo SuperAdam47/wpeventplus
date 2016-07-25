@@ -32,16 +32,16 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     protected $oApp = null;
 
     function _init() {
-        
+
         EventPlus::setPlugin($this);
-        EventPlus_Cookie::$expiration = time() + 10 * 365 * 24 * 60 * 60; /*10 years*/
-  
-        
+        EventPlus_Cookie::$expiration = time() + 10 * 365 * 24 * 60 * 60; /* 10 years */
+
+
         if (is_admin() == false) {
             ob_start();
         }
-        
-        $this->add_action( 'plugins_loaded', $this, 'i8ln');
+
+        $this->add_action('plugins_loaded', $this, 'i8ln');
 
         $oEventPlusCore = EventPlus::factory('Core', array(
                     'mode' => 'development'
@@ -51,16 +51,16 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $oRegistry->set('core', $oEventPlusCore);
         $oRegistry->set('db', EventPlus::factory('WordPress_Database'));
         $oRegistry->set('url', EventPlus::factory('Url', array(
-                'site_url' => EVENT_PLUS_SITE_URL,
-                'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
-                'assets_url' => $this->getUrl() . 'assets/',
-                'menu_slug' => $this->getSlug(),
+                    'site_url' => EVENT_PLUS_SITE_URL,
+                    'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
+                    'assets_url' => $this->getUrl() . 'assets/',
+                    'menu_slug' => $this->getSlug(),
         )));
 
         $oFlashMessage = EventPlus::factory('Flash_Message');
         $oFlashMessage->setKey('eventplus_admin_flash_messages');
         $oRegistry->set('flash', $oFlashMessage);
-        
+
         if (is_admin()) {
             add_action('admin_notices', array($oFlashMessage, 'render'));
         }
@@ -75,9 +75,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function i8ln() {
-        load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($this->getFile())) . '/lang/');    
+        load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($this->getFile())) . '/lang/');
     }
-    
+
     private function addCommonActions() {
         $this->add_action('init', $this->oApp, 'eventPlusInit');
         $this->add_action('widgets_init', $this, 'registerWidgets');
@@ -120,6 +120,25 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     function initFront() {
         $this->add_action('wp_head', $this, 'pluginInfo');
         $this->add_action('init', $this->oApp, 'frontInit');
+        $this->add_action('template_redirect', $this, 'eventplus_confirmation_registration');
+    }
+
+    function eventplus_confirmation_registration() {
+        if (is_page() == false && isset($_GET['eventplus_token']) && isset($_GET['action'])  && isset($_GET['event_id'])) {
+
+            if (strtolower($_GET['action']) == 'confirmation') {
+        
+                $company_options = EventPlus_Models_Settings::getSettings();
+                
+                if($company_options['evrplus_page_id'] > 0 && intval($_GET['event_id']) > 0 && strlen($_GET['eventplus_token']) == 32){
+                    
+                    $perma_link = get_permalink($company_options['evrplus_page_id']);
+                    $payment_link = $perma_link . "?action=confirmation&eventplus_token=" . strip_tags($_GET['eventplus_token']) . "&event_id=" . (int)$_GET['event_id'];
+                    wp_redirect($payment_link);
+                    exit();
+                }
+            }
+        }
     }
 
     function registerWidgets() {
@@ -144,7 +163,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function activate() {
-        require_once (EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . "install.php"); 
+        require_once (EVENT_PLUS_PLUGIN_FRAMEWORK_PATH . "install.php");
         evrplus_install();
     }
 

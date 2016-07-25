@@ -8,6 +8,10 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
         
         if(self::$cache === null){
             self::$cache =  get_option('evr_company_settings');
+            
+            if(self::$cache['return_url'] <= 0){
+                self::$cache['return_url'] = self::$cache['evrplus_page_id']; /*FAllback page id*/
+            }
         }
         
         return self::$cache;
