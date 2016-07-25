@@ -27,8 +27,11 @@ class EventPlus_Helpers_App {
                 if($colExists == 0){
 
                     $sql = "ALTER TABLE `".get_option('evr_event')."` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
-                    $q = EventPlus::getRegistry()->get('db')->query($sql);
+                    $q = $wpDb->query($sql);
                 }
+                
+                $wpDb->query('ALTER TABLE `wp_evr_payment` CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+              
             }
             
             EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);

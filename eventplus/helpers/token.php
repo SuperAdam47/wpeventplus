@@ -16,6 +16,10 @@ class EventPlus_Helpers_Token {
     static function set($event_id, $token) {
         return EventPlus_Cookie::set('eplus_reg_token_' . $event_id, $token);
     }
+    
+    static function delete($event_id) {
+        return EventPlus_Cookie::delete('eplus_reg_token_' . $event_id);
+    }
 
     static function isValid($event_id) {
         return (self::get($event_id) != '');

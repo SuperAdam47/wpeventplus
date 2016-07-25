@@ -16,7 +16,7 @@
 </div>
 </p>
 
-<p>
+<p style='display: none;'>
     <label for="accept_donations">
         <?php _e('Will you accept donations?', 'evrplus_language'); ?>
     </label>

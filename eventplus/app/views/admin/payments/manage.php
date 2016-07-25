@@ -88,9 +88,11 @@ $event_id = $oEvent->id;
                             ?>
                         </td>
                         <td>
-                            <?php if (count($payments) > 0): ?>
+                            <?php
+                            $totalPaid = 0;
+                            if (count($payments) > 0):
+                                ?>
                                 <?php
-                                $totalPaid = 0;
                                 foreach ($payments as $paymentRow):
 
                                     $deleteLink = $this->adminUrl('admin_payments/delete', array('event_id' => $event_id, 'id' => $paymentRow['id']));
@@ -98,13 +100,16 @@ $event_id = $oEvent->id;
                                     $viewLink = $this->adminUrl('admin_payments/view', array('event_id' => $event_id, 'id' => $paymentRow['id']));
 
                                     $totalPaid = $totalPaid + $paymentRow['mc_gross'];
-                                    echo $paymentRow['mc_currency'] . " " . $paymentRow['mc_gross'] . " " . $paymentRow['txn_type'] . " " . $paymentRow['txn_id'] . " (" . $paymentRow['payment_date'] . ")" . "     ";
+                                    echo $paymentRow['payment_status'] . " - " . $paymentRow['mc_currency'] . " " . $paymentRow['mc_gross'] . " " . $paymentRow['txn_type'] . " " . $paymentRow['txn_id'] . " (" . $paymentRow['payment_date'] . ")" . "     ";
                                     ?>
                                     <?php if (EventPlus_Models_Payments::isValidMethod($paymentRow['txn_type']) == false): ?>
                                         <a href="<?php echo $deleteLink; ?>" onclick="return confirm('Are you sure you wish to delete?');"><?php _e('Delete', 'evrplus_language'); ?></a> | 
                                         <a href="<?php echo $editLink; ?>"><?php _e('Edit', 'evrplus_language'); ?></a> <br />
-
+                                    <?php else: ?>
+                                        <a href="<?php echo $viewLink; ?>"><?php _e('View Details', 'evrplus_language'); ?></a> 
                                     <?php endif; ?>
+                       
+                                    <br />
 
                                 <?php endforeach; ?>
                             <?php else: ?>
@@ -118,9 +123,9 @@ $event_id = $oEvent->id;
                             <?php if ($totalPaid != $payment): ?>
                                 <a href="<?php echo $this->adminUrl('admin_payments/add', array('event_id' => $event_id, 'attendee_id' => $attendee_id)); ?>" class="btn btn-small btn-warning"><?php _e('Add Payment', 'evrplus_language'); ?></a>
                             <?php else: ?>
-                                 <a href="<?php echo $viewLink; ?>" class="btn btn-small btn-info"><?php _e('View Details', 'evrplus_language'); ?></a> 
+                                -
                             <?php endif; ?>
-                                
+
                         </td>
                     </tr>
 

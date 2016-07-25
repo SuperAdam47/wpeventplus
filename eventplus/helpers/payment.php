@@ -114,7 +114,7 @@ class EventPlus_Helpers_Payment {
         $date = $this->attendeeRow ['date'];
         $reg_type = $this->attendeeRow['reg_type'];
         $ticket_order = unserialize($this->attendeeRow['tickets']);
-     
+
         $tax = $this->attendeeRow['tax'];
         $payment = $this->attendeeRow['payment'];
         $coupon = $this->attendeeRow['coupon'];
@@ -124,7 +124,7 @@ class EventPlus_Helpers_Payment {
         // Print the Order Verification to the screen.
 
         echo '<table width="95%" border="0">'
-                . '<tr>
+        . '<tr>
                   <td bgcolor="black" colspan="2"><b><font color="white">' . __('Order details', 'evrplus_language') . '</font></b></td>
                 </tr>'
         . '<tr><td><strong>';
@@ -137,12 +137,12 @@ class EventPlus_Helpers_Payment {
         _e('Number of Attendees:', 'evrplus_language');
         echo '</strong></td><td>' . $quantity . '</td></tr>';
         $row_count = count($ticket_order);
-        
-        if($row_count > 0){
+
+        if ($row_count > 0) {
             echo '<tr><td><strong>';
-        _e('Order Details:', 'evrplus_language');
-        echo '</strong></td><td>';
-        
+            _e('Order Details:', 'evrplus_language');
+            echo '</strong></td><td>';
+
             for ($row = 0; $row < $row_count; $row++) {
                 if ($ticket_order[$row]['ItemQty'] >= "1") {
                     echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
@@ -181,12 +181,12 @@ class EventPlus_Helpers_Payment {
                 foreach ($paymentOptions as $pi => $paymentOption) {
 
                     $paymentMethodMeta = $oPaymentMethods->getMethodMeta($paymentOption);
-                    
+
                     $paymentTitleStr = $paymentMethodMeta['title'];
-                    if($paymentMethodMeta['logo'] != ''){
-                        $paymentTitleStr = "<img src='".EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $paymentMethodMeta['logo']."' alt='".$paymentMethodMeta['title']."' />";
+                    if ($paymentMethodMeta['logo'] != '') {
+                        $paymentTitleStr = "<img src='" . EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $paymentMethodMeta['logo'] . "' alt='" . $paymentMethodMeta['title'] . "' />";
                     }
-                    
+
                     if ($paymentOption == EventPlus_Models_Payments::STRIPE) {
 
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
@@ -211,10 +211,10 @@ class EventPlus_Helpers_Payment {
                             echo'<tr>
                             <td valign="top"><b>' . $paymentTitleStr . '</b></td>
                             <td>';
-                       
+
                             echo " <a href='#' class='offline--details-toggle' title='View Details'>(" . __("View Details", 'evrplus_language') . ")</a>";
-                            
-                             echo'<div id="evplus--offline-details" style="display:none;">';
+
+                            echo'<div id="evplus--offline-details" style="display:none;">';
                             _e("Please mail your check to:", 'evrplus_language');
                             echo "<p>" .
                             stripslashes($this->companyOptions['company']) . "<br />" .
@@ -233,11 +233,11 @@ class EventPlus_Helpers_Payment {
 
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
                             $oPayPal = new EventPlus_Payments_Paypal();
-                            
+
                             $returnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/re7urn.php?eventplus_token=' . $this->attendeeRow['token'];
                             $cancelUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/canc3l.php?eventplus_token=' . $this->attendeeRow['token'];
                             $ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
-                            
+
                             $oPayPal->add_field('business', $this->companyOptions['payment_vendor_id']);
                             $oPayPal->add_field('return', $returnUrl);
                             $oPayPal->add_field('cancel_return', $cancelUrl);
@@ -338,10 +338,10 @@ class EventPlus_Helpers_Payment {
             }
         } else {
 
-     
+
             echo '<table width="95%" border="0">';
             echo '<tr>
-                  <td bgcolor="black" colspan="2"><b><font color="white">'.__("Payment Details", 'evrplus_language').'</font></b></td>
+                  <td bgcolor="black" colspan="2"><b><font color="white">' . __("Payment Details", 'evrplus_language') . '</font></b></td>
                 </tr>';
             echo '<tr>'
             . '<td>Payment Status</td><td>' . ucfirst($this->attendeeRow['payment_status']) . '</td>'
@@ -352,23 +352,26 @@ class EventPlus_Helpers_Payment {
 
             if (count($payments)) {
                 foreach ($payments as $p => $paymentRow) {
-                    
+
                     $metaPayment = $oModels_Payments->getMethodMeta($paymentRow['txn_type']);
                     $paymentTitleStr = $paymentRow['txn_type'];
-                    
-                    if(isset($metaPayment['title'])){
+
+                    if (isset($metaPayment['title'])) {
                         $paymentTitleStr = $metaPayment['title'];
                     }
-               
-                    if($metaPayment['logo'] != ''){
-                        $paymentTitleStr = "<img src='".EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $metaPayment['logo']."' alt='".$metaPayment['title']."' />";
+
+                    if ($metaPayment['logo'] != '') {
+                        $paymentTitleStr = "<img src='" . EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $metaPayment['logo'] . "' alt='" . $metaPayment['title'] . "' />";
+                    }
+
+                    if ($paymentRow['txn_id'] != '' && $paymentRow['txn_id'] != null) {
+                        echo '<tr>'
+                        . '<td>' . __("Transaction Id", 'evrplus_language') . '</td><td>' . $paymentRow['txn_id'] . '</td>'
+                        . '</tr>';
                     }
                     
                     echo '<tr>'
-                    . '<td>'.__("Transaction Id", 'evrplus_language').'</td><td>' . $paymentRow['txn_id'] . '</td>'
-                    . '</tr>';
-                    echo '<tr>'
-                    . '<td>'.__("Payment Method", 'evrplus_language').'</td><td>' . $paymentTitleStr . '</td>'
+                    . '<td>' . __("Payment Method", 'evrplus_language') . '</td><td>' . $paymentTitleStr . '</td>'
                     . '</tr>';
                 }
             }

@@ -192,7 +192,7 @@ if ($rows) {
         
         #In order to get the number of seats we need to count all attendees for this event
         #Retrieve the number of registered attendees for this event from attendee db
-        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id'";
+        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = 'success' AND event_id='$event->id'";
         
         $num = 0;
 
