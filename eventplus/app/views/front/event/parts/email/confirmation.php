@@ -122,6 +122,7 @@ if ($company_options['admin_noti'] == "Y") {
         $company_options['company_postal'],
         $payment_link, $start_date, $start_time, $end_date, $end_time,
         $reg_form['quantity'], $attendee_names, $ticket_list);
+    
     $admin_email_body = '<p>A new user register on [event_name]. Please check user details here:<br /></p>';
     $admin_email_body .='<a href="' . admin_url() . 'admin.php?page=attendee&action=aview_attendee&event_id=' . $event_id . '&attendee_id=' . $reg_id . '">Click Here</a>';
     $email_content = str_replace($SearchValues, $ReplaceValues, $admin_email_body);

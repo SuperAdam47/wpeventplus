@@ -88,9 +88,18 @@ $invoice_data = array('reg_id' => $reg_id, 'lname' => $reg_form['lname'], 'fname
 $invoice_post = urlencode(serialize($invoice_data));
 
 if (EventPlus::factory('Request')->isPost()) {
-    include 'email/confirmation.php';
+    $oEmailReigstration = new EventPlus_Helpers_Mail_Registration(array(
+        'event_id' => $event_id,
+        'attendee_id' => $reg_id,
+    ));
+
+    $emailSent = $oEmailReigstration->send();
+
+    if ($emailSent) {
+        e("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
+    }
 }
-//End Send Coordinator Email     
+
 //Provide screen feedback on registration process  
 //If registration is at capacity and attendee is waitlisted, notify attendee of waitlist.
 if ($reg_form['reg_type'] == "WAIT") {
@@ -135,23 +144,23 @@ if ($reg_form['payment'] > 0) {
 // If Accept Donations is yes and Event Fees are 0, then make Donation Offer
 if (($company_options['donations'] == "Yes") && (($reg_form['payment'] < 1) || ($reg_form['payment'] == "")) && ($reg_form['reg_type'] != "WAIT")) {
 
-    /*_e("While there is no fee for this event, we gladly accept donations.", 'evrplus_language');
-    echo "<br/>";
+    /* _e("While there is no fee for this event, we gladly accept donations.", 'evrplus_language');
+      echo "<br/>";
 
-    if ($company_options['checks'] == "Yes") {
-        _e("You may donate online or by check.  If you are donating by check, please mail your check to:", 'evrplus_language');
-        echo "<p>" .
-        stripslashes($company_options['company']) . "<br />" .
-        $company_options['company_street1'] . "<br />";
-        if ($company_options['company_street2'] != "") {
-            echo $company_options['company_street2'] . "<br />";
-        }
-        echo $company_options['company_city'] . " " . $company_options['company_state'] . " " . $company_options['company_postal'] . "</p>";
-        _e("Reference: Donation - ", 'evrplus_language');
-        echo "<b>" . $event_name . "</b><br/><br/>";
-    }
-    */
-    
+      if ($company_options['checks'] == "Yes") {
+      _e("You may donate online or by check.  If you are donating by check, please mail your check to:", 'evrplus_language');
+      echo "<p>" .
+      stripslashes($company_options['company']) . "<br />" .
+      $company_options['company_street1'] . "<br />";
+      if ($company_options['company_street2'] != "") {
+      echo $company_options['company_street2'] . "<br />";
+      }
+      echo $company_options['company_city'] . " " . $company_options['company_state'] . " " . $company_options['company_postal'] . "</p>";
+      _e("Reference: Donation - ", 'evrplus_language');
+      echo "<b>" . $event_name . "</b><br/><br/>";
+      }
+     */
+
     //_e("Please select the Donate button to be taken to our payment vendor's site for online-donations.", 'evrplus_language');
     //echo "<hr/>";
     //EventPlus_Helpers_Payment::evrplus_registration_donation($event_id, $reg_id);
