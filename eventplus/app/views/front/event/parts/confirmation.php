@@ -96,7 +96,7 @@ if (EventPlus::factory('Request')->isPost()) {
     $emailSent = $oEmailReigstration->send();
 
     if ($emailSent) {
-        e("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
+        _e("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
     }
 }
 
