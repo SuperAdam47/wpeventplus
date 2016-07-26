@@ -73,6 +73,25 @@ $wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
 
 EventPlus_Helpers_Token::delete($event_id);
 
+$emailData = array(
+    'payer_id' => $attendee_id,
+    'attendee_id' => $attendee_id,
+    'event_id' => $event_id,
+    'payment_date' => $payment_date,
+    'payment_status' => $payment_status,
+    'txn_data' => array(
+        "payer_email" => $payer_email,
+        "amount" => $mc_gross,
+        "txn_id" => $txn_id,
+        'payment_status' => $payment_status,
+        'payment_date' => $payment_date,
+        'txn_type' => EventPlus_Models_Payments::AUTHORIZE
+    )
+);
+
+$oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
+$oEmailPayment->send();
+
 $urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
 echo'<script>window.location.href="' . $urlToGo . '";</script>';
 exit;
