@@ -32,7 +32,7 @@ $attendeeRow = $wpdb->get_row($sql, ARRAY_A);
 
 $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $attendeeRow['event_id'] . " LIMIT 1";
 $eventRow = $wpdb->get_row($sql, ARRAY_A);
-if ($eventRow['id'] <= 0 || $oPayPal->isValid() == false) {
+if ($eventRow['id'] <= 0) {
     wp_die(__("Invalid request", 'evrplus_language'));
 }
 
@@ -66,17 +66,12 @@ $pdt_payment_status = strtoupper($txn_data['payment_status']);
 
 if ($pdt_payment_status == 'FAIL') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
-} else if ($pdt_payment_status == clsAbstractStatusCodes::COMPLETED) {
-
-    $business = urldecode($txn_data['business']);
-
-    if ($business != trim($company_options['payment_vendor_id'])) {
-        $payment_status = clsAbstractStatusCodes::FAILED;
-    } else {
-        $payment_status = clsAbstractStatusCodes::COMPLETED;
-        $amountPaid = $attendeeRow['payment'];
-    }
+} else if ($pdt_payment_status == 'COMPLETED') {
+    $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
+}else{
+    $payment_status = $pdt_payment_status;
 }
+
 
 $wpdb->query($wpdb->prepare("UPDATE " . get_option('evr_attendee') . " SET payment_status = '" . esc_sql($payment_status) . "', amount_pd = '" . esc_sql($amountPaid) . "', payment_date = '" . esc_sql($payment_date) . "' WHERE id = %d", $attendeeRow['id']));
 
@@ -92,34 +87,18 @@ $sqlParams = array(
     'mc_currency' => $mc_currency,
     'payment_type' => 'full',
     'payment_status' => $payment_status,
+    'pending_reason' => ''.$txn_data['pending_reason'].'',
+    'payer_status' => ''.$txn_data['payer_status'].'',
+    'payment_type' => ''.$txn_data['payment_type'].'',
+    'reason_code' => ''.$txn_data['reason_code'].'',
     'txn_type' => EventPlus_Models_Payments::PAYPAL
 );
 
-$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 $wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
 
 EventPlus_Helpers_Token::delete($event_id);
 
-$emailData = array(
-    'payer_id' => $attendeeRow['id'],
-    'attendee_id' => $attendeeRow['id'],
-    'event_id' => $event_id,
-    'payment_status' => $payment_status,
-    'txn_data' => array(
-        "payer_email" => $payer_email,
-        "amount" => $mc_gross,
-        "txn_id" => $txnData['txn_id'],
-        'payment_status' => $payment_status,
-        'mc_currency' => $mc_currency,
-        'payment_date' => $payment_date,
-        'txn_type' => EventPlus_Models_Payments::PAYPAL
-    )
-);
-
-$oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
-$oEmailPayment->send();
-
 $urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
 echo'<script>window.location.href="' . $urlToGo . '";</script>';
 exit;
-
