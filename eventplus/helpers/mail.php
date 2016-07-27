@@ -1,6 +1,6 @@
 <?php
 
-final class EventPlus_Helpers_Mail {
+class EventPlus_Helpers_Mail {
 
     /**
      * @var EventPlus_Validate
@@ -12,7 +12,7 @@ final class EventPlus_Helpers_Mail {
     protected $eventRow = array();
 
     function __construct($data) {
-        $this->oValidate = new EventPlus_Validate();
+        $this->oValidate = new EventPlus_Validate($data);
         $this->data = $data;
         $this->company_options = EventPlus_Models_Settings::getSettings();
 

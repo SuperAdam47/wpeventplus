@@ -1,14 +1,7 @@
 <?php
-
-$varDirectoryPath = dirname(__FILE__);
-
-$varDirectoryPath = str_replace('wp-content\plugins\wpeventplus\public\stripe', '', $varDirectoryPath);
-$varDirectoryPath = str_replace('wp-content/plugins/wpeventplus/public/stripe', '', $varDirectoryPath);
-
-
-include_once($varDirectoryPath . 'wp-load.php');
-include_once($varDirectoryPath . 'wp-config.php');
-include_once($varDirectoryPath . 'wp-includes/wp-db.php');
+include_once('../../../../../wp-load.php');
+include_once('../../../../../wp-config.php');
+include_once('../../../../../wp-includes/wp-db.php');
 
 global $wpdb;
 
