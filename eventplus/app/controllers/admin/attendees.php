@@ -34,7 +34,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
             $totalRecords = $this->_model->getTotalAttendees($this->oEvent->id);
             $p->items($totalRecords);
             $p->limit($record_limit); // Limit entries per page
-            $p->target($this->adminUrl('admin_attendees'));
+            $p->target($this->adminUrl('admin_attendees', array('event_id' => $this->oEvent->id)));
 
             if (!isset($_GET['paging']) || $_GET['paging'] == 0) {
                 $p->page = 1;
