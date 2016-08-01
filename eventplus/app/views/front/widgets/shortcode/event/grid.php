@@ -68,7 +68,11 @@ if (count($rows)):
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
-                                <?php echo EventPlus_Helpers_Funx::truncateGrid(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); ?>
+                                <?php 
+								$content = html_entity_decode($event->event_desc);
+								
+								echo $con = substr(strip_tags(stripslashes($content)),0,110) . "..."; 
+								//echo EventPlus_Helpers_Funx::truncateGrid(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); ?>
                             </div>
                             <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">Read more</a> </div>
                         </div>
