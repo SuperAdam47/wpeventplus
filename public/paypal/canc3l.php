@@ -1,11 +1,15 @@
 <?php    
-if (file_exists('../../../../../wp-config.php')) {
+$currentDir = __DIR__;
+$dirParts = explode('/wp-content/', $currentDir);
+$wpDir = $dirParts[0] . DIRECTORY_SEPARATOR;
+
+if (file_exists($wpDir.'wp-config.php') == false) {
     die('Bad Request');
 }
 
-include_once('../../../../../wp-load.php');
-include_once('../../../../../wp-config.php');
-include_once('../../../../../wp-includes/wp-db.php');
+include_once($wpDir.'wp-load.php');
+include_once($wpDir.'wp-config.php');
+include_once($wpDir.'wp-includes/wp-db.php');
 
 global $wpdb;
 
