@@ -1,15 +1,16 @@
 <?php
+
 $currentDir = __DIR__;
 $dirParts = explode('/wp-content/', $currentDir);
 $wpDir = $dirParts[0] . DIRECTORY_SEPARATOR;
 
-if (file_exists($wpDir.'wp-config.php') == false) {
+if (file_exists($wpDir . 'wp-config.php') == false) {
     die('Bad Request');
 }
 
-include_once($wpDir.'wp-load.php');
-include_once($wpDir.'wp-config.php');
-include_once($wpDir.'wp-includes/wp-db.php');
+include_once($wpDir . 'wp-load.php');
+include_once($wpDir . 'wp-config.php');
+include_once($wpDir . 'wp-includes/wp-db.php');
 
 global $wpdb;
 
@@ -70,7 +71,7 @@ if ($pdt_payment_status == 'FAIL') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
 } else if ($pdt_payment_status == 'COMPLETED') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
-}else{
+} else {
     $payment_status = $pdt_payment_status;
 }
 
@@ -89,10 +90,10 @@ $sqlParams = array(
     'mc_currency' => $mc_currency,
     'payment_type' => 'full',
     'payment_status' => $payment_status,
-    'pending_reason' => ''.$txn_data['pending_reason'].'',
-    'payer_status' => ''.$txn_data['payer_status'].'',
-    'payment_type' => ''.$txn_data['payment_type'].'',
-    'reason_code' => ''.$txn_data['reason_code'].'',
+    'pending_reason' => '' . $txn_data['pending_reason'] . '',
+    'payer_status' => '' . $txn_data['payer_status'] . '',
+    'payment_type' => '' . $txn_data['payment_type'] . '',
+    'reason_code' => '' . $txn_data['reason_code'] . '',
     'txn_type' => EventPlus_Models_Payments::PAYPAL
 );
 
@@ -100,6 +101,26 @@ $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%
 $wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
 
 EventPlus_Helpers_Token::delete($event_id);
+
+
+$emailData = array(
+    'payer_id' => $attendeeRow['id'],
+    'attendee_id' => $attendeeRow['id'],
+    'event_id' => $event_id,
+    'payment_status' => $payment_status,
+    'txn_data' => array(
+        "payer_email" => $payer_email,
+        "amount" => $mc_gross,
+        "txn_id" => $txnData['txn_id'],
+        'payment_status' => $payment_status,
+        'mc_currency' => $mc_currency,
+        'payment_date' => $payment_date,
+        'txn_type' => EventPlus_Models_Payments::PAYPAL
+    )
+);
+
+$oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
+$oEmailPayment->send();
 
 $urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
 echo'<script>window.location.href="' . $urlToGo . '";</script>';
