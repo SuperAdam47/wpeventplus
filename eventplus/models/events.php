@@ -29,11 +29,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     
     function addEvent($params) {
 
-        $event_name = esc_html($params['event_name']);
+        $event_name = esc_sql($params['event_name']);
         $disable_event_reg = strtoupper($params['disable_event_reg']);
-        $event_identifier = esc_html($params['event_identifier']);
+        $event_identifier = esc_sql($params['event_identifier']);
         $display_desc = 'Y';  // Y or N
-        $event_desc = esc_html($params['event_desc']);
+        $event_desc = esc_sql($params['event_desc']);
         if (!empty($params['event_category'])) {
             $event_category = serialize($params['event_category']);
         } else {
@@ -103,7 +103,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         }
         $send_mail = $params['send_mail'];  // Y or N
 
-        $conf_mail = esc_html($params['conf_mail']);
+        $conf_mail = esc_sql($params['conf_mail']);
         //build start date
         $start_date = $start_year . "-" . $start_month . "-" . $start_day;
         //build end date
@@ -134,7 +134,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
 
         if (!empty($params['coord_pay_msg'])) {
-            $coord_pay_msg = esc_html($params['coord_pay_msg']);
+            $coord_pay_msg = esc_sql($params['coord_pay_msg']);
         } else {
             $coord_pay_msg = "";
         }
@@ -153,7 +153,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
 
         // Y or N
-        $term_desc = esc_html($params['term_desc']);
+        $term_desc = esc_sql($params['term_desc']);
 
         $count = $this->getWpDb()->get_var("SELECT COUNT(*) as count
                     FROM INFORMATION_SCHEMA.COLUMNS
@@ -248,11 +248,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $event_id = (int) $params['id'];
 
-        $event_name = esc_html($params['event_name']);
+        $event_name = esc_sql($params['event_name']);
         $disable_event_reg = strtoupper($params['disable_event_reg']);
-        $event_identifier = esc_html($params['event_identifier']);
+        $event_identifier = esc_sql($params['event_identifier']);
         $display_desc = 'Y';  // Y or N
-        $event_desc = esc_html($params['event_desc']);
+        $event_desc = esc_sql($params['event_desc']);
 
         if (!empty($params['event_category'])) {
             $event_category = serialize($params['event_category']);
@@ -271,7 +271,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $location_list = "";
         }
 
-        $event_location = esc_html($params['event_location']);
+        $event_location = esc_sql($params['event_location']);
         $event_address = $params['event_street'];
         $event_city = stripslashes($params['event_city']);
         $event_state = $params['event_state'];
@@ -321,7 +321,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         }
 
         $send_mail = $params['send_mail'];  // Y or N
-        $conf_mail = esc_html($params['conf_mail']);
+        $conf_mail = esc_sql($params['conf_mail']);
         //build start date
         $start_date = $start_year . "-" . $start_month . "-" . $start_day;
         //build end date
@@ -344,7 +344,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $coord_msg = $params['event_country'];
         if (!empty($params['coord_pay_msg'])) {
-            $coord_pay_msg = esc_html($params['coord_pay_msg']);
+            $coord_pay_msg = esc_sql($params['coord_pay_msg']);
         } else {
             $coord_pay_msg = "";
         }
@@ -360,7 +360,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $custom_cur = "";
         }
 
-        $term_desc = esc_html($params['term_desc']);
+        $term_desc = esc_sql($params['term_desc']);
 
         $sql = array(
             'event_name' => $event_name,
