@@ -4,6 +4,7 @@ $event_id = 0;
 $form_url = $this->adminUrl('admin_events', array('method' => 'add'));
 if (is_object($row)) {
     if ($row->id > 0) {
+        
         $event_id = (int) $row->id;
         $form_url = $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id));
         $event_name = stripslashes($row->event_name);
@@ -168,11 +169,7 @@ if (is_object($row)) {
             $expiration_date = strtotime($stp);
         }
 
-         $close_dt = $end_date . " " . $end_time;
-
-        $dateTime = new DateTime($close_dt);
-        $expiration_date = $dateTime->format("U");
-
+  
         $today = strtotime($current_dt);
 
 
