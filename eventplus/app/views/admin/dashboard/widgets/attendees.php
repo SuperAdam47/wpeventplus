@@ -45,7 +45,7 @@
 
                                 <?php foreach ($attendees as $attendee) { ?>
                                 <tr>
-                                    <td><?php echo $attendee->fname . ' ' . $attendee->fname; ?></td>
+                                    <td><?php echo $attendee->fname . ' ' . $attendee->lname; ?></td>
                                     <td><?php echo $attendee->event_name ?></td>
                                     <td><?php echo $attendee->quantity; ?></td>
                                     <td><a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $attendee->event_id, 'attendee_id' => $attendee->id)); ?>" class="btn btn-mini btn-info">View</a></td>

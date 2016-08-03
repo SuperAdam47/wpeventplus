@@ -251,7 +251,7 @@ if (!function_exists('evrplus_prev_link')) {
 
 if (!function_exists('evrplus_generate_frm_defaults')) {
 
-    function evrplus_generate_frm_defaults($field, $tag, $value='') {
+    function evrplus_generate_frm_defaults($field, $tag, $value = '') {
         ?>
         <li>
             <label for="<?php echo $field; ?>"><?php echo $tag; ?></label>
@@ -297,9 +297,9 @@ if (!function_exists('evrplus_get_open_seats')) {
 
     function evrplus_get_open_seats($event_id, $reg_limit) {
         global $wpdb;
-    
+
         $num = 0;
-        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id='$event_id'";
+        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '" . EventPlus_Models_Payments::PAYMENT_SUCCESS . "' AND event_id='$event_id'";
         $attendee_count = $wpdb->get_var($sql2);
         If ($attendee_count >= 1) {
             $num = $attendee_count;
@@ -445,6 +445,29 @@ if (!function_exists('evrplus_Truncate_grid')) {
             }
         }
         return $string;
+    }
+
+}
+
+
+if (!function_exists('wpeventplus_get_open_seats')) {
+
+    function wpeventplus_get_open_seats($event_id, $reg_limit) {
+
+        if (trim($reg_limit) == "" || $reg_limit >= 999999) {
+            return "Unlimited";
+        }
+
+        global $wpdb;
+
+        $num = 0;
+        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '" . EventPlus_Models_Payments::PAYMENT_SUCCESS . "' AND event_id='$event_id'";
+        $attendee_count = $wpdb->get_var($sql2);
+        If ($attendee_count >= 1) {
+            $num = $attendee_count;
+        }
+        $open_seats = $reg_limit - $num;
+        return $open_seats;
     }
 
 }

@@ -18,8 +18,13 @@
                             </th>
 
                             <th>
+                                <?php _e('Seats', 'evrplus_language'); ?>  									
+                            </th>
+
+                            <th>
                                 <?php _e('Available Seats', 'evrplus_language'); ?>  									
                             </th>
+
                             <th>
                                 <?php _e('Status', 'evrplus_language'); ?> 									
                             </th>
@@ -47,7 +52,6 @@
 
                                     $event_close = $event->close;
                                     $end_date = $event->end_date;
-                                    $available_spaces = $reg_limit;
                                     $start_date = $event->start_date;
                                     $start_time = $event->start_time;
 
@@ -79,10 +83,14 @@
 
                                         $active_event = '<span class="event_ac">' . __('ACTIVE', 'evrplus_language') . '</span>';
                                     }
+
+
+                                    $available_spaces = wpeventplus_get_open_seats($event->id, $reg_limit);
                                     ?>
                                 <tr>
                                     <td><?php echo stripslashes($event->event_name) ?></td>
                                     <td><?php echo $reg_limit ?></td>
+                                    <td><?php echo $available_spaces ?></td>
                                     <td><?php echo $active_event ?></td>
                                 </tr>
                             <?php } ?>
