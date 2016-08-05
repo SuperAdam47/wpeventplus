@@ -203,7 +203,6 @@ if (is_object($row)) {
             'venue' => __('Event Venue', 'evrplus_language'),
             'datetime' => __('Event Date/Time', 'evrplus_language'),
             'options' => __('Event Options', 'evrplus_language'),
-            'discounts' => __('Discounts', 'evrplus_language'),
             'email' => __('Confirmation Mail', 'evrplus_language'),
         );
         ?>
