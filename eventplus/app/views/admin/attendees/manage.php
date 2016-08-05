@@ -69,11 +69,11 @@ $event_id = $oEvent->id;
                 <td>
                     <?php 
                     $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending'; 
-                    if($payment_status == 'Pending' && intVal($attendee->payment) === intVal($attendee->amount_pd)){
+                    if($payment_status == 'Pending' && ($attendee->payment) === ($attendee->amount_pd)){
                         $payment_status = "Success";
                     }
                     ?>
-                    <?php if ($payment_status == 'success'): ?>
+                    <?php if (strtolower($payment_status) == 'success'): ?>
                         <span class='label  label-success'><?php echo ucfirst($payment_status); ?></span>
                     <?php else: ?>
                         <span class='label label-warning'><?php echo $payment_status; ?></span>

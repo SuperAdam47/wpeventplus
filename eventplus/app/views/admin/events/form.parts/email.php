@@ -14,7 +14,7 @@ if (isset($conf_mail) == false || $conf_mail == '') {
 <div class="postbox">
     <div class="inside">
         <div class="padding">
-            <h1 class="stephead"><?php _e('Step 5', 'evrplus_language'); ?></h1>
+            <h1 class="stephead"><?php _e('Step 6', 'evrplus_language'); ?></h1>
             <br>
             <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/email-icon.png'); ?>"><?php _e('Custom Confirmation Email', 'evrplus_language'); ?></span>
             <div class="form-table">
