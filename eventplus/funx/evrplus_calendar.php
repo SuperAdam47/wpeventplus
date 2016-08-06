@@ -351,7 +351,7 @@ function evrplus_show_event($event, $day = 0) {
     }
     if (isset($company_options['show_num_seats']) and $company_options['show_num_seats'] == 'yes') {
         $num = 0;
-        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id'";
+        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id' AND payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."'";
 
         $attendee_count = $wpdb->get_var($sql2);
         If ($attendee_count >= 1) {
@@ -365,7 +365,7 @@ function evrplus_show_event($event, $day = 0) {
         If ($available >= 1) {
             $seats = $available . " " . __("Seats", 'evrplus_language');
         }
-        If ($available == 0) {
+        If ($available <= 0) {
             $seats = __("Event Full", 'evrplus_language');
         }
         if (!isset($event->reg_limit) or empty($event->reg_limit) or $event->reg_limit == 999999)
