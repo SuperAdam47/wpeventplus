@@ -442,12 +442,13 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $orderby = ' ORDER BY ' . $params['sort'];
         }
 
-        if ($params['company_options']['order_event_list'] == 'DESC') {
-            $orderby .= " DESC ";
+        if (!empty($params['company_options']['order_event_list'])) {
+			$option = $params['company_options']['order_event_list'];
+            $orderby2= " $option ";
         }
 
         //check database for number of records with date of today or in the future
-        $sql = "SELECT * FROM " . $this->_table . $orderby;
+        $sql = "SELECT * FROM " . $this->_table . $orderby.$orderby2;
 
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
