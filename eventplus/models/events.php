@@ -357,7 +357,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $custom_cur = "";
         }
 
-        $term_desc = ($params['term_desc']);
+        $term_desc = stripslashes($params['term_desc']);
 
         $sql = array(
             'event_name' => $event_name,
