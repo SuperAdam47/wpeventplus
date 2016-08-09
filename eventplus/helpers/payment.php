@@ -369,7 +369,7 @@ class EventPlus_Helpers_Payment {
                         . '<td>' . __("Transaction Id", 'evrplus_language') . '</td><td>' . $paymentRow['txn_id'] . '</td>'
                         . '</tr>';
                     }
-                    
+
                     echo '<tr>'
                     . '<td>' . __("Payment Method", 'evrplus_language') . '</td><td>' . $paymentTitleStr . '</td>'
                     . '</tr>';
@@ -517,6 +517,100 @@ class EventPlus_Helpers_Payment {
             }
         }
         //End Paypal Donation Section
+    }
+
+    function get_details() {
+
+        $event_id = $this->event_id;
+
+        if ($this->eventRow['id'] <= 0) {
+            _e('Invalid event - please retry!', 'evrplus_language');
+            return;
+        }
+
+        $attendee_id = $this->attendee_id;
+
+        if ($this->attendeeRow['id'] <= 0) {
+            _e('Invalid registration - please retry!', 'evrplus_language');
+            return;
+        }
+
+
+        $event_name = stripslashes($this->eventRow['event_name']);
+        $event_location = $this->eventRow['event_location'];
+        $event_address = $this->eventRow['event_address'];
+        $event_city = $this->eventRow['event_city'];
+        $event_postal = $this->eventRow['event_postal'];
+        $reg_limit = $this->eventRow['reg_limit'];
+        $start_time = $this->eventRow['start_time'];
+        $end_time = $this->eventRow['end_time'];
+        $start_date = $this->eventRow['start_date'];
+        $end_date = $this->eventRow['end_date'];
+        $use_coupon = $this->eventRow['use_coupon'];
+        $coupon_code = $this->eventRow['coupon_code'];
+        $coupon_code_price = $this->eventRow['coupon_code_price'];
+
+
+        $lname = $this->attendeeRow ['lname'];
+        $fname = $this->attendeeRow ['fname'];
+        $address = $this->attendeeRow ['address'];
+        $city = $this->attendeeRow ['city'];
+        $state = $this->attendeeRow ['state'];
+        $zip = $this->attendeeRow ['zip'];
+        $email = $this->attendeeRow ['email'];
+        $phone = $this->attendeeRow ['phone'];
+        $quantity = $this->attendeeRow ['quantity'];
+        $date = $this->attendeeRow ['date'];
+        $reg_type = $this->attendeeRow['reg_type'];
+        $ticket_order = unserialize($this->attendeeRow['tickets']);
+
+        $tax = $this->attendeeRow['tax'];
+        $payment = $this->attendeeRow['payment'];
+        $coupon = $this->attendeeRow['coupon'];
+        $token = $this->attendeeRow['token'];
+        $attendee_name = $fname . " " . $lname;
+
+        // Print the Order Verification to the screen.
+
+        echo '<table width="95%" border="0">'
+        . '<tr>
+                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Order details', 'evrplus_language') . '</font></b></td>
+                </tr>'
+        . '<tr><td><strong>';
+        _e('Event Name/Cost:', 'evrplus_language');
+        echo '</strong></td><td>' . $event_name . ' - ' . $ticket_order[0]['ItemCurrency'] . ' ' . $payment . '</td></tr><tr><td><strong>';
+        _e('Attendee Name:', 'evrplus_language');
+        echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
+        _e('Email Address:', 'evrplus_language');
+        echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
+        _e('Number of Attendees:', 'evrplus_language');
+        echo '</strong></td><td>' . $quantity . '</td></tr>';
+        $row_count = count($ticket_order);
+
+        if ($row_count > 0) {
+            echo '<tr><td><strong>';
+            _e('Order Details:', 'evrplus_language');
+            echo '</strong></td><td>';
+
+            for ($row = 0; $row < $row_count; $row++) {
+                if ($ticket_order[$row]['ItemQty'] >= "1") {
+                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
+                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
+                }
+            }
+        }
+        echo '</td></tr>';
+
+        if ($this->companyOptions['use_sales_tax'] == "Y") {
+            echo '<tr><td></td><td>';
+            _e('Sales Tax  ', 'evrplus_language');
+            echo ':  ' . $tax;
+            echo '</td></tr>';
+        }
+
+        echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
+        echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td></tr></table>';
+
     }
 
 }

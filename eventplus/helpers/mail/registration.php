@@ -16,53 +16,51 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
                     return;
                 }
 
-                if (strtoupper($this->eventRow['send_mail']) == "N") {
-                    return;
-                }
+                if (strtoupper($this->eventRow['send_mail']) == "Y") {
+                    $emailBodyStr = stripslashes($this->eventRow['conf_mail']);
+                    if (trim($emailBodyStr) == '') {
+                        $emailBodyStr = $this->company_options['message'];
+                    }
 
-                $emailBodyStr = stripslashes($this->eventRow['conf_mail']);
-                if (trim($emailBodyStr) == '') {
-                    $emailBodyStr = $this->company_options['message'];
-                }
+                    if ($emailBodyStr != '') {
 
-                if ($emailBodyStr != '') {
+                        $emailBodyStr = $this->bindParams($emailBodyStr);
 
-                    $emailBodyStr = $this->bindParams($emailBodyStr);
+                        $email_content = $emailBodyStr;
 
-                    $email_content = $emailBodyStr;
+                        $message_top = "<html><body>";
+                        $message_bottom = "</html></body>";
 
-                    $message_top = "<html><body>";
-                    $message_bottom = "</html></body>";
-
-                    $wait_message = '<font color="red"><p>' . __("Thank you for registering for", 'evrplus_language') . " [event_name]. "
-                            . __("At this time, all seats for the event have been taken. Your information has been placed on our waiting list.  
+                        $wait_message = '<font color="red"><p>' . __("Thank you for registering for", 'evrplus_language') . " [event_name]. "
+                                . __("At this time, all seats for the event have been taken. Your information has been placed on our waiting list.  
         The waiting list is on a first come, first serve basis.  
         You will be notified by email should a seat become available.", 'evrplus_language') . '</p>'
-                            . '<p>' . __("Thank You", 'evrplus_language') . '</p></font>';
+                                . '<p>' . __("Thank You", 'evrplus_language') . '</p></font>';
 
-                    if (trim($this->company_options['wait_message']) != "") {
-                        $wait_message = $this->company_options['wait_message'];
+                        if (trim($this->company_options['wait_message']) != "") {
+                            $wait_message = $this->company_options['wait_message'];
+                        }
+
+                        $wait_message = $this->bindParams($wait_message);
+
+                        if (strtoupper($this->attendeeRow['reg_type']) == "WAIT") {
+                            $email_content = $wait_message;
+                        }
+
+                        $email_body = $message_top . $email_content . $message_bottom;
+
+                        $headers = array(
+                            'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
+                            "Content-Type: text/html"
+                        );
+                        $headers = implode("\r\n", $headers) . "\r\n";
+
+                        $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
+                        $mail_subject = $event_name;
+
+
+                        $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
                     }
-
-                    $wait_message = $this->bindParams($wait_message);
-
-                    if (strtoupper($this->attendeeRow['reg_type']) == "WAIT") {
-                        $email_content = $wait_message;
-                    }
-
-                    $email_body = $message_top . $email_content . $message_bottom;
-
-                    $headers = array(
-                        'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
-                        "Content-Type: text/html"
-                    );
-                    $headers = implode("\r\n", $headers) . "\r\n";
-
-                    $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
-                    $mail_subject = $event_name;
-
-
-                    $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
                 }
             }
         }
