@@ -79,12 +79,16 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
             if (trim($this->company_options['c_message']) != "") {
                 $admin_email_body = $this->company_options['c_message'];
             }
-            
+
             $admin_body = $this->bindParams($admin_email_body);
 
             $admin_email_body = $message_top . $admin_body . $message_bottom;
-            
+
             $toAdminEmails = array(get_option('admin_email'));
+            if (isset($this->company_options['email']) && !empty($this->company_options['email'])) {
+                $toAdminEmails[] = trim($this->company_options['email']);
+            }
+
             if (isset($this->company_options['secondary_email']) && !empty($this->company_options['secondary_email'])) {
                 $emails = explode(',', $this->company_options['secondary_email']);
                 foreach ($emails as $email) {
