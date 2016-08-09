@@ -15,6 +15,8 @@ class EventPlus_Helpers_Payment {
         global $wpdb;
 
         $this->companyOptions = EventPlus_Models_Settings::getSettings();
+        
+        
         $this->event_id = $event_id;
         $this->attendee_id = $attendee_id;
 
@@ -571,6 +573,10 @@ class EventPlus_Helpers_Payment {
         $attendee_name = $fname . " " . $lname;
 
         // Print the Order Verification to the screen.
+        
+        if(isset($this->companyOptions['c_message']) && trim($this->companyOptions['c_message']) != ''){
+            echo '<p>' . html_entity_decode(stripslashes($this->companyOptions['c_message'])) . '</p>';
+        }
 
         echo '<table width="95%" border="0">'
         . '<tr>

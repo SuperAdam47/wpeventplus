@@ -109,6 +109,8 @@ if ($reg_form['reg_type'] == "WAIT") {
     return;
 }
 
+
+
 //If there is a balance of payment over 0, then notify attendee of payment need.  
 if ($reg_form['payment'] > 0) {
 
@@ -139,6 +141,9 @@ if ($reg_form['payment'] > 0) {
 
     $oHelperPayment = new EventPlus_Helpers_Payment($event_id, $reg_id);
     $oHelperPayment->evrplus_registration_payment($event_id, $reg_id);
+} else if ($reg_form['payment'] <= 0) {
+    $oHelperPayment = new EventPlus_Helpers_Payment($event_id, $reg_id);
+    $oHelperPayment->get_details(); 
 }
 
 // If Accept Donations is yes and Event Fees are 0, then make Donation Offer
