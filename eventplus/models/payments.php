@@ -55,10 +55,10 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     function updateAttendeeStatus($payer_id) {
         
         $sql = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id = '" . (int) $payer_id . "' LIMIT 1";
-        $attendeeRow = $this->wpDb()->get_row($sql, ARRAY_A);
+        $attendeeRow = $this->getWpDb()->get_row($sql, ARRAY_A);
 
         $sql = "SELECT SUM(mc_gross) as totPaid FROM " . get_option('evr_payment') . " WHERE payment_status = 'success' AND payer_id='".(int)$payer_id."' LIMIT 1";
-        $totPaymentRow = $this->wpDb()->get_row($sql, ARRAY_A);
+        $totPaymentRow = $this->getWpDb()->get_row($sql, ARRAY_A);
         
         $total_paid = $totPaymentRow['totPaid'];
         $orderTotal = $attendeeRow['payment'];

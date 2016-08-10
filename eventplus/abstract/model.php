@@ -330,6 +330,10 @@ abstract class EventPlus_Abstract_Model {
         return $this->db->getDb();
     }
 
+    function wpDb() {
+        return $this->db->getDb();
+    }
+
     function query($sql) {
         return $this->db->query($sql);
     }

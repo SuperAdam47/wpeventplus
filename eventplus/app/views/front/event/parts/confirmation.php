@@ -87,18 +87,13 @@ $invoice_data = array('reg_id' => $reg_id, 'lname' => $reg_form['lname'], 'fname
 
 $invoice_post = urlencode(serialize($invoice_data));
 
-if (EventPlus::factory('Request')->isPost()) {
-    $oEmailReigstration = new EventPlus_Helpers_Mail_Registration(array(
-        'event_id' => $event_id,
-        'attendee_id' => $reg_id,
-    ));
-
-    $emailSent = $oEmailReigstration->send();
-
-    if ($emailSent) {
+if (isset($_GET['event_emr'])) {
+    if (md5($_GET['event_emr']) == md5(1)) {
         _e("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
     }
 }
+
+
 
 //Provide screen feedback on registration process  
 //If registration is at capacity and attendee is waitlisted, notify attendee of waitlist.
@@ -108,6 +103,8 @@ if ($reg_form['reg_type'] == "WAIT") {
     echo "</p>";
     return;
 }
+
+
 
 //If there is a balance of payment over 0, then notify attendee of payment need.  
 if ($reg_form['payment'] > 0) {
@@ -139,6 +136,9 @@ if ($reg_form['payment'] > 0) {
 
     $oHelperPayment = new EventPlus_Helpers_Payment($event_id, $reg_id);
     $oHelperPayment->evrplus_registration_payment($event_id, $reg_id);
+} else if ($reg_form['payment'] <= 0) {
+    $oHelperPayment = new EventPlus_Helpers_Payment($event_id, $reg_id);
+    $oHelperPayment->get_details();
 }
 
 // If Accept Donations is yes and Event Fees are 0, then make Donation Offer
