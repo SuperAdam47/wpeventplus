@@ -3,7 +3,9 @@
 class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
     function send() {
-
+        
+        $boolConfirmation = false;
+        
         if (strtoupper($this->company_options['send_confirm']) == 'Y') {
 
             if ($this->data['event_id'] > 0 && $this->data['attendee_id'] > 0) {
@@ -59,7 +61,7 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
                         $mail_subject = $event_name;
 
 
-                        $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
+                        $boolConfirmation = $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
                     }
                 }
             }
@@ -108,6 +110,8 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
                 $this->send_wp_mail($toAdminEmails, 'New Registration - ' . stripslashes($mail_subject), html_entity_decode(nl2br($admin_email_body)), $headers);
             }
         }
+        
+        return $boolConfirmation;
     }
 
 }

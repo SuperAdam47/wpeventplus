@@ -44,9 +44,9 @@ $attendee_row = $attendee_result[0];
 # If there are no records then we can add this record. 
 $count = $wpdb->num_rows;
 
-if($count > 0 && $attendee_row['id'] > 0){
-    $wpdb->query("DELETE FROM ". get_option('evr_attendee') . " WHERE token= '" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "'");
-    $wpdb->query("DELETE FROM " . get_option('evr_answer') . " WHERE registration_id = '" . (int)$attendee_row['id'] . "'");
+if ($count > 0 && $attendee_row['id'] > 0) {
+    $wpdb->query("DELETE FROM " . get_option('evr_attendee') . " WHERE token= '" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "'");
+    $wpdb->query("DELETE FROM " . get_option('evr_answer') . " WHERE registration_id = '" . (int) $attendee_row['id'] . "'");
 }
 
 
@@ -65,6 +65,7 @@ $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%
 #Post new attendee info to the Attendee Database
 $attendee_insert_result = $wpdb->insert(get_option('evr_attendee'), $sql, $sql_data);
 
+$is_email_sent = 0;
 # If attendee record posted to the database, then add the custom questions as well.
 if ($attendee_insert_result) {
 
@@ -82,8 +83,19 @@ if ($attendee_insert_result) {
             ++$i;
         } while ($i < (count($questionsResponse) + 1));
     }
+
+    $oEmailReigstration = new EventPlus_Helpers_Mail_Registration(array(
+        'event_id' => $event_id,
+        'attendee_id' => $reg_id,
+    ));
+
+    $emailSent = $oEmailReigstration->send();
+
+    if ($emailSent) {
+        $is_email_sent = 1;
+    }
 }
 
 #Now that the attendee record has been posted and we have id, redirect to confirmation page.
-$url_to_goto = evrplus_permalink($company_options['evrplus_page_id']) . 'action=confirmation&event_id=' . $passed_event_id . '&eventplus_token=' . $eventplus_token;
+$url_to_goto = evrplus_permalink($company_options['evrplus_page_id']) . 'action=confirmation&event_emr=' . md5($is_email_sent) . '&event_id=' . $passed_event_id . '&eventplus_token=' . $eventplus_token;
 echo '<meta http-equiv="refresh" content="0;url=' . $url_to_goto . '" />';
