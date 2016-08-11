@@ -134,6 +134,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                                     ?>
                                                     <option value="USD" >USD</option>
                                                     <option value="TWD" >TWD</option>
+                                                    <option value="JOD" >JOD</option>
                                                     <option value="TRY" >TRY</option>
                                                     <option value="THB" >THB</option>
                                                     <option value="RUB" >RUB</option>
