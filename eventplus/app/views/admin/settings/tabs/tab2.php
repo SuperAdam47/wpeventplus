@@ -24,6 +24,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             </option>
                             <!--<option value="<?php echo $company_options['default_currency']; ?>" ><?php echo $company_options['default_currency']; ?> </option>-->
                             <option value="USD" <?php if ($company_options['default_currency'] == 'USD') echo ' selected'; ?>>USD</option>
+                            <option value="JOD" <?php if ($company_options['default_currency'] == 'JOD') echo ' selected'; ?>>JOD</option>
                             <option value="TWD" <?php if ($company_options['default_currency'] == 'TWD') echo ' selected'; ?>>TWD</option>
                             <option value="TRY" <?php if ($company_options['default_currency'] == 'TRY') echo ' selected'; ?>>TRY</option>
                             <option value="THB" <?php if ($company_options['default_currency'] == 'THB') echo ' selected'; ?>>THB</option>
