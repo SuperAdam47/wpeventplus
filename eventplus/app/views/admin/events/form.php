@@ -3,6 +3,7 @@ $editor_settings = array('wpautop', 'media_buttons' => false, 'textarea_rows' =>
 $event_id = 0;
 $form_url = $this->adminUrl('admin_events', array('method' => 'add'));
 if (is_object($row)) {
+
     if ($row->id > 0) {
 
         $event_id = (int) $row->id;
@@ -15,6 +16,8 @@ if (is_object($row)) {
         $reg_limit = $row->reg_limit;
         $term_c = $row->term_c;
         $term_desc = $row->term_desc;
+        $meta_data = $row->meta_data;
+        
         /*
           $event_location = stripslashes($row['event_location']);
           $event_address = $row['event_address'];

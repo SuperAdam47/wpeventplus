@@ -37,6 +37,7 @@ $event_id = $oEvent->id;
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
                 <th><?php _e('Email', 'evrplus_language'); ?></th>
                 <th><?php _e('Phone', 'evrplus_language'); ?></th>
+                <th><?php _e('Payment', 'evrplus_language'); ?></th>
                 <th><?php _e('Payment Status', 'evrplus_language'); ?></th>
                 <th><?php _e('Action', 'evrplus_language'); ?></th>
             </tr>
@@ -66,10 +67,11 @@ $event_id = $oEvent->id;
                     echo "</td>"
                     . "<td>" . $attendee->email . "</td><td>" . $attendee->phone . "</td>";
                     ?>
+           
                 <td>
-                    <?php 
-                    $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending'; 
-                    if($payment_status == 'Pending' && ($attendee->payment) === ($attendee->amount_pd)){
+                    <?php
+                    $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending';
+                    if ($payment_status == 'Pending' && ($attendee->payment) === ($attendee->amount_pd)) {
                         $payment_status = "Success";
                     }
                     ?>

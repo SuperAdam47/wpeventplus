@@ -8,8 +8,6 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
     function index() {
 
-        
-        
         $record_limit = 20;
 
         $p = new EventPlus_Pagination();
@@ -34,13 +32,13 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
         $limit_str = "LIMIT " . ($p->page - 1) * $p->limit . ", " . $p->limit;
 
         $params = $this->_request->getParams();
-        
+
         $company_options = EventPlus_Models_Settings::getSettings();
         $params['company_options'] = $company_options;
         $params['limit_str'] = $limit_str;
 
         $rows = $this->_model->getEvents($params);
-        
+
         $response = $this->oView->loadLayout('admin/layouts/events', 'admin/events/manage', array(
             'company_options' => $company_options,
             'rows' => $rows,
@@ -61,7 +59,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
     function action_add_redirect() {
         $this->redirect($this->adminUrl('admin_events/add'));
     }
-    
+
     function action_add() {
 
         if ($this->_request->isPost()) {
@@ -95,7 +93,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
         $id = intVal($this->_request->getParam('id'));
         $row = $this->_model->getData($id);
 
-
+        
         if ($row === false) {
             $this->setErrorMessage(__("Event doesn't exist.", 'evrplus_language'));
             $this->redirect($this->adminUrl('admin_events'));
@@ -117,12 +115,17 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
             )));
             return;
         }
+        
+        
+        $oEventMeta = new EventPlus_Models_Events_Meta();
+        $row->meta_data = $oEventMeta->getAllOptions($id);
 
         $formData = $this->fillFormData(array(
             'form_heading' => __("Edit Event", 'evrplus_language'),
             'button_label' => __("Update Event", 'evrplus_language'),
             'row' => $row,
         ));
+        
 
         $response = $this->oView->loadLayout('admin/layouts/events', 'admin/events/form', $formData);
 
@@ -181,4 +184,5 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
         $this->redirect($this->adminUrl('admin_events'));
     }
+
 }

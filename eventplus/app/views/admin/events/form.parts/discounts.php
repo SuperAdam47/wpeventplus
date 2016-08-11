@@ -1,3 +1,4 @@
+
 <div class="postbox">
     <div class="inside">
         <div class="padding">
@@ -7,14 +8,15 @@
             <div class="form-table">
 
                 <p>
+          
                     <label for="qty_discount_yes">
                         <?php _e('Would you like to offer quantity based discounts? ', 'evrplus_language'); ?></label><br />
                     <select name = 'qty_discount' class="regular-select ev--qty-discount">
 
-                        <option value="N" <?php if ($company_options['qty_discount'] == 'N') echo ' selected'; ?>>
+                        <option value="N" <?php if ($meta_data['qty_discount'] == 'N') echo ' selected'; ?>>
                             <?php _e('No', 'evrplus_language'); ?>
                         </option>
-                        <option value="Y" <?php if ($company_options['qty_discount'] == 'Y') echo ' selected'; ?>>
+                        <option value="Y" <?php if ($meta_data['qty_discount'] == 'Y') echo ' selected'; ?>>
                             <?php _e('Yes', 'evrplus_language'); ?>
                         </option>
                     </select>
@@ -23,13 +25,13 @@
                 </p>
 
                 <?php
-                $qtyMinPlusRange = range(1, 10);
+                $qtyMinPlusRange = range(1, 20);
                 ?>
 
-                <div class="cl2" id="discount_range_holder" style="display: none;">
+                <div class="cl2" id="discount_range_holder" <?php if($meta_data['qty_discount'] != 'Y'): ?>style="display: none;"<?php endif; ?>>
                     <table class="widefat" cellspacing="5" cellpadding="5">
                         <tr>
-                            <td>Range</td>
+                            <td>Quantity</td>
                             <td>Percentage</td>
                         </tr>
                         <?php foreach ($qtyMinPlusRange as $ri => $rVal): ?>
@@ -37,7 +39,7 @@
                                 <td>
                                     <?php echo $rVal; ?>+
                                 </td>
-                                <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount[<?php echo $rVal; ?>]" value="" /></td>
+                                <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount_settings[<?php echo $rVal; ?>]" value="<?php echo $meta_data['qty_discount_settings'][$rVal]; ?>" /></td>
                             </tr>
                         <?php endforeach; ?>
 

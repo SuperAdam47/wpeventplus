@@ -26,7 +26,7 @@ EventPlus::init();
 class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     protected $_plugin_title = 'Events+';
-    protected $_build_version = '6.00.32';
+    protected $_build_version = '6.00.33';
     protected $_plugin_version = '2.0.3';
     protected $_plugin_slug = 'eventplus';
     protected $oApp = null;

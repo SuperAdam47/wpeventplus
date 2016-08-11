@@ -1,8 +1,9 @@
 <?php
+
 $num_people = 0;
 $item_order = array();
 
-$passed_event_id = (int)$_POST['event_id'];
+$passed_event_id = (int) $_POST['event_id'];
 $event_id = 0;
 if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['eventplus_token']) && strlen($_POST['eventplus_token']) == 32)) {
     $event_id = $passed_event_id;
@@ -14,8 +15,8 @@ if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['event
 $eventplus_token = $_POST['eventplus_token'];
 
 $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
-if($isPending === false){
-      _e("Couldn't proceed! registration already processed.", 'evrplus_language');
+if ($isPending === false) {
+    _e("Couldn't proceed! registration already processed.", 'evrplus_language');
     return;
 }
 
@@ -155,7 +156,7 @@ if ($reg_type == "WAIT") {
 $ticket_data = serialize($item_order);
 
 $qanda = array();
-$questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '".(int)$event_id."'");
+$questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "'");
 if ($questions) {
     foreach ($questions as $question) {
         switch ($question->question_type) {
@@ -184,7 +185,7 @@ if ($questions) {
     }
 }
 
-$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int)$event_id;
+$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $event_id;
 $result = $wpdb->get_results($sql, ARRAY_A);
 
 foreach ($result as $row) {
@@ -215,24 +216,27 @@ $posted_data = array('lname' => $lname, 'fname' => $fname, 'address' => $address
     'state' => $state, 'zip' => $zip, 'reg_type' => $reg_type, 'email' => $email,
     'phone' => $phone, 'email' => $email, 'coupon' => $coupon, 'event_id' => $event_id,
     'company' => $company, 'co_add' => $coadd, 'co_city' => $cocity, 'co_state' => $costate, 'co_zip' => $cozip,
-    'num_people' => $quantity, 'tickets' => $ticket_data, 'payment' => $payment, 'fees' => $fees, 'tax' => $tax);
+    'num_people' => $quantity, 'tickets' => $ticket_data,
+    'payment' => $payment,
+    'order_total' => $payment,
+    'fees' => $fees, 'tax' => $tax);
 
 #Begin display of confirmation form
 echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/validate.js.php') . '"></script>';
 echo '<p align="left"><strong>' . __('Please verify your registration details:', 'evrplus_language') . '</strong></p>';
 echo '<table width="95%" border="0"><tr><td><strong>' . _e('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
 
-$eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment ;
+$eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment;
 
-if(intval($payment) == 0){
-    $eventNameCostStr = $event_name . ' - Free' ;
+if (intval($payment) == 0) {
+    $eventNameCostStr = $event_name . ' - Free';
 }
 
-echo $eventNameCostStr. '</td></tr><tr><td><strong>';
+echo $eventNameCostStr . '</td></tr><tr><td><strong>';
 
 _e('Registering Name:', 'evrplus_language');
 echo '</strong></td><td>' . $attendee_name . '</td></tr>'
-        . '<tr><td><strong>' . __('Email Address:', 'evrplus_language') . '</strong></td><td>';
+ . '<tr><td><strong>' . __('Email Address:', 'evrplus_language') . '</strong></td><td>';
 echo $email . '</td></tr><tr><td><strong>' . __('Number of Attendees:', 'evrplus_language');
 echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>' . __('Order Details:', 'evrplus_language') . '</strong></td><td>';
 
@@ -242,12 +246,12 @@ if ($reg_type == "WAIT") {
 } else {
     $row_count = count($item_order);
     for ($row = 0; $row < $row_count; $row++) {
-        if ($item_order[$row]['ItemQty'] >= "1") {
+        if ($item_order[$row]['ItemQty'] >= 1) {
             $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " " . $item_order[$row]['ItemCurrency'] . '  ' . $item_order[$row]['ItemCost'] . "<br \>";
-            if($item_order[$row]['ItemCost'] <= 0){
-                $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free "  . "<br \>";
+            if ($item_order[$row]['ItemCost'] <= 0) {
+                $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free " . "<br \>";
             }
-            
+
             echo $strItemD;
         }
     }
@@ -269,8 +273,34 @@ if ($company_options['use_sales_tax'] == "Y") {
     _e('Sales Tax:', 'evrplus_language');
     echo '  ' . $tax . '</td></tr>';
 }
-echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Event Name / Total Cost:', 'evrplus_language') . '</strong></td><td>';
-echo $event_name . ': ' . $item_order[0]['ItemCurrency'] . '<strong>  ' . number_format(floatval($payment), 2) . '</strong></td></tr></table>';
+
+$total = $payment;
+if (intval($total) > 0) {
+    $oEventMeta = new EventPlus_Models_Events_Meta();
+    $meta_data = $oEventMeta->getAllOptions($event_id);
+    $discountPercentage = 0;
+    if ($meta_data['qty_discount'] == 'Y') {
+        $discountPercentage = EventPlus_Helpers_Event::getDiscountPercentage($quantity, $meta_data['qty_discount_settings']);
+
+        if ($discountPercentage > 0) {
+            $posted_data['discount_percentage'] = $discountPercentage;
+            $posted_data['discount'] = round(($total * $discountPercentage) / 100, 2);
+            $total = $total - $posted_data['discount'];
+            $posted_data['payment'] = $total;
+        }
+    }
+}
+        
+if ($posted_data['discount'] > 0) {
+    echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Order Total:', 'evrplus_language') . '</strong></td><td>';
+    echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($payment), 2) . ')</strong></td></tr>';
+    echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Discount:', 'evrplus_language') . ' (' . intval($posted_data['discount_percentage']) . '%)</strong></td><td>';
+    echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($posted_data['discount']), 2) . ')</strong></td></tr>';
+}
+
+echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td><td>';
+
+echo $item_order[0]['ItemCurrency'] . '<strong>  ' . number_format(floatval($total), 2) . '</strong></td></tr></table>';
 echo '<p align="left"><strong>';
 if ($reg_type == "WAIT") {
     $type = __('You are on the waiting list.', 'evrplus_language');
@@ -284,7 +314,7 @@ echo '</strong><br />';
 echo '<form id="attendee_confirm" class="evrplus_regform" method="post" action="';
 echo evrplus_permalink($company_options['evrplus_page_id']);
 echo '" onSubmit="mySubmit.disabled=true;return validateConfirmationForm(this)"><p>';
-if ($quantity > "0") {
+if ($quantity > 0) {
     echo '<div style="width:95%;">';
     $i = 0;
     do {
