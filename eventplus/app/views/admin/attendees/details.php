@@ -127,7 +127,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                     <?php endif; ?>
                                     <?php
                                     $num = 0;
-                                    $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event_id'";
+                                    $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = 'success' AND event_id='$event_id'";
 
                                     $attendee_count = $this->wpDb()->get_var($sql2);
 
