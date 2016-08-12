@@ -2,11 +2,25 @@
 
 class EventPlus_Filters {
 
+    private $autopActive = true;
+
     function remove_wpautop($content) {
+
+        if (!has_filter('the_content', 'wpautop')) {
+            $this->autopActive = false;
+        }
 
         if ($this->removeAutoPCheck($content)) {
             remove_filter('the_content', 'wpautop');
-            remove_filter('the_content', 'wptexturize');
+        }
+
+        return $content;
+    }
+
+    function do_wpautop($content) {
+
+        if ($this->autopActive) {
+            add_filter('the_content', 'wpautop');
         }
 
         return $content;
