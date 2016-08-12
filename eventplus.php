@@ -85,16 +85,18 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     private function addFilters() {
 
+        
+
         $oFilters = new EventPlus_Filters();
         $this->add_filter('the_content', $oFilters, 'grid_the_content_filter');
         $this->add_filter('the_content', $oFilters, 'upcoming_event_list');
-        $this->add_filter('the_content', $oFilters, 'evrplus_content_replace',9);
+        $this->add_filter('the_content', $oFilters, 'remove_wpautop',8);
+        $this->add_filter('the_content', $oFilters, 'evrplus_content_replace', 9);
         $this->add_filter('the_content', $oFilters, 'evrplus_calendar_replace');
         $this->add_filter('page_template', $oFilters, 'wpa3396_page_template');
 
-
-        add_filter('the_content', 'evrplus_calendar_replace');
         add_filter('the_content', 'evrplus_mini_cal_calendar_replace');
+
     }
 
     private function registerShortcodes() {
@@ -124,16 +126,16 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function eventplus_confirmation_registration() {
-        if (is_page() == false && isset($_GET['eventplus_token']) && isset($_GET['action'])  && isset($_GET['event_id'])) {
+        if (is_page() == false && isset($_GET['eventplus_token']) && isset($_GET['action']) && isset($_GET['event_id'])) {
 
             if (strtolower($_GET['action']) == 'confirmation') {
-        
+
                 $company_options = EventPlus_Models_Settings::getSettings();
-                
-                if($company_options['evrplus_page_id'] > 0 && intval($_GET['event_id']) > 0 && strlen($_GET['eventplus_token']) == 32){
-                    
+
+                if ($company_options['evrplus_page_id'] > 0 && intval($_GET['event_id']) > 0 && strlen($_GET['eventplus_token']) == 32) {
+
                     $perma_link = get_permalink($company_options['evrplus_page_id']);
-                    $payment_link = $perma_link . "?action=confirmation&eventplus_token=" . strip_tags($_GET['eventplus_token']) . "&event_id=" . (int)$_GET['event_id'];
+                    $payment_link = $perma_link . "?action=confirmation&eventplus_token=" . strip_tags($_GET['eventplus_token']) . "&event_id=" . (int) $_GET['event_id'];
                     wp_redirect($payment_link);
                     exit();
                 }

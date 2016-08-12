@@ -440,7 +440,6 @@ if ($rows) {
                                     }
                                     ?>
                                 </ul>
-                                <br />   
                                 <?php
                                 #See how many seats are left available
                                 $available = evrplus_get_open_seats($event->id, $event->reg_limit);
@@ -459,7 +458,7 @@ if ($rows) {
                                             <div style="  margin-top: 5px; margin-right: 5px;" class="dashicons dashicons-cart"></div>
                                             <?php _e('Registration Fees', 'evrplus_language'); ?>
                                         </h2>
-                                        <br />
+                            
                                         <p class="reg_fees_select"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
                                         <?php
                                         foreach ($rows as $fee) {
@@ -563,7 +562,7 @@ if ($rows) {
 
                                             <b>
                                                 <?php if ($fee->item_price > 0): ?>
-                                                    <?php _e('Total   ', 'evrplus_language'); ?>
+                                                    <?php _e('Total', 'evrplus_language'); ?>
                                                     <input style="width: 100px" type="text" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
                                                 <?php else: ?>
                                                     <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
