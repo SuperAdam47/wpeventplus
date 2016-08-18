@@ -108,7 +108,10 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
             $headers = implode("\r\n", $headers) . "\r\n";
 
-            $this->send_wp_mail($toAdminEmails, 'New Registration - ' . stripslashes($mail_subject), html_entity_decode(nl2br($admin_email_body)), $headers);
+            $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
+            $mail_subject = $event_name;
+                
+            $r = $this->send_wp_mail($toAdminEmails, 'New Registration - ' . stripslashes($mail_subject), html_entity_decode(nl2br($admin_email_body)), $headers);
         }
     }
 
