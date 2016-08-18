@@ -17,7 +17,7 @@ class EventPlus_Helpers_Mail {
         $this->company_options = EventPlus_Models_Settings::getSettings();
 
         $oAttendee = new EventPlus_Models_Attendees();
-        $this->attendeeRow = $oAttendee->getRow($this->data['attendee_id']);
+        $this->attendeeRow = $oAttendee->getData($this->data['attendee_id']);
 
         $oEvent = new EventPlus_Models_Events();
         $this->eventRow = $oEvent->getRow($this->data['event_id']);
