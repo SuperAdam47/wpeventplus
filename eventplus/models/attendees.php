@@ -23,7 +23,7 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
     
     
     function getAttendeesSum($event_id) {
-        $sql = "SELECT SUM(quantity) as totQty FROM " . $this->_table . " WHERE event_id  = '" . (int) $event_id . "'";
+        $sql = "SELECT SUM(quantity) as totQty FROM " . $this->_table . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id  = '" . (int) $event_id . "'";
         $row = $this->QuickArray($sql);
 
         return $row['totQty'];

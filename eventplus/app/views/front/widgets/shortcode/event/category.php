@@ -94,7 +94,7 @@ $start_date = $end_date = '';
 
 
 
-            $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='" . (int) $event_id . "'";
+            $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE  payment_status = 'success' AND event_id='" . (int) $event_id . "'";
 
             $attendeesRs = $this->wpDb()->get_results($sql2, ARRAY_N);
 

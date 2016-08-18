@@ -37,7 +37,7 @@ $event_id = $oEvent->id;
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
                 <th><?php _e('Email', 'evrplus_language'); ?></th>
                 <th><?php _e('Phone', 'evrplus_language'); ?></th>
-                <th><?php _e('Payment Status', 'evrplus_language'); ?></th>
+                <th><?php _e('Status', 'evrplus_language'); ?></th>
                 <th><?php _e('Action', 'evrplus_language'); ?></th>
             </tr>
         </thead>
@@ -86,10 +86,10 @@ $event_id = $oEvent->id;
                     <a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('View', 'evrplus_language'); ?></a>
                     <br style="clear:both;" /><br />
 
-                    <?php if ($payment_status != 'success'): ?>
+
                         <a id="delete_button" href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
                            onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a>
-                       <?php endif; ?>
+            
                 </td>
 
                 <?php

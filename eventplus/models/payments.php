@@ -7,6 +7,7 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
     const STRIPE = 'STRIPEACTIVE';
     const OFFLINE = 'NONE';
     
+    const PAYMENT_PENDING = 'pending';
     const PAYMENT_FAILED = 'failed';
     const PAYMENT_SUCCESS = 'success';
     
@@ -110,6 +111,8 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         
         if($amount_pd > 0){
             $payment_status = 'success';
+        }else{
+             $payment_status = 'pending';
         }
 
         $send_payment_rec = $params['send_payment_rec'];
@@ -261,6 +264,8 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         
         if($amount_pd > 0){
             $payment_status = 'success';
+        }else{
+             $payment_status = 'pending';
         }
 
         $mc_gross = $amount_pd;

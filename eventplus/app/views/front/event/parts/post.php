@@ -50,6 +50,10 @@ if ($count > 0 && $attendee_row['id'] > 0) {
 }
 
 
+$payment_status = EventPlus_Models_Payments::PAYMENT_PENDING;
+if ($reg_form['payment'] <= 0) {
+    $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
+}
 
 # Put all attendee data in an array for submission to the attendee database
 $sql = array('lname' => $reg_form['lname'], 'fname' => $reg_form['fname'], 'address' => $reg_form['address'], 'city' => $reg_form['city'],
@@ -57,10 +61,10 @@ $sql = array('lname' => $reg_form['lname'], 'fname' => $reg_form['fname'], 'addr
     'phone' => $reg_form['phone'], 'coupon' => $reg_form['coupon'], 'event_id' => $reg_form['event_id'], 'quantity' => $reg_form['num_people'],
     'tickets' => $reg_form['tickets'], 'payment' => $reg_form['payment'], 'tax' => $reg_form['tax'], 'attendees' => $attendee_list,
     'company' => $reg_form['company'], 'co_address' => $reg_form['co_add'], 'co_city' => $reg_form['co_city'], 'co_state' => $reg_form['co_state'],
-    'co_zip' => $reg_form['co_zip'], 'token' => $eventplus_token);
+    'co_zip' => $reg_form['co_zip'], 'token' => $eventplus_token, 'payment_status' => $payment_status);
 
 # Define datatypes for submission to database, should be one for each field to post
-$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 
 #Post new attendee info to the Attendee Database
 $attendee_insert_result = $wpdb->insert(get_option('evr_attendee'), $sql, $sql_data);

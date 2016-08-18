@@ -260,7 +260,7 @@ function evrplus_mini_cal_show_event($event) {
     $header_details .= '</span><br/>';
     $event_id = $event->id;
     $reg_limit = $event->reg_limit;
-    $number_attendees = $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id=%d", $event_id));
+    $number_attendees = $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE  payment_status = 'success' AND event_id=%d", $event_id));
     if ($number_attendees == '' || $number_attendees == 0) {
         $number_attendees = '0';
     }
