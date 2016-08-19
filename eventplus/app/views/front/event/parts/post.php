@@ -50,7 +50,7 @@ if ($count > 0 && $attendee_row['id'] > 0) {
 }
 
 
-$payment_status = EventPlus_Models_Payments::PAYMENT_PENDING;
+$payment_status = '';
 if ($reg_form['payment'] <= 0) {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
 }
