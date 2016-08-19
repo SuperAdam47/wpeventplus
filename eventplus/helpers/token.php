@@ -62,7 +62,7 @@ class EventPlus_Helpers_Token {
         
         $tokenRow = self::getDataByToken($token, true);
 
-        if ($tokenRow['payment_status'] == '' || $tokenRow['payment_status'] == null) {
+        if ($tokenRow['payment_status'] == '' || $tokenRow['payment_status'] == null || $tokenRow['payment_status'] == 'pending') {
             return true;
         } else {
             return false;
