@@ -300,19 +300,18 @@ if ($rows) {
                 $captcha = "N";
             }
             ?>
-            <script type="text/javascript" src="<?php echo $this->assetUrl('scripts/public/validate.js.php?captcha=' . $captcha . ''); ?>"></script> 
             <?php
             $tax_rate = .0;
             if ($company_options['use_sales_tax'] == "Y") {
                 $tax_rate = .0875;
                 if ($company_options['sales_tax_rate'] != "") {
                     $tax_rate = $company_options['sales_tax_rate'];
-                    echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/calculator.js.php?tax=' . $tax_rate . '') . '"></script>';
                 }
-            } else {
-                echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/calculator.js.php?tax=' . $tax_rate . '') . '"></script>';
             }
             ?>
+            <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+            <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v='.time()); ?>"></script> 
+            
             <div id="evrplus_pop_foot">
                 <p align="center" >
                     <?php
