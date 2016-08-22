@@ -224,7 +224,7 @@ if ($rows) {
                     <?php
                 }
 
-                $sqlEndDate = "SELECT end_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
+                $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
                 $resultEndDate = $wpdb->get_var($sqlEndDate);
 
                 if (isset($_GET['recurr']))
