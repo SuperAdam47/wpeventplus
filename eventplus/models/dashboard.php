@@ -12,7 +12,7 @@ class EventPlus_Models_Dashboard extends EventPlus_Abstract_Model {
         if (count($events) > 0) {
             foreach ($events as $i => $event) {
 
-                $sql = "SELECT SUM(quantity) as totQty FROM " . get_option('evr_attendee') . " WHERE event_id = '" . (int) $event->id . "'";
+                $sql = "SELECT SUM(quantity) as totQty FROM " . get_option('evr_attendee') . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id = '" . (int) $event->id . "'";
                 $rowSum = $this->QuickArray($sql);
 
                 $event->number_attendees = $rowSum['totQty'];

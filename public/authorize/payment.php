@@ -1,15 +1,16 @@
 <?php
+
 $currentDir = __DIR__;
 $dirParts = explode('wp-content', $currentDir);
 $wpDir = $dirParts[0] . DIRECTORY_SEPARATOR;
 
-if (file_exists($wpDir.'wp-config.php') == false) {
+if (file_exists($wpDir . 'wp-config.php') == false) {
     die('Bad Request');
 }
 
-include_once($wpDir.'wp-load.php');
-include_once($wpDir.'wp-config.php');
-include_once($wpDir.'wp-includes/wp-db.php');
+include_once($wpDir . 'wp-load.php');
+include_once($wpDir . 'wp-config.php');
+include_once($wpDir . 'wp-includes/wp-db.php');
 
 global $wpdb;
 
@@ -21,10 +22,10 @@ $amount = $_REQUEST['x_amount'];
 $x_MD5_Hash = $_REQUEST['x_MD5_Hash'];
 $payer_email = $_REQUEST['x_email'];
 $method = $_REQUEST['x_method']; //CC or ECHECK
-$txn_description = $_REQUEST['x_description']; 
+$txn_description = $_REQUEST['x_description'];
 $amountPaid = 0;
 
-$attendee_id = (int)$invoiceNumParts[0];
+$attendee_id = (int) $invoiceNumParts[0];
 
 $company_options = EventPlus_Models_Settings::getSettings();
 
@@ -47,7 +48,7 @@ $event_id = $eventRow['id'];
 
 $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
 $mc_gross = $amount;
-if(intVal($responseCode) === 1){
+if (intVal($responseCode) === 1) {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
     $amountPaid = 0;
     $mc_gross = 0;
@@ -59,7 +60,7 @@ $wpdb->query($wpdb->prepare("UPDATE " . get_option('evr_attendee') . " SET payme
 
 $sqlParams = array(
     'payer_id' => (int) $attendee_id,
-    'event_id' => (int)$event_id,
+    'event_id' => (int) $event_id,
     'payment_date' => $payment_date,
     'payer_email' => $payer_email,
     'txn_id' => $txn_id,

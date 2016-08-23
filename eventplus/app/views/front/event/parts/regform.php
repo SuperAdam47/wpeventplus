@@ -224,7 +224,7 @@ if ($rows) {
                     <?php
                 }
 
-                $sqlEndDate = "SELECT end_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
+                $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
                 $resultEndDate = $wpdb->get_var($sqlEndDate);
 
                 if (isset($_GET['recurr']))
@@ -300,19 +300,18 @@ if ($rows) {
                 $captcha = "N";
             }
             ?>
-            <script type="text/javascript" src="<?php echo $this->assetUrl('scripts/public/validate.js.php?captcha=' . $captcha . ''); ?>"></script> 
             <?php
             $tax_rate = .0;
             if ($company_options['use_sales_tax'] == "Y") {
                 $tax_rate = .0875;
                 if ($company_options['sales_tax_rate'] != "") {
                     $tax_rate = $company_options['sales_tax_rate'];
-                    echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/calculator.js.php?tax=' . $tax_rate . '') . '"></script>';
                 }
-            } else {
-                echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/calculator.js.php?tax=' . $tax_rate . '') . '"></script>';
             }
             ?>
+            <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+            <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v='.time()); ?>"></script> 
+            
             <div id="evrplus_pop_foot">
                 <p align="center" >
                     <?php
@@ -440,7 +439,6 @@ if ($rows) {
                                     }
                                     ?>
                                 </ul>
-                                <br />   
                                 <?php
                                 #See how many seats are left available
                                 $available = evrplus_get_open_seats($event->id, $event->reg_limit);
@@ -459,7 +457,7 @@ if ($rows) {
                                             <div style="  margin-top: 5px; margin-right: 5px;" class="dashicons dashicons-cart"></div>
                                             <?php _e('Registration Fees', 'evrplus_language'); ?>
                                         </h2>
-                                        <br />
+                            
                                         <p class="reg_fees_select"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
                                         <?php
                                         foreach ($rows as $fee) {
@@ -480,6 +478,7 @@ if ($rows) {
                                                                     echo 'CalculateTotal(this.form)';
                                                                 }
                                                                 ?>">
+                                                            <option value="0" selected="selected"></option>
                                                             <?php
                                                             #Begin generation of DropDown Box - Options
                                                             #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
@@ -563,7 +562,7 @@ if ($rows) {
 
                                             <b>
                                                 <?php if ($fee->item_price > 0): ?>
-                                                    <?php _e('Total   ', 'evrplus_language'); ?>
+                                                    <?php _e('Total', 'evrplus_language'); ?>
                                                     <input style="width: 100px" type="text" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
                                                 <?php else: ?>
                                                     <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>

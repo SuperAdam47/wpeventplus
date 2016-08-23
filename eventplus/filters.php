@@ -2,6 +2,52 @@
 
 class EventPlus_Filters {
 
+    private $autopActive = true;
+
+    function remove_wpautop($content) {
+
+        if (!has_filter('the_content', 'wpautop')) {
+            $this->autopActive = false;
+        }
+
+        if ($this->removeAutoPCheck($content)) {
+            remove_filter('the_content', 'wpautop');
+        }
+
+        return $content;
+    }
+
+    function do_wpautop($content) {
+
+        if ($this->autopActive) {
+            add_filter('the_content', 'wpautop');
+        }
+
+        return $content;
+    }
+
+    private function removeAutoPCheck($content) {
+        if (has_shortcode($content, 'eventsplus_grid')) {
+            return true;
+        }
+
+        if (preg_match('{EVR_UPCOMING}', $content)) {
+            return true;
+        }
+
+        if (preg_match('{EVRREGIS}', $content)) {
+            return true;
+        }
+
+        if (preg_match('[PLUS_CALENDAR:([A-Za-z])\w+]', $content, $matches)) {
+            return true;
+        } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
+            return true;
+        }
+
+        return false;
+    }
+
     function grid_the_content_filter($content) {
 
         $file = EventPlus::getPlugin()->getFile();

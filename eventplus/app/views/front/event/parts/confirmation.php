@@ -88,8 +88,8 @@ $invoice_data = array('reg_id' => $reg_id, 'lname' => $reg_form['lname'], 'fname
 $invoice_post = urlencode(serialize($invoice_data));
 
 if (isset($_GET['event_emr'])) {
-    if (md5($_GET['event_emr']) == md5(1)) {
-        _e("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
+   if ($_GET['event_emr'] == md5(1)) {
+        echo __("A confirmation email has been sent to:", 'evrplus_language') . ' ' . $reg_form['email'] . "<br/>";
     }
 }
 

@@ -3,6 +3,7 @@ $currentDir = __DIR__;
 $dirParts = explode('wp-content', $currentDir);
 $wpDir = $dirParts[0] . DIRECTORY_SEPARATOR;
 
+
 if (file_exists($wpDir.'wp-config.php') == false) {
     die('Bad Request');
 }

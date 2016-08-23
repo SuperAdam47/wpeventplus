@@ -44,8 +44,10 @@ if (count($rows)):
                     }
                     
                     $catStr = '';
-                    foreach ($this_cats as $cat) {
-                        $catStr .= EventPlus_Helpers_Event::get_category_identifier_by_id($cat) . ' ';
+                    if(is_array($this_cats)){
+                        foreach ($this_cats as $cat) {
+                            $catStr .= EventPlus_Helpers_Event::get_category_identifier_by_id($cat) . ' ';
+                        }
                     }
                     ?>
                     <div class="media-box <?php echo $catStr; ?>" data-columns="<?php echo $col; ?>">

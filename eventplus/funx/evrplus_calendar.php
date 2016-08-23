@@ -6,6 +6,8 @@
 ##Set the number of future days for upcoming events listing##
 $future_days = "60";
 $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
+
+
 /* * **Function to return a prefix which will allow the correct , placement of arguments into the query string. ** */
 
 /* * ***************************** Display the Calendar in a page ************************* */
@@ -274,8 +276,8 @@ function evrplus_display_calendar($cat = null) {
     }
     
     $calendar_body .= '</table>';
-    $calendar_body .= evrplus_colorbox_cal_content($grabbed_events_popup);
-
+    //$calendar_body .= evrplus_colorbox_cal_content($grabbed_events_popup);
+ 
     echo $calendar_body;
     return $calendar_body;
 }
@@ -311,8 +313,10 @@ function evrplus_show_non_events($events) {
 
 function evrplus_show_event($event, $day = 0) {
     global $wpdb;
+    
     $company_options = EventPlus_Models_Settings::getSettings();
-
+    $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
+    
     $cal_head_clr = $company_options['evrplus_cal_head'];
 
     $cal_head_txt_clr = $company_options['cal_head_txt_clr'];
@@ -382,9 +386,7 @@ function evrplus_show_event($event, $day = 0) {
 
     $event_id = $event->id;
 
-    global $wpdb, $evrplus_date_format, $noImage;
     $curdate = date("Y-m-j");
-    $company_options = EventPlus_Models_Settings::getSettings();
     $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id = $event_id";
     $rows = $wpdb->get_results($sql);
 
@@ -429,7 +431,8 @@ function evrplus_show_event($event, $day = 0) {
             $details = '<div class = "catgry">';
             $details = '<div class="dummy dummy-text"><span class="tooltip tooltip-effect-1">';
             $details .= '<a class="tooltip-item" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
-            $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span><span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><span class="event_time">' . $start_time . ' - ' . $end_time . '</span><span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>Read more</a></span> </span></span></div>';
+            $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span><span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br>'
+                    . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><span class="event_time">' . $start_time . ' - ' . $end_time . '</span><span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>Read more</a></span> </span></span></div>';
         } else if (($tooltip_status = '') || ($tooltip_status = 'N')) {
             $details = '<div class = "catgry">';
             $details .= '<a class="" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
@@ -450,7 +453,13 @@ function evrplus_show_event($event, $day = 0) {
             $details = '<div class = "catgry">';
             $details = '<div class="dummy dummy-text"><span class="tooltip tooltip-effect-1">';
             $details .= '<a class="tooltip-item" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
-            $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span><span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><span class="event_time">' . $start_time . ' - ' . $end_time . '</span><span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>Read more</a></span> </span></span></div>';
+            $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span>'
+                    . '<span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br>'
+                    . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span>'
+                    . '<span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/>'
+                    . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span>'
+                    . '<span class="event_time">' . $start_time . ' - ' . $end_time . '</span>'
+                    . '<span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>Read more</a></span> </span></span></div>';
         } else if (($tooltip_status = '') || ($tooltip_status = 'N')) {
             $details = '<div class = "catgry">';
             $details .= '<a class="" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
@@ -460,7 +469,7 @@ function evrplus_show_event($event, $day = 0) {
         
     }
     $details .= $seats;
-    global $evrplus_date_format;
+
     $details .= '<div style="display:none;">';
     $details .= '<div id="tip_' . $event->id . '" style="width: 510px;">';
     if ($event->image_link != '')
@@ -483,8 +492,9 @@ function evrplus_show_event($event, $day = 0) {
 #Used for colorbox popup with event details.
 
 function evrplus_colorbox_cal_content($events) {
-    global $wpdb, $evrplus_date_format;
+    global $wpdb;
    
+    $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
     
     #retrieve company and configuration settings
     $company_options = EventPlus_Models_Settings::getSettings();
