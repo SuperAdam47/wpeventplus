@@ -3,7 +3,7 @@
     <div class="inside">
         <div class="padding">
 
-            <h1 class="stephead"><?php _e('Step 5', 'evrplus_language'); ?></h1>
+            <h1 class="stephead"><?php _e('Optional', 'evrplus_language'); ?></h1>
             <br>
             <div class="form-table">
 
@@ -26,6 +26,7 @@
 
                 <?php
                 $qtyMinPlusRange = range(1, 20);
+                $company_options = EventPlus_Models_Settings::getSettings();
                 ?>
 
                 <div class="cl2" id="discount_range_holder" <?php if($meta_data['qty_discount'] != 'Y'): ?>style="display: none;"<?php endif; ?>>
@@ -34,12 +35,21 @@
                             <td>Quantity</td>
                             <td>Percentage</td>
                         </tr>
-                        <?php foreach ($qtyMinPlusRange as $ri => $rVal): ?>
+                        <?php foreach ($qtyMinPlusRange as $ri => $rVal): 
+                            $perVal = intval($meta_data['qty_discount_settings'][$rVal]);
+                        
+                            if($perVal < 0 && is_array($company_options['qty_discount_settings'])){
+                                
+                                if(isset($company_options['qty_discount_settings'][$rVal])){
+                                    $perVal = $company_options['qty_discount_settings'][$rVal];
+                                }
+                            }
+                            ?>
                             <tr>
                                 <td>
                                     <?php echo $rVal; ?>+
                                 </td>
-                                <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount_settings[<?php echo $rVal; ?>]" value="<?php echo $meta_data['qty_discount_settings'][$rVal]; ?>" /></td>
+                                <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount_settings[<?php echo $rVal; ?>]" value="<?php echo (int)$perVal; ?>" /></td>
                             </tr>
                         <?php endforeach; ?>
 

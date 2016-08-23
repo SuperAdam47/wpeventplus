@@ -17,7 +17,7 @@ if (is_object($row)) {
         $term_c = $row->term_c;
         $term_desc = $row->term_desc;
         $meta_data = $row->meta_data;
-        
+
         /*
           $event_location = stripslashes($row['event_location']);
           $event_address = $row['event_address'];
@@ -201,14 +201,19 @@ if (is_object($row)) {
         <?php endif; ?>
 
         <?php
+        $company_options = EventPlus_Models_Settings::getSettings();
         $tabs = array(
             'description' => __('Description', 'evrplus_language'),
             'venue' => __('Event Venue', 'evrplus_language'),
             'datetime' => __('Event Date/Time', 'evrplus_language'),
-            'options' => __('Event Options', 'evrplus_language'),
-            'discounts' => __('Bulk Discounts', 'evrplus_language'),
-            'email' => __('Confirmation Mail', 'evrplus_language'),
+            'options' => __('Event Options', 'evrplus_language')
         );
+
+        $tabs ['email'] = __('Confirmation Mail', 'evrplus_language');
+        if ($company_options['qty_discount'] == 'Y') {
+            $tabs ['discounts'] = __('Bulk Discounts', 'evrplus_language');
+        }
+
         ?>
 
         <ul class="tabs">

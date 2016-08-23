@@ -94,6 +94,8 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['admin_noti'] = $params['admin_noti'];
             $company_options['order_event_list'] = $params['order_event_list'];
             $company_options['evrplus_tooltip_show'] = $params['tooltip_show'];
+            $company_options['qty_discount'] = $params['qty_discount'];
+            $company_options['qty_discount_settings'] = $params['qty_discount_settings'];
             //$company_options['evrplus_invoice'] = $params['evrplus_invoice'];
             update_option('evr_company_settings', $company_options);
             update_option('evr_start_of_week', $start_of_week);

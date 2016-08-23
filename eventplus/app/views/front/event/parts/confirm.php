@@ -222,7 +222,7 @@ $posted_data = array('lname' => $lname, 'fname' => $fname, 'address' => $address
     'fees' => $fees, 'tax' => $tax);
 
 #Begin display of confirmation form
-echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/validate.js.php') . '"></script>';
+echo '<script type="text/javascript" src="' . $this->assetUrl('front/funx.js?v=' . time()) . '"></script>';
 echo '<p align="left"><strong>' . __('Please verify your registration details:', 'evrplus_language') . '</strong></p>';
 echo '<table width="95%" border="0"><tr><td><strong>' . _e('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
 
@@ -276,11 +276,13 @@ if ($company_options['use_sales_tax'] == "Y") {
 
 $total = $payment;
 if (intval($total) > 0) {
-    $oEventMeta = new EventPlus_Models_Events_Meta();
-    $meta_data = $oEventMeta->getAllOptions($event_id);
+    $oEventDiscounts = new EventPlus_Models_Events_Discounts();
+    $discountSettings = $oEventDiscounts->getSettings($event_id);
+
+
     $discountPercentage = 0;
-    if ($meta_data['qty_discount'] == 'Y') {
-        $discountPercentage = EventPlus_Helpers_Event::getDiscountPercentage($quantity, $meta_data['qty_discount_settings']);
+    if (count($discountSettings) > 0 && is_array($discountSettings)) {
+        $discountPercentage = EventPlus_Helpers_Event::getDiscountPercentage($quantity, $discountSettings);
 
         if ($discountPercentage > 0) {
             $posted_data['discount_percentage'] = $discountPercentage;
@@ -290,7 +292,7 @@ if (intval($total) > 0) {
         }
     }
 }
-        
+
 if ($posted_data['discount'] > 0) {
     echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Order Total:', 'evrplus_language') . '</strong></td><td>';
     echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($payment), 2) . ')</strong></td></tr>';
