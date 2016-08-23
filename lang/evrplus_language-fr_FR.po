@@ -2299,7 +2299,7 @@ msgstr "Sièges"
 
 #: evrplus_Calendar.php:30
 msgid "Time"
-msgstr "Temps"
+msgstr "Horaires"
 
 #: evrplus_Calendar.php:30
 msgid "Location"
@@ -2443,7 +2443,7 @@ msgid "Time:"
 msgstr "Temps:"
 
 msgid "REGISTER"
-msgstr "REGISTRE"
+msgstr "Inscriptions"
 
 msgid "Lets get your plugin setup!"
 msgstr "Mettons-nous votre configuration de plugin!"
@@ -2623,7 +2623,7 @@ msgid "Search By Title"
 msgstr "Recherche par titre"
 
 msgid "Jan"
-msgstr "Jean"
+msgstr "Janv"
 
 msgid "Feb"
 msgstr "février"
@@ -2708,49 +2708,49 @@ msgstr "S'il vous plaît revenir en arrière et choisir un article!"
 
 
 msgid "Do you wish to disable registration for this event?"
-msgstr ""
+msgstr "Vous souhaitez désactiver l'enregistrement pour cet événement?"
 
 msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr ""
+msgstr "Pour payer en ligne, s'il vous plaît cliquer sur le bouton de paiement à prendre pour le site de notre fournisseur de paiement."
 
 msgid "Pay Now"
-msgstr ""
+msgstr "Payez Maintenant"
 
 msgid "Registration has been processed already."
-msgstr ""
+msgstr "Les inscriptions ont déjà été traitées."
 
 msgid "Invalid request - Payment couldn't be processed."
-msgstr ""
+msgstr "Requête invalide - Paiement n'a pas pu être traitée."
 
 msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr ""
+msgstr "Félicitations à vous! Transaction a été rempli et le paiement a été reçu. Merci pour votre paiement."
 
 msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr ""
+msgstr "Transaction a été effectuée, mais le paiement a échoué. S'il vous plaît essayer de vous inscrire à nouveau."
 
 msgid "Payment details"
-msgstr ""
+msgstr "détails du paiement"
 
 msgid "View details"
-msgstr ""
+msgstr "Voir les détails"
 
 msgid "Payment Status"
-msgstr ""
+msgstr "Statut de paiement"
 
 msgid "Payment Methods"
 msgstr ""
 
 msgid "Payment Method"
-msgstr ""
+msgstr "Moyens de paiement"
 
 msgid "Order details"
-msgstr ""
+msgstr "Détails de la commande"
 
 msgid "PayPal Sandbox Mode Is Active"
-msgstr ""
+msgstr "Mode Sandbox PayPal est actif"
 
 msgid "Sandbox"
-msgstr ""
+msgstr "bac à sable"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr ""
+msgstr "S'il vous plaît sélectionnez l'une des méthodes suivantes et en cliquant sur le bouton Payer maintenant, vous serez redirigé vers le site de notre fournisseur de paiement."
