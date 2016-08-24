@@ -2696,49 +2696,49 @@ msgstr "Por favor, volte e selecione um item!"
 
 
 msgid "Do you wish to disable registration for this event?"
-msgstr ""
+msgstr "Você deseja desativar o registro para este evento?"
 
 msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr ""
+msgstr "Para pagar on-line, por favor, selecione o botão de Pagamento a ser levado para o site do nosso fornecedor de pagamento."
 
 msgid "Pay Now"
-msgstr ""
+msgstr "Pague agora"
 
 msgid "Registration has been processed already."
-msgstr ""
+msgstr "Registro da empresa já foi processada."
 
 msgid "Invalid request - Payment couldn't be processed."
-msgstr ""
+msgstr "Pedido inválido - O pagamento não pôde ser processado."
 
 msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr ""
+msgstr "Parabéns! Transação foi concluída e que o pagamento foi recebido. Obrigado por seu pagamento."
 
 msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr ""
+msgstr "Transação foi concluída, mas o pagamento falhou. Por favor, tente registrar novamente."
 
 msgid "Payment details"
-msgstr ""
+msgstr "Detalhes do pagamento"
 
 msgid "View details"
-msgstr ""
+msgstr "Ver detalhes"
 
 msgid "Payment Status"
-msgstr ""
+msgstr "Status do pagamento"
 
 msgid "Payment Methods"
-msgstr ""
+msgstr "Métodos de Pagamento"
 
 msgid "Payment Method"
-msgstr ""
+msgstr "Método de pagamento"
 
 msgid "Order details"
-msgstr ""
+msgstr "Detalhes do pedido"
 
 msgid "PayPal Sandbox Mode Is Active"
-msgstr ""
+msgstr "PayPal modo Sandbox está ativo"
 
 msgid "Sandbox"
-msgstr ""
+msgstr "Caixa de areia"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr ""
+msgstr "Por favor seleccione um dos seguintes métodos e clicando no botão Pagar agora você será levado ao site do nosso fornecedor de pagamento."
