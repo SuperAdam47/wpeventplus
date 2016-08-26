@@ -2738,7 +2738,7 @@ msgid "Payment Status"
 msgstr "Statut de paiement"
 
 msgid "Payment Methods"
-msgstr ""
+msgstr "Moyens de paiement"
 
 msgid "Payment Method"
 msgstr "Moyens de paiement"

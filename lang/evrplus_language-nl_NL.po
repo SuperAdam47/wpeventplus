@@ -2291,49 +2291,49 @@ msgstr "Ga terug en selecteer een item!"
 
 
 msgid "Do you wish to disable registration for this event?"
-msgstr ""
+msgstr "Wilt u de registratie voor dit evenement uit te schakelen?"
 
 msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr ""
+msgstr "Om online te betalen, selecteer dan de Betaling knop te nemen naar de site van onze betaling leverancier."
 
 msgid "Pay Now"
-msgstr ""
+msgstr "Betaal nu"
 
 msgid "Registration has been processed already."
-msgstr ""
+msgstr "Registratie is al verwerkt."
 
 msgid "Invalid request - Payment couldn't be processed."
-msgstr ""
+msgstr "Ongeldig verzoek - Betaling kan niet worden verwerkt."
 
 msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr ""
+msgstr "Gefeliciteerd! Transactie is voltooid en de betaling is ontvangen. Bedankt voor uw betaling."
 
 msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr ""
+msgstr "Transactie is voltooid, maar de betaling is mislukt. Probeer opnieuw te registreren."
 
 msgid "Payment details"
-msgstr ""
+msgstr "Betalings details"
 
 msgid "View details"
-msgstr ""
+msgstr "Bekijk details"
 
 msgid "Payment Status"
-msgstr ""
+msgstr "Betalingsstatus"
 
 msgid "Payment Methods"
-msgstr ""
+msgstr "Betaalmethoden"
 
 msgid "Payment Method"
-msgstr ""
+msgstr "Betalingsmiddel"
 
 msgid "Order details"
-msgstr ""
+msgstr "Bestel Details"
 
 msgid "PayPal Sandbox Mode Is Active"
-msgstr ""
+msgstr "PayPal Sandbox mode actief"
 
 msgid "Sandbox"
-msgstr ""
+msgstr "sandbox"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr ""
+msgstr "Selecteer een van de volgende methoden en door te klikken op Nu betalen knop wordt u naar de site van onze betaling leverancier."

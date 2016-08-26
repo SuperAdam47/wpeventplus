@@ -310,8 +310,8 @@ if ($rows) {
             }
             ?>
             <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
-            <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v='.time()); ?>"></script> 
-            
+            <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
+
             <div id="evrplus_pop_foot">
                 <p align="center" >
                     <?php
@@ -337,7 +337,7 @@ if ($rows) {
 
                     <?php if ($company_options['form_css'] != ''): ?>
                         <style>
-                        *<?php echo $company_options['form_css']; ?>
+                            *<?php echo $company_options['form_css']; ?>
                         </style>
                     <?php endif; ?>
                     <div id="evrplusRegForm">
@@ -457,7 +457,7 @@ if ($rows) {
                                             <div style="  margin-top: 5px; margin-right: 5px;" class="dashicons dashicons-cart"></div>
                                             <?php _e('Registration Fees', 'evrplus_language'); ?>
                                         </h2>
-                            
+
                                         <p class="reg_fees_select"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
                                         <?php
                                         foreach ($rows as $fee) {
@@ -470,7 +470,7 @@ if ($rows) {
                                                 <input type="hidden" name="reg_type" value="RGLR"/>
                                                 <div align="left">
                                                     <label for="cost" title ="<?php echo $fee->item_description; ?>" >
-                                                        <select style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
+                                                        <select class="eventplus-ddl-items" style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
                                                                 onChange="<?php
                                                                 if ($company_options['use_sales_tax'] == "Y") {
                                                                     echo 'CalculateTotalTax(this.form)';
@@ -620,6 +620,14 @@ if ($rows) {
                                     <input type="submit" name="mySubmit" id="mySubmit" disabled="true" value="<?php _e('Submit', 'evrplus_language'); ?>" />
                                     <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
                                 </div>
+
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        if(jQuery('.eventplus-ddl-items').val() >= 0){
+                                            jQuery('#mySubmit').removeAttr('disabled');
+                                        }
+                                    });
+                                </script>
                             </form>
                         <?php } ?>
                     </div>

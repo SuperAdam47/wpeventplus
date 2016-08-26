@@ -2053,49 +2053,49 @@ msgstr "Eine Bestätigungsmail wurde gesendet an:"
 
 
 msgid "Do you wish to disable registration for this event?"
-msgstr ""
+msgstr "Haben Sie sich für diesen Event deaktivieren möchten?"
 
 msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr ""
+msgstr "online bezahlen Sie bitte die Zahlung, wählen Sie zum an unseren Zahlungs Anbieter-Site getroffen werden."
 
 msgid "Pay Now"
-msgstr ""
+msgstr "Jetzt bezahlen"
 
 msgid "Registration has been processed already."
-msgstr ""
+msgstr "Registrierung wurde bereits verarbeitet."
 
 msgid "Invalid request - Payment couldn't be processed."
-msgstr ""
+msgstr "Ungültige Anforderung - Zahlung nicht verarbeitet werden konnten."
 
 msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr ""
+msgstr "Herzlichen Glückwunsch ! Transaktion ist abgeschlossen und die Zahlung eingegangen ist. Vielen Dank für Ihre Zahlung."
 
 msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr ""
+msgstr "Transaktion wurde erfolgreich abgeschlossen, aber die Zahlung ist fehlgeschlagen. Bitte versuchen Sie es erneut zu registrieren."
 
 msgid "Payment details"
-msgstr ""
+msgstr "Zahlungsdetails"
 
 msgid "View details"
-msgstr ""
+msgstr "Details anzeigen"
 
 msgid "Payment Status"
 msgstr ""
 
 msgid "Payment Methods"
-msgstr ""
+msgstr "Zahlungsstatus"
 
 msgid "Payment Method"
-msgstr ""
+msgstr "Zahlungsmethoden"
 
 msgid "Order details"
-msgstr ""
+msgstr "Zahlungsmethode"
 
 msgid "PayPal Sandbox Mode Is Active"
-msgstr ""
+msgstr "PayPal Sandbox-Modus aktiv"
 
 msgid "Sandbox"
-msgstr ""
+msgstr "Sandbox"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr ""
+msgstr "Bitte wählen Sie eine der folgenden Methoden und durch Klicken auf Pay Now Button werden Sie zu unserem Zahlungs Anbieter-Site getroffen werden."
