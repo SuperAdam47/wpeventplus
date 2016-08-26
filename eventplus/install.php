@@ -47,6 +47,7 @@ function evrplus_install() {
     evrplus_question_db();
     evrplus_answer_db();
     evrplus_event_db();
+    evrplus_event_meta_db();
     evrplus_cost_db();
     evrplus_payment_db();
     evrplus_generator();
