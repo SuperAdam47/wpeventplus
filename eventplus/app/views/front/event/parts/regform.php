@@ -235,7 +235,7 @@ if ($rows) {
                 ?>
                 <script type="text/javascript">
                     jQuery(document).ready(function ($) {
-                        var endDate = new Date(<?php echo strtotime($close_dt) ?>);
+                        var endDate = new Date(<?php echo strtotime($resultEndDate) ?>);
                         $('#evrplus_counter').redCountdown({
                             end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                             labels: true,
