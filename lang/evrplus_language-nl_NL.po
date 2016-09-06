@@ -2323,8 +2323,6 @@ msgstr "Betalingsstatus"
 msgid "Payment Methods"
 msgstr "Betaalmethoden"
 
-msgid "Payment Method"
-msgstr "Betalingsmiddel"
 
 msgid "Order details"
 msgstr "Bestel Details"

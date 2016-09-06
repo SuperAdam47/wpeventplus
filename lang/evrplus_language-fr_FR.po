@@ -2740,9 +2740,6 @@ msgstr "Statut de paiement"
 msgid "Payment Methods"
 msgstr "Moyens de paiement"
 
-msgid "Payment Method"
-msgstr "Moyens de paiement"
-
 msgid "Order details"
 msgstr "Détails de la commande"
 
