@@ -168,4 +168,18 @@ class EventPlus_Helpers_Event {
         return $discountPercentage;
     }
 
+    static function getPercentageDataset($qty_discount_settings) {
+        $discountDataset = array();
+        if (is_array($qty_discount_settings) && count($qty_discount_settings) > 0) {
+
+            asort($qty_discount_settings);
+
+            foreach ($qty_discount_settings as $qtyDiscount => $percentage) {
+                $discountDataset[$qtyDiscount] = $percentage;
+            }
+        }
+
+        return $discountDataset;
+    }
+
 }
