@@ -54,9 +54,15 @@ $questionOptions = array(
                                     <br/><div class="pass2"><input name="values" type="text" id="values" size="50" value="<?php echo $row['response']; ?>" />
                                     </div>                            	                                                                
                                     <div class="pass1"><?php _e('Do You want this field to be mandatory?', 'evrplus_language'); ?>:</div>                            	
-                                    <br/><div class="pass2">
-                                        <input id="sd1" name="required" type="radio" id="required"<?php echo ($row['required'] == "Y") ? " checked='checked'" : ""; ?> />
+                                    <br/>
+                                    <div class="pass2">
+                                    
+                                        <input id="sd1" name="required" type="radio"<?php echo ($row['required'] == "Y") ? " checked='checked'" : ""; ?> />
                                         <label for="sd1"><?php _e('Yes', 'evrplus_language'); ?></label>
+                                    
+                                        <input id="sd2" name="required" type="radio"<?php echo ($row['required'] == "N") ? " checked='checked'" : ""; ?> />
+                                        <label for="sd2"><?php _e('No', 'evrplus_language'); ?></label>
+                                    
                                     </div>                            	
                                     <br/><div class="pass1"><?php _e('Comments', 'evrplus_language'); ?>:</div>                              
                                     <br/> 
