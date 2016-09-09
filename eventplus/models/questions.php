@@ -34,7 +34,7 @@ class EventPlus_Models_Questions extends EventPlus_Abstract_Model {
         $question = $params['question'];
         $question_type = $params['question_type'];
         $values = $params['values'];
-        $required = $params['required'] ? 'Y' : 'N';
+        $required = ($params['required'] == 'Y') ? 'Y' : 'N';
         $remark = $params['remark'];
         $sequence = $wpdb->get_var("SELECT max(sequence) FROM " . get_option('evr_question') . " where event_id = '$event_id' LIMIT 1") + 1;
 
@@ -56,7 +56,7 @@ class EventPlus_Models_Questions extends EventPlus_Abstract_Model {
         $question_id = (int) $params['question_id'];
         $question_type = $params['question_type'];
         $values = $params['values'];
-        $required = $params['required'] ? 'Y' : 'N';
+        $required = ($params['required'] == 'Y') ? 'Y' : 'N';
         $remark = $params['remark'];
 
         $wpdb->query("UPDATE " . get_option('evr_question') . " set `question_type` = '$question_type', `question` = '$question_text', " . " `response` = '$values', `required` = '$required', `remark` = '$remark' where id = $question_id ");

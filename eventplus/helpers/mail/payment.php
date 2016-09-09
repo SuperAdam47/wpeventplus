@@ -18,7 +18,7 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
             $strBody = str_replace($searchValues, $replaceValues, $strBody);
         }
         
-        return $str;
+        return $strBody;
     }
 
     function send() {

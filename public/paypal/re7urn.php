@@ -39,6 +39,12 @@ if ($eventRow['id'] <= 0) {
     wp_die(__("Invalid request", 'evrplus_language'));
 }
 
+
+if ($attendeeRow['payment_status'] == EventPlus_Models_Payments::PAYMENT_SUCCESS) {
+    wp_die(__("Already processed", 'evrplus_language'));
+}
+
+
 $event_id = $eventRow['id'];
 
 $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
@@ -57,12 +63,20 @@ $pdtData = $oPayPal->validatePdt($_REQUEST['tx'], $company_options['paypal_pdt_t
 $txn_data = array_merge($_REQUEST, $pdtData);
 
 if (isset($txn_data['txn_id'])) {
-    $txn_id = $txn_data['txn_id'];
+    $txn_id = trim($txn_data['txn_id']);
     $first_name = $txn_data['first_name'];
     $last_name = $txn_data['last_name'];
     $payer_email = $txn_data['payer_email'];
     $mc_gross = $txn_data['mc_gross'];
     $mc_currency = $txn_data['mc_currency'];
+    $amount_pd = $mc_gross;
+}
+
+$sql = "SELECT txn_id,payer_id FROM " . get_option('evr_payment') . " WHERE txn_id = '" . esc_sql(trim($txn_id)) . "' AND payer_id=" . (int) $attendeeRow['id'] . " LIMIT 1";
+$_paymentRow = $wpdb->get_row($sql, ARRAY_A);
+
+if ($_paymentRow['payer_id'] > 0) {
+    wp_die(__("Payment already processed", 'evrplus_language'));
 }
 
 $pdt_payment_status = strtoupper($txn_data['payment_status']);
@@ -111,7 +125,7 @@ $emailData = array(
     'txn_data' => array(
         "payer_email" => $payer_email,
         "amount" => $mc_gross,
-        "txn_id" => $txnData['txn_id'],
+        "txn_id" => $txn_data['txn_id'],
         'payment_status' => $payment_status,
         'mc_currency' => $mc_currency,
         'payment_date' => $payment_date,

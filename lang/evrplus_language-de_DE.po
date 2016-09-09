@@ -2085,8 +2085,6 @@ msgstr ""
 msgid "Payment Methods"
 msgstr "Zahlungsstatus"
 
-msgid "Payment Method"
-msgstr "Zahlungsmethoden"
 
 msgid "Order details"
 msgstr "Zahlungsmethode"

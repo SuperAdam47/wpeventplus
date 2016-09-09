@@ -1815,8 +1815,6 @@ msgstr "Estado de pago"
 msgid "Payment Methods"
 msgstr "Métodos de pago"
 
-msgid "Payment Method"
-msgstr "Método de pago"
 
 msgid "Order details"
 msgstr "detalles de la orden"
