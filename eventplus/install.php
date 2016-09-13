@@ -73,7 +73,7 @@ function evrplus_install() {
         wp_insert_post($my_post);
     }
 
-    EventPlus_Helpers_Funx::updateBuildVersion($cur_build);
+    EventPlus_Helpers_Funx::updateBuildVersion(EventPlus_Helpers_Funx::getBuildVersion());
 }
 
 function evrplus_upgrade_tables() {
