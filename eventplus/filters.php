@@ -88,22 +88,27 @@ class EventPlus_Filters {
     }
 
     function evrplus_calendar_replace($content) {
-        if (preg_match('[PLUS_CALENDAR:([A-Za-z])\w+]', $content, $matches)) {
-            $evr = $matches[0];
-            $pos = strpos($evr, ':');
-            $cat = substr($evr, $pos + 1);
-            ob_start();
 
-            evrplus_display_calendar($cat); //function with main content
-            $buffer = ob_get_contents();
-            ob_end_clean();
-            $content = str_replace('[PLUS_CALENDAR:' . $cat . ']', $buffer, $content);
-        } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
-            ob_start();
-            evrplus_display_calendar(); //function with main content
-            $buffer = ob_get_contents();
-            ob_end_clean();
-            $content = str_replace('[PLUS_CALENDAR]', $buffer, $content);
+        $pieces = explode("]", $content);
+        foreach ($pieces as $val) {
+            if (preg_match('[PLUS_CALENDAR:([A-Za-z])\w+]', $content, $matches)) {
+
+                $evr = $matches[0];
+                $pos = strpos($evr, ':');
+                $cat = substr($evr, $pos + 1);
+                ob_start();
+
+                evrplus_display_calendar($cat); //function with main content
+                $buffer = ob_get_contents();
+                ob_end_clean();
+                $content = str_replace('[PLUS_CALENDAR:' . $cat . ']', $buffer, $content);
+            } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
+                ob_start();
+                evrplus_display_calendar(); //function with main content
+                $buffer = ob_get_contents();
+                ob_end_clean();
+                $content = str_replace('[PLUS_CALENDAR]', $buffer, $content);
+            }
         }
         return $content;
     }
