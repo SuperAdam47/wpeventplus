@@ -20,17 +20,16 @@ class EventPlus_Helpers_App {
 
             if ($oldBuildVersion <= '6.00.31') {
 
-                $wpDb = EventPlus::getRegistry()->get('db');
                 $checkCol = "SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'wp_evr_event' AND COLUMN_NAME = 'disable_event_reg' ";
-                $colExists = (count($wpDb->get_results($checkCol, ARRAY_N)) > 0 );
+                $colExists = (count($wpdb->get_results($checkCol, ARRAY_N)) > 0 );
 
                 if ($colExists == 0) {
 
                     $sql = "ALTER TABLE `" . get_option('evr_event') . "` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
-                    $q = $wpDb->query($sql);
+                    $q = $wpdb->query($sql);
                 }
 
-                $wpDb->query('ALTER TABLE `wp_evr_payment` CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+                $wpdb->query('ALTER TABLE `wp_evr_payment` CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
             }
 
             EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
@@ -57,11 +56,10 @@ class EventPlus_Helpers_App {
                     update_option($option_name, $currentBuildVersion);
 
                     $attendee_table_name = get_option('evr_attendee');
-                    $wpDb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `discount_percentage` DECIMAL(5,2) NOT NULL AFTER `token`, ADD `discount_amount` DECIMAL(10,2) NOT NULL AFTER `discount_percentage`;');
-                    $wpDb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `order_total` DECIMAL(10,2) NOT NULL AFTER `token`;');
+                    $wpdb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `discount_percentage` DECIMAL(5,2) NOT NULL AFTER `token`, ADD `discount_amount` DECIMAL(10,2) NOT NULL AFTER `discount_percentage`;');
+                    $wpdb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `order_total` DECIMAL(10,2) NOT NULL AFTER `token`;');
 
                     update_option('evr_attendee_version', $currentBuildVersion);
-
 
                     EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
                 }
