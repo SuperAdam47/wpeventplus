@@ -676,8 +676,10 @@ function evrplus_event_db() {
 
 function evrplus_event_meta_db() {
     //Define global variables
-    global $wpdb, $cur_build, $table_message;
-
+    global $wpdb, $table_message;
+    
+    $cur_build = EventPlus_Helpers_Funx::getBuildVersion();
+    
     //Create new variables for this function
     $table_name = $wpdb->prefix . "eventplusmeta";
     $evrplus_eventmeta_version = $cur_build;
