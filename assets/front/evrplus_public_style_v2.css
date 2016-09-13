@@ -1183,14 +1183,17 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 .tooltip {
     display: inline;
     position: relative;
-    z-index: 999;
 }
 
 .events .tooltip {
     opacity: 10;
     display: inline;
     position: relative;
-    z-index: 999;
+}
+
+table.calendar-table
+{
+overflow:auto !important;
 }
 
 /* Trigger text */

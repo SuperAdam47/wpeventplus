@@ -2728,8 +2728,6 @@ msgstr "Status do pagamento"
 msgid "Payment Methods"
 msgstr "Métodos de Pagamento"
 
-msgid "Payment Method"
-msgstr "Método de pagamento"
 
 msgid "Order details"
 msgstr "Detalhes do pedido"

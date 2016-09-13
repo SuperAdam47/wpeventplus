@@ -1089,10 +1089,6 @@ msgstr ""
 msgid "Payment Message Subject"
 msgstr ""
 
-#. Text in echo
-#: evrplus_admin_payments.php:670
-msgid "Payment Method"
-msgstr ""
 
 #. Text in echo
 #: evrplus_admin_payments.php:468 evrplus_admin_payments.php:647

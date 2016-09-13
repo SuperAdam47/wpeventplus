@@ -65,8 +65,8 @@ $event_id = $oEvent->id;
                     $event_id = $row['event_id'];
                     $coupon = $row['coupon'];
 
-                    $sql3 = "SELECT * FROM " . get_option('evr_payment') . " WHERE payer_id='$attendee_id' ";
-
+                    $sql3 = "SELECT * FROM " . get_option('evr_payment') . " WHERE payer_id='$attendee_id' GROUP BY txn_id";
+                    
                     $payments = $this->wpDb()->get_results($sql3, ARRAY_A);
                     ?>
                     <tr>

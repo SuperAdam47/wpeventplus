@@ -30,6 +30,10 @@ if ($eventRow['id'] <= 0) {
     wp_die(__("Invalid request", 'evrplus_language'));
 }
 
+if($attendeeRow['payment_status'] == EventPlus_Models_Payments::PAYMENT_SUCCESS){
+    wp_die(__("Already processed", 'evrplus_language'));
+}
+
 $event_id = $eventRow['id'];
 
 $output = EventPlus::dispatch('front_event_parts_paypal/ipn');
