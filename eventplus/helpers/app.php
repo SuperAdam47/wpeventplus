@@ -16,7 +16,7 @@ class EventPlus_Helpers_App {
         $oldBuildVersion = EventPlus_Helpers_Funx::getOldBuildVersion();
         $currentBuildVersion = EventPlus::getPlugin()->getBuildVersion();
 
-        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion) {
+        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion !== false) {
 
             if ($oldBuildVersion <= '6.00.31') {
 
@@ -36,7 +36,7 @@ class EventPlus_Helpers_App {
             EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
         }
 
-        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion) {
+        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion !== false) {
 
             if ($oldBuildVersion <= '6.00.32') {
 
