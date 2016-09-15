@@ -105,12 +105,10 @@ if ($attendee_insert_result) {
     if ($emailSent) {
         $is_email_sent = 1;
     }
-
-    if ($payment_status == EventPlus_Models_Payments::PAYMENT_SUCCESS) {
-        EventPlus_Helpers_Token::delete($event_id);
-    }
 }
 
+EventPlus_Helpers_Token::delete($event_id);
+ 
 #Now that the attendee record has been posted and we have id, redirect to confirmation page.
 $url_to_goto = evrplus_permalink($company_options['evrplus_page_id']) . 'action=confirmation&event_emr=' . md5($is_email_sent) . '&event_id=' . $passed_event_id . '&eventplus_token=' . $eventplus_token;
 echo '<meta http-equiv="refresh" content="0;url=' . $url_to_goto . '" />';

@@ -30,12 +30,6 @@ class eplus_front_event_parts_confirmation_controller extends EventPlus_Abstract
             return;
         }
 
-        $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
-        if ($isPending && $cookie_token != $eventplus_token) {
-           EventPlus_Helpers_Token::set($event_id, $eventplus_token); /*reset the token as user might access email on different browser*/
-        }
-
-
         $reg_id = $attendeeData[0]['id'];
 
         $output = $this->oView->View('front/event/parts/confirmation', array(
