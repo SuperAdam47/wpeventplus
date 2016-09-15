@@ -60,8 +60,12 @@ class EventPlus_Helpers_Assets_Admin {
     }
 
     function adminHeader() {
-
+        
         $file = EventPlus::getPlugin()->getFile();
+        
+        if(strstr(strtolower($_GET['page']),'eventplus') == false){
+            return;
+        }
 
         wp_register_style($handle = 'evrplus_admin_css', $src = plugins_url('/assets/admin/css/evrplus_admin_style.css', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
 
@@ -119,6 +123,11 @@ class EventPlus_Helpers_Assets_Admin {
     }
 
     function init() {
+        
+        if(strstr(strtolower($_GET['page']),'eventplus') == false){
+            return;
+        }
+        
         $this->initAssets();
       
         add_action('admin_head', array($this, 'loadTinyMce'));

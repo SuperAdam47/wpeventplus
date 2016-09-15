@@ -84,9 +84,6 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     private function addFilters() {
-
-
-
         $oFilters = new EventPlus_Filters();
         $this->add_filter('the_content', $oFilters, 'grid_the_content_filter');
         $this->add_filter('the_content', $oFilters, 'upcoming_event_list');
