@@ -1193,7 +1193,7 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 
 table.calendar-table
 {
-overflow:auto !important;
+overflow:hidden !important;
 }
 
 /* Trigger text */
