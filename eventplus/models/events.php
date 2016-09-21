@@ -15,18 +15,18 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         return $row;
     }
-    
+
     function getRow($event_id) {
 
         $sql = "SELECT * FROM " . $this->_table . " WHERE id = '" . (int) $event_id . "' LIMIT 1";
         return $this->QuickArray($sql);
     }
-    
-    function getEventsByCategoryId($category_id){
-        $sql = "SELECT * FROM " . $this->_table . " WHERE category_id LIKE '%\"".  esc_sql($category_id)."\"%' AND str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e')";
+
+    function getEventsByCategoryId($category_id) {
+        $sql = "SELECT * FROM " . $this->_table . " WHERE category_id LIKE '%\"" . esc_sql($category_id) . "\"%' AND str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e')";
         return $this->getWpDb()->get_results($sql, ARRAY_A);
     }
-    
+
     function addEvent($params) {
 
         $event_name = ($params['event_name']);
@@ -78,7 +78,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $outside_reg = $params['outside_reg'];  // Yor N
         $external_site = $params['external_site'];
 
-        
+
         if (!empty($params['reg_form_defaults'])) {
             $reg_form_defaults = serialize($params['reg_form_defaults']);
         } else {
@@ -223,7 +223,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             'term_c' => "$term_c",
             'term_desc' => "$term_desc");
 
-        $sqlFormat = array('%s','%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
+        $sqlFormat = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
             '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
@@ -253,7 +253,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $event_identifier = ($params['event_identifier']);
         $display_desc = 'Y';  // Y or N
         $event_desc = $params['event_desc'];
-       
+
         if (!empty($params['event_category'])) {
             $event_category = serialize($params['event_category']);
         } else {
@@ -436,20 +436,26 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function getEvents($params) {
 
         $orderby = " ORDER BY str_to_date(start_time,'%h:%i%p') ";
-
+        
 
         if (!empty($params['sort'])) {
             $orderby = ' ORDER BY ' . $params['sort'];
+            if (in_array(strtolower($params['sort_direction']), array('asc','desc'))) {
+                $orderby .= ' ' . $params['sort_direction'];
+            }
         }
 
+
         if (!empty($params['company_options']['order_event_list'])) {
-			$option = $params['company_options']['order_event_list'];
-            $orderby2= " $option ";
+            $option = $params['company_options']['order_event_list'];
+            $orderby2 = " $option ";
         }
 
         //check database for number of records with date of today or in the future
-        $sql = "SELECT * FROM " . $this->_table . $orderby.$orderby2;
+        $sql = "SELECT * FROM " . $this->_table . $orderby . $orderby2;
 
+   
+        
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
         }
@@ -626,11 +632,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function fetchEventsByDate($date) {
         $company_options = EventPlus_Models_Settings::getSettings();
         if ($company_options['order_event_list'] == 'DESC') {
-            $events = $this->getWpDb()->get_results("SELECT * FROM " . $this->_table . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('".  esc_sql($date)."', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('".  esc_sql($date)."', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p') DESC");
+            $events = $this->getWpDb()->get_results("SELECT * FROM " . $this->_table . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('" . esc_sql($date) . "', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('" . esc_sql($date) . "', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p') DESC");
         } else {
-            $events = $this->getWpDb()->get_results("SELECT * FROM " . $this->_table . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('".  esc_sql($date)."', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('".  esc_sql($date)."', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p')  ASC");
+            $events = $this->getWpDb()->get_results("SELECT * FROM " . $this->_table . " WHERE (str_to_date(start_date, '%Y-%m-%e') <= str_to_date('" . esc_sql($date) . "', '%Y-%m-%e') AND str_to_date(end_date, '%Y-%m-%e') >= str_to_date('" . esc_sql($date) . "', '%Y-%m-%e')) OR recurrence_choice='yes' ORDER BY str_to_date(start_time,'%h:%i%p')  ASC");
         }
-        
+
         return $events;
     }
 

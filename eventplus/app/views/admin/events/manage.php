@@ -13,10 +13,14 @@ $total_items = count($rows);
     </div>
     <?php if ($total_items > 0) : ?>
         <p class="sort"> <?php _e('Sort By', 'evrplus_language'); ?> &nbsp; 
-            <select name= "event_sort" class="event_sort">
+            <select name= "event_sort" class="event_sort event_sort_field">
                 <option value=""> <?php _e('Select', 'evrplus_language'); ?> </option>
                 <option value="id" <?php if ($_REQUEST['sort'] == 'id') echo 'selected="selected"' ?>> <?php _e('ID', 'evrplus_language'); ?></option>
                 <option value="start_date" <?php if ($_REQUEST['sort'] == 'start_date') echo 'selected="selected"' ?>><?php _e('Date', 'evrplus_language'); ?></option>
+            </select>
+            <select name= "sort_direction" class="event_sort sort_direction">
+                <option value="asc" <?php if ($_REQUEST['sort_direction'] == 'asc') echo 'selected="selected"' ?>> <?php _e('ASC', 'evrplus_language'); ?></option>
+                <option value="desc" <?php if ($_REQUEST['sort_direction'] == 'desc') echo 'selected="selected"' ?>><?php _e('DESC', 'evrplus_language'); ?></option>
             </select>
         </p>
     <?php endif; ?>

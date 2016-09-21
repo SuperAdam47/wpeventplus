@@ -10,7 +10,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
         
         
-        $record_limit = 20;
+        $record_limit = 50;
 
         $p = new EventPlus_Pagination();
         $totalEvents = $this->_model->getTotalEvents();
@@ -36,7 +36,6 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
         $params = $this->_request->getParams();
         
         $company_options = EventPlus_Models_Settings::getSettings();
-        $params['company_options'] = $company_options;
         $params['limit_str'] = $limit_str;
 
         $rows = $this->_model->getEvents($params);
