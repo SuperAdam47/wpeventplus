@@ -1,8 +1,9 @@
 <?php
+
 $num_people = 0;
 $item_order = array();
 
-$passed_event_id = (int)$_POST['event_id'];
+$passed_event_id = (int) $_POST['event_id'];
 $event_id = 0;
 if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['eventplus_token']) && strlen($_POST['eventplus_token']) == 32)) {
     $event_id = $passed_event_id;
@@ -14,8 +15,8 @@ if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['event
 $eventplus_token = $_POST['eventplus_token'];
 
 $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
-if($isPending === false){
-      _e("Couldn't proceed! registration already processed.", 'evrplus_language');
+if ($isPending === false) {
+    _e("Couldn't proceed! registration already processed.", 'evrplus_language');
     return;
 }
 
@@ -155,7 +156,7 @@ if ($reg_type == "WAIT") {
 $ticket_data = serialize($item_order);
 
 $qanda = array();
-$questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '".(int)$event_id."'");
+$questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "'");
 if ($questions) {
     foreach ($questions as $question) {
         switch ($question->question_type) {
@@ -184,7 +185,7 @@ if ($questions) {
     }
 }
 
-$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int)$event_id;
+$sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int) $event_id;
 $result = $wpdb->get_results($sql, ARRAY_A);
 
 foreach ($result as $row) {
@@ -222,17 +223,17 @@ echo '<script type="text/javascript" src="' . $this->assetUrl('scripts/public/va
 echo '<p align="left"><strong>' . __('Please verify your registration details:', 'evrplus_language') . '</strong></p>';
 echo '<table width="95%" border="0"><tr><td><strong>' . _e('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
 
-$eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment ;
+$eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment;
 
-if(intval($payment) == 0){
-    $eventNameCostStr = $event_name . ' - Free' ;
+if (intval($payment) == 0) {
+    $eventNameCostStr = $event_name . ' - Free';
 }
 
-echo $eventNameCostStr. '</td></tr><tr><td><strong>';
+echo $eventNameCostStr . '</td></tr><tr><td><strong>';
 
 _e('Registering Name:', 'evrplus_language');
 echo '</strong></td><td>' . $attendee_name . '</td></tr>'
-        . '<tr><td><strong>' . __('Email Address:', 'evrplus_language') . '</strong></td><td>';
+ . '<tr><td><strong>' . __('Email Address:', 'evrplus_language') . '</strong></td><td>';
 echo $email . '</td></tr><tr><td><strong>' . __('Number of Attendees:', 'evrplus_language');
 echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>' . __('Order Details:', 'evrplus_language') . '</strong></td><td>';
 
@@ -244,10 +245,10 @@ if ($reg_type == "WAIT") {
     for ($row = 0; $row < $row_count; $row++) {
         if ($item_order[$row]['ItemQty'] >= "1") {
             $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " " . $item_order[$row]['ItemCurrency'] . '  ' . $item_order[$row]['ItemCost'] . "<br \>";
-            if($item_order[$row]['ItemCost'] <= 0){
-                $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free "  . "<br \>";
+            if ($item_order[$row]['ItemCost'] <= 0) {
+                $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free " . "<br \>";
             }
-            
+
             echo $strItemD;
         }
     }
@@ -278,6 +279,27 @@ if ($reg_type == "WAIT") {
 if ($reg_type == "RGLR") {
     $type = __('You are registering for', 'evrplus_language') . " " . $quantity . " " . __('person(s).', 'evrplus_language') . "   " . __('Please provide the first and last name of each person:', 'evrplus_language');
 }
+
+/**
+function eventplus_registration_message($reg_type) {
+
+    if ($reg_type == "WAIT") {
+        return __('You are on the waiting list.', 'evrplus_language');
+    }
+    
+    if ($reg_type == "RGLR") {
+        return __('Please provide the first and last name of each person:', 'evrplus_language');
+    }
+}
+
+add_filter('eventplus_registration_type_message', 'eventplus_registration_message');
+
+ */
+
+if (has_filter('eventplus_registration_type_message')) {
+    $type = apply_filters('eventplus_registration_type_message', $reg_type);
+}
+
 echo $type;
 echo '</strong><br />';
 

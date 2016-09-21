@@ -1,27 +1,31 @@
 <?php
 
 class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
-    
+
     protected static $cache = null;
-    
-    static function getSettings() {
-        
-        if(self::$cache === null){
-            self::$cache =  get_option('evr_company_settings');
-            
-            if(self::$cache['return_url'] <= 0){
-                self::$cache['return_url'] = self::$cache['evrplus_page_id']; /*FAllback page id*/
+
+    static function getSettings($key = null) {
+
+        if (self::$cache === null) {
+            self::$cache = get_option('evr_company_settings');
+
+            if (self::$cache['return_url'] <= 0) {
+                self::$cache['return_url'] = self::$cache['evrplus_page_id']; /* FAllback page id */
             }
         }
-        
-        return self::$cache;
+
+        if ($key !== null) {
+            return isset(self::$cache[$key]) ? self::$cache[$key] : null;
+        } else {
+            return self::$cache;
+        }
     }
-   
+
     static function getPaymentMethods() {
         $companyOptions = self::getSettings();
         return (array) $companyOptions['payment_vendor'];
     }
-    
+
     function saveSettings($params) {
         if ($params['company_name'] != "") {
             $company_options = get_option('evrplus_company_settings');
