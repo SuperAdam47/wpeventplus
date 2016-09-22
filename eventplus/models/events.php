@@ -436,16 +436,21 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function getEvents($params) {
 
         $orderby = " ORDER BY str_to_date(start_time,'%h:%i%p') ";
-        
+
 
         if (!empty($params['sort'])) {
             $orderby = ' ORDER BY ' . $params['sort'];
-            if (in_array(strtolower($params['sort_direction']), array('asc','desc'))) {
+
+            if ($params['sort'] == 'start_date') {
+                $orderby = " ORDER BY DATE(start_date) ";
+            }
+
+            if (in_array(strtolower($params['sort_direction']), array('asc', 'desc'))) {
                 $orderby .= ' ' . $params['sort_direction'];
             }
         }
 
-
+ 
         if (!empty($params['company_options']['order_event_list'])) {
             $option = $params['company_options']['order_event_list'];
             $orderby2 = " $option ";
@@ -454,11 +459,13 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         //check database for number of records with date of today or in the future
         $sql = "SELECT * FROM " . $this->_table . $orderby . $orderby2;
 
-   
-        
+
+
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
         }
+        
+     
 
         return $this->getResults($sql);
     }
