@@ -904,7 +904,6 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 }
 
 .timing {
-    font-family: "Helvetica Neue Bold",arial,helvetica,sans-serif;
     font-size: 100%;
     border-left: 1px solid #d3d3d3;
     color: #333;
@@ -922,8 +921,6 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 }
 
 .timing time.icon {
-    font-size: 1em;
-/* change icon size */
     display: block;
     position: relative;
     width: 80px;
@@ -942,35 +939,30 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 .timing time.icon * {
     display: block;
     width: 100%;
-/* font-size: 14px; */
-    font-weight: 700;
-    font-style: normal;
     text-align: center;
 }
 
 .timing time.icon strong {
-    position: absolute;
-    top: 0;
-    padding: 0;
     color: #fff;
     background-color: #999;
     border-bottom: 1px dashed #999;
     box-shadow: 0 2px 0 #999;
+	font-size: 90%;
 }
 
 .timing time.icon em {
     position: absolute;
-    bottom: .3em;
-    color: #999;
+    bottom: 0;
+    color: #999 !important;
     font-size: 12px;
+    font-style: normal;
 }
 
 .timing time.icon span {
-    width: 100%;
     font-size: 28px;
-    letter-spacing: -.05em;
-    padding-top: 24px;
-    color: #2f2f2f;
+    font-weight: 700;
+	line-height: 1.25;
+    color: #2f2f2f !important;
 }
 
 .timing time.icon:hover,time.icon:focus {
@@ -1040,6 +1032,22 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
     100% {
         transform: rotate(0deg) skewY(0deg);
     }
+}
+
+.widget.evrplus-widget-list-events	.timing time.icon
+{
+	width: 60px;
+	height: 60px;
+	margin: 0.5em auto;
+	border-radius: 0.4em;
+}
+.widget.evrplus-widget-list-events	.timing time.icon em
+{
+	font-size: 9px;
+}
+.widget.evrplus-widget-list-events	.timing time.icon span
+{
+	font-size: 18px;
 }
 
 /******************* custom ***********************/
@@ -1193,7 +1201,7 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 
 table.calendar-table
 {
-overflow:auto !important;
+overflow:hidden !important;
 }
 
 /* Trigger text */
@@ -1465,10 +1473,6 @@ overflow:auto !important;
 
 .time-cont br {
     display: none !important;
-}
-
-.timing time.icon span {
-    padding-top: 18px !important;
 }
 
 .evrplus_counter .timer {

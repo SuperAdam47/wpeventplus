@@ -234,12 +234,6 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         if ($this->getWpDb()->insert($this->_table, $sqlData, $sqlFormat)) {
             $response = true;
             $message = __('The event ', 'evrplus_language') . ' ' . stripslashes($params['event_name']) . ' ' . __(' has been added.', 'evrplus_language');
-
-            $event_id = $this->db->getInsertID();
-
-            $oMeta = new EventPlus_Models_Events_Meta();
-            $oMeta->updateOption($event_id, 'qty_discount', $params['qty_discount']);
-            $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
         } else {
             $response = false;
             $message = __('There was an error in your submission, please try again. The event was not saved!', 'evrplus_language');
@@ -425,11 +419,6 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $message = __('The Event details saved for ', 'evrplus_language') . ' ' . stripslashes($params['event']) . ' ' . __(' has been updated!', 'evrplus_language');
         }
 
-
-        $oMeta = new EventPlus_Models_Events_Meta();
-        $oMeta->updateOption($event_id, 'qty_discount', $params['qty_discount']);
-        $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
-
         $this->setMessage($message);
 
         return $response;
@@ -451,8 +440,17 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         if (!empty($params['sort'])) {
             $orderby = ' ORDER BY ' . $params['sort'];
+
+            if ($params['sort'] == 'start_date') {
+                $orderby = " ORDER BY DATE(start_date) ";
+            }
+
+            if (in_array(strtolower($params['sort_direction']), array('asc', 'desc'))) {
+                $orderby .= ' ' . $params['sort_direction'];
+            }
         }
 
+ 
         if (!empty($params['company_options']['order_event_list'])) {
             $option = $params['company_options']['order_event_list'];
             $orderby2 = " $option ";
@@ -461,9 +459,13 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         //check database for number of records with date of today or in the future
         $sql = "SELECT * FROM " . $this->_table . $orderby . $orderby2;
 
+
+
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
         }
+        
+     
 
         return $this->getResults($sql);
     }

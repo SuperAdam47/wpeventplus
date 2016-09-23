@@ -131,7 +131,7 @@ if ($rows) {
                     ?>
                 </div>
                 <div class="LocationDetailsContainer">
-                    <div class="col-sm-6 locationAddressBorder">
+                    <div class="col-sm-6 col-xs-12 locationAddressBorder">
                         <div id="evrplus_pop_address">
                             <h3>
                                 <u>
@@ -144,7 +144,7 @@ if ($rows) {
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 col-xs-12">
                         <div class="padding">
                             <div id="evrplus_pop_price">
                                 <h3>

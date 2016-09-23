@@ -310,6 +310,27 @@ if ($reg_type == "WAIT") {
 if ($reg_type == "RGLR") {
     $type = __('You are registering for', 'evrplus_language') . " " . $quantity . " " . __('person(s).', 'evrplus_language') . "   " . __('Please provide the first and last name of each person:', 'evrplus_language');
 }
+
+/**
+function eventplus_registration_message($reg_type) {
+
+    if ($reg_type == "WAIT") {
+        return __('You are on the waiting list.', 'evrplus_language');
+    }
+    
+    if ($reg_type == "RGLR") {
+        return __('Please provide the first and last name of each person:', 'evrplus_language');
+    }
+}
+
+add_filter('eventplus_registration_type_message', 'eventplus_registration_message');
+
+ */
+
+if (has_filter('eventplus_registration_type_message')) {
+    $type = apply_filters('eventplus_registration_type_message', $reg_type);
+}
+
 echo $type;
 echo '</strong><br />';
 
