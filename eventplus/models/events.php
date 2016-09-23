@@ -234,6 +234,12 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         if ($this->getWpDb()->insert($this->_table, $sqlData, $sqlFormat)) {
             $response = true;
             $message = __('The event ', 'evrplus_language') . ' ' . stripslashes($params['event_name']) . ' ' . __(' has been added.', 'evrplus_language');
+
+            $event_id = $this->db->getInsertID();
+
+            $oMeta = new EventPlus_Models_Events_Meta();
+            $oMeta->updateOption($event_id, 'qty_discount', $params['qty_discount']);
+            $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
         } else {
             $response = false;
             $message = __('There was an error in your submission, please try again. The event was not saved!', 'evrplus_language');
@@ -419,6 +425,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $message = __('The Event details saved for ', 'evrplus_language') . ' ' . stripslashes($params['event']) . ' ' . __(' has been updated!', 'evrplus_language');
         }
 
+
+        $oMeta = new EventPlus_Models_Events_Meta();
+        $oMeta->updateOption($event_id, 'qty_discount', $params['qty_discount']);
+        $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
+
         $this->setMessage($message);
 
         return $response;
@@ -482,6 +493,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $q = $this->deleteRow('id', $event_id, __('The event has been deleted.', 'evrplus_language'), __("The event couldn't deleted.", 'evrplus_language'));
 
         if ($q) {
+            $this->getWpDb()->query($this->getWpDb()->prepare(" DELETE FROM " . get_option('evr_eventplusmeta') . " WHERE event_id = %d", $event_id));
             $this->getWpDb()->query($this->getWpDb()->prepare(" DELETE FROM " . get_option('evr_question') . " WHERE event_id = %d", $event_id));
             $this->getWpDb()->query($this->getWpDb()->prepare(" DELETE FROM " . get_option('evr_cost') . " WHERE event_id = %d", $event_id));
         }

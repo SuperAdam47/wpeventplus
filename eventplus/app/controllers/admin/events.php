@@ -94,7 +94,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
         $id = intVal($this->_request->getParam('id'));
         $row = $this->_model->getData($id);
 
-
+        
         if ($row === false) {
             $this->setErrorMessage(__("Event doesn't exist.", 'evrplus_language'));
             $this->redirect($this->adminUrl('admin_events'));
@@ -116,12 +116,17 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
             )));
             return;
         }
+        
+        
+        $oEventMeta = new EventPlus_Models_Events_Meta();
+        $row->meta_data = $oEventMeta->getAllOptions($id);
 
         $formData = $this->fillFormData(array(
             'form_heading' => __("Edit Event", 'evrplus_language'),
             'button_label' => __("Update Event", 'evrplus_language'),
             'row' => $row,
         ));
+        
 
         $response = $this->oView->loadLayout('admin/layouts/events', 'admin/events/form', $formData);
 
