@@ -1201,7 +1201,14 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
 
 table.calendar-table
 {
+overflow:auto !important;
+}
+
+@media (max-width: 767px) {
+table.calendar-table
+{
 overflow:hidden !important;
+}
 }
 
 /* Trigger text */
