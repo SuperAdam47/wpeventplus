@@ -51,7 +51,7 @@ if ($count > 0 && $attendee_row['id'] > 0) {
 
 
 $payment_status = '';
-if ($reg_form['payment'] <= 0) {
+if ($reg_form['payment'] <= 0 && $reg_form['reg_type'] == 'RGLR') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
 }
 
