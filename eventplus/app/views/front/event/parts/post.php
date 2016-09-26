@@ -55,6 +55,13 @@ if ($reg_form['payment'] <= 0 && $reg_form['reg_type'] == 'RGLR') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
 }
 
+if($reg_form['discount'] <= 0){
+    $reg_form['discount'] = 0;
+}
+
+if($reg_form['discount_percentage'] <= 0){
+    $reg_form['discount_percentage'] = 0;
+}
 
 # Put all attendee data in an array for submission to the attendee database
 $sql = array('lname' => $reg_form['lname'], 'fname' => $reg_form['fname'], 'address' => $reg_form['address'], 'city' => $reg_form['city'],
@@ -64,10 +71,9 @@ $sql = array('lname' => $reg_form['lname'], 'fname' => $reg_form['fname'], 'addr
     'company' => $reg_form['company'], 'co_address' => $reg_form['co_add'], 'co_city' => $reg_form['co_city'], 'co_state' => $reg_form['co_state'],
     'co_zip' => $reg_form['co_zip'], 'token' => $eventplus_token, 'payment_status' => $payment_status,
     'order_total' => $reg_form['order_total'],
-    'discount_percentage' => $reg_form['discount_percentage'],
+    'discount_percentage' => intVal($reg_form['discount_percentage']),
     'discount_amount' => $reg_form['discount'],
 );
-
 
 # Define datatypes for submission to database, should be one for each field to post
 $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');

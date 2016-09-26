@@ -310,9 +310,12 @@ if ($rows) {
             }
             ?>
             <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+            <script>
+                var discountSettings = new Array();
+            </script>
             <?php
             $oEventDiscounts = new EventPlus_Models_Events_Discounts();
-            $discountSettings = $oEventDiscounts->getSettings($event_id);
+            $discountSettings = array(); //$oEventDiscounts->getSettings($event_id);
 
             $discountPercentage = 0;
             if (count($discountSettings) > 0 && is_array($discountSettings)) {
@@ -321,7 +324,6 @@ if ($rows) {
                 if (count($discountDataset) > 0) {
                     ?>
                     <script>
-                        var discountSettings = new Array();
             <?php foreach ($discountDataset as $qty => $percentage): ?>
                             discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
             <?php endforeach; ?>
