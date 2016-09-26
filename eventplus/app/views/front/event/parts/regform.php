@@ -480,7 +480,7 @@ if ($rows) {
                                             <?php _e('Registration Fees', 'evrplus_language'); ?>
                                         </h2>
 
-                                        <p class="reg_fees_select"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
+                                        <p class="reg_fees_select" id="eplus_must_select_message"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
                                         <?php
                                         foreach ($rows as $fee) {
                                             #check fee dates and if date range is valid, display fee

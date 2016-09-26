@@ -267,6 +267,10 @@ function CalculateTotalTax(frm) {
             }
         }
     }
+    
+     if(order_total <= 0){
+        return;
+    }
 
     frm.fees.value = round_decimals(order_total, 2);
     tax_total = order_total * tax_rate;
@@ -351,6 +355,11 @@ function CalculateTotal(frm) {
                 }
             }
         }
+    }
+    
+    
+    if(order_total <= 0){
+        return;
     }
 
     frm.total.value = round_decimals(order_total, 2);
