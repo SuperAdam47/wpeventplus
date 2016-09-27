@@ -753,15 +753,7 @@ img.btn_close {
 }
 
 input[type="submit"],button[type="submit"],input[type="reset"] {
-    background-color: #5BA4A4;
-    border: medium none;
-    border-radius: 2px;
-    color: #FFF;
-    cursor: pointer;
-    font-size: 12px;
-    padding: 7px 11px;
     transition: all .2s linear 0;
-    width: auto;
 }
 
 #details {
