@@ -96,7 +96,7 @@ class EventPlus_Helpers_Mail {
         $ticket_array = unserialize($this->attendeeRow['tickets']);
 
         $attendee_names = "";
-        if (count($attendee_array) > "0") {
+        if (count($attendee_array) > 0) {
             $i = 0;
             do {
                 $attendee_names .= $attendee_array[$i]["first_name"] . " " . $attendee_array[$i]['last_name'] . ",";
