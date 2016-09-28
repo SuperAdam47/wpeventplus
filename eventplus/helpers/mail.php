@@ -34,6 +34,9 @@ class EventPlus_Helpers_Mail {
                 }
             }
         } else if (is_array($to)) {
+            
+            $to = array_unique($to);
+            
             foreach ($to as $i => $toEmail) {
                 if ($this->oValidate->email($toEmail)) {
                     $q = wp_mail($toEmail, $subject, $message, $headers, $attachments);

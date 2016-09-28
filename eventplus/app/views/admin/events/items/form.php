@@ -45,6 +45,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                     <input type="hidden" name="event_id" value="<?php echo $event_id; ?>"/>
                                     <input type="hidden" name="item_id" value="<?php echo $item_id; ?>"/>
                                     <input type="hidden" name="event_end" value="<?php echo $end_date; ?>"/>
+                                      <input type="hidden" name="item_cat" value='REG' />
                                     <h3><?php
                                         echo $form_heading . ' - ';
                                         echo stripslashes($event_name);
@@ -52,7 +53,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                     <hr />
                                     <br />
                                     <ul>
-                                        <li>
+                                         <?php /*<li>
                                             <div class="pass1"> 
                                                 <label class="er_ticket_info" >
                                                     <?php _e('What type of Item/Cost is this?', 'evrplus_language'); ?>
@@ -65,13 +66,15 @@ $item_custom_cur = $row['item_custom_cur'];
                                             </div>
                                             <br/>
 
-                                            <div class="pass2"> 
+                                           <div class="pass2"> 
                                                 <select class="title" name="item_cat">
                                                     <?php foreach ($itemOptions as $optionKey => $itemOption): ?>
                                                         <option value="<?php echo $optionKey; ?>"<?php echo ($row['item_cat'] == $optionKey) ? " selected='selected'" : ""; ?>><?php echo $optionKey; ?> - <?php echo $itemOption; ?></option>                            				
                                                     <?php endforeach; ?>           
-                                                </select></div>
-                                        </li>
+                                                </select>
+                                             * </div>
+                                            
+                                        </li> */ ?>
                                         <li>
                                             <div class="pass1"><label class="er_ticket_info" ><?php _e('Name of Cost/Item', 'evrplus_language'); ?></label></div>
                                             <div class="pass1"><p title="Use a concise but descriptive name. Limit is 69 Characters."></p></div>
