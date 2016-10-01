@@ -28,6 +28,7 @@ class EventPlus_Widgets_Events extends WP_Widget {
             'oWidget' => $instance,
             'before_widget' => $before_widget,
             'before_title' => $before_title,
+            'after_title' => $after_title,
             'title' => $title,
             'record_limit' => $record_limit,
             'event_desc_count' => $event_desc_count,
