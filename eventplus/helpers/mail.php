@@ -22,9 +22,9 @@ class EventPlus_Helpers_Mail {
         $oEvent = new EventPlus_Models_Events();
         $this->eventRow = $oEvent->getRow($this->data['event_id']);
     }
-
+    
     function send_wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
-
+        
         $totSent = 0;
         if (is_string($to)) {
             if ($this->oValidate->email($to)) {
@@ -46,7 +46,7 @@ class EventPlus_Helpers_Mail {
                 }
             }
         }
-        
+       
         return $totSent;
     }
 
