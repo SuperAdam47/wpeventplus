@@ -44,8 +44,10 @@ $attendee_row = $attendee_result[0];
 # If there are no records then we can add this record. 
 $count = $wpdb->num_rows;
 
+$update_id = 0;
 if ($count > 0 && $attendee_row['id'] > 0) {
-    $wpdb->query("DELETE FROM " . get_option('evr_attendee') . " WHERE token= '" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "'");
+    $update_id = array('id' => $attendee_row['id']);
+    //$wpdb->query("DELETE FROM " . get_option('evr_attendee') . " WHERE token= '" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "'");
     $wpdb->query("DELETE FROM " . get_option('evr_answer') . " WHERE registration_id = '" . (int) $attendee_row['id'] . "'");
 }
 
@@ -55,11 +57,11 @@ if ($reg_form['payment'] <= 0 && $reg_form['reg_type'] == 'RGLR') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
 }
 
-if($reg_form['discount'] <= 0){
+if ($reg_form['discount'] <= 0) {
     $reg_form['discount'] = 0;
 }
 
-if($reg_form['discount_percentage'] <= 0){
+if ($reg_form['discount_percentage'] <= 0) {
     $reg_form['discount_percentage'] = 0;
 }
 
@@ -78,9 +80,17 @@ $sql = array('lname' => $reg_form['lname'], 'fname' => $reg_form['fname'], 'addr
 # Define datatypes for submission to database, should be one for each field to post
 $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
 
-
-#Post new attendee info to the Attendee Database
-$attendee_insert_result = $wpdb->insert(get_option('evr_attendee'), $sql, $sql_data);
+$attendee_insert_result = false;
+if (is_array($update_id)) {
+    if ($wpdb->update(get_option('evr_attendee'), $sql, $update_id) === false) {
+        $attendee_insert_result = false;
+    }else{
+        $attendee_insert_result = true;
+    }
+} else {
+    #Post new attendee info to the Attendee Database
+    $attendee_insert_result = $wpdb->insert(get_option('evr_attendee'), $sql, $sql_data);
+}
 
 $is_email_sent = 0;
 # If attendee record posted to the database, then add the custom questions as well.
@@ -88,6 +98,11 @@ if ($attendee_insert_result) {
 
     # In order to post the custom, we need the id of the attendee we are posting for.
     $reg_id = $wpdb->insert_id;
+    if($attendee_row['id'] > 0){
+        $reg_id = $attendee_row['id'];
+    }
+    
+
 
     #Check our array of unserialized responses, if there are any begin posting to the answer database
     if (count($questionsResponse) > 0) {
@@ -114,7 +129,8 @@ if ($attendee_insert_result) {
 }
 
 EventPlus_Helpers_Token::delete($event_id);
- 
+
 #Now that the attendee record has been posted and we have id, redirect to confirmation page.
 $url_to_goto = evrplus_permalink($company_options['evrplus_page_id']) . 'action=confirmation&event_emr=' . md5($is_email_sent) . '&event_id=' . $passed_event_id . '&eventplus_token=' . $eventplus_token;
 echo '<meta http-equiv="refresh" content="0;url=' . $url_to_goto . '" />';
+exit;
