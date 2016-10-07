@@ -6,6 +6,7 @@ $event_id = $oEvent->id;
 $lname = $row['lname'];
 $fname = $row['fname'];
 $address = $row['address'];
+$company = $row['company'];
 $city = $row['city'];
 $state = $row['state'];
 $zip = $row['zip'];
@@ -67,6 +68,10 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                         <li><div class="pass1"><label for="fname"><b><?php _e('First Name', 'evrplus_language'); ?>: </b></label> <?php echo $fname; ?></div></li>
                                         <li><div class="pass1"><label for="lname"><b><?php _e('Last Name', 'evrplus_language'); ?>: </b></label> <?php echo $lname; ?></div></li>
                                         <li><div class="pass1"><label for="email" ><b><?php _e('Email Address', 'evrplus_language'); ?>: </b></label> <?php echo $email; ?></div></li>
+                                        <?php if ($company != "") { ?>
+                                            <li><div class="pass1"><label for="phone" ><b><?php _e('Company', 'evrplus_language'); ?>: </b></label> 
+                                                <?php echo $company; ?></div></li>
+                                        <?php } ?>
                                         <?php if ($inc_phone == "Y") { ?>
                                             <li><div class="pass1"><label for="phone" ><b><?php _e('Phone Number', 'evrplus_language'); ?>: </b></label> <?php echo $phone; ?></div></li>
                                         <?php } ?>

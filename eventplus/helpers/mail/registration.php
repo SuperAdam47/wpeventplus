@@ -28,6 +28,14 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
             }
 
             if ($emailBodyStr != '') {
+                
+                $bindParams = array(
+                    "[company]" => stripslashes($this->attendeeRow['company']),
+                );
+
+                foreach ($bindParams as $searchValue => $replaceValue) {
+                    $emailBodyStr = str_replace($searchValue, $replaceValue, $emailBodyStr);
+                }
 
                 $emailBodyStr = $this->bindParams($emailBodyStr);
 
