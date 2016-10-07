@@ -310,6 +310,28 @@ if ($rows) {
             }
             ?>
             <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+            <script>
+                var discountSettings = new Array();
+            </script>
+            <?php
+            $oEventDiscounts = new EventPlus_Models_Events_Discounts();
+            $discountSettings = array(); //$oEventDiscounts->getSettings($event_id);
+
+            $discountPercentage = 0;
+            if (count($discountSettings) > 0 && is_array($discountSettings)) {
+                $discountDataset = EventPlus_Helpers_Event::getPercentageDataset($discountSettings);
+
+                if (count($discountDataset) > 0) {
+                    ?>
+                    <script>
+            <?php foreach ($discountDataset as $qty => $percentage): ?>
+                            discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
+            <?php endforeach; ?>
+                    </script>
+                    <?php
+                }
+            }
+            ?>
             <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
 
             <div id="evrplus_pop_foot">
@@ -369,7 +391,7 @@ if ($rows) {
                         } else {
                             ?> 
                             <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="mySubmit.disabled = true;
-                            return validateForm(this)">
+                                return validateForm(this)">
                                 <ul>
                                     <?php
                                     evrplus_generate_frm_defaults('fname', __('First Name', 'evrplus_language'), $pendingTokenRow['fname']);
@@ -458,7 +480,7 @@ if ($rows) {
                                             <?php _e('Registration Fees', 'evrplus_language'); ?>
                                         </h2>
 
-                                        <p class="reg_fees_select"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
+                                        <p class="reg_fees_select" id="eplus_must_select_message"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
                                         <?php
                                         foreach ($rows as $fee) {
                                             #check fee dates and if date range is valid, display fee
@@ -531,7 +553,7 @@ if ($rows) {
                                             ?>
                                             <p class="reg_fees_update">  <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?>
                                                 <?php _e('Please update fee dates!', 'evrplus_language'); ?></p>
-                                            <?php #if no fees set hidden reg type to WAIT  ?>
+                                            <?php #if no fees set hidden reg type to WAIT   ?>
                                             <input type="hidden" name="reg_type" value="WAIT" />
                                         <?php } ?>
                                         <br />
@@ -542,11 +564,21 @@ if ($rows) {
                                             <table>
                                                 <tr><td><b><?php _e('Registration Fees', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
                                                 <tr><td><b><?php _e('Sales Tax', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
+
+                                                <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
+                                                    <tr class="eventplus-discount-info">
+                                                        <td><b><?php _e('Discount', 'evrplus_language'); ?></b></td>
+                                                        <td><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
+                                                    </tr>
+                                                <?php else: ?>
+                                                    <input ype="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
+                                                <?php endif; ?>
                                                 <?php if ($fee->item_price > 0): ?>
                                                     <tr>
                                                         <td><b><?php _e('Total', 'evrplus_language'); ?></b></td>
                                                         <td>
-                                                            <input style="width: 100px" type="text" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                            <input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                            <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
                                                         </td>
                                                     </tr>
                                                 <?php else: ?>
@@ -562,10 +594,29 @@ if ($rows) {
 
                                             <b>
                                                 <?php if ($fee->item_price > 0): ?>
-                                                    <?php _e('Total', 'evrplus_language'); ?>
-                                                    <input style="width: 100px" type="text" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                    <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
+                                                        <div class="eventplus-discount-info">
+                                                            <?php _e('Registration Fees', 'evrplus_language'); ?>
+                                                            <input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+
+
+                                                            <?php _e('Discount', 'evrplus_language'); ?>
+                                                            <input style="width: 100px" type="text" name="discount" id="discount" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+
+                                                        </div>
+                                                    <?php else: ?>
+                                                        <input type="hidden" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                        <input type="hidden" name="discount" id="discount" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+
+                                                    <?php endif; ?>
+                                                    <div>
+                                                        <?php _e('Total', 'evrplus_language'); ?>
+                                                        <input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                        <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+
+                                                    </div>
                                                 <?php else: ?>
-                                                    <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                    <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
 
                                                 <?php endif; ?>
                                             </b>
@@ -623,9 +674,11 @@ if ($rows) {
 
                                 <script type="text/javascript">
                                     jQuery(document).ready(function ($) {
-                                        if(jQuery('.eventplus-ddl-items').val() >= 0){
+                                        if (jQuery('.eventplus-ddl-items').val() >= 0) {
                                             jQuery('#mySubmit').removeAttr('disabled');
                                         }
+
+                                        jQuery('.eventplus-ddl-items').trigger('change');
                                     });
                                 </script>
                             </form>

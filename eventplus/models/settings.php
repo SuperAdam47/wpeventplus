@@ -1,27 +1,31 @@
 <?php
 
 class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
-    
+
     protected static $cache = null;
-    
-    static function getSettings() {
-        
-        if(self::$cache === null){
-            self::$cache =  get_option('evr_company_settings');
-            
-            if(self::$cache['return_url'] <= 0){
-                self::$cache['return_url'] = self::$cache['evrplus_page_id']; /*FAllback page id*/
+
+    static function getSettings($key = null) {
+
+        if (self::$cache === null) {
+            self::$cache = get_option('evr_company_settings');
+
+            if (self::$cache['return_url'] <= 0) {
+                self::$cache['return_url'] = self::$cache['evrplus_page_id']; /* FAllback page id */
             }
         }
-        
-        return self::$cache;
+
+        if ($key !== null) {
+            return isset(self::$cache[$key]) ? self::$cache[$key] : null;
+        } else {
+            return self::$cache;
+        }
     }
-   
+
     static function getPaymentMethods() {
         $companyOptions = self::getSettings();
         return (array) $companyOptions['payment_vendor'];
     }
-    
+
     function saveSettings($params) {
         if ($params['company_name'] != "") {
             $company_options = get_option('evrplus_company_settings');
@@ -94,6 +98,8 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['admin_noti'] = $params['admin_noti'];
             $company_options['order_event_list'] = $params['order_event_list'];
             $company_options['evrplus_tooltip_show'] = $params['tooltip_show'];
+            $company_options['qty_discount'] = $params['qty_discount'];
+            $company_options['qty_discount_settings'] = $params['qty_discount_settings'];
             //$company_options['evrplus_invoice'] = $params['evrplus_invoice'];
             update_option('evr_company_settings', $company_options);
             update_option('evr_start_of_week', $start_of_week);

@@ -15,7 +15,7 @@ class eplus_front_shortcode_attendees_short_controller extends EventPlus_Abstrac
         $oAttendee = new EventPlus_Models_Attendees();
         $event = $oEvent->getData($event_id);
 
-        $participants = $oAttendee->getRecords(array('event_id' => $event_id));
+        $participants = $oAttendee->getRecords(array('event_id' => $event_id, 'payment_status' => 'success'));
 
         $outputStr = "<h2>" . __('Attendee List for ', 'evrplus_language') . stripslashes($event->event_name) . "</h2>";
 
@@ -24,15 +24,15 @@ class eplus_front_shortcode_attendees_short_controller extends EventPlus_Abstrac
 
             foreach ($participants as $participant) {
                 $attendee_array = unserialize($participant->attendees);
-                if (count($attendee_array) > "0") {
-                    $i = 0;
-                    do {
-                        if ($attendee_array[$i]['first_name'] == '') {
-                            continue;
+                
+                if(count($attendee_array) && is_array($attendee_array)){
+                    foreach($attendee_array as $k => $attendee_arr){
+                        if(isset($attendee_arr['first_name'])){
+                            if($attendee_arr['first_name'] != ''){
+                                 array_push($people, $attendee_arr);
+                            }
                         }
-                        array_push($people, $attendee_array[$i]);
-                        ++$i;
-                    } while ($i < count($attendee_array));
+                    }
                 }
             }
         }

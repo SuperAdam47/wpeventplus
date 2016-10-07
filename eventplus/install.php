@@ -47,6 +47,7 @@ function evrplus_install() {
     evrplus_question_db();
     evrplus_answer_db();
     evrplus_event_db();
+    evrplus_event_meta_db();
     evrplus_cost_db();
     evrplus_payment_db();
     evrplus_generator();
@@ -71,7 +72,7 @@ function evrplus_install() {
         // Insert the post into the database
         wp_insert_post($my_post);
     }
-    
+
     EventPlus_Helpers_Funx::updateBuildVersion(EventPlus_Helpers_Funx::getBuildVersion());
 }
 
@@ -522,8 +523,11 @@ function evrplus_attendee_db() {
                       amount_pd VARCHAR (45) DEFAULT NULL,
                       payment_date varchar(30) DEFAULT NULL,
                       token varchar(32) NOT NULL DEFAULT '0',
-                      UNIQUE KEY id (id)
-					) DEFAULT CHARSET=utf8;";
+                      order_total decimal(10,2) NOT NULL,
+                      discount_percentage decimal(5,2) NOT NULL,
+                      discount_amount decimal(10,2) NOT NULL,
+                      UNIQUE KEY id (id)) DEFAULT CHARSET=utf8;";
+
     require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
     if (dbDelta($sql)) {
         //create option in the wordpress options tale for the event attendee table name
@@ -642,7 +646,9 @@ function evrplus_event_db() {
 		  term_desc TEXT DEFAULT NULL,
           UNIQUE KEY id (id)
           ) DEFAULT CHARSET=utf8;";
+
     require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+
     if (dbDelta($sql)) {
         //create option for table name
         $option_name = 'evr_event';
@@ -666,6 +672,38 @@ function evrplus_event_db() {
           CHANGE external_site external_site VARCHAR( 255 ) NULL DEFAULT NULL
 		  ;";
     $wpdb->query($sql_alter);
+}
+
+function evrplus_event_meta_db() {
+    //Define global variables
+    global $wpdb, $table_message;
+    
+    $cur_build = EventPlus_Helpers_Funx::getBuildVersion();
+    
+    //Create new variables for this function
+    $table_name = $wpdb->prefix . "eventplusmeta";
+    $evrplus_eventmeta_version = $cur_build;
+    $sql = "CREATE TABLE `" . $table_name . "` ( `meta_id` BIGINT(11) NOT NULL AUTO_INCREMENT , `event_id` BIGINT(11) NOT NULL , `meta_key` VARCHAR(255) NOT NULL , `meta_value` LONGTEXT NOT NULL , PRIMARY KEY (`meta_id`), INDEX (`event_id`), INDEX (`meta_key`(191))) ENGINE = InnoDB;";
+
+    require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+
+    if (dbDelta($sql)) {
+        //create option for table name
+        $option_name = 'evr_eventplusmeta';
+        $newvalue = $table_name;
+        update_option($option_name, $newvalue);
+
+        //create option for table version
+        $option_name = 'evr_eventplusmeta_version';
+        $newvalue = $evrplus_eventmeta_version;
+        update_option($option_name, $newvalue);
+
+        $table_message .= __('Success Updating table - ', '') . $table_name . '<br/>';
+    } else {
+        $table_message .= __('Failure Updating table - ', '') . $table_name . '<br/>';
+    }
+
+    return $table_message;
 }
 
 function evrplus_cost_db() {

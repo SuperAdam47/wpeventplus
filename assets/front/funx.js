@@ -242,7 +242,7 @@ function CalculateTotalTax(frm) {
     }
 
     var order_total = 0;
-    var item_one = 0
+    var item_one = 0;
 
     for (var i = 0; i < frm.elements.length; ++i) {
         form_field = frm.elements[i];
@@ -267,14 +267,71 @@ function CalculateTotalTax(frm) {
             }
         }
     }
+    
+     if(order_total <= 0){
+        return;
+    }
+
     frm.fees.value = round_decimals(order_total, 2);
     tax_total = order_total * tax_rate;
     frm.tax.value = round_decimals(tax_total, 2);
-    grand_total = order_total + tax_total;
+
+    var grand_total = order_total + tax_total;
+    
     frm.total.value = round_decimals(grand_total, 2);
+    
+    if (item_one) {
+        var discountPercentage = getDiscountPercentage(item_one);
+
+        frm.discount.value = 0;
+        if (discountPercentage > 0) {
+
+            var discount = (grand_total * discountPercentage) / 100;
+
+            if (isNaN(discount) == false) {
+                grand_total = grand_total - discount;
+                frm.discount.value = round_decimals(discount, 2);
+            }
+        }
+    }
+
+    frm.displaytotal.value = round_decimals(grand_total, 2);
+}
+
+
+function getDiscountPercentage(qty) {
+    var percentage = 0;
+    if (qty > 0) {
+
+        if (discountSettings.length) {
+            for (var i = discountSettings.length; i > 0; i--) {
+                var rS = discountSettings[i];
+
+                if (rS) {
+
+                    var qtySet = rS.split(':');
+
+                    if (qtySet) {
+                        var qtyDiscount = qtySet[0];
+                        var discountPercentage = qtySet[1];
+
+                        if (qty > qtyDiscount && discountPercentage > 0 && discountPercentage <= 100) {
+                            percentage = discountPercentage;
+                            break;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    return percentage;
+
 }
 
 function CalculateTotal(frm) {
+
     var order_total = 0;
     var item_one = 0;
     for (var i = 0; i < frm.elements.length; ++i) {
@@ -299,7 +356,32 @@ function CalculateTotal(frm) {
             }
         }
     }
+    
+    
+    if(order_total <= 0){
+        return;
+    }
+
     frm.total.value = round_decimals(order_total, 2);
+    frm.fees.value = round_decimals(order_total, 2);
+    
+    if (item_one && order_total > 0) {
+        var discountPercentage = getDiscountPercentage(item_one);
+
+        frm.discount.value = 0;
+        if (discountPercentage > 0) {
+
+            var discount = (order_total * discountPercentage) / 100;
+
+            if (isNaN(discount) == false) {
+                order_total = order_total - discount;
+                frm.discount.value = round_decimals(discount, 2);
+            }
+        }
+    }
+    
+    frm.displaytotal.value = round_decimals(order_total, 2);
+
 }
 
 function round_decimals(original_number, decimals) {

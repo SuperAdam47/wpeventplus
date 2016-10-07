@@ -2,7 +2,7 @@
 
 /** Plugin Name: WP EventsPlus
  * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
- * Version: 2.0.7
+ * Version: 2.0.9
  * Author: wpeventsplus.com
  * Author URI: http://wpeventsplus.com/
  * License: GPL2
@@ -26,8 +26,9 @@ EventPlus::init();
 class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     protected $_plugin_title = 'Events+';
-    protected $_build_version = '6.00.32';
+    protected $_build_version = '6.00.33';
     protected $_plugin_version = '2.0.6';
+
     protected $_plugin_slug = 'eventplus';
     protected $oApp = null;
 
@@ -118,9 +119,27 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function initFront() {
+        $this->add_filter('pre_get_document_title', $this, 'filterMetaTitle');
         $this->add_action('wp_head', $this, 'pluginInfo');
         $this->add_action('init', $this->oApp, 'frontInit');
         $this->add_action('template_redirect', $this, 'eventplus_confirmation_registration');
+    }
+
+    function filterMetaTitle() {
+        global $post;
+
+        if (is_admin()) {
+            return;
+        }
+
+        if (isset($_GET['event_id'])) {
+
+            if (is_object($post) && is_singular() && is_singular() && $post->ID == EventPlus_Models_Settings::getSettings('evrplus_page_id')) {
+                $oEvent = new EventPlus_Models_Events();
+                $eventRow = $oEvent->getRow((int) $_GET['event_id']);
+                return $eventRow['event_name'];
+            }
+        }
     }
 
     function eventplus_confirmation_registration() {

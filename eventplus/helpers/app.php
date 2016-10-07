@@ -6,38 +6,67 @@ class EventPlus_Helpers_App {
         $this->doOputputBufer();
 
         EventPlus::factory('Helpers_Assets')->init();
-        
+
         $this->doUpgrade();
     }
 
     protected function doUpgrade() {
+        global $wpdb;
+
         $oldBuildVersion = EventPlus_Helpers_Funx::getOldBuildVersion();
-        
         $currentBuildVersion = EventPlus::getPlugin()->getBuildVersion();
-        
-        
-        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion) {
 
-            if($oldBuildVersion <= '6.00.31'){
-                
-                $wpDb = EventPlus::getRegistry()->get('db');
+        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion !== false) {
+
+            if ($oldBuildVersion <= '6.00.31') {
+
                 $checkCol = "SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME = 'wp_evr_event' AND COLUMN_NAME = 'disable_event_reg' ";
-                $colExists = (count($wpDb->get_results($checkCol, ARRAY_N)) > 0 );
-                
-                if($colExists == 0){
+                $colExists = (count($wpdb->get_results($checkCol, ARRAY_N)) > 0 );
 
-                    $sql = "ALTER TABLE `".get_option('evr_event')."` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
-                    $q = $wpDb->query($sql);
+                if ($colExists == 0) {
+
+                    $sql = "ALTER TABLE `" . get_option('evr_event') . "` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
+                    $q = $wpdb->query($sql);
                 }
-                
-                $wpDb->query('ALTER TABLE `wp_evr_payment` CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
-              
+
+                $wpdb->query('ALTER TABLE `wp_evr_payment` CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
             }
-            
+
             EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
         }
+
+        if ($oldBuildVersion < $currentBuildVersion && $oldBuildVersion !== false) {
+
+            if ($oldBuildVersion <= '6.00.32') {
+
+                $table_name = $wpdb->prefix . "eventplusmeta";
+
+                $sql = "CREATE TABLE `" . $table_name . "` ( `meta_id` BIGINT(11) NOT NULL AUTO_INCREMENT , `event_id` BIGINT(11) NOT NULL , `meta_key` VARCHAR(255) NOT NULL , `meta_value` LONGTEXT NOT NULL , PRIMARY KEY (`meta_id`), INDEX (`event_id`), INDEX (`meta_key`(191))) ENGINE = InnoDB;";
+
+                require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+
+                if (dbDelta($sql)) {
+                    //create option for table name
+                    $option_name = 'evr_eventplusmeta';
+                    $newvalue = $table_name;
+                    update_option($option_name, $newvalue);
+
+                    //create option for table version
+                    $option_name = 'evr_eventplusmeta_version';
+                    update_option($option_name, $currentBuildVersion);
+
+                    $attendee_table_name = get_option('evr_attendee');
+                    $wpdb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `discount_percentage` DECIMAL(5,2) NOT NULL AFTER `token`, ADD `discount_amount` DECIMAL(10,2) NOT NULL AFTER `discount_percentage`;');
+                    $wpdb->query('ALTER TABLE `' . $attendee_table_name . '` ADD `order_total` DECIMAL(10,2) NOT NULL AFTER `token`;');
+
+                    update_option('evr_attendee_version', $currentBuildVersion);
+
+                    EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
+                }
+            }
+        }
     }
-    
+
     function adminInit() {
         EventPlus::factory('Helpers_Assets_Admin')->init();
     }
@@ -120,7 +149,7 @@ class EventPlus_Helpers_App {
 
     function insert_footer_wpse_51023() {
         ?>
-<script type="text/javascript">
+        <script type="text/javascript">
             function showDiv(elem) {
                 if (elem.value == 'STRIPEACTIVE') {
                     document.getElementById('Divsecond').style.display = "block";

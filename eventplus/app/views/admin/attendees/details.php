@@ -6,6 +6,7 @@ $event_id = $oEvent->id;
 $lname = $row['lname'];
 $fname = $row['fname'];
 $address = $row['address'];
+$company = $row['company'];
 $city = $row['city'];
 $state = $row['state'];
 $zip = $row['zip'];
@@ -16,10 +17,12 @@ $date = $row['date'];
 $reg_type = $row['reg_type'];
 $ticket_order = unserialize($row['tickets']);
 $payment = $row['payment'];
+$order_total = $row['order_total'];
+$discount_percentage = $row['discount_percentage'];
+$discount_amount = $row['discount_amount'];
 $event_id = $row['event_id'];
 $coupon = $row['coupon'];
 $attendees = unserialize($row['attendees']);
-
 
 $reg_form_defaults = unserialize($oEvent->reg_form_defaults);
 if ($reg_form_defaults != "") {
@@ -65,6 +68,10 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                         <li><div class="pass1"><label for="fname"><b><?php _e('First Name', 'evrplus_language'); ?>: </b></label> <?php echo $fname; ?></div></li>
                                         <li><div class="pass1"><label for="lname"><b><?php _e('Last Name', 'evrplus_language'); ?>: </b></label> <?php echo $lname; ?></div></li>
                                         <li><div class="pass1"><label for="email" ><b><?php _e('Email Address', 'evrplus_language'); ?>: </b></label> <?php echo $email; ?></div></li>
+                                        <?php if ($company != "") { ?>
+                                            <li><div class="pass1"><label for="phone" ><b><?php _e('Company', 'evrplus_language'); ?>: </b></label> 
+                                                <?php echo $company; ?></div></li>
+                                        <?php } ?>
                                         <?php if ($inc_phone == "Y") { ?>
                                             <li><div class="pass1"><label for="phone" ><b><?php _e('Phone Number', 'evrplus_language'); ?>: </b></label> <?php echo $phone; ?></div></li>
                                         <?php } ?>
@@ -103,16 +110,15 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                 }
                                                 echo "</li>";
                                             }
-                                        }else{
-                                            _e('No records found','evrplus_language');
+                                        } else {
+                                            _e('No records found', 'evrplus_language');
                                         }
                                         ?>
                                     </ul>
-                                    
-                                    <?php  if ($quantity > 0 && count($attendees) > 0 && is_array($attendees)): ?>
-                                    <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/check-icon.png'); ?>"><?php _e('Attendees', 'evrplus_language'); ?></span><br /><ul class="ssa"><br/>
-                                        <?php
-                                       
+
+                                    <?php if ($quantity > 0 && count($attendees) > 0 && is_array($attendees)): ?>
+                                        <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/check-icon.png'); ?>"><?php _e('Attendees', 'evrplus_language'); ?></span><br /><ul class="ssa"><br/>
+                                            <?php
                                             $i = 0;
                                             do {
                                                 $person = $i + 1;
@@ -121,9 +127,8 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
 
                                                 ++$i;
                                             } while ($i < $quantity);
-                                        
-                                        ?>
-                                    </ul>
+                                            ?>
+                                        </ul>
                                     <?php endif; ?>
                                     <?php
                                     $num = 0;
@@ -131,23 +136,10 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
 
                                     $attendee_count = $this->wpDb()->get_var($sql2);
 
-
                                     If ($attendee_count >= 1) {
                                         $num = $attendee_count;
                                     }
                                     $available = $reg_limit - $num;
-
-
-                                    /* 	$sql2= "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event_id'";
-                                      $result2 = mysql_query($sql2);
-                                      $num = 0;
-                                      while($row = mysql_fetch_array($result2)){$num =  $row['SUM(quantity)'];};
-
-                                      $available = $reg_limit - $num;
-
-                                     */
-
-                                    // if ($available > "1"){
                                     ?>                
 
                                     <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/dollar-icon.png'); ?>"><?php _e('Registration Fees', 'evrplus_language'); ?></span><br /><ul class="ssa"><br />
@@ -163,12 +155,23 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                 ?>
 
                                                 <li><div class="pass1"><b><?php echo $ticket_order[$row]['ItemName'] . "    " . $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost']; ?>: </b><?php echo $ticket_order[$row]['ItemQty']; ?></div></li>
-                                            <?php }
+                                                <?php
+                                            }
                                         }
                                         ?>
+
+                                        <?php if ($discount_amount > 0) : ?>
+                                            <li><div class="pass1"><b><?php _e('Total', 'evrplus_language'); ?>: </b><?php
+                                                    echo $ticket_order[0]['ItemCurrency'] . ' ' . $order_total;
+                                                    ?></div><li>
+                                            <li><div class="pass1"><b><?php _e('Discount', 'evrplus_language'); ?> (<?php echo intval($discount_percentage) ?>%) : </b><?php
+                                                    echo $ticket_order[0]['ItemCurrency'] . ' ' . $discount_amount;
+                                                    ?></div><li>
+                                            <?php endif; ?>
+
                                         <li><div class="pass1"><b><?php _e('Registration TOTAL', 'evrplus_language'); ?> : </b><?php
                                                 if ($payment > 0) {
-                                                    echo $payment;
+                                                    echo $ticket_order[0]['ItemCurrency'] . ' ' . number_format($payment, 2);
                                                 } else {
                                                     echo '0.0';
                                                 }
@@ -179,14 +182,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                     if ($open_seats <= "1") {
                                         echo '<hr><br><b><font color="red">';
                                         _e('This event has reached registration capacity.', 'evrplus_language');
-                                        echo "<br>";
-                                        /* Removed this to allow editing reg form without changing wait status
-                                          _e('Please provide your information to be placed on the waiting list.','evrplus_language');
-                                          echo '</b></font>';
-                                          ?>
-                                          <input type="hidden" name="reg_type" value="WAIT" />
-                                          <?php
-                                         */
+                                        echo "<br />";
                                     }
                                     ?>
 
@@ -281,7 +277,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                     <?php if ($ER_org_data['captcha'] == 'Y') { ?>
                                         <p>Enter the security code as it is shown (required):<script type="text/javascript">sjcap("altTextField");</script>
                                         <noscript><p>[This resource requires a Javascript enabled browser.]</p></noscript>
-<?php } ?>
+                                    <?php } ?>
 
 
 

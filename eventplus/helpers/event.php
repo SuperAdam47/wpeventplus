@@ -28,17 +28,17 @@ class EventPlus_Helpers_Event {
 
     static function check_recurrence($id) {
         global $wpdb;
-        $isRecurr = $wpdb->get_var("SELECT recurrence_choice FROM " . get_option('evr_event') . " WHERE id=" . (int)$id);
+        $isRecurr = $wpdb->get_var("SELECT recurrence_choice FROM " . get_option('evr_event') . " WHERE id=" . (int) $id);
         $curr = null;
         if ($isRecurr == "yes") {
-            $row = $wpdb->get_var("SELECT start_date FROM " . get_option('evr_event') . " WHERE id=" . (int)$id);
+            $row = $wpdb->get_var("SELECT start_date FROM " . get_option('evr_event') . " WHERE id=" . (int) $id);
             if ($row) {
                 $time = strtotime($row);
                 $current = time();
                 if ($time > $current)
                     $curr = $time;
                 else {
-                    $period = $wpdb->get_var("SELECT recurrence_period FROM " . get_option('evr_event') . " WHERE id=" . (int)$id);
+                    $period = $wpdb->get_var("SELECT recurrence_period FROM " . get_option('evr_event') . " WHERE id=" . (int) $id);
                     switch ($period) {
                         case 'weekly':
                             while (true) {
@@ -109,15 +109,15 @@ class EventPlus_Helpers_Event {
             }
             $day_count = $day_count + 1;
         }
-        
+
         if ($output == '') {
             $output .= '<li>' . __('No event till now!', 'evrplus_language') . '</li>';
         }
-        
+
         $visual = '<ul>';
         $visual .= $output;
         $visual .= '</ul>';
-        
+
         return $visual;
     }
 
@@ -149,6 +149,37 @@ class EventPlus_Helpers_Event {
         }
 
         return $arr_events;
+    }
+
+    static function getDiscountPercentage($quantity, $qty_discount_settings) {
+        $discountPercentage = 0;
+        if ($quantity > 0 && is_array($qty_discount_settings) && count($qty_discount_settings) > 0) {
+
+            krsort($qty_discount_settings);
+
+            foreach ($qty_discount_settings as $qtyDiscount => $percentage) {
+                if ($quantity > $qtyDiscount && $percentage > 0 && $percentage <= 100) {
+                    $discountPercentage = $percentage;
+                    break;
+                }
+            }
+        }
+
+        return $discountPercentage;
+    }
+
+    static function getPercentageDataset($qty_discount_settings) {
+        $discountDataset = array();
+        if (is_array($qty_discount_settings) && count($qty_discount_settings) > 0) {
+
+            asort($qty_discount_settings);
+
+            foreach ($qty_discount_settings as $qtyDiscount => $percentage) {
+                $discountDataset[$qtyDiscount] = $percentage;
+            }
+        }
+
+        return $discountDataset;
     }
 
 }

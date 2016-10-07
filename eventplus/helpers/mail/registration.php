@@ -28,6 +28,14 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
             }
 
             if ($emailBodyStr != '') {
+                
+                $bindParams = array(
+                    "[company]" => stripslashes($this->attendeeRow['company']),
+                );
+
+                foreach ($bindParams as $searchValue => $replaceValue) {
+                    $emailBodyStr = str_replace($searchValue, $replaceValue, $emailBodyStr);
+                }
 
                 $emailBodyStr = $this->bindParams($emailBodyStr);
 
@@ -54,15 +62,14 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
                 $email_body = $message_top . $email_content . $message_bottom;
 
-                $headers = array(
-                    'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
-                    "Content-Type: text/html"
-                );
-                $headers = implode("\r\n", $headers) . "\r\n";
+                 $headers = array(
+                        'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">",
+                        "Content-Type: text/html; charset=UTF-8"
+                    );
+
 
                 $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
                 $mail_subject = $event_name;
-
 
                 $this->boolConfirmation = $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
             }
@@ -98,15 +105,13 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
         }
 
         $toAdminEmails = array_unique($toAdminEmails);
-
+        
         if (count($toAdminEmails) > 0) {
 
             $headers = array(
-                'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
-                "Content-Type: text/html"
+                'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">",
+                "Content-Type: text/html; charset=UTF-8"
             );
-
-            $headers = implode("\r\n", $headers) . "\r\n";
 
             $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
             $mail_subject = $event_name;

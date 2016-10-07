@@ -22,9 +22,9 @@ class EventPlus_Helpers_Mail {
         $oEvent = new EventPlus_Models_Events();
         $this->eventRow = $oEvent->getRow($this->data['event_id']);
     }
-
+    
     function send_wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
-
+        
         $totSent = 0;
         if (is_string($to)) {
             if ($this->oValidate->email($to)) {
@@ -34,6 +34,9 @@ class EventPlus_Helpers_Mail {
                 }
             }
         } else if (is_array($to)) {
+            
+            $to = array_unique($to);
+            
             foreach ($to as $i => $toEmail) {
                 if ($this->oValidate->email($toEmail)) {
                     $q = wp_mail($toEmail, $subject, $message, $headers, $attachments);
@@ -43,7 +46,7 @@ class EventPlus_Helpers_Mail {
                 }
             }
         }
-        
+       
         return $totSent;
     }
 
@@ -93,7 +96,7 @@ class EventPlus_Helpers_Mail {
         $ticket_array = unserialize($this->attendeeRow['tickets']);
 
         $attendee_names = "";
-        if (count($attendee_array) > "0") {
+        if (count($attendee_array) > 0) {
             $i = 0;
             do {
                 $attendee_names .= $attendee_array[$i]["first_name"] . " " . $attendee_array[$i]['last_name'] . ",";

@@ -7,7 +7,8 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
     }
 
     function index() {
-
+        
+    
         if ($this->_request->isPost()) {
 
             $response = $this->_model->saveSettings($this->_request->getParams());
@@ -32,6 +33,7 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
             'tab6' => __('Waitlist', 'evrplus_language'),
             'tab7' => __('Calendar', 'evrplus_language'),
             'tab8' => __('Tax', 'evrplus_language'),
+            'tabdiscount' => __('Bulk Discounts', 'evrplus_language'),
             'tab9' => __('Done', 'evrplus_language'),
         );
 

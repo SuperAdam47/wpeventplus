@@ -3,6 +3,7 @@ $editor_settings = array('wpautop', 'media_buttons' => false, 'textarea_rows' =>
 $event_id = 0;
 $form_url = $this->adminUrl('admin_events', array('method' => 'add'));
 if (is_object($row)) {
+
     if ($row->id > 0) {
 
         $event_id = (int) $row->id;
@@ -15,6 +16,8 @@ if (is_object($row)) {
         $reg_limit = $row->reg_limit;
         $term_c = $row->term_c;
         $term_desc = $row->term_desc;
+        $meta_data = $row->meta_data;
+
         /*
           $event_location = stripslashes($row['event_location']);
           $event_address = $row['event_address'];
@@ -198,13 +201,19 @@ if (is_object($row)) {
         <?php endif; ?>
 
         <?php
+        $company_options = EventPlus_Models_Settings::getSettings();
         $tabs = array(
             'description' => __('Description', 'evrplus_language'),
             'venue' => __('Event Venue', 'evrplus_language'),
             'datetime' => __('Event Date/Time', 'evrplus_language'),
-            'options' => __('Event Options', 'evrplus_language'),
-            'email' => __('Confirmation Mail', 'evrplus_language'),
+            'options' => __('Event Options', 'evrplus_language')
         );
+
+        $tabs ['email'] = __('Confirmation Mail', 'evrplus_language');
+        if ($company_options['qty_discount'] == 'Y') {
+            $tabs ['discounts'] = __('Bulk Discounts', 'evrplus_language');
+        }
+
         ?>
 
         <ul class="tabs">
