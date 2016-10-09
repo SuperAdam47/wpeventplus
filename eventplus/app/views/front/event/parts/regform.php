@@ -214,10 +214,10 @@ if ($rows) {
                         </div>
 
                         <div class="timer">
-                            <div class="days">  <?php _e('Days', 'evrplus_language'); ?></div>
-                            <div class="hours"> <?php _e('Hours', 'evrplus_language'); ?></div>
-                            <div class="min">   <?php _e('Minutes', 'evrplus_language'); ?></div>
-                            <div class="sec">   <?php _e('Seconds', 'evrplus_language'); ?></div>
+                            <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
+                            <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
+                            <div class="min"><?php _e('Minutes', 'evrplus_language'); ?></div>
+                            <div class="sec"><?php _e('Seconds', 'evrplus_language'); ?></div>
                         </div>
 
                     </div>

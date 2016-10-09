@@ -1476,7 +1476,7 @@ overflow:hidden !important;
 
 .evrplus_counter .timer {
     margin: 0 auto;
-    width: 65%;
+    width: 400px;
     overflow: hidden;
     padding-bottom: 10px;
 }
@@ -1495,3 +1495,6 @@ overflow:hidden !important;
 .wpb_wrapper form p > br {
     display: none;
 }
+
+.media-box-container	.media-box-image	{ height: auto !important; }
+.media-box-container	.media-box-image	.media-box-thumbnail-container	img	{ max-width: 100%; }
