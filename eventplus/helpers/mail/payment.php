@@ -4,8 +4,6 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
 
     protected function bindParams($str) {
 
-        $strBody = parent::bindParams($str);
-
         $txnData = $this->data['txn_data'];
 
         $bindParams = array(
@@ -15,10 +13,10 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
         );
 
         foreach ($bindParams as $searchValues => $replaceValues) {
-            $strBody = str_replace($searchValues, $replaceValues, $strBody);
+            $str = str_replace($searchValues, $replaceValues, $str);
         }
 
-        return $strBody;
+        return parent::bindParams($str);
     }
 
     function send() {
