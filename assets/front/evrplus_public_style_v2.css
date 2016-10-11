@@ -1497,4 +1497,4 @@ overflow:hidden !important;
 }
 
 .media-box-container	.media-box-image	{ height: auto !important; }
-.media-box-container	.media-box-image	.media-box-thumbnail-container	img	{ max-width: 100%; }
+.media-box-container	.media-box-image	.media-box-thumbnail-container	img	{ max-width: 100%; height: auto !important; }
