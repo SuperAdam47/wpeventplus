@@ -23,6 +23,7 @@ class EventPlus_Helpers_Admin_Menu {
         add_menu_page($title, $title, $role, $parent_uri, array($this, 'handle'));
         add_submenu_page($parent_uri, 'Configure Plugin', __('General Settings', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_settings'), array($this, 'handle'));
         add_submenu_page($parent_uri, 'Event Categories', __('Event Categories', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_categories'), array($this, 'handle'));
+        add_submenu_page($parent_uri, 'Add Event', __('Add Event', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_events/add'), array($this, 'handle'));
         add_submenu_page($parent_uri, 'Manage Events', __('Manage Events', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_events'), array($this, 'handle'));
         
      

@@ -55,7 +55,8 @@ try {
     Stripe::setApiKey($company_options['secret_key']);
 
     $currency = $company_options['default_currency'];
-    if ($currency == '') {
+    $currency = trim($currency);
+    if (strlen($currency) < 3 || $currency == '') {
         $currency = 'USD';
     }
 
