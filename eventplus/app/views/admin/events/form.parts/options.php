@@ -6,7 +6,24 @@
             <br>
             <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/check-icon.png'); ?>"><?php _e('Choose Event Options', 'evrplus_language'); ?></span>
             <div class="form-table">
+                
+                 <p>
+                    <label class="tooltip">
+                        <?php _e('Show Registration Button', 'evrplus_language'); ?></label><p class="cs2" title="<?php _e('If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed.', 'evrplus_language'); ?>"></p><br/>
+                <input id="y1" type="radio" name="show_register_button" class="radio" id="accept_checks_yes" value="Y" <?php
+                if ($show_register_button == "Y" || $show_register_button == '') {
+                    echo "checked";
+                };
+                ?>/><label for="y1"><?php _e('Yes', 'evrplus_language'); ?></label>
+                <input id="y2" type="radio" name="show_register_button" class="radio" id="accept_checks_no" value="N" <?php
+                if ($show_register_button == "N") {
+                    echo "checked";
+                };
+                ?> /><label for="y2"><?php _e('No ', 'evrplus_language'); ?></label>
 
+                </p>
+
+                <br />
                 <p>
                     <label class="tooltip">
                         <?php _e('Will you accept checks/cash for this event? ', 'evrplus_language'); ?></label><p class="cs2" title="<?php _e('If you will accept checks or cash, usually when accepting payment at event/on-site.', 'evrplus_language'); ?>"></p><br/>
@@ -22,7 +39,7 @@
                 ?> /><label for="y2"><?php _e('No ', 'evrplus_language'); ?></label>
 
                 </p>
-                
+
                 <div class="cl2">
                     <p>
                         <label class="tooltip" >
@@ -39,7 +56,7 @@
                     ?>  /><label for="w2"><?php _e('No', 'evrplus_language'); ?> 
                     </label></p>
                 </div>
-                
+
                 <div class="cl2">  
                     <p>
 
@@ -48,26 +65,26 @@
                     <input class= "title" id="external_site" name="external_site" type="text" value="<?php echo $external_site; ?>"/>
                     </p>
                 </div>
-                
+
                 <div class="cl2">
                     <p>
                         <label class="tooltip">
                             <?php _e('Do you wish to disable registration for this event?', 'evrplus_language'); ?>
                         </label> 
-                    <br/>
-                    <input type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_yes" value="Y" <?php
-                    if ($disable_event_reg == "Y") {
-                        echo "checked";
-                    }
-                    ?>/> <label for="disable_event_reg_yes"><?php _e('Yes', 'evrplus_language'); ?> </label>
-                    <input  type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_no" value="N" <?php
-                    if ($disable_event_reg == "N") {
-                        echo "checked";
-                    };
-                    ?>  /><label for="disable_event_reg_no"><?php _e('No', 'evrplus_language'); ?> 
-                    </label></p>
+                        <br/>
+                        <input type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_yes" value="Y" <?php
+                        if ($disable_event_reg == "Y") {
+                            echo "checked";
+                        }
+                        ?>/> <label for="disable_event_reg_yes"><?php _e('Yes', 'evrplus_language'); ?> </label>
+                        <input  type="radio" name="disable_event_reg" class="radio" id="disable_event_reg_no" value="N" <?php
+                        if ($disable_event_reg == "N") {
+                            echo "checked";
+                        };
+                        ?>  /><label for="disable_event_reg_no"><?php _e('No', 'evrplus_language'); ?> 
+                        </label></p>
                 </div>
-                
+
                 <br style="clear:both;" />
                 <p>
 
