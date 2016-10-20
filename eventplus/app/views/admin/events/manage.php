@@ -111,50 +111,28 @@ $total_items = count($rows);
                         <td><?php echo $active_event; ?></td>
                         <td><?php echo $number_attendees; ?> / <?php echo $reg_limit; ?></td>
                         <td>
-                            <div style="float:left; margin-right:10px;">
-
-                                <div class="fees_btn_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_events_items', array('event_id' => $event_id)) ?>" class="fees_btn"><?php _e('Fees/Items', 'evrplus_language'); ?></a>
-                                </div>
-                            </div>
-                            <div style="float:left; margin-right:10px;">
-
-
-                                <div class="question_btn_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_questions', array('event_id' => $event_id)) ?>" class="question_btn"><?php _e('Questions', 'evrplus_language'); ?></a>
-                                </div>
-
-                            </div>
-                            <div style="float:left;">
-                                <div class="attendee_btn_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_attendees', array('event_id' => $event_id)) ?>" class="attendee_btn"><?php _e('Attendees', 'evrplus_language'); ?></a>
-                                </div>
-                            </div>
-                            <div style="float:left;">
-                                <div class="edit_button_icon">
-                                    <a class="edit_button" href="<?php echo $this->adminUrl('admin_payments', array('event_id' => $event_id)) ?>"><?php _e('Payments', 'evrplus_language'); ?></a>
-                                </div>
+                            <div class="btn-group grid-actions">
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php _e('Manage', 'evrplus_language'); ?> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="fees"><a href="<?php echo $this->adminUrl('admin_events_items', array('event_id' => $event_id)) ?>"><?php _e('Fees/Items', 'evrplus_language'); ?></a></li>
+                                        <li class="questions"><a href="<?php echo $this->adminUrl('admin_questions', array('event_id' => $event_id)) ?>"><?php _e('Questions', 'evrplus_language'); ?></a></li>
+                                        <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees', array('event_id' => $event_id)) ?>"><?php _e('Attendees', 'evrplus_language'); ?></a></li>
+                                        <li class="payments"><a href="<?php echo $this->adminUrl('admin_payments', array('event_id' => $event_id)) ?>"><?php _e('Payments', 'evrplus_language'); ?></a></li>
+                                </ul>
                             </div>
                         </td>
                         <td>
-                            <div style="float:left; margin-right:10px;">
-                                <div class="edit_button_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id)) ?>" class="edit_button"><?php _e('Edit', 'evrplus_language'); ?></a>
-                                </div>
-
-                            </div>
-                            <div style="float:left; margin-right:10px;">
-                                <div class="copy_btn_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_events', array('method' => 'copy', 'id' => $event_id)) ?>" class="copy_btn" onclick="return confirm('<?php _e('Are you sure you want to copy', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Copy', 'evrplus_language'); ?></a>
-                                </div>
-
-                            </div>
-                            <div style="float:left;">
-
-                                <div class="delete_btn_icon">
-                                    <a href="<?php echo $this->adminUrl('admin_events', array('method' => 'delete', 'id' => $event_id)) ?>" class="delete_btn" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a>
-                                </div>
-
+                            <div class="btn-group grid-actions">
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php _e('Action', 'evrplus_language'); ?> <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li class="edit"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id)) ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
+                                        <li class="copy"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'copy', 'id' => $event_id)) ?>" onclick="return confirm('<?php _e('Are you sure you want to copy', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Copy', 'evrplus_language'); ?></a></li>
+                                        <li class="delete"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'delete', 'id' => $event_id)) ?>" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
+                                </ul>
                             </div>
                         </td>
                     </tr>

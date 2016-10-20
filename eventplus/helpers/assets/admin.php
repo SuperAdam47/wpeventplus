@@ -83,6 +83,8 @@ class EventPlus_Helpers_Assets_Admin {
         wp_register_script($handle = 'evrplus_tab_script', $src = plugins_url('/assets/scripts/evrplus_tabs.js', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
 
         // wp_register_script($handle = 'evrplus_tooltip_script', $src = plugins_url('/assets/js/jquery.tooltip.js', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
+		
+        wp_register_script($handle = 'bootstrap', $src = plugins_url('/assets/scripts/bootstrap.min.js', $file), $deps = array(), $ver = '3.3.7', $media = 'all');
 
         wp_register_script($handle = 'jquery-ui', $src = "//code.jquery.com/ui/1.11.4/jquery-ui.js", $deps = array(), $ver = '1.10.4', $media = 'all');
 
@@ -97,6 +99,8 @@ class EventPlus_Helpers_Assets_Admin {
         wp_enqueue_script('evrplus_tooltip_script');
 
         wp_enqueue_script('farbtastic');
+
+        wp_enqueue_script('bootstrap');
 
         wp_enqueue_script('jquery-ui');
     }

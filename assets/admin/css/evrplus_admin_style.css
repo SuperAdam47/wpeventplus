@@ -2597,7 +2597,6 @@ input[type="radio"] + label:before {
 	}
 	.events-plus_page_events .padding {
 	    padding: 10px;
-	    overflow: hidden;
 	    font-family: Arial;
 	}
 	.events-plus_page_events .evrplus_plugin .evrplus_content_half li,
@@ -5106,6 +5105,22 @@ input[type="radio"] + label:before {
 	    width: 100% !important
 	}
 	/******************* custom ***********************/
+	
+	/**** mmk custom ***/
+	.grid-actions	ul	li	{ margin-bottom: 0; line-height: 20px; border-bottom: 1px solid #ddd; }
+	.grid-actions	ul	li	a:hover	{ background-color: #5ba4a4; color: #fff; }
+	.grid-actions	ul	li	a:before	{ font-family: dashicons; font-size: 20px; margin: 0 7px 0 0; position: relative; top: 5px;  }
+	.grid-actions	ul	li.view-all	a:before	{ content: "\f179"; }
+	.grid-actions	ul	li.edit	a:before	{ content: "\f111"; }
+	.grid-actions	ul	li.copy	a:before	{ content: "\f105"; }
+	.grid-actions	ul	li.delete	a:before	{ content: "\f182"; }
+	.grid-actions	ul	li.fees	a:before	{ content: "\f174"; }
+	.grid-actions	ul	li.questions	a:before	{ content: "\f107"; }
+	.grid-actions	ul	li.attendees	a:before	{ content: "\f110"; }
+	.grid-actions	ul	li.payments	a:before	{ content: "\f526"; }
+	
+	.grid-actions.open .btn-default.dropdown-toggle	{ background-color: #5ba4a4; color: #fff; }
+	/**** mmk custom ***/
 	/*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
