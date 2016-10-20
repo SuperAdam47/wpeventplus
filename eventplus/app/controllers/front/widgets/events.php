@@ -6,10 +6,9 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         
         $record_limit = $this->_invokeArgs['record_limit']; // Defaults to 5 
         $event_desc_count = $this->_invokeArgs['event_desc_count']; // Defaults to 5
-        $record_category = $this->_invokeArgs['event_category_id']; // Defaults to 0 (All)
+        $record_category = $this->_invokeArgs['record_category']; // Defaults to 0 (All)
         $event_template = $this->_invokeArgs['event_template'];
-    
-   
+
         $events_list = $this->makeEventsList($record_limit,$event_desc_count, $record_category, $event_template);
         
         $viewParams = $this->_invokeArgs;
@@ -29,7 +28,9 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $category_query = '';
         
         if (intval($record_limit) > 20)
-            $record_limit = '20';
+            $record_limit = 20;
+        
+        var_dump($record_category);
         
         if ($record_category != '0' && $record_category > 0)
             $category_query = " AND category_id LIKE '%:\"$record_category\"%' ";
