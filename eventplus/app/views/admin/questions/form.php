@@ -57,10 +57,10 @@ $questionOptions = array(
                                     <br/>
                                     <div class="pass2">
                                     
-                                        <input id="sd1" name="required" type="radio"<?php echo ($row['required'] == "Y") ? " checked='checked'" : ""; ?> />
+                                        <input id="sd1" name="required" type="radio"<?php echo ($row['required'] == "Y") ? " checked='checked'" : ""; ?> value="Y" />
                                         <label for="sd1"><?php _e('Yes', 'evrplus_language'); ?></label>
                                     
-                                        <input id="sd2" name="required" type="radio"<?php echo ($row['required'] == "N") ? " checked='checked'" : ""; ?> />
+                                        <input id="sd2" name="required" type="radio"<?php echo ($row['required'] == "N") ? " checked='checked'" : ""; ?> value="N" />
                                         <label for="sd2"><?php _e('No', 'evrplus_language'); ?></label>
                                     
                                     </div>                            	

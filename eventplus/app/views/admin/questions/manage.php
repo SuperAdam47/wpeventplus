@@ -21,7 +21,7 @@ $event_id = $oEvent->id;
 
     <h3>
         <span><?php _e('Manage Questions', 'evrplus_language'); ?> - <strong><?php echo stripslashes($event_name); ?></strong></span>
-          <?php if ($total_items): ?> <br /><br />
+        <?php if ($total_items): ?> <br /><br />
             <a class="btn btn-small btn-primary" href="<?php echo $this->adminUrl('admin_questions/sort', array('event_id' => $oEvent->id)); ?>"><?php _e('Sort Questions', 'evrplus_language'); ?></a>
         <?php endif; ?>
     </h3>     
@@ -60,7 +60,13 @@ $event_id = $oEvent->id;
 
                         <td style="white-space: nowrap;"><?php echo $question_id; ?></td>
 
-                        <td><?php echo $question->question; ?></td>
+                        <td>
+                            <?php if ($question->required == 'Y'): ?>
+                                <strong><?php echo $question->question; ?></strong>
+                            <?php else: ?>
+                                <?php echo $question->question; ?>
+                            <?php endif; ?>
+                        </td>
 
                         <td>
 

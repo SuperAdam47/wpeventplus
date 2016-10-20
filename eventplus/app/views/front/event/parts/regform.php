@@ -350,16 +350,26 @@ if ($rows) {
                 ?>
                 <div class="registerForm">
                     <?php
+                    
+                    $oMeta = new EventPlus_Models_Events_Meta();
+                    $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
+                    
+                    $show_form_bool = 0;
+                    if($show_register_button == '' || !in_array(strtolower($show_register_button), array('y','n')) || strtolower($show_register_button) == 'n'){
+                        $show_form_bool = 1;
+                    }
+        
+                        
                     if ($outside_reg == "Y")
                         echo '<a class="extenal_link_reg" href="' . $external_site . '" >' . __('REGISTER', 'evrplus_language') . '</a>';
                     else
-                        echo '<input id="eventplus_register_btn" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
+                        echo '<input id="eventplus_register_btn" data-show-form-default="'.$show_form_bool.'" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
                         ?>
                     <!--Custom styles from company settings for form--> 
 
                     <?php if ($company_options['form_css'] != ''): ?>
                         <style>
-                            *<?php echo $company_options['form_css']; ?>
+                            <?php echo $company_options['form_css']; ?>
                         </style>
                     <?php endif; ?>
                     <div id="evrplusRegForm">

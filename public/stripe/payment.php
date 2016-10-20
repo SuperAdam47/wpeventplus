@@ -1,15 +1,16 @@
 <?php
+
 $currentDir = __DIR__;
 $dirParts = explode('wp-content', $currentDir);
 $wpDir = $dirParts[0] . DIRECTORY_SEPARATOR;
 
-if (file_exists($wpDir.'wp-config.php') == false) {
+if (file_exists($wpDir . 'wp-config.php') == false) {
     die('Bad Request');
 }
 
-include_once($wpDir.'wp-load.php');
-include_once($wpDir.'wp-config.php');
-include_once($wpDir.'wp-includes/wp-db.php');
+include_once($wpDir . 'wp-load.php');
+include_once($wpDir . 'wp-config.php');
+include_once($wpDir . 'wp-includes/wp-db.php');
 
 global $wpdb;
 
@@ -53,9 +54,15 @@ try {
     require_once('Stripe/lib/Stripe.php');
     Stripe::setApiKey($company_options['secret_key']);
 
+    $currency = $company_options['default_currency'];
+    $currency = trim($currency);
+    if (strlen($currency) < 3 || $currency == '') {
+        $currency = 'USD';
+    }
+
     $oCharge = Stripe_Charge::create(array(
                 "amount" => $price,
-                "currency" => "usd",
+                "currency" => $currency,
                 "card" => $stripeToken,
                 "description" => '[' . $eventRow['id'] . '] ' . $eventRow['event_name'] . '  - Payment',
                 "metadata" => array("registration_id" => $attendeeRow['id'])
