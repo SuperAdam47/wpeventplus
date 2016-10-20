@@ -30,7 +30,6 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         if (intval($record_limit) > 20)
             $record_limit = 20;
         
-        var_dump($record_category);
         
         if ($record_category != '0' && $record_category > 0)
             $category_query = " AND category_id LIKE '%:\"$record_category\"%' ";
