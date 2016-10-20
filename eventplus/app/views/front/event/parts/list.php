@@ -167,14 +167,16 @@ if ($rows) {
         $date_format = "M j, Y";
         $time_start = $event->start_time;
         $time_end = $event->end_time;
-        if ($opt = EventPlus_Models_Settings::getSettings()) {
-            if (isset($opt['date_format']) and $opt['date_format'] == 'eur')
-                $date_format = "j M Y";
-            if (isset($opt['time_format']) and $opt['time_format'] == '24hrs') {
-                $time_start = date('H:i', strtotime($event->start_time));
-                $time_end = date('H:i', strtotime($event->end_time));
-            }
+        $opt = EventPlus_Models_Settings::getSettings();
+   
+        if (isset($opt['date_format']) and $opt['date_format'] == 'eur')
+            $date_format = "j M Y";
+        
+        if (isset($opt['time_format']) and $opt['time_format'] == '24hrs') {
+            $time_start = date('H:i', strtotime($event->start_time));
+            $time_end = date('H:i', strtotime($event->end_time));
         }
+       
         
         $codeToReturn = str_replace("{EVENT_TIME_START}", $time_start, $codeToReturn);
         $start = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->start_date));

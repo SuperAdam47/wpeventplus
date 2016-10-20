@@ -181,6 +181,9 @@ if (is_object($row)) {
         } else {
             $active_event = '<span style="color: #090; font-weight:bold;">' . __('ACTIVE EVENT', 'evrplus_language') . '</span>';
         }
+        
+        $oMeta = new EventPlus_Models_Events_Meta();
+        $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
     }
 }
 ?>
