@@ -27,8 +27,8 @@ $total_items = count($rows);
     <table class="widefat">
         <thead>
             <tr>
-                <th><?php _e('Start Date', 'evrplus_language'); ?></th>
                 <th><?php _e('Event ID', 'evrplus_language'); ?></th>
+                <th><?php _e('Start Date', 'evrplus_language'); ?></th>
                 <th><?php _e('Name', 'evrplus_language'); ?></th>
                 <th><?php _e('ShortCode', 'evrplus_language'); ?></th>
                 <th><?php _e('Status', 'evrplus_language'); ?></th>
@@ -100,8 +100,8 @@ $total_items = count($rows);
                     }
                     ?>
                     <tr>
+                        <td><?php echo $event_id; ?></td>
                         <td style="white-space: nowrap;"><?php echo $start_date; ?></td>
-                        <td><?php echo $event_id . " " . $close_dt; ?></td>
                         <td>
                             <a href="<?php echo EventPlus::factory('Helpers_Event')->permalink($company_options['evrplus_page_id']) . "action=evrplusegister&event_id=" . $event_id ?>" target="_blank"><?php echo EventPlus_Helpers_Funx::truncateWords($event_name, 8, "..."); ?></a>
                             <br />
