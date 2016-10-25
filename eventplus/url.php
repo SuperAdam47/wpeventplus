@@ -32,12 +32,12 @@ class EventPlus_Url {
      * @param array $queryParams Named querystring URL parts (optional)
      * @return string
      */
-    function admin($core_uri, $queryParams = array(), $isSecure = false) {
+    function admin($core_uri, $queryParams = array()) {
         $url = $this->admin_url;
 
         // HTTPS Secure URL?
-        if ($isSecure == true) {
-            $url = str_replace('http:', 'https:', $url);
+        if (is_ssl()) {
+            $url = str_replace('http://', 'https://', $url);
         }
 
         $core_uri_parts = explode('/', $core_uri);
