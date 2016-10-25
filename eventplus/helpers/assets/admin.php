@@ -56,7 +56,7 @@ class EventPlus_Helpers_Assets_Admin {
         wp_enqueue_script('jquery-ui-tooltip');
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');
-       // wp_enqueue_script(array('tiny_mce', 'editor', 'editor-functions', 'thickbox', 'media-upload'));
+        wp_enqueue_script(array('tiny_mce', 'editor', 'editor-functions', 'media-upload'));
     }
 
     function adminHeader() {

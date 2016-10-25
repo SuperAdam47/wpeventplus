@@ -6,31 +6,24 @@ class EventPlus_Helpers_Assets_Front {
         $file = EventPlus::getPlugin()->getFile();
 
         wp_register_style('evrplus_public', plugins_url('assets/front/evrplus_public_style_v2.css', $file), array(), '1.0.0', 'all');
-
         wp_register_style('evrplus_calendar', plugins_url('assets/front/evrplus_calendar_v19.css', $file), array(), '1.0.0', 'all');
-
-        wp_register_style('custom-style', plugins_url('assets/front/custom-style.css', $file), array(), '1.0.0', 'all');
-
         wp_register_style('evrplus_pop_style', plugins_url('assets/front/evrplus_pop_style_v1.css', $file), array(), '1.0.0', 'all');
-
         wp_register_style('evrplus_fancy_style', plugins_url('assets/scripts/fancybox/jquery.fancybox-1.3.4.css', $file), array(), '1.0.0', 'all');
-
         wp_register_style('evrplus_colorbox_style', plugins_url('assets/scripts/colorbox/css/colorbox.css', $file), array(), '1.0.0', 'all');
-
+        wp_register_style('eventplus-bootstrap-css', plugins_url('assets/js/bootstrap.min.css', $file), array(), '1.0.0', 'all');
+        wp_register_style('custom-style', plugins_url('assets/front/custom-style.css', $file), array(), '1.0.0', 'all');
+        wp_register_style('eventplus-front-style', plugins_url('assets/front/front.css', $file), array(), '1.0.0', 'all');
+       
         wp_enqueue_style('evrplus_public');
-
         wp_enqueue_style('evrplus_calendar');
-
         wp_enqueue_style('evrplus_pop_style');
+        //wp_enqueue_style('evrplus_fancy_style');
+        //wp_enqueue_style('evrplus_colorbox_style');
 
-        wp_enqueue_style('evrplus_fancy_style');
+        wp_enqueue_style('eventplus-bootstrap-css');
 
-        wp_enqueue_style('evrplus_colorbox_style');
-
-        wp_register_style('bootstrabCSS', plugins_url('assets/js/bootstrap.min.css', $file), array(), '1.0.0', 'all');
-        wp_enqueue_style('bootstrabCSS');
-
-        wp_enqueue_style('custom-style');
+        //wp_enqueue_style('custom-style');
+        wp_enqueue_style('eventplus-front-style');
     }
 
     function enqueueScripts() {
