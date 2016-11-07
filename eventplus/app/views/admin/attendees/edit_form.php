@@ -129,11 +129,11 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                         echo "checked";
                                                     }
                                                     ?> /><label for="rt1" style="width:auto !important;"><?php _e('Wait List', 'evrplus_language'); ?></label><br/>
-                                                <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
-                                                       if ($reg_type == "RGLR") {
-                                                           echo "checked";
-                                                       }
-                                                       ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li>
+                                                                                                                                                                                                        <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
+                                                                                                                                                                                                               if ($reg_type == "RGLR") {
+                                                                                                                                                                                                                   echo "checked";
+                                                                                                                                                                                                               }
+                                                                                                                                                                                                               ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li>
                                                 <?php
                                                 $open_seats = $available;
                                                 $curdate = date("Y-m-d");
@@ -154,6 +154,11 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                                             $available = $item_limit;
                                                                         }
                                                                     }
+
+                                                                    if ($available > 499) {
+                                                                        $available = 500;
+                                                                    }
+
                                                                     for ($i = 1; $i < $available + 1; $i++) {
                                                                         ?>
                                                                         <option value="<?php echo($i); ?>"><?php echo($i); ?></option>
@@ -212,6 +217,11 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                                         $available = $item_limit;
                                                                     }
                                                                 }
+
+                                                                if ($available > 499) {
+                                                                    $available = 500;
+                                                                }
+
                                                                 for ($i = 1; $i < $available + 1; $i++) {
                                                                     ?>
                                                                     <option value="<?php echo($i); ?>"><?php echo($i); ?></option>
@@ -328,7 +338,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                             <p>Enter the security code as it is shown (required):<script type="text/javascript">sjcap("altTextField");</script>
                                             <noscript><p>[This resource requires a Javascript enabled browser.]</p></noscript>
                                         <?php } ?>
-                               
+
                                         <input type="hidden" name="event_id" value="<?php echo $event_id; ?>"/>
                                         <p align="center" class="att" id="uyt"><input class="satt" type="submit" name="Submit" value="<?php echo $button_label; ?>"/> </p>
                                     </form>

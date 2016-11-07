@@ -10,7 +10,7 @@ class EventPlus_Cookie {
     /**
      * @var  integer  Number of seconds before the cookie expires
      */
-    public static $expiration = WPEVENT_PLUS_COOKIE_EXPIRY;
+    public static $expiration = 0;
 
     /**
      * @var  string  Restrict the path that the cookie is available to
