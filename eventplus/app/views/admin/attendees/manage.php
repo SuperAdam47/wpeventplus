@@ -31,15 +31,12 @@ $event_id = $oEvent->id;
 
         <thead>
             <tr>
-                <th><?php _e('Type', 'evrplus_language'); ?></th>
                 <th><?php _e('People', 'evrplus_language'); ?></th>
-                <th><?php _e('Registered Name', 'evrplus_language'); ?> </th>
+                <th><?php _e('Registered Name', 'evrplus_language'); ?></th>
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
                 <th><?php _e('Email', 'evrplus_language'); ?></th>
                 <th><?php _e('Phone', 'evrplus_language'); ?></th>
-                <th><?php _e('Payment', 'evrplus_language'); ?></th>
                 <th><?php _e('Status', 'evrplus_language'); ?></th>
-
                 <th><?php _e('Action', 'evrplus_language'); ?></th>
             </tr>
         </thead>
@@ -55,7 +52,6 @@ $event_id = $oEvent->id;
                     $event_id = (int) $question->event_id;
 
                     echo "<tr>"
-                    . "<td>" . $attendee->reg_type . "</td>"
                     . "<td>" . $attendee->quantity . "</td><td align='left'>" . $attendee->lname . ", " . $attendee->fname . " ( ID: " . $attendee->id . ")</td><td>";
 
                     if ($attendee->attendees == "" || $attendee->attendees == "N") {
@@ -83,16 +79,22 @@ $event_id = $oEvent->id;
                     <?php endif; ?>
                 </td>
                 <td>    
-                    <?php if ($payment_status != 'success'): ?>
-                        <a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('Edit', 'evrplus_language'); ?></a>
-                    <?php endif; ?>
-                    <a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" id="update_button1"><?php _e('View', 'evrplus_language'); ?></a>
-                    <br style="clear:both;" /><br />
+                    <div class="btn-group grid-actions">
+                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php _e('Action', 'evrplus_language'); ?> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                         <?php if ($payment_status != 'success'): ?>
+                            <li class="edit"><a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
+                            <?php endif; ?>
+                            <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('View', 'evrplus_language'); ?></a></li>
+                            
+                            <li class="delete"><a href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
+                           onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
+                    </ul>
+                    </div>
 
-
-                        <a id="delete_button" href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
-                           onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a>
-            
+                   
                 </td>
 
                 <?php

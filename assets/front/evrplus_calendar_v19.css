@@ -583,7 +583,7 @@ a.tooltip:hover em {
     padding: .2em 0 .6em;
 }
 
-.classic {
+.calendar-table	.classic {
     padding: .8em 1em;
 }
 
@@ -602,7 +602,7 @@ a.tooltip:hover em {
     background: transparent;
 }
 
-.classic {
+.calendar-table	.classic {
     background: #FFA;
     border: 1px solid #FFAD33;
 }

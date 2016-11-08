@@ -756,7 +756,7 @@ function evrplus_payment_db() {
 				  payer_id varchar(15) NOT NULL,
                   event_id varchar (15) NOT NULL,
 				  payment_date varchar(30) DEFAULT NULL,
-				  txn_id varchar(20) NOT NULL,
+				  txn_id varchar(60) NOT NULL,
 				  first_name varchar(50) NOT NULL,
 				  last_name varchar(50) NOT NULL,
 				  payer_email varchar(100) NOT NULL,

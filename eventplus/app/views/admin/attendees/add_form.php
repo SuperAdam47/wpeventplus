@@ -61,7 +61,7 @@ $use_coupon = $oEvent->use_coupon;
                                         <?php if ($use_coupon == "Y") { ?>
                                             <li><div class="pass1"><label for="coupon"><?php _e('Enter coupon code', 'evrplus_language'); ?></label></div><div class="pass2"><input type="text" id="coupon" name="coupon" /></div></li>
                                         <?php } ?>
-                                        
+
                                     </ul>
                                     <?php
                                     $num = 0;
@@ -72,17 +72,16 @@ $use_coupon = $oEvent->use_coupon;
                                     if ($attendee_count >= 1) {
                                         $num = $attendee_count;
                                     }
-                                    
+
                                     $available = $reg_limit - $num;
 
                                     if ($available >= 1) {
-
                                         ?>                
                                         <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/dollar-icon.png'); ?>"><?php _e('Registration Fees', 'evrplus_language'); ?></span><br /><br/>
                                         <?php
                                         $open_seats = $available;
                                         $curdate = date("Y-m-d");
-                                        $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int)$event_id . " ORDER BY sequence ASC";
+                                        $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
                                         //$result = mysql_query ( $sql );
                                         //while ($row = mysql_fetch_assoc ($result)){
                                         $result = $this->wpDb()->get_results($sql, ARRAY_A);
@@ -99,7 +98,6 @@ $use_coupon = $oEvent->use_coupon;
                                             $item_start_date = $row['item_available_start_date'];
                                             $item_end_date = $row['item_available_end_date'];
                                             $item_custom_cur = $row['item_custom_cur'];
-
                                             ?>
                                             <input type="hidden" name="reg_type" value="RGLR"/>
                                             <div class="pass1"><?php echo $item_title . "    " . $item_custom_cur . " " . $item_price; ?></div><div class="pass2"><select name="PROD_<?php echo $event_id . "-" . $item_id . "_" . $item_price; ?>" id = "PROD_<?php
@@ -114,6 +112,11 @@ $use_coupon = $oEvent->use_coupon;
                                                                 $available = $item_limit;
                                                             }
                                                         }
+                                                        
+                                                        if($available > 499){
+                                                            $available = 500;
+                                                        }
+                                                        
                                                         for ($i = 1; $i < $available + 1; $i++) {
                                                             ?>
                                                             <option value="<?php echo($i); ?>"><?php echo($i); ?></option>

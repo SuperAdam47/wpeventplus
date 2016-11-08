@@ -25,6 +25,8 @@ class EventPlus_Helpers_Mail {
     
     function send_wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
         
+        $message = nl2br($message);
+        
         $totSent = 0;
         if (is_string($to)) {
             if ($this->oValidate->email($to)) {

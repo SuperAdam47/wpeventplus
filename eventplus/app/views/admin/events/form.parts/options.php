@@ -9,17 +9,18 @@
                 
                  <p>
                     <label class="tooltip">
-                        <?php _e('Show Registration Button', 'evrplus_language'); ?></label><p class="cs2" title="<?php _e('If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed.', 'evrplus_language'); ?>"></p><br/>
-                <input id="y1" type="radio" name="show_register_button" class="radio" id="accept_checks_yes" value="Y" <?php
+                        <?php _e('Show Registration Button', 'evrplus_language'); ?></label>
+                 <p class="cs2" title="<?php _e('If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed.', 'evrplus_language'); ?>"></p><br/>
+                <input type="radio" name="show_register_button" class="radio" id="show_register_button_yes" value="Y" <?php
                 if ($show_register_button == "Y" || $show_register_button == '') {
                     echo "checked";
                 };
-                ?>/><label for="y1"><?php _e('Yes', 'evrplus_language'); ?></label>
-                <input id="y2" type="radio" name="show_register_button" class="radio" id="accept_checks_no" value="N" <?php
+                ?>/><label for="show_register_button_yes"><?php _e('Yes', 'evrplus_language'); ?></label>
+                <input type="radio" name="show_register_button" class="radio" id="show_register_buttonno" value="N" <?php
                 if ($show_register_button == "N") {
                     echo "checked";
                 };
-                ?> /><label for="y2"><?php _e('No ', 'evrplus_language'); ?></label>
+                ?> /><label for="show_register_buttonno"><?php _e('No ', 'evrplus_language'); ?></label>
 
                 </p>
 
