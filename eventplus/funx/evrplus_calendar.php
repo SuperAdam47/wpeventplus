@@ -33,7 +33,6 @@ function evrplus_calendar_replace($content) {
     return $content;
 }
 
-
 function evrplus_display_calendar($cat = null) {
     global $wpdb, $week_no;
 
@@ -53,14 +52,14 @@ function evrplus_display_calendar($cat = null) {
         <style type="text/css">
             .calendar-date-switcher {background-color:<?php echo $cal_head_clr; ?>;color: <?php echo $cal_head_txt_clr; ?>;}
         </style>
-    <?php
+        <?php
     }
     if ($cal_day_clr != "") {
         ?>
         <style type="text/css">
             .current-day { background-color:<?php echo $cal_day_clr; ?>;color: <?php echo $cal_day_txt_clr; ?>;}
         </style>
-    <?php
+        <?php
     }
     if ($cal_day_hdr_clr != "") {
         ?>
@@ -274,10 +273,10 @@ function evrplus_display_calendar($cat = null) {
             }
         }
     }
-    
+
     $calendar_body .= '</table>';
     //$calendar_body .= evrplus_colorbox_cal_content($grabbed_events_popup);
- 
+
     echo $calendar_body;
     return $calendar_body;
 }
@@ -313,10 +312,10 @@ function evrplus_show_non_events($events) {
 
 function evrplus_show_event($event, $day = 0) {
     global $wpdb;
-    
+
     $company_options = EventPlus_Models_Settings::getSettings();
     $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
-    
+
     $cal_head_clr = $company_options['evrplus_cal_head'];
 
     $cal_head_txt_clr = $company_options['cal_head_txt_clr'];
@@ -330,8 +329,8 @@ function evrplus_show_event($event, $day = 0) {
 
     $show_cat = $cal_use_cat;
     $category_identifier = '';
+    $cat_array = @unserialize($event->category_id);
     if ($show_cat == 'Y') {
-        $cat_array = unserialize($event->category_id);
         $cat_id = $cat_array[0];
         $sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . $cat_id . "'";
         $cat_details = $wpdb->get_row($sql);
@@ -355,7 +354,7 @@ function evrplus_show_event($event, $day = 0) {
     }
     if (isset($company_options['show_num_seats']) and $company_options['show_num_seats'] == 'yes') {
         $num = 0;
-        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id' AND payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."'";
+        $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id' AND payment_status = '" . EventPlus_Models_Payments::PAYMENT_SUCCESS . "'";
 
         $attendee_count = $wpdb->get_var($sql2);
         If ($attendee_count >= 1) {
@@ -454,8 +453,14 @@ function evrplus_show_event($event, $day = 0) {
             $details = '<div class="dummy dummy-text"><span class="tooltip tooltip-effect-1">';
             $details .= '<a class="tooltip-item" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
             $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span>'
-                    . '<span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br>'
-                    . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span>'
+                    . '<span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br>';
+
+            if (count($cat_array) > 0) {
+                $details .= '<span style="font-size:15px;color: #666;" class="dashicons dashicons-category"></span>'
+                        . '<span class="event_date">' . EventPlus_Helpers_Funx::getCategoryList($cat_array) . '</span><br/>';
+            }
+
+            $details .= '<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span>'
                     . '<span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/>'
                     . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span>'
                     . '<span class="event_time">' . $start_time . ' - ' . $end_time . '</span>'
@@ -465,9 +470,7 @@ function evrplus_show_event($event, $day = 0) {
             $details .= '<a class="" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
         }
     }
-    if (strlen(html_entity_decode($event->event_name)) > 30) {
-        
-    }
+
     $details .= $seats;
 
     $details .= '<div style="display:none;">';
@@ -493,9 +496,9 @@ function evrplus_show_event($event, $day = 0) {
 
 function evrplus_colorbox_cal_content($events) {
     global $wpdb;
-   
+
     $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
-    
+
     #retrieve company and configuration settings
     $company_options = EventPlus_Models_Settings::getSettings();
 
@@ -511,7 +514,7 @@ function evrplus_colorbox_cal_content($events) {
             } else if ($event->close == "") {
                 $close_dt = $event->start_date . " " . $event->start_time;
             }
-            
+
             $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
             $expiration_date = strtotime($stp);
             $today = strtotime($current_dt);

@@ -18,7 +18,7 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
             return false;
         }
     }
-    
+
     function getDataByIdentifier($category_identifier) {
         $sql = "SELECT * FROM " . $this->_table . " WHERE category_identifier = '" . esc_sql($category_identifier) . "' LIMIT 1";
         $row = $this->QuickArray($sql);
@@ -31,7 +31,14 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
     }
 
     function getCategories(array $params = array()) {
-        $sql = "SELECT * FROM " . $this->_table . " ORDER BY id ASC";
+        $sql = "SELECT * FROM " . $this->_table . " WHERE 1=1 ";
+
+        if (is_array($params['id_collection']) && count($params['id_collection'])) {
+            $sql .= " AND id IN (" . implode(',', $params['id_collection']) . ") ";
+        }
+
+        $sql .= " ORDER BY id ASC";
+
         return $this->getResults($sql);
     }
 
@@ -134,6 +141,22 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
 
     function deleteCategory($id) {
         return $this->deleteRow('id', $id, __('The category has been deleted.', 'evrplus_language'), __("The category couldn't deleted.", 'evrplus_language'));
+    }
+
+    function getCategoriesKeys(array $params = array()) {
+        $sql = "SELECT * FROM " . $this->_table . " WHERE 1=1 ";
+
+        if (is_array($params['id_collection']) && count($params['id_collection'])) {
+            $sql .= " AND id IN (" . implode(',', $params['id_collection']) . ") ";
+        }
+
+        $sql .= " ORDER BY id ASC";
+
+        if (isset($params['limit']) && $params['limit'] > 0) {
+            $sql .= " LIMIT " . (int)$params['limit'] . " ";
+        }
+
+        return $this->Dataset($sql, 'id');
     }
 
 }
