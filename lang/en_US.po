@@ -2556,23 +2556,5 @@ msgstr ""
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
 msgstr ""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-	
+msgid "read more"
+msgstr ""

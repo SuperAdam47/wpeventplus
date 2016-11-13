@@ -1827,3 +1827,6 @@ msgstr "Salvadera"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
 msgstr "Por favor seleccione uno de los métodos siguientes y haciendo clic en el botón Pagar ahora se le llevará a la página web de nuestro proveedor de pago."
+
+msgid "read more"
+msgstr "Lee mas"

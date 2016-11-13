@@ -2751,3 +2751,6 @@ msgstr "bac à sable"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
 msgstr "S'il vous plaît sélectionnez l'une des méthodes suivantes et en cliquant sur le bouton Payer maintenant, vous serez redirigé vers le site de notre fournisseur de paiement."
+
+msgid "read more"
+msgstr "Lire la suite"
