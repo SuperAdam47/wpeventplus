@@ -5,110 +5,88 @@ msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Timo de Winter <timo@blackcoffeemedia.com>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Language: nl_NL\n"
-"X-Generator: Poedit 1.8.5\n"
+"Language: ca_CA\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #. Text in echo
 #: evrplus_admin_questions.php:70
 msgid " . . .Now returning you to Question Management . . "
-msgstr ". . .Nu terug naar Vragen beheer. ."
+msgstr "Tornant a la gestió de preguntes"
 
 #. Text in echo
 #: evrplus_admin_questions.php:67
 msgid " . . .Now returning you to Question Managment . . "
-msgstr ". . .Nu terug naar Vragen beheer. ."
+msgstr "Tornant a la gestió de preguntes"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:796 evrplus_admin_attendee.php:844
 msgid " . . .Now returning you to attendee list . . "
-msgstr ". . .Terug naar bezoekerslijst . ."
+msgstr "Tornant a la llista d'assistents"
 
 #. Text in echo
 #: evrplus_event.php:966 evrplus_event.php:969 evrplus_event.php:1538
 #: evrplus_event.php:1542 evrplus_event.php:1573 evrplus_event.php:1676
 #: evrplus_event.php:1679
 msgid " . . .Now returning you to event list . . "
-msgstr "...Terug naar de lijst met evenementen.."
+msgstr "Tornant a la llista d'esdeveniments"
 
 #. Text in echo
 #: evrplus_admin_payments.php:794 evrplus_admin_payments.php:914
 msgid " . . .Now returning you to the payment section . . "
-msgstr ". . .Terug naar betalingen . ."
+msgstr "Tornant a la secció de pagament"
 
 #. Text in echo
 #: evrplus_event.php:1558
 msgid " attendes registered for this event.  The event cannot be deleted."
-msgstr ""
-"bezoekers geregistreerd voor dit evenement. Het evenement kan niet worden "
-"verwijderd."
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "REGISTER"
-msgstr "AANMELDEN"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Submit"
-msgstr "Meld Aan"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Registration Fees"
-msgstr "Inschrijving"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Select One"
-msgstr "Selecteer"
+msgstr "Hi ha assistents registrats a aquest esdeveniment, no pot ser eliminat"
 
 #. Text in echo
 #: evrplus_event.php:1537
 msgid " has been updated!"
-msgstr "zijn opgeslagen"
+msgstr "S'ha actualitzat!"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1264 evrplus_admin_payments.php:310
 msgid "# People"
-msgstr "# mensen"
+msgstr "# Persones"
 
 #. Text in echo
 #: evrplus_company.php:192
 msgid "(For your logo on PayPal page)"
-msgstr "(Voor uw logo op de PayPal pagina)"
+msgstr "(Per al teu logo a la página de PayPal)"
 
 #. Text in echo
 #: eventsplus/evrplus_company.php:
 msgid "Choose the date format for your events:"
-msgstr "Kies de datumnotatie voor uw evenementen:"
+msgstr "Tria el format de data dels esdeveniments"
 
 #. Text in echo
 #: eventsplus/evrplus_company.php:
 msgid "Choose the time format for your events:"
-msgstr "Kies het tijd formaat voor uw evenementen:"
+msgstr "Tria la hora dels esdeveniments"
 
 #. Text in echo
 #: eventsplus/event/evrplus_event_new.php:
 msgid "Will this event run indefinitely?"
-msgstr "Zal dit evenement lopen voor onbepaalde tijd?"
+msgstr "Es repeteix l'esdeveniment indefinidament?"
 
 #. Text in echo
 #: evrplus_company.php:208
 msgid "(used for cancelled payments)"
-msgstr "(gebruikt voor het annuleren van betalingen)"
+msgstr "(per a pagaments cancel·lats)"
 
 #. Text in echo
 #: evrplus_company.php:227
 msgid "(used for testing/debug)"
-msgstr "(gebruikt voor het testen)"
+msgstr "(per a fer un test)"
 
 #. Text in echo
 #: evrplus_company.php:212
 msgid "(used to process payments)"
-msgstr "(gebruikt om betalingen mogelijk te maken)"
+msgstr "(per a processar pagaments)"
 
 #. Text in echo
 #: evrplus_registration.php:1724 evrplus_content.php:113
@@ -117,146 +95,148 @@ msgid ""
 "several days if you made a payment and your payment is not showing at this "
 "time."
 msgstr ""
-"*Betalingen kunnen soms enige vertraging kennen. Controleer over een paar "
-"dagen of u een betaling heeft gedaan als deze niet verschijnt."
+"* Els pagaments podrien trigar diversos dies en publicar-se en aquesta "
+"pàgina. Si us plau, torna d'aquí a alguns dies si has fet un pagament i no "
+"es mostra en aquest moment"
 
 #. Text in echo
 #: evrplus_public_form.php evrplus_event.php:1560
 msgid ". . .Now returning you to event list . . "
-msgstr "...Terug naar de lijst met evenementen.."
+msgstr "Tornant a la llista d'esdeveniments"
 
 #. Text in echo
 #: evrplus_event.php:488
 msgid "ADD EVENT"
-msgstr "VOEG EVENEMENT TOE"
+msgstr "AFEGIR ESDEVENIMENT"
 
 #. Text in echo
 #: evrplus_event.php:2165
 msgid "ADD NEW COST/TICKET"
-msgstr "Voeg nieuwe kosten/ticket toe"
+msgstr "AFEGIR NOU PREU/TIQUET"
 
 #. Text in echo
 #: evrplus_event.php:594
 msgid "ADD NEW EVENT"
-msgstr "VOEG NIEUW EVENEMENT TOE"
+msgstr "AFEGIR UN NOU ESDEVENIMENT"
 
 #. Text in echo
 #: evrplus_admin_questions.php:211
 msgid "ADD NEW QUESTION"
-msgstr "VOEG EEN NIEUWE VRAAG TOE"
+msgstr "AFEGIR UNA NOVA PREGUNTA"
 
 #. Text in echo
 #: evrplus_admin_questions.php:252
 msgid "ADD QUESTION"
-msgstr "VOEG VRAAG TOE"
+msgstr "AFEGIR PREGUNTA"
 
 #. Text in echo
 #: evrplus_event.php:2304
 msgid "AVAILABILITY TIMES OF COST/ITEM"
-msgstr "Beschikbaarheidstijden van  Kosten/Item"
+msgstr "HORARIS DISPONIBLES DEL PREU/PRODUCTE"
 
 #. Text in echo
 #: evrplus_admin_category.php:346 evrplus_admin_attendee.php:1264
 #: evrplus_admin_payments.php:310
 msgid "Action"
-msgstr "Actie"
+msgstr "Acció"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:868 evrplus_event.php:108
 msgid "Active Events"
-msgstr "Actieve evenementen"
+msgstr "Esdeveniments actius"
 
 #. Text in echo
 #: evrplus_admin_category.php:35
 msgid "Add A Category"
-msgstr "Voeg categorie toe"
+msgstr "Afegeix una categoria"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1242
 msgid "Add Attendee"
-msgstr "Voeg bezoeker toe:"
+msgstr "Afegeix un assistent"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:91
 msgid "Add Attendee:"
-msgstr "Voeg bezoeker toe:"
+msgstr "Afegeix un assistent:"
 
 #. Text in echo
 #: evrplus_admin_category.php:127
 msgid "Add Category"
-msgstr "Voeg categorie toe"
+msgstr "Afegeix una categoria"
 
 #. Text in echo
 #: evrplus_event.php:2090
 msgid "Add Event Cost/Item for "
-msgstr "Voeg Evenement kosten/items toe voor"
+msgstr "Afegeix un esdeveniment per al preu/producte"
 
 #. Text in echo
 #: evrplus_admin_payments.php:364
 msgid "Add Payment"
-msgstr "Voeg betaling toe"
+msgstr "Afegeix un pagament"
 
 #. Text in echo
 #: evrplus_admin_payments.php:639
 msgid "Add Payment:"
-msgstr "Voeg betaling toe:"
+msgstr "Afegeix un pagament:"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:103 evrplus_admin_attendee.php:386
 msgid "Address"
-msgstr "Adres"
+msgstr "Adreça"
 
 #. Text in echo
 #: evrplus_event.php:1293
 msgid ""
 "All location information must be complete for Google Map feature to work."
 msgstr ""
-"Alle locatie informatie moet ingevuld zijn om Google Map te laten werken"
+"Tota la informació d'ubicació ha de ser completa per a que funcioni el mapa "
+"de Google"
 
 #. Text in echo
 #: evrplus_admin_payments.php:469 evrplus_admin_payments.php:648
 msgid "Amount Paid"
-msgstr "Totale betaling"
+msgstr "Total pagat"
 
 #. Text in echo
 #: evrplus_admin_menu.php:63
 msgid "Answer Table Name:"
-msgstr "Naam van de antwoordetabel:"
+msgstr "Nom de la taula de respostes:"
 
 #. Text in echo
 #: evrplus_admin_menu.php:66
 msgid "Answer Table Version:"
-msgstr "Antwoorden tabel versie:"
+msgstr "Versió de la taula de respostes:"
 
 #. Text in echo
 #: evrplus_event.php:2584 evrplus_admin_questions.php:446
 msgid "Apply Changes"
-msgstr "Pas veranderingen toe"
+msgstr "Aplicar canvis"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "April"
-msgstr "April"
+msgstr "Abril"
 
 #. Text in echo
 #: evrplus_event.php:259
 msgid "Are you sure you want to copy"
-msgstr "Weet u zeker dat u wilt kopiëren ?"
+msgstr "Estàs segur que vols copiar"
 
 #. Text in echo
 #: evrplus_event.php:266
 msgid "Are you sure you want to delete"
-msgstr "Weet u zeker dat u wilt verwijderen?"
+msgstr "Estàs segur que vols esborrar"
 
 #. Text in echo
 #: evrplus_admin_category.php:371
 msgid "Are you sure you want to delete category?"
-msgstr "Weet u zeker dat u deze categorie wilt verwijderen?"
+msgstr "Estàs segur que vols esborrar la categoría?"
 
 #. Text in echo
 #: evrplus_event.php:1351
 msgid "Are you using an external registration?"
-msgstr "Gebruikt u externe registratie?"
+msgstr "Estàs utilitzant un registre extern?"
 
 #. Text in echo
 #: evrplus_registration.php:1172
@@ -265,392 +245,399 @@ msgid ""
 "been placed on our waiting list.  The waiting list is on a first come, first "
 "serve basis.  You will be notified by email should a seat become available."
 msgstr ""
-"Op dit  moment zijn er geen plaatsen beschikbaar. Uw informatie is "
-"toegevoegd aan de wachtlijst. De wachtlijst is op volgorde van binnenkomst. "
-"U krijgt een e-mail als er plaatsen beschikbaar komen."
+"En aquest moment, no queden places per a l'esdeveniment. T'hem col·locat en "
+"llista d'espera. Se't notificarà per email si es disposés d'una plaça."
+
+#. Text in echo
+#: evrplus_admin_attendee.php:367 evrplus_admin_attendee.php:1238
+msgid "Attendee Management"
+msgstr "Gestió dels assitents"
 
 #. Text in echo
 #: evrplus_admin_menu.php:42
 msgid "Attendee Table Name:"
-msgstr "Tabel met de namen van bezoekers"
+msgstr "Nom de la taula d'assistents"
 
 #. Text in echo
 #: evrplus_admin_menu.php:45
 msgid "Attendee Table Version:"
-msgstr "Bezoekers tabel versie:"
+msgstr "Versió de la taula d'assistents"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:989 evrplus_event.php:244
 msgid "Attendees"
-msgstr "Bezoekers"
+msgstr "Assistents"
 
 #. Text in echo
 #: evrplus_company.php:245
 msgid "Attention"
-msgstr "Let op"
+msgstr "Atenció"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "August"
-msgstr "Augustus"
+msgstr "Agost"
 
 #. Text in echo
 #: evrplus_company.php:152
 msgid "Authorized.Net Txn Key"
-msgstr "Authorized.Net Txn Key"
+msgstr "Clau Txn de Authorized.Net "
 
 #. Text in echo
 #: evrplus_event.php:2247
 msgid "Available items/cost per registration/order?"
-msgstr "Beschikbare items/kosten per registratie/order?"
+msgstr "Productes/preus disponibles per registre?"
 
 #. Text in echo
 #: evrplus_admin_payments.php:639
 msgid "Balance Owed:"
-msgstr "Verschuldigd saldo"
+msgstr "Saldo degut:"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Between"
-msgstr "tussen de"
+msgstr "Entre"
 
 #. Text in echo
 #: evrplus_company.php:208
 msgid "Cancel Return URL"
-msgstr "Annuleer Return URL"
+msgstr "URL de devolució de cancel·lacions"
 
 #. Text in echo
 #: evrplus_admin_payments.php:666 evrplus_admin_payments.php:657
 msgid "Cancelation"
-msgstr "Annulering"
+msgstr "Cancel·lació"
 
 #. Text in echo
 #: evrplus_admin_payments.php:679 evrplus_admin_payments.php:674
 msgid "Cash"
-msgstr "Contant"
+msgstr "Efectiu"
 
 #. Text in echo
 #: evrplus_admin_category.php:47 evrplus_admin_category.php:171
 msgid "Category Description"
-msgstr "Beschrijving van de categorie"
+msgstr "Descripció de la categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:12
 msgid "Category Management"
-msgstr "Categorie beheer"
+msgstr "Gestió de la categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:42 evrplus_admin_category.php:164
 msgid "Category Name"
-msgstr "Categorie naam"
+msgstr "Nom de la categoria"
 
 #. Text in echo
 #: evrplus_admin_menu.php:70
 msgid "Category Table Name:"
-msgstr "Categorie tabel naam:"
+msgstr "Nom de la taula de la categoria"
 
 #. Text in echo
 #: evrplus_admin_menu.php:73
 msgid "Category Table Version:"
-msgstr "Categorie tabel versie:"
+msgstr "Versió de la taula de la categoria"
 
 #. Text in echo
 #: evrplus_admin_payments.php:678 evrplus_admin_payments.php:673
 msgid "Check"
-msgstr "Controleer"
+msgstr "Comprova"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:106 evrplus_admin_attendee.php:389
 #: evrplus_registration.php:581 evrplus_event.php:706 evrplus_event.php:797
 #: evrplus_event.php:1278 evrplus_event.php:1374
 msgid "City"
-msgstr "Woonplaats"
+msgstr "Ciutat"
+
+msgid "Country"
+msgstr "País"
 
 #. Text in echo
 #: evrplus_company.php:51
 msgid "Company & Plugin Settings"
-msgstr "Bedrijfs & Plugin instellingen"
+msgstr "Configuració de l'empresa i el plugin"
 
 #. Text in echo
 #: evrplus_company.php:89
 msgid "Company City:"
-msgstr "Bedrijfsstad:"
+msgstr "Ciutat de l'empresa: "
 
 #. Text in echo
 #: evrplus_company.php:110
 msgid "Company Information"
-msgstr "Bedrijfsinformatie"
+msgstr "Informació de l'empresa: "
 
 #. Text in echo
 #: evrplus_company.php:77
 msgid "Company Name:"
-msgstr "Bedrijfsnaam:"
+msgstr "Nom de l'empresa: "
 
 #. Text in echo
 #: evrplus_company.php:97
 msgid "Company Postal Code:"
-msgstr "Bedrijfspostcode:"
+msgstr "Codi postal de l'empresa: "
 
 #. Text in echo
 #: evrplus_company.php:93
 msgid "Company State:"
-msgstr "Bedrijfsprovincie:"
+msgstr "Provincia de l'empresa: "
 
 #. Text in echo
 #: evrplus_company.php:81
 msgid "Company Street 1:"
-msgstr "Bedrijfsstraat 1:"
+msgstr "Adreça de l'empresa 1: "
 
 #. Text in echo
 #: evrplus_company.php:85
 msgid "Company Street 2:"
-msgstr "Bedrijfsstraat 2:"
+msgstr "Adreça de l'empresa 2: "
 
 #. Text in echo
 #: evrplus_company.php:370
 msgid "Company details saved"
-msgstr "Bedrijfsgegevens opgeslagen"
+msgstr "Detalls de l'empresa guardats"
 
 #. Text in echo
 #: evrplus_event.php:1166
 msgid "Confirmation Mail"
-msgstr "Bevestigingsmail"
+msgstr "Correu de confirmació"
 
 #. Text in echo
 #: evrplus_event.php:1416
 msgid "Confirmation eMail"
-msgstr "Bevestiging e-mail"
+msgstr "Email de confirmació"
 
 #. Text in echo
 #: evrplus_event.php:259
 msgid "Copy"
-msgstr "Kopieer"
+msgstr "Copiar"
 
 #. Text in echo
 #: evrplus_admin_menu.php:77
 msgid "Cost Table Name:"
-msgstr "Kosten tabel naam:"
+msgstr "Nom de la taula de preus:"
 
 #. Text in echo
 #: evrplus_admin_menu.php:80
 msgid "Cost Table Version:"
-msgstr "Kosten tabel versie:"
+msgstr "Versió de la taula de preus:"
 
 #. Text in echo
 #: evrplus_company.php:160
 msgid "Currency Format:"
-msgstr "Koers format:"
+msgstr "Format de moneda:"
 
 #. Text in echo
 #: evrplus_admin_category.php:325
 msgid "Current Categories"
-msgstr "Huidige categorieën"
+msgstr "Categories actuals"
 
 #. Text in echo
 #: evrplus_event.php:1424
 msgid "Custom Confirmation Email"
-msgstr "Aangepaste bevestiging e-mail"
+msgstr "Email de confirmació personalitzat"
 
 #. Text in echo
 #: evrplus_event.php:2274
 msgid "Custom Currency"
-msgstr "Huidige valuta"
+msgstr "Moneda personalitzada"
 
 #. Text in echo
 #: evrplus_admin_questions.php:140
 msgid "Custom Questions"
-msgstr "Eigen vragen"
+msgstr "Preguntes personalitzades"
 
 #. Text in echo
 #: evrplus_admin_category.php:371 evrplus_admin_questions.php:423
 msgid "DELETE"
-msgstr "Verwijder"
+msgstr "ELIMINAR"
 
 #. Text in echo
 #: evrplus_admin_menu.php:38
 msgid "Data Table Information"
-msgstr "Data tabel informatie"
+msgstr "Informació de la taula de dades"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "December"
-msgstr "December"
+msgstr "Desembre"
 
 #. Text in echo
 #: evrplus_event.php:1368
 msgid "Default Registration Information (Name and Email Required)"
-msgstr "Standaard Registratie Informatie (naam en E-mail zijn verplicht)"
+msgstr "Informació de registre per defecte (nom i email requerits)"
 
 #. Text in echo
 #: evrplus_event.php:266
 msgid "Delete"
-msgstr "Verwijder"
+msgstr "Eliminar"
 
 #. Text in echo
 #: evrplus_admin_payments.php:663 evrplus_admin_payments.php:654
 msgid "Deposit"
-msgstr "Storting"
+msgstr "Dipòsit"
 
 #. Text in echo
 #: evrplus_admin_category.php:343 evrplus_admin_questions.php:139
 msgid "Description"
-msgstr "Beschrijving"
+msgstr "Descripció"
 
 #. Text in echo
 #: evrplus_event.php:2243
 msgid "Description of Cost"
-msgstr "Beschrijving van de kosten"
+msgstr "Descripció del preu"
 
 #. Text in echo
 #: evrplus_event.php:1203
 msgid "Detailed Event Description"
-msgstr "Gedetailleerde beschrijving van het evenement"
+msgstr "Descripció detallada de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:2233 evrplus_event.php:2208
 msgid "Discount"
-msgstr "korting"
+msgstr "Descompte"
 
 #. Text in echo
 #: evrplus_admin_category.php:344
 msgid "Display Description"
-msgstr "Laat beschrijving zien"
+msgstr "Mostrar descripció"
 
 #. Text in echo
 #: evrplus_event.php:1194
 msgid "Display description on registration form page? "
-msgstr "De beschrijving laten zien op de registratiepagina?"
+msgstr "Mostrar descripció al formulari de la página de registre?"
 
 #. Text in echo
 #: evrplus_admin_category.php:44
 msgid "Do you want to display the category description on the events page?"
 msgstr ""
-"Wilt u de categoriebeschrijving weergeven op de pagina van het evenement?"
+"Vols mostrar la descripció de la categoria a la pàgina d'esdeveniments?"
 
 #. Text in echo
 #: evrplus_admin_category.php:167
 msgid "Do you want to display the event description on the events page?"
-msgstr "Wilt u de beschrijving van het evenement op de evenement pagina?"
+msgstr ""
+"Vols mostrar la descripció de l'esdeveniment a la pàgina d'esdeveniments?"
 
 #. Text in echo
 #: evrplus_admin_payments.php:492
 msgid "Do you want to send a payment received notice to the payer?"
-msgstr "Wilt u een betalingsbevestiging versturen naar de klant?"
+msgstr "Vols enviar una notificació de pagament rebut al pagador?"
 
 #. Text in echo
 #: evrplus_admin_payments.php:687
 msgid "Do you want to send a revised payment received notice to the payer?"
-msgstr "Wilt u een melding van herziene betaling versturen naar de klant?"
+msgstr "Vols enviar una notificació de revisió de pagament rebut al pagador?"
 
 #. Text in echo
 #: evrplus_event.php:1418
 msgid "Do you want to use a custom email for this event?"
-msgstr "Wilt u een eigen email gebruiken voor dit evenement?"
+msgstr "Vols utilitzar un email personalitzat per a aquest esdeveniment?"
 
 #. Text in echo
 #: evrplus_admin_payments.php:664 evrplus_admin_payments.php:655
 msgid "Donation"
-msgstr "Donatie"
+msgstr "Donació"
 
 #. Text in echo
 #: evrplus_admin_questions.php:422
 msgid "Drag Line Up or Down to ReArrange."
-msgstr "Trek een lijn van of naar herschikken"
+msgstr "Arrossega una línia cap amunt o cap avall per a reordenar."
 
 #. Text in echo
 #: evrplus_admin_questions.php:302
 msgid "Drop Down"
-msgstr "Drop Down"
+msgstr "Desplegable"
 
 #. Text in echo
 #: evrplus_admin_category.php:370 evrplus_event.php:1160
 #: evrplus_admin_questions.php:422
 msgid "EDIT"
-msgstr "Bewerk"
+msgstr "EDITAR"
 
 #. Text in echo
 #: evrplus_admin_questions.php:279
 msgid "EDIT QUESTION"
-msgstr "BEWERK VRAAG"
+msgstr "EDITAR PREGUNTA"
 
 #. Text in echo
 #: evrplus_registration.php:1048
 msgid "ERROR: Invalid Security Code."
-msgstr "FOUT: Veiligheidscode is onjuist."
+msgstr "ERROR: Codi de seguretat erroni"
 
 #. Text in echo
 #: evrplus_event.php:1248
 msgid "EVENT VENUE"
-msgstr "Plaats van het Evenement"
+msgstr "LLOC DE L'ESDEVENIMENT"
 
 #. Text in echo
 #: evrplus_event.php:252
 msgid "Edit"
-msgstr "Bewerk"
+msgstr "Editar"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:374
 msgid "Edit Attendee:"
-msgstr "Bewerk bezoeker:"
+msgstr "Editar assistent"
 
 #. Text in echo
 #: evrplus_admin_category.php:157
 msgid "Edit Category"
-msgstr "Categorie bewerken"
+msgstr "Editar categoria"
 
 #. Text in echo
 #: evrplus_event.php:2201
 msgid "Edit Event Cost/Item for "
-msgstr "Bewerk Evenement kosten/item voor"
+msgstr "Editar preu/producte de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1264
 msgid "Email"
-msgstr "E-mail"
+msgstr "Email"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:98 evrplus_admin_attendee.php:381
 #: evrplus_registration.php:560
 msgid "Email Address"
-msgstr "E-mail"
+msgstr "Direcció d'email"
 
 #. Text in echo
 #: evrplus_company.php:280
 msgid "Email Settings - Confirmation Email"
-msgstr "E-mail instellingen - Bevestigingsmail"
+msgstr "Configuració d'email - Email de confirmació"
 
 #. Text in echo
 #: evrplus_registration.php:959
 msgid "Email format not correct!"
-msgstr "Het e-mailadres klopt niet!"
+msgstr "Format d'email incorrecte!"
 
 #. Text in echo
 #: evrplus_event.php:747 evrplus_event.php:1323
 msgid "End Date"
-msgstr "Einddatum"
+msgstr "Data final"
 
 #. Text in echo
 #: evrplus_event.php:1324
 msgid "End Time"
-msgstr "Eindtijd"
+msgstr "Hora final"
 
 #. Text in echo
 #: evrplus_registration.php:622
 msgid "Enter coupon code for discount"
-msgstr "Vul uw couponcode in voor korting"
+msgstr "Introduir cupó de descompte"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:115 evrplus_admin_attendee.php:398
 msgid "Enter coupon code for discount off primary registration?"
-msgstr "Vul uw couponcode in voor korting"
+msgstr "Introduir el codi de cupó de descompte en la primera inscripció?"
 
 #. Text in echo
 #: evrplus_event.php:1261
 msgid ""
 "Enter the name of the business or facility where the event is being held"
 msgstr ""
-"Vul de naam bedrijfsnaam of de naam van de faciliteit in waar het evenement "
-"gaat plaatsvinden"
+"Introdueix el nom de l'empresa o institució on es celebra l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1252
@@ -658,13 +645,13 @@ msgid ""
 "Enter the number of available seats at your event venue. Leave blank if "
 "their is no limit on registrations."
 msgstr ""
-"Geef het aantal beschikbare plaatsen op voor uw evenementenlocatie. Laat "
-"leeg als er geen limit is."
+"Introdueix el nombre de places disponibles al seu lloc de celebració de "
+"l'esdeveniment. Deixa en blanc si no hi ha un límit en els registres."
 
 #. Text in echo
 #: evrplus_registration.php:811
 msgid "Enter the security code as it is shown (required)"
-msgstr "Vul de veiligheidscode in zoals getoond (verplicht)"
+msgstr "Introdueixi el codi de seguretat com es mostra (requerit)"
 
 #. Text in echo
 #: evrplus_event.php:1423
@@ -672,14 +659,17 @@ msgid ""
 "Enter the text for the confirmation email.  This email will be sent in text "
 "format.  See User Manual for data tags."
 msgstr ""
-"Vul de tekst in voor de bevestigingsmail. Deze mail wordt verstuurd in "
-"tekstformaat. Zie de gebruikershandleiding voor data tags."
+"Introdueixi el text del correu electrònic de confirmació. Aquest correu "
+"electrònic serà enviat en format de text. Consulteu el Manual de l'usuari "
+"per variables de dades."
 
 #. Text in echo
 #: evrplus_event.php:1358
 msgid ""
 "Enter the url hyperlink to another webpage or website external registration"
-msgstr "Vul de URL hyperlink naar de externe  webpagina of website in"
+msgstr ""
+"Introduïu l'hipervincle URL a una altra pàgina web o lloc web de registre "
+"extern"
 
 #. Text in echo
 #: evrplus_event.php:1395
@@ -687,17 +677,15 @@ msgid ""
 "Enter the url hyperlink to another webpage or website with more event "
 "information"
 msgstr ""
-"Vul een URL hyperlink naar een andere webpagina of website met meer "
-"informatie in"
+"Introduïu l'hipervincle URL a una altra pàgina web o lloc web amb més "
+"informació sobre l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1409
 msgid ""
 "Enter the url of an image you wish displayed above the registration form.  "
 "The image should be no wider than 450."
-msgstr ""
-"Vul de URL van een plaatje in dat u zou willen laten zien boven het "
-"registratieformulier. Het plaatje mag niet breder zijn dan 450."
+msgstr "Esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1403
@@ -705,155 +693,150 @@ msgid ""
 "Enter the url to an image you would like displayed next to the event in the "
 "event listings. Size should be 150 x112"
 msgstr ""
-"Vul de URL in van een plaatje dat u zou willen laten zien naast de "
-"evenementgegevens. De maten moeten 150x112 zijn."
+"Introdueix l'URL d'una imatge que vols que es mostra al costat de "
+"l'esdeveniment en les llistes d'esdeveniments. La mida ha de ser de 150 x 112"
 
 #. Text in echo
 #: evrplus_admin_questions.php:138
 msgid "Event"
-msgstr "Evenement"
+msgstr "Esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1223
 msgid "Event Categories"
-msgstr "Evenement categorieën"
+msgstr "Categories de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_payments.php:680 evrplus_admin_payments.php:675
 msgid "Event Credit"
-msgstr "Evenementkorting"
+msgstr "Crèdit de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1164
 msgid "Event Date/Time"
-msgstr "Datum/tijd van het evenement"
+msgstr "Data/hora de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1162
 msgid "Event Description"
-msgstr "Evenement beschijving"
+msgstr "Descripció de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1109 evrplus_registration.php:317
 #: evrplus_content.php:609
 msgid "Event Fees"
-msgstr "Kosten"
+msgstr "Taxes de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1862
 msgid "Event Items:"
-msgstr "Evenementen items:"
+msgstr "Articles de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1391
 msgid "Event Listing Options"
-msgstr "Evenementen optieslijst"
+msgstr "Opcions de llistat de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1262
 msgid "Event Location/Venue"
-msgstr "Evenementslocatie"
-
-#. Text in echo
-#: evrplus_event.php:1262
-msgid "Event Location"
-msgstr "Evenementslocatie"
+msgstr "Lloc de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:2544
 msgid "Event Management"
-msgstr "Evenementenbeheer"
+msgstr "Gestió de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1177
 msgid "Event Name/Title "
-msgstr "Evenement Naam/Titel"
+msgstr "Nom/títol de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_questions.php:401
 msgid "Event Question Management"
-msgstr "Evenement Vragen Beheer"
+msgstr "Gestió de preguntes de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_questions.php:82
 msgid "Event Questions"
-msgstr "Vragen over het evenement"
+msgstr "Preguntes de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_menu.php:30
 msgid "Event Registration Plugin - Current Information"
-msgstr "Event Registration Plugin - Huidige Informatie"
+msgstr "Registre de l'esdeveniment - Informació actual"
 
 #. Text in echo
 #: evrplus_event.php:1253
 msgid "Event Seating Capacity"
-msgstr "Beschikbare plaatsen"
+msgstr "Nombre de places de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_menu.php:49
 msgid "Event Table Name:"
-msgstr "Tabel met de namen van evenementen:"
+msgstr "Nom de la taula de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_menu.php:52
 msgid "Event Table Version:"
-msgstr "Evenement tabel versie:"
+msgstr "Versió de la taula de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1163
 msgid "Event Venue"
-msgstr "Evenementslocatie"
+msgstr "Lloc de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_payments.php:77 Dashboard.php:172
 msgid "Events"
-msgstr "Evenementen"
+msgstr "Esdeveniments"
 
 #. Text in echo
 #: evrplus_event.php:782 evrplus_event.php:1359
 msgid "External registration URL"
-msgstr "Externe registratie URL"
+msgstr "URL de registre extern"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "February"
-msgstr "Februari"
+msgstr "Febrer"
 
 #. Text in echo
 #: evrplus_event.php:230
 msgid "Fees/Items"
-msgstr "Betalingen/Items"
+msgstr "Taxes/articles"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:96 evrplus_admin_attendee.php:379
 #: evrplus_registration.php:550
 msgid "First Name"
-msgstr "Voornaam"
+msgstr "Nom"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Fri"
-msgstr "vrij"
+msgstr "Div"
 
 #. Text in echo
 #: evrplus_admin_payments.php:661 evrplus_admin_payments.php:652
 msgid "Full Payment"
-msgstr "Volledige betaling"
+msgstr "Pagament total"
 
 #. Text in echo
 #: evrplus_company.php:222
 msgid "GET"
-msgstr "GET"
+msgstr "AGAFA"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Go"
-msgstr "Zoek"
+msgstr "Anar"
 
 #. Text in echo
 #: evrplus_event.php:833 evrplus_event.php:1410
 msgid "Header Image URL"
-msgstr "Hoofdafbeelding URL"
+msgstr "URL d l'imatge de l'encapçalament"
 
 #. Text in echo
 #: evrplus_admin_category.php:340
@@ -863,7 +846,7 @@ msgstr "ID"
 #. Text in echo
 #: evrplus_admin_category.php:342
 msgid "Identifier"
-msgstr "Identificatienummer"
+msgstr "Identificador"
 
 #. Text in echo
 #: evrplus_event.php:1417
@@ -871,8 +854,9 @@ msgid ""
 "If you have send mail option enabled in the company settings, you can "
 "override the default mail by creating a custom mail for this event."
 msgstr ""
-"Als u de verzendoptie heeft aangezet in de bedrijfsinstellingen, dan kunt u "
-"de standaard mail overschrijven met uw eigen mail voor dit evenement."
+"Si tens l'opció habilitada en la configuració de l'empresa d'enviar un "
+"email, pots invalidar el correu predeterminat mitjançant la creació d'un "
+"correu personalitzat per a aquest esdeveniment."
 
 #. Text in echo
 #: evrplus_event.php:1193
@@ -880,8 +864,8 @@ msgid ""
 "If you want the description to display under the event title on the "
 "registration form, select yes."
 msgstr ""
-"Als u de beschrijving onder de evenementtitel opzet registratieformulier "
-"wilt, kies dan ja."
+"Si vols que la descripció es vegi sota el títol de l'esdeveniment en el "
+"formulari de registre, selecciona si."
 
 #. Text in echo
 #: evrplus_event.php:840
@@ -889,8 +873,8 @@ msgid ""
 "If you will accept checks or cash, usually when accepting payment at event/"
 "on-site"
 msgstr ""
-"Als u cheques of contant geld accepteert, meestal als mensen ter plaatse "
-"kunnen betalen"
+"Si acceptaràs xecs o efectiu, generalment quan s'accepta el pagament el dia "
+"de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1339
@@ -898,129 +882,129 @@ msgid ""
 "If you will accept checks or cash, usually when accepting payment at event/"
 "on-site."
 msgstr ""
-"Als u cheques of contant geld accepteert, meestal wanneer u betaling ter "
-"plaatse accepteert."
+"Si acceptaràs xecs o efectiu, generalment quan s'accepta el pagament el dia "
+"de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_company.php:192
 msgid "Image URL"
-msgstr "Afbeelding URL"
+msgstr "URL de la imatge"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "In "
-msgstr "In"
+msgstr "En"
 
 #. Text in echo
 #: evrplus_event.php:2576
 msgid "Item Sales Begin:"
-msgstr "Item korting begin:"
+msgstr "Inici de venta:"
 
 #. Text in echo
 #: evrplus_event.php:2576
 msgid "Item Sales End:"
-msgstr "Item Sales einde:"
+msgstr "Final de venta:"
 
 #. Text in echo
 #: evrplus_event.php:2299
 msgid "Item/Cost Value"
-msgstr "Item/Kosten waarde"
+msgstr "Preu"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "January"
-msgstr "Januari"
+msgstr "Gener"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "July"
-msgstr "Juli"
+msgstr "Juliol"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "June"
-msgstr "Juni"
+msgstr "Juny"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:97 evrplus_admin_attendee.php:380
 #: evrplus_registration.php:555
 msgid "Last Name"
-msgstr "Achternaam"
+msgstr "Cognoms"
 
 #. Text in echo
 #: evrplus_company.php:59
 msgid "Make A Donation to Events Registration"
-msgstr "Doe een donatie voor Evenementen registratie"
+msgstr "Fes una donació"
 
 #. Text in echo
 #: evrplus_admin_category.php:25
 msgid "Manage Categories"
-msgstr "Categorieën bewerken..."
+msgstr "Gestionar categories"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "March"
-msgstr "Maart"
+msgstr "Març"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "May"
-msgstr "Mag"
+msgstr "Maig"
 
 #. Text in echo
 #: evrplus_event.php:2235 evrplus_event.php:2208
 msgid "Meal or Food"
-msgstr "Maaltijd / eten"
+msgstr "Menjar"
 
 #. Text in echo
 #: evrplus_event.php:2232 evrplus_event.php:2208
 msgid "Merchandise"
-msgstr "Merchandise"
+msgstr "Merxandatge"
 
 #. Text in echo
 #: evrplus_admin_payments.php:665 evrplus_admin_payments.php:656
 msgid "Modification"
-msgstr "Modificatie"
+msgstr "Modificació"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Mon"
-msgstr "ma"
+msgstr "Dill"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Month"
-msgstr "Maand"
+msgstr "Mes"
 
 #. Text in echo
 #: evrplus_event.php:1396
 msgid "More Info URL"
-msgstr "Meer informatie URL"
+msgstr "URL per a més informació"
 
 #. Text in echo
 #: evrplus_admin_questions.php:301
 msgid "Multiple"
-msgstr "Meervoudig"
+msgstr "Múltiple"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1264 evrplus_admin_payments.php:310
 msgid "Name"
-msgstr "Naam"
+msgstr "Nom"
 
 #. Text in echo
 #: evrplus_admin_category.php:341
 msgid "Name "
-msgstr "Naam"
+msgstr "Nom"
 
 #. Text in echo
 #: evrplus_event.php:2239
 msgid "Name of Cost/Item"
-msgstr "Naam van de kosten/item"
+msgstr "Nom de l'article"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Next"
-msgstr "Volgende"
+msgstr "Següent"
 
 #. Text in echo
 #: evrplus_admin_category.php:46 evrplus_admin_category.php:169
@@ -1029,199 +1013,194 @@ msgstr "Volgende"
 #: evrplus_event.php:776 evrplus_event.php:843 evrplus_event.php:1196
 #: evrplus_event.php:1298 evrplus_event.php:1353 evrplus_event.php:1420
 msgid "No"
-msgstr "Nee"
+msgstr "No"
 
 #. Text in echo
 #: evrplus_event.php:765 evrplus_event.php:1342
 msgid "No "
-msgstr "Nee"
+msgstr "No"
 
 #. Text in echo
 #: evrplus_admin_questions.php:173
 msgid "No Custom Questions"
-msgstr "Geen eigen vragen"
+msgstr "No hi ha preguntes personalitzades"
 
 #. Text in echo
 #: evrplus_registration.php:697
 msgid "No Fees Have Been Setup For This Event!"
-msgstr "Er worden geen kosten in rekening gebracht voor dit evenement"
+msgstr "No s'han estipulat taxes per aquest edeveniment"
 
 #. Text in echo
 #: evrplus_admin_export.php:1 evrplus_admin_payments.php:313
 #: evrplus_registration.php:1724 evrplus_content.php:113
 msgid "No Payments Received!"
-msgstr "Geen betalingen ontvangen!"
+msgstr "Cap pagament rebut!"
 
 #. Text in echo
 #: evrplus_admin_category.php:375
 msgid "No Record Found!"
-msgstr "Geen registratie gevonden"
+msgstr "No s'ha trobat cap registre!"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "No event till now!"
-msgstr "Geen Evenement tot nu toe!"
+msgstr "Cap esdeveniment fins ara!"
 
 #. Text in echo
 #: evrplus_company.php:212
 msgid "Notify URL"
-msgstr "Kennisgevings URL"
+msgstr "URL de notificació"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "November"
-msgstr "November"
+msgstr "Novembre"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:807
 msgid "Now adding extra question responses."
-msgstr "Er worden extra antwoorden op vragen toegevoegd."
+msgstr "Afegint respostes extra"
 
 #. Text in echo
 #: evrplus_event.php:2369 evrplus_event.php:2428
 msgid "Now taking you back . . ."
-msgstr "U gaat nu terug ...."
+msgstr "Tornant..."
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "October"
-msgstr "Oktober"
+msgstr "Octubre"
 
 #. Text in echo
 #: evrplus_company.php:148
 msgid "Online Payment ID"
-msgstr "Online Betalings ID"
+msgstr "ID de pagament online"
 
 #. Text in echo
 #: evrplus_company.php:132
 msgid "Online Payment Vendor:"
-msgstr "Online Betalings Organisatie:"
+msgstr "Pagament online a proveïdors"
 
 #. Text in echo
 #: evrplus_admin_payments.php:677 evrplus_admin_payments.php:672
 msgid "Online/Credit Card"
-msgstr "Online/Credit Card"
+msgstr "Tarja de crèdit"
 
 #. Text in echo
 #: evrplus_event.php:1391
 msgid "Optional"
-msgstr "Niet verplicht"
+msgstr "Opcional"
 
 #. Text in echo
 #: evrplus_event.php:1165
 msgid "Options"
-msgstr "Opties"
+msgstr "Opcions"
 
 #. Text in echo
 #: evrplus_admin_payments.php:310
 msgid "Order Detail"
-msgstr "Bestelinformatie"
+msgstr "Detalls de la reserva"
 
 #. Text in echo
 #: evrplus_company.php:157
 msgid "PAY NOW"
-msgstr "Betaal nu"
+msgstr "PAGAR ARA"
 
 #. Text in echo
 #: evrplus_company.php:223
 msgid "POST"
-msgstr "POST"
+msgstr "MÉS TARD"
 
 #. Text in echo
 #: evrplus_admin_payments.php:519
 msgid "POST PAYMENT"
-msgstr "Vooruitbetaling"
+msgstr "PAGAR MÉS TARD"
 
 #. Text in echo
 #: evrplus_company.php:239
 msgid "Page Settings"
-msgstr "Pagina instellingen"
+msgstr "Configuració de la pàgina"
 
 #. Text in echo
 #: evrplus_admin_payments.php:662 evrplus_admin_payments.php:653
 msgid "Partial Payment"
-msgstr "Gedeeltelijke betaling"
+msgstr "Pagament parcial"
 
 #. Text in echo
 #: evrplus_company.php:156
 msgid "Payment Button Text"
-msgstr "Betalings knop tekst"
+msgstr "Text del botó de pagament"
 
 #. Text in echo
 #: evrplus_company.php:313
 msgid "Payment Confirmation Settings - Confirmation Email"
-msgstr "Betaling bevestigings instellingen - Bevestigings E-mail"
+msgstr "Configuració de la confirmació de pagament - Email de confirmació"
 
 #. Text in echo
 #: evrplus_admin_payments.php:632
 msgid "Payment Management"
-msgstr "Betalingsbeheer"
+msgstr "Gestió de pagaments"
 
 #. Text in echo
 #: evrplus_company.php:318
 msgid "Payment Message Subject"
-msgstr "Onderwerp van de betalingsboodschap"
-
-#. Text in echo
-#: evrplus_admin_payments.php:670
-msgid "Payment Method"
-msgstr "Betaalmethode"
+msgstr "Asumpte del missatge de pagaments"
 
 #. Text in echo
 #: evrplus_admin_payments.php:468 evrplus_admin_payments.php:647
 msgid "Payment Received Date"
-msgstr "Betalingsdatum"
+msgstr "Data de recepció de pagaments"
 
 #. Text in echo
 #: evrplus_admin_payments.php:956
 msgid "Payment Received Notification sent."
-msgstr "Melding ontvangen betaling is verzonden."
+msgstr "Notificació de pagaments rebuts enviada"
 
 #. Text in echo
 #: evrplus_company.php:127
 msgid "Payment Settings"
-msgstr "Betalingsinstellingen"
+msgstr "Configuració de pagaments"
 
 #. Text in echo
 #: evrplus_admin_menu.php:84
 msgid "Payment Table Name:"
-msgstr "Betaling tabel naam:"
+msgstr "Nom de la taula de pagaments"
 
 #. Text in echo
 #: evrplus_admin_menu.php:87
 msgid "Payment Table Version:"
-msgstr "Betaling tabel versie:"
+msgstr "Versió de la taula de pagaments"
 
 #. Text in echo
 #: evrplus_admin_payments.php:649
 msgid "Payment Type"
-msgstr "Type betaling"
+msgstr "Tipus de pagament"
 
 #. Text in echo
 #: evrplus_admin_payments.php:202 evrplus_admin_payments.php:310
 msgid "Payments"
-msgstr "Betalingen"
+msgstr "Pagaments"
 
 #. Text in echo
 #: evrplus_registration.php:1724 evrplus_content.php:113
 msgid "Payments received:"
-msgstr "Betaling ontvangen:"
+msgstr "Pagaments rebuts:"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1264
 msgid "Phone"
-msgstr "Telefoon"
+msgstr "Telèfon"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:100 evrplus_admin_attendee.php:383
 #: evrplus_registration.php:567
 msgid "Phone Number"
-msgstr "Telefoon"
+msgstr "Número de telèfon"
 
 #. Text in echo
 #: evrplus_event.php:800 evrplus_event.php:1377
 msgid "Phone Number</label>"
-msgstr "Telefoonnummer"
+msgstr "Número de telèfon</label>"
 
 #. Text in echo
 #: evrplus_content.php:373
@@ -1229,8 +1208,8 @@ msgid ""
 "Please check your email for payment information. Click the link provided in "
 "the registration confirmation."
 msgstr ""
-"Controleer uw e-mail op betaling informatie. Klik op de link in de "
-"registratiebevestiging."
+"Si us plau, comprova l'email per a la informació de pagament. Fes clic a "
+"l'enllaç que apareix a la confirmació de registre."
 
 #. Text in echo
 #: evrplus_event.php:2298
@@ -1239,63 +1218,68 @@ msgid ""
 "registration cost.  Use minus symbol before for discount amounts (i.e. "
 "-5.00)."
 msgstr ""
-"Vul het bedrag in met 2 decimale cijfers achter de komma (10.00) voor "
-"registratiekosten. Gebruik het min symbool voor kortingsbedragen ( -5.00)"
+"Si us plau, introdueixi la quantitat usant 2 decimals (és a dir, 10,00) per "
+"al valor de la inscripció. Utilitza signe menys abans per a imports de "
+"descompte (és a dir, -5.00)."
 
 #. Text in echo
 #: evrplus_registration.php:974
 msgid "Please enter your address."
-msgstr "Vul uw adres in."
+msgstr "Introdueix la teva adreça"
 
 #. Text in echo
 #: evrplus_registration.php:979
 msgid "Please enter your city."
-msgstr "Vul de woonplaats in."
+msgstr "Introdueix la teva ciutat"
 
 #. Text in echo
 #: evrplus_registration.php:951
 msgid "Please enter your first name."
-msgstr "Vul uw voornaam in."
+msgstr "Introdueix el teu nom"
 
 #. Text in echo
 #: evrplus_registration.php:954
 msgid "Please enter your last name."
-msgstr "Vul uw achternaam in."
+msgstr "Introdueix el teu cognom"
 
 #. Text in echo
 #: evrplus_registration.php:963
 msgid "Please enter your phone number."
-msgstr "Vul uw telefoonnummer in."
+msgstr "Introdueix el teu telèfon"
 
 #. Text in echo
 #: evrplus_registration.php:983
 msgid "Please enter your state."
-msgstr "Vul uw provincie in."
+msgstr "Introdueix la teva provincia"
 
 #. Text in echo
 #: evrplus_registration.php:989
 msgid "Please enter your zip/postal code."
-msgstr "Vul uw postcode in"
+msgstr "Introdueix el teu codi postal"
 
 #. Text in echo
 #: evrplus_event.php:1436
 msgid "Please make sure you complete each section before submitting!"
-msgstr "Let op dat u elk onderdeel invult voor u bevestigt!"
+msgstr "Si us plau assegura't de completar cada secció abans d'enviar!"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:473 evrplus_registration.php:709
 msgid "Please provide your information to be placed on the waiting list."
-msgstr "Vul uw gegevens in en u komt op een wachtlijst terecht"
+msgstr ""
+"Si us plau, proporciona les tevés dades per a ser col·locat en la llista "
+"d'espera."
 
 #. Text in echo
 #: evrplus_admin_questions.php:335
 msgid "Please select a question to edit!"
-msgstr "Kies een vraag om te bewerken!"
+msgstr "Si su plau, selecciona una pregunta per editar!"
 
 #. Text in echo
 #: evrplus_event.php:2253
 msgid "Please select no for event pricing setup, select yes for free event"
-msgstr "Kies nee bij een betaald evenement. kies ja voor een gratis evenement."
+msgstr ""
+"Si us plau selecciona no per a la configuració de preus per a "
+"l'esdeveniment, seleccioneu si per a un esdeveniment gratuït"
 
 #. Text in echo
 #: evrplus_registration.php:1172
@@ -1303,42 +1287,44 @@ msgid ""
 "Please select the Pay Now button to be taken to our payment vendor's site "
 "for online-payment."
 msgstr ""
-"Kies de Betaal nu knop om naar de betaalsite te gaan voor online betalen."
+"Selecciona el botó Pagar Ara per ser conduït a la pàgina web del nostre "
+"proveïdor de pagament online."
 
 #. Text in echo
 #: evrplus_event.php:2274
 msgid "Please select the country in which the currency format will be used"
-msgstr "Kies het land  waarvoor de valuta wordt gekozen"
+msgstr ""
+"Si us plau selecciona el país en el qual s'utilitzarà el format de moneda"
 
 #. Text in echo
 #: evrplus_registration.php:967
 msgid "Please use correct format for your phone number."
-msgstr "Uw telefoonnummer klopt niet."
+msgstr "Si us plau utilitza el format correcte per al número de telèfon."
 
 #. Text in echo
 #: evrplus_registration.php:595
 msgid "Postal/Zip Code"
-msgstr "Postcode"
+msgstr "Codi postal"
 
 #. Text in echo
 #: evrplus_event.php:1285
 msgid "Postcode"
-msgstr "Postcode"
+msgstr "Codi postal"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Prev"
-msgstr "Preview"
+msgstr "Anterior"
 
 #. Text in echo
 #: evrplus_company.php:101
 msgid "Primary contact email:"
-msgstr "Standaard contact e-mail:"
+msgstr "Email de contacte:"
 
 #. Text in echo
 #: evrplus_event.php:2243
 msgid "Provide a description of the cost/ticket."
-msgstr "Geef een beschrijving van de kosten/ticket."
+msgstr "Dona una descripció del preu"
 
 #. Text in echo
 #: evrplus_event.php:1201
@@ -1346,14 +1332,13 @@ msgid ""
 "Provide a detailed description of the event, include key details other than "
 "when and where. Do not use any html code. This is a text only display"
 msgstr ""
-"Een gedetailleerde beschrijving van de gebeurtenis omvatten behalve wanneer "
-"en waar belangrijke details. Gebruik geen html code gebruiken. Dit is een "
-"tekst slechts beeldscherm"
+"Proporciona una descripció detallada de l'esdeveniment, inclou altres "
+"detalls diferents de quan i on. No utilitzis codi html"
 
 #. Text in echo
 #: evrplus_event.php:1184
 msgid "Provide a short Unique ID for this event. i.e. BOB001"
-msgstr "Vul een korte unieke ID voor dit evenement bijvoorbeeld BOB001"
+msgstr "Introdueix un ID únic per a l'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:2247
@@ -1362,146 +1347,140 @@ msgid ""
 "is a REG item, available seats will impact overall amount available. Leave "
 "blank if no limit."
 msgstr ""
-"Geef het aantal beschikbare item/kosten types per registratieformulier. Als "
-"het een REG item is, beschikbare plaatsen heeft invloed op de totale "
-"hoeveelheid beschikbare plaatsen. Laat leeg als er geen limit is."
+"Proporciona el nombre de tipus preus disponibles per formulari d'inscripció"
 
 #. Text in echo
 #: evrplus_admin_questions.php:432
 msgid "QUESTION"
-msgstr "VRAAG"
+msgstr "PREGUNTA"
 
 #. Text in echo
 #: evrplus_admin_questions.php:290
 msgid "Question"
-msgstr "Vraag"
+msgstr "Pregunta"
 
 #. Text in echo
 #: evrplus_admin_menu.php:56
 msgid "Question Table Name:"
-msgstr "Tabel met vragen:"
+msgstr "Nom de la taula de preguntes:"
 
 #. Text in echo
 #: evrplus_admin_menu.php:59
 msgid "Question Table Version:"
-msgstr "Vragentabel versie:"
+msgstr "Versió de la taula de preguntes:"
 
 #. Text in echo
 #: evrplus_event.php:237
 msgid "Questions"
-msgstr "Vragen"
+msgstr "Preguntes"
 
 #. Text in echo
 #: evrplus_registration.php:642
 msgid "REGISTRATION FEES"
-msgstr "Registratiekosten"
+msgstr "TAXES DE REGISTRE"
 
 #. Text in echo
 #: evrplus_admin_questions.php:427
 msgid "REQUIRED"
-msgstr "VERPLICHT"
+msgstr "REQUERIT"
 
 #. Text in echo
 #: evrplus_admin_questions.php:433
 msgid "RESPONSES"
-msgstr "ANTWOORDEN"
+msgstr "RESPOSTES"
 
 #. Text in echo
 #: evrplus_event.php:2551
 msgid "ReOrder Event Items/Cost for display:"
-msgstr "Verander de volgorde van de Items/kosten van dit evenement"
+msgstr "Reordenar preus d'esdeveniments per mostrar"
 
 #. Text in echo
 #: evrplus_admin_questions.php:408
 msgid "ReOrder Event Questions for display order:"
-msgstr "Verander de volgorde voor de Evenement Vragen:"
+msgstr "Reordenar preguntes d'esdeveniments per mostrar"
 
 #. Text in echo
 #: evrplus_admin_payments.php:667 evrplus_admin_payments.php:658
 msgid "Refund"
-msgstr "Terugbetaling"
+msgstr "Devolució"
 
 #. Text in echo
 #: evrplus_event.php:2231 evrplus_event.php:2208
 msgid "Registration Attendee"
-msgstr "Registratie bezoekers"
+msgstr "Registre d'assistents"
 
 #. Text in echo
 #: evrplus_registration.php:695
 msgid "Registration TOTAL"
-msgstr "Registratie TOTAL"
+msgstr "Registre TOTAL"
 
 #. Text in echo
 #: evrplus_registration.php:1172
 msgid ""
 "Registration, however, is not complete until we have received your payment."
-msgstr ""
-"Registratie, is nog niet compleet totdat wij uw betaling hebben ontvangen."
+msgstr "Registre, tot i que no estarà compelt fins que rebem el pagament"
 
 #. Text in echo
 #: evrplus_registration.php:697
 msgid "Registrations will be placed on the wait list!"
-msgstr "Registraties worden op een wachtlijst gezet!"
+msgstr "Els registres aniran a la llista d'espera!"
 
 #. Text in echo
 #: evrplus_admin_questions.php:312
 msgid "Required"
-msgstr "Verplicht"
+msgstr "Requerit"
 
 #. Text in echo
 #: evrplus_company.php:216
 msgid "Return Method:"
-msgstr "Return methode:"
+msgstr "Mètode de devolució:"
 
 #. Text in echo
 #: evrplus_admin_questions.php:504
 msgid "SELECT ANOTHER EVENT"
-msgstr "Kies een ander evenement"
+msgstr "SELECCIONA UN ALTRE ESDEVENIMENT"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:582
 msgid "SUBMIT"
-msgstr "Toevoegen"
+msgstr "ENVIAR"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Sat"
-msgstr "Za"
+msgstr "Diss"
 
 #. Text in echo
 #: evrplus_company.php:332
 msgid "Save Options"
-msgstr "Bewaar opties"
+msgstr "Opcions de guardat"
 
 #. Text in echo
 #: evrplus_admin_payments.php:259
 msgid "Select A Different Event"
-msgstr "Selecteer een ander evenement"
+msgstr "Selecciona un esdeveniment diferent"
 
 #. Text in echo
 #: evrplus_admin_questions.php:89
 msgid "Select An Event"
-msgstr "Kies een evenement"
+msgstr "Selecciona un esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1246
 msgid "Select Another Event"
-msgstr "Kies een ander evenement"
+msgstr "Selecciona un altre esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:2204
 msgid ""
 "Select a Item/Cost category.  Note that category REG is used for attendance "
 "count, all others are not included in attendance count."
-msgstr ""
-"Kies een Item/Kosten categorie. Let op. De categorie REG wordt gebruikt voor "
-"het tellen van de bezoekers, alle ander worden niet meegenomen bij de "
-"bezoekersaantallen."
+msgstr "Selecciona un una categoría de preu/article"
 
 #. Text in echo
 #: evrplus_event.php:1222
 msgid "Select one or many categories for an event"
-msgstr "Kies een of meerdere categorieën voor dit evenement"
+msgstr "Selecciona una o varies categories per a un esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:1367
@@ -1509,23 +1488,23 @@ msgid ""
 "Select the default fields for the registration form.  Note that name and "
 "email or not optional"
 msgstr ""
-"Kies de standaard velden voor het registratieformulier.  Let op! Naam en e-"
-"mail zijn niet optioneel"
+"Selecciona els camps per defecte de la fitxa d'inscripció. Recorda que el "
+"nom i el correu electrònic no són opcionals"
 
 #. Text in echo
 #: evrplus_admin_questions.php:307
 msgid "Selections"
-msgstr "Keuzes"
+msgstr "Seleccions"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "September"
-msgstr "September"
+msgstr "Setembre"
 
 #. Text in function
 #: Dashboard.php:172
 msgid "Settings"
-msgstr "Instellingen"
+msgstr "Configuració"
 
 #. Text in echo
 #: evrplus_admin_category.php:345
@@ -1535,132 +1514,132 @@ msgstr "Shortcode"
 #. Text in echo
 #: evrplus_admin_questions.php:300
 msgid "Single"
-msgstr "Enkel"
+msgstr "Individual"
 
 #. Text in echo
 #: evrplus_event.php:1306 evrplus_admin_questions.php:137
 msgid "Start Date"
-msgstr "Startdatum"
+msgstr "Data d'inici"
 
 #. Text in echo
 #: evrplus_event.php:1314
 msgid "Start Time"
-msgstr "Starttijd"
+msgstr "Hora d'inici"
 
 #. Text in echo
 #: evrplus_registration.php:588 evrplus_event.php:709 evrplus_event.php:1281
 msgid "State"
-msgstr "Provincie"
+msgstr "Provincia"
 
 #. Text in echo
 #: evrplus_event.php:798 evrplus_event.php:1375
 msgid "State or Province"
-msgstr "Provincie"
+msgstr "Provincia"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:109 evrplus_admin_attendee.php:392
 msgid "State/Province"
-msgstr "Provincie"
+msgstr "Provincia"
 
 #. Text in echo
 #: evrplus_event.php:1270
 msgid "Street"
-msgstr "Straat"
+msgstr "Carrer"
 
 #. Text in echo
 #: evrplus_event.php:796 evrplus_event.php:1373
 msgid "Street Address"
-msgstr "Straat"
+msgstr "Adreça"
 
 #. Text in echo
 #: evrplus_registration.php:574
 msgid "Street/PO Address"
-msgstr "Straat"
+msgstr "Adreça"
 
 #. Text in echo
 #: evrplus_event.php:860
 msgid "Submit New Event"
-msgstr "Pas nieuw evenement toe"
+msgstr "Crear nou esdeveniment"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Sun"
-msgstr "Zo"
+msgstr "Dg"
 
 #. Text in echo
 #: evrplus_admin_questions.php:431
 msgid "TYPE"
-msgstr "TYPE"
+msgstr "TIPUS"
 
 #. Text in echo
 #: evrplus_admin_questions.php:298
 msgid "Text"
-msgstr "Tekst"
+msgstr "Text"
 
 #. Text in echo
 #: evrplus_admin_questions.php:299
 msgid "Text Area"
-msgstr "Tekstvak"
+msgstr "Area de text"
 
 #. Text in echo
 #: evrplus_event.php:1537
 msgid "The Event details saved for "
-msgstr "De details van dit evenement zijn opgeslagen voor"
+msgstr "Detalls de l'esdeveniment guardats per"
 
 #. Text in echo
 #: evrplus_admin_questions.php:476
 msgid "The Question has been deleted. Returning to Question Management."
-msgstr "De vraag is verwijderd. Ga terug naar Vragen Beheer."
+msgstr "La pregunta s'ha eliminat. Tornant a la gestió de preguntes"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:840
 msgid "The attendee extra questions responses have been added."
-msgstr "De extra antwoorden op de vragen van bezoekers zijn toegevoegd."
+msgstr "S'han afegit les respostes extra de l'assistent"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:792
 msgid "The attendee has been added."
-msgstr "De bezoeker is toegevoegd."
+msgstr "S'ha afegit l'assistent"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1313
 msgid "The attendee information has been successfully deleted from the event."
-msgstr "De aanwezige informatie is met succes verwijderd uit het evenement."
+msgstr "La información de l'assistent s'ha esborrat de l'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_category.php:278
 msgid "The category has been added."
-msgstr "De categorie is toegevoegd."
+msgstr "S'ha afegit la categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:378
 msgid "The category has been successfully deleted."
-msgstr "De categorie is succesvol verwijderd."
+msgstr "S'ha eliminat la categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:303
 msgid "The category has been updated."
-msgstr "De categorie is geüpdatet."
+msgstr "S'ha actualitzat la categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:280
 msgid "The category was not saved."
-msgstr "De categorie is niet opgeslagen."
+msgstr "La categoría no s'ha guardat"
 
 #. Text in echo
 #: evrplus_admin_category.php:305
 msgid "The category was not updated."
-msgstr "De categorie is niet geüpdatet."
+msgstr "La categoría no s'ha actualitzat"
 
 #. Text in echo
 #: evrplus_event.php:1667
 msgid "The cost "
-msgstr "De kosten"
+msgstr "El preu"
 
 #. Text in echo
 #: evrplus_event.php:2387
 msgid "The cost item/ has been deleted."
-msgstr "Het kosten item is verwijderd."
+msgstr "El preu s'ha eliminat"
 
 #. Text in echo
 #: evrplus_event.php:2457
@@ -1668,13 +1647,13 @@ msgid ""
 "The coupon code information has been updated.  You will now be returned to "
 "the Event Pricing Page"
 msgstr ""
-"De couponcode informatie is geüpdatet. U gaat terug naar de prijspagina van "
-"dit evenement"
+"La informació del codi de cupó s'ha actualitzat. Ara es torna a la pàgina de "
+"preus dels esdeveniments"
 
 #. Text in echo
 #: evrplus_event.php:965 evrplus_event.php:1641
 msgid "The event "
-msgstr "Het evenement"
+msgstr "L'esdeveniment"
 
 #. Text in echo
 #: evrplus_event.php:2424
@@ -1682,8 +1661,8 @@ msgid ""
 "The event cost/ticket item has been added.  You will now be taken back to "
 "the Event Pricing Page"
 msgstr ""
-"Het evenement kosten/ticket is toegevoegd. U gaat nu terug naar de "
-"prijspagina van het evenement"
+"El preu de l'esdeveniment s'ha afegit. Ara es torna a la pàgina de preus "
+"dels esdeveniments"
 
 #. Text in echo
 #: evrplus_event.php:2365
@@ -1691,48 +1670,48 @@ msgid ""
 "The event cost/ticket item has been updated.  You will now be taken back to "
 "the Event Pricing Page"
 msgstr ""
-"Het evenement kosten/ticket item is geüpdatet. U gaat nu terug naar de prijs "
-"pagina van dit evenement"
+"El preu de l'esdeveniment s'ha actualitzat. Ara es torna a la pàgina de "
+"preus dels esdeveniments"
 
 #. Text in echo
 #: evrplus_event.php:1568
 msgid "The event has been deleted."
-msgstr "Het evenement is verwijderd."
+msgstr "L'esdeveniment s'ha eliminat"
 
 #. Text in echo
 #: evrplus_registration.php:1052
 msgid "The following fields need to be completed before you can submit."
-msgstr "De volgende velden zijn verplicht."
+msgstr "Els següents camps s'ha de completar abans d'enviar"
 
 #. Text in echo
 #: evrplus_admin_payments.php:790
 msgid "The payment has been added."
-msgstr "De betaling is toegevoegd."
+msgstr "S'ha afegit el pagament"
 
 #. Text in echo
 #: evrplus_admin_payments.php:386
 msgid "The payment has been successfully deleted from the attendee."
-msgstr "De betaling is succesvol verwijderd door de bezoeker."
+msgstr "S'ha elimiat el pagament de l'assistent"
 
 #. Text in echo
 #: evrplus_admin_payments.php:910
 msgid "The payment has been updated."
-msgstr "De betaling is bijgewerkt."
+msgstr "S'ha actualitzat el pagament"
 
 #. Text in echo
 #: evrplus_admin_questions.php:66
 msgid "The question has been added."
-msgstr "De vraag is toegevoegd."
+msgstr "S'ha afegit la pregunta"
 
 #. Text in echo
 #: evrplus_event.php:1558
 msgid "There are currently "
-msgstr "Er zijn op dit moment"
+msgstr "En aquest moment hi ha"
 
 #. Text in echo
 #: evrplus_registration.php:1169
 msgid "There was an error in your submission, please try again."
-msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw."
+msgstr "S'ha produït un error, si us plau intenta-ho de nou."
 
 #. Text in echo
 #: evrplus_admin_attendee.php:795
@@ -1740,8 +1719,8 @@ msgid ""
 "There was an error in your submission, please try again. The attendee was "
 "not saved!"
 msgstr ""
-"Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De bezoeker "
-"is niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. L'assistent no s'ha "
+"guardat"
 
 #. Text in echo
 #: evrplus_event.php:1669
@@ -1749,8 +1728,7 @@ msgid ""
 "There was an error in your submission, please try again. The cost was not "
 "saved!"
 msgstr ""
-"Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. De kosten "
-"zijn niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. El preu no s'ha guardat"
 
 #. Text in echo
 #: evrplus_event.php:2460
@@ -1758,8 +1736,8 @@ msgid ""
 "There was an error in your submission, please try again. The coupon code "
 "changes were not saved!"
 msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. De veranderingen aan "
-"de couponcode zijn niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. Els canvis al cupó no "
+"s'han guardat"
 
 #. Text in echo
 #: evrplus_event.php:2428
@@ -1767,8 +1745,8 @@ msgid ""
 "There was an error in your submission, please try again. The event cost/"
 "ticket item was not saved!"
 msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het kosten/ticket "
-"item van dit evenement is niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. El preu de "
+"l'esdeveniment no s'ha guardat"
 
 #. Text in echo
 #: evrplus_event.php:2369
@@ -1776,8 +1754,8 @@ msgid ""
 "There was an error in your submission, please try again. The event cost/"
 "ticket item was not updated!"
 msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. De kosten/ticket "
-"item van dit evenement is niet geüpdatet."
+"S'ha produït un error, si us plau intenta-ho de nou. El preu de "
+"l'esdeveniment no s'ha actualitzat"
 
 #. Text in echo
 #: evrplus_event.php:1572
@@ -1785,8 +1763,8 @@ msgid ""
 "There was an error in your submission, please try again. The event was not "
 "deleted!"
 msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het evenement is "
-"niet verwijderd!"
+"S'ha produït un error, si us plau intenta-ho de nou. L'esdeveniment no s'ha "
+"eliminat"
 
 #. Text in echo
 #: evrplus_event.php:968 evrplus_event.php:1678
@@ -1794,8 +1772,8 @@ msgid ""
 "There was an error in your submission, please try again. The event was not "
 "saved!"
 msgstr ""
-"Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. Het "
-"evenement is niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. L'esdeveniment no s'ha "
+"guardat"
 
 #. Text in echo
 #: evrplus_event.php:1541
@@ -1803,8 +1781,8 @@ msgid ""
 "There was an error in your submission, please try again. The event was not "
 "updated!"
 msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het evenement is "
-"niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. L'esdeveniment no s'ha "
+"actualitzat"
 
 #. Text in echo
 #: evrplus_admin_payments.php:793
@@ -1812,8 +1790,8 @@ msgid ""
 "There was an error in your submission, please try again. The payment was not "
 "saved!"
 msgstr ""
-"Er heeft zich een fout voorgedaan in uw aanmelding, probeer het opnieuw. De "
-"betaling is niet verwerkt."
+"S'ha produït un error, si us plau intenta-ho de nou. El pagament no s'ha "
+"guardat"
 
 #. Text in echo
 #: evrplus_admin_payments.php:913
@@ -1821,8 +1799,8 @@ msgid ""
 "There was an error in your submission, please try again. The payment was not "
 "updated!"
 msgstr ""
-"Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De betaling "
-"is niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. El pagament no s'ha "
+"actualitzat"
 
 #. Text in echo
 #: evrplus_admin_questions.php:69
@@ -1830,180 +1808,180 @@ msgid ""
 "There was an error in your submission, please try again. The question was "
 "not saved!"
 msgstr ""
-"Er is een fout opgetreden in uw aanvulling, probeer het opnieuw. De vraag is "
-"niet opgeslagen!"
+"S'ha produït un error, si us plau intenta-ho de nou. La pregunta no s'ha "
+"guardat"
 
 #. Text in echo
 #: evrplus_company.php:246
 msgid "These settings must be configured for the plugin to function correctly."
 msgstr ""
-"Deze instellingen moeten goed zijn ingevuld. Anders werkt deze plugin niet "
-"correct."
+"Aquests ajustaments s'han de confirgurar per a que el plugin funcioni "
+"correctament "
 
 #. Text in echo
 #: evrplus_admin_attendee.php:473 evrplus_registration.php:709
 msgid "This event has reached registration capacity."
-msgstr "Dit evenement is volgeboekt."
+msgstr "Aquest esdeveniment està complert"
 
 #. Text in echo
 #: evrplus_registration.php:813
 msgid "This resource requires a Javascript enabled browser."
-msgstr "Deze hulpbron vereist dat Javascript aan staat in de browser."
+msgstr "Aquest recurs requereix JavaScript activat  al navegador"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Thu"
-msgstr "Do"
+msgstr "Dij"
 
 #. Text in echo
 #: evrplus_event.php:827 evrplus_event.php:1404
 msgid "Thumbnail Image URL"
-msgstr "Kleine afbeelding URL"
+msgstr "URL d'imatge de previsualització"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Time"
-msgstr "Tijd"
+msgstr "Hora"
 
 #. Text in echo
 #: evrplus_registration.php:1724 evrplus_content.php:113
 msgid "Total Outstanding Payment Due*:"
-msgstr "Totaal nog te voldoen*:"
+msgstr "Pagament total pendent *:"
 
 #. Text in echo
 #: evrplus_registration.php:1724 evrplus_content.php:113
 msgid "Total Payment Due*:"
-msgstr "Totaal voldaan*:"
+msgstr "Pagament total a pagar*:"
 
 #. Text in echo
 #: evrplus_admin_payments.php:682
 msgid "Transaction ID"
-msgstr "Transactie ID"
+msgstr "ID de transacció"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Tue"
-msgstr "di"
+msgstr "Dim"
 
 #. Text in echo
 #: evrplus_admin_questions.php:295
 msgid "Type"
-msgstr "Type"
+msgstr "Tipus"
 
 #. Text in echo
 #: evrplus_event.php:2315
 msgid "UPDATE COST/TICKET"
-msgstr "Update Kosten/Ticket"
+msgstr "ACTUALITZAR PREU"
 
 #. Text in echo
 #: evrplus_admin_payments.php:714
 msgid "UPDATE PAYMENT"
-msgstr "Update betaling"
+msgstr "ACTUALITZAR PAGAMENT"
 
 #. Text in echo
 #: evrplus_admin_questions.php:327
 msgid "UPDATE QUESTION"
-msgstr "UPDATE VRAAG"
+msgstr "ACTUALITZAR PREGUNTA"
 
 #. Text in echo
 #: evrplus_admin_category.php:165
 msgid "Unique Category Identifier"
-msgstr "Unieke categorie ID"
+msgstr "Identificador únic de categoria"
 
 #. Text in echo
 #: evrplus_event.php:1185
 msgid "Unique Event Identifier"
-msgstr "Uniek Identificatienummer van Evenement"
+msgstr "Identificador únic d'esdeveniment"
 
 #. Text in echo
 #: evrplus_admin_category.php:43
 msgid "Unique ID For Category"
-msgstr "Uniek ID voor categorie"
+msgstr "ID únic de categoria"
 
 #. Text in echo
 #: evrplus_admin_category.php:256
 msgid "Update Category"
-msgstr "Update categorie"
+msgstr "Actualitzar categoria"
 
 #. Text in echo
 #: evrplus_event.php:1431
 msgid "Update Event"
-msgstr "Update  evenement"
+msgstr "Actualitzar esdeveniment"
 
 #. Text in echo
 #: evrplus_company.php:115
 msgid "Use Captcha on registration form?"
-msgstr "Captcha gebruiken bij registratie?"
+msgstr "Utilitzar Captcha al formulari de registre?"
 
 #. Text in echo
 #: evrplus_event.php:1294
 msgid "Use Google Maps On Registration Page"
-msgstr "Gebruik Google Maps op Registratie pagina"
+msgstr "Utilitzar Google maps a la página de registre"
 
 #. Text in echo
 #: evrplus_company.php:227
 msgid "Use PayPal Sandbox"
-msgstr "Gebruik Paypal Sandbox"
+msgstr "Utilitzar plataforma de pagament de Paypal"
 
 #. Text in echo
 #: evrplus_event.php:1176 evrplus_event.php:2239
 msgid "Use a concise but descriptive name."
-msgstr "Gebruik een bondige, beschrijvende naam."
+msgstr "Utilitzar un nom concís però descriptiu"
 
 #. Text in echo
 #: evrplus_event.php:2251
 msgid "VALUE/COST"
-msgstr "Waarde/Kosten"
+msgstr "PREU"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:1256
 msgid "View Attendee:"
-msgstr "Bekijk de bezoekers:"
+msgstr "Veure assistent:"
 
 #. Text in echo
 #: evrplus_admin_payments.php:267
 msgid "View Payments:"
-msgstr "Bekijk betalingen:"
+msgstr "Veure pagaments:"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Wed"
-msgstr "Wo"
+msgstr "Dx"
 
 #. Text in echo
 #: evrplus_event.php:2205
 msgid "What type of Item/Cost is this?"
-msgstr "Wat voor type Item/kosten is dit ?"
+msgstr "Quin tipus de preu/article és?"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:429
 msgid "What type of Registration?"
-msgstr "Welk type registratie?"
+msgstr "Quin tipus de registre?"
 
 #. Text in echo
 #: evrplus_event.php:2254
 msgid "Will this be a free item?"
-msgstr "Is dit item gratis?"
+msgstr "Serà gratuït?"
 
 #. Text in echo
 #: evrplus_event.php:1340
 msgid "Will you accept checks/cash for this event? "
-msgstr "Accepteert u cheques/"
+msgstr "Acceptes efectiu per aquest esdeveniment?"
 
 #. Text in echo
 #: evrplus_company.php:184
 msgid "Will you accept donations?"
-msgstr "Accepteert u donaties?"
+msgstr "Acceptes donacions?"
 
 #. Text in echo
 #: evrplus_event.php:2234 evrplus_event.php:2208
 msgid "Workshop"
-msgstr "Workshop"
+msgstr "Taller de treball"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "Year"
-msgstr "Jaar"
+msgstr "Any"
 
 #. Text in echo
 #: evrplus_admin_category.php:45 evrplus_admin_category.php:168
@@ -2013,7 +1991,7 @@ msgstr "Jaar"
 #: evrplus_event.php:1195 evrplus_event.php:1297 evrplus_event.php:1341
 #: evrplus_event.php:1352 evrplus_event.php:1419
 msgid "Yes"
-msgstr "Ja"
+msgstr "Si"
 
 #. Text in echo
 #: evrplus_event.php:1350
@@ -2021,8 +1999,8 @@ msgid ""
 "You can point your register now button to an external registration site/page "
 "by selecting yes and entering the url!"
 msgstr ""
-"U kunt de registreer nu knop laten doorverwijzen naar een externe site of "
-"pagina door ja te kiezen en de url in te geven."
+"Pots fer el registre a un lloc extern posant un botó de web/pàgina "
+"seleccionant si i introduint la URL!"
 
 #. Text in echo
 #: evrplus_registration.php:1172
@@ -2030,312 +2008,633 @@ msgid ""
 "You may pay online or by check.  If you are paying by check, please mail "
 "your check today to:"
 msgstr ""
-"U kunt online betalen of met een cheque. . Als u betaalt met een cheque "
-"stuurt u deze vandaag op naar:"
+"Pots pagar online o amb xec. Si pagues amb xec, si us plau envia'l avui a:"
 
 #. Text in echo
 #: evrplus_registration.php:1172
 msgid "You're information has been received."
-msgstr "Uw informatie is ontvangen."
+msgstr "Hem rebut la teva informació"
 
 #. Text in echo
 #: evrplus_event.php:799 evrplus_event.php:1376
 msgid "Zip or Postal Code"
-msgstr "Postcode"
+msgstr "Codi postal"
 
 #. Text in echo
 #: evrplus_admin_attendee.php:112 evrplus_admin_attendee.php:395
 msgid "Zip/Postal Code"
-msgstr "Postcode"
+msgstr "Codi postal"
 
 #. Text in function
 #: evrplus_calendar.php:1
 msgid "all day"
-msgstr "Gehele dag"
+msgstr "tot el dia"
 
 #. Text in echo
 #: evrplus_event.php:965 evrplus_event.php:1641 evrplus_event.php:1667
 msgid "has been added."
-msgstr "is toegevoegd"
+msgstr "s'ha afegit"
 
 #. Text in echo
 #: eventsplus/public/evrplus_public-form.php:508
 msgid "I accept the terms and conditions"
-msgstr "Ik accepteer de algemene voorwaarden"
+msgstr "Acepto els termes i condicions"
 
 #. Text in function
 #: eventsplus/public/evrplus_public-form.php:301
 msgid "MORE INFO"
-msgstr "Meer informatie."
+msgstr "MÉS INFORMACIÓ"
 
 #. Text in function
 #: eventsplus/public/evrplus_public-form.php:301
 msgid "Registration "
-msgstr "Registratie"
+msgstr "Registre"
 
 #. Text in function
 #: eventsplus/public/evrplus_public-form.php:301
-msgid "Add to your calendar"
-msgstr "Voeg toe aan je agenda"
+msgid "Add to your calendar "
+msgstr "Afegir al teu calendari"
 
 #. Text in function
 #: eventsplus/public/evrplus_public-form.php:301
 msgid "Registration Fees "
-msgstr "Registratiekosten"
+msgstr "Taxes de registre"
 
 #. Text in function
 #: eventsplus/public/evrplus_public-form.php:301
 msgid "You must select at least one item!"
-msgstr "U moet minstens één item te selecteren!"
+msgstr "Has de sel·leccionar com a mínim un article!"
+
+#. Text in function
+#: eventsplus/public/evrplus_public-form.php:301
+msgid "Total"
+msgstr "Total"
 
 #. Text in echo
 #: eventsplus/Dashboard.php:
 msgid "General Settings"
-msgstr "Algemeen instellingen"
+msgstr "Configuració general"
 
 #. Text in echo
 #: eventsplus/Dashboard.php:
 msgid "Manage Events"
-msgstr "Beheer Evenementen"
+msgstr "Gestionar esdeveniments"
 
 #. Text in echo
 #: eventsplus/Dashboard.php:
 msgid "Registration Fields"
-msgstr "Aanmelding Velden"
+msgstr "Camps de registre"
 
 #. Text in echo
 #: eventsplus/evrplus_event_edit.php:
 msgid "Event Options"
-msgstr "Event Opties"
+msgstr "Opcions de l'esdeveniment"
 
 msgid "A confirmation email has been sent to:"
-msgstr "Een bevestigings e-mail is verzonden naar:"
+msgstr "Un email de confirmació s'ha enviat a:"
 
 msgid "Registration Detail Summary:"
-msgstr "Registratie Detail Samenvatting :"
+msgstr "Resum dels detalls de registre"
 
 msgid "Event Name/Cost:"
-msgstr "Event Naam / Kosten:"
+msgstr "Nom/preu de l'edeveniment"
+
+msgid "event name/cost:"
+msgstr "nom/preu de l'edeveniment:"
 
 msgid "Attendee Name:"
-msgstr "Deelnemer Naam:"
+msgstr "Nom de l'assitent:"
 
 msgid "Email Address:"
-msgstr "E-mailadres:"
+msgstr "Email: "
 
 msgid "Number of Attendees:"
-msgstr "Aantal deelnemers :"
+msgstr "Nombre d'assistents:"
 
 msgid "Order Details:"
-msgstr "Bestel Details:"
+msgstr "Detalls de la comanda: "
+
+msgid "Total Cost:"
+msgstr "Preu total:"
+
+msgid "Your information has been received."
+msgstr "Hem rebut la teva informació"
+
+msgid "CONFIRMED"
+msgstr "CONFIRMAT"
+
+msgid "BACK"
+msgstr "ENDARRERA"
+
+msgid "Confirmed"
+msgstr "Confirmat"
 
 # #####################
 msgid "Please verify your registration details:"
-msgstr "Controleer uw registratie gegevens :"
+msgstr "Si us plau verifica els teus detalls de registre:"
 
 msgid "Registering Name:"
-msgstr "Registreren Naam:"
+msgstr "Nom de registre: "
 
 msgid "Event Name / Total Cost:"
-msgstr "Event Naam / Total Cost :"
+msgstr "Nom de l'esdeveniment / Preu total:"
 
 msgid "You are registering for"
-msgstr "U zich inschrijft voor"
+msgstr "T'estàs registrant per"
 
 msgid "person(s)."
-msgstr "persoon ( s ) ."
+msgstr "persona/es"
 
 msgid "Please provide the first and last name of each person:"
-msgstr "Geef de voor- en achternaam van elke persoon :"
+msgstr "Si us plau introdueix nom i cognom de cada persona:"
 
 msgid "Open Seats"
-msgstr "Open Stoelen"
+msgstr "Places disponibles"
 
 msgid "FREE"
 msgstr "GRATIS"
 
-msgid "Event Full"
-msgstr "event Volledige"
+msgid "Days"
+msgstr "Dies"
 
-msgid "Unlimited"
-msgstr "Onbeperkt"
+msgid "Hours"
+msgstr "Hores"
 
-msgid "go"
-msgstr "Ga"
+msgid "Minutes"
+msgstr "Minuts"
 
-msgid "jan"
-msgstr "januari"
+msgid "Seconds"
+msgstr "Segons"
 
-msgid "feb"
-msgstr "februari"
+msgid "Saturday"
+msgstr "Dissabte"
 
-msgid "mar"
-msgstr "ontsieren"
+msgid "Sunday"
+msgstr "Diumenge"
 
-msgid "apr"
-msgstr "april"
+msgid "Monday"
+msgstr "Dilluns"
 
-msgid "may"
-msgstr "mei"
+msgid "Tuesday"
+msgstr "Dimarts"
 
-msgid "jun"
-msgstr "juni"
+msgid "Wednesday"
+msgstr "Dimecres"
 
-msgid "jul"
-msgstr "juli"
+msgid "Thursday"
+msgstr "Dijous"
 
-msgid "aug"
-msgstr "augustus"
+msgid "Friday"
+msgstr "Divendres"
 
-msgid "sept"
-msgstr "september"
+msgid "SEND"
+msgstr "ENVIAR"
 
-msgid "sep"
-msgstr "september"
+msgid "Send"
+msgstr "Enviar"
 
-msgid "oct"
-msgstr "oktober"
+msgid "Postal Code:"
+msgstr "Codi postal"
 
-msgid "nov"
-msgstr "november"
+msgid "Primary Contact email:"
+msgstr "Email de contacte:"
 
-msgid "dec"
-msgstr "december"
+msgid "Secondary Contact emails(Separated By Commas[,]):"
+msgstr "Altres emails de contacte (separats per comes)"
 
-msgid "Jan"
-msgstr "jan"
+msgid "Submit"
+msgstr "Enviar"
 
-msgid "Feb"
-msgstr "februari"
+msgid "Reset"
+msgstr "Esborrar"
 
-msgid "Mar"
-msgstr "ontsieren"
+msgid "Time:"
+msgstr "Hora:"
 
-msgid "Apr"
-msgstr "april"
+msgid "REGISTER"
+msgstr "REGISTRE"
 
-msgid "Jun"
-msgstr "juni"
+msgid "Lets get your plugin setup!"
+msgstr "Configura el teu plugin!"
 
-msgid "Jul"
-msgstr "juli"
+msgid "ADD NEW CATEGORY"
+msgstr "AFEGIR NOVA CATEGORIA"
 
-msgid "Aug"
-msgstr "augustus"
+msgid "Event ID"
+msgstr "ID de l'esdeveniment"
 
-msgid "Sept"
-msgstr "september"
+msgid "ShortCode"
+msgstr "ShortCode"
 
-msgid "Sep"
-msgstr "september"
+msgid "Status"
+msgstr "Estat"
 
-msgid "Oct"
-msgstr "oktober"
+msgid "Estado"
+msgstr "Estat"
 
-msgid "Nov"
-msgstr "november"
+msgid "Manage"
+msgstr "Gestionar"
 
-msgid "Dec"
-msgstr "december"
+msgid "ACTIVE"
+msgstr "ACTIU"
 
-msgid "YEAR"
-msgstr "JAAR"
+msgid "# Attendees"
+msgstr "# Assistents"
 
-msgid "january"
-msgstr "januari"
+msgid "Reports"
+msgstr "Informes"
 
-msgid "february"
-msgstr "februari"
+msgid "Name / Location, City"
+msgstr "Nom / Lloc, Ciutat"
 
-msgid "march"
-msgstr "maart"
+msgid "EXPIRED"
+msgstr "CADUCAT"
 
-msgid "april"
-msgstr "april"
+msgid "View All"
+msgstr "Veure-ho tot"
 
-msgid "june"
-msgstr "juni"
+msgid "Delete All"
+msgstr "Esborrar-ho tot"
 
-msgid "july"
-msgstr "juli"
+msgid "Sort By"
+msgstr "Ordenar per"
 
-msgid "august"
-msgstr "augustus"
+msgid "Date"
+msgstr "Data"
 
-msgid "september"
-msgstr "september"
+msgid "Sales"
+msgstr "Ventes"
 
-msgid "october"
-msgstr "oktober"
+msgid "Outstanding"
+msgstr "Excepcional"
 
-msgid "november"
-msgstr "November"
+msgid "Location / City"
+msgstr "Lloc / Ciutat"
 
-msgid "december"
-msgstr "december"
+msgid "View Payments"
+msgstr "Veure pagaments"
 
-msgid "seats"
-msgstr "zetels"
+msgid "ACTIVE EVENT"
+msgstr "ESDEVENIMENT ACTIU"
+
+msgid "EXPIRED EVENT"
+msgstr "ESDEVENIMENT CADUCAT"
+
+msgid "free"
+msgstr "gratis"
+
+msgid "Free"
+msgstr "Gratis"
+
+msgid "TOTAL PAYMENTS"
+msgstr "PAGAMENTS TOTALS"
+
+msgid "TOTAL EVENTS"
+msgstr "ESDEVENIMENTS TOTALS"
+
+msgid "TOTAL CATEGORIES"
+msgstr "CATEGORIES TOTALS"
+
+msgid "TOTAL ATTENDEES"
+msgstr "ASSISTENTS TOTALS"
+
+msgid "progress"
+msgstr "progrés"
+
+msgid "change"
+msgstr "canvi"
+
+msgid "grow"
+msgstr "créixer"
+
+msgid "LATEST EVENTS"
+msgstr "ÚLTIMS ESDEVENIMENTS"
+
+msgid "LATEST PAYMENTS"
+msgstr "ÚLTIMS PAGMENTS"
+
+msgid "LATEST ATTENDEES"
+msgstr "ÚLTIMS ASSISTENTS"
+
+msgid "LATEST CATEGORIES"
+msgstr "ÚLTIMES CATEGORIES"
+
+msgid "AVAILABLE SEATS"
+msgstr "PLACES DISPONIBLES"
+
+msgid "PAYER"
+msgstr "PAGADOR"
+
+msgid "AMOUNT"
+msgstr "TOTAL"
+
+msgid "ITEM QUANTITY"
+msgstr "QUANTITAT D'ARTICLES"
+
+msgid "EVENT NAME"
+msgstr "NOM DE L'ESDEVENIMENT"
+
+msgid "Event Name"
+msgstr "Nom de l'esdeveniment"
+
+msgid "Available Seats"
+msgstr "Places disponibles"
+
+msgid "Payer"
+msgstr "Pagador"
+
+msgid "Amount"
+msgstr "Total"
+
+msgid "Item Quantity"
+msgstr "Quantitat d'articles"
+
+msgid "Attendee Name"
+msgstr "Nom de l'assistent"
+
+msgid "Recurring event"
+msgstr "Edeveniment que es repeteix"
+
+msgid "No Payments Found!"
+msgstr "No s'ha trobat paga,ents!"
+
+msgid "Event Location"
+msgstr "Lloc de l'esdeveniment"
+
+msgid "Attendee"
+msgstr "Assistent"
+
+msgid "MAKE A DONATION"
+msgstr "FER UNA DONACIÓ"
+
+msgid ""
+"Please select the Donate button to be taken to our payment vendor's site for "
+"online-donations."
+msgstr ""
+"Selecciona el botó Donar per anar al lloc del nostre proveïdor de pagament "
+"per fer donacions online."
+
+msgid "Please update fee dates!"
+msgstr "Si us plau actualitza les dates gratuites!"
+
+msgid "Company Address"
+msgstr "Adreça de l'empresa"
+
+msgid "All"
+msgstr "Tot"
+
+msgid "Search By Title"
+msgstr "Buscar per títol"
+
+msgid "JAN"
+msgstr "GEN"
+
+msgid "FEB"
+msgstr "FEB"
+
+msgid "MAR"
+msgstr "MAR"
+
+msgid "APR"
+msgstr "ABR"
+
+msgid "MAY"
+msgstr "MAIG"
+
+msgid "JUN"
+msgstr "JUN"
+
+msgid "JUL"
+msgstr "JUL"
+
+msgid "AUG"
+msgstr "AGO"
+
+msgid "SEP"
+msgstr "SET"
+
+msgid "OCT"
+msgstr "OCT"
+
+msgid "NOV"
+msgstr "NOV"
+
+msgid "DEC"
+msgstr "DES"
+
+msgid "Calender"
+msgstr "Calendari"
 
 msgid "Seats"
-msgstr "stoelen"
+msgstr "Places"
+
+msgid "Recurring"
+msgstr "Recurrent"
+
+msgid "event"
+msgstr "esdeveniment"
+
+msgid "Event Full"
+msgstr "Esdeveniment complet"
+
+msgid "Unlimited"
+msgstr "Il·limitat"
+
+msgid "go"
+msgstr "anar"
+
+msgid "GO"
+msgstr "ANAR"
+
+msgid "jan"
+msgstr "gen"
+
+msgid "feb"
+msgstr "feb"
+
+msgid "mar"
+msgstr "mar"
+
+msgid "apr"
+msgstr "abr"
+
+msgid "may"
+msgstr "maig"
+
+msgid "jun"
+msgstr "jun"
+
+msgid "jul"
+msgstr "jul"
+
+msgid "aug"
+msgstr "ago"
+
+msgid "sept"
+msgstr "set"
+
+msgid "sep"
+msgstr "set"
+
+msgid "oct"
+msgstr "oct"
+
+msgid "nov"
+msgstr "nov"
+
+msgid "dec"
+msgstr "des"
+
+msgid "Jan"
+msgstr "Gen"
+
+msgid "Feb"
+msgstr "Feb"
+
+msgid "Mar"
+msgstr "Mar"
+
+msgid "Apr"
+msgstr "Abr"
+
+msgid "Jun"
+msgstr "Jun"
+
+msgid "Jul"
+msgstr "Jul"
+
+msgid "Aug"
+msgstr "Ago"
+
+msgid "Sept"
+msgstr "Set"
+
+msgid "Sep"
+msgstr "Set"
+
+msgid "Oct"
+msgstr "Oct"
+
+msgid "Nov"
+msgstr "Nov"
+
+msgid "Dec"
+msgstr "Des"
+
+msgid "YEAR"
+msgstr "ANY"
+
+msgid "january"
+msgstr "gener"
+
+msgid "february"
+msgstr "febrer"
+
+msgid "march"
+msgstr "març"
+
+msgid "april"
+msgstr "abril"
+
+msgid "june"
+msgstr "juny"
+
+msgid "july"
+msgstr "juliol"
+
+msgid "august"
+msgstr "agost"
+
+msgid "september"
+msgstr "setembre"
+
+msgid "october"
+msgstr "octubre"
+
+msgid "november"
+msgstr "novembre"
+
+msgid "december"
+msgstr "desembre"
+
+msgid "seats"
+msgstr "places"
 
 msgid "Type your confirmation message below"
-msgstr "Typ hieronder uw bevestigingsbericht"
+msgstr "Introdueix el teu missatge de confirmació aquí sota"
 
 msgid "You must select at least one registration item."
-msgstr "U moet minstens één registratie te selecteren."
+msgstr "Has de seleccionar almenys un element de registre."
 
 msgid "Please go back and select an item!"
-msgstr "Ga terug en selecteer een item!"
-
+msgstr "Si us plau torna enrera i sel·lecciona un article!"
 
 msgid "Do you wish to disable registration for this event?"
-msgstr "Wilt u de registratie voor dit evenement uit te schakelen?"
+msgstr "Vols deshabilitar el registre per aquest esdeveniment?"
 
-msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr "Om online te betalen, selecteer dan de Betaling knop te nemen naar de site van onze betaling leverancier."
+msgid ""
+"To pay online, please select the Payment button to be taken to our payment "
+"vendor's site."
+msgstr ""
+"Per pagar online si us plau selecciona el botó de pagament per anar a la "
+"pàgina web del nostre proveïdor de pagament."
 
 msgid "Pay Now"
-msgstr "Betaal nu"
+msgstr "Pagar ara"
 
 msgid "Registration has been processed already."
-msgstr "Registratie is al verwerkt."
+msgstr "El registre ja s'ha processat"
 
 msgid "Invalid request - Payment couldn't be processed."
-msgstr "Ongeldig verzoek - Betaling kan niet worden verwerkt."
+msgstr "Sol·licitud no vàlida - El pagament no s'ha pogut processar."
 
-msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr "Gefeliciteerd! Transactie is voltooid en de betaling is ontvangen. Bedankt voor uw betaling."
+msgid ""
+"Congratulations! Transaction has been completed and payment has been "
+"received. Thank you for your payment."
+msgstr ""
+"Enhorabona! Transacció completat i pagament rebut. Gràcies pel teu pagament."
 
-msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr "Transactie is voltooid, maar de betaling is mislukt. Probeer opnieuw te registreren."
+msgid ""
+"Transaction has been completed but payment failed. Please try registering "
+"again."
+msgstr ""
+"Transacció completa, però el pagament ha fallat. Si us plau, intenta "
+"registrar-te de nou."
 
 msgid "Payment details"
-msgstr "Betalings details"
+msgstr "Detalls del pagament"
 
 msgid "View details"
-msgstr "Bekijk details"
+msgstr "Veure detalls"
 
 msgid "Payment Status"
-msgstr "Betalingsstatus"
+msgstr "Estat del pagament"
 
 msgid "Payment Methods"
-msgstr "Betaalmethoden"
+msgstr "Mètodes de pagament"
 
+msgid "Payment Method"
+msgstr "Mètode de pagament"
 
 msgid "Order details"
-msgstr "Bestel Details"
+msgstr "Detalls de la comanda"
 
 msgid "PayPal Sandbox Mode Is Active"
-msgstr "PayPal Sandbox mode actief"
+msgstr "La plataforma de pagament de PayPal és activa"
 
 msgid "Sandbox"
-msgstr "sandbox"
+msgstr "Plataforma de pagament"
 
-msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr "Selecteer een van de volgende methoden en door te klikken op Nu betalen knop wordt u naar de site van onze betaling leverancier."
+msgid ""
+"Please select one of the following methods and by clicking Pay Now button "
+"you will be taken to our payment vendor's site."
+msgstr ""
+"Si us plau selecciona un dels mètodes següents i fent clic al botó Pagar Ara "
+"se't portarà a la pàgina web del nostre proveïdor de pagament."
+
+msgid "Company Name"
+msgstr "Nom de l'empresa"
 
 
 msgid "read more"
-msgstr "Lees verder"
+msgstr "Llegeix més"
