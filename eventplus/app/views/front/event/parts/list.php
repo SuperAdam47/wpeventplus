@@ -229,7 +229,7 @@ echo '</table>'
 if ($rows) {
     foreach ($rows as $event) {
         #use the included file to put all the event data for this event into strings
-        include "_event_array2string.php";
+        //include "_event_array2string.php";
         
         #Generate the html popup code for this event
         //include "evrplus_event_colorbox_pop.php";

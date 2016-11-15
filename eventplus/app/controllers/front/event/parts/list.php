@@ -8,6 +8,12 @@ class eplus_front_event_parts_list_controller extends EventPlus_Abstract_Control
         $this->setResponse($output);
     }
     
+    function action_events_list() {
+        
+        $output = $this->oView->View('front/event/parts/events_list');
+        $this->setResponse($output);
+    }
+    
     function action_accordion(){
         $output = $this->oView->View('front/event/parts/accordion');
         $this->setResponse($output);
