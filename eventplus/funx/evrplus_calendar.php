@@ -292,7 +292,7 @@ function evrplus_show_events($events, $day = 0, $cat = null) {
             $cat_id = $wpdb->get_var("SELECT id FROM " . get_option('evr_category') . " WHERE category_identifier='$cat'");
             if ($cat_id) {
                 $cat_array = unserialize($event->category_id);
-                if (!in_array($cat_id, $cat_array))
+                if (!in_array($cat_id, (array)$cat_array))
                     continue;
             }
         }
