@@ -24,6 +24,10 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
         $this->methodMeta[self::OFFLINE] = array('title' => __('Payment Offline', 'evrplus_language'), 'logo' => '');
     }
     
+    static function getPaymentStatusCodes(){
+        return array(self::PAYMENT_FAILED, self::PAYMENT_PENDING, self::PAYMENT_SUCCESS);
+    }
+    
     function getMethodMeta($method){
         return $this->methodMeta[$method];
     }

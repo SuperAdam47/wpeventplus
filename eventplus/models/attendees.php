@@ -135,6 +135,7 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
         $payment = $params['total'];
         $coupon = $params['coupon'];
         $reg_type = $params['reg_type'];
+        $payment_status = $params['payment_status'];
         $attendee_array = $params['attendee'];
         $attendee_list = serialize($attendee_array);
 
@@ -173,7 +174,7 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
         $ticket_data = serialize($item_order);
         $sql = array(
             'lname' => $lname, 'fname' => $fname, 'address' => $address, 'city' => $city,
-            'state' => $state, 'zip' => $zip, 'reg_type' => $reg_type, 'email' => $email,
+            'state' => $state, 'zip' => $zip, 'reg_type' => $reg_type, 'email' => $email, 'payment_status' => $payment_status,
             'phone' => $phone, 'email' => $email, 'coupon' => $coupon, 'event_id' => $event_id,
             'quantity' => $num_people, 'tickets' => $ticket_data, 'payment' => $payment, 'attendees' => $attendee_list);
         $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
