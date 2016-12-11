@@ -1,0 +1,82 @@
+@media (min-width: 768px) and (max-width: 992px) {
+.events-plus-2 .events-list .ti8le	{ font-size: 30px; }
+
+.events-plus-2 .event-single .ti8le	{ font-size: 36px; }
+
+.events-plus-2	.event-single	.me8a	.fa	{ width: 54px; height: 54px; line-height: 54px; }
+
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 40px 0; font-size: 19px; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 21px; }
+}
+@media (max-width: 992px) {
+.events-plus-2	input[type=submit], .events-plus-2	input[type=button], .events-plus-2	input[type=reset], .events-plus-2	.btn	{ font-size: 16px; padding-right: 15px; padding-left: 15px; }
+
+.events-plus-2	.btn-ic0n:before	{ margin-right: 10px; }
+	
+.events-plus-2	.btn-larg3	{ padding-top: 15px; padding-bottom: 15px; font-size: 18px; }
+
+.events-plus-2	.event-single	.s0cial	a	{ width: 48px; height: 48px; font-size: 26px; line-height: 48px; }
+
+.events-plus-2	.event-single	.me8a.al8	.it3m	.d3sc	{ padding: 25px 40px; }
+}
+@media (max-width: 767px) {
+.events-plus-2	input[type=text], .events-plus-2	input[type=email], .events-plus-2	input[type=tel], .events-plus-2	input[type=password], .events-plus-2	select, .events-plus-2	textarea	{ font-size: 16px; padding: 15px; }
+
+.events-plus-2	.btn-larg3	{ padding: 10px; font-size: 15px; }
+
+.events-plus-2 .events-list .ti8le	{ font-size: 28px; }
+
+.events-plus-2	.events-list-widget	.ti8le	{ font-size: 21px; }
+.events-plus-2	.events-list-widget	.me8a	>	span	{ display: block; margin-right: 0; }
+.events-plus-2	.events-list-widget	.me8a	>	span:last-child	{ margin-bottom: 0; }
+
+.events-plus-2	.event-single	.s0cial	{ top: 10px; left: 15px; }
+
+.events-plus-2	.event-single	.bann3r	.acti0n	{ top: 10px; right: 10px; }
+
+.events-plus-2 .event-single .ti8le	{ font-size: 30px; padding-top: 25px; padding-bottom: 30px; }
+
+.events-plus-2	.event-single	.s0cial	a	{ width: 36px; height: 36px; line-height: 36px; font-size: 24px; margin-bottom: 10px; }
+
+.events-plus-2	.event-single	.me8a	.fa	{ width: 36px; height: 36px; line-height: 36px; font-size: 24px; }
+
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 40px 0; font-size: 17px; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 19px; }
+
+.events-plus-2	.event-single	.me8a.al8	.it3m	.d3sc	{ padding: 25px 30px; }
+
+.events-plus-2	.event-single	.d3sc	{ padding: 20px 15px; }
+
+.events-plus-2	.event-single	.coun8	{ padding-top: 30px; padding-bottom: 30px; }
+
+.events-plus-2	.event-single	.ac8ion	{ padding-top: 30px; padding-bottom: 30px; }
+.events-plus-2	.event-single	.ac8ion	.btn	{ margin: 0 10px; }
+
+.events-plus-2	.data-summary	{ font-size: 15px; }
+
+.events-plus-2	.data-summary	thead	th	{ padding-right: 10px; font-size: 17px; }
+.events-plus-2	.data-summary	thead	th	.fa	{ width: 24px; height: 24px; line-height: 24px; font-size: 16px; margin-right: 5px; }
+.events-plus-2	.data-summary	tbody	td	{ padding: 10px; }
+.events-plus-2	.data-summary	tbody	td	.fa	{ margin-right: 5px; }
+.events-plus-2	.data-summary	tfoot	td	{ padding: 10px; }
+
+.events-plus-2	.info-m3ssages	{ padding: 10px; font-size: 15px; } 
+}
+@media (max-width: 639px) {	
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 50px 0 30px; font-size: 15px; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 17px; }
+}
+@media (max-width: 479px) {
+.events-plus-2	.events-list	.i8em	>	div	{ width: 100%; }
+
+.events-plus-2	.events-list	.t7umb	{ margin-bottom: 20px; }
+
+.events-plus-2 .event-single .ti8le	{ font-size: 23px; }
+
+.events-plus-2	.event-single	.me8a	.it3m	{ width: 100%; border-right: none; border-bottom: 1px solid #ccc; }
+.events-plus-2	.event-single	.me8a	.it3m:nth-child(2)	{ border-bottom: none; }
+
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 30px 0; }
+
+.events-plus-2	.data-summary	tbody	td	.fa	{ display: block; margin-bottom: 5px; }
+}
