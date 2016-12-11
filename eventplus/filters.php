@@ -39,7 +39,7 @@ class EventPlus_Filters {
             return true;
         }
 
-        if (preg_match('[PLUS_CALENDAR:([A-Za-z])\w+]', $content, $matches)) {
+        if (preg_match('[PLUS_CALENDAR:([A-Za-z0-9])\w+]', $content, $matches)) {
             return true;
         } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
             return true;
@@ -91,7 +91,7 @@ class EventPlus_Filters {
 
         $pieces = explode("]", $content);
         foreach ($pieces as $val) {
-            if (preg_match('[PLUS_CALENDAR:([A-Za-z])\w+]', $content, $matches)) {
+            if (preg_match('[PLUS_CALENDAR:([A-Za-z0-9])\w+]', $content, $matches)) {
 
                 $evr = $matches[0];
                 $pos = strpos($evr, ':');
