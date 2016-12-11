@@ -2097,3 +2097,6 @@ msgstr "Sandbox"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
 msgstr "Bitte wählen Sie eine der folgenden Methoden und durch Klicken auf Pay Now Button werden Sie zu unserem Zahlungs Anbieter-Site getroffen werden."
+
+msgid "read more"
+msgstr "Weiterlesen"

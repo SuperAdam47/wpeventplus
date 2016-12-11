@@ -30,6 +30,7 @@ $total_items = count($rows);
                 <th><?php _e('Event ID', 'evrplus_language'); ?></th>
                 <th><?php _e('Start Date', 'evrplus_language'); ?></th>
                 <th><?php _e('Name', 'evrplus_language'); ?></th>
+                <th><?php _e('Category', 'evrplus_language'); ?></th>
                 <th><?php _e('ShortCode', 'evrplus_language'); ?></th>
                 <th><?php _e('Status', 'evrplus_language'); ?></th>
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
@@ -107,6 +108,23 @@ $total_items = count($rows);
                             <br />
                             <?php echo $event_location; ?><?php echo ", " . $event_city; ?>
                         </td>
+                        <td  class="cname">
+                            <?php if (is_array($event->category_id) && count($event->category_id)): ?>
+                                <?php
+                                foreach ($event->category_id as $d => $cid):
+                                    
+                                    $catRow = $event_category_dataset[$cid];
+                                    $category_name = stripslashes(htmlspecialchars_decode($catRow['category_name']));
+                                    $category_color = $catRow['category_color'];
+                                    $font_color = $catRow['font_color'];
+                                    $style = "margin-bottom:4px; background-color:" . $category_color . " ; color:" . $font_color . " ;";
+                                    ?>
+                                    <span style="<?php echo $style; ?>"><?php echo $category_name; ?></span>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                -
+                            <?php endif; ?>
+                        </td>
                         <td style="white-space: nowrap;">[eventsplus_single event_id="<?php echo $event_id; ?>"] </td>
                         <td><?php echo $active_event; ?></td>
                         <td><?php echo $number_attendees; ?> / <?php echo $reg_limit; ?></td>
@@ -114,12 +132,12 @@ $total_items = count($rows);
                             <div class="btn-group grid-actions">
                                 <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php _e('Manage', 'evrplus_language'); ?> <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li class="fees"><a href="<?php echo $this->adminUrl('admin_events_items', array('event_id' => $event_id)) ?>"><?php _e('Fees/Items', 'evrplus_language'); ?></a></li>
-                                        <li class="questions"><a href="<?php echo $this->adminUrl('admin_questions', array('event_id' => $event_id)) ?>"><?php _e('Questions', 'evrplus_language'); ?></a></li>
-                                        <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees', array('event_id' => $event_id)) ?>"><?php _e('Attendees', 'evrplus_language'); ?></a></li>
-                                        <li class="payments"><a href="<?php echo $this->adminUrl('admin_payments', array('event_id' => $event_id)) ?>"><?php _e('Payments', 'evrplus_language'); ?></a></li>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="fees"><a href="<?php echo $this->adminUrl('admin_events_items', array('event_id' => $event_id)) ?>"><?php _e('Fees/Items', 'evrplus_language'); ?></a></li>
+                                    <li class="questions"><a href="<?php echo $this->adminUrl('admin_questions', array('event_id' => $event_id)) ?>"><?php _e('Questions', 'evrplus_language'); ?></a></li>
+                                    <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees', array('event_id' => $event_id)) ?>"><?php _e('Attendees', 'evrplus_language'); ?></a></li>
+                                    <li class="payments"><a href="<?php echo $this->adminUrl('admin_payments', array('event_id' => $event_id)) ?>"><?php _e('Payments', 'evrplus_language'); ?></a></li>
                                 </ul>
                             </div>
                         </td>
@@ -127,11 +145,11 @@ $total_items = count($rows);
                             <div class="btn-group grid-actions">
                                 <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php _e('Action', 'evrplus_language'); ?> <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li class="edit"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id)) ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
-                                        <li class="copy"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'copy', 'id' => $event_id)) ?>" onclick="return confirm('<?php _e('Are you sure you want to copy', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Copy', 'evrplus_language'); ?></a></li>
-                                        <li class="delete"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'delete', 'id' => $event_id)) ?>" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
+                                </button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li class="edit"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $event_id)) ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
+                                    <li class="copy"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'copy', 'id' => $event_id)) ?>" onclick="return confirm('<?php _e('Are you sure you want to copy', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Copy', 'evrplus_language'); ?></a></li>
+                                    <li class="delete"><a href="<?php echo $this->adminUrl('admin_events', array('method' => 'delete', 'id' => $event_id)) ?>" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
                                 </ul>
                             </div>
                         </td>

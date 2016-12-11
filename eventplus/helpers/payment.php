@@ -249,12 +249,12 @@ class EventPlus_Helpers_Payment {
 
                             $returnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/re7urn.php?eventplus_token=' . $this->attendeeRow['token'];
                             $cancelUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/canc3l.php?eventplus_token=' . $this->attendeeRow['token'];
-                            $ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
+                            //$ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
 
                             $oPayPal->add_field('business', $this->companyOptions['payment_vendor_id']);
                             $oPayPal->add_field('return', $returnUrl);
                             $oPayPal->add_field('cancel_return', $cancelUrl);
-                            $oPayPal->add_field('notify_url', $ipnUrl);
+                            //$oPayPal->add_field('notify_url', $ipnUrl);
                             $oPayPal->add_field('item_name', $event_name . ' | Reg. ID: ' . $attendee_id . ' | Name: ' . $attendee_name . ' | Total Registrants: ' . $quantity);
                             $oPayPal->add_field('amount', $payment);
                             $oPayPal->add_field('currency_code', $ticket_order[0]['ItemCurrency']);

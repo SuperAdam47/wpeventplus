@@ -48,6 +48,10 @@ $event_name = stripslashes($oEvent->event_name);
 $use_coupon = $oEvent->use_coupon;
 
 $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '$event_id' order by sequence");
+
+$payment_status = ($row['payment_status'] != null && $row['payment_status'] != '') ? $row['payment_status'] : 'pending';
+
+$statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
 ?>
 <style type="text/css">.ui-tooltip, .arrow:before {background: #5BA4A4;border:1px #fff solid !important;}.ui-tooltip {padding: 10px 10px;color: white;font: bold 13px "Helvetica Neue", Sans-Serif;}.arrow {width: 70px;height: 25px;overflow: hidden;position: absolute;bottom: 5px;left: -26px;z-index: -1;}.arrow{display:none !important;}.arrow:before {content: "";position: absolute;left: 20px;top: 0px;width: 25px;height: 25px;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);tranform: rotate(45deg);}</style>
 <br /><br />
@@ -118,23 +122,23 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                         $num = 0;
                                         $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE  payment_status = 'success' AND event_id='$event_id'";
                                         $attendee_count = $this->wpDb()->get_var($sql2);
-                                        If ($attendee_count >= 1) {
+                                        if ($attendee_count >= 1) {
                                             $num = $attendee_count;
                                         }
                                         $available = $reg_limit - $num;
                                         ?>                
                                         <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/dollar-icon.png'); ?>"><?php _e('Registration Fees', 'evrplus_language'); ?></span><br /><ul>
                                             <li class="aw"><br/><div class="pass1"><label for="reg_type"><?php _e('What type of Registration?', 'evrplus_language'); ?></label></div><div class="pass2"><input id="rt1" type="radio" id="reg_type" name="reg_type" value="WAIT" <?php
-                                                    if ($reg_type == "WAIT") {
+                                        if ($reg_type == "WAIT") {
+                                            echo "checked";
+                                        }
+                                        ?> /><label for="rt1" style="width:auto !important;"><?php _e('Wait List', 'evrplus_language'); ?></label><br/>
+                                                                                                                                                                                                        <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
+                                                    if ($reg_type == "RGLR") {
                                                         echo "checked";
                                                     }
-                                                    ?> /><label for="rt1" style="width:auto !important;"><?php _e('Wait List', 'evrplus_language'); ?></label><br/>
-                                                                                                                                                                                                        <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
-                                                                                                                                                                                                               if ($reg_type == "RGLR") {
-                                                                                                                                                                                                                   echo "checked";
-                                                                                                                                                                                                               }
-                                                                                                                                                                                                               ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li>
-                                                <?php
+                                        ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li>
+                                                                                                                                                                                                                      <?php
                                                 $open_seats = $available;
                                                 $curdate = date("Y-m-d");
                                                 $row_count = count($ticket_order);
@@ -142,9 +146,9 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                     for ($row = 0; $row < $row_count; $row++) {
                                                         ?>
                                                     <li><div class="pass1"><?php echo $ticket_order[$row]['ItemName'] . "    " . $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost']; ?></div><div class="pass2"><select name="PROD_<?php echo $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost']; ?>" id = "PROD_<?php
-                                                            echo
-                                                            $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost'];
-                                                            ?>" onChange="CalculateTotal(this.form)"  >
+                                                echo
+                                                $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost'];
+                                                        ?>" onChange="CalculateTotal(this.form)"  >
                                                                 <option value="<?php echo $ticket_order[$row]['ItemQty']; ?>"><?php echo $ticket_order[$row]['ItemQty']; ?></option>
                                                                 <option value="0">0</option>
                                                                 <?php
@@ -206,8 +210,8 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                                         ?>
                                                     <input type="hidden" name="reg_type" value="RGLR"/>
                                                     <div class="pass1"><?php echo $item_title . "    " . $item_custom_cur . " " . $item_price; ?></div><div class="pass2"><select name="PROD_<?php echo $event_id . "-" . $item_id . "_" . $item_price; ?>" id = "PROD_<?php
-                                                        echo
-                                                        $event_id . "-" . $item_id . "_" . $item_price;
+                                                echo
+                                                $event_id . "-" . $item_id . "_" . $item_price;
                                                         ?>" onChange="CalculateTotal(this.form)"  >
                                                             <option value="0">0</option>
                                                             <?php
@@ -250,14 +254,25 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                             <li><div class="pass1"><b><?php _e('Registration TOTAL', 'evrplus_language'); ?> : </b></div>
                                                 <div class="pass2"> 
                                                     <input class="ert" readonly type="text" name="total" id="total" size="10" <?php
-                                                    if ($payment > "") {
-                                                        echo 'value="' . $payment . '"';
-                                                    } else {
-                                                        echo 'value="0.00"';
-                                                    }
-                                                    ?>  /></div><li>
+                                            if ($payment > "") {
+                                                echo 'value="' . $payment . '"';
+                                            } else {
+                                                echo 'value="0.00"';
+                                            }
+                                            ?>  /></div><li>
                                         </ul>
                                         <br />
+                                        <ul>
+                                            <li class="aw"><br><div class="pass1"><label for="payment_status"><?php _e('Status', 'evrplus_language'); ?></label></div>
+                                                <div class="pass2">
+                                                    <?php foreach($statusOptions as $s => $statusOption): ?>
+                                                    <input <?php echo (strtolower($statusOption) == strtolower($payment_status)) ? " checked='checked'" : ''; ?> type="radio" value="<?php echo $statusOption; ?>" name="payment_status" id="opt_<?php echo $statusOption; ?>">
+                                                    <label style="width:auto !important;" for="opt_<?php echo $statusOption; ?>"><?php echo __(ucfirst($statusOption),'evrplus_language'); ?></label><br>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            </li>
+
+                                        </ul>
                                         <?php
                                         if ($open_seats <= "1") {
                                             echo '<hr><br><b><font color="red">';

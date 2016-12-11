@@ -2740,3 +2740,7 @@ msgstr "Caixa de areia"
 
 msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
 msgstr "Por favor seleccione um dos seguintes métodos e clicando no botão Pagar agora você será levado ao site do nosso fornecedor de pagamento."
+
+
+msgid "read more"
+msgstr "Lees verder"

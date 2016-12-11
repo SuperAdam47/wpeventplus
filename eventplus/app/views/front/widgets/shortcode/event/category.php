@@ -314,7 +314,15 @@ $start_date = $end_date = '';
 
                                     <img src="<?php echo $this->assetUrl('images/popup-time-icon.png'); ?>" style="  float: left;margin-right: 3px;margin-top: 2px;">
 
-                                    <?php echo $start_time . ( ($row['end_date'] == $row['start_date']) ? ' - ' . $end_time : '' ); ?></p>
+                                     <?php
+                                     if(isset($company_options['time_format']) && $company_options['time_format'] == '24hrs'){ 
+                                         $start_time = date('H:i',strtotime($start_time)); 
+                                         $end_time = date('H:i',strtotime($end_time));
+                                     }
+                                    ?>
+                                    <?php echo $start_time . ( ($row['end_date'] == $row['start_date']) ? ' - ' . $end_time : '' ); ?>
+                                   
+                                </p>
 
                             </div><?php
 

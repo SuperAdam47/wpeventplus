@@ -151,5 +151,21 @@ class EventPlus_Helpers_Funx {
         return $string;
     }
 
-  
+    static function getCategoryList($event_category_ids, $limit = 0) {
+        $oCategory = new EventPlus_Models_Categories();
+        $event_category_dataset = $oCategory->getCategoriesKeys(array('id_collection' => $event_category_ids, 'limit' => $limit));
+
+        $category_list_str = '';
+        if (count($event_category_dataset)) {
+            $cNames = array();
+            foreach ($event_category_dataset as $k => $cRow) {
+                $cNames[] = $cRow['category_name'];
+            }
+
+            $category_list_str = implode(', ', $cNames);
+        }
+        
+        return $category_list_str;
+    }
+
 }

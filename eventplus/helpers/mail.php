@@ -91,6 +91,14 @@ class EventPlus_Helpers_Mail {
         $send_mail = $this->eventRow['send_mail'];  // Y or N
         $start_date = $this->eventRow['start_date'];
         $end_date = $this->eventRow['end_date'];
+        $category_id = $this->eventRow['category_id'];
+        
+      
+        $category_list_str = '';
+        if(is_array($event_category) && count($event_category)){
+            $category_list_str = EventPlus_Helpers_Funx::getCategoryList($event_category);
+        }
+
 
         $payment_link = evrplus_permalink($this->company_options['evrplus_page_id']) . "?action=confirmation&eventplus_token=" . $this->attendeeRow['token'] . "&event_id=" . $this->data['event_id'];
 
@@ -118,6 +126,7 @@ class EventPlus_Helpers_Mail {
 
         $bindParams = array(
             "[id]" => $this->attendeeRow['id'],
+            "[category_list]" => $category_list_str,
             "[fname]" => $this->attendeeRow['fname'],
             "[lname]" => $this->attendeeRow['lname'],
             "[phone]" => $this->attendeeRow['phone'],

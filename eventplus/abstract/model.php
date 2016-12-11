@@ -238,12 +238,17 @@ abstract class EventPlus_Abstract_Model {
      * @param String | SQL Query
      * @return Array 
      */
-    public function Dataset($sql) {
+    public function Dataset($sql, $key = '') {
         $dataset = array();
 
         $rows = $this->db->dataset($sql);
         foreach ($rows as $k => $row) {
-            $dataset[] = $row;
+
+            if ($key != '' && isset($row[$key])) {
+                $dataset[$row[$key]] = $row;
+            } else {
+                $dataset[] = $row;
+            }
         }
 
         return $dataset;
@@ -339,7 +344,7 @@ abstract class EventPlus_Abstract_Model {
     }
 
     function deleteRow($pk, $value, $success, $error) {
-        $sql = "DELETE FROM " . $this->_table . " WHERE ".$pk." ='" . (int) $value . "'";
+        $sql = "DELETE FROM " . $this->_table . " WHERE " . $pk . " ='" . (int) $value . "'";
         $q = $this->query($sql);
 
         if ($q == false) {

@@ -39,8 +39,24 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
         $params['limit_str'] = $limit_str;
 
         $rows = $this->_model->getEvents($params);
-        
+        $category_id_collection = array();
+
+        foreach($rows as $k => $r){
+            $category_id = @unserialize($r->category_id);
+            
+            if(is_array($category_id)){
+                $r->category_id = $category_id;
+                $category_id_collection = array_merge($category_id_collection,$category_id);
+            }
+            
+            $rows[$k] = $r;
+        }
+  
+        $oCategory = new EventPlus_Models_Categories();
+        $event_category_dataset = $oCategory->getCategoriesKeys(array('id_collection' => $category_id_collection));
+    
         $response = $this->oView->loadLayout('admin/layouts/events', 'admin/events/manage', array(
+            'event_category_dataset' => $event_category_dataset,
             'company_options' => $company_options,
             'rows' => $rows,
             'p' => $p,
