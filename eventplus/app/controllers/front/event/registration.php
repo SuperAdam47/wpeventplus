@@ -92,8 +92,7 @@ class eplus_front_event_registration_controller extends EventPlus_Abstract_Contr
             $output = EventPlus::dispatch('front_event_parts_list/accordion', array());
             $this->setResponse($output);
         } else {
-
-            $output = EventPlus::dispatch('front_event_parts_list/events_list', array());
+            $output = EventPlus::dispatch('front_shortcode_event_list/index', array());
             $this->setResponse($output);
         }
     }

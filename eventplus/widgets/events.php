@@ -16,6 +16,8 @@ class EventPlus_Widgets_Events extends WP_Widget {
     // Widget output to the User
     function widget($args, $instance) {
         
+        wp_enqueue_style('eventplus-fonts-fa');
+         
         extract($args, EXTR_SKIP);
         $title = apply_filters('widget_title', $instance['title']);
         $record_limit = isset($instance['event_limit']) ? strip_tags($instance['event_limit']) : '5'; // Defaults to 5 

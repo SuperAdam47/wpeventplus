@@ -463,7 +463,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             }
         }
 
- 
+
         if (!empty($params['company_options']['order_event_list'])) {
             $option = $params['company_options']['order_event_list'];
             $orderby2 = " $option ";
@@ -477,8 +477,8 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
         }
-        
-     
+
+
 
         return $this->getResults($sql);
     }
@@ -659,6 +659,19 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         }
 
         return $events;
+    }
+
+    function getEventsBySettings() {
+        $company_options = EventPlus_Models_Settings::getSettings();
+       
+        # Get events that end date is later than today and order by start date
+        if ($company_options['order_event_list'] == 'DESC') {
+            $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
+        } else {
+            $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') ASC";
+        }
+
+        return $this->getWpDb()->get_results($sql);
     }
 
 }

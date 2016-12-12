@@ -80,4 +80,8 @@ class EventPlus_ShortCodes {
         return $buffer;
     }
 
+    function eventList($atts) {
+        return EventPlus::dispatch('front_shortcode_event_list/index');
+    }
+
 }

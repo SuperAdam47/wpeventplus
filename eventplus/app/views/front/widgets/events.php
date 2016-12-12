@@ -4,9 +4,12 @@ if ($title) {
     echo $before_title . $title . $after_title;
 }
 ?>
-<ul style="max-width: 500px;  border: 1px solid #cdcdcd; border-radius:2px; padding:0;">
-    <?php
-    echo $events_list;
-    ?></ul>
+<div class="events-plus-2">
+    <div class="events-list events-list-widget">
+        <?php
+        echo $events_list;
+        ?>
+    </div>
+</div>
 <?php
 echo $after_widget;
