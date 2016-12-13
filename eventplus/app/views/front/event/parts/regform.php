@@ -90,8 +90,6 @@ if ($rows) {
                             $noImage = true;
                             ?>
                             <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
-                        <?php } else { ?>
-                            <div style='height:100px;'>&nbsp;</div>
                         <?php } ?>
                     </div>
                     <h2 class="ti8le"><?php echo $event_name; ?></h2>
@@ -140,7 +138,6 @@ if ($rows) {
                                 <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
                                 
                                 <?php
-                                $eventLocationStr = '';
                                 $eventLocationStr = stripslashes($event_location);
                                 if($event_address != ''){
                                     $eventLocationStr .= '<br />' . $eventLocationStr;
