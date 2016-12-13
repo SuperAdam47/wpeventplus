@@ -1,3 +1,8 @@
+<?php if ($company_options['form_css'] != ''): ?>
+    <style>
+    <?php echo $company_options['form_css']; ?>
+    </style>
+<?php endif; ?>
 <?php
 global $noImage;
 
@@ -13,146 +18,150 @@ if ($rows) {
     $cap_url = $this->assetUrl('cimg/');
     $md5_url = $this->assetUrl("js/md5.js");
 
-    #Begin Page Content    
-    #Set default to show or hide event details
+
     if ($display_desc == "Y") {
         $dsply = "block";
     } else {
         $dsply = "none";
     }
 
-    #Begin Expand/Hide for event details
+    $url = urlencode(add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), get_permalink(get_page_by_path('evrplus_registration'))));
+
+    $d_format = date_i18n($evrplus_date_format, strtotime($event->start_date));
+    if (isset($_GET['recurr'])) {
+        $d_format = date_i18n($evrplus_date_format, $_GET['recurr']);
+    } elseif ($recurr) {
+        $d_format = date_i18n($evrplus_date_format, $recurr);
+    }
+
+    if (isset($company_options['time_format']) and $company_options['time_format'] == '24hrs') {
+        $start_time = date('H:i', strtotime($start_time));
+        $end_time = date('H:i', strtotime($end_time));
+    }
+
+    $captcha = "N";
+    if ($company_options['captcha'] == 'Y') {
+        $captcha = "Y";
+    }
+
+    $tax_rate = .0;
+    if ($company_options['use_sales_tax'] == "Y") {
+        $tax_rate = .0875;
+        if ($company_options['sales_tax_rate'] != "") {
+            $tax_rate = $company_options['sales_tax_rate'];
+        }
+    }
+
+    $current_dt = date('Y-m-d H:i', current_time('timestamp', 0));
+    if ($event_close == "start") {
+        $close_dt = $start_date . " " . $start_time;
+    } else if ($event_close == "end") {
+        $close_dt = $end_date . " " . $end_time;
+    } else if ($event_close == "") {
+        $close_dt = $start_date . " " . $start_time;
+    }
+    $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
+    $expiration_date = strtotime($stp);
+    if (isset($_GET['recurr']) and $_GET['recurr'])
+        $expiration_date = $_GET['recurr'];
+    elseif ($recurr)
+        $expiration_date = $recurr;
+    $today = strtotime($current_dt);
     ?>
-    <div>
-        <div id="details" style="border-style:solid;border-width:2px;border-color:#FF0000;padding: 0 0 15px;width:730px;">
-            <div class="evrplus_Image_single">
-                <?php
-                $noImage = false;
-
-                if ($header_image != "header_image" && $header_image != "") {
-                    $noImage = true;
-                    ?>
-                    <img style="width:100%" src="<?php echo $header_image; ?>" />
-                <?php } ?>
-                <div class="evrplus_social_container" style="float: right; text-align: center;">
-                    <a class="evrplus_addToCalendar" href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>ics.php?event_id=<?php echo $event_id; ?>">
-                        <div class="evrplus_addcal_icon evrplus_addcal_icon_add_calendar"></div>
-                        <div class="evrplus_addcal"><?php echo __('Add to your calendar', 'evrplus_language'); ?></div>
-                    </a>
-                    <?php
-                    $url = urlencode(add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), get_permalink(get_page_by_path('evrplus_registration'))));
-                    if (isset($company_options['show_social_icons']) and ! empty($company_options['show_social_icons']) and $company_options['show_social_icons'] != '2'):
-                        echo '<div class="evrplus_social_content">';
-                        $classForNoImage = "float: left; margin-right: 8px;";
-                        $classForNoImageTitle = "padding-top:60px;";
-                        if ($header_image != "header_image" && $header_image != "") {
-
-                            echo '<span class="evrplus_social_Links "style="text-align: center; ">
-							 <a class="evrplus_socialfacebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '">
-							 	<div class="evrplus_fb_icon"></div>
-							 </a>
-							</span>';
-                        } else {
-                            echo '<span class="evrplus_social_Links "style="text-align: center; float: left; margin-right: 8px;">
-							 <a class="evrplus_socialfacebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=' . $url . '">
-							 	<div class="evrplus_fb_icon"></div>
-							 </a>
-							</span>';
-                        }
-
-                        echo '<span class="evrplus_social_Links" style="text-align: center; float:left;">
-					 		<a class="evrplus_socialtwitter" target="_blank" href="https://twitter.com/home?status=' . $event_name . ' - ' . $url . '">
-						 		<div class="evrplus_tw_icon"></div>
-					 		</a>
-					 	</span>';
-                        echo '</div>';
-                    endif;
-                    ?>
-                </div>
-            </div>
-            <?php
-            if ($header_image != "header_image" && $header_image != "") {
-                echo '<h2>' . $event_name . '</h2>';
-            } else {
-                echo '<h2 style="padding-top:60px;">' . $event_name . '</h2>';
-            }
-            ?>
-            <div class="event_dateTime_container"><?php
-                $d_format = date_i18n($evrplus_date_format, strtotime($event->start_date));
-
-
-                if (isset($_GET['recurr'])) {
-                    $d_format = date_i18n($evrplus_date_format, $_GET['recurr']);
-                } elseif ($recurr)
-                    $d_format = date_i18n($evrplus_date_format, $recurr);
-                echo '<div class="col-sm-6 event_date_border"><div class="event_date_container"><p class="event_date" style="float:left;"><span class="dashicons dashicons-calendar-alt"></span> </p><div class="dashiconsText">' . $d_format . '<br />';
-                if ($end_date != $start_date and $end_year != '2050') {
-                    echo "  -  " . date_i18n($evrplus_date_format, strtotime($event->end_date)) . '</p></p></div></div></div>';
-                } else {
-                    echo '</div></div></div>';
-                }
-                if (isset($company_options['time_format']) and $company_options['time_format'] == '24hrs') {
-                    $start_time = date('H:i', strtotime($start_time));
-                    $end_time = date('H:i', strtotime($end_time));
-                }
-                echo '<div class="col-sm-6"><div class="event_time_container"><p class="event_time"><span class="dashicons dashicons-clock"></span> ' . __('Time', 'evrplus_language') . ": " . $start_time . " - " . $end_time . '</p></div></div>';
-                ?></div>
-            <div class="evrplus_thumbnail_container">
-                <?php if ($image_link != "") { ?>
-                    <img class="evrplus_pop_img evrplus_thumbnail_single" src="<?php echo $image_link; ?>" alt="Thumbnail Image" />
-                <?php } else { ?>
-                    <?php /* <!--<img class="evrplus_pop_img evrplus_thumbnail_single" src="<?php echo EVR_PLUGINFULLURL; ?>images/event_icon.png" />--> */ ?>
-                <?php } ?>
-                <p><?php echo html_entity_decode(nl2br($event_desc)); ?></p>
-            </div>
-            <div style="width:100%;white-space:normal;">
-                <div style="white-space:normal;" class="event_map_border">
-                    <?php
-                    if ($google_map == "Y") {
-                        ?>
-                        <div id="evrplus_pop_map">
-                            <?php
-                            //echo '<img border="0" src="http://maps.google.com/maps/api/staticmap?center=';
-                            //echo $event_address.','.$event_city.','.$event_state;
-                            //echo '&zoom=14&size=280x180&maptype=roadmap&markers=size:mid|color:0xFFFF00|label:*|';
-                            //echo $event_address.','.$event_city.'&sensor=false" />';
-                            $event_address_map = str_replace(" ", "+", $event_address);
-                            $event_city_map = str_replace(" ", "+", $event_city);
-                            $event_state_map = str_replace(" ", "+", $event_state);
-                            $event_country_map = str_replace(" ", "+", $event_country);
-                            if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']))
-                                echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
-                            else
-                                echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
-                            ?>
+    <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+    <div class="events-plus-2">
+        <div class="event-single" id="event-slug">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="bann3r">
+                        <?php if (isset($company_options['show_social_icons']) && !empty($company_options['show_social_icons']) && $company_options['show_social_icons'] != '2'): ?>
+                            <div class="s0cial">
+                                <a href="<?php echo 'https://twitter.com/home?status=' . $event_name . ' - ' . $url . ''; ?>" class="twitter evrplus_socialtwitter"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" class="facebook evrplus_socialfacebook"><i class="fa fa-facebook-f"></i></a>
+                            </div>
+                        <?php endif; ?>
+                        <div class="acti0n">
+                            <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>ics.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo __('Add to your calendar', 'evrplus_language'); ?></a>
                         </div>
                         <?php
-                    }
-                    ?>
-                </div>
-                <div class="LocationDetailsContainer">
-                    <div class="col-sm-6 col-xs-12 locationAddressBorder">
-                        <div id="evrplus_pop_address">
-                            <h3>
-                                <u>
-                                    <div class="dashicons dashicons-location"></div>
-                                    <p class="locationTitle"><?php _e('Event Location', 'evrplus_language'); ?></p>
-                                </u>
-                            </h3>
-                            <p>
-                                <?php echo stripslashes($event_location) . '<br />' . $event_address . '<br />' . $event_city . ', ' . $event_state . ' ' . $event_postal; ?>
-                            </p>
-                        </div>
+                        $noImage = false;
+
+                        if ($header_image != "header_image" && $header_image != "") {
+                            $noImage = true;
+                            ?>
+                            <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
+                        <?php } else { ?>
+                            <div style='height:100px;'>&nbsp;</div>
+                        <?php } ?>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
-                        <div class="padding">
-                            <div id="evrplus_pop_price">
-                                <h3>
-                                    <u>
-                                        <div style="  margin-top: 5px; margin-right: 5px;" class="dashicons dashicons-cart"></div>
-                                        <p class="event_fee"><?php _e('Event Fees', 'evrplus_language'); ?>:</p>
-                                    </u>
+                    <h2 class="ti8le"><?php echo $event_name; ?></h2>
+                </div>
+                <div class="col-xs-12">
+                    <div class="me8a">
+                        <div class="col-xs-6 it3m">
+                            <i class="fa fa-2x fa-calendar"></i>
+                            <div class="d3sc">
+                                <h3 class="titl3">
+                                    <?php echo $d_format; ?>
+                                    <?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
                                 </h3>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 it3m">
+                            <i class="fa fa-2x fa-clock-o"></i>
+                            <div class="d3sc">
+                                <h3 class="titl3"><?php echo $start_time . " - " . $end_time; ?></h3>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="d3sc">
+                        <p><?php echo html_entity_decode(nl2br($event_desc)); ?></p>
+                    </div>
+
+                    <?php if ($google_map == "Y"): ?>
+                        <?php
+                        $event_address_map = str_replace(" ", "+", $event_address);
+                        $event_city_map = str_replace(" ", "+", $event_city);
+                        $event_state_map = str_replace(" ", "+", $event_state);
+                        $event_country_map = str_replace(" ", "+", $event_country);
+                        if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']))
+                            echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        else
+                            echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        ?>
+                    <?php endif; ?>
+
+                    <div class="me8a al8">
+                        <div class="col-xs-6 it3m">
+                            <i class="fa fa-2x fa-map-marker"></i>
+                            <div class="d3sc">
+                                <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
+                                
+                                <?php
+                                $eventLocationStr = '';
+                                $eventLocationStr = stripslashes($event_location);
+                                if($event_address != ''){
+                                    $eventLocationStr .= '<br />' . $eventLocationStr;
+                                }
+                                if($event_city != ''){
+                                    $eventLocationStr .= '<br />' . $event_city;
+                                    if($event_state != ''){
+                                        $eventLocationStr .= ', ' . $event_state;
+                                    }
+                                    if($event_postal != ''){
+                                        $eventLocationStr .= ', ' . $event_postal;
+                                    }
+                                }
+                                ?>
+                                <?php echo $eventLocationStr; ?>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 it3m">
+                            <i class="fa fa-2x fa-money"></i>
+                            <div class="d3sc">
+                                <h3 class="titl3"><?php _e('Event Fees', 'evrplus_language'); ?></h3>
                                 <?php
                                 $curdate = date("Y-m-d");
                                 $sql2 = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . $event_id . " ORDER BY sequence ASC";
@@ -189,514 +198,265 @@ if ($rows) {
                                         $item_price = __('FREE', 'evrplus_language');
                                     }
 
-                                    echo '<p>' . $item_title . '   ' . $item_custom_cur . ' ' . $item_price . '<br /></p>';
+                                    echo '<div class="row">'
+                                    . ' <div class="col-xs-6">' . $item_title . '</div>'
+                                    . ' <div class="col-xs-6">' . $item_custom_cur . ' ' . $item_price . '</div>' .
+                                    '</div>';
                                 }
 
                                 if (!$result2) {
-                                    echo '<p>' . _e('FREE', 'evrplus_language') . '</p>';
+                                    echo '<div class="row">'
+                                    . ' <div class="col-xs-6">' . _e('FREE', 'evrplus_language') . '</div>' .
+                                    '</div>';
                                 }
                                 ?>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <?php
-            if ($counter_checks == 'Y') {
-                $sql_status = "SELECT * FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
-                $recurring_status_ex = $wpdb->get_results($sql_status);
-                $recurring_status = $recurring_status_ex[0]->recurrence_choice;
-                if ($recurring_status == 'no') {
-                    ?>
-                    <div class="evrplus_counter">
-                        <div id="evrplus_counter" class="redCountdownDemo">
-
-                        </div>
-
-                        <div class="timer">
-                            <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
-                            <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
-                            <div class="min"><?php _e('Minutes', 'evrplus_language'); ?></div>
-                            <div class="sec"><?php _e('Seconds', 'evrplus_language'); ?></div>
-                        </div>
-
+                        <div class="clearfix"></div>
                     </div>
                     <?php
-                }
-
-                $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
-                $resultEndDate = $wpdb->get_var($sqlEndDate);
-
-                if (isset($_GET['recurr']))
-                    $resultEndDate = date_i18n('d-m-Y', $_GET['recurr']);
-                elseif ($recurr)
-                    $resultEndDate = date_i18n('d-m-Y', $recurr);
-                $close_dt = $end_date . " " . $end_time;
-                ?>
-                <script type="text/javascript">
-                    jQuery(document).ready(function ($) {
-                        var endDate = new Date(<?php echo strtotime($resultEndDate) ?>);
-                        $('#evrplus_counter').redCountdown({
-                            end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
-                            labels: true,
-                            style: {
-                                element: "",
-                                textResponsive: .5,
-                                daysElement: {
-                                    gauge: {
-                                        thickness: .2,
-                                        bgColor: "#cccccc",
-                                        fgColor: "#1ABC9C"
-                                    },
-                                    textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                },
-                                hoursElement: {
-                                    gauge: {
-                                        thickness: .2,
-                                        bgColor: "#cccccc",
-                                        fgColor: "#2980B9"
-                                    },
-                                    textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                },
-                                minutesElement: {
-                                    gauge: {
-                                        thickness: .2,
-                                        bgColor: "#cccccc",
-                                        fgColor: "#8E44AD"
-                                    },
-                                    textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                },
-                                secondsElement: {
-                                    gauge: {
-                                        thickness: .2,
-                                        bgColor: "#cccccc",
-                                        fgColor: "#F39C12"
-                                    },
-                                    textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                }
-                            },
-                            onEndCallback: function () {
-                                console.log("Time out!");
-                            }});
-                    });
-                </script>
-            <?php } ?>
-            <?php
-            #End Expand Hide for Event Details
-            /**  In lieu of using the expand/hide feature you can just show the description only by commenting 
-             * out the above block and uncommenting the below line.
-             * 
-             */
-//if ($display_desc =="Y"){ echo "<blockquote>".html_entity_decode($event_desc)."</blockquote>"; }
-#Registration form content begins here
-            ?>
-            <!--End Show/Hide Event Details -->
-            <!--Begin registration form scripts -->
-            <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
-            <?php
-            if ($company_options['captcha'] == 'Y') {
-                $captcha = "Y";
-            } else {
-                $captcha = "N";
-            }
-            ?>
-            <?php
-            $tax_rate = .0;
-            if ($company_options['use_sales_tax'] == "Y") {
-                $tax_rate = .0875;
-                if ($company_options['sales_tax_rate'] != "") {
-                    $tax_rate = $company_options['sales_tax_rate'];
-                }
-            }
-            ?>
-            <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
-            <script>
-                var discountSettings = new Array();
-            </script>
-            <?php
-            $oEventDiscounts = new EventPlus_Models_Events_Discounts();
-            $discountSettings = array(); //$oEventDiscounts->getSettings($event_id);
-
-            $discountPercentage = 0;
-            if (count($discountSettings) > 0 && is_array($discountSettings)) {
-                $discountDataset = EventPlus_Helpers_Event::getPercentageDataset($discountSettings);
-
-                if (count($discountDataset) > 0) {
-                    ?>
-                    <script>
-            <?php foreach ($discountDataset as $qty => $percentage): ?>
-                            discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
-            <?php endforeach; ?>
-                    </script>
-                    <?php
-                }
-            }
-            ?>
-            <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
-
-            <div id="evrplus_pop_foot">
-                <p align="center" >
-                    <?php
-                    if ($more_info != "") {
-                        echo ' <input class="more_info_button" type="button" onClick="window.open(\'' . $more_info . '\');" value="' . __('MORE INFO', 'evrplus_language') . '" />';
-                    }
-                    ?>
-                </p>
-            </div>
-            <?php
-            if ($disable_event_reg != 'Y'):
-                $eventplus_token = EventPlus_Helpers_Token::doToken($event_id);
-                $pendingTokenRow = EventPlus_Helpers_Token::getPendingRow();
-                ?>
-                <div class="registerForm">
-                    <?php
-                    
-                    $oMeta = new EventPlus_Models_Events_Meta();
-                    $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
-                    
-                    $show_form_bool = 0;
-                    if($show_register_button == '' || !in_array(strtolower($show_register_button), array('y','n')) || strtolower($show_register_button) == 'n'){
-                        $show_form_bool = 1;
-                    }
-        
-                        
-                    if ($outside_reg == "Y")
-                        echo '<a class="extenal_link_reg" href="' . $external_site . '" >' . __('REGISTER', 'evrplus_language') . '</a>';
-                    else
-                        echo '<input id="eventplus_register_btn" data-show-form-default="'.$show_form_bool.'" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
-                        ?>
-                    <!--Custom styles from company settings for form--> 
-
-                    <?php if ($company_options['form_css'] != ''): ?>
-                        <style>
-                            <?php echo $company_options['form_css']; ?>
-                        </style>
-                    <?php endif; ?>
-                    <div id="evrplusRegForm">
-                        <?php
-                        //$current_dt= date('Y-m-d H:i a',current_time('timestamp',0));
-                        $current_dt = date('Y-m-d H:i', current_time('timestamp', 0));
-                        if ($event_close == "start") {
-                            $close_dt = $start_date . " " . $start_time;
-                        } else if ($event_close == "end") {
-                            $close_dt = $end_date . " " . $end_time;
-                        } else if ($event_close == "") {
-                            $close_dt = $start_date . " " . $start_time;
-                        }
-                        $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
-                        $expiration_date = strtotime($stp);
-                        if (isset($_GET['recurr']) and $_GET['recurr'])
-                            $expiration_date = $_GET['recurr'];
-                        elseif ($recurr)
-                            $expiration_date = $recurr;
-                        $today = strtotime($current_dt);
-                        //echo "The current date and time is: ".$current_dt."<br/>";
-                        //echo "Registration closes at: ". $stp."<br/>";                              
-                        if ($expiration_date <= $today) {
-                            echo '<br/><p class="reg_fees_select">';
-                            _e('Registration is closed for this event.', 'evrplus_language');
-                            echo '</p><p class="reg_fees_select">';
-                            _e('For more information or questions, please email: ', 'evrplus_language');
-                            echo '</p><a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
-                        } else {
-                            ?> 
-                            <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="mySubmit.disabled = true;
-                                return validateForm(this)">
-                                <ul>
-                                    <?php
-                                    evrplus_generate_frm_defaults('fname', __('First Name', 'evrplus_language'), $pendingTokenRow['fname']);
-                                    evrplus_generate_frm_defaults('lname', __('Last Name', 'evrplus_language'), $pendingTokenRow['lname']);
-                                    evrplus_generate_frm_defaults('email', __('Email Address', 'evrplus_language'), $pendingTokenRow['email']);
-                                    if ($inc_phone == "Y") {
-                                        evrplus_generate_frm_defaults('phone', __('Phone Number', 'evrplus_language'), $pendingTokenRow['phone']);
-                                    }
-                                    if ($inc_address == "Y") {
-                                        evrplus_generate_frm_defaults('address', __('Street/PO Address', 'evrplus_language'), $pendingTokenRow['address']);
-                                    }
-                                    if ($inc_city == "Y") {
-                                        evrplus_generate_frm_defaults('city', __('City', 'evrplus_language', $pendingTokenRow['city']));
-                                    }
-                                    if ($inc_country == "Y") {
-                                        evrplus_generate_frm_defaults('country', __('Country', 'evrplus_language'), $pendingTokenRow['country']);
-                                    }
-                                    if ($inc_state == "Y") {
-                                        evrplus_generate_frm_defaults('state', __('State', 'evrplus_language'), $pendingTokenRow['state']);
-                                    }
-                                    if ($inc_zip == "Y") {
-                                        evrplus_generate_frm_defaults('zip', __('Postal/Zip Code', 'evrplus_language'), $pendingTokenRow['zip']);
-                                    }
-                                    if ($inc_comp == "Y") {
-                                        evrplus_generate_frm_defaults('company', __('Company Name', 'evrplus_language'), $pendingTokenRow['company']);
-                                    }
-                                    if ($inc_coadd == "Y") {
-                                        evrplus_generate_frm_defaults('co_address', __('Company Address', 'evrplus_language'), $pendingTokenRow['co_address']);
-                                    }
-                                    if ($inc_cocity == "Y") {
-                                        evrplus_generate_frm_defaults('co_city', __('Company City', 'evrplus_language'), $pendingTokenRow['co_city']);
-                                    }
-                                    if ($inc_costate == "Y") {
-                                        evrplus_generate_frm_defaults('co_state', __('Company State/Province', 'evrplus_language'), $pendingTokenRow['co_state']);
-                                    }
-                                    if ($inc_copostal == "Y") {
-                                        evrplus_generate_frm_defaults('co_zip', __('Company Postal Code', 'evrplus_language'), $pendingTokenRow['co_zip']);
-                                    }
-                                    if ($inc_cophone == "Y") {
-                                        evrplus_generate_frm_defaults('co_phone', __('Company Phone', 'evrplus_language'), $pendingTokenRow['co_phone']);
-                                    }
-                                    ?>
-                                    <!--End Default Questions -->
-                                    <!--Begin Custom Questions -->
-                                    <?php
-                                    //Additional Questions
-                                    $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
-                                    if ($questions) {
-                                        foreach ($questions as $question) {
-                                            $title = '';
-                                            if ($question->remark) {
-                                                $title = $question->remark;
-                                            }
-                                            ?>
-                                            <li title="<?php echo $title; ?>">
-                                                <label for="question-<?php echo $question->id; ?>" ><?php echo $question->question; ?></label>
-                                                <?php echo evrplus_form_build($question); ?>
-                                            </li>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
-                                    <!--End Custom Questions -->
-                                    <?php
-                                    if ($use_coupon == "Y") {
-                                        evrplus_generate_frm_defaults('coupon', __('Enter coupon code for discount', 'evrplus_language'));
-                                    }
-                                    ?>
-                                </ul>
-                                <?php
-                                #See how many seats are left available
-                                $available = evrplus_get_open_seats($event->id, $event->reg_limit);
-                                #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
-                                if ($available >= 1) {
-                                    $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . $event_id . " ORDER BY sequence ASC";
-                                    $rows = $wpdb->get_results($sql);
-                                    if ($rows) {
-                                        $open_seats = $available;
-                                        $curdate = date("Y-m-d");
-                                        $fee_count = 0;
-                                        $isfees = "N";
-                                        #Display Section Header
-                                        ?>
-                                        <h2 class="reg_img">
-                                            <div style="  margin-top: 5px; margin-right: 5px;" class="dashicons dashicons-cart"></div>
-                                            <?php _e('Registration Fees', 'evrplus_language'); ?>
-                                        </h2>
-
-                                        <p class="reg_fees_select" id="eplus_must_select_message"><?php _e('You must select at least one item!', 'evrplus_language'); ?></p>
-                                        <?php
-                                        foreach ($rows as $fee) {
-                                            #check fee dates and if date range is valid, display fee
-                                            if ((evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate))) {
-                                                $req = '';
-                                                $isfees = "Y";
-                                                #Set hidden value for registration type to RGLR vs. WAIT
-                                                ?>
-                                                <input type="hidden" name="reg_type" value="RGLR"/>
-                                                <div align="left">
-                                                    <label for="cost" title ="<?php echo $fee->item_description; ?>" >
-                                                        <select class="eventplus-ddl-items" style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
-                                                                onChange="<?php
-                                                                if ($company_options['use_sales_tax'] == "Y") {
-                                                                    echo 'CalculateTotalTax(this.form)';
-                                                                } else {
-                                                                    echo 'CalculateTotal(this.form)';
-                                                                }
-                                                                ?>">
-                                                            <option value="0" selected="selected"></option>
-                                                            <?php
-                                                            #Begin generation of DropDown Box - Options
-                                                            #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
-                                                            if ($fee->item_cat == "REG") {
-                                                                if ($fee->item_limit != "") {
-                                                                    if ($available >= $fee->item_limit) {
-                                                                        $units_available = $fee->item_limit;
-                                                                    } else {
-                                                                        $units_available = $available;
-                                                                    }
-                                                                }
-                                                                for ($i = 1; $i <= $units_available; $i++) {
-                                                                    ?>
-                                                                    <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
-                                                                    <?php
-                                                                }
-                                                            }
-                                                            #If item is not REG type, and no limit was set, limit options to 10
-                                                            if ($fee->item_cat != "REG") {
-                                                                $num_select = "10";
-                                                                if ($fee->item_limit != "") {
-                                                                    $num_select = $fee->item_limit;
-                                                                }
-                                                                for ($i = 1; $i < $num_select + 1; $i++) {
-                                                                    ?> 
-                                                                    <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
-                                                                    <?php
-                                                                }
-                                                            }
-                                                            ?></select>   
-                                                        <?php
-                                                        #Display Fee description and cost.
-                                                        if ($fee->item_custom_cur == "GBP") {
-                                                            $item_custom_cur = "&pound;";
-                                                        }
-                                                        if ($fee->item_custom_cur == "USD") {
-                                                            $item_custom_cur = "$";
-                                                        }
-                                                        if ($fee->item_custom_cur == "BRL") {
-                                                            $item_custom_cur = "R$";
-                                                        }
-                                                        echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
-                                                        ?></label>
-                                                </div>
-                                                <?php
-                                            }
-                                        }
-                                        #No fees are within todays date range.
-                                        if ($isfees == "N") {
-                                            ?>
-                                            <p class="reg_fees_update">  <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?>
-                                                <?php _e('Please update fee dates!', 'evrplus_language'); ?></p>
-                                            <?php #if no fees set hidden reg type to WAIT   ?>
-                                            <input type="hidden" name="reg_type" value="WAIT" />
-                                        <?php } ?>
-                                        <br />
-                                        <?php
-                                        #Display the Total Boxes with Tax
-                                        if ($company_options['use_sales_tax'] == "Y") {
-                                            ?>
-                                            <table>
-                                                <tr><td><b><?php _e('Registration Fees', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
-                                                <tr><td><b><?php _e('Sales Tax', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
-
-                                                <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
-                                                    <tr class="eventplus-discount-info">
-                                                        <td><b><?php _e('Discount', 'evrplus_language'); ?></b></td>
-                                                        <td><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
-                                                    </tr>
-                                                <?php else: ?>
-                                                    <input ype="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
-                                                <?php endif; ?>
-                                                <?php if ($fee->item_price > 0): ?>
-                                                    <tr>
-                                                        <td><b><?php _e('Total', 'evrplus_language'); ?></b></td>
-                                                        <td>
-                                                            <input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                            <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                        </td>
-                                                    </tr>
-                                                <?php else: ?>
-                                                    <tr>
-                                                        <td colspan="2">
-                                                            <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                        </td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                            </table>
-                                        <?php } else {  #Display Total Boxes without Tax 
-                                            ?>
-
-                                            <b>
-                                                <?php if ($fee->item_price > 0): ?>
-                                                    <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
-                                                        <div class="eventplus-discount-info">
-                                                            <?php _e('Registration Fees', 'evrplus_language'); ?>
-                                                            <input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-
-
-                                                            <?php _e('Discount', 'evrplus_language'); ?>
-                                                            <input style="width: 100px" type="text" name="discount" id="discount" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-
-                                                        </div>
-                                                    <?php else: ?>
-                                                        <input type="hidden" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                        <input type="hidden" name="discount" id="discount" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-
-                                                    <?php endif; ?>
-                                                    <div>
-                                                        <?php _e('Total', 'evrplus_language'); ?>
-                                                        <input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                        <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-
-                                                    </div>
-                                                <?php else: ?>
-                                                    <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-
-                                                <?php endif; ?>
-                                            </b>
-                                        <?php } ?>
-                                        <br />
-                                        <br />
-                                    <?php } else {
-                                        ?>
-                                        <p class="reg_fees_update">
-                                            <?php _e('No Fees Have Been Setup For This Event!', 'evrplus_language'); ?>
-                                            <?php _e('Registration for this event can not be taken at this time.', 'evrplus_language'); ?>
-                                        </p>
-                                        <?php
-                                    }
-                                } else {
-                                    ?>
-                                    <p class="reg_fees_update"><?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
-                                        <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
-                                    </p>
-                                    <br />
-                                    <input type="checkbox" onclick="mySubmit.disabled = false" name="request" value="Waitlist" /> 
-                                    <?php _e('Put me on the waitlist.', 'evrplus_language'); ?>
-                                    <input type="hidden" name="reg_type" value="WAIT" />
-                                <?php } ?>
-                                <br />
-                                <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != "") { ?>
-                                    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
-                                    <script type="text/javascript">
-                                        jQuery(document).ready(function () {
-                                            jQuery("#mySubmit").click(function () {
-                                                if (grecaptcha.getResponse() == "") {
-                                                    alert("Please fill the captcha !");
-                                                    return false;
-                                                }
-                                            });
-                                        });
-                                    </script>
-                                    <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
-                                    <?php
-                                }
-                                ?>
-                                <?php
-                                if ($term_c == 'Y') {
-                                    echo '<p><input type="checkbox" name="accept_term" required/>' . __('I accept the terms and conditions', 'evrplus_language') . '</p>';
-                                    echo '<p><div style="width:100%;height:90px;overflow-y:scroll;">' . html_entity_decode($term_desc) . '</div></p>';
-                                }
-                                ?>
-                                <input type="hidden" name="action" value="confirm"/>
-                                <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
-                                <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
-                                <div  class="regform_buttons">
-                                    <input type="submit" name="mySubmit" id="mySubmit" disabled="true" value="<?php _e('Submit', 'evrplus_language'); ?>" />
-                                    <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
+                    if ($counter_checks == 'Y'):
+                        $sql_status = "SELECT * FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
+                        $recurring_status_ex = $wpdb->get_results($sql_status);
+                        $recurring_status = $recurring_status_ex[0]->recurrence_choice;
+                        if ($recurring_status == 'no'):
+                            ?>
+                            <div class="coun8">
+                                <div id="evrplus_counter" class="redCountdownDemo"></div>
+                                <div class="timer">
+                                    <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
+                                    <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
+                                    <div class="min"><?php _e('Minutes', 'evrplus_language'); ?></div>
+                                    <div class="sec"><?php _e('Seconds', 'evrplus_language'); ?></div>
                                 </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php
+                        $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
+                        $resultEndDate = $wpdb->get_var($sqlEndDate);
 
-                                <script type="text/javascript">
-                                    jQuery(document).ready(function ($) {
-                                        if (jQuery('.eventplus-ddl-items').val() >= 0) {
-                                            jQuery('#mySubmit').removeAttr('disabled');
+                        if (isset($_GET['recurr']))
+                            $resultEndDate = date_i18n('d-m-Y', $_GET['recurr']);
+                        elseif ($recurr)
+                            $resultEndDate = date_i18n('d-m-Y', $recurr);
+                        $close_dt = $end_date . " " . $end_time;
+                        ?>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function ($) {
+                                var endDate = new Date(<?php echo strtotime($resultEndDate) ?>);
+                                $('#evrplus_counter').redCountdown({
+                                    end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
+                                    labels: true,
+                                    style: {
+                                        element: "",
+                                        textResponsive: .5,
+                                        daysElement: {
+                                            gauge: {
+                                                thickness: .2,
+                                                bgColor: "#cccccc",
+                                                fgColor: "#1ABC9C"
+                                            },
+                                            textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                                        },
+                                        hoursElement: {
+                                            gauge: {
+                                                thickness: .2,
+                                                bgColor: "#cccccc",
+                                                fgColor: "#2980B9"
+                                            },
+                                            textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                                        },
+                                        minutesElement: {
+                                            gauge: {
+                                                thickness: .2,
+                                                bgColor: "#cccccc",
+                                                fgColor: "#8E44AD"
+                                            },
+                                            textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                                        },
+                                        secondsElement: {
+                                            gauge: {
+                                                thickness: .2,
+                                                bgColor: "#cccccc",
+                                                fgColor: "#F39C12"
+                                            },
+                                            textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
                                         }
+                                    },
+                                    onEndCallback: function () {
 
-                                        jQuery('.eventplus-ddl-items').trigger('change');
-                                    });
-                                </script>
-                            </form>
-                        <?php } ?>
+                                    }});
+                            });
+                        </script>
+                        <?php
+                    endif;
+                    ?>
+                    <div class="ac8ion">
+                        <?php if ($disable_event_reg != 'Y'): ?>
+                            <?php if ($outside_reg == "Y"): ?>
+                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                            <?php else: ?>
+                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if ($more_info != ""): ?>
+                            <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
+                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                           <?php endif; ?>
                     </div>
+
+                    <?php if ($disable_event_reg != "Y"): ?>
+                        <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
+                        <script>
+                                var discountSettings = new Array();
+                        </script>
+                        <?php
+                        $oEventDiscounts = new EventPlus_Models_Events_Discounts();
+                        $discountSettings = array(); //$oEventDiscounts->getSettings($event_id);
+
+                        $discountPercentage = 0;
+                        if (count($discountSettings) > 0 && is_array($discountSettings)) {
+                            $discountDataset = EventPlus_Helpers_Event::getPercentageDataset($discountSettings);
+
+                            if (count($discountDataset) > 0) {
+                                ?>
+                                <script>
+                <?php foreach ($discountDataset as $qty => $percentage): ?>
+                                        discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
+                <?php endforeach; ?>
+                                </script>
+                                <?php
+                            }
+                        }
+                        ?>
+                        <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
+
+                        <div class="col-md-10 col-md-offset-1 col-xs-12 regis8er-form" id="evrplusRegForm" style="display: none;">
+                            <?php if ($expiration_date <= $today): ?>
+                                <?php
+                                echo '<div class="info-m3ssages">';
+                                _e('Registration is closed for this event.', 'evrplus_language');
+                                _e('For more information or questions, please email: ', 'evrplus_language');
+                                echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
+                                ?>
+                            <?php else: ?>
+                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="mySubmit.disabled = true;
+                                        return validateForm(this)">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12 fi3ld gr33n fi3ld-with-icon us3r">
+                                            <input type="text" name="first-name" id="first-name" placeholder="First Name">
+                                            <span class="valida8ion-msg gr33n">Success State</span>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                            <input type="text" name="last-name" id="last-name" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
+                                            <input type="text" name="email-address" id="email-address" placeholder="Email Address">
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12 fi3ld r3d fi3ld-with-icon te7">
+                                            <input type="text" name="phone" id="phone" placeholder="Phone Number">
+                                            <span class="valida8ion-msg r3d">This text will explain what you have to write in the input above.</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 fi3ld fi3ld-with-icon addr3ss">
+                                            <input type="text" name="address" id="address" placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4 col-xs-12 fi3ld">
+                                            <select name="country" id="country">
+                                                <option>Country</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12 fi3ld">
+                                            <input type="text" name="city" id="city" placeholder="City">
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12 fi3ld">
+                                            <input type="text" name="postal-code" id="postal-code" placeholder="Postal Code">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 fi3ld">
+                                            <input type="text" name="text-field" id="text-field" placeholder="Text Field">
+                                        </div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <textarea name="textarea" id="textarea" placeholder="Text Area" rows="8"></textarea>
+                                        </div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <p>These are the radio buttons:</p>
+                                            <label class="radi0"><input type="radio" name="radio" value="yes"> Yes</label>
+                                            <label class="radi0"><input type="radio" name="radio" value="no"> No</label>
+                                        </div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <p>These are the check marks:</p>
+                                            <label class="checkb0x"><input type="checkbox" name="choice-1" value="1"> Choice 1</label>
+                                            <label class="checkb0x"><input type="checkbox" name="choice-2" value="2"> Choice 2</label>
+                                            <label class="checkb0x"><input type="checkbox" name="choice-3" value="3"> Choice 3</label>
+                                        </div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <h3 class="section-ti8le"><i class="fa fa-calculator"></i> Event Fees</h3>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> You must select atleast one item</div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
+                                            <select name="regular" id="regular">
+                                                <option>Regular Ticket</option>
+                                            </select>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
+                                            <select name="vip" id="vip">
+                                                <option>VIP Ticket</option>
+                                            </select>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-md-5 col-sm-8 col-xs-12">
+                                            <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="60%">Registration Fees</td>
+                                                        <td width="40%" align="right">$ 0.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sales Tax</td>
+                                                        <td align="right">$ 0.00</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td>Total</td>
+                                                        <td align="right">$ 0.00</td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <div class="g-recaptcha" data-sitekey="6LdGyQwUAAAAAG7qcMyUY-9MN9duCFvgr0eJLuS6"></div>
+                                        </div>
+                                        <div class="col-xs-12 fi3ld">
+                                            <label class="checkb0x"><input type="checkbox" name="terms" value="1"> Accept the terms and conditions</label>
+                                            <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10">Our WordPress Events plugin is an out of the box solution for event managers, workshop managers, seminars, gym classes, and just about any type of public or private events. With our Events Calendar plugin you can display all your events in one full width calendar, visitors can filter events on a monthly basis and you can display multiple calendars at once.
+
+                                                                                                                    With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
+                                        </div>
+                                        <div class="col-xs-12 fi3ld-buttons">
+                                            <input type="submit" name="submit" id="submit" value="Submit">
+                                            <input type="reset" name="reset" id="reset" value="Reset">
+                                        </div>
+                                    </div>
+                                </form>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
+                <div class="clearfix"></div>
+            </div>
         </div>
-    </div>        
+    </div>
     <?php
 }

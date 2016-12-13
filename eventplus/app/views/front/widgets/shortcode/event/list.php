@@ -58,7 +58,7 @@
             <div class="events-list">
                 <div class="i8em" style="border-right-color: <?php echo $style_event_catgry; ?>;">
                     <div class="col-lg-2 col-sm-3 col-xs-4 t7umb">
-                        <a href="single-event.php"><img src="<?php echo $imgSrc; ?>" alt="<?php echo $event_name; ?>"></a>
+                        <a href="<?php echo $event_link; ?>"><img src="<?php echo $imgSrc; ?>" alt="<?php echo $event_name; ?>"></a>
                         <?php
                         if ($company_options['show_num_seats'] !== 'no'):
 
@@ -106,7 +106,7 @@
                                 8276 Walnut Blvd. Jonesboro. GA. 30238
                             </span>*/?>
                         </div>
-                        <p class="d3sc"><?php echo evrplus_Truncate(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); ?></p>
+                        <p class="d3sc"><?php echo evrplus_Truncate(html_entity_decode(stripslashes($event->event_desc)), 150, ' '); ?></p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
