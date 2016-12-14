@@ -90,6 +90,8 @@ if ($rows) {
                             $noImage = true;
                             ?>
                             <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
+                        <?php }else{ ?>
+                            <div style="height:100px;">&nbsp;</div>
                         <?php } ?>
                     </div>
                     <h2 class="ti8le"><?php echo $event_name; ?></h2>
@@ -136,18 +138,18 @@ if ($rows) {
                             <i class="fa fa-2x fa-map-marker"></i>
                             <div class="d3sc">
                                 <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
-                                
+
                                 <?php
                                 $eventLocationStr = stripslashes($event_location);
-                                if($event_address != ''){
+                                if ($event_address != '') {
                                     $eventLocationStr .= '<br />' . $eventLocationStr;
                                 }
-                                if($event_city != ''){
+                                if ($event_city != '') {
                                     $eventLocationStr .= '<br />' . $event_city;
-                                    if($event_state != ''){
+                                    if ($event_state != '') {
                                         $eventLocationStr .= ', ' . $event_state;
                                     }
-                                    if($event_postal != ''){
+                                    if ($event_postal != '') {
                                         $eventLocationStr .= ', ' . $event_postal;
                                     }
                                 }
@@ -218,13 +220,15 @@ if ($rows) {
                         $recurring_status = $recurring_status_ex[0]->recurrence_choice;
                         if ($recurring_status == 'no'):
                             ?>
-                            <div class="coun8">
-                                <div id="evrplus_counter" class="redCountdownDemo"></div>
-                                <div class="timer">
-                                    <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
-                                    <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
-                                    <div class="min"><?php _e('Minutes', 'evrplus_language'); ?></div>
-                                    <div class="sec"><?php _e('Seconds', 'evrplus_language'); ?></div>
+                            <div class="ccoun8" id="details">
+                                <div class="evrplus_counter">
+                                    <div id="evrplus_counter" class="redCountdownDemo"></div>
+                                    <div class="timer">
+                                        <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
+                                        <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
+                                        <div class="min"><?php _e('Minutes', 'evrplus_language'); ?></div>
+                                        <div class="sec"><?php _e('Seconds', 'evrplus_language'); ?></div>
+                                    </div>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -439,7 +443,7 @@ if ($rows) {
                                             <label class="checkb0x"><input type="checkbox" name="terms" value="1"> Accept the terms and conditions</label>
                                             <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10">Our WordPress Events plugin is an out of the box solution for event managers, workshop managers, seminars, gym classes, and just about any type of public or private events. With our Events Calendar plugin you can display all your events in one full width calendar, visitors can filter events on a monthly basis and you can display multiple calendars at once.
 
-                                                                                                                    With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
+                                                                                                                                With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
                                         </div>
                                         <div class="col-xs-12 fi3ld-buttons">
                                             <input type="submit" name="submit" id="submit" value="Submit">
