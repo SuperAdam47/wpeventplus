@@ -581,7 +581,7 @@ if ($rows) {
                                                         <td><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
                                                     </tr>
                                                 <?php else: ?>
-                                                    <input ype="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
+                                                    <input type="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
                                                 <?php endif; ?>
                                                 <?php if ($fee->item_price > 0): ?>
                                                     <tr>
