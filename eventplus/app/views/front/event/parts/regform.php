@@ -95,13 +95,13 @@ if ($rows) {
                     <h2 class="ti8le"><?php echo $event_name; ?></h2>
                 </div>
                 <div class="col-xs-12">
-                    <div class="me8a">
+                    <div class="row-eq-height me8a">
                         <div class="col-xs-6 it3m">
                             <i class="fa fa-2x fa-calendar"></i>
                             <div class="d3sc">
                                 <h3 class="titl3">
                                     <?php echo $d_format; ?>
-                                    <?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
+                                    <?php if ($end_date != $start_date and $end_year != '2050'): ?><br /> <?php echo __('to', 'evrplus_language'); ?> <br /><?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
                                 </h3>
                             </div>
                         </div>
@@ -125,13 +125,13 @@ if ($rows) {
                         $event_state_map = str_replace(" ", "+", $event_state);
                         $event_country_map = str_replace(" ", "+", $event_country);
                         if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']))
-                            echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                            echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                         else
-                            echo '<iframe width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                            echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                         ?>
                     <?php endif; ?>
 
-                    <div class="me8a al8">
+                    <div class="row-eq-height me8a al8">
                         <div class="col-xs-6 it3m">
                             <i class="fa fa-2x fa-map-marker"></i>
                             <div class="d3sc">

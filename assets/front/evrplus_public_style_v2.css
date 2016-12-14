@@ -82,17 +82,17 @@ table td.even {
 /**/
 /*Style for Registration Form Layout */
 /**/
-#evrplusRegForm {
+#evrplusRegFormOld {
     width: 95%;
     margin-left: 30px;
 }
 
-#evrplusRegForm .evrplus_regform ul li {
+#evrplusRegFormOld .evrplus_regform ul li {
     list-style: none;
     padding-bottom: 5px;
 }
 
-#evrplusRegForm ul li {
+#evrplusRegFormOld ul li {
     list-style: none;
     padding-bottom: 5px;
 }
@@ -106,42 +106,42 @@ table td.even {
 }
 
 /*Textfield style*/
-#evrplusRegForm li .fieldbox {
+#evrplusRegFormOld li .fieldbox {
     height: 15px;
     padding-left: 5px;
 }
 
-#evrplusRegForm li .fieldbox input {
+#evrplusRegFormOld li .fieldbox input {
     height: 15px;
     padding-top: 5px;
     width: 300px;
 }
 
-#evrplusRegForm li .couponbox {
+#evrplusRegFormOld li .couponbox {
     height: 20px;
     padding-left: 5px;
 }
 
-#evrplusRegForm li .couponbox input {
+#evrplusRegFormOld li .couponbox input {
     height: 20px;
     padding-top: 5px;
     width: 200px;
 }
 
 /*Textarea style*/
-#evrplusRegForm li .msgbox {
+#evrplusRegFormOld li .msgbox {
     height: 100px;
     padding-left: 5px;
 }
 
-#evrplusRegForm li .msgbox textarea {
+#evrplusRegFormOld li .msgbox textarea {
     height: 100px;
     padding-top: 5px;
     width: 385px;
 }
 
 /*Radio Style & Checkbox Style*/
-#evrplusRegForm .radio {
+#evrplusRegFormOld .radio {
     margin-top: 0;
     margin-bottom: 0;
     text-indent: -15px;
@@ -724,7 +724,7 @@ img.btn_close {
     font-weight: 700 !important;
 }
 
-#evrplusRegForm form input[type="text"] {
+#evrplusRegFormOld form input[type="text"] {
     border: 6px solid #F7F9FA;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;

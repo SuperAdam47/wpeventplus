@@ -30,14 +30,14 @@ top:8px;
 padding:0 10px;
 }
 
-.evrplus_addToCalendar {
+.evrplus_addToCalendarOld {
 display:block;
 float:right;
 width:200px;
 text-decoration:none;
 }
 
-.evrplus_addToCalendar:hover {
+.evrplus_addToCalendarOld:hover {
 text-decoration:none;
 }
 
@@ -345,7 +345,7 @@ width:100%;
 position:static;
 }
 
-.evrplus_addToCalendar {
+.evrplus_addToCalendarOld {
 float:none;
 margin:15px auto;
 }
