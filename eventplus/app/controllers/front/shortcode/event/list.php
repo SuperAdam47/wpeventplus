@@ -4,7 +4,7 @@ class eplus_front_shortcode_event_list_controller extends EventPlus_Abstract_Con
 
     function index() {
   
-        wp_enqueue_style('eventplus-fonts-fa');
+       
         
         $oEvents = new EventPlus_Models_Events();
         $rows = $oEvents->getEventsBySettings();

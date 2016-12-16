@@ -50,7 +50,11 @@ abstract class EventPlus_Abstract_Controller {
     protected $oView = null;
 
     function __construct($oDispatcher, array $args = array()) {
-
+        
+        if(is_admin() == false){
+             wp_enqueue_style('eventplus-fonts-fa');
+        }
+        
         $this->oDispatcher = $oDispatcher;
         $this->oView = EventPlus::factory('View')
                 ->setDirectory($this->oDispatcher->getViewDirectory());
