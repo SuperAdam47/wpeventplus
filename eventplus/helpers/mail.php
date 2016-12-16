@@ -123,7 +123,8 @@ class EventPlus_Helpers_Mail {
                 }
             }
         }
-
+        
+        
         $bindParams = array(
             "[id]" => $this->attendeeRow['id'],
             "[category_list]" => $category_list_str,
@@ -158,8 +159,10 @@ class EventPlus_Helpers_Mail {
             "[end_time]" => $end_time,
             "[num_people]" => number_format($this->attendeeRow['quantity'], 0),
             "[attendees]" => $attendee_names,
-            "[tickets]" => $ticket_list
+            "[tickets]" => $ticket_list,
+            "[ADMIN_ATTENDEE_LINK]" => $this->adminUrl('admin_attendees/details', array('event_id' => $this->eventRow['id'], 'attendee_id' => $this->attendeeRow['id']))
         );
+        
 
         foreach ($bindParams as $searchValue => $replaceValue) {
             $str = str_replace($searchValue, $replaceValue, $str);
