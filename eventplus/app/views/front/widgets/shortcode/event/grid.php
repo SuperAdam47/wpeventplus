@@ -17,7 +17,8 @@ if (count($rows)):
                         <?php } ?>
                     </ul>
                 </div>
-                <div id="evr-grid">
+                <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>">
+               
                 <?php endif; ?>
 
                 <?php
@@ -82,17 +83,5 @@ if (count($rows)):
                 <?php endforeach; ?>
             </div>
         </div>
-        <script type="text/javascript">
-            jQuery(function ($) {
-                $('#evr-grid').mediaBoxes({
-                    filterContainer: '#evr-filter',
-                    search: '#evr-search',
-                    boxesToLoadStart: <?php echo $init_events; ?>,
-                    boxesToLoad: <?php echo $load_new_events; ?>,
-                    horizontalSpaceBetweenBoxes: 20,
-                    verticalSpaceBetweenBoxes: 20,
-                });
-            });
-        </script>
     </div>
 <?php endif; 
