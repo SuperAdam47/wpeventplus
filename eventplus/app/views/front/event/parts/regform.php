@@ -90,7 +90,7 @@ if ($rows) {
                             $noImage = true;
                             ?>
                             <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
-                        <?php }else{ ?>
+                        <?php } else { ?>
                             <div style="height:100px;">&nbsp;</div>
                         <?php } ?>
                     </div>
@@ -302,7 +302,7 @@ if ($rows) {
                         <?php endif; ?>
                         <?php if ($more_info != ""): ?>
                             <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
-                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                                            return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
                            <?php endif; ?>
                     </div>
 
@@ -341,48 +341,73 @@ if ($rows) {
                                 echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
                                 ?>
                             <?php else: ?>
-                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="mySubmit.disabled = true;
-                                        return validateForm(this)">
+                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>">
                                     <div class="row">
-                                        <div class="col-sm-6 col-xs-12 fi3ld gr33n fi3ld-with-icon us3r">
-                                            <input type="text" name="first-name" id="first-name" placeholder="First Name">
-                                            <span class="valida8ion-msg gr33n">Success State</span>
+                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                            <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
                                         </div>
                                         <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                            <input type="text" name="last-name" id="last-name" placeholder="Last Name">
+                                            <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
-                                            <input type="text" name="email-address" id="email-address" placeholder="Email Address">
+                                            <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
                                         </div>
-                                        <div class="col-sm-6 col-xs-12 fi3ld r3d fi3ld-with-icon te7">
-                                            <input type="text" name="phone" id="phone" placeholder="Phone Number">
-                                            <span class="valida8ion-msg r3d">This text will explain what you have to write in the input above.</span>
-                                        </div>
+                                        <?php if ($inc_phone == "Y"): ?>
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
+                                                <input class="" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 fi3ld fi3ld-with-icon addr3ss">
-                                            <input type="text" name="address" id="address" placeholder="Address">
-                                        </div>
+                                        <?php 
+                                        if ($inc_address == "Y"): ?>
+
+                                            <div class="<?php if($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
+                                                <input type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($inc_country == "Y"): ?>
+                                            <div class="<?php if($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
+                                                <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-4 col-xs-12 fi3ld">
-                                            <select name="country" id="country">
-                                                <option>Country</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-4 col-xs-12 fi3ld">
-                                            <input type="text" name="city" id="city" placeholder="City">
-                                        </div>
-                                        <div class="col-sm-4 col-xs-12 fi3ld">
-                                            <input type="text" name="postal-code" id="postal-code" placeholder="Postal Code">
-                                        </div>
+
+                                        <?php if ($inc_city == "Y"): ?>
+                                            <div class="col-sm-4 col-xs-12 fi3ld">
+                                                <input type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($inc_state == "Y"): ?>
+                                            <div class="col-sm-4 col-xs-12 fi3ld">
+                                                <input type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($inc_state == "Y"): ?>
+                                            <div class="col-sm-4 col-xs-12 fi3ld">
+                                                <input type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12 fi3ld">
-                                            <input type="text" name="text-field" id="text-field" placeholder="Text Field">
+                                        <?php
+                                        $company_form_fields = array(
+                                            'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
+                                            'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
+                                            'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
+                                            'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
+                                            'co_zip' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_copostal),
+                                            'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
+                                        );
+                                        ?>
+
+                                        <div class="col-sm-6 col-xs-12 fi3ld">
+                                            <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
                                         </div>
+
                                         <div class="col-xs-12 fi3ld">
                                             <textarea name="textarea" id="textarea" placeholder="Text Area" rows="8"></textarea>
                                         </div>
@@ -443,7 +468,7 @@ if ($rows) {
                                             <label class="checkb0x"><input type="checkbox" name="terms" value="1"> Accept the terms and conditions</label>
                                             <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10">Our WordPress Events plugin is an out of the box solution for event managers, workshop managers, seminars, gym classes, and just about any type of public or private events. With our Events Calendar plugin you can display all your events in one full width calendar, visitors can filter events on a monthly basis and you can display multiple calendars at once.
 
-                                                                                                                                With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
+                                                                                                                                                                                                        With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
                                         </div>
                                         <div class="col-xs-12 fi3ld-buttons">
                                             <input type="submit" name="submit" id="submit" value="Submit">
