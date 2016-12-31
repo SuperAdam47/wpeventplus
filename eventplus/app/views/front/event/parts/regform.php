@@ -302,7 +302,7 @@ if ($rows) {
                         <?php endif; ?>
                         <?php if ($more_info != ""): ?>
                             <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
-                                            return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
                            <?php endif; ?>
                     </div>
 
@@ -361,15 +361,14 @@ if ($rows) {
                                         <?php endif; ?>
                                     </div>
                                     <div class="row">
-                                        <?php 
-                                        if ($inc_address == "Y"): ?>
+                                        <?php if ($inc_address == "Y"): ?>
 
-                                            <div class="<?php if($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
+                                            <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
                                                 <input type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
                                         <?php if ($inc_country == "Y"): ?>
-                                            <div class="<?php if($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
+                                            <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
                                                 <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
@@ -386,7 +385,7 @@ if ($rows) {
                                                 <input type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
-                                        <?php if ($inc_state == "Y"): ?>
+                                        <?php if ($inc_zip == "Y"): ?>
                                             <div class="col-sm-4 col-xs-12 fi3ld">
                                                 <input type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
                                             </div>
@@ -404,9 +403,13 @@ if ($rows) {
                                         );
                                         ?>
 
-                                        <div class="col-sm-6 col-xs-12 fi3ld">
-                                            <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
-                                        </div>
+                                        <?php foreach ($company_form_fields as $field => $fieldSet): ?>
+                                            <?php if ($fieldSet['flag']): ?>
+                                                <div class="col-sm-6 col-xs-12 fi3ld">
+                                                    <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
 
                                         <div class="col-xs-12 fi3ld">
                                             <textarea name="textarea" id="textarea" placeholder="Text Area" rows="8"></textarea>
@@ -468,7 +471,7 @@ if ($rows) {
                                             <label class="checkb0x"><input type="checkbox" name="terms" value="1"> Accept the terms and conditions</label>
                                             <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10">Our WordPress Events plugin is an out of the box solution for event managers, workshop managers, seminars, gym classes, and just about any type of public or private events. With our Events Calendar plugin you can display all your events in one full width calendar, visitors can filter events on a monthly basis and you can display multiple calendars at once.
 
-                                                                                                                                                                                                        With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
+                                                                                                                                                                                                                                With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
                                         </div>
                                         <div class="col-xs-12 fi3ld-buttons">
                                             <input type="submit" name="submit" id="submit" value="Submit">
