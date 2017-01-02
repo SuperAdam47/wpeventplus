@@ -341,7 +341,8 @@ if ($rows) {
                                 echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
                                 ?>
                             <?php else: ?>
-                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>">
+                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  onSubmit="mySubmit.disabled = true;
+                                return validateForm(this)">
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
                                             <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
@@ -356,7 +357,7 @@ if ($rows) {
                                         </div>
                                         <?php if ($inc_phone == "Y"): ?>
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
-                                                <input class="" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
+                                                <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
                                     </div>
@@ -464,16 +465,35 @@ if ($rows) {
                                             </table>
                                         </div>
                                         <div class="clearfix"></div>
-                                        <div class="col-xs-12 fi3ld">
-                                            <div class="g-recaptcha" data-sitekey="6LdGyQwUAAAAAG7qcMyUY-9MN9duCFvgr0eJLuS6"></div>
-                                        </div>
-                                        <div class="col-xs-12 fi3ld">
-                                            <label class="checkb0x"><input type="checkbox" name="terms" value="1"> Accept the terms and conditions</label>
-                                            <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10">Our WordPress Events plugin is an out of the box solution for event managers, workshop managers, seminars, gym classes, and just about any type of public or private events. With our Events Calendar plugin you can display all your events in one full width calendar, visitors can filter events on a monthly basis and you can display multiple calendars at once.
+                                        <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                                            <div class="col-xs-12 fi3ld">
+                                                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
+                                                <script type="text/javascript">
+                                        jQuery(document).ready(function () {
+                                            jQuery("#mySubmit").click(function () {
+                                                if (grecaptcha.getResponse() == "") {
+                                                    alert("Please fill the captcha !");
+                                                    return false;
+                                                }
+                                            });
+                                        });
+                                                </script>
+                                                <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
+                                            </div>
+                                        <?php endif; ?>
 
-                                                                                                                                                                                                                                With our WordPress Event Manager plugin you will not need to pay for extra features like other plugin authors charge. You get all the features for the same price: WordPress event list, Events Registration and Management, WordPress Events Grid to display your events in a stylish Event Grid, Events Sidebar Widget, WordPress events dashboard for all event statistics, Events Map integration, Responsive events, and so much more.</textarea>
-                                        </div>
+
+                                        <?php if ($term_c == 'Y'): ?>
+                                            <div class="col-xs-12 fi3ld">
+                                                <label class="checkb0x"><input type="checkbox" name="accept_term" value="1" required /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                            </div>
+                                        <?php endif; ?>
                                         <div class="col-xs-12 fi3ld-buttons">
+                                            <input type="hidden" name="action" value="confirm"/>
+                                            <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
+                                            <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
+
                                             <input type="submit" name="submit" id="submit" value="Submit">
                                             <input type="reset" name="reset" id="reset" value="Reset">
                                         </div>

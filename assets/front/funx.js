@@ -127,6 +127,7 @@ function validateConfirmationForm(confForm) {
     }
     return true;
 }
+
 function validateForm(form) {
     var msg = "";
     if (form.fname.value == "") {
