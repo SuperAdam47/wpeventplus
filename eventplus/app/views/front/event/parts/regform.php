@@ -342,7 +342,7 @@ if ($rows) {
                                 ?>
                             <?php else: ?>
                                 <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  onSubmit="mySubmit.disabled = true;
-                                return validateForm(this)">
+                                        return validateForm(this)">
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
                                             <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
@@ -415,11 +415,26 @@ if ($rows) {
                                         <div class="col-xs-12 fi3ld">
                                             <textarea name="textarea" id="textarea" placeholder="Text Area" rows="8"></textarea>
                                         </div>
-                                        <div class="col-xs-12 fi3ld">
-                                            <p>These are the radio buttons:</p>
-                                            <label class="radi0"><input type="radio" name="radio" value="yes"> Yes</label>
-                                            <label class="radi0"><input type="radio" name="radio" value="no"> No</label>
-                                        </div>
+
+                                        <?php
+                                        $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
+                                        if ($questions) :
+                                            ?>
+                                            <?php
+                                            foreach ($questions as $question):
+                                                $title = '';
+                                                if ($question->remark) {
+                                                    $title = $question->remark;
+                                                }
+                                                ?>
+                                                <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
+                                                    <p><?php echo $question->question; ?></p>
+                                                    <?php echo $this->View('front/event\parts\inc\form_fields.php'); ?>
+                                                    <label class="radi0"><input type="radio" name="radio" value="yes"> Yes</label>
+                                                    <label class="radi0"><input type="radio" name="radio" value="no"> No</label>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                         <div class="col-xs-12 fi3ld">
                                             <p>These are the check marks:</p>
                                             <label class="checkb0x"><input type="checkbox" name="choice-1" value="1"> Choice 1</label>
