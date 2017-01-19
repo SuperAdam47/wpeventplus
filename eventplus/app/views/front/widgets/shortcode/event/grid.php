@@ -4,10 +4,11 @@ extract($invoke_params);
 if (count($rows)):
     ?>
 
-    <?php if ($cats): ?>
 
-        <div class="grid-section">
-            <div class="content grid-container">
+
+    <div class="grid-section">
+        <div class="content grid-container">
+            <?php if ($cats): ?>
                 <div class="filters-container">
                     <input type="text" id="evr-search" class="media-boxes-search" placeholder="<?php _e('Search By Title', 'evrplus_language'); ?>">
                     <ul class="media-boxes-filter" id="evr-filter">
@@ -17,9 +18,9 @@ if (count($rows)):
                         <?php } ?>
                     </ul>
                 </div>
-                <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>">
-               
-                <?php endif; ?>
+            <?php endif; ?>
+
+            <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>">
 
                 <?php
                 foreach ($rows as $event) :
@@ -43,9 +44,9 @@ if (count($rows)):
                     if (isset($company_options['time_format']) && $company_options['time_format'] == '24hrs') {
                         $start_time = date('H:i', strtotime($start_time));
                     }
-                    
+
                     $catStr = '';
-                    if(is_array($this_cats)){
+                    if (is_array($this_cats)) {
                         foreach ($this_cats as $cat) {
                             $catStr .= EventPlus_Helpers_Event::get_category_identifier_by_id($cat) . ' ';
                         }
@@ -71,17 +72,19 @@ if (count($rows)):
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
-                                <?php 
-								$content = html_entity_decode($event->event_desc);
-								
-								echo $con = substr(strip_tags(stripslashes($content)),0,110) . "..."; 
-								//echo EventPlus_Helpers_Funx::truncateGrid(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); ?>
+                                <?php
+                                $content = html_entity_decode($event->event_desc);
+
+                                echo $con = substr(strip_tags(stripslashes($content)), 0, 110) . "...";
+                                //echo EventPlus_Helpers_Funx::truncateGrid(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); 
+                                ?>
                             </div>
                             <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">Read more</a> </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+    <?php endforeach; ?>
             </div>
         </div>
     </div>
-<?php endif; 
+    <?php
+ endif; 
