@@ -67,6 +67,18 @@ if ($rows) {
     elseif ($recurr)
         $expiration_date = $recurr;
     $today = strtotime($current_dt);
+
+    $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
+    $resultEndDate = $wpdb->get_var($sqlEndDate);
+
+    if (isset($_GET['recurr']))
+        $resultEndDate = date_i18n('d-m-Y', $_GET['recurr']);
+    elseif ($recurr)
+        $resultEndDate = date_i18n('d-m-Y', $recurr);
+    $close_dt = $end_date . " " . $end_time;
+
+    #See how many seats are left available
+    $available = evrplus_get_open_seats($event->id, $event->reg_limit);
     ?>
     <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
     <div class="events-plus-2">
@@ -232,16 +244,7 @@ if ($rows) {
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <?php
-                        $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
-                        $resultEndDate = $wpdb->get_var($sqlEndDate);
 
-                        if (isset($_GET['recurr']))
-                            $resultEndDate = date_i18n('d-m-Y', $_GET['recurr']);
-                        elseif ($recurr)
-                            $resultEndDate = date_i18n('d-m-Y', $recurr);
-                        $close_dt = $end_date . " " . $end_time;
-                        ?>
                         <script type="text/javascript">
                             jQuery(document).ready(function ($) {
                                 var endDate = new Date(<?php echo strtotime($resultEndDate) ?>);
@@ -412,7 +415,7 @@ if ($rows) {
                                             <?php endif; ?>
                                         <?php endforeach; ?>
 
-                            
+
                                         <?php
                                         $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
                                         if ($questions) :
@@ -426,18 +429,20 @@ if ($rows) {
                                                 ?>
                                                 <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
                                                     <p><?php echo $question->question; ?></p>
-                                                    <?php echo $this->View('front/event/parts/inc/form_fields'); ?>
-                                                    <label class="radi0"><input type="radio" name="radio" value="yes"> Yes</label>
-                                                    <label class="radi0"><input type="radio" name="radio" value="no"> No</label>
+                                                    <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
                                                 </div>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
-                                        <div class="col-xs-12 fi3ld">
-                                            <p>These are the check marks:</p>
-                                            <label class="checkb0x"><input type="checkbox" name="choice-1" value="1"> Choice 1</label>
-                                            <label class="checkb0x"><input type="checkbox" name="choice-2" value="2"> Choice 2</label>
-                                            <label class="checkb0x"><input type="checkbox" name="choice-3" value="3"> Choice 3</label>
-                                        </div>
+
+                                        <?php if ($use_coupon == "Y"): ?>
+                                            <div class="col-xs-4 fi3ld"  title="<?php echo $title; ?>">
+                                                <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
+                                                <input type="text" name="coupon" id="coupon" value="" />
+                                            </div>
+            <?php endif;
+            ?>
+
+
                                         <div class="col-xs-12 fi3ld">
                                             <h3 class="section-ti8le"><i class="fa fa-calculator"></i> Event Fees</h3>
                                         </div>
@@ -477,7 +482,7 @@ if ($rows) {
                                             </table>
                                         </div>
                                         <div class="clearfix"></div>
-                                        <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+            <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
                                             <div class="col-xs-12 fi3ld">
                                                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
                                                 <script type="text/javascript">
@@ -492,15 +497,15 @@ if ($rows) {
                                                 </script>
                                                 <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
                                             </div>
-                                        <?php endif; ?>
+            <?php endif; ?>
 
 
-                                        <?php if ($term_c == 'Y'): ?>
+            <?php if ($term_c == 'Y'): ?>
                                             <div class="col-xs-12 fi3ld">
                                                 <label class="checkb0x"><input type="checkbox" name="accept_term" value="1" required /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                 <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
                                             </div>
-                                        <?php endif; ?>
+            <?php endif; ?>
                                         <div class="col-xs-12 fi3ld-buttons">
                                             <input type="hidden" name="action" value="confirm"/>
                                             <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
@@ -511,9 +516,9 @@ if ($rows) {
                                         </div>
                                     </div>
                                 </form>
-                            <?php endif; ?>
+        <?php endif; ?>
                         </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
                 </div>
                 <div class="clearfix"></div>
             </div>
