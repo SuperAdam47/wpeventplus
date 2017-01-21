@@ -463,7 +463,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             }
         }
 
- 
+
         if (!empty($params['company_options']['order_event_list'])) {
             $option = $params['company_options']['order_event_list'];
             $orderby2 = " $option ";
@@ -477,8 +477,8 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
         }
-        
-     
+
+
 
         return $this->getResults($sql);
     }
@@ -659,6 +659,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         }
 
         return $events;
+    }
+
+    function getComboDataset($params = array()) {
+        $sql = "SELECT id, event_name FROM " . $this->_table . "  ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
+        return $this->getWpDb()->get_results($sql, ARRAY_A);
     }
 
 }

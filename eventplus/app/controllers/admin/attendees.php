@@ -27,49 +27,49 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
     function index() {
 
-        if ($this->oEvent->id > 0) {
-            $record_limit = 15;
 
-            $p = new EventPlus_Pagination();
-            $totalRecords = $this->_model->getTotalAttendees($this->oEvent->id);
-            $p->items($totalRecords);
-            $p->limit($record_limit); // Limit entries per page
-            $p->target($this->adminUrl('admin_attendees', array('event_id' => $this->oEvent->id)));
+        $record_limit = 15;
 
-            if (!isset($_GET['paging']) || $_GET['paging'] == 0) {
-                $p->page = 1;
-            } else {
-
-                $p->page = (int) $_GET['paging'];
-            }
-
-            $p->currentPage($p->page);
-            $p->calculate(); // Calculates what to show
-
-            $p->parameterName('paging');
-
-            $p->adjacents(1); //No. of page away from the current page
-
-            $limit_str = "LIMIT " . ($p->page - 1) * $p->limit . ", " . $p->limit;
-
-            $params = $this->_request->getParams();
-
-            $params['event_id'] = $this->oEvent->id;
-            $params['limit_str'] = $limit_str;
-
-            $rows = $this->_model->getRecords($params);
-
-            $response = $this->oView->loadLayout('admin/layouts/attendees', 'admin/attendees/manage', array(
-                'rows' => $rows,
-                'p' => $p,
-            ));
-
-            $this->setResponse($response);
-        } else {
-            $response = $this->oView->loadLayout('admin/layouts/attendees', 'admin/attendees/landing');
-
-            $this->setResponse($response);
+        $event_id = 0;
+        if ($this->oEvent->id) {
+            $event_id = $this->oEvent->id;
         }
+
+        $p = new EventPlus_Pagination();
+        $totalRecords = $this->_model->getTotalAttendees($event_id);
+        $p->items($totalRecords);
+        $p->limit($record_limit); 
+        $p->target($this->adminUrl('admin_attendees', array('event_id' => $event_id)));
+
+        if (!isset($_GET['paging']) || $_GET['paging'] == 0) {
+            $p->page = 1;
+        } else {
+
+            $p->page = (int) $_GET['paging'];
+        }
+
+        $p->currentPage($p->page);
+        $p->calculate(); // Calculates what to show
+
+        $p->parameterName('paging');
+
+        $p->adjacents(1); //No. of page away from the current page
+
+        $limit_str = "LIMIT " . ($p->page - 1) * $p->limit . ", " . $p->limit;
+
+        $params = $this->_request->getParams();
+
+        $params['event_id'] = $this->oEvent->id;
+        $params['limit_str'] = $limit_str;
+
+        $rows = $this->_model->getRecords($params);
+
+        $response = $this->oView->loadLayout('admin/layouts/attendees', 'admin/attendees/manage', array(
+            'rows' => $rows,
+            'p' => $p,
+        ));
+
+        $this->setResponse($response);
     }
 
     function action_add() {
@@ -140,7 +140,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
         $this->setResponse($response);
     }
-    
+
     function action_details() {
 
         $attendee_id = intVal($this->_request->getParam('attendee_id'));
@@ -184,7 +184,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
         $this->redirect($this->adminUrl('admin_attendees', array('event_id' => $row['event_id'])));
     }
-    
+
     function action_delete_all() {
 
         $response = $this->_model->deleteRecordsByEventId($this->oEvent->id);
@@ -197,4 +197,5 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
         $this->redirect($this->adminUrl('admin_attendees', array('event_id' => $this->oEvent->id)));
     }
+
 }

@@ -14,8 +14,14 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
     }
     
     function getTotalAttendees($event_id) {
-        $sql = "SELECT count(1) as totRecords FROM " . $this->_table . " WHERE event_id = '" . (int) $event_id . "' LIMIT 1";
-
+        $sql = "SELECT count(1) as totRecords FROM " . $this->_table . " WHERE 1=1 ";
+        
+        if($event_id > 0){
+            $sql .= " AND event_id = '" . (int) $event_id . "'";
+        }
+        
+        $sql .= " LIMIT 1";
+        
         $row = $this->QuickArray($sql);
 
         return $row['totRecords'];
@@ -194,17 +200,19 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
 
     function getRecords($params, $type =  OBJECT) {
 
-        $sql = "SELECT *  FROM " . $this->_table . " WHERE 1=1  ";
+        $sql = "SELECT a.*, e.event_name FROM " . $this->_table . " a"
+                . " JOIN ".get_option('evr_event')." e on e.id = a.event_id"
+                . "  WHERE 1=1  ";
 
         if ($params['event_id']) {
-            $sql .= " AND event_id = '" . (int) $params['event_id'] . "'";
+            $sql .= " AND a.event_id = '" . (int) $params['event_id'] . "'";
         }
 
         if ($params['payment_status']) {
-            $sql .= " AND payment_status = '" . esc_sql($params['payment_status']) . "'";
+            $sql .= " AND a.payment_status = '" . esc_sql($params['payment_status']) . "'";
         }
 
-        $sql .= ' ORDER BY id DESC ';
+        $sql .= ' ORDER BY a.id DESC ';
 
         if ($params['limit_str'] != '') {
             $sql .= ' ' . $params['limit_str'];
