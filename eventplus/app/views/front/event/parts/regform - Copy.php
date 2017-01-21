@@ -85,7 +85,6 @@ if ($rows) {
                     $d_format = date_i18n($evrplus_date_format, $_GET['recurr']);
                 } elseif ($recurr)
                     $d_format = date_i18n($evrplus_date_format, $recurr);
-                
                 echo '<div class="col-sm-6 event_date_border"><div class="event_date_container"><p class="event_date" style="float:left;"><span class="dashicons dashicons-calendar-alt"></span> </p><div class="dashiconsText">' . $d_format . '<br />';
                 if ($end_date != $start_date and $end_year != '2050') {
                     echo "  -  " . date_i18n($evrplus_date_format, strtotime($event->end_date)) . '</p></p></div></div></div>';
@@ -582,7 +581,7 @@ if ($rows) {
                                                         <td><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
                                                     </tr>
                                                 <?php else: ?>
-                                                    <input ype="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
+                                                    <input type="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
                                                 <?php endif; ?>
                                                 <?php if ($fee->item_price > 0): ?>
                                                     <tr>

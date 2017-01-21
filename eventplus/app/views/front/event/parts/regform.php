@@ -79,6 +79,14 @@ if ($rows) {
 
     #See how many seats are left available
     $available = evrplus_get_open_seats($event->id, $event->reg_limit);
+
+    $oMeta = new EventPlus_Models_Events_Meta();
+    $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
+
+    $show_form_bool = 0;
+    if ($show_register_button == '' || !in_array(strtolower($show_register_button), array('y', 'n')) || strtolower($show_register_button) == 'n') {
+        $show_form_bool = 1;
+    }
     ?>
     <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
     <div class="events-plus-2">
@@ -335,157 +343,163 @@ if ($rows) {
                         ?>
                         <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
 
-                        <div class="col-md-10 col-md-offset-1 col-xs-12 regis8er-form" id="evrplusRegForm" style="display: none;">
+                        <?php
+                        if ($disable_event_reg != 'Y'):
+                            $eventplus_token = EventPlus_Helpers_Token::doToken($event_id);
+                            $pendingTokenRow = EventPlus_Helpers_Token::getPendingRow();
+                            ?>
+                            <div class="col-md-10 col-md-offset-1 col-xs-12 regis8er-form" id="evrplusRegForm" style="display: none;">
                             <?php if ($expiration_date <= $today): ?>
-                                <?php
-                                echo '<div class="info-m3ssages">';
-                                _e('Registration is closed for this event.', 'evrplus_language');
-                                _e('For more information or questions, please email: ', 'evrplus_language');
-                                echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
-                                ?>
-                            <?php else: ?>
-                                <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  onSubmit="mySubmit.disabled = true;
-                                                        return validateForm(this)">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                            <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
-                                        </div>
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                            <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
-                                            <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
-                                        </div>
-                                        <?php if ($inc_phone == "Y"): ?>
-                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
-                                                <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-                                        <?php if ($inc_address == "Y"): ?>
+                                    <?php
+                                    echo '<div class="info-m3ssages">';
+                                    _e('Registration is closed for this event.', 'evrplus_language');
+                                    _e('For more information or questions, please email: ', 'evrplus_language');
+                                    echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
+                                    ?>
+                                <?php else: ?>
 
-                                            <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
-                                                <input type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
+                                    <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  onSubmit="mySubmit.disabled = true;
+                                                            return validateForm(this)">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
                                             </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_country == "Y"): ?>
-                                            <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
-                                                <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
                                             </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-
-                                        <?php if ($inc_city == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
+                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
                                             </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_state == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_zip == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-                                        <?php
-                                        $company_form_fields = array(
-                                            'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
-                                            'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
-                                            'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
-                                            'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
-                                            'co_zip' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_copostal),
-                                            'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
-                                        );
-                                        ?>
-
-                                        <?php foreach ($company_form_fields as $field => $fieldSet): ?>
-                                            <?php if ($fieldSet['flag']): ?>
-                                                <div class="col-sm-6 col-xs-12 fi3ld">
-                                                    <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
+                <?php if ($inc_phone == "Y"): ?>
+                                                <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
+                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
                                                 </div>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
+                <?php endif; ?>
+                                        </div>
+                                        <div class="row">
+                <?php if ($inc_address == "Y"): ?>
 
-
-                                        <?php
-                                        $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
-                                        if ($questions) :
-                                            ?>
-                                            <?php
-                                            foreach ($questions as $question):
-                                                $title = '';
-                                                if ($question->remark) {
-                                                    $title = $question->remark;
-                                                }
-                                                ?>
-                                                <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
-                                                    <p><?php echo $question->question; ?></p>
-                                                    <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
+                                                <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
+                                                    <input type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
                                                 </div>
+                <?php endif; ?>
+                                            <?php if ($inc_country == "Y"): ?>
+                                                <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
+                                                    <input type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                                </div>
+                <?php endif; ?>
+                                        </div>
+                                        <div class="row">
+
+                <?php if ($inc_city == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                                </div>
+                <?php endif; ?>
+                                            <?php if ($inc_state == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
+                                                </div>
+                <?php endif; ?>
+                                            <?php if ($inc_zip == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
+                                                </div>
+                <?php endif; ?>
+                                        </div>
+                                        <div class="row">
+                <?php
+                $company_form_fields = array(
+                    'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
+                    'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
+                    'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
+                    'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
+                    'co_zip' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_copostal),
+                    'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
+                );
+                ?>
+
+                                            <?php foreach ($company_form_fields as $field => $fieldSet): ?>
+                                                <?php if ($fieldSet['flag']): ?>
+                                                    <div class="col-sm-6 col-xs-12 fi3ld">
+                                                        <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
+                                                    </div>
+                    <?php endif; ?>
                                             <?php endforeach; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($use_coupon == "Y"): ?>
-                                            <div class="col-xs-4 fi3ld"  title="<?php echo $title; ?>">
-                                                <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
-                                                <input type="text" name="coupon" id="coupon" value="" />
-                                            </div>
-            <?php endif;
-            ?>
 
 
-                                        <div class="col-xs-12 fi3ld">
-                                            <h3 class="section-ti8le"><i class="fa fa-calculator"></i> Event Fees</h3>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> You must select atleast one item</div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
-                                            <select name="regular" id="regular">
-                                                <option>Regular Ticket</option>
-                                            </select>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
-                                            <select name="vip" id="vip">
-                                                <option>VIP Ticket</option>
-                                            </select>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <div class="col-md-5 col-sm-8 col-xs-12">
-                                            <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
-                                                <tbody>
-                                                    <tr>
-                                                        <td width="60%">Registration Fees</td>
-                                                        <td width="40%" align="right">$ 0.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Sales Tax</td>
-                                                        <td align="right">$ 0.00</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <td>Total</td>
-                                                        <td align="right">$ 0.00</td>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                        <div class="clearfix"></div>
-            <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                <?php
+                $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
+                if ($questions) :
+                    ?>
+                                                <?php
+                                                foreach ($questions as $question):
+                                                    $title = '';
+                                                    if ($question->remark) {
+                                                        $title = $question->remark;
+                                                    }
+                                                    ?>
+                                                    <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
+                                                        <p><?php echo $question->question; ?></p>
+                        <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
+                                                    </div>
+                                                    <?php endforeach; ?>
+                                            <?php endif; ?>
+
+                                            <?php if ($use_coupon == "Y"): ?>
+                                                <div class="col-xs-4 fi3ld"  title="<?php echo $title; ?>">
+                                                    <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
+                                                    <input type="text" name="coupon" id="coupon" value="" />
+                                                </div>
+                <?php endif;
+                ?>
+
+
                                             <div class="col-xs-12 fi3ld">
-                                                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
-                                                <script type="text/javascript">
+                                                <h3 class="section-ti8le"><i class="fa fa-calculator"></i> Event Fees</h3>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> You must select atleast one item</div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
+                                                <select name="regular" id="regular">
+                                                    <option>Regular Ticket</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld">
+                                                <select name="vip" id="vip">
+                                                    <option>VIP Ticket</option>
+                                                </select>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-5 col-sm-8 col-xs-12">
+                                                <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="60%">Registration Fees</td>
+                                                            <td width="40%" align="right">$ 0.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sales Tax</td>
+                                                            <td align="right">$ 0.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>Total</td>
+                                                            <td align="right">$ 0.00</td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                            <div class="clearfix"></div>
+                <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                                                <div class="col-xs-12 fi3ld">
+                                                    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
+                                                    <script type="text/javascript">
                                         jQuery(document).ready(function () {
                                             jQuery("#mySubmit").click(function () {
                                                 if (grecaptcha.getResponse() == "") {
@@ -494,31 +508,32 @@ if ($rows) {
                                                 }
                                             });
                                         });
-                                                </script>
-                                                <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
+                                                    </script>
+                                                    <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
+                                                </div>
+                <?php endif; ?>
+
+
+                <?php if ($term_c == 'Y'): ?>
+                                                <div class="col-xs-12 fi3ld">
+                                                    <label class="checkb0x"><input type="checkbox" name="accept_term" value="1" required /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                    <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                                </div>
+                <?php endif; ?>
+                                            <div class="col-xs-12 fi3ld-buttons">
+                                                <input type="hidden" name="action" value="confirm"/>
+                                                <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
+                                                <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
+
+                                                <input type="submit" name="submit" id="submit" value="Submit">
+                                                <input type="reset" name="reset" id="reset" value="Reset">
                                             </div>
-            <?php endif; ?>
-
-
-            <?php if ($term_c == 'Y'): ?>
-                                            <div class="col-xs-12 fi3ld">
-                                                <label class="checkb0x"><input type="checkbox" name="accept_term" value="1" required /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
-                                                <textarea name="terms" id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
-                                            </div>
-            <?php endif; ?>
-                                        <div class="col-xs-12 fi3ld-buttons">
-                                            <input type="hidden" name="action" value="confirm"/>
-                                            <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
-                                            <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
-
-                                            <input type="submit" name="submit" id="submit" value="Submit">
-                                            <input type="reset" name="reset" id="reset" value="Reset">
                                         </div>
-                                    </div>
-                                </form>
-        <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
+                                    </form>
+            <?php endif; ?>
+                            </div>
+                            <?php endif; ?>
+                    <?php endif; ?>
                 </div>
                 <div class="clearfix"></div>
             </div>
