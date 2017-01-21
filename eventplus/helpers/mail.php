@@ -16,17 +16,30 @@ class EventPlus_Helpers_Mail {
         $this->data = $data;
         $this->company_options = EventPlus_Models_Settings::getSettings();
 
-        $oAttendee = new EventPlus_Models_Attendees();
-        $this->attendeeRow = $oAttendee->getData($this->data['attendee_id']);
 
-        $oEvent = new EventPlus_Models_Events();
-        $this->eventRow = $oEvent->getRow($this->data['event_id']);
+        if ($this->data['attendee_id'] > 0) {
+            $oAttendee = new EventPlus_Models_Attendees();
+            $this->attendeeRow = $oAttendee->getData($this->data['attendee_id']);
+        }
+
+        if (isset($this->data['attendeeRow'])) {
+            $this->attendeeRow = $this->data['attendeeRow'];
+        }
+
+        if ($this->data['event_id'] > 0) {
+            $oEvent = new EventPlus_Models_Events();
+            $this->eventRow = $oEvent->getRow($this->data['event_id']);
+        }
+
+        if (isset($this->data['eventRow'])) {
+            $this->eventRow = $this->data['eventRow'];
+        }
     }
-    
+
     function send_wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
-        
+
         $message = nl2br($message);
-        
+
         $totSent = 0;
         if (is_string($to)) {
             if ($this->oValidate->email($to)) {
@@ -36,9 +49,9 @@ class EventPlus_Helpers_Mail {
                 }
             }
         } else if (is_array($to)) {
-            
+
             $to = array_unique($to);
-            
+
             foreach ($to as $i => $toEmail) {
                 if ($this->oValidate->email($toEmail)) {
                     $q = wp_mail($toEmail, $subject, $message, $headers, $attachments);
@@ -48,7 +61,7 @@ class EventPlus_Helpers_Mail {
                 }
             }
         }
-       
+
         return $totSent;
     }
 
@@ -56,7 +69,7 @@ class EventPlus_Helpers_Mail {
         return EventPlus::getRegistry()->url->admin($uri, $params);
     }
 
-    protected function bindParams($str) {
+    public function bindParams($str) {
         $use_coupon = $this->eventRow['use_coupon'];
         $reg_limit = $this->eventRow['reg_limit'];
         $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
@@ -92,10 +105,10 @@ class EventPlus_Helpers_Mail {
         $start_date = $this->eventRow['start_date'];
         $end_date = $this->eventRow['end_date'];
         $category_id = $this->eventRow['category_id'];
-        
-      
+
+
         $category_list_str = '';
-        if(is_array($event_category) && count($event_category)){
+        if (is_array($event_category) && count($event_category)) {
             $category_list_str = EventPlus_Helpers_Funx::getCategoryList($event_category);
         }
 
@@ -123,8 +136,8 @@ class EventPlus_Helpers_Mail {
                 }
             }
         }
-        
-        
+
+
         $bindParams = array(
             "[id]" => $this->attendeeRow['id'],
             "[category_list]" => $category_list_str,
@@ -162,7 +175,7 @@ class EventPlus_Helpers_Mail {
             "[tickets]" => $ticket_list,
             "[ADMIN_ATTENDEE_LINK]" => $this->adminUrl('admin_attendees/details', array('event_id' => $this->eventRow['id'], 'attendee_id' => $this->attendeeRow['id']))
         );
-        
+
 
         foreach ($bindParams as $searchValue => $replaceValue) {
             $str = str_replace($searchValue, $replaceValue, $str);
