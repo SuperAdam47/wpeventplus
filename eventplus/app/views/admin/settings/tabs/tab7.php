@@ -38,7 +38,7 @@
                                 </option>
                             </select>
                         </div>
-                    </label>start
+                    </label>
                 </p>
                 <p>
                     <label>
