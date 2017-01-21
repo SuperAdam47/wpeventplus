@@ -1,7 +1,12 @@
 <?php
 $total_items = count($rows);
-$event_name = $oEvent->event_name;
-$event_id = $oEvent->id;
+$event_name = '';
+$event_id = 0;
+
+if (is_object($oEvent)) {
+    $event_name = $oEvent->event_name;
+    $event_id = $oEvent->id;
+}
 ?>
 <div class="padding">
 
