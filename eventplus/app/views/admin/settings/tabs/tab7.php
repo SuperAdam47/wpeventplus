@@ -95,7 +95,7 @@
                         <div class="styled">
                             <select name="start_of_week">
                                 <?php if (get_option('evr_start_of_week') == 0) { ?>
-                                    <option value="0">Sunday</option>
+                                <option value="0" selected><?php _e('Sunday', 'evrplus_language'); ?></option>
                                      <option value="1">
                                     <?php _e('Monday', 'evrplus_language'); ?>
                                 </option>
@@ -104,7 +104,7 @@
                                  <option value="0">
                                     <?php _e('Sunday', 'evrplus_language'); ?>
                                 </option>
-                                    <option value="1">
+                                <option value="1" selected>
                                         <?php _e('Monday', 'evrplus_language'); ?>
                                     </option>
                                
