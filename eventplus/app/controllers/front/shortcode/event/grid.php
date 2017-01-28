@@ -16,6 +16,10 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         wp_enqueue_script('jquery.magnific-popup.min');
         wp_register_script('jquery.mediaBoxes', plugins_url('/assets/scripts/gridview/js/jquery.mediaBoxes.js', $file), array('jquery'), '1.0.0', 'all');
         wp_enqueue_script('jquery.mediaBoxes');
+        
+        wp_register_script('evrplus_grid', plugins_url('/assets/front/evrplus_grid.js', $file), array('jquery'), '1.0.0', true);
+        wp_enqueue_script('evrplus_grid');
+        
         wp_register_script('jquery.transit.min', plugins_url('/assets/scripts/gridview/js/jquery.transit.min.js', $file), array('jquery'), '1.0.0', 'all');
         wp_enqueue_script('jquery.transit.min');
         wp_register_script('modernizr.custom.min', plugins_url('/assets/scripts/gridview/js/modernizr.custom.min.js', $file), array('jquery'), '1.0.0', 'all');

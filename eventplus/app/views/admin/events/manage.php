@@ -112,14 +112,14 @@ $total_items = count($rows);
                             <?php if (is_array($event->category_id) && count($event->category_id)): ?>
                                 <?php
                                 foreach ($event->category_id as $d => $cid):
-                                    
+
                                     $catRow = $event_category_dataset[$cid];
                                     $category_name = stripslashes(htmlspecialchars_decode($catRow['category_name']));
                                     $category_color = $catRow['category_color'];
                                     $font_color = $catRow['font_color'];
-                                    $style = "margin-bottom:4px; background-color:" . $category_color . " ; color:" . $font_color . " ;";
+                                    $style = "padding:5px; text-wrap:none; margin-bottom:2px;  background-color:" . $category_color . " ; color:" . $font_color . " ;";
                                     ?>
-                                    <span style="<?php echo $style; ?>"><?php echo $category_name; ?></span>
+                                    <div style="<?php echo $style; ?>"><?php echo $category_name; ?></div>
                                 <?php endforeach; ?>
                             <?php else: ?>
                                 -

@@ -182,4 +182,8 @@ class EventPlus_Helpers_Event {
         return $discountDataset;
     }
 
+    static function comboDataset($param = array()) {
+        $oEvents = new EventPlus_Models_Events();
+        return $oEvents->getComboDataset();
+    }
 }

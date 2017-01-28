@@ -10,9 +10,9 @@ $start_date = $end_date = '';
 
 # Get events that end date is later than today and order by start date
 if ($company_options['order_event_list'] == 'DESC') {
-    $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
+    $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY date(start_date) DESC";
 } else {
-    $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') ASC";
+    $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY date(start_date) ASC";
 }
 $rows = $wpdb->get_results($sql);
 ?>

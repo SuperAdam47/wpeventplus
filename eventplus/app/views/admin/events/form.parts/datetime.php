@@ -93,14 +93,17 @@
                                             <?php _e('Gaps per repeat', 'evrplus_language'); ?><p class="cs2" title="<?php _e('Enter the repetition period', 'evrplus_language'); ?>"></p><br/>
                                             <input  class="recurrence_repeat_period" name="recurrence_repeat_period" value="<?php echo $recurrence_repeat_period; ?>" type="number" min="0" max="100"></p>
                                             </div>
-                                            <p class="p3"><label><?php _e('Close Registration on', 'evrplus_language'); ?> </label><select name="close"><?php
+                                            <p class="p3"><label><?php _e('Close Registration on', 'evrplus_language'); ?> </label>
+                                                <select name="close"><?php
                                                     if ($close == "start") {
-                                                        echo '<option value="start">' . __('Start of Event', 'evrplus_language') . '</option>';
-                                                    }
-                                                    if ($close == "end") {
+                                                        echo '<option value="start" selected>' . __('Start of Event', 'evrplus_language') . '</option>';
                                                         echo '<option value="end">' . __('End of Event', 'evrplus_language') . '</option>';
                                                     }
-                                                    ?><option value="start"><?php _e('Start of Event', 'evrplus_language'); ?></option><option value="end"><?php _e('End of Event', 'evrplus_language'); ?></option></select></p>
+                                                    if ($close == "end") {
+                                                        echo '<option value="start">' . __('Start of Event', 'evrplus_language') . '</option>';
+                                                        echo '<option value="end" selected>' . __('End of Event', 'evrplus_language') . '</option>';
+                                                    }
+                                                    ?>
                                             <input  type="submit" name="Submit" value="<?php echo $button_label; ?>" id="add_new_event" />
                                 </div>
                             </div>

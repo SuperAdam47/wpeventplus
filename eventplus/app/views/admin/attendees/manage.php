@@ -1,7 +1,12 @@
 <?php
 $total_items = count($rows);
-$event_name = $oEvent->event_name;
-$event_id = $oEvent->id;
+$event_name = '';
+$event_id = 0;
+
+if (is_object($oEvent)) {
+    $event_name = $oEvent->event_name;
+    $event_id = $oEvent->id;
+}
 ?>
 <div class="padding">
 
@@ -20,17 +25,31 @@ $event_id = $oEvent->id;
     </div>
 
     <h3>
-        <span><?php _e('Manage Attendees', 'evrplus_language'); ?> - <strong><?php echo stripslashes($event_name); ?></strong></span>
+        <span><?php _e('Manage Attendees', 'evrplus_language'); ?> <?php if ($event_name != ''): ?>- <strong><?php echo stripslashes($event_name); ?></strong><?php endif; ?></span>
         <?php if ($total_items): ?> <br /><br />
             <a class="btn btn-small btn-primary" onclick="return confirm('Are you sure you wish to delete all attendees under <?php echo stripslashes($event_name); ?>?');" href="<?php echo $this->adminUrl('admin_attendees/delete_all', array('event_id' => $oEvent->id)); ?>"><?php _e('Delete All', 'evrplus_language'); ?></a>
         <?php endif; ?>
     </h3>     
 
+    <?php
+    $events = EventPlus_Helpers_Event::comboDataset();
+    if (count($events)):
+        ?>
+        <p class="sort">
+            <select name="event_id" class="event_id_filter" data-current-uri="eventplus_admin_attendees">
+                <option value=""> <?php _e('All', 'evrplus_language'); ?> </option>
+                <?php foreach ($events as $ei => $eventRow): ?>
+                    <option value="<?php echo $eventRow['id']; ?>" <?php if ($_REQUEST['event_id'] == $eventRow['id']) echo 'selected="selected"' ?>> <?php echo $eventRow['event_name']; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+    <?php endif; ?>
 
     <table class="widefat">
 
         <thead>
             <tr>
+                <th><?php _e('Event Name/Title', 'evrplus_language'); ?></th>
                 <th><?php _e('People', 'evrplus_language'); ?></th>
                 <th><?php _e('Registered Name', 'evrplus_language'); ?></th>
                 <th><?php _e('Attendees', 'evrplus_language'); ?></th>
@@ -52,7 +71,9 @@ $event_id = $oEvent->id;
                     $event_id = (int) $question->event_id;
 
                     echo "<tr>"
-                    . "<td>" . $attendee->quantity . "</td><td align='left'>" . $attendee->lname . ", " . $attendee->fname . " ( ID: " . $attendee->id . ")</td><td>";
+                    . "<td><a href='" . $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $attendee->event_id)) . "'>" . $attendee->event_name . "</a></td>"
+                    . "<td>" . $attendee->quantity . "</td>"
+                    . "<td align='left'>" . $attendee->lname . ", " . $attendee->fname . " ( ID: " . $attendee->id . ")</td><td>";
 
                     if ($attendee->attendees == "" || $attendee->attendees == "N") {
                         echo "<font color='red'>Please Update This Attendee</font>";
@@ -64,7 +85,7 @@ $event_id = $oEvent->id;
                     echo "</td>"
                     . "<td>" . $attendee->email . "</td><td>" . $attendee->phone . "</td>";
                     ?>
-           
+
                 <td>
                     <?php
                     $payment_status = ($attendee->payment_status != null && $attendee->payment_status != '') ? $attendee->payment_status : 'Pending';
@@ -80,21 +101,21 @@ $event_id = $oEvent->id;
                 </td>
                 <td>    
                     <div class="btn-group grid-actions">
-                    <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php _e('Action', 'evrplus_language'); ?> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu pull-right">
-                         <?php if ($payment_status != 'success'): ?>
-                            <li class="edit"><a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
+                        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?php _e('Action', 'evrplus_language'); ?> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <?php if ($payment_status != 'success'): ?>
+                                <li class="edit"><a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
                             <?php endif; ?>
                             <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('View', 'evrplus_language'); ?></a></li>
-                            
+
                             <li class="delete"><a href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
-                           onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
-                    </ul>
+                                                  onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
+                        </ul>
                     </div>
 
-                   
+
                 </td>
 
                 <?php

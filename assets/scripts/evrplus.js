@@ -41,6 +41,17 @@ var page = getUrlParameter('paging');
 
   
 });
+
+ jQuery( ".event_id_filter" ).change(function() {
+  var oField =jQuery(this);
+  var event_id =oField.val();
+	
+                var current_url = location.protocol + '//' + location.host + location.pathname+'?page='+oField.attr('data-current-uri')+'&event_id='+event_id;
+                window.location.href = current_url;
+	  
+
+  
+});
 });
 jQuery(document).ready(function() {
  jQuery( ".event_atten_sort" ).change(function() {

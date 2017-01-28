@@ -8,8 +8,6 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
     function index() {
 
-        
-        
         $record_limit = 50;
 
         $p = new EventPlus_Pagination();
