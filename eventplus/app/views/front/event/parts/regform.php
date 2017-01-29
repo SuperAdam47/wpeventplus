@@ -3,6 +3,21 @@
     <?php echo $company_options['form_css']; ?>
     </style>
 <?php endif; ?>
+
+<script>
+    var validationErrors = {
+        fname: "<?php echo __('Please enter your first name', 'evrplus_language'); ?>",
+        lname: "<?php echo __('Please enter your last name', 'evrplus_language'); ?>",
+        email: "<?php echo __('Email format not correct!', 'evrplus_language'); ?>",
+        phone: "<?php echo __('Please enter your phone number', 'evrplus_language'); ?>",
+        phone_invalid: "<?php echo __('Please use correct format for your phone number', 'evrplus_language'); ?>",
+        address: "<?php echo __('Please enter your address', 'evrplus_language'); ?>",
+        city: "<?php echo __('Please enter your city', 'evrplus_language'); ?>",
+        state: "<?php echo __('Please enter your state', 'evrplus_language'); ?>",
+        zip: "<?php echo __('Please enter your zip/postal code', 'evrplus_language'); ?>",
+        accept_terms: "<?php echo __("You didn't accept terms and conditions!", 'evrplus_language'); ?>!"
+    };
+</script>
 <?php
 global $noImage;
 
@@ -85,7 +100,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
     $show_form_bool = 1;
 }
 ?>
-<input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+
 <div class="events-plus-2">
     <div class="event-single" id="event-slug">
         <div class="row">
@@ -486,6 +501,19 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                         <input type="hidden" name="reg_type" value="RGLR"/>  
 
                                                         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld" title="<?php echo $fee->item_description; ?>">
+                                                            <p>  <?php
+                                                            #Display Fee description and cost.
+                                                            if ($fee->item_custom_cur == "GBP") {
+                                                                $item_custom_cur = "&pound;";
+                                                            }
+                                                            if ($fee->item_custom_cur == "USD") {
+                                                                $item_custom_cur = "$";
+                                                            }
+                                                            if ($fee->item_custom_cur == "BRL") {
+                                                                $item_custom_cur = "R$";
+                                                            }
+                                                            echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
+                                                            ?></p>
                                                             <select name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
                                                                     id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
                                                                     class="eventplus-ddl-items" 
@@ -529,19 +557,8 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                 }
                                                                 ?>
                                                             </select>
-                                                            <?php
-                                                            #Display Fee description and cost.
-                                                            if ($fee->item_custom_cur == "GBP") {
-                                                                $item_custom_cur = "&pound;";
-                                                            }
-                                                            if ($fee->item_custom_cur == "USD") {
-                                                                $item_custom_cur = "$";
-                                                            }
-                                                            if ($fee->item_custom_cur == "BRL") {
-                                                                $item_custom_cur = "R$";
-                                                            }
-                                                            echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
-                                                            ?>
+                                                          
+                                                            
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     <?php endif; ?>
@@ -557,7 +574,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                 <?php else: ?>
 
                                                     <div class="clearfix"></div>
-                                                    <div class="col-md-5 col-sm-8 col-xs-12">
+                                                    <div class="col-md-5 col-sm-8 col-xs-12" id="eplus-data-summary-container">
                                                         <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
                                                             <tbody>
                                                                 <tr>
@@ -613,6 +630,17 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                 </div>
                                             <?php endif; ?>
 
+
+                                        <?php else: ?>
+
+                                            <div class="col-xs-12">
+                                                <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
+                                                    <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
+                                                    <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
+                                                </div>
+                                            </div>  
+
+
                                         <?php endif; ?>
 
 
@@ -626,20 +654,29 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
 
                                         <?php if ($term_c == 'Y'): ?>
                                             <div class="col-xs-12 fi3ld">
-                                                <label class="checkb0x"><input type="checkbox" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                 <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
                                             </div>
                                         <?php endif; ?>
+
+
+                                        <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
+                                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i>
+                                                <span id="form_action_message_eplus"></span>
+                                            </div>
+                                        </div>
+
                                         <div class="col-xs-12 fi3ld-buttons">
                                             <input type="hidden" name="action" value="confirm"/>
                                             <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
                                             <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
-
+                                            <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
 
                                             <input type="submit" name="mySubmit" id="mySubmit" value="<?php _e('Submit', 'evrplus_language'); ?>" />
                                             <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
 
                                         </div>
+
                                     </div>
                                 </form>
                             <?php endif; ?>
@@ -664,14 +701,9 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                                     });
                                                                                 });
     </script>
-<?php endif; ?>
+    <?php
 
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        if (jQuery('.eventplus-ddl-items').val() >= 0) {
-            jQuery('#mySubmit').removeAttr('disabled');
-        }
 
-        jQuery('.eventplus-ddl-items').trigger('change');
-    });
-</script>
+
+
+ endif;

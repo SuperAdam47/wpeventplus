@@ -54,6 +54,7 @@ function checkInternationalPhone(strPhone) {
     s = stripCharsInBag(strPhone, validWorldPhoneChars);
     return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
 }
+
 function echeck(str) {
     var at = "@";
     var dot = ".";
@@ -84,12 +85,14 @@ function echeck(str) {
     }
     return true;
 }
+
 function testIsValidObject(objToTest) {
     if (objToTest == null || objToTest == undefined) {
         return false;
     }
     return true;
 }
+
 function jcap() {
     var uword = hex_md5(document.getElementById(jfldid).value);
     if (uword == cword[anum - 1]) {
@@ -99,6 +102,7 @@ function jcap() {
         return false;
     }
 }
+
 function validateConfirmationForm(confForm) {
     var msg = "";
     var i = 0;
@@ -116,6 +120,7 @@ function validateConfirmationForm(confForm) {
         i++;
         var form = confForm['attendee[' + i + '][first_name]'];
     }
+
     if (msg.length > 0) {
         msg = "The following fields need to be completed before you can submit.\n\n" + msg;
         alert(msg);
@@ -130,51 +135,57 @@ function validateConfirmationForm(confForm) {
 
 function validateForm(form) {
     var msg = "";
-    
+
+    var oActionMsgContainer = jQuery('#action_message_eplus_container');
+    var oActionMsg = jQuery('#form_action_message_eplus');
+
+    oActionMsgContainer.fadeOut();
+    oActionMsg.fadeOut();
 
     if (form.fname.value == "") {
-        msg += "\n " + "Please enter your first name";
+        msg += "<li>" + validationErrors.fname + "</li>";
         form.fname.focus( );
     }
     if (form.lname.value == "") {
-        msg += "\n " + "Please enter your last name";
+        msg += "<li>" + validationErrors.lname + "</li>";
         form.lname.focus( );
     }
     if (echeck(form.email.value) == false) {
-        msg += "\n " + "Email format not correct!";
+        msg += "<li>" + validationErrors.email + "</li>";
     }
     if (form.phone) {
         if (form.phone.value == "" || form.phone.value == null) {
-            msg += "\n " + "Please enter your phone number.";
+            msg += "<li>" + validationErrors.phone + "</li>";
             form.phone.focus( );
         }
         if (checkInternationalPhone(form.phone.value) == false) {
-            msg += "\n " + "Please use correct format for your phone number.";
+            msg += "<li>" + validationErrors.phone_invalid + "</li>";
             form.value = "";
             form.phone.focus();
         }
     }
     if (form.address) {
         if (form.address.value == "") {
-            msg += "\n " + "Please enter your address.";
+            msg += "<li>" + validationErrors.address + "</li>";
             form.address.focus( );
         }
     }
     if (form.city) {
         if (form.city.value == "") {
-            msg += "\n " + "Please enter your city.";
+            msg += "<li>" + validationErrors.city + "</li>";
             form.city.focus( );
         }
     }
     if (form.state) {
         if (form.state.value == "") {
-            msg += "\n " + "Please enter your state.";
+            msg += "<li>" + validationErrors.state + "</li>";
             form.state.focus( );
         }
     }
+    
     if (form.zip) {
         if (form.zip.value == "") {
-            msg += "\n " + "Please enter your zip/postal code.";
+            msg += "<li>" + validationErrors.zip + "</li>";
             form.zip.focus( );
         }
     }
@@ -189,10 +200,10 @@ function validateForm(form) {
     var e;
     for (var i = 0, e; e = inputs[i]; i++) {
         var value = e.value ? trim(e.value) : null;
-        if (e.type == "text" && e.title && !value && e.className == "r") {
-            msg += "\n " + e.title;
+        if (e.type == "text" && e.title && !value && trim(e.className) == "eplus_required_cq") {
+            msg += "<li> " + e.title + "</li>";
         }
-        if ((e.type == "radio" || e.type == "checkbox") && e.className == "r") {
+        if ((e.type == "radio" || e.type == "checkbox") && trim(e.className) == "eplus_required_cq") {
             var rd = ""
             var controls = form.elements;
             function getSelectedControl(group)
@@ -202,36 +213,51 @@ function validateForm(form) {
                         return group[i];
                 return null;
             }
+            
             if (!getSelectedControl(controls[e.name])) {
-                msg += "\n " + e.title;
+                msg += "<li> " + e.title + "</li>";
+                break;
             }
         }
     }
+    
     var inputs = form.getElementsByTagName("textarea");
     var e;
     for (var i = 0, e; e = inputs[i]; i++) {
         var value = e.value ? trim(e.value) : null;
-        if (!value && e.className == "r")
+        if (!value && trim(e.className) == "eplus_required_cq")
         {
-            msg += "\n " + e.title;
+            msg += "<li> " + e.title + "</li>";
         }
     }
     var inputs = form.getElementsByTagName("select");
     var e;
     for (var i = 0, e; e = inputs[i]; i++) {
         var value = e.value ? trim(e.value) : null;
-        if ((!value || value == '') && e.className == "r")
+        if ((!value || value == '') && trim(e.className) == "eplus_required_cq")
         {
-            msg += "\n " + e.title;
+            msg += "<li> " + e.title + "</li>";
         }
     }
+
+
+    if(form.accept_term){
+         if (form.accept_term.checked == false){
+               msg += "<li> " + validationErrors.accept_terms + "</li>";
+         }
+    }
+    
     if (msg.length > 0) {
-        msg = "The following fields need to be completed before you can submit.\n\n" + msg;
-        alert(msg);
+        msg = "<ul>" + msg + "</ul>";
+
+        oActionMsgContainer.fadeIn();
+        oActionMsg.html(msg);
+        oActionMsg.fadeIn();
+
         if (document.getElementById("mySubmit").disabled == true) {
             document.getElementById("mySubmit").disabled = false;
         }
-        document.getElementById("mySubmit").focus( );
+        document.getElementById("mySubmit").focus();
         return false;
     }
 
@@ -258,9 +284,14 @@ function CalculateTotalTax(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
+                jQuery('#event_fee_item_message').fadeOut();
+                jQuery('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
+
+                jQuery('#event_fee_item_message').fadeIn();
+                jQuery('#eplus-data-summary-container').fadeOut();
             }
             if (item_quantity >= 0) {
                 order_total += item_quantity * item_price;
@@ -348,10 +379,15 @@ function CalculateTotal(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
+                jQuery('#event_fee_item_message').fadeOut();
+                jQuery('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
+                jQuery('#event_fee_item_message').fadeIn();
+                jQuery('#eplus-data-summary-container').fadeOut();
             }
+            
             if (item_quantity >= 0) {
                 order_total += item_quantity * item_price;
                 if (order_total < 0) {
@@ -415,13 +451,15 @@ function pad_with_zeros(rounded_value, decimal_places) {
     return value_string;
 }
 
-function a_message()
-{
-    alert('I came from an external script! Ha, Ha, Ha!!!!');
-}
-
 
 jQuery(document).ready(function ($) {
+
+    if (jQuery('.eventplus-ddl-items').val() >= 0) {
+        jQuery('#mySubmit').removeAttr('disabled');
+    }
+
+    jQuery('.eventplus-ddl-items').trigger('change');
+
     jQuery('.paypal--sandbox-toggle').on('click', function (e) {
         e.preventDefault();
         jQuery('#evplus--sandbox').toggle();
