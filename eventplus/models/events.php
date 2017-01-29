@@ -661,10 +661,9 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         return $events;
     }
 
-
     function getEventsBySettings() {
         $company_options = EventPlus_Models_Settings::getSettings();
-       
+
         # Get events that end date is later than today and order by start date
         if ($company_options['order_event_list'] == 'DESC') {
             $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
@@ -674,10 +673,15 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         return $this->getWpDb()->get_results($sql);
     }
-    
+
     function getComboDataset($params = array()) {
         $sql = "SELECT id, event_name FROM " . $this->_table . "  ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
         return $this->getWpDb()->get_results($sql, ARRAY_A);
+    }
+
+    function getEventObject($event_id) {
+        $sql = "SELECT * FROM " . $this->_table . " WHERE id = '" . (int) $event_id . "' LIMIT 1";
+        return $this->getWpDb()->get_results($sql);
     }
 
 }

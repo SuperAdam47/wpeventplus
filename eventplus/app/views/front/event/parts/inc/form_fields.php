@@ -1,8 +1,8 @@
 <?php
 
-$required = '';
+$requiredClass = '';
 if ($question->required == "Y") {
-    $required = ' class="r"';
+    $requiredClass = ' eplus_required_cq';
 }
 
 $placeholder = '';
@@ -16,14 +16,14 @@ if ($question_type == 'TEXT') {
     echo $this->View('front/event/parts/inc/form_fields/text', array(
         'question' => $question,
         'answer' => $answer,
-        'required' => $required,
+        'requiredClass' => $requiredClass,
         'placeholder' => $placeholder,
     ));
 } elseif ($question_type == 'TEXTAREA') {
     echo $this->View('front/event/parts/inc/form_fields/textarea', array(
         'question' => $question,
         'answer' => $answer,
-        'required' => $required,
+        'requiredClass' => $requiredClass,
         'placeholder' => $placeholder,
     ));
 } elseif ($question_type == 'SINGLE') {
@@ -34,7 +34,7 @@ if ($question_type == 'TEXT') {
         'answer' => $answer,
         'answers' => $answers,
         'values' => $values,
-        'required' => $required,
+        'requiredClass' => $requiredClass,
         'placeholder' => $placeholder,
     ));
 } elseif ($question_type == 'MULTIPLE') {
@@ -45,7 +45,7 @@ if ($question_type == 'TEXT') {
         'answer' => $answer,
         'answers' => $answers,
         'values' => $values,
-        'required' => $required,
+        'requiredClass' => $requiredClass,
         'placeholder' => $placeholder,
     ));
 } elseif ($question_type == 'DROPDOWN') {
@@ -56,7 +56,7 @@ if ($question_type == 'TEXT') {
         'answer' => $answer,
         'answers' => $answers,
         'values' => $values,
-        'required' => $required,
+        'requiredClass' => $requiredClass,
         'placeholder' => $placeholder,
     ));
 }

@@ -540,7 +540,8 @@ if ($rows) {
                                                                     <?php
                                                                 }
                                                             }
-                                                            ?></select>   
+                                                            ?>
+                                                        </select>   
                                                         <?php
                                                         #Display Fee description and cost.
                                                         if ($fee->item_custom_cur == "GBP") {
@@ -572,8 +573,12 @@ if ($rows) {
                                         if ($company_options['use_sales_tax'] == "Y") {
                                             ?>
                                             <table>
-                                                <tr><td><b><?php _e('Registration Fees', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
-                                                <tr><td><b><?php _e('Sales Tax', 'evrplus_language'); ?></b></td><td><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td></tr>
+                                                <tr><td><b><?php _e('Registration Fees', 'evrplus_language'); ?></b></td>
+                                                    <td><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
+                                                </tr>
+                                                <tr><td><b><?php _e('Sales Tax', 'evrplus_language'); ?></b></td>
+                                                    <td><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
+                                                </tr>
 
                                                 <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
                                                     <tr class="eventplus-discount-info">

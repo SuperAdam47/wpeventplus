@@ -130,6 +130,8 @@ function validateConfirmationForm(confForm) {
 
 function validateForm(form) {
     var msg = "";
+    
+
     if (form.fname.value == "") {
         msg += "\n " + "Please enter your first name";
         form.fname.focus( );
@@ -182,6 +184,7 @@ function validateForm(form) {
         }
         return null;
     }
+
     var inputs = form.getElementsByTagName("input");
     var e;
     for (var i = 0, e; e = inputs[i]; i++) {
@@ -268,8 +271,8 @@ function CalculateTotalTax(frm) {
             }
         }
     }
-    
-     if(order_total <= 0){
+
+    if (order_total <= 0) {
         return;
     }
 
@@ -278,9 +281,9 @@ function CalculateTotalTax(frm) {
     frm.tax.value = round_decimals(tax_total, 2);
 
     var grand_total = order_total + tax_total;
-    
+
     frm.total.value = round_decimals(grand_total, 2);
-    
+
     if (item_one) {
         var discountPercentage = getDiscountPercentage(item_one);
 
@@ -357,15 +360,15 @@ function CalculateTotal(frm) {
             }
         }
     }
-    
-    
-    if(order_total <= 0){
+
+
+    if (order_total <= 0) {
         return;
     }
 
     frm.total.value = round_decimals(order_total, 2);
     frm.fees.value = round_decimals(order_total, 2);
-    
+
     if (item_one && order_total > 0) {
         var discountPercentage = getDiscountPercentage(item_one);
 
@@ -380,7 +383,7 @@ function CalculateTotal(frm) {
             }
         }
     }
-    
+
     frm.displaytotal.value = round_decimals(order_total, 2);
 
 }
@@ -415,4 +418,58 @@ function pad_with_zeros(rounded_value, decimal_places) {
 function a_message()
 {
     alert('I came from an external script! Ha, Ha, Ha!!!!');
-} 
+}
+
+
+jQuery(document).ready(function ($) {
+    jQuery('.paypal--sandbox-toggle').on('click', function (e) {
+        e.preventDefault();
+        jQuery('#evplus--sandbox').toggle();
+    });
+
+    jQuery('.offline--details-toggle').on('click', function (e) {
+        e.preventDefault();
+        jQuery('#evplus--offline-details').toggle();
+    });
+
+    if (jQuery('#eventplus_register_btn').length) {
+        var oRegisterBtn = jQuery('#eventplus_register_btn');
+        oRegisterBtn.on('click', function (e) {
+            e.preventDefault();
+            jQuery(this).hide();
+            jQuery('#evrplusRegForm').slideDown();
+        });
+
+        if (oRegisterBtn.attr('data-show-form-default') == '1') {
+            oRegisterBtn.trigger('click');
+        }
+    }
+
+
+    jQuery('.eplus-required').on('change', function () {
+        var oSelf = jQuery(this);
+        var oParent = oSelf.parent('.fi3ld');
+        if (oSelf.val() == '') {
+            oParent.addClass('r3d');
+            oParent.removeClass('gr33n');
+        } else {
+
+            if (oSelf.attr('type') == 'email') {
+                if (echeck(oSelf.val()) == false) {
+                    oParent.addClass('r3d');
+                    oParent.removeClass('gr33n');
+                } else {
+                    oParent.addClass('gr33n');
+                    oParent.removeClass('r3d');
+                }
+
+                return;
+            }
+
+            oParent.addClass('gr33n');
+            oParent.removeClass('r3d');
+        }
+    });
+});
+
+    
