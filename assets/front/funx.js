@@ -518,6 +518,19 @@ jQuery(document).ready(function ($) {
 
                 return;
             }
+            
+            if (oSelf.hasClass('eplus-phone')) {
+            
+                if (checkInternationalPhone(oSelf.val()) == false) {
+                    oParent.addClass('r3d');
+                    oParent.removeClass('gr33n');
+                } else {
+                    oParent.addClass('gr33n');
+                    oParent.removeClass('r3d');
+                }
+
+                return;
+            }
 
             oParent.addClass('gr33n');
             oParent.removeClass('r3d');
