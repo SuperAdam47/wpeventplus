@@ -431,7 +431,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                             'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
                                             'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
                                             'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
-                                            'co_zip' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_copostal),
+                                            'co_zip' => array('title' => __('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
                                             'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
                                         );
                                         ?>
@@ -464,7 +464,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         <?php endif; ?>
 
                                         <?php if ($use_coupon == "Y"): ?>
-                                            <div class="col-xs-4 fi3ld"  title="<?php echo $title; ?>">
+                                            <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
                                                 <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
                                                 <input type="text" name="coupon" id="coupon" value="" />
                                             </div>
@@ -502,18 +502,18 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
 
                                                         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld" title="<?php echo $fee->item_description; ?>">
                                                             <p>  <?php
-                                                            #Display Fee description and cost.
-                                                            if ($fee->item_custom_cur == "GBP") {
-                                                                $item_custom_cur = "&pound;";
-                                                            }
-                                                            if ($fee->item_custom_cur == "USD") {
-                                                                $item_custom_cur = "$";
-                                                            }
-                                                            if ($fee->item_custom_cur == "BRL") {
-                                                                $item_custom_cur = "R$";
-                                                            }
-                                                            echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
-                                                            ?></p>
+                                                                #Display Fee description and cost.
+                                                                if ($fee->item_custom_cur == "GBP") {
+                                                                    $item_custom_cur = "&pound;";
+                                                                }
+                                                                if ($fee->item_custom_cur == "USD") {
+                                                                    $item_custom_cur = "$";
+                                                                }
+                                                                if ($fee->item_custom_cur == "BRL") {
+                                                                    $item_custom_cur = "R$";
+                                                                }
+                                                                echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
+                                                                ?></p>
                                                             <select name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
                                                                     id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
                                                                     class="eventplus-ddl-items" 
@@ -557,8 +557,8 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                 }
                                                                 ?>
                                                             </select>
-                                                          
-                                                            
+
+
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     <?php endif; ?>
@@ -574,7 +574,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                 <?php else: ?>
 
                                                     <div class="clearfix"></div>
-                                                    <div class="col-md-5 col-sm-8 col-xs-12" id="eplus-data-summary-container">
+                                                    <div class="col-md-8 col-sm-8 col-xs-12" id="eplus-data-summary-container">
                                                         <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
                                                             <tbody>
                                                                 <tr>
@@ -702,6 +702,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                                 });
     </script>
     <?php
+
 
 
 

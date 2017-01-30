@@ -104,17 +104,24 @@ function jcap() {
 }
 
 function validateConfirmationForm(confForm) {
+
+    var oActionMsgContainer = jQuery('#action_message_eplus_container');
+    var oActionMsg = jQuery('#form_action_message_eplus');
+
+    oActionMsgContainer.fadeOut();
+    oActionMsg.fadeOut();
+
     var msg = "";
     var i = 0;
     var form = confForm['attendee[' + i + '][first_name]'];
     while (form != undefined)
     {
         if (confForm['attendee[' + i + '][first_name]'].value == "") {
-            msg += "\n Attendee #" + (i + 1) + " Please enter attendee first name";
+            msg += "<li>Attendee #" + (i + 1) + " Please enter attendee first name</li>";
             confForm['attendee[' + i + '][first_name]'].focus( );
         }
         if (confForm['attendee[' + i + '][last_name]'].value == "") {
-            msg += "\n Attendee #" + (i + 1) + " Please enter attendee last name";
+            msg += "<li>Attendee #" + (i + 1) + " Please enter attendee last name</li>";
             confForm['attendee[' + i + '][last_name]'].focus( );
         }
         i++;
@@ -122,12 +129,14 @@ function validateConfirmationForm(confForm) {
     }
 
     if (msg.length > 0) {
-        msg = "The following fields need to be completed before you can submit.\n\n" + msg;
-        alert(msg);
-        if (document.getElementById("mySubmit").disabled == true) {
-            document.getElementById("mySubmit").disabled = false;
+        msg = "<ul>" + msg + "</ul>";
+        oActionMsgContainer.fadeIn();
+        oActionMsg.html(msg);
+        oActionMsg.fadeIn();
+        if (document.getElementById("myConfirmSubmit").disabled == true) {
+            document.getElementById("myConfirmSubmit").disabled = false;
         }
-        document.getElementById("mySubmit").focus( );
+        document.getElementById("myConfirmSubmit").focus();
         return false;
     }
     return true;
@@ -182,7 +191,7 @@ function validateForm(form) {
             form.state.focus( );
         }
     }
-    
+
     if (form.zip) {
         if (form.zip.value == "") {
             msg += "<li>" + validationErrors.zip + "</li>";
@@ -213,14 +222,14 @@ function validateForm(form) {
                         return group[i];
                 return null;
             }
-            
+
             if (!getSelectedControl(controls[e.name])) {
                 msg += "<li> " + e.title + "</li>";
                 break;
             }
         }
     }
-    
+
     var inputs = form.getElementsByTagName("textarea");
     var e;
     for (var i = 0, e; e = inputs[i]; i++) {
@@ -241,12 +250,12 @@ function validateForm(form) {
     }
 
 
-    if(form.accept_term){
-         if (form.accept_term.checked == false){
-               msg += "<li> " + validationErrors.accept_terms + "</li>";
-         }
+    if (form.accept_term) {
+        if (form.accept_term.checked == false) {
+            msg += "<li> " + validationErrors.accept_terms + "</li>";
+        }
     }
-    
+
     if (msg.length > 0) {
         msg = "<ul>" + msg + "</ul>";
 
@@ -387,7 +396,7 @@ function CalculateTotal(frm) {
                 jQuery('#event_fee_item_message').fadeIn();
                 jQuery('#eplus-data-summary-container').fadeOut();
             }
-            
+
             if (item_quantity >= 0) {
                 order_total += item_quantity * item_price;
                 if (order_total < 0) {
@@ -456,6 +465,12 @@ jQuery(document).ready(function ($) {
 
     if (jQuery('.eventplus-ddl-items').val() >= 0) {
         jQuery('#mySubmit').removeAttr('disabled');
+    }
+  
+    if (jQuery('#qty_attendees').length && jQuery('#eventplus_attendee_form_confirm').length) {
+        if (jQuery('#qty_attendees').val() == '1') {
+            jQuery('#eventplus_attendee_form_confirm').submit();
+        }
     }
 
     jQuery('.eventplus-ddl-items').trigger('change');

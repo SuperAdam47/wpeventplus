@@ -1,5 +1,4 @@
 <?php
-
 $num_people = 0;
 $item_order = array();
 
@@ -223,62 +222,24 @@ $posted_data = array('lname' => $lname, 'fname' => $fname, 'address' => $address
 
 #Begin display of confirmation form
 echo '<script type="text/javascript" src="' . $this->assetUrl('front/funx.js?v=' . time()) . '"></script>';
-echo '<p align="left"><strong>' . __('Please verify your registration details:', 'evrplus_language') . '</strong></p>';
-echo '<table width="95%" border="0"><tr><td><strong>' . _e('Event Name/Cost:', 'evrplus_language') . '</strong></td><td>';
+
 
 $eventNameCostStr = $event_name . ' - ' . $item_order[0]['ItemCurrency'] . '&nbsp;' . $payment;
-
 if (intval($payment) == 0) {
     $eventNameCostStr = $event_name . ' - Free';
 }
 
-echo $eventNameCostStr . '</td></tr><tr><td><strong>';
-
-_e('Registering Name:', 'evrplus_language');
-echo '</strong></td><td>' . $attendee_name . '</td></tr>'
- . '<tr><td><strong>' . __('Email Address:', 'evrplus_language') . '</strong></td><td>';
-echo $email . '</td></tr><tr><td><strong>' . __('Number of Attendees:', 'evrplus_language');
-echo '</strong></td><td>' . $quantity . '</td></tr><tr><td><strong>' . __('Order Details:', 'evrplus_language') . '</strong></td><td>';
 
 #Registration Type
-if ($reg_type == "WAIT") {
-    echo "WAIT LIST";
-} else {
+$row_count = 0;
+if ($reg_type != "WAIT") {
     $row_count = count($item_order);
-    for ($row = 0; $row < $row_count; $row++) {
-        if ($item_order[$row]['ItemQty'] >= 1) {
-            $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " " . $item_order[$row]['ItemCurrency'] . '  ' . $item_order[$row]['ItemCost'] . "<br \>";
-            if ($item_order[$row]['ItemCost'] <= 0) {
-                $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free " . "<br \>";
-            }
-
-            echo $strItemD;
-        }
-    }
-}
-
-echo '</td></tr><tr>';
-
-if ($use_coupon == "Y") {
-    if ($coupon == $coupon_code) {
-        echo '<td><strong>' . __('Coupon:', 'evrplus_language') . '</strong></td><td>' . $coupon_code_price . '</td>';
-    } elseif ($coupon != $coupon_code && $coupon != '') {
-        echo '<td><strong>' . __('Coupon:', 'evrplus_language') . '</strong></td><td>' . __('Invalid Code!', 'evrplus_language') . '</td>';
-    }
-}
-echo '</tr>';
-
-if ($company_options['use_sales_tax'] == "Y") {
-    echo '<tr><td></td><td>';
-    _e('Sales Tax:', 'evrplus_language');
-    echo '  ' . $tax . '</td></tr>';
 }
 
 $total = $payment;
 if (intval($total) > 0) {
     $oEventDiscounts = new EventPlus_Models_Events_Discounts();
     $discountSettings = $oEventDiscounts->getSettings($event_id);
-
 
     $discountPercentage = 0;
     if (count($discountSettings) > 0 && is_array($discountSettings)) {
@@ -293,17 +254,6 @@ if (intval($total) > 0) {
     }
 }
 
-if ($posted_data['discount'] > 0) {
-    echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Order Total:', 'evrplus_language') . '</strong></td><td>';
-    echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($payment), 2) . ')</strong></td></tr>';
-    echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Discount:', 'evrplus_language') . ' (' . intval($posted_data['discount_percentage']) . '%)</strong></td><td>';
-    echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($posted_data['discount']), 2) . ')</strong></td></tr>';
-}
-
-echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td><td>';
-
-echo $item_order[0]['ItemCurrency'] . '<strong>  ' . number_format(floatval($total), 2) . '</strong></td></tr></table>';
-echo '<p align="left"><strong>';
 if ($reg_type == "WAIT") {
     $type = __('You are on the waiting list.', 'evrplus_language');
 }
@@ -311,71 +261,195 @@ if ($reg_type == "RGLR") {
     $type = __('You are registering for', 'evrplus_language') . " " . $quantity . " " . __('person(s).', 'evrplus_language') . "   " . __('Please provide the first and last name of each person:', 'evrplus_language');
 }
 
-/**
-function eventplus_registration_message($reg_type) {
-
-    if ($reg_type == "WAIT") {
-        return __('You are on the waiting list.', 'evrplus_language');
-    }
-    
-    if ($reg_type == "RGLR") {
-        return __('Please provide the first and last name of each person:', 'evrplus_language');
-    }
-}
-
-add_filter('eventplus_registration_type_message', 'eventplus_registration_message');
-
- */
-
 if (has_filter('eventplus_registration_type_message')) {
     $type = apply_filters('eventplus_registration_type_message', $reg_type);
 }
 
-echo $type;
-echo '</strong><br />';
-
-echo '<form id="attendee_confirm" class="evrplus_regform" method="post" action="';
-echo evrplus_permalink($company_options['evrplus_page_id']);
-echo '" onSubmit="mySubmit.disabled=true;return validateConfirmationForm(this)"><p>';
-if ($quantity > 0) {
-    echo '<div style="width:95%;">';
-    $i = 0;
-    do {
-        $person = $i + 1;
-        echo __('Attendee', 'evrplus_language') . ' #' . $person . '<br/>&nbsp;&nbsp;&nbsp;' . __('First Name', 'evrplus_language') .
-        ': <input name="attendee[' . $i . '][first_name]"';
-        if ($i == 0) {
-            echo 'value ="' . $fname . '"';
-        }
-        echo '/>';
-        echo '<br/>&nbsp;&nbsp;&nbsp;' . __('Last Name', 'evrplus_language') . ': <input name="attendee[' . $i . '][last_name]"';
-        if ($i == 0) {
-            echo 'value ="' . $lname . '"';
-        }
-        echo '/></br>';
-
-        ++$i;
-    } while ($i < $quantity);
-    echo '</div>';
-}
-
 $form_post = urlencode(serialize($posted_data));
 $question_post = urlencode(serialize($qanda));
-echo '<br /><div style="float:left;"><input type="submit" value=" &lt;-- ' . __('BACK', 'evrplus_language') . '" onclick="history.go(-1);return false;" /></div>';
-$count = (int) $quantity;
-if ($count <= 0) {
-    echo '<br/><font color="red"><b>';
-    _e('You must select at least one registration item.', 'evrplus_language') . '<br />';
-    _e('Please go back and select an item!', 'evrplus_language');
-    echo '</b></font>';
-} else {
-    echo '<input type="hidden" name="reg_form" value="' . $form_post . '" />';
-    echo '<input type="hidden" name="questions" value="' . $question_post . '" />';
-    echo '<input type="hidden" name="action" value="post"/>';
-    echo '<input type="hidden" name="eventplus_token" value="' . $eventplus_token . '" />';
-    echo '<input type="hidden" name="event_id" value="' . $event_id . '" />';
+?>
+<div class="events-plus-2">
+    <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
+        <thead>
+            <tr>
+                <th colspan="3"><i class="fa fa-pencil"></i> <?php echo __('Please verify your registration details:', 'evrplus_language'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="35%"><i class="fa fa-calculator"></i> <?php echo _e('Event Name/Cost:', 'evrplus_language'); ?></td>
+                <td width="50%"><?php echo $eventNameCostStr; ?></td>
+                <td width="15%" align="right"></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-user"></i> <?php echo _e('Registering Name:', 'evrplus_language'); ?></td>
+                <td><?php echo $attendee_name; ?></td>
+                <td align="right"></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-envelope"></i> <?php echo __('Email Address:', 'evrplus_language'); ?></td>
+                <td><?php echo $email; ?></td>
+                <td align="right"></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-users"></i> <?php echo __('Number of Attendees:', 'evrplus_language'); ?></td>
+                <td><?php echo $quantity; ?></td>
+                <td align="right"></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-pencil"></i> <?php echo __('Order Details:', 'evrplus_language'); ?></td>
+                <td><?php if ($reg_type == "WAIT"): ?><?php echo __('Waiting List', 'evrplus_language'); ?><?php endif; ?></td>
+                <td align="right"></td>
+            </tr>
 
-    echo '<div style="margin-left: 150px;">';
-    echo '<input type="submit" name="mySubmit" id="mySubmit" value="' . __('Confirmed', 'evrplus_language') . '" /></div>';
-}
-echo '</form>';
+            <?php
+            if ($row_count):
+                for ($row = 0; $row < $row_count; $row++):
+                    if ($item_order[$row]['ItemQty'] >= 1) {
+                        $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " " . $item_order[$row]['ItemCurrency'] . '  ' . $item_order[$row]['ItemCost'] . "<br \>";
+                        if ($item_order[$row]['ItemCost'] <= 0) {
+                            $strItemD = $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName'] . " - Free " . "<br \>";
+                        }
+                    }
+                    ?>
+                    <?php if ($item_order[$row]['ItemQty'] >= 1): ?>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><?php echo $item_order[$row]['ItemQty'] . " " . $item_order[$row]['ItemCat'] . "-" . $item_order[$row]['ItemName']; ?></td>
+                            <td align="right">
+                                <?php
+                                if ($item_order[$row]['ItemCost'] > 0) {
+                                    echo $item_order[$row]['ItemCurrency'] . '  ' . $item_order[$row]['ItemCost'];
+                                } else {
+                                    echo __('Free', 'evrplus_language');
+                                }
+                                ?>
+
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                <?php endfor; ?>
+            <?php endif; ?>
+        </tbody>
+        <tfoot>
+            <?php if ($use_coupon == "Y"): ?>
+                <tr>
+                    <?php if ($coupon == $coupon_code): ?>
+                        <td><?php echo __('Coupon:', 'evrplus_language'); ?></td>
+                        <td><?php echo $coupon_code; ?></td>
+                        <td align="right"><?php echo $coupon_code_price; ?></td>
+                    <?php elseif ($coupon != $coupon_code && $coupon != ''): ?>
+                        <td><?php echo __('Coupon:', 'evrplus_language'); ?></td>
+                        <td><?php echo __('Invalid Code!', 'evrplus_language'); ?></td>
+                        <td align="right">&nbsp;</td>
+                    <?php endif; ?>
+                </tr>
+            <?php endif; ?>
+            <?php if ($company_options['use_sales_tax'] == "Y"): ?>
+                <tr>
+                    <td></td>
+                    <td><?php _e('Sales Tax:', 'evrplus_language'); ?></td>
+                    <td align="right"><?php echo $tax; ?></td>
+                </tr>
+            <?php endif; ?>
+
+
+            <?php if ($posted_data['discount'] > 0): ?>
+                <tr>
+                    <td></td>
+                    <td><?php echo __('Order Total:', 'evrplus_language'); ?></td>
+                    <td align="right"><?php echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($payment), 2) . ')</strong>'; ?></td>
+                </tr> 
+                <tr>
+                    <td></td>
+                    <td><?php echo __('Discount:', 'evrplus_language') . ' (' . intval($posted_data['discount_percentage']) . '%)'; ?></td>
+                    <td align="right"><?php echo $item_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($posted_data['discount']), 2) . ')</strong>'; ?></td>
+                </tr> 
+            <?php endif; ?>
+            <tr>
+                <td></td>
+                <td><?php echo __('Total Cost:', 'evrplus_language'); ?></td>
+                <td align="right"><?php echo $item_order[0]['ItemCurrency'] . '<strong>  ' . number_format(floatval($total), 2) . '</strong>'; ?></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <?php
+    if ($type != ""):
+        ?>
+        <div class="col-xs-12">
+            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php echo $type; ?></div>
+        </div>
+        <?php
+    endif;
+    ?>
+
+
+    <div class="row">
+        <div class="col-xs-12 regis8er-form" id="regis8er-form">
+
+            <form id="eventplus_attendee_form_confirm" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="myConfirmSubmit.disabled = true;
+                    return validateConfirmationForm(this)">
+                <div class="row">
+                    <?php if ($quantity > 0): ?>
+                        <?php
+                        for ($person = 0; $person < $quantity; $person++):
+                            $first_fname = '';
+                            $first_lname = '';
+                            if ($person == 0) {
+                                $first_fname = $fname;
+                                $first_lname = $lname;
+                            }
+                            ?>
+                            <div class="col-xs-12 fi3ld">
+                                <h3 class="section-sub-ti8le"><i class="fa fa-user"></i> <?php echo __('Attendee', 'evrplus_language'); ?> # <?php echo $person + 1; ?></h3>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-9 fi3ld">
+                                <input class="eplus-required" value="<?php echo $first_fname; ?>" type="text" name="attendee[<?php echo $person; ?>][first_name]" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-4 col-sm-6 col-xs-9 fi3ld">
+                                <input class="eplus-required" value="<?php echo $first_lname; ?>" type="text" name="attendee[<?php echo $person; ?>][last_name]" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
+                            </div>
+                            <div class="clearfix"></div>
+                        <?php endfor; ?>
+                    <?php endif; ?>
+
+                    <div class="clearfix"></div>
+                    <div class="col-xs-12 fi3ld-buttons">
+
+                        <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
+                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i>
+                                <span id="form_action_message_eplus"></span>
+                            </div>
+                        </div>
+
+                        <input type="reset" name="back" id="back" value="<?php echo __('BACK', 'evrplus_language'); ?>" onclick="history.go(-1);
+                                return false;">
+
+                        <?php
+                        $count = (int) $quantity;
+                        if ($count <= 0) {
+                            echo '<div class="col-xs-12">
+                                    <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
+                                    ' . __('You must select at least one registration item.', 'evrplus_language') . '
+                                    ' . __('Please go back and select an item!', 'evrplus_language') . '
+                                    </div>
+                            </div>';
+                        } else {
+                            echo '<input type="hidden" id="qty_attendees" value="' . $quantity . '" />';
+                            echo '<input type="hidden" name="reg_form" value="' . $form_post . '" />';
+                            echo '<input type="hidden" name="questions" value="' . $question_post . '" />';
+                            echo '<input type="hidden" name="action" value="post"/>';
+                            echo '<input type="hidden" name="eventplus_token" value="' . $eventplus_token . '" />';
+                            echo '<input type="hidden" name="event_id" value="' . $event_id . '" />';
+
+                            echo '<input type="submit" name="myConfirmSubmit" id="myConfirmSubmit" value="' . __('Confirmed', 'evrplus_language') . '" />';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

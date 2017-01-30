@@ -125,51 +125,63 @@ class EventPlus_Helpers_Payment {
         $discount_percentage = $this->attendeeRow['discount_percentage'];
         $discount_amount = $this->attendeeRow['discount_amount'];
         $attendee_name = $fname . " " . $lname;
+        $row_count = count($ticket_order);
 
         // Print the Order Verification to the screen.
 
-        echo '<table width="95%" border="0">'
-        . '<tr>
-                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Order details', 'evrplus_language') . '</font></b></td>
-                </tr>'
-        . '<tr><td><strong>';
-        _e('Event Name:', 'evrplus_language');
-        echo '</strong></td><td>' . $event_name . '</td></tr><tr><td><strong>';
-        _e('Attendee Name:', 'evrplus_language');
-        echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-        _e('Email Address:', 'evrplus_language');
-        echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-        _e('Number of Attendees:', 'evrplus_language');
-        echo '</strong></td><td>' . $quantity . '</td></tr>';
-        $row_count = count($ticket_order);
+        echo '<table width="100%" cellpadding="0" cellspacing="0" class="data-summary">'
+        . '<thead>
+                <tr>
+                    <th colspan="2"><i class="fa fa-pencil"></i> ' . __('Order details', 'evrplus_language') . '</th>
+                </tr>
+            </thead>';
+
+        echo '<tbody>';
+
+        echo '<tr>';
+        echo '<td><i class="fa fa-calculator"></i> ' . __('Event Name:', 'evrplus_language') . '</td>
+                <td>' . $event_name . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Attendee Name:', 'evrplus_language') . '</td>
+                <td>' . $attendee_name . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Email Address:', 'evrplus_language') . '</td>
+                <td>' . $email . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Number of Attendees:', 'evrplus_language') . '</td>
+                <td>' . $quantity . '</td>';
+        echo '</tr>';
 
         if ($row_count > 0) {
-            echo '<tr><td><strong>';
+            echo '<tr>'
+            . '<td>';
             _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
+            echo '</td>'
+            . '<td>';
 
             for ($row = 0; $row < $row_count; $row++) {
                 if ($ticket_order[$row]['ItemQty'] >= 1) {
-                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . ' - ' .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
+                    echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
+                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br/>";
                 }
             }
-        }
-        echo '</td></tr>';
 
-        if ($this->companyOptions['use_sales_tax'] == "Y") {
-            echo '<tr><td></td><td>';
-            _e('Sales Tax  ', 'evrplus_language');
-            echo ':  ' . $tax;
             echo '</td></tr>';
         }
 
-        if ($discount_percentage > 0 && $discount_amount > 0) {
-            echo '<tr><td><strong>' . __('Order Total:', 'evrplus_language') . '</strong></td>';
-            echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($order_total, 2) . '</strong></td></tr>';
+        echo '</tbody>';
 
-            echo '<tr><td colspan="2"></td></tr><tr><td><strong>' . __('Discount:', 'evrplus_language') . ' (' . intval($discount_percentage) . '%)</strong></td><td>';
-            echo $ticket_order[0]['ItemCurrency'] . '<strong>  (' . number_format(floatval($discount_amount), 2) . ')</strong></td></tr>';
+        if ($this->companyOptions['use_sales_tax'] == "Y") {
+            echo '<tr><td colspan="2"></td><td>';
+            _e('Sales Tax  ', 'evrplus_language');
+            echo ':  ' . $tax;
+            echo '</td></tr>';
         }
 
         echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
@@ -181,14 +193,15 @@ class EventPlus_Helpers_Payment {
             $paymentOptions = $this->getPaymentOptions();
 
             if (count($paymentOptions) > 0) {
-                echo __("Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site", 'evrplus_language');
-                echo '<table width="95%" cellspacing="0" cellpadding="2" border="0">
-                <tbody>
-                <tr>
-                  <td bgcolor="black" colspan="2">
-                    <b><font color="white">' . __('Payment Methods', 'evrplus_language') . '</font></b>
-                </td>
-                </tr>';
+                echo'
+            <div class="info-m3ssages">' . __("Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site", 'evrplus_language') . '</div>
+        ';
+                echo '<table width="100%" cellspacing="0" cellpadding="0" border="0"  class="data-summary"><thead>
+                    <tr>
+                    <th colspan="2"><i class="fa fa-money"></i> ' . __('Payment Methods', 'evrplus_language') . '</th>
+                </tr>
+                </thead>
+                <tbody>';
 
                 $oPaymentMethods = new EventPlus_Models_Payments();
                 foreach ($paymentOptions as $pi => $paymentOption) {
@@ -339,7 +352,7 @@ class EventPlus_Helpers_Payment {
                         echo "	<INPUT type='hidden' name='x_test_request' value='$testMode' />";
                         echo "	<INPUT type='hidden' name='x_show_form' value='PAYMENT_FORM' />";
                         echo "	<INPUT type='hidden' name='x_Relay_URL' value='$ipn_url' />";
-                        echo "	<input type='submit' value='$label' />";
+                        echo "	<input type='submit' value='$label' class='btn btn-sma77 btn-gr3y btn-ic0n paymen8' />";
                         echo "</FORM>";
                         echo '</td>
                           </tr>';
@@ -352,12 +365,12 @@ class EventPlus_Helpers_Payment {
         } else {
 
 
-            echo '<table width="95%" border="0">';
+            echo '<table width="100%" cellpadding="0" cellspacing="0" class="data-summary">';
             echo '<tr>
-                  <td bgcolor="black" colspan="2"><b><font color="white">' . __("Payment Details", 'evrplus_language') . '</font></b></td>
+                  <td colspan="2">' . __("Payment Details", 'evrplus_language') . '</td>
                 </tr>';
             echo '<tr>'
-            . '<td>Payment Status</td><td>' . ucfirst($this->attendeeRow['payment_status']) . '</td>'
+            . '<td>' . __("Payment Status", 'evrplus_language') . '</td><td>' . ucfirst($this->attendeeRow['payment_status']) . '</td>'
             . '</tr>';
 
             $oModels_Payments = new EventPlus_Models_Payments();
@@ -582,6 +595,7 @@ class EventPlus_Helpers_Payment {
         $coupon = $this->attendeeRow['coupon'];
         $token = $this->attendeeRow['token'];
         $attendee_name = $fname . " " . $lname;
+        $row_count = count($ticket_order);
 
         // Print the Order Verification to the screen.
 
@@ -592,40 +606,61 @@ class EventPlus_Helpers_Payment {
             ));
 
             $confirmation_message_str = html_entity_decode(stripslashes($this->companyOptions['c_message']));
-            echo '<p>' . $oMail->bindParams($confirmation_message_str) . '</p>';
+            echo '<div class="col-xs-12">
+            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> ' . $oMail->bindParams($confirmation_message_str) . '</div>
+        </div>';
         }
 
-        echo '<table width="95%" border="0">'
-        . '<tr>
-                  <td bgcolor="black" colspan="2"><b><font color="white">' . __('Order details', 'evrplus_language') . '</font></b></td>
-                </tr>'
-        . '<tr><td><strong>';
-        _e('Event Name:', 'evrplus_language');
-        echo '</strong></td><td>' . $event_name . '</td></tr><tr><td><strong>';
-        _e('Attendee Name:', 'evrplus_language');
-        echo '</strong></td><td>' . $attendee_name . '</td></tr><tr><td><strong>';
-        _e('Email Address:', 'evrplus_language');
-        echo '</strong></td><td>' . $email . '</td></tr><tr><td><strong>';
-        _e('Number of Attendees:', 'evrplus_language');
-        echo '</strong></td><td>' . $quantity . '</td></tr>';
-        $row_count = count($ticket_order);
+        echo '<table width="100%" cellpadding="0" cellspacing="0" class="data-summary">'
+        . '<thead>
+                <tr>
+                    <th colspan="2"><i class="fa fa-pencil"></i> ' . __('Order details', 'evrplus_language') . '</th>
+                </tr>
+            </thead>';
+
+        echo '<tbody>';
+
+        echo '<tr>';
+        echo '<td><i class="fa fa-calculator"></i> ' . __('Event Name:', 'evrplus_language') . '</td>
+                <td>' . $event_name . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Attendee Name:', 'evrplus_language') . '</td>
+                <td>' . $attendee_name . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Email Address:', 'evrplus_language') . '</td>
+                <td>' . $email . '</td>';
+        echo '</tr>';
+
+        echo '<tr>';
+        echo '<td>' . __('Number of Attendees:', 'evrplus_language') . '</td>
+                <td>' . $quantity . '</td>';
+        echo '</tr>';
 
         if ($row_count > 0) {
-            echo '<tr><td><strong>';
+            echo '<tr>'
+            . '<td>';
             _e('Order Details:', 'evrplus_language');
-            echo '</strong></td><td>';
+            echo '</td>'
+            . '<td>';
 
             for ($row = 0; $row < $row_count; $row++) {
-                if ($ticket_order[$row]['ItemQty'] >= "1") {
+                if ($ticket_order[$row]['ItemQty'] >= 1) {
                     echo $ticket_order[$row]['ItemQty'] . " " . $ticket_order[$row]['ItemCat'] . "-" . $ticket_order[$row]['ItemName'] . " " .
-                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br \>";
+                    $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost'] . "<br/>";
                 }
             }
+
+            echo '</td></tr>';
         }
-        echo '</td></tr>';
+
+        echo '</tbody>';
 
         if ($this->companyOptions['use_sales_tax'] == "Y") {
-            echo '<tr><td></td><td>';
+            echo '<tr><td colspan="2"></td><td>';
             _e('Sales Tax  ', 'evrplus_language');
             echo ':  ' . $tax;
             echo '</td></tr>';
