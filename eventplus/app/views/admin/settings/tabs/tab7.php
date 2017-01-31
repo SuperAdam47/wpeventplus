@@ -211,7 +211,7 @@
                 </div>
                 </p>
                 <p>
-                    <?php _e('Do you want to Show Tool tip on the Date selector?', 'evrplus_language'); ?>
+                    <?php _e('Do you want to Show Tool tip on the Calendar?', 'evrplus_language'); ?>
                 <div class="con">
                     <input id="tp1" type="radio" name="evrplus_tooltip_select" class="regular-radio" value="Y"  <?php
                     if ($company_options['evrplus_tooltip_select'] == "Y") {
