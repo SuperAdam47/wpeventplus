@@ -45,6 +45,13 @@
 
 </style>
 
+<?php
+$currentTab = 'tab1';
+if (isset($_GET['ct'])) {
+    $currentTab = $_GET['ct'];
+}
+?>
+
 <div class="events-plus_page_configure">
     <div class="evrplus_container">
 
@@ -56,7 +63,8 @@
             <ul class="tabs">
 
                 <?php foreach ($tabs as $tabKey => $tabTitle): ?>
-                    <li><a href="#<?php echo $tabKey; ?>">
+                    <li class="settingsTab" data-tab="<?php echo $tabKey; ?>" id="li_st_<?php echo $tabKey; ?>">
+                        <a id="eplus_settings_tab_<?php echo $tabKey; ?>" href="#<?php echo $tabKey; ?>">
                             <?php echo $tabTitle; ?>
                         </a></li>
                 <?php endforeach; ?>
@@ -182,9 +190,10 @@
                         </div>
                     </div>
             </div>
-            <!--<div style="clear: both; display: block; padding: 10px 0; text-align:center;" class="last"><font ><?php //_e('Please make sure you complete each section before submitting!','evrplus_language');            ?></font></div>-->
             <p align="center">
                 <input type="hidden" name="update_company" value="update">
+
+                <input type="hidden" id="eventplus_settings_current_tab" name="eplus_current_tab" value="<?php echo $currentTab; ?>">
                 <input  type="submit" name="update_button" value="<?php _e('Update Configuration Settings', 'evrplus_language'); ?>" id="update_button" />
                 </form>
             </p>
@@ -238,6 +247,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function () {
         jQuery('.tabs li a').click(function () {
+
             if (jQuery(this).attr('href') == '#tab9') {
                 jQuery('.disp').html("<?php echo _e("Let's get your events plugin configured!", 'evrplus_language'); ?>");
 
@@ -245,8 +255,27 @@
                 jQuery('.disp').html("<?php echo _e('Event Registration Configuration Settings', 'evrplus_language'); ?>");
 
             }
-
         });
+
+        jQuery('li.settingsTab').click(function () {
+            jQuery('#eventplus_settings_current_tab').val(jQuery(this).attr('data-tab'));
+        });
+
+        //eplus_settings_tab_
+<?php if ($currentTab != ''): ?>
+            setTimeout(function () {
+                jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+
+                var oLi = jQuery('#li_st_<?php echo $currentTab; ?>');
+                oLi.addClass("active"); //Add "active" class to selected tab
+
+                jQuery(".tab_content").hide(); //Hide all tab content
+
+                var activeTab = oLi.find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+
+                jQuery(activeTab).fadeIn(); //Fade in the active content
+            }, 50);
+<?php endif; ?>
 
     });
 

@@ -7,11 +7,12 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
     }
 
     function index() {
-        
-    
+
+
         if ($this->_request->isPost()) {
 
-            $response = $this->_model->saveSettings($this->_request->getParams());
+            $params = $this->_request->getParams();
+            $response = $this->_model->saveSettings($params);
 
             if ($response) {
                 $this->setSuccessMessage($this->_model->getMessage());
@@ -19,7 +20,12 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
                 $this->setErrorMessage($this->_model->getMessage());
             }
 
-            $this->redirect($this->adminUrl('admin_settings'));
+            //$params
+            $currentTab = 'tab1';
+            if (isset($params['eplus_current_tab'])) {
+                $currentTab = $params['eplus_current_tab'];
+            }
+            $this->redirect($this->adminUrl('admin_settings', array('ct' => $currentTab)));
             return;
         }
 
