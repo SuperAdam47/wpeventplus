@@ -71,6 +71,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['payment_subj'] = $params['payment_subj'];
             $company_options['payment_message'] = ($params['payment_message']);
             $company_options['c_message'] = ($params['c_message']);
+            $company_options['info_recieved'] = ($params['info_recieved']);
             $company_options['captcha'] = $params['captcha'];
             $company_options['captcha_key'] = $params['captcha_key'];
             $company_options['event_pop'] = $params['event_pop'];

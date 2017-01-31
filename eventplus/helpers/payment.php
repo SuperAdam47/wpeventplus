@@ -178,10 +178,10 @@ class EventPlus_Helpers_Payment {
         echo '</tbody>';
 
         if ($this->companyOptions['use_sales_tax'] == "Y") {
-            echo '<tr><td colspan="2"></td><td>';
-            _e('Sales Tax  ', 'evrplus_language');
-            echo ':  ' . $tax;
-            echo '</td></tr>';
+            echo '<tr>'
+            . '<td>' . __('Sales Tax  ', 'evrplus_language') . '</td>'
+            . '<td>' . $tax . '</td>'
+            . '</tr>';
         }
 
         echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';

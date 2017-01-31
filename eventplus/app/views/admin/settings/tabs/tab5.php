@@ -143,7 +143,7 @@
                 </font>
                 </p>
                 <p>
-                    <?php _e('Type your confirmation message below', 'evrplus_language'); ?>
+                    <?php _e('Email Body', 'evrplus_language'); ?>
                     :
                     <?php
                     $settings = array(
@@ -162,6 +162,28 @@
                         <textarea name="c_message" id="message" style="width: 100%; height: 250px;">
 
                             <?php echo stripslashes($company_options['c_message']); ?></textarea>
+                    <?php }
+                    ?>
+                </p>
+                <br />
+                <p>
+                    <?php _e('Type your confirmation message below', 'evrplus_language'); ?>
+                    :
+                    <?php
+                    $settings = array(
+                        'media_buttons' => false,
+                        'quicktags' => array('buttons' => 'b,i,ul,ol,li,link,close'),
+                        'tinymce' => array('theme_advanced_buttons1' => 'bold,italic,bullist,numlist,|,justifyleft,justifycenter,justifyright,|,link,unlink,|,fullscreen')
+                    );
+
+                    if (function_exists('wp_editor')) {
+                        wp_editor(html_entity_decode(stripslashes($company_options['info_recieved'])), 'info_recieved', $settings);
+                    } else {
+                        ?>
+                        <a href="javascript:void(0)" onclick="tinyfy(1, 'info_recieved')">
+                            <input type="button" value="WYSIWG"/>
+                        </a> <br />
+                        <textarea name="info_recieved" id="message" style="width: 100%; height: 250px;"><?php echo stripslashes($company_options['info_recieved']); ?></textarea>
                     <?php }
                     ?>
                 </p>

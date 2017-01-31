@@ -1,3 +1,4 @@
+<p><?php echo $question->question; ?><?php echo $question->required == 'Y' ? ' *' : ''; ?></p>
 <?php
 
 echo "<select class='".$requiredClass."' name='DROPDOWN_" . $question->id . "' $required id='DROPDOWN_" . $question->id . "' title='" . $question->question . "' />";

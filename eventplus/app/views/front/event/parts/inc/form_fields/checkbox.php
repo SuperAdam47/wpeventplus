@@ -1,3 +1,4 @@
+<p><?php echo $question->question; ?><?php echo $question->required == 'Y' ? ' *' : ''; ?></p>
 <?php
 
 foreach ($values as $key => $value) {

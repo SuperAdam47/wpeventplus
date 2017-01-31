@@ -344,7 +344,8 @@ $question_post = urlencode(serialize($qanda));
                         <td align="right">&nbsp;</td>
                     <?php endif; ?>
                 </tr>
-            <?php endif; ?>
+            <?php endif; 
+            ?>
             <?php if ($company_options['use_sales_tax'] == "Y"): ?>
                 <tr>
                     <td></td>

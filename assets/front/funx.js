@@ -466,7 +466,7 @@ jQuery(document).ready(function ($) {
     if (jQuery('.eventplus-ddl-items').val() >= 0) {
         jQuery('#mySubmit').removeAttr('disabled');
     }
-  
+
     if (jQuery('#qty_attendees').length && jQuery('#eventplus_attendee_form_confirm').length) {
         if (jQuery('#qty_attendees').val() == '1') {
             jQuery('#eventplus_attendee_form_confirm').submit();
@@ -502,31 +502,52 @@ jQuery(document).ready(function ($) {
     jQuery('.eplus-required').on('change', function () {
         var oSelf = jQuery(this);
         var oParent = oSelf.parent('.fi3ld');
+        var oValidationMsg = oParent.find('span.valida8ion-msg');
+        if (!oValidationMsg.length) {
+            oParent.append('<span class="valida8ion-msg r3d" style="display:none;">&nbsp;</span>');
+            oValidationMsg = oParent.find('span.valida8ion-msg');
+        }
+
         if (oSelf.val() == '') {
             oParent.addClass('r3d');
             oParent.removeClass('gr33n');
+
+            if (validationErrors) {
+                oValidationMsg.html(validationErrors.required);
+                oValidationMsg.fadeIn();
+            }
         } else {
 
             if (oSelf.attr('type') == 'email') {
                 if (echeck(oSelf.val()) == false) {
                     oParent.addClass('r3d');
                     oParent.removeClass('gr33n');
+                    if (validationErrors) {
+                        oValidationMsg.html(validationErrors.invalid);
+                        oValidationMsg.fadeIn();
+                    }
                 } else {
                     oParent.addClass('gr33n');
                     oParent.removeClass('r3d');
+                     oValidationMsg.fadeOut();
                 }
 
                 return;
             }
-            
+
             if (oSelf.hasClass('eplus-phone')) {
-            
+
                 if (checkInternationalPhone(oSelf.val()) == false) {
                     oParent.addClass('r3d');
                     oParent.removeClass('gr33n');
+                    if (validationErrors) {
+                        oValidationMsg.html(validationErrors.invalid);
+                        oValidationMsg.fadeIn();
+                    }
                 } else {
                     oParent.addClass('gr33n');
                     oParent.removeClass('r3d');
+                    oValidationMsg.fadeOut();
                 }
 
                 return;
@@ -534,6 +555,7 @@ jQuery(document).ready(function ($) {
 
             oParent.addClass('gr33n');
             oParent.removeClass('r3d');
+            oValidationMsg.fadeOut();
         }
     });
 });

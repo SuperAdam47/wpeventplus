@@ -6,6 +6,8 @@
 
 <script>
     var validationErrors = {
+        invalid: "<?php echo __('Invalid', 'evrplus_language'); ?>",
+        required: "<?php echo __('Required', 'evrplus_language'); ?>",
         fname: "<?php echo __('Please enter your first name', 'evrplus_language'); ?>",
         lname: "<?php echo __('Please enter your last name', 'evrplus_language'); ?>",
         email: "<?php echo __('Email format not correct!', 'evrplus_language'); ?>",
@@ -448,16 +450,13 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         <?php
                                         $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
                                         if ($questions) :
-                                            ?>
-                                            <?php
-                                            foreach ($questions as $question):
+                                            foreach ($questions as $question):  
                                                 $title = '';
                                                 if ($question->remark) {
                                                     $title = $question->remark;
                                                 }
                                                 ?>
                                                 <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
-                                                    <p><?php echo $question->question; ?><?php echo $question->required == 'Y' ? ' *' : ''; ?></p>
                                                     <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
                                                 </div>
                                             <?php endforeach; ?>
@@ -702,6 +701,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                                 });
     </script>
     <?php
+
 
 
 
