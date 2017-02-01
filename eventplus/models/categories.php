@@ -56,9 +56,9 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
 
     function addCategory($params) {
 
-        $category_name = htmlentities2($params['category_name']);
+        $category_name = ($params['category_name']);
         $category_identifier = htmlentities2($params['category_identifier']);
-        $category_desc = htmlentities2($params['category_desc']);
+        $category_desc = ($params['category_desc']);
         $display_category_desc = $params['display_desc'];
         $category_background = $params['cat_back'];
         $category_font = $params['cat_text'];
@@ -96,9 +96,9 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
     function editCategory($params, array $dbRow) {
 
         $category_id = intVal($params['id']);
-        $category_name = htmlentities2($params['category_name']);
+        $category_name = ($params['category_name']);
         $category_identifier = htmlentities2($params['category_identifier']);
-        $category_desc = htmlentities2($params['category_desc']);
+        $category_desc = ($params['category_desc']);
         $display_category_desc = $params['display_desc'];
         $category_background = $params['cat_back'];
         $category_font = $params['cat_text'];
