@@ -1,11 +1,11 @@
 <?php
 $total_items = count($rows);
 $event_name = '';
-$event_id = 0;
+$_event_id = 0;
 
 if (is_object($oEvent)) {
     $event_name = $oEvent->event_name;
-    $event_id = $oEvent->id;
+    $_event_id = $oEvent->id;
 }
 ?>
 <div class="padding">
@@ -93,10 +93,10 @@ if (is_object($oEvent)) {
                         $payment_status = "Success";
                     }
                     ?>
-                    <?php if (strtolower($payment_status) == 'success'): ?>
-                        <span class='label  label-success'><?php echo ucfirst($payment_status); ?></span>
+                   <?php if (strtolower($payment_status) == 'success'): ?>
+                        <span class='label  label-success' style="color:#FFF;"><?php echo ucfirst($payment_status); ?></span>
                     <?php else: ?>
-                        <span class='label label-warning'><?php echo $payment_status; ?></span>
+                        <span class='label label-warning' style="color:#FFF;"><?php echo $payment_status; ?></span>
                     <?php endif; ?>
                 </td>
                 <td>    
@@ -134,15 +134,15 @@ if (is_object($oEvent)) {
         </tbody>
 
     </table>
-    <?php if ($total_items): ?>
+    <?php if ($total_items && $_event_id > 0): ?>
         <br />
         <div style="float:left; margin-right:20px;">
-            <form method="POST" action="<?php echo $this->adminUrl('admin_attendees/export', array('event_id' => $oEvent->id, 'type' => 'xls')); ?>">
+            <form method="POST" action="<?php echo $this->adminUrl('admin_attendees/export', array('event_id' => $_event_id, 'type' => 'xls')); ?>">
                 <input class="xls_btn" type="submit" value="Export Details - Excel"/>
             </form>
         </div>
         <div style="float:left;">
-            <form method="POST" action="<?php echo $this->adminUrl('admin_attendees/export', array('event_id' => $oEvent->id, 'type' => 'csv')); ?>">
+            <form method="POST" action="<?php echo $this->adminUrl('admin_attendees/export', array('event_id' => $_event_id, 'type' => 'csv')); ?>">
                 <input class="csv_btn" type="submit" value="Export Details - CSV"/>
             </form>
         </div>
