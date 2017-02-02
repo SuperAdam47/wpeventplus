@@ -317,19 +317,21 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                     <?php
                 endif;
                 ?>
-                <div class="ac8ion">
-                    <?php if ($disable_event_reg != 'Y'): ?>
-                        <?php if ($outside_reg == "Y"): ?>
-                            <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
-                        <?php else: ?>
-                            <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                <?php if ($disable_event_reg != 'Y' || $more_info != ""): ?>
+                    <div class="ac8ion">
+                        <?php if ($disable_event_reg != 'Y'): ?>
+                            <?php if ($outside_reg == "Y"): ?>
+                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                            <?php else: ?>
+                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                            <?php endif; ?>
                         <?php endif; ?>
-                    <?php endif; ?>
-                    <?php if ($more_info != ""): ?>
-                        <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
-                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
-                       <?php endif; ?>
-                </div>
+                        <?php if ($more_info != ""): ?>
+                            <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
+                                        return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                           <?php endif; ?>
+                    </div>
+                <?php endif; ?>
 
                 <?php if ($disable_event_reg != "Y"): ?>
                     <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
@@ -450,7 +452,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         <?php
                                         $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
                                         if ($questions) :
-                                            foreach ($questions as $question):  
+                                            foreach ($questions as $question):
                                                 $title = '';
                                                 if ($question->remark) {
                                                     $title = $question->remark;
@@ -701,6 +703,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                                 });
     </script>
     <?php
+
 
 
 
