@@ -41,7 +41,7 @@
 .events-plus-2	.event-single	.me8a	.fa	{ width: 36px; height: 36px; line-height: 36px; font-size: 24px; }
 
 .events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 40px 0; font-size: 17px; }
-.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 19px; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 17px; }
 
 .events-plus-2	.event-single	.me8a.al8	.it3m	.d3sc	{ padding: 25px 30px; }
 
@@ -73,6 +73,7 @@
 
 .events-plus-2 .event-single .ti8le	{ font-size: 23px; }
 
+.events-plus-2	.event-single	.me8a	{ display: block !important; }
 .events-plus-2	.event-single	.me8a	.it3m	{ width: 100%; border-right: none; border-bottom: 1px solid #ccc; }
 .events-plus-2	.event-single	.me8a	.it3m:nth-child(2)	{ border-bottom: none; }
 

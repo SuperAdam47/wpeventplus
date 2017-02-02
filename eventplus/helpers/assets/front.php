@@ -14,7 +14,7 @@ class EventPlus_Helpers_Assets_Front {
         
         wp_register_style('eventplus-front', plugins_url('assets/front/style.css', $file), array(), '1.0.0', 'all');
         wp_register_style('eventplus-responsive', plugins_url('assets/front/responsive.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('eventplus-fonts-fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
+        wp_register_style('eventplus-fonts-fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
         
         wp_enqueue_style('evrplus_public');
 

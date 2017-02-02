@@ -1,4 +1,6 @@
 <?php if ($rows): ?>
+<div class="events-plus-2">
+    <div class="events-list">
     <?php
     foreach ($rows as $event):
         #Determine when the event ends and compare that date and time to today's date and time
@@ -54,65 +56,61 @@
         $endDate = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->end_date));
         $event_name = stripslashes($event->event_name);
         ?>
-        <div class="events-plus-2">
-            <div class="events-list">
-                <div class="i8em" style="border-right-color: <?php echo $style_event_catgry; ?>;">
-                    <div class="col-lg-2 col-sm-3 col-xs-4 t7umb">
-                        <a href="<?php echo $event_link; ?>"><img src="<?php echo $imgSrc; ?>" alt="<?php echo $event_name; ?>"></a>
-                        <?php
-                        if ($company_options['show_num_seats'] !== 'no'):
+        <div class="i8em" style="border-right-color: <?php echo $style_event_catgry; ?>;">
+            <div class="col-lg-2 col-sm-3 col-xs-4 t7umb">
+                <a href="<?php echo $event_link; ?>"><img src="<?php echo $imgSrc; ?>" alt="<?php echo $event_name; ?>"></a>
+                <?php
+                if ($company_options['show_num_seats'] !== 'no'):
 
-                            $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = 'success' AND event_id='$event->id'";
+                    $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = 'success' AND event_id='$event->id'";
 
-                            $num = 0;
+                    $num = 0;
 
-                            $attendee_count = $wpdb->get_var($sql2);
-                            If ($attendee_count >= 1) {
-                                $num = $attendee_count;
-                            }
+                    $attendee_count = $wpdb->get_var($sql2);
+                    If ($attendee_count >= 1) {
+                        $num = $attendee_count;
+                    }
 
-                            $available_spaces = 0;
-                            if ($event->reg_limit != "") {
-                                $available_spaces = $event->reg_limit - $num;
-                            }
+                    $available_spaces = 0;
+                    if ($event->reg_limit != "") {
+                        $available_spaces = $event->reg_limit - $num;
+                    }
 
-                            if (!isset($event->reg_limit) or empty($event->reg_limit) or $event->reg_limit == 999999) {
-                                $available_spaces = __("Unlimited", 'evrplus_language');
-                            }
-                            ?>
-                            <div class="sea8s">
-                                <?php echo __('Open Seats', 'evrplus_language'); ?>
-                                <label style="background-color: <?php echo $style_event_catgry; ?>;"><?php echo $available_spaces; ?></label>
-                            </div>
-                        <?php endif; ?>
+                    if (!isset($event->reg_limit) or empty($event->reg_limit) or $event->reg_limit == 999999) {
+                        $available_spaces = __("Unlimited", 'evrplus_language');
+                    }
+                    ?>
+                    <div class="sea8s">
+                        <?php echo __('Open Seats', 'evrplus_language'); ?>
+                        <label style="background-color: <?php echo $style_event_catgry; ?>;"><?php echo $available_spaces; ?></label>
                     </div>
-                    <div class="col-lg-10 col-sm-9 col-xs-8">
-                        <h2 class="ti8le"><a href="<?php echo $event_link; ?>" title="<?php echo $event_name; ?>"><?php echo $event_name; ?></a></h2>
-                        <div class="me8a">
-                            <span>
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <?php if ($event->end_date == $event->start_date): ?>
-                                    <?php echo $startDate; ?>
-                                <?php else: ?>
-                                <?php echo $startDate; ?> - <?php echo $endDate; ?>
-                                <?php endif; ?>
-                            </span>
-                            <span>
-                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <?php echo $time_start; ?> <?php echo ($event->end_date == $event->start_date) ? ' - ' . $time_end : ''; ?>
-                            </span>
-                            <?php /*<span>
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                8276 Walnut Blvd. Jonesboro. GA. 30238
-                            </span>*/?>
-                        </div>
-                        <p class="d3sc"><?php echo evrplus_Truncate(html_entity_decode(stripslashes($event->event_desc)), 150, ' '); ?></p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+                <?php endif; ?>
             </div>
+            <div class="col-lg-10 col-sm-9 col-xs-8">
+                <h2 class="ti8le"><a href="<?php echo $event_link; ?>" title="<?php echo $event_name; ?>"><?php echo $event_name; ?></a></h2>
+                <div class="me8a">
+                    <span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <?php if ($event->end_date == $event->start_date): ?>
+                            <?php echo $startDate; ?>
+                        <?php else: ?>
+                        <?php echo $startDate; ?> - <?php echo $endDate; ?>
+                        <?php endif; ?>
+                    </span>
+                    <span>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <?php echo $time_start; ?> <?php echo ($event->end_date == $event->start_date) ? ' - ' . $time_end : ''; ?>
+                    </span>
+                    <?php /*<span>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        8276 Walnut Blvd. Jonesboro. GA. 30238
+                    </span>*/?>
+                </div>
+                <p class="d3sc"><?php echo evrplus_Truncate(html_entity_decode(stripslashes($event->event_desc)), 150, ' '); ?></p>
+            </div>
+            <div class="clearfix"></div>
         </div>
-
-    <?php endforeach; ?>
-
+    	<?php endforeach; ?>
+    </div>
+</div>
 <?php endif; ?>

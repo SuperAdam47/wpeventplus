@@ -32,7 +32,7 @@
 .events-plus-2	.events-list	.i8em:hover	{ box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); z-index: 2; }
 
 .events-plus-2	.events-list	.t7umb	{ text-align: center; }
-.events-plus-2	.events-list	.t7umb	img	{ max-width: 75%; border: 5px solid #d3d3d3; border-radius: 50%; }
+.events-plus-2	.events-list	.t7umb	img	{ max-width: 75%; height: auto; border: 5px solid #d3d3d3; border-radius: 50%; margin: 0 auto; }
 
 .events-plus-2	.events-list	.sea8s	{ margin: 10px 0 0; font-size: 15px; }
 .events-plus-2	.events-list	.sea8s	label	{ display: block; width: 65%; padding: 5px 0; margin: 2px auto 0; color: #fff; border-radius: 2px; }
@@ -54,11 +54,11 @@
 
 .events-plus-2	.event-single	{ background-color: #f5f5f5; border: 1px solid #ccc; box-shadow: 0 0 6px #ccc; margin: 0 0 30px; }
 
-.events-plus-2	.event-single	.bann3r	{ position: relative; height: 100%; }
-.events-plus-2	.event-single	.bann3r	img	{ position: relative; z-index: 1; max-width: 100%; }
+.events-plus-2	.event-single	.bann3r	{ position: relative; height: 100%; text-align: center; }
+.events-plus-2	.event-single	.bann3r	img	{ position: relative; z-index: 1; max-width: 100%; height: auto; }
 
 .events-plus-2	.event-single	.s0cial	{ position: absolute; top: 20px; left: 20px; z-index: 2; }
-.events-plus-2	.event-single	.s0cial	a	{ display: block; width: 64px; height: 64px; margin: 0 0 20px; color: #fff; font-size: 34px; line-height: 64px; text-align: center; border-radius: 5px; }
+.events-plus-2	.event-single	.s0cial	a	{ display: block; width: 64px; height: 64px; margin: 0 0 20px; color: #fff !important; font-size: 34px; line-height: 64px; text-align: center; border-radius: 5px; }
 .events-plus-2	.event-single	.s0cial	a:last-child	{ margin-bottom: 0; }
 .events-plus-2	.event-single	.s0cial	a.twitter	{ background-color: #00abf0; box-shadow: 0 4px 0 0 #0073a4; }
 .events-plus-2	.event-single	.s0cial	a.facebook	{ background-color: #3a579a; box-shadow: 0 4px 0 0 #203257; }
@@ -101,6 +101,7 @@
 .events-plus-2	.event-single	.ac8ion	.btn	{ margin: 0 20px; }
 
 .events-plus-2	.event-single	.regis8er-form	{ padding-top: 40px; padding-bottom: 40px; }
+.events-plus-2	.event-single	.regis8er-form	form	{ width: 100% !important; }
 
 .events-plus-2	.regis8er-form	input[type=text], 
 .events-plus-2	.regis8er-form	input[type=email], 
