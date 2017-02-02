@@ -119,10 +119,10 @@
 .events-plus-2	.regis8er-form	.fi3ld	{ margin-bottom: 25px; }
 .events-plus-2	.regis8er-form	.fi3ld	p	{ font-size: 17px; margin: 0 0 20px; }
 
-.events-plus-2	.regis8er-form	.section-ti8le	{ font-size: 24px; border-bottom: 1px solid #ccc; padding: 0 0 5px; }
+.events-plus-2	.regis8er-form	.section-ti8le	{ font-size: 24px; border-bottom: 1px solid #ccc; padding: 0 0 5px; margin-bottom: 0 !important; }
 .events-plus-2	.regis8er-form	.section-ti8le	.fa	{ font-size: 85%; margin: 0 10px 0 0; }
 
-.events-plus-2	.regis8er-form	.section-sub-ti8le	{ font-size: 17px; }
+.events-plus-2	.regis8er-form	.section-sub-ti8le	{ font-size: 17px; margin-bottom: 0 !important; }
 .events-plus-2	.regis8er-form	.section-sub-ti8le	.fa	{ margin: 0 10px 0 0; }
 
 .events-plus-2	.regis8er-form	.fi3ld-with-icon	{ position: relative; }
