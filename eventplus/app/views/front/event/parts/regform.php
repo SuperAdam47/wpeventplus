@@ -317,7 +317,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                     <?php
                 endif;
                 ?>
-                <?php if ($disable_event_reg != 'Y' || $more_info != ""): ?>
+                <?php if (($disable_event_reg != '' && $disable_event_reg != 'Y') || $more_info != ""): ?>
                     <div class="ac8ion">
                         <?php if ($disable_event_reg != 'Y'): ?>
                             <?php if ($outside_reg == "Y"): ?>
