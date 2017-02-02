@@ -254,7 +254,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                     $recurring_status = $recurring_status_ex[0]->recurrence_choice;
                     if ($recurring_status == 'no'):
                         ?>
-                        <div class="ccoun8" id="details">
+                        <div class="coun8" id="details">
                             <div class="evrplus_counter">
                                 <div id="evrplus_counter" class="redCountdownDemo"></div>
                                 <div class="timer">
