@@ -151,7 +151,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                         <div class="d3sc">
                             <h3 class="titl3">
                                 <?php echo $d_format; ?>
-<?php if ($end_date != $start_date and $end_year != '2050'): ?><br /> <?php echo __('to', 'evrplus_language'); ?> <br /><?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
+<?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
                             </h3>
                         </div>
                     </div>
