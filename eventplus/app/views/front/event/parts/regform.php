@@ -188,9 +188,9 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                             <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
 
                             <?php
-                            $eventLocationStr = stripslashes($event_location);
+                            $eventLocationStr = '';
                             if ($event_address != '') {
-                                $eventLocationStr .= '<br />' . $eventLocationStr;
+                                $eventLocationStr .= '<br />' . stripslashes($event_location);
                             }
                             if ($event_city != '') {
                                 $eventLocationStr .= '<br />' . $event_city;
