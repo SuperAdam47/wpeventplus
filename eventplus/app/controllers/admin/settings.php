@@ -30,18 +30,7 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
         }
 
 
-        $tabs = array(
-            'tab1' => __('Contact', 'evrplus_language'),
-            'tab2' => __('Payment', 'evrplus_language'),
-            'tab3' => __('Captcha', 'evrplus_language'),
-            'tab4' => __('Page Config', 'evrplus_language'),
-            'tab5' => __('Confirmation', 'evrplus_language'),
-            'tab6' => __('Waitlist', 'evrplus_language'),
-            'tab7' => __('Calendar', 'evrplus_language'),
-            'tab8' => __('Tax', 'evrplus_language'),
-            'tabdiscount' => __('Bulk Discounts', 'evrplus_language'),
-            'tab9' => __('Done', 'evrplus_language'),
-        );
+        $tabs = EventPlus_Helpers_Admin_Menu::getSettingTabs();
 
         $response = $this->oView->View('admin/settings', array(
             'company_options' => EventPlus_Models_Settings::getSettings(),

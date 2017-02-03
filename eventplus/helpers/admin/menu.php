@@ -17,11 +17,24 @@ class EventPlus_Helpers_Admin_Menu {
 
         $title = $oPlugin->getTitle();
         $parent_uri = $this->oUrl->prepareUri('admin');
+        $settings_uri = $this->oUrl->prepareUri('admin_settings');
         $role = 'manage_options';
 
 
         add_menu_page($title, $title, $role, $parent_uri, array($this, 'handle'));
-        add_submenu_page($parent_uri, 'Configure Plugin', __('General Settings', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_settings'), array($this, 'handle'));
+        add_submenu_page($parent_uri, 'Configure Plugin', __('General Settings', 'evrplus_language'), $role, $settings_uri, array($this, 'handle'));
+        
+        if(isset($_GET['page'])){
+            if($_GET['page'] == 'eventplus_admin_settings'){
+                $setting_tabs = EventPlus_Helpers_Admin_Menu::getSettingTabs();
+                unset($setting_tabs['tab9']);
+                foreach($setting_tabs as $tabKey => $tabValue){
+                    add_submenu_page($parent_uri, $tabValue, ' &nbsp;&nbsp;' .$tabValue, $role, $this->oUrl->prepareUri('admin_settings&ct='.$tabKey), array($this, 'handle'));
+
+                }
+            }
+        }
+         
         add_submenu_page($parent_uri, 'Event Categories', __('Event Categories', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_categories'), array($this, 'handle'));
         add_submenu_page($parent_uri, 'Add Event', __('Add Event', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_events/add'), array($this, 'handle'));
         add_submenu_page($parent_uri, 'Manage Events', __('Manage Events', 'evrplus_language'), $role, $this->oUrl->prepareUri('admin_events'), array($this, 'handle'));
@@ -45,6 +58,21 @@ class EventPlus_Helpers_Admin_Menu {
             echo wp_die($ex->getMessage());
             exit;
         }
+    }
+    
+    static function getSettingTabs(){
+        return array(
+            'tab1' => __('Contact', 'evrplus_language'),
+            'tab2' => __('Payment', 'evrplus_language'),
+            'tab3' => __('Captcha', 'evrplus_language'),
+            'tab4' => __('Page Config', 'evrplus_language'),
+            'tab5' => __('Confirmation', 'evrplus_language'),
+            'tab6' => __('Waitlist', 'evrplus_language'),
+            'tab7' => __('Calendar', 'evrplus_language'),
+            'tab8' => __('Tax', 'evrplus_language'),
+            'tabdiscount' => __('Bulk Discounts', 'evrplus_language'),
+            'tab9' => __('Done', 'evrplus_language'),
+        );
     }
 
 }

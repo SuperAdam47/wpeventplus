@@ -81,7 +81,14 @@ class EventPlus_ShortCodes {
     }
 
     function eventList($atts) {
-        return EventPlus::dispatch('front_shortcode_event_list/index');
+        
+        $attributes = (shortcode_atts(array(
+            'limit' => 0
+                        ), $atts));
+        
+        return EventPlus::dispatch('front_shortcode_event_list/index', array(
+            'shortcode_attributes' => $attributes
+        ));
     }
 
 }

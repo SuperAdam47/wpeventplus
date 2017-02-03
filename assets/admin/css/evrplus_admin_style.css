@@ -1493,7 +1493,6 @@ input[type="radio"] + label:before {
 	    width: 80px;
 	    color: #0A4A54;
 	    letter-spacing: 1px;
-	    text-transform: ;
 	    font-weight: bold;
 	    text-align: center;
 	    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
@@ -3115,7 +3114,7 @@ input[type="radio"] + label:before {
 	    text-align: center !important;
 	}
 	#er_ticket_sortable li {
-	    background-image: url("http://eventsplus.estudios.us/wp-content/uploads/2014/02/drag-icon.png");
+	    background-image: none;;
 	    background-position: left center;
 	    background-repeat: no-repeat;
 	    cursor: move !important;

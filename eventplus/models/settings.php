@@ -90,6 +90,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['cal_head_txt_clr'] = $params['cal_head_txt_clr'];
             $company_options['evrplus_cal_cur_day'] = $params['evrplus_cal_cur_day'];
             $company_options['evrplus_cal_use_cat'] = $params['evrplus_cal_use_cat']; //true-false
+            $company_options['evrplus_flag_add_to_cal_button'] = $params['evrplus_flag_add_to_cal_button']; //true-false
             $company_options['evrplus_cal_pop_border'] = $params['evrplus_cal_pop_border'];
             $company_options['cal_day_txt_clr'] = $params['cal_day_txt_clr'];
             $company_options['show_social_icons'] = $params['show_social_icons'];

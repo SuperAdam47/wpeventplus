@@ -146,6 +146,28 @@
                     <br />
                 </div>
                 </p>
+                <p>
+                    <?php _e('Do you want to show add to calendar button?', 'evrplus_language'); ?>
+                <div class="con">
+                    <input id="evrplus_flag_add_to_cal_button1" type="radio" name="evrplus_flag_add_to_cal_button" class="regular-radio" value="Y"  <?php
+                    if ($company_options['evrplus_flag_add_to_cal_button'] == "Y") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="evrplus_flag_add_to_cal_button1">
+                        <?php _e('Yes', 'evrplus_language'); ?>
+                    </label>
+                    <input id="evrplus_flag_add_to_cal_button12" type="radio" name="evrplus_flag_add_to_cal_button" class="regular-radio" value="N"  <?php
+                    if ($company_options['evrplus_flag_add_to_cal_button'] == "N") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="evrplus_flag_add_to_cal_button12">
+                        <?php _e('No', 'evrplus_language'); ?>
+                    </label>
+                    <br />
+                </div>
+                </p>
                 <p class="tp1">
                     <?php _e('Select color for Calendar Display', 'evrplus_language'); ?>
                     :</p>
