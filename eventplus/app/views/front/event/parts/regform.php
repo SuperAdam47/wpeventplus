@@ -140,25 +140,25 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                         <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
                     <?php } else { ?>
                         <div style="height:100px;">&nbsp;</div>
-<?php } ?>
+                    <?php } ?>
                 </div>
                 <h2 class="ti8le"><?php echo $event_name; ?></h2>
             </div>
             <div class="col-xs-12">
                 <div class="row-eq-height me8a">
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-2x fa-calendar"></i>
+                        <i class="fa fa-1x fa-calendar"></i>
                         <div class="d3sc">
-                            <h3 class="titl3">
-                                <?php echo $d_format; ?>
-<?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
-                            </h3>
+
+                            <?php echo $d_format; ?> 
+                            <?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
+
                         </div>
                     </div>
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-2x fa-clock-o"></i>
+                        <i class="fa fa-1x fa-clock-o"></i>
                         <div class="d3sc">
-                            <h3 class="titl3"><?php echo $start_time . " - " . $end_time; ?></h3>
+                            <?php echo $start_time . " - " . $end_time; ?>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -179,19 +179,20 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                     else
                         echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                     ?>
-<?php endif; ?>
+                <?php endif; ?>
 
                 <div class="row-eq-height me8a al8">
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-2x fa-map-marker"></i>
+                        <i class="fa fa-1x fa-map-marker"></i>
                         <div class="d3sc">
                             <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
 
                             <?php
                             $eventLocationStr = '';
-                            if ($event_address != '') {
-                                $eventLocationStr .= '<br />' . stripslashes($event_location);
+                            if ($event_location != '') {
+                                $eventLocationStr .= stripslashes($event_location);
                             }
+
                             if ($event_city != '') {
                                 $eventLocationStr .= '<br />' . $event_city;
                                 if ($event_state != '') {
@@ -202,11 +203,11 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                 }
                             }
                             ?>
-<?php echo $eventLocationStr; ?>
+                            <?php echo $eventLocationStr; ?>
                         </div>
                     </div>
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-2x fa-money"></i>
+                        <i class="fa fa-1x fa-money"></i>
                         <div class="d3sc">
                             <h3 class="titl3"><?php _e('Event Fees', 'evrplus_language'); ?></h3>
                             <?php
@@ -279,7 +280,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                 </div>
                             </div>
                         </div>
-    <?php endif; ?>
+                    <?php endif; ?>
 
                     <script type="text/javascript">
                         jQuery(document).ready(function ($) {
@@ -331,23 +332,23 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                     <?php
                 endif;
                 ?>
-                    <?php if (($disable_event_reg != '' && $disable_event_reg != 'Y') || $more_info != ""): ?>
-                    <div class="ac8ion">
+                <?php if (($disable_event_reg != '' && $disable_event_reg != 'Y') || $more_info != ""): ?>
+                    <div class="ac8ion" id="eventplus_actions_registration_btns">
                         <?php if ($disable_event_reg != 'Y'): ?>
                             <?php if ($outside_reg == "Y"): ?>
-                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er eventplus-registration-actions" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
                             <?php else: ?>
-                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er eventplus-registration-actions" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
                             <?php endif; ?>
                         <?php endif; ?>
-                           <?php if ($more_info != ""): ?>
-                            <a href="#" class="btn btn-ic0n m0re-info" onClick="window.open('<?php echo $more_info; ?>');
+                        <?php if ($more_info != ""): ?>
+                            <a href="#" class="btn btn-ic0n m0re-info eventplus-registration-actions" onClick="window.open('<?php echo $more_info; ?>');
                                             return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
-                    <?php endif; ?>
+                           <?php endif; ?>
                     </div>
                 <?php endif; ?>
 
-<?php if ($disable_event_reg != "Y"): ?>
+                <?php if ($disable_event_reg != "Y"): ?>
                     <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
                     <script>
                                 var discountSettings = new Array();
@@ -365,7 +366,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                             <script>
             <?php foreach ($discountDataset as $qty => $percentage): ?>
                                     discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
-                            <?php endforeach; ?>
+            <?php endforeach; ?>
                             </script>
                             <?php
                         }
@@ -387,7 +388,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                 echo '<a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a>';
                                 echo'</div>';
                                 ?>
-        <?php else: ?>
+                            <?php else: ?>
 
                                 <form  name="regform"  class="evrplus_regform" method="post" 
                                        action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  
@@ -405,42 +406,42 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
                                             <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
                                         </div>
-            <?php if ($inc_phone == "Y"): ?>
+                                        <?php if ($inc_phone == "Y"): ?>
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
                                                 <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
                                             </div>
-            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
-            <?php if ($inc_address == "Y"): ?>
+                                        <?php if ($inc_address == "Y"): ?>
 
                                             <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
                                                 <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
-            <?php if ($inc_country == "Y"): ?>
+                                        <?php if ($inc_country == "Y"): ?>
                                             <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
                                                 <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
                                             </div>
-            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
 
-            <?php if ($inc_city == "Y"): ?>
+                                        <?php if ($inc_city == "Y"): ?>
                                             <div class="col-sm-4 col-xs-12 fi3ld">
                                                 <input class="eplus-required" type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
-            <?php if ($inc_state == "Y"): ?>
+                                        <?php if ($inc_state == "Y"): ?>
                                             <div class="col-sm-4 col-xs-12 fi3ld">
                                                 <input class="eplus-required" type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
                                             </div>
                                         <?php endif; ?>
-            <?php if ($inc_zip == "Y"): ?>
+                                        <?php if ($inc_zip == "Y"): ?>
                                             <div class="col-sm-4 col-xs-12 fi3ld">
                                                 <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
                                             </div>
-            <?php endif; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="row">
                                         <?php
@@ -455,12 +456,12 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         ?>
 
                                         <?php foreach ($company_form_fields as $field => $fieldSet): ?>
-                <?php if ($fieldSet['flag']): ?>
+                                            <?php if ($fieldSet['flag']): ?>
                                                 <div class="col-sm-6 col-xs-12 fi3ld">
                                                     <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
                                                 </div>
                                             <?php endif; ?>
-            <?php endforeach; ?>
+                                        <?php endforeach; ?>
 
 
                                         <?php
@@ -473,12 +474,12 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                 }
                                                 ?>
                                                 <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
-                                                <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
+                                                    <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
                                                 </div>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
 
-            <?php if ($use_coupon == "Y"): ?>
+                                        <?php if ($use_coupon == "Y"): ?>
                                             <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
                                                 <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
                                                 <input type="text" name="coupon" id="coupon" value="" />
@@ -577,16 +578,16 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     <?php endif; ?>
-                    <?php endforeach; ?>
+                                                <?php endforeach; ?>
 
 
 
-                    <?php if ($isfees == "N"): ?>
+                                                <?php if ($isfees == "N"): ?>
                                                     <div class="col-xs-12">
                                                         <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?></div>
                                                     </div>
                                                     <input type="hidden" name="reg_type" value="WAIT" />
-                    <?php else: ?>
+                                                <?php else: ?>
 
                                                     <div class="clearfix"></div>
                                                     <div class="col-md-8 col-sm-8 col-xs-12" id="eplus-data-summary-container">
@@ -596,27 +597,27 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                     <td width="60%"><?php _e('Registration Fees', 'evrplus_language'); ?></td>
                                                                     <td width="40%" align="right"><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
                                                                 </tr>
-                        <?php if ($company_options['use_sales_tax'] == "Y"): ?>
+                                                                <?php if ($company_options['use_sales_tax'] == "Y"): ?>
                                                                     <tr>
                                                                         <td><?php _e('Sales Tax', 'evrplus_language'); ?></td>
                                                                         <td align="right"><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
                                                                     </tr>
                                                                 <?php endif; ?>
-                        <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
+                                                                <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
                                                                     <tr>
                                                                         <td width="60%"><?php _e('Discount', 'evrplus_language'); ?></td>
                                                                         <td width="40%" align="right"><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
                                                                     </tr>
-                        <?php else: ?>
+                                                                <?php else: ?>
                                                                     <tr style="display:none;"><td>
                                                                             <input type="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
                                                                         </td>
                                                                     </tr>
 
-                        <?php endif; ?>
+                                                                <?php endif; ?>
                                                             </tbody>
                                                             <tfoot>
-                        <?php if ($fee->item_price > 0): ?>
+                                                                <?php if ($fee->item_price > 0): ?>
 
                                                                     <tr>
                                                                         <td><?php _e('Total', 'evrplus_language'); ?></td>
@@ -624,55 +625,55 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                             <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
                                                                     </tr>
 
-                        <?php else: ?>
+                                                                <?php else: ?>
                                                                     <tr>
                                                                         <td colspan="2">
                                                                             <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
                                                                         </td>
                                                                     </tr>
-                        <?php endif; ?>
+                                                                <?php endif; ?>
                                                             </tfoot>
                                                         </table>
                                                     </div>
 
                                                 <?php endif; ?>
-                <?php else: ?>
+                                            <?php else: ?>
                                                 <div class="col-xs-12">
                                                     <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
                                                         <?php _e('No Fees Have Been Setup For This Event!', 'evrplus_language'); ?>
-                    <?php _e('Registration for this event can not be taken at this time.', 'evrplus_language'); ?>
+                                                        <?php _e('Registration for this event can not be taken at this time.', 'evrplus_language'); ?>
                                                     </div>
                                                 </div>
-                <?php endif; ?>
+                                            <?php endif; ?>
 
 
-            <?php else: ?>
+                                        <?php else: ?>
 
                                             <div class="col-xs-12">
                                                 <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
                                                     <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
-                <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
+                                                    <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
                                                 </div>
                                             </div>  
 
 
-            <?php endif; ?>
+                                        <?php endif; ?>
 
 
                                         <div class="clearfix"></div>
-            <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                                        <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
                                             <div class="col-xs-12 fi3ld">
                                                 <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
                                             </div>
-            <?php endif; ?>
+                                        <?php endif; ?>
 
 
-            <?php if ($term_c == 'Y'): ?>
+                                        <?php if ($term_c == 'Y'): ?>
                                             <div class="col-xs-12 fi3ld">
                                                 <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                 <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
                                             </div>
-            <?php endif; ?>
+                                        <?php endif; ?>
 
 
                                         <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
@@ -694,10 +695,10 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
 
                                     </div>
                                 </form>
-                        <?php endif; ?>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
-<?php endif; ?>
+                <?php endif; ?>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -717,6 +718,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                                                                 });
     </script>
     <?php
+
 
 
 

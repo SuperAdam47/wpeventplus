@@ -496,6 +496,10 @@ jQuery(document).ready(function ($) {
         if (oRegisterBtn.attr('data-show-form-default') == '1') {
             oRegisterBtn.trigger('click');
         }
+        
+        if(jQuery('.eventplus-registration-actions').length == 1){
+            jQuery('#eventplus_actions_registration_btns').hide();
+        }
     }
 
 
