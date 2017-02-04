@@ -60,7 +60,10 @@
 .events-plus-2	.data-summary	tbody	td	.fa	{ margin-right: 5px; }
 .events-plus-2	.data-summary	tfoot	td	{ padding: 10px; }
 
-.events-plus-2	.info-m3ssages	{ padding: 10px; font-size: 15px; } 
+.events-plus-2	.info-m3ssages	{ padding: 10px; font-size: 15px; }
+
+.events-plus-2	#details .redCountdownDemo	{ width: 100%; }
+.events-plus-2	.evrplus_counter .timer	{ width: 100%; font-size: 13px !important; }
 }
 @media (max-width: 639px) {	
 .events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 50px 0 30px; font-size: 14px; }

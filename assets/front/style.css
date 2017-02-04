@@ -95,7 +95,7 @@
 
 .events-plus-2	.event-single	.ma9	{ margin-bottom: 0 !important; }
 
-.events-plus-2	.event-single	.coun8	{ padding-top: 40px; padding-bottom: 40px; text-align: center; border-bottom: 1px solid #ccc; }
+.events-plus-2	.event-single	.coun8	{ padding: 0 0 10px !important; text-align: center; }
 
 .events-plus-2	.event-single	.ac8ion	{ padding-top: 40px; padding-bottom: 40px; text-align: center; }
 .events-plus-2	.event-single	.ac8ion	.btn	{ margin: 0 20px; }
