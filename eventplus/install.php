@@ -2,7 +2,7 @@
 
 /*
  * @author Events Plus
- * @copyright 2016
+ * @copyright 2017
  */
 
 $evrplus_date_format = EventPlus_Helpers_Funx::getDateFormat();
