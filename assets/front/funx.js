@@ -491,15 +491,16 @@ jQuery(document).ready(function ($) {
             e.preventDefault();
             jQuery(this).hide();
             jQuery('#evrplusRegForm').slideDown();
+
+            if (jQuery('.eventplus-registration-actions').length == 1) {
+                jQuery('#eventplus_actions_registration_btns').hide();
+            }
         });
 
         if (oRegisterBtn.attr('data-show-form-default') == '1') {
             oRegisterBtn.trigger('click');
         }
-        
-        if(jQuery('.eventplus-registration-actions').length == 1){
-            jQuery('#eventplus_actions_registration_btns').hide();
-        }
+
     }
 
 
@@ -533,7 +534,7 @@ jQuery(document).ready(function ($) {
                 } else {
                     oParent.addClass('gr33n');
                     oParent.removeClass('r3d');
-                     oValidationMsg.fadeOut();
+                    oValidationMsg.fadeOut();
                 }
 
                 return;

@@ -147,18 +147,20 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
             <div class="col-xs-12">
                 <div class="row-eq-height me8a">
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-1x fa-calendar"></i>
+                        <i class="fa fa-2x fa-calendar"></i>
                         <div class="d3sc">
-
-                            <?php echo $d_format; ?> 
-                            <?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
-
+                            <h4>
+                                <?php echo $d_format; ?> 
+                                <?php if ($end_date != $start_date and $end_year != '2050'): ?> - <?php echo date_i18n($evrplus_date_format, strtotime($event->end_date)); ?><?php endif; ?>
+                            </h4>
                         </div>
                     </div>
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-1x fa-clock-o"></i>
+                        <i class="fa fa-2x fa-clock-o"></i>
                         <div class="d3sc">
+                            <h4>
                             <?php echo $start_time . " - " . $end_time; ?>
+                            </h4>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -183,9 +185,9 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
 
                 <div class="row-eq-height me8a al8">
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-1x fa-map-marker"></i>
+                        <i class="fa fa-2x fa-map-marker"></i>
                         <div class="d3sc">
-                            <h3 class="titl3"><?php _e('Event Location', 'evrplus_language'); ?></h3>
+                            <h4><?php _e('Event Location', 'evrplus_language'); ?></h4>
 
                             <?php
                             $eventLocationStr = '';
@@ -207,9 +209,9 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                         </div>
                     </div>
                     <div class="col-xs-6 it3m">
-                        <i class="fa fa-1x fa-money"></i>
+                        <i class="fa fa-2x fa-money"></i>
                         <div class="d3sc">
-                            <h3 class="titl3"><?php _e('Event Fees', 'evrplus_language'); ?></h3>
+                            <h4><?php _e('Event Fees', 'evrplus_language'); ?></h4>
                             <?php
                             $curdate = date("Y-m-d");
                             $sql2 = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . $event_id . " ORDER BY sequence ASC";

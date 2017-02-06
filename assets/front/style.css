@@ -72,8 +72,8 @@
 .events-plus-2	.event-single	.me8a	.it3m:nth-child(2)	{ border-right: none; }
 .events-plus-2	.event-single	.me8a	.fa	{ display: block; width: 44px; height: 44px; line-height: 44px; border-width: 0 1px 1px 0; border-style: solid; border-color: #ccc; position: absolute; left: 0; top: 0; background-color: #e9e9e9; font-weight: inherit }
 
-.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 50px 0; font-size: 14px; font-weight: 300; line-height: 1; }
-.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 21px; font-weight: 300; margin: 0; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	{ padding: 50px 0; font-size: 15px !important; font-weight: 300; line-height: 1; }
+.events-plus-2	.event-single	.me8a	.it3m	.d3sc	.titl3	{ font-size: 25px; font-weight: 300; margin: 0; }
 
 .events-plus-2	.event-single	.me8a.al8	.it3m	.d3sc	{ padding: 25px 75px; line-height: 1.5; }
 .events-plus-2	.event-single	.me8a.al8	.it3m	.d3sc	.titl3	{ font-weight: 400; margin-bottom: 15px; }
