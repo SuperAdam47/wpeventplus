@@ -186,4 +186,18 @@ class EventPlus_Helpers_Event {
         $oEvents = new EventPlus_Models_Events();
         return $oEvents->getComboDataset();
     }
+
+    static function getThumbnailAttachment($raw_source_url) {
+
+        $attachment_id = EventPlus_Helpers_Funx::getAttachmentId($raw_source_url);
+
+        if ($attachment_id > 0) {
+            $medium_array = image_downsize($attachment_id, 'thumbnail');
+            $medium_path = $medium_array[0];
+            return $medium_path;
+        } else {
+            return $raw_source_url;
+        }
+    }
+
 }

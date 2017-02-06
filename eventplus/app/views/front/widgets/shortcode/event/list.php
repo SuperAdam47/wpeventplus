@@ -31,6 +31,8 @@
         $imgSrc = $event->image_link;
         if ($event->image_link == "") {
             $imgSrc = $this->assetUrl('images/calendar-icon.png');
+        }else{
+            $imgSrc = EventPlus_Helpers_Event::getThumbnailAttachment($imgSrc);
         }
 
         $event_link = evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . ( ($curr) ? '&recurr=' . $curr : '' );
@@ -55,6 +57,8 @@
         $startDate = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->start_date));
         $endDate = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->end_date));
         $event_name = stripslashes($event->event_name);
+        
+        
         ?>
         <div class="i8em" style="border-right-color: <?php echo $style_event_catgry; ?>;">
             <div class="col-lg-2 col-sm-3 col-xs-4 t7umb">

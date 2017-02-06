@@ -164,8 +164,14 @@ class EventPlus_Helpers_Funx {
 
             $category_list_str = implode(', ', $cNames);
         }
-        
+
         return $category_list_str;
+    }
+
+    static function getAttachmentId($image_url) {
+        global $wpdb;
+        $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s' LIMIT 1", $image_url));
+        return $attachment[0];
     }
 
 }
