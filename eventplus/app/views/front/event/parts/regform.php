@@ -5,6 +5,14 @@ $curdate = date("Y-m-j");
 $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id = '" . (int) $event_id . "'";
 $rows = $wpdb->get_results($sql);
 
+$term_c_force = '';
+if (isset($event_meta_data)) {
+    if (isset($event_meta_data['term_c_force'])) {
+        $term_c_force = $event_meta_data['term_c_force'];
+    }
+}
+
+
 if ($rows) {
     foreach ($rows as $event) {
         include "_event_array2string.php";
@@ -311,7 +319,7 @@ if ($rows) {
             ?>
             <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
             <script>
-                var discountSettings = new Array();
+                    var discountSettings = new Array();
             </script>
             <?php
             $oEventDiscounts = new EventPlus_Models_Events_Discounts();
@@ -350,26 +358,25 @@ if ($rows) {
                 ?>
                 <div class="registerForm">
                     <?php
-                    
                     $oMeta = new EventPlus_Models_Events_Meta();
                     $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
-                    
+
                     $show_form_bool = 0;
-                    if($show_register_button == '' || !in_array(strtolower($show_register_button), array('y','n')) || strtolower($show_register_button) == 'n'){
+                    if ($show_register_button == '' || !in_array(strtolower($show_register_button), array('y', 'n')) || strtolower($show_register_button) == 'n') {
                         $show_form_bool = 1;
                     }
-        
-                        
+
+
                     if ($outside_reg == "Y")
                         echo '<a class="extenal_link_reg" href="' . $external_site . '" >' . __('REGISTER', 'evrplus_language') . '</a>';
                     else
-                        echo '<input id="eventplus_register_btn" data-show-form-default="'.$show_form_bool.'" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
+                        echo '<input id="eventplus_register_btn" data-show-form-default="' . $show_form_bool . '" class="register_now_button" type="button" value="' . __('REGISTER', 'evrplus_language') . '"/>'
                         ?>
                     <!--Custom styles from company settings for form--> 
 
                     <?php if ($company_options['form_css'] != ''): ?>
                         <style>
-                            <?php echo $company_options['form_css']; ?>
+            <?php echo $company_options['form_css']; ?>
                         </style>
                     <?php endif; ?>
                     <div id="evrplusRegForm">
@@ -400,9 +407,33 @@ if ($rows) {
                             echo '</p><a href="mailto:' . $company_options['company_email'] . '">' . $company_options['company_email'] . '</a></div>';
                         } else {
                             ?> 
+
+
+
                             <form  name="regform"  class="evrplus_regform" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="mySubmit.disabled = true;
-                                return validateForm(this)">
+                                            return validateForm(this)">
+
+                                <?php
+                                $formFieldStyle = ' ';
+                                if ($term_c_force == 'Y' && $term_c == 'Y'):
+                                    $formFieldStyle = ' style="display:none;"';
+                                    ?>
+                                    <ul style="float:none; clear:both;">
+                                        <li>
+
+                                            <?php
+                                            echo '<p><input id="eventplus_terms_cbox" type="checkbox" name="accept_term" required/>' . __('I accept the terms and conditions', 'evrplus_language') . '</p>';
+                                            echo '<p><div style="width:100%;height:90px;overflow-y:scroll;">' . html_entity_decode($term_desc) . '</div></p>';
+                                            ?>
+                                        </li>
+                                    </ul>
+                                <?php endif; ?>
+                                
+                                
+                                <div id="eventplus_form_fields_ul"<?php echo $formFieldStyle; ?>>
                                 <ul>
+
+
                                     <?php
                                     evrplus_generate_frm_defaults('fname', __('First Name', 'evrplus_language'), $pendingTokenRow['fname']);
                                     evrplus_generate_frm_defaults('lname', __('Last Name', 'evrplus_language'), $pendingTokenRow['lname']);
@@ -504,12 +535,12 @@ if ($rows) {
                                                     <label for="cost" title ="<?php echo $fee->item_description; ?>" >
                                                         <select class="eventplus-ddl-items" style="width: 60px" name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>" 
                                                                 onChange="<?php
-                                                                if ($company_options['use_sales_tax'] == "Y") {
-                                                                    echo 'CalculateTotalTax(this.form)';
-                                                                } else {
-                                                                    echo 'CalculateTotal(this.form)';
-                                                                }
-                                                                ?>">
+                            if ($company_options['use_sales_tax'] == "Y") {
+                                echo 'CalculateTotalTax(this.form)';
+                            } else {
+                                echo 'CalculateTotal(this.form)';
+                            }
+                                                ?>">
                                                             <option value="0" selected="selected"></option>
                                                             <?php
                                                             #Begin generation of DropDown Box - Options
@@ -541,7 +572,7 @@ if ($rows) {
                                                                 }
                                                             }
                                                             ?></select>   
-                                                        <?php
+                                                            <?php
                                                         #Display Fee description and cost.
                                                         if ($fee->item_custom_cur == "GBP") {
                                                             $item_custom_cur = "&pound;";
@@ -563,7 +594,7 @@ if ($rows) {
                                             ?>
                                             <p class="reg_fees_update">  <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?>
                                                 <?php _e('Please update fee dates!', 'evrplus_language'); ?></p>
-                                            <?php #if no fees set hidden reg type to WAIT   ?>
+                                                <?php #if no fees set hidden reg type to WAIT   ?>
                                             <input type="hidden" name="reg_type" value="WAIT" />
                                         <?php } ?>
                                         <br />
@@ -669,7 +700,7 @@ if ($rows) {
                                 }
                                 ?>
                                 <?php
-                                if ($term_c == 'Y') {
+                                if ($term_c == 'Y' && $term_c_force != 'Y') {
                                     echo '<p><input type="checkbox" name="accept_term" required/>' . __('I accept the terms and conditions', 'evrplus_language') . '</p>';
                                     echo '<p><div style="width:100%;height:90px;overflow-y:scroll;">' . html_entity_decode($term_desc) . '</div></p>';
                                 }
@@ -690,7 +721,8 @@ if ($rows) {
 
                                         jQuery('.eventplus-ddl-items').trigger('change');
                                     });
-                                </script>
+                                 </script>
+                                 </div>
                             </form>
                         <?php } ?>
                     </div>
