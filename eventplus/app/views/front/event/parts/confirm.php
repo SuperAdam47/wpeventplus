@@ -1,3 +1,9 @@
+<script>
+    var validationErrors = {
+        invalid: "<?php echo __('Invalid', 'evrplus_language'); ?>",
+        required: "<?php echo __('Required', 'evrplus_language'); ?>"
+    };
+</script>
 <?php
 $num_people = 0;
 $item_order = array();
