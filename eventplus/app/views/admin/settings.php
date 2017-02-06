@@ -79,7 +79,7 @@
                                     :</strong><br>
                                 <?php _e('For customized confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email', 'evrplus_language'); ?>
                                 .</p>
-                            <p>[id}, [fname], [lname], [phone], [event],[description], [cost], [company], [co_add1], [co_add2], [co_city],[co_state], [co_zip],[contact], [payment_url], [start_date], [start_time], [end_date], [end_time], [category_list]</p>
+                            <p>[id], [fname], [lname], [phone], [event],[description], [cost], [company], [co_add1], [co_add2], [co_city],[co_state], [co_zip],[contact], [payment_url], [start_date], [start_time], [end_date], [end_time], [category_list]</p>
                         </div>
                     </div>
                     <div style="display:none;">
