@@ -41,16 +41,11 @@ function checkInternationalPhone(strPhone) {
     if (strPhone.indexOf("-") != -1) {
         bracket = bracket + 1;
     }
-    if (strPhone.indexOf("(") != -1 && strPhone.indexOf("(") > bracket) {
+    if (strPhone.indexOf("(") > bracket) {
         return false;
     }
-    var brchr = strPhone.indexOf("(");
-    if (strPhone.indexOf("(") != -1 && strPhone.charAt(brchr + 2) != ")") {
-        return false;
-    }
-    if (strPhone.indexOf("(") == -1 && strPhone.indexOf(")") != -1) {
-        return false;
-    }
+  
+ 
     s = stripCharsInBag(strPhone, validWorldPhoneChars);
     return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
 }

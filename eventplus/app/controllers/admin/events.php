@@ -139,6 +139,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
             'form_heading' => __("Edit Event", 'evrplus_language'),
             'button_label' => __("Update Event", 'evrplus_language'),
             'row' => $row,
+            'meta_data' => $row->meta_data,
         ));
         
 

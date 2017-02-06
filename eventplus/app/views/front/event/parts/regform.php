@@ -101,6 +101,13 @@ $show_form_bool = 0;
 if ($show_register_button == '' || !in_array(strtolower($show_register_button), array('y', 'n')) || strtolower($show_register_button) == 'n') {
     $show_form_bool = 1;
 }
+
+$term_c_force = '';
+if (isset($event_meta_data)) {
+    if (isset($event_meta_data['term_c_force'])) {
+        $term_c_force = $event_meta_data['term_c_force'];
+    }
+}
 ?>
 
 <div class="events-plus-2">
@@ -159,7 +166,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                         <i class="fa fa-2x fa-clock-o"></i>
                         <div class="d3sc">
                             <h4>
-                            <?php echo $start_time . " - " . $end_time; ?>
+                                <?php echo $start_time . " - " . $end_time; ?>
                             </h4>
                         </div>
                     </div>
@@ -396,305 +403,321 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                        action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  
                                        onSubmit="mySubmit.disabled = true;
                                                     return validateForm(this)">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                            <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
-                                        </div>
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                            <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
-                                            <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
-                                        </div>
-                                        <?php if ($inc_phone == "Y"): ?>
-                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
-                                                <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-                                        <?php if ($inc_address == "Y"): ?>
 
-                                            <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
-                                                <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_country == "Y"): ?>
-                                            <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
-                                                <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-
-                                        <?php if ($inc_city == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input class="eplus-required" type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_state == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input class="eplus-required" type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                        <?php if ($inc_zip == "Y"): ?>
-                                            <div class="col-sm-4 col-xs-12 fi3ld">
-                                                <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="row">
-                                        <?php
-                                        $company_form_fields = array(
-                                            'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
-                                            'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
-                                            'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
-                                            'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
-                                            'co_zip' => array('title' => __('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
-                                            'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
-                                        );
+                                    <?php
+                                    $formFieldStyle = ' ';
+                                    if ($term_c_force == 'Y' && $term_c == 'Y'):
+                                        $formFieldStyle = ' style="display:none;"';
                                         ?>
-
-                                        <?php foreach ($company_form_fields as $field => $fieldSet): ?>
-                                            <?php if ($fieldSet['flag']): ?>
-                                                <div class="col-sm-6 col-xs-12 fi3ld">
-                                                    <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
-                                                </div>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-
-
-                                        <?php
-                                        $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
-                                        if ($questions) :
-                                            foreach ($questions as $question):
-                                                $title = '';
-                                                if ($question->remark) {
-                                                    $title = $question->remark;
-                                                }
-                                                ?>
-                                                <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
-                                                    <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
-                                                </div>
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-
-                                        <?php if ($use_coupon == "Y"): ?>
-                                            <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
-                                                <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
-                                                <input type="text" name="coupon" id="coupon" value="" />
-                                            </div>
-                                        <?php endif;
-                                        ?>
-
-                                        <?php
-                                        #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
-                                        if ($available >= 1):
-                                            $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
-                                            $rows = $wpdb->get_results($sql);
-                                            if ($rows):
-                                                $open_seats = $available;
-                                                $curdate = date("Y-m-d");
-                                                $fee_count = 0;
-                                                $isfees = "N";
-                                                ?>
-                                                <div class="col-xs-12 fi3ld">
-                                                    <h3 class="section-ti8le"><i class="fa fa-calculator"></i> <?php _e('Registration Fees', 'evrplus_language'); ?></h3>
-                                                </div>
-
-                                                <div class="col-xs-12" id="event_fee_item_message">
-                                                    <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('You must select at least one item!', 'evrplus_language'); ?></div>
-                                                </div>
-
-
-                                                <?php
-                                                foreach ($rows as $fee):
-                                                    #check fee dates and if date range is valid, display fee
-                                                    if ((evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate))):
-                                                        $req = '';
-                                                        $isfees = "Y";
-                                                        ?>
-                                                        <input type="hidden" name="reg_type" value="RGLR"/>  
-
-                                                        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld" title="<?php echo $fee->item_description; ?>">
-                                                            <p>  <?php
-                                                                #Display Fee description and cost.
-                                                                if ($fee->item_custom_cur == "GBP") {
-                                                                    $item_custom_cur = "&pound;";
-                                                                }
-                                                                if ($fee->item_custom_cur == "USD") {
-                                                                    $item_custom_cur = "$";
-                                                                }
-                                                                if ($fee->item_custom_cur == "BRL") {
-                                                                    $item_custom_cur = "R$";
-                                                                }
-                                                                echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
-                                                                ?></p>
-                                                            <select name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
-                                                                    id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
-                                                                    class="eventplus-ddl-items" 
-                                                                    onChange="<?php
-                                                                    if ($company_options['use_sales_tax'] == "Y") {
-                                                                        echo 'CalculateTotalTax(this.form)';
-                                                                    } else {
-                                                                        echo 'CalculateTotal(this.form)';
-                                                                    }
-                                                                    ?>"
-                                                                    >
-                                                                <option value="0"></option>
-                                                                <?php
-                                                                #Begin generation of DropDown Box - Options
-                                                                #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
-                                                                if ($fee->item_cat == "REG") {
-                                                                    if ($fee->item_limit != "") {
-                                                                        if ($available >= $fee->item_limit) {
-                                                                            $units_available = $fee->item_limit;
-                                                                        } else {
-                                                                            $units_available = $available;
-                                                                        }
-                                                                    }
-                                                                    for ($i = 1; $i <= $units_available; $i++) {
-                                                                        ?>
-                                                                        <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
-                                                                        <?php
-                                                                    }
-                                                                }
-                                                                #If item is not REG type, and no limit was set, limit options to 10
-                                                                if ($fee->item_cat != "REG") {
-                                                                    $num_select = "10";
-                                                                    if ($fee->item_limit != "") {
-                                                                        $num_select = $fee->item_limit;
-                                                                    }
-                                                                    for ($i = 1; $i < $num_select + 1; $i++) {
-                                                                        ?> 
-                                                                        <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
-                                                                        <?php
-                                                                    }
-                                                                }
-                                                                ?>
-                                                            </select>
-
-
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    <?php endif; ?>
-                                                <?php endforeach; ?>
-
-
-
-                                                <?php if ($isfees == "N"): ?>
-                                                    <div class="col-xs-12">
-                                                        <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?></div>
-                                                    </div>
-                                                    <input type="hidden" name="reg_type" value="WAIT" />
-                                                <?php else: ?>
-
-                                                    <div class="clearfix"></div>
-                                                    <div class="col-md-8 col-sm-8 col-xs-12" id="eplus-data-summary-container">
-                                                        <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td width="60%"><?php _e('Registration Fees', 'evrplus_language'); ?></td>
-                                                                    <td width="40%" align="right"><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
-                                                                </tr>
-                                                                <?php if ($company_options['use_sales_tax'] == "Y"): ?>
-                                                                    <tr>
-                                                                        <td><?php _e('Sales Tax', 'evrplus_language'); ?></td>
-                                                                        <td align="right"><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
-                                                                    </tr>
-                                                                <?php endif; ?>
-                                                                <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
-                                                                    <tr>
-                                                                        <td width="60%"><?php _e('Discount', 'evrplus_language'); ?></td>
-                                                                        <td width="40%" align="right"><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
-                                                                    </tr>
-                                                                <?php else: ?>
-                                                                    <tr style="display:none;"><td>
-                                                                            <input type="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                <?php endif; ?>
-                                                            </tbody>
-                                                            <tfoot>
-                                                                <?php if ($fee->item_price > 0): ?>
-
-                                                                    <tr>
-                                                                        <td><?php _e('Total', 'evrplus_language'); ?></td>
-                                                                        <td align="right"><input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                                            <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
-                                                                    </tr>
-
-                                                                <?php else: ?>
-                                                                    <tr>
-                                                                        <td colspan="2">
-                                                                            <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
-                                                                        </td>
-                                                                    </tr>
-                                                                <?php endif; ?>
-                                                            </tfoot>
-                                                        </table>
-                                                    </div>
-
-                                                <?php endif; ?>
-                                            <?php else: ?>
-                                                <div class="col-xs-12">
-                                                    <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
-                                                        <?php _e('No Fees Have Been Setup For This Event!', 'evrplus_language'); ?>
-                                                        <?php _e('Registration for this event can not be taken at this time.', 'evrplus_language'); ?>
-                                                    </div>
-                                                </div>
-                                            <?php endif; ?>
-
-
-                                        <?php else: ?>
-
-                                            <div class="col-xs-12">
-                                                <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
-                                                    <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
-                                                    <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
-                                                </div>
-                                            </div>  
-
-
-                                        <?php endif; ?>
-
-
-                                        <div class="clearfix"></div>
-                                        <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                                        <div class="row">
                                             <div class="col-xs-12 fi3ld">
-                                                <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
-                                            </div>
-                                        <?php endif; ?>
-
-
-                                        <?php if ($term_c == 'Y'): ?>
-                                            <div class="col-xs-12 fi3ld">
-                                                <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                <label class="checkb0x"><input checked="false" type="checkbox" id="eventplus_terms_cbox" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                 <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
                                             </div>
-                                        <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
 
-
-                                        <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
-                                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i>
-                                                <span id="form_action_message_eplus"></span>
+                                    <div id="eventplus_form_fields"<?php echo $formFieldStyle; ?>>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
+                                            </div>
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
+                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
+                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
+                                            </div>
+                                            <?php if ($inc_phone == "Y"): ?>
+                                                <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
+                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="row">
+                                            <?php if ($inc_address == "Y"): ?>
 
-                                        <div class="col-xs-12 fi3ld-buttons">
-                                            <input type="hidden" name="action" value="confirm"/>
-                                            <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
-                                            <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
-                                            <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+                                                <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
+                                                    <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($inc_country == "Y"): ?>
+                                                <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
+                                                    <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="row">
 
-                                            <input type="submit" name="mySubmit" id="mySubmit" value="<?php _e('Submit', 'evrplus_language'); ?>" />
-                                            <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
+                                            <?php if ($inc_city == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input class="eplus-required" type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($inc_state == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input class="eplus-required" type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($inc_zip == "Y"): ?>
+                                                <div class="col-sm-4 col-xs-12 fi3ld">
+                                                    <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                        <div class="row">
+                                            <?php
+                                            $company_form_fields = array(
+                                                'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
+                                                'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
+                                                'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
+                                                'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
+                                                'co_zip' => array('title' => __('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
+                                                'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
+                                            );
+                                            ?>
+
+                                            <?php foreach ($company_form_fields as $field => $fieldSet): ?>
+                                                <?php if ($fieldSet['flag']): ?>
+                                                    <div class="col-sm-6 col-xs-12 fi3ld">
+                                                        <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endforeach; ?>
+
+
+                                            <?php
+                                            $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
+                                            if ($questions) :
+                                                foreach ($questions as $question):
+                                                    $title = '';
+                                                    if ($question->remark) {
+                                                        $title = $question->remark;
+                                                    }
+                                                    ?>
+                                                    <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
+                                                        <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+
+                                            <?php if ($use_coupon == "Y"): ?>
+                                                <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
+                                                    <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
+                                                    <input type="text" name="coupon" id="coupon" value="" />
+                                                </div>
+                                            <?php endif;
+                                            ?>
+
+                                            <?php
+                                            #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
+                                            if ($available >= 1):
+                                                $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
+                                                $rows = $wpdb->get_results($sql);
+                                                if ($rows):
+                                                    $open_seats = $available;
+                                                    $curdate = date("Y-m-d");
+                                                    $fee_count = 0;
+                                                    $isfees = "N";
+                                                    ?>
+                                                    <div class="col-xs-12 fi3ld">
+                                                        <h3 class="section-ti8le"><i class="fa fa-calculator"></i> <?php _e('Registration Fees', 'evrplus_language'); ?></h3>
+                                                    </div>
+
+                                                    <div class="col-xs-12" id="event_fee_item_message">
+                                                        <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('You must select at least one item!', 'evrplus_language'); ?></div>
+                                                    </div>
+
+
+                                                    <?php
+                                                    foreach ($rows as $fee):
+                                                        #check fee dates and if date range is valid, display fee
+                                                        if ((evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate))):
+                                                            $req = '';
+                                                            $isfees = "Y";
+                                                            ?>
+                                                            <input type="hidden" name="reg_type" value="RGLR"/>  
+
+                                                            <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld" title="<?php echo $fee->item_description; ?>">
+                                                                <p>  <?php
+                                                                    #Display Fee description and cost.
+                                                                    if ($fee->item_custom_cur == "GBP") {
+                                                                        $item_custom_cur = "&pound;";
+                                                                    }
+                                                                    if ($fee->item_custom_cur == "USD") {
+                                                                        $item_custom_cur = "$";
+                                                                    }
+                                                                    if ($fee->item_custom_cur == "BRL") {
+                                                                        $item_custom_cur = "R$";
+                                                                    }
+                                                                    echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
+                                                                    ?></p>
+                                                                <select name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
+                                                                        id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
+                                                                        class="eventplus-ddl-items" 
+                                                                        onChange="<?php
+                                                                        if ($company_options['use_sales_tax'] == "Y") {
+                                                                            echo 'CalculateTotalTax(this.form)';
+                                                                        } else {
+                                                                            echo 'CalculateTotal(this.form)';
+                                                                        }
+                                                                        ?>"
+                                                                        >
+                                                                    <option value="0"></option>
+                                                                    <?php
+                                                                    #Begin generation of DropDown Box - Options
+                                                                    #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
+                                                                    if ($fee->item_cat == "REG") {
+                                                                        if ($fee->item_limit != "") {
+                                                                            if ($available >= $fee->item_limit) {
+                                                                                $units_available = $fee->item_limit;
+                                                                            } else {
+                                                                                $units_available = $available;
+                                                                            }
+                                                                        }
+                                                                        for ($i = 1; $i <= $units_available; $i++) {
+                                                                            ?>
+                                                                            <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
+                                                                            <?php
+                                                                        }
+                                                                    }
+                                                                    #If item is not REG type, and no limit was set, limit options to 10
+                                                                    if ($fee->item_cat != "REG") {
+                                                                        $num_select = "10";
+                                                                        if ($fee->item_limit != "") {
+                                                                            $num_select = $fee->item_limit;
+                                                                        }
+                                                                        for ($i = 1; $i < $num_select + 1; $i++) {
+                                                                            ?> 
+                                                                            <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
+                                                                            <?php
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </select>
+
+
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        <?php endif; ?>
+                                                    <?php endforeach; ?>
+
+
+
+                                                    <?php if ($isfees == "N"): ?>
+                                                        <div class="col-xs-12">
+                                                            <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?></div>
+                                                        </div>
+                                                        <input type="hidden" name="reg_type" value="WAIT" />
+                                                    <?php else: ?>
+
+                                                        <div class="clearfix"></div>
+                                                        <div class="col-md-8 col-sm-8 col-xs-12" id="eplus-data-summary-container">
+                                                            <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td width="60%"><?php _e('Registration Fees', 'evrplus_language'); ?></td>
+                                                                        <td width="40%" align="right"><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
+                                                                    </tr>
+                                                                    <?php if ($company_options['use_sales_tax'] == "Y"): ?>
+                                                                        <tr>
+                                                                            <td><?php _e('Sales Tax', 'evrplus_language'); ?></td>
+                                                                            <td align="right"><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
+                                                                        </tr>
+                                                                    <?php endif; ?>
+                                                                    <?php if (count($discountSettings) > 0 && is_array($discountSettings)): ?>
+                                                                        <tr>
+                                                                            <td width="60%"><?php _e('Discount', 'evrplus_language'); ?></td>
+                                                                            <td width="40%" align="right"><input style="width: 100px" type="text" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/></td>
+                                                                        </tr>
+                                                                    <?php else: ?>
+                                                                        <tr style="display:none;"><td>
+                                                                                <input type="hidden" id="discount" name="discount" size="10" value="0.00" readonly="readyonly" onFocus="this.form.elements[0].focus()"/>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    <?php endif; ?>
+                                                                </tbody>
+                                                                <tfoot>
+                                                                    <?php if ($fee->item_price > 0): ?>
+
+                                                                        <tr>
+                                                                            <td><?php _e('Total', 'evrplus_language'); ?></td>
+                                                                            <td align="right"><input style="width: 100px" type="text" name="displaytotal" id="displaytotal" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                                                <input type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
+                                                                        </tr>
+
+                                                                    <?php else: ?>
+                                                                        <tr>
+                                                                            <td colspan="2">
+                                                                                <input style="width: 100px" type="hidden" name="total" id="total" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/>
+                                                                            </td>
+                                                                        </tr>
+                                                                    <?php endif; ?>
+                                                                </tfoot>
+                                                            </table>
+                                                        </div>
+
+                                                    <?php endif; ?>
+                                                <?php else: ?>
+                                                    <div class="col-xs-12">
+                                                        <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
+                                                            <?php _e('No Fees Have Been Setup For This Event!', 'evrplus_language'); ?>
+                                                            <?php _e('Registration for this event can not be taken at this time.', 'evrplus_language'); ?>
+                                                        </div>
+                                                    </div>
+                                                <?php endif; ?>
+
+
+                                            <?php else: ?>
+
+                                                <div class="col-xs-12">
+                                                    <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
+                                                        <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
+                                                        <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
+                                                    </div>
+                                                </div>  
+
+
+                                            <?php endif; ?>
+
+
+                                            <div class="clearfix"></div>
+                                            <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+                                                <div class="col-xs-12 fi3ld">
+                                                    <div class="g-recaptcha" id ="g-recaptcha" data-sitekey="<?php echo $company_options['captcha_key']; ?>"></div>
+                                                </div>
+                                            <?php endif; ?>
+
+
+                                            <?php if ($term_c == 'Y' && $term_c_force != 'Y'): ?>
+                                                <div class="col-xs-12 fi3ld">
+                                                    <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                    <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                                </div>
+                                            <?php endif; ?>
+
+
+                                            <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
+                                                <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i>
+                                                    <span id="form_action_message_eplus"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 fi3ld-buttons">
+                                                <input type="hidden" name="action" value="confirm"/>
+                                                <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
+                                                <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
+                                                <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+
+                                                <input type="submit" name="mySubmit" id="mySubmit" value="<?php _e('Submit', 'evrplus_language'); ?>" />
+                                                <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
+
+                                            </div>
 
                                         </div>
-
                                     </div>
                                 </form>
                             <?php endif; ?>
@@ -710,19 +733,16 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
 <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-                                                                                jQuery(document).ready(function () {
-                                                                                    jQuery("#mySubmit").click(function () {
-                                                                                        if (grecaptcha.getResponse() == "") {
-                                                                                            alert("Please fill the captcha !");
-                                                                                            return false;
-                                                                                        }
+                                                                                    jQuery(document).ready(function () {
+                                                                                        jQuery("#mySubmit").click(function () {
+                                                                                            if (grecaptcha.getResponse() == "") {
+                                                                                                alert("Please fill the captcha !");
+                                                                                                return false;
+                                                                                            }
+                                                                                        });
                                                                                     });
-                                                                                });
     </script>
     <?php
-
-
-
 
 
 

@@ -152,3 +152,4 @@ if ($event->reg_limit != "") {
 if ($event->reg_limit == "" || $event->reg_limit == " " || $event->reg_limit == "999") {
     $available_spaces = "UNLIMITED";
 }
+

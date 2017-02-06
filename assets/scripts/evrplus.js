@@ -3,7 +3,7 @@ function confirmDelete(){
  if (confirm('Are you sure want to delete?')){
       return true;
     }
-  }
+}
   
 jQuery(document).ready(function() {
 	
@@ -51,26 +51,25 @@ var page = getUrlParameter('paging');
 	  
 
   
+    });
 });
-});
+
 jQuery(document).ready(function() {
- jQuery( ".event_atten_sort" ).change(function() {
-  var sort =jQuery('.event_atten_sort').val();
-  if(!sort=='') 
-	  {
-	  var current_url = location.protocol + '//' + location.host + location.pathname+'?page=attendee&sort='+sort;
-	  window.location.href = current_url;
-	  
-	  }
-  
-});
+    jQuery( ".event_atten_sort" ).change(function() {
+     var sort =jQuery('.event_atten_sort').val();
+     if(!sort=='') 
+       {
+           var current_url = location.protocol + '//' + location.host + location.pathname+'?page=attendee&sort='+sort;
+           window.location.href = current_url;
+
+       }
+
+   });
 });
 
 
 jQuery(document).ready(function($){
 
-	
-   
 	$('a.poplight[href^="#"]').click(function() {
 
 		var popID = $(this).attr('rel'); 
@@ -79,7 +78,7 @@ jQuery(document).ready(function($){
  
 				
 
-		//Pull Query & Variables from href URL
+		/*Pull Query & Variables from href URL*/
 
 		var query= popURL.split('?');
 
@@ -88,57 +87,38 @@ jQuery(document).ready(function($){
 		var popWidth = dim[0].split('=')[1]; 
 
 
-		
-
 		$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"><img src="/wp-content/plugins/eventsplus/images/btn-close.png" class="btn_close" title="Close Window" alt="Close" /></a>');
 
-		
-
 	
-
 		var popMargTop = ($('#' + popID).height() + 80) / 2;
 
 		var popMargLeft = ($('#' + popID).width() + 80) / 2;
 
-		
-
-		
-
 		$('#' + popID).css({ 
-
 			'margin-top' : -popMargTop,
-
 			'margin-left' : -popMargLeft
-
 		});
 
 		
 
-		
-
 		$('body').append('<div id="fade"></div>'); 
-
 		$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); 
 
-		
-
+	
 		return false;
 
 	});
 
 	
+            /*Close Popups and Fade Layer*/
 
-	   
+            $('a.close, #fade').live('click', function() { 
 
-	//Close Popups and Fade Layer
+                    $('#fade , .popup_block').fadeOut(function() {
 
-	$('a.close, #fade').live('click', function() { 
+                            $('#fade, a.close').remove();  
 
-	  	$('#fade , .popup_block').fadeOut(function() {
-
-			$('#fade, a.close').remove();  
-
-	}); //fade them both out
+            }); 
 
 		
 
@@ -154,7 +134,7 @@ jQuery(document).ready(function($){
 
 
 
-//Script form fancybox configuration - used for popupt help  -- need to change to wp internal thickbox in next revision.
+/*Script form fancybox configuration - used for popupt help  -- need to change to wp internal thickbox in next revision.*/
 
 
 /*        $j = jQuery.noConflict();
@@ -207,7 +187,7 @@ jQuery(document).ready(function($){
 
         
 
-//Script form fancybox configuration - used for popupt help  -- need to change to wp internal thickbox in next revision.
+/*Script form fancybox configuration - used for popupt help  -- need to change to wp internal thickbox in next revision.*/
 
         
 
@@ -225,12 +205,12 @@ jQuery(document).ready(function($){
 
         
 
-//used for the tabbing feature in the admin page for company settins and event configuration and event edititing
+/*used for the tabbing feature in the admin page for company settins and event configuration and event edititing*/
 
 
 jQuery(document).ready(function($) {
 
-	//Default Action
+	/*Default Action*/
 
 	$(".tab_content").hide(); //Hide all content
 
@@ -240,19 +220,19 @@ jQuery(document).ready(function($) {
 
 	$('.dropdown-toggle').dropdown();
 
-	//On Click Event
+	/*On Click Event*/
 
 	$("ul.tabs li").click(function() {
 
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$("ul.tabs li").removeClass("active"); 
 
-		$(this).addClass("active"); //Add "active" class to selected tab
+		$(this).addClass("active"); 
 
-		$(".tab_content").hide(); //Hide all tab content
+		$(".tab_content").hide();
 
-		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		var activeTab = $(this).find("a").attr("href"); 
 
-		$(activeTab).fadeIn(); //Fade in the active content
+		$(activeTab).fadeIn(); 
 
 		return false;
 
@@ -303,9 +283,7 @@ jQuery(document).ready(function($) {
                 $(".infinate_event").filter('[value="no"]').prop('checked',true).trigger('change');
             }
         });
-
-    <!--end script-->
-			//used for showing and hide for the recurrence options		
+	
 
 
 });       
@@ -313,7 +291,6 @@ jQuery(document).ready(function($) {
 jQuery(document).ready(function($) {
 
 	
-
 	$('#term_c_y').click(function(){
 
 		$('#term_div').show();

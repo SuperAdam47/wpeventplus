@@ -31,7 +31,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
         $record_limit = 15;
 
         $event_id = 0;
-        if ($this->oEvent->id) {
+        if (is_object($this->oEvent)) {
             $event_id = $this->oEvent->id;
         }
 
@@ -66,6 +66,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
         $response = $this->oView->loadLayout('admin/layouts/attendees', 'admin/attendees/manage', array(
             'rows' => $rows,
+            'oEvent' => $this->oEvent,
             'p' => $p,
         ));
 
