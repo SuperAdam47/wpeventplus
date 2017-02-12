@@ -2,7 +2,7 @@
 
 class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
 
-    protected function bindParams($str) {
+    public function bindParams($str) {
 
         $txnData = $this->data['txn_data'];
 
