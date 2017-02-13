@@ -673,7 +673,7 @@ if ($show_register_button == '' || !in_array(strtolower($show_register_button), 
                                         <?php if ($term_c == 'Y'): ?>
                                             <div class="col-xs-12 fi3ld">
                                                 <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
-                                                <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                                <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                             </div>
                                         <?php endif; ?>
 
