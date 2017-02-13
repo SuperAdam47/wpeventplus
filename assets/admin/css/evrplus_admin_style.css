@@ -2483,6 +2483,8 @@ input[type="radio"] + label:before {
 	    display: block;
 	    margin: 1em 1em 0 0;
 	    font-weight: normal;
+            opacity: 1 !important;
+            position: inherit !important;
 	}
 	.events-plus_page_events #er_popup_Form input.radio {
 	    clear: both;
