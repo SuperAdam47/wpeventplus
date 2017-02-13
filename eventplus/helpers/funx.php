@@ -174,4 +174,8 @@ class EventPlus_Helpers_Funx {
         return $attachment[0];
     }
 
+    static function getTimestamp($datetime_string) {
+         return strtotime($datetime_string);
+    }
+
 }

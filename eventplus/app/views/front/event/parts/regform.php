@@ -293,7 +293,8 @@ if (isset($event_meta_data)) {
 
                     <script type="text/javascript">
                         jQuery(document).ready(function ($) {
-                            var endDate = new Date(<?php echo strtotime($resultEndDate) ?>);
+                            
+                            var endDate = new Date(<?php echo EventPlus_Helpers_Funx::getTimestamp($resultEndDate) ?>);
                             $('#evrplus_counter').redCountdown({
                                 end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                                 labels: true,
