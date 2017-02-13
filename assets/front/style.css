@@ -119,6 +119,23 @@
 .events-plus-2	.regis8er-form	.fi3ld	{ margin-bottom: 25px; }
 .events-plus-2	.regis8er-form	.fi3ld	p	{ font-size: 17px; margin: 0 0 20px; }
 
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	{ background-color: #fafafb; border: 1px solid #bdc3c7; font-weight: 400; font-size: 14px; color: #aaa; padding: 20px; height: 270px; overflow-y: scroll; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	>	*:last-child	{ margin-bottom: 0; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	a	{ color: #042272; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	a:hover	{ text-decoration: underline; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	hr	{ height: 1px; border: none; background-color: #bdc3c7; margin-bottom: 20px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	h2	{ font-size: 25px; font-weight: bold; margin: 0 0 30px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	h3	{ font-size: 17px; font-weight: bold; margin: 0 0 20px;  }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	h4	{ font-size: 15px; font-weight: bold; margin: 0 0 20px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	p	{ line-height: 1.5; margin: 0 0 25px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ul, .events-plus-2	.regis8er-form	.fi3ld	.t3rms	ol	{ margin: 0 0 25px 20px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ul	li, .events-plus-2	.regis8er-form	.fi3ld	.t3rms	ol	li	{ line-height: 1.5; margin-bottom: 5px; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ul	li	{ list-style: disc; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ul	ul	li	{ list-style: circle; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ol	li	{ list-style: decimal; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ol	ol	li	{ list-style: lower-alpha; }
+.events-plus-2	.regis8er-form	.fi3ld	.t3rms	ul	ul, .events-plus-2	.regis8er-form	.fi3ld	.t3rms	ol	ol	{ margin-top: 5px; margin-bottom: 0; }
+
 .events-plus-2	.regis8er-form	.section-ti8le	{ font-size: 24px; border-bottom: 1px solid #ccc; padding: 0 0 5px; margin-bottom: 0 !important; }
 .events-plus-2	.regis8er-form	.section-ti8le	.fa	{ font-size: 85%; margin: 0 10px 0 0; }
 
