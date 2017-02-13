@@ -293,7 +293,7 @@ if (isset($event_meta_data)) {
 
                     <script type="text/javascript">
                         jQuery(document).ready(function ($) {
-                            
+
                             var endDate = new Date(<?php echo EventPlus_Helpers_Funx::getTimestamp($resultEndDate) ?>);
                             $('#evrplus_counter').redCountdown({
                                 end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
@@ -353,7 +353,7 @@ if (isset($event_meta_data)) {
                         <?php endif; ?>
                         <?php if ($more_info != ""): ?>
                             <a href="#" class="btn btn-ic0n m0re-info eventplus-registration-actions" onClick="window.open('<?php echo $more_info; ?>');
-                                            return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
                            <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -361,7 +361,7 @@ if (isset($event_meta_data)) {
                 <?php if ($disable_event_reg != "Y"): ?>
                     <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
                     <script>
-                                var discountSettings = new Array();
+                            var discountSettings = new Array();
                     </script>
                     <?php
                     $oEventDiscounts = new EventPlus_Models_Events_Discounts();
@@ -403,7 +403,7 @@ if (isset($event_meta_data)) {
                                 <form  name="regform"  class="evrplus_regform" method="post" 
                                        action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  
                                        onSubmit="mySubmit.disabled = true;
-                                                    return validateForm(this)">
+                                        return validateForm(this)">
 
                                     <?php
                                     $formFieldStyle = ' ';
@@ -413,10 +413,11 @@ if (isset($event_meta_data)) {
                                         <div class="row">
                                             <div class="col-xs-12 fi3ld">
                                                 <label class="checkb0x"><input checked="false" type="checkbox" id="eventplus_terms_cbox" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
-                                                <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                                <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                             </div>
                                         </div>
                                     <?php endif; ?>
+
 
                                     <div id="eventplus_form_fields"<?php echo $formFieldStyle; ?>>
                                         <div class="row">
@@ -696,7 +697,7 @@ if (isset($event_meta_data)) {
                                             <?php if ($term_c == 'Y' && $term_c_force != 'Y'): ?>
                                                 <div class="col-xs-12 fi3ld">
                                                     <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
-                                                    <textarea id="terms" style="font-size: 90%" readonly rows="10"><?php echo html_entity_decode($term_desc); ?></textarea>
+                                                    <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                                 </div>
                                             <?php endif; ?>
 
@@ -734,16 +735,17 @@ if (isset($event_meta_data)) {
 <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-                                                                                    jQuery(document).ready(function () {
-                                                                                        jQuery("#mySubmit").click(function () {
-                                                                                            if (grecaptcha.getResponse() == "") {
-                                                                                                alert("Please fill the captcha !");
-                                                                                                return false;
-                                                                                            }
-                                                                                        });
-                                                                                    });
+                                                            jQuery(document).ready(function () {
+                                                                jQuery("#mySubmit").click(function () {
+                                                                    if (grecaptcha.getResponse() == "") {
+                                                                        alert("Please fill the captcha !");
+                                                                        return false;
+                                                                    }
+                                                                });
+                                                            });
     </script>
     <?php
+
 
 
 
