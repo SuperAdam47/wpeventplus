@@ -515,6 +515,7 @@ if (isset($event_meta_data)) {
 
                                             <?php
                                             #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
+                                            $available = 0;
                                             if ($available >= 1):
                                                 $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
                                                 $rows = $wpdb->get_results($sql);
@@ -677,10 +678,13 @@ if (isset($event_meta_data)) {
 
                                                 <div class="col-xs-12">
                                                     <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
-                                                        <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
+                                                         <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
                                                         <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
                                                     </div>
                                                 </div>  
+
+                                                <input type="hidden" name="request" value="Waitlist" /> 
+                                                <input type="hidden" name="reg_type" value="WAIT" />
 
 
                                             <?php endif; ?>
@@ -735,16 +739,17 @@ if (isset($event_meta_data)) {
 <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-                                                            jQuery(document).ready(function () {
-                                                                jQuery("#mySubmit").click(function () {
-                                                                    if (grecaptcha.getResponse() == "") {
-                                                                        alert("Please fill the captcha !");
-                                                                        return false;
-                                                                    }
-                                                                });
-                                                            });
+                                        jQuery(document).ready(function () {
+                                            jQuery("#mySubmit").click(function () {
+                                                if (grecaptcha.getResponse() == "") {
+                                                    alert("Please fill the captcha !");
+                                                    return false;
+                                                }
+                                            });
+                                        });
     </script>
     <?php
+
 
 
 
