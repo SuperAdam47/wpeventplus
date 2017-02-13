@@ -515,7 +515,6 @@ if (isset($event_meta_data)) {
 
                                             <?php
                                             #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
-                                            $available = 0;
                                             if ($available >= 1):
                                                 $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
                                                 $rows = $wpdb->get_results($sql);
