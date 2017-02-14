@@ -566,7 +566,7 @@ if (isset($event_meta_data)) {
                                                                         }
                                                                         ?>"
                                                                         >
-                                                                    <option value="0"></option>
+                                                                    <option value="0">0</option>
                                                                     <?php
                                                                     #Begin generation of DropDown Box - Options
                                                                     #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
