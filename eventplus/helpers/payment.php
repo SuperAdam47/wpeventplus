@@ -667,7 +667,14 @@ class EventPlus_Helpers_Payment {
         }
 
         echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-        echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td></tr></table>';
+        
+        if($payment > 0){
+            echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td>';
+        }else{
+             echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . $payment . '</strong></td>';
+        }
+        
+         echo '</tr></table>';
     }
 
 }
