@@ -26,6 +26,11 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $sql = "SELECT * FROM " . $this->_table . " WHERE category_id LIKE '%\"" . esc_sql($category_id) . "\"%' AND str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e')";
         return $this->getWpDb()->get_results($sql, ARRAY_A);
     }
+    
+    function getEventsByCategory($category_id) {
+        $sql = "SELECT * FROM " . $this->_table . " WHERE category_id LIKE '%\"" . esc_sql($category_id) . "\"%' AND str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e')";
+        return $this->getWpDb()->get_results($sql);
+    }
 
     function addEvent($params) {
 
