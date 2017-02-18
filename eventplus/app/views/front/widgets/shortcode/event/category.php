@@ -110,7 +110,7 @@
                         8276 Walnut Blvd. Jonesboro. GA. 30238
                     </span>*/?>
                 </div>
-                <p class="d3sc"><?php echo evrplus_Truncate(html_entity_decode(stripslashes($event->event_desc)), 150, ' '); ?></p>
+                <p class="d3sc"><?php echo evrplus_Truncate(strip_tags(html_entity_decode(stripslashes($event->event_desc))), 150, ' '); ?></p>
             </div>
             <div class="clearfix"></div>
         </div>
