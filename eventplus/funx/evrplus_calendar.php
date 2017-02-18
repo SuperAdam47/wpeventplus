@@ -330,14 +330,18 @@ function evrplus_show_event($event, $day = 0) {
     $show_cat = $cal_use_cat;
     $category_identifier = '';
     $cat_array = @unserialize($event->category_id);
+    
+    $style = "background: white; border: 2px solid #2BB0D7;";
+    $edge = '#b8ced6';
     if ($show_cat == 'Y') {
         $cat_id = $cat_array[0];
+       
         $sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . $cat_id . "'";
         $cat_details = $wpdb->get_row($sql);
+        
         if ($cat_details != "") {
             $style = "background: white; border: 2px solid " . stripslashes($cat_details->category_color) . "; ";
             $edge = $cat_details->category_color;
-
             $category_identifier = $cat_details->category_identifier;
         } else {
             $style = 'background: white; border: 2px solid ' . $cal_pop_brdr_clr . ';';
@@ -352,6 +356,7 @@ function evrplus_show_event($event, $day = 0) {
             $edge = '#b8ced6';
         }
     }
+    
     if (isset($company_options['show_num_seats']) and $company_options['show_num_seats'] == 'yes') {
         $num = 0;
         $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE event_id='$event->id' AND payment_status = '" . EventPlus_Models_Payments::PAYMENT_SUCCESS . "'";
@@ -376,11 +381,14 @@ function evrplus_show_event($event, $day = 0) {
     }else {
         $seats = '';
     }
+    
     if ($event->more_info != '') {
         $linky = stripslashes($event->more_info);
     } else {
         $linky = evrplus_permalink($company_options['evrplus_page_id']) . "action=evrplusegister&event_id=" . $event->id;
     }
+    
+  
     $style_event_catgry = '';
 
     $event_id = $event->id;
@@ -389,15 +397,15 @@ function evrplus_show_event($event, $day = 0) {
     $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id = $event_id";
     $rows = $wpdb->get_results($sql);
 
-    $event_name = $rows['0']->event_name;
+    $event_name = stripslashes($rows['0']->event_name);
 
-    $event_img = $rows['0']->image_link;
+    $event_img = stripslashes($rows['0']->image_link);
 
-    $event_dis = $rows['0']->event_desc;
+    $event_dis = stripslashes($rows['0']->event_desc);
 
     $tooltip_status = $company_options['evrplus_tooltip_select'];
 
-    $event_url = evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event_id;
+    $event_url = stripslashes(evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event_id);
 
     if (empty($event_img)) {
         $event_img = plugins_url('images/calendar-icon.png', __FILE__);
@@ -416,8 +424,11 @@ function evrplus_show_event($event, $day = 0) {
         $date = strtotime($day . '-' . $this_month . '-' . $this_year);
         $extraParam = '&recurr=' . $date;
     }
+    
     if ($category_identifier != '') {
-        $style_event_catgry = 'background:' . ($cat_details->category_color) . '!important;color:' . ($cat_details->font_color) . '!important;';
+        
+        $style_event_catgry = 'background:' . (stripslashes($cat_details->category_color)) . '!important; color:' . (stripslashes($cat_details->font_color)) . '!important;';
+  
         $d_format = '<p class="dashiconsText">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</P>';
         $d_format = date_i18n($evrplus_date_format, strtotime($event->start_date));
         $start_time = $event->start_time;
@@ -429,12 +440,12 @@ function evrplus_show_event($event, $day = 0) {
         if ($tooltip_status == 'Y') {
             $details = '<div class = "catgry">';
             $details = '<div class="dummy dummy-text"><span class="tooltip tooltip-effect-1">';
-            $details .= '<a class="tooltip-item" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
+            $details .= '<a class="tooltip-item" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '" style="' . $style_event_catgry . '">' . $event_name . '</a>';
             $details .='<span class="tooltip-content clearfix"><span class="event_img" style="background:url(' . $event_img . ')"></span><span class="tooltip-text heading"><span class="event_title">' . $event_name . '</span><br><br>'
                     . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><span class="event_time">' . $start_time . ' - ' . $end_time . '</span><span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>'. __('read more', 'evrplus_language').'</a></span> </span></span></div>';
         } else if (($tooltip_status = '') || ($tooltip_status = 'N')) {
             $details = '<div class = "catgry">';
-            $details .= '<a class="" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
+            $details .= '<a href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '" style="' . $style_event_catgry . '">' . $event_name . '</a>';
         }
     } else {
         $d_format = '<p class="dashiconsText">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</P>';
@@ -464,10 +475,10 @@ function evrplus_show_event($event, $day = 0) {
                     . '<span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/>'
                     . '<span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span>'
                     . '<span class="event_time">' . $start_time . ' - ' . $end_time . '</span>'
-                    . '<span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>Read more</a></span> </span></span></div>';
+                    . '<span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span><span class="tooltip-text read-more"><a href=' . $event_url . '>'.__('read more', 'evrplus_language').'</a></span> </span></span></div>';
         } else if (($tooltip_status = '') || ($tooltip_status = 'N')) {
             $details = '<div class = "catgry">';
-            $details .= '<a class="" href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
+            $details .= '<a href="' . evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . $extraParam . '"style="' . $style_event_catgry . '">' . $event_name . '</a>';
         }
     }
 
@@ -476,19 +487,28 @@ function evrplus_show_event($event, $day = 0) {
     $details .= '<div style="display:none;">';
     $details .= '<div id="tip_' . $event->id . '" style="width: 510px;">';
     if ($event->image_link != '')
-        $details .= '<div style="width: 100px;display: inline-block; "><div class="thumb" style="background-image: url(' . $event->image_link . ');"></div></div>';
+        $details .= '<div style="width: 100px;display: inline-block; "><div class="thumb" style="background-image: url(' . stripslashes($event->image_link) . ');"></div></div>';
     else
         $details .= '<div style="width: 100px;display: inline-block; "><div class="thumb" style="background-image: url(' . EVR_PLUGINFULLURL . 'images/calendar-icon.png);"></div></div>';
+    
     $start_time = $event->start_time;
     $end_time = $event->end_time;
     if (isset($company_options['time_format']) and $company_options['time_format'] == '24hrs') {
         $start_time = date('H:i', strtotime($start_time));
         $end_time = date('H:i', strtotime($end_time));
     }
-    $details .= '<div style="width: 300px;  margin-left: 80px;display: inline-block;position: relative;top: -20px;"><h3 style="color:#666; margin-bottom: 0;">' . $event->event_name . '</h3><p style="color:#666;   line-height: 15px; margin-top: 0; font-size: 12px;">' . evrplus_Truncate(html_entity_decode($event->event_desc), 15, ' ') . '</p><span style="color:#666;  font-size: 14px;"><span class="dashicons dashicons-calendar-alt"></span>' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/><span style="color:#666;  font-size: 14px;"><span class="dashicons dashicons-clock"></span> Time: ' . $start_time . ' - ' . $end_time . '</span></div>';
+    $details .= '<div style="width: 300px;  margin-left: 80px;display: inline-block;position: relative;top: -20px;">'
+            . '<h3 style="color:#666; margin-bottom: 0;">' . stripslashes($event->event_name) . '</h3>'
+            . '<p style="color:#666;   line-height: 15px; margin-top: 0; font-size: 12px;">' . evrplus_Truncate(strip_tags(html_entity_decode(stripslashes($event->event_desc))), 15, ' ') . '</p>'
+            . '<span style="color:#666;  font-size: 14px;">'
+            . '<span class="dashicons dashicons-calendar-alt"></span>' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span>'
+            . '<br/><span style="color:#666;  font-size: 14px;"><span class="dashicons dashicons-clock"></span> '
+            . 'Time: ' . $start_time . ' - ' . $end_time . '</span>'
+            . '</div>';
     $details .= '</div>';
     $details .= '</div>';
     $details.='</div>';
+    
     return $details;
 }
 
