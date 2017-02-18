@@ -37,7 +37,7 @@
 .events-plus-2	.events-list	.sea8s	{ margin: 10px 0 0; font-size: 15px; }
 .events-plus-2	.events-list	.sea8s	label	{ display: block; width: 65%; padding: 5px 0; margin: 2px auto 0; color: #fff; border-radius: 2px; }
 
-.events-plus-2	.events-list	.ti8le	{ font-size: 38px; font-weight: 300; margin: 0 0 10px; }
+.events-plus-2	.events-list	.ti8le	{ font-size: 38px; font-weight: 300; margin: 0 0 10px; word-wrap: normal; }
 .events-plus-2	.events-list	.me8a	{ margin: 0 0 10px; font-size: 14px; }
 .events-plus-2	.events-list	.me8a	>	span	{ display: inline-block; margin: 0 20px 10px 0; }
 .events-plus-2	.events-list	.me8a	>	span:last-child	{ margin-right: 0; }
