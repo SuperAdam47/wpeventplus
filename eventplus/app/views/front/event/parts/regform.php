@@ -134,7 +134,7 @@ if (isset($event_meta_data)) {
                         ?>
 
                         <div class="acti0n">
-                            <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>ics.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo __('Add to your calendar', 'evrplus_language'); ?></a>
+                            <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>add_to_calednar.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo __('Add to your calendar', 'evrplus_language'); ?></a>
                         </div>
 
                     <?php endif; ?>

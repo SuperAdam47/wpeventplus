@@ -3,36 +3,36 @@
 class eplus_front_shortcode_event_category_controller extends EventPlus_Abstract_Controller {
 
     function index() {
-        
+
         $event_category_id = $this->_invokeArgs['event_category_id'];
         if ($event_category_id == "") {
             $this->setResponse(__("Category not supplied", "evrplus_language"));
             return;
         }
-        
+
         $curdate = date("Y-m-j");
-        
+
         $oEvent = new EventPlus_Models_Events();
         $oAttendee = new EventPlus_Models_Attendees();
-        
+
         $oEventCategories = new EventPlus_Models_Categories();
         $categoryRow = $oEventCategories->getDataByIdentifier($event_category_id);
         if ($categoryRow['id'] <= 0) {
             $this->setResponse(__("Invalid Category supplied", "evrplus_language"));
             return;
         }
-        
-        $events = $oEvent->getEventsByCategoryId($categoryRow['id']);
-        
+
+        $rows = $oEvent->getEventsByCategory($categoryRow['id']);
+
         $viewParams = array();
         $viewParams['invoke_params'] = $this->_invokeArgs;
         $viewParams['curdate'] = $curdate;
-        $viewParams['events'] = $events;
+        $viewParams['rows'] = $rows;
         $viewParams['categoryRow'] = $categoryRow;
         $viewParams['company_options'] = EventPlus_Models_Settings::getSettings();
-      
-        $output = $this->oView->View('front/widgets/shortcode/event/category',$viewParams);  
-         
+
+        $output = $this->oView->View('front/widgets/shortcode/event/category', $viewParams);
+
         $this->setResponse($output);
     }
 
