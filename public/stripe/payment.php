@@ -64,6 +64,7 @@ try {
                 "amount" => $price,
                 "currency" => $currency,
                 "card" => $stripeToken,
+                "receipt_email" => $attendeeRow['email'],
                 "description" => '[' . $eventRow['id'] . '] ' . $eventRow['event_name'] . '  - Payment',
                 "metadata" => array("registration_id" => $attendeeRow['id'])
     ));
