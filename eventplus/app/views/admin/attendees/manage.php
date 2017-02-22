@@ -26,7 +26,7 @@ if (is_object($oEvent)) {
 
     <h3>
         <span><?php _e('Manage Attendees', 'evrplus_language'); ?> <?php if ($event_name != ''): ?>- <strong><?php echo stripslashes($event_name); ?></strong><?php endif; ?></span>
-        <?php if ($total_items): ?> <br /><br />
+         <?php if ($total_items && $_event_id > 0): ?> <br /><br />
             <a class="btn btn-small btn-primary" onclick="return confirm('Are you sure you wish to delete all attendees under <?php echo stripslashes($event_name); ?>?');" href="<?php echo $this->adminUrl('admin_attendees/delete_all', array('event_id' => $oEvent->id)); ?>"><?php _e('Delete All', 'evrplus_language'); ?></a>
         <?php endif; ?>
     </h3>     
