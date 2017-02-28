@@ -30,8 +30,8 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
         if ($pay_confirm == 'Y' && $this->data['payment_status'] == EventPlus_Models_Payments::PAYMENT_SUCCESS) {
             
             $headers = array(
-                "From: " . $organization . " <" . $contact . ">",
-                "Reply-To: " . $organization . "  <" . $contact . ">",
+               'From: "' . $organization . '" <' . $contact . ">",
+               'Reply-To: "' . $organization . '" <' . $contact . ">",
                 "Content-Type: text/html; charset=UTF-8"
             );
 
