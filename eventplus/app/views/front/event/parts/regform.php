@@ -153,7 +153,7 @@ if (isset($event_meta_data)) {
             </div>
             <div class="col-xs-12">
                 <div class="row-eq-height me8a">
-                    <div class="col-xs-6 it3m">
+                    <div id="eventplus_event_date" class="col-xs-6 it3m">
                         <i class="fa fa-2x fa-calendar"></i>
                         <div class="d3sc">
                             <h4>
@@ -162,7 +162,7 @@ if (isset($event_meta_data)) {
                             </h4>
                         </div>
                     </div>
-                    <div class="col-xs-6 it3m">
+                    <div id="eventplus_event_time" class="col-xs-6 it3m">
                         <i class="fa fa-2x fa-clock-o"></i>
                         <div class="d3sc">
                             <h4>
@@ -173,7 +173,7 @@ if (isset($event_meta_data)) {
                     <div class="clearfix"></div>
                 </div>
 
-                <div class="d3sc">
+                <div class="d3sc" id="eventplus_event_description">
                     <p><?php echo html_entity_decode(nl2br($event_desc)); ?></p>
                 </div>
 
@@ -191,7 +191,7 @@ if (isset($event_meta_data)) {
                 <?php endif; ?>
 
                 <div class="row-eq-height me8a al8">
-                    <div class="col-xs-6 it3m">
+                    <div class="col-xs-6 it3m" id="eventplus_event_location">
                         <i class="fa fa-2x fa-map-marker"></i>
                         <div class="d3sc">
                             <h4><?php _e('Event Location', 'evrplus_language'); ?></h4>
@@ -215,7 +215,7 @@ if (isset($event_meta_data)) {
                             <?php echo $eventLocationStr; ?>
                         </div>
                     </div>
-                    <div class="col-xs-6 it3m">
+                    <div class="col-xs-6 it3m" id="eventplus_event_fees">
                         <i class="fa fa-2x fa-money"></i>
                         <div class="d3sc">
                             <h4><?php _e('Event Fees', 'evrplus_language'); ?></h4>
@@ -278,7 +278,7 @@ if (isset($event_meta_data)) {
                     $recurring_status = $recurring_status_ex[0]->recurrence_choice;
                     if ($recurring_status == 'no'):
                         ?>
-                        <div class="coun8" id="details">
+                        <div class="coun8 ev3nt-coun73r-wra993r" id="details">
                             <div class="evrplus_counter">
                                 <div id="evrplus_counter" class="redCountdownDemo"></div>
                                 <div class="timer">
