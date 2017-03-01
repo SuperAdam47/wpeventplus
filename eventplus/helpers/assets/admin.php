@@ -51,7 +51,7 @@ class EventPlus_Helpers_Assets_Admin {
         wp_enqueue_script('jquery-ui-draggable');
         wp_enqueue_script('jquery-ui-droppable');
         wp_enqueue_script('jquery-ui-selectable');
-        wp_enqueue_script('jquery-ui-core');  
+        wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-tabs');
         wp_enqueue_script('jquery-ui-tooltip');
         wp_enqueue_script('thickbox');
@@ -60,12 +60,12 @@ class EventPlus_Helpers_Assets_Admin {
     }
 
     function adminHeader() {
-        
-        $file = EventPlus::getPlugin()->getFile();
-        
-        if(strstr(strtolower($_GET['page']),'eventplus') == false){
+
+        if ($this->isAdminRequest() == false) {
             return;
         }
+
+        $file = EventPlus::getPlugin()->getFile();
 
         wp_register_style($handle = 'evrplus_admin_css', $src = plugins_url('/assets/admin/css/evrplus_admin_style.css', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
 
@@ -83,14 +83,14 @@ class EventPlus_Helpers_Assets_Admin {
         wp_register_script($handle = 'evrplus_tab_script', $src = plugins_url('/assets/scripts/evrplus_tabs.js', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
 
         // wp_register_script($handle = 'evrplus_tooltip_script', $src = plugins_url('/assets/js/jquery.tooltip.js', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
-		
+
         wp_register_script($handle = 'bootstrap', $src = plugins_url('/assets/scripts/bootstrap.min.js', $file), $deps = array(), $ver = '3.3.7', $media = 'all');
 
         wp_register_script($handle = 'jquery-ui', $src = "//code.jquery.com/ui/1.11.4/jquery-ui.js", $deps = array(), $ver = '1.10.4', $media = 'all');
 
         wp_enqueue_script('jquery');
 
-        wp_enqueue_script('evrplus_admin_script'); 
+        wp_enqueue_script('evrplus_admin_script');
 
         wp_enqueue_script('evrplus_admin_fancy');
 
@@ -126,14 +126,34 @@ class EventPlus_Helpers_Assets_Admin {
 	';
     }
 
+    function isWidget() {
+        if (strstr($_SERVER['PHP_SELF'], 'widgets.php')) {
+            return true;
+        }
+        return false;
+    }
+
+    function isAdminRequest() {
+        if ($this->isWidget()) {
+            return true;
+        }
+
+        if (strstr(strtolower($_GET['page']), 'eventplus')) {
+            return true;
+        }
+
+        return false;
+    }
+
     function init() {
-        
-        if(strstr(strtolower($_GET['page']),'eventplus') == false){
+
+
+        if ($this->isAdminRequest() == false) {
             return;
         }
-        
+
         $this->initAssets();
-      
+
         add_action('admin_head', array($this, 'loadTinyMce'));
         add_action('admin_head', array($this, 'adminHeader'));
         add_action('admin_head', array($this, 'loadScripts'));
