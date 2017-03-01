@@ -38,7 +38,7 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
         $p = new EventPlus_Pagination();
         $totalRecords = $this->_model->getTotalAttendees($event_id);
         $p->items($totalRecords);
-        $p->limit($record_limit); 
+        $p->limit($record_limit);
         $p->target($this->adminUrl('admin_attendees', array('event_id' => $event_id)));
 
         if (!isset($_GET['paging']) || $_GET['paging'] == 0) {
@@ -108,6 +108,19 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
             $this->setErrorMessage(__("Attendee doesn't exist.", 'evrplus_language'));
             $this->redirect($this->adminUrl('admin_attendees'));
             return false;
+        }
+        
+        $event_id = (int) $this->_request->getParam('event_id');
+        if($event_id <= 0){
+            $event_id = $row['event_id'];
+        }
+         
+        $this->oEvent = $this->_modelEvents->getData($event_id);
+        $this->oView->oEvent = $this->oEvent;
+
+        if ($this->oEvent->id <= 0) {
+            $this->setErrorMessage(__('Invalid event id.', 'evrplus_language'));
+            $this->redirect($this->adminUrl('admin_attendees'));
         }
 
         if ($this->_request->isPost()) {
