@@ -96,6 +96,10 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
         if (isset($this->company_options['email']) && !empty($this->company_options['email'])) {
             $toAdminEmails[] = trim($this->company_options['email']);
         }
+        
+        if (isset($this->company_options['company_email']) && !empty($this->company_options['company_email'])) {
+            $toAdminEmails[] = trim($this->company_options['company_email']);
+        }
 
         if (isset($this->company_options['secondary_email']) && !empty($this->company_options['secondary_email'])) {
             $emails = explode(',', $this->company_options['secondary_email']);

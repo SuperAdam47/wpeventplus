@@ -28,9 +28,7 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
         $contact = $this->company_options['company_email'];
 
         if ($pay_confirm == 'Y' && $this->data['payment_status'] == EventPlus_Models_Payments::PAYMENT_SUCCESS) {
-            
-            $headers[] = 'From: Me Myself <me@example.net>';
-            
+      
             $headers = array(
                 'From: '.$organization.' <'.$contact.'>',
                 'Reply-To: '.$organization.' <'.$contact.'>',
