@@ -247,6 +247,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
             $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
             $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
+            $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
         } else {
             $response = false;
             $message = __('There was an error in your submission, please try again. The event was not saved!', 'evrplus_language');
@@ -438,6 +439,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $oMeta->updateOption($event_id, 'qty_discount_settings', (array) $params['qty_discount_settings']);
         $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
         $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
+        $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
 
         $this->setMessage($message);
 

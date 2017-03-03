@@ -6,11 +6,11 @@
             <br>
             <span class="steptitle"><img class="stepimg" src="<?php echo $this->assetUrl('images/check-icon.png'); ?>"><?php _e('Choose Event Options', 'evrplus_language'); ?></span>
             <div class="form-table">
-                
-                 <p>
+
+                <p>
                     <label class="tooltip">
                         <?php _e('Show Registration Button', 'evrplus_language'); ?></label>
-                 <p class="cs2" title="<?php _e('If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed.', 'evrplus_language'); ?>"></p><br/>
+                <p class="cs2" title="<?php _e('If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed.', 'evrplus_language'); ?>"></p><br/>
                 <input type="radio" name="show_register_button" class="radio" id="show_register_button_yes" value="Y" <?php
                 if ($show_register_button == "Y" || $show_register_button == '') {
                     echo "checked";
@@ -21,6 +21,23 @@
                     echo "checked";
                 };
                 ?> /><label for="show_register_buttonno"><?php _e('No ', 'evrplus_language'); ?></label>
+
+                </p>
+                 <br />
+                <p>
+                    <label class="tooltip">
+                        <?php _e('Skip Registration Step2', 'evrplus_language'); ?></label>
+                <p class="cs2" title="<?php _e('Whether to skip step2 if attendee quantity is 1.', 'evrplus_language'); ?>"></p><br/>
+                <input type="radio" name="skip_step_2" class="radio" id="skip_step_2_yes" value="Y" <?php
+                if ($skip_step_2 == "Y" || $skip_step_2 == '') {
+                    echo "checked";
+                };
+                ?>/><label for="skip_step_2_yes"><?php _e('Yes', 'evrplus_language'); ?></label>
+                <input type="radio" name="skip_step_2" class="radio" id="skip_step_2_no" value="N" <?php
+                if ($skip_step_2 == "N") {
+                    echo "checked";
+                }
+                ?> /><label for="skip_step_2_no"><?php _e('No ', 'evrplus_language'); ?></label>
 
                 </p>
 
@@ -215,45 +232,44 @@
                         ?>  /><label for="term_c_n"><?php _e('No', 'evrplus_language'); ?> 
                         </label>
                     </p>
-                        <br /><br />
+                    <br /><br />
                     <div id="term_div" style="<?php
                     if ($term_c == 'N' || $term_c == '') {
                         echo 'display:none';
                     }
                     ?>">
-                        
+
                         <?php
                         $term_c_force = '';
-                        if(isset( $meta_data)){
-                            if(isset($meta_data['term_c_force'])){
+                        if (isset($meta_data)) {
+                            if (isset($meta_data['term_c_force'])) {
                                 $term_c_force = $meta_data['term_c_force'];
                             }
                         }
-                        
                         ?>
-                             <p>
-                        <label class="tooltip" >
-                            <?php _e('Do you want to force terms and conditions?', 'evrplus_language'); ?></label> 
-                                 <p class="cs2" title="<?php _e('If yes, registration form will only be displayed once attendee agrees the terms and conditions', 'evrplus_language'); ?>"></p>
-                                 <br/>
+                        <p>
+                            <label class="tooltip" >
+                                <?php _e('Do you want to force terms and conditions?', 'evrplus_language'); ?></label> 
+                        <p class="cs2" title="<?php _e('If yes, registration form will only be displayed once attendee agrees the terms and conditions', 'evrplus_language'); ?>"></p>
+                        <br/>
                         <input type="radio" name="term_c_force" class="radio" id="term_c_force_y" value="Y" <?php
-                        if ($term_c_force == "Y") {
-                            echo "checked";
-                        };
-                        ?>/> <label for="term_c_force_y"><?php _e('Yes', 'evrplus_language'); ?> </label>
+                                if ($term_c_force == "Y") {
+                                    echo "checked";
+                                };
+                                ?>/> <label for="term_c_force_y"><?php _e('Yes', 'evrplus_language'); ?> </label>
                         <input  type="radio" name="term_c_force" class="radio" id="term_c_force_n" value="N" <?php
                         if ($term_c_force == "N") {
                             echo "checked";
                         };
-                        ?>  /><label for="term_c_force_n"><?php _e('No', 'evrplus_language'); ?> 
+                                ?>  /><label for="term_c_force_n"><?php _e('No', 'evrplus_language'); ?> 
                         </label>
                         <Br />
-                             <?php
-                             if (function_exists('the_editor')) {
-                                 echo "</p>";
-                                 the_editor(htmlspecialchars_decode($term_desc), "term_desc", '', false);
-                             } else {
-                                 ?>
+                        <?php
+                        if (function_exists('the_editor')) {
+                            echo "</p>";
+                            the_editor(htmlspecialchars_decode($term_desc), "term_desc", '', false);
+                        } else {
+                            ?>
 
                             <a href="javascript:void(0)" onclick="tinyfy(1, 'term_desc')"><input type="button" value="WYSIWG"/></a>
                             </p>
@@ -274,15 +290,15 @@
                         <label class="tooltip">
                             <?php _e('Would you like to display countdown timer? Yes  No ', 'evrplus_language'); ?></label><br/>
                         <input type="radio" name="counter_checks" class="radio" id="counter_checks_yes" value="Y" <?php
-                        if ($counter_checks == "Y") {
-                            echo "checked";
-                        };
-                        ?> /><label for="counter_checks_yes"><?php _e('Yes', 'evrplus_language'); ?></label>
+                            if ($counter_checks == "Y") {
+                                echo "checked";
+                            };
+                            ?> /><label for="counter_checks_yes"><?php _e('Yes', 'evrplus_language'); ?></label>
                         <input type="radio" name="counter_checks" class="radio" id="counter_checks_no" value="N" <?php
                         if ($counter_checks == "N") {
                             echo "checked";
                         };
-                        ?> /><label for="counter_checks_no"><?php _e('No ', 'evrplus_language'); ?></label>
+                            ?> /><label for="counter_checks_no"><?php _e('No ', 'evrplus_language'); ?></label>
 
                     </p>
                 </div>

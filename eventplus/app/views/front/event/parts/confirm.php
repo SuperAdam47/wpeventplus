@@ -350,7 +350,7 @@ $question_post = urlencode(serialize($qanda));
                         <td align="right">&nbsp;</td>
                     <?php endif; ?>
                 </tr>
-            <?php endif; 
+            <?php endif;
             ?>
             <?php if ($company_options['use_sales_tax'] == "Y"): ?>
                 <tr>
@@ -444,7 +444,13 @@ $question_post = urlencode(serialize($qanda));
                                     </div>
                             </div>';
                         } else {
-                            echo '<input type="hidden" id="qty_attendees" value="' . $quantity . '" />';
+
+                            $oMeta = new EventPlus_Models_Events_Meta();
+                            $skip_step_2 = $oMeta->getOption($event_id, 'skip_step_2');
+                            if ($skip_step_2 == 'Y' || $skip_step_2 == '') {
+                                echo '<input type="hidden" id="qty_attendees" value="' . $quantity . '" />';
+                            }
+
                             echo '<input type="hidden" name="reg_form" value="' . $form_post . '" />';
                             echo '<input type="hidden" name="questions" value="' . $question_post . '" />';
                             echo '<input type="hidden" name="action" value="post"/>';
