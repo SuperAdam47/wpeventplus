@@ -40,7 +40,10 @@
             <tr><td><?php echo $category_id ?></td>
                 <td class="cname"><span style="<?php echo $style; ?>"><?php echo $category_name ?></span></td>
                 <td><?php echo $category_identifier ?></td>
-                <td style="white-space: nowrap;">[eventsplus_category event_category_id="<?php echo $category_identifier ?>"]</td>
+                <td style="white-space: nowrap;">
+                    [eventsplus_category event_category_id="<?php echo $category_identifier ?>"]
+                    [PLUS_CALENDAR:<?php echo $category_identifier ?>]
+                </td>
                 <td class="catc">
                     <a id="update_button" href="<?php echo $this->adminUrl('admin_categories', array('method' => 'edit', 'id' => $category_id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a>  |
 

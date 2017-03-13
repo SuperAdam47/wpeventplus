@@ -20,6 +20,12 @@ class EventPlus_ShortCodes {
 
     function eventGrid($atts) {
 
+        $file = EventPlus::getPlugin()->getFile();
+        wp_register_style('mediaBoxes', plugins_url('/assets/scripts/gridview/css/mediaBoxes.css', $file), array(), '1.0.0', 'all');
+        wp_enqueue_style('mediaBoxes');
+        wp_register_style('magnific-popup', plugins_url('/assets/scripts/gridview/css/magnific-popup.css', $file), array(), '1.0.0', 'all');
+        wp_enqueue_style('magnific-popup');
+
         extract(shortcode_atts(array(
             'columns' => '4',
             'ordered' => 'yes',
@@ -30,7 +36,7 @@ class EventPlus_ShortCodes {
 
 
         $col = ($columns == 2) ? 2 : 4 - ($columns - 1);
-        
+
         return EventPlus::dispatch('front_shortcode_event_grid/index', array(
                     'col' => $col,
                     'columns' => $columns,
@@ -71,23 +77,23 @@ class EventPlus_ShortCodes {
         $id = "{$event_id}";
 
         $curr = EventPlus_Helpers_Event::check_recurrence($id);
-        
+
         $buffer = EventPlus::dispatch('front_event_parts_regform/index', array(
-                'event_id' => $id,
-                'recurr' => $curr,
+                    'event_id' => $id,
+                    'recurr' => $curr,
         ));
-        
+
         return $buffer;
     }
 
     function eventList($atts) {
-        
+
         $attributes = (shortcode_atts(array(
-            'limit' => 0
+                    'limit' => 0
                         ), $atts));
-        
+
         return EventPlus::dispatch('front_shortcode_event_list/index', array(
-            'shortcode_attributes' => $attributes
+                    'shortcode_attributes' => $attributes
         ));
     }
 

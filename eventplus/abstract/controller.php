@@ -277,7 +277,7 @@ abstract class EventPlus_Abstract_Controller {
         $this->flash($message, 'error');
     }
     
-    function redirect($location, $status){
+    function redirect($location, $status=302){
         wp_safe_redirect( $location, $status );
     }
     

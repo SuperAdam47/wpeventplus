@@ -110,7 +110,7 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
 
         if (trim($category_identifier) == '') {
             $errors[] = __('Please fill in category unique id.', 'evrplus_language');
-        } else if ($category_identifier != $dbRow['category_identifier']) {
+        } else if ($params['category_identifier'] != $dbRow['category_identifier']) {
             if ($this->identifierExists($category_identifier) > 0) {
                 $errors[] = __('Category unique id already exists.', 'evrplus_language');
             }
