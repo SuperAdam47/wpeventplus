@@ -73,13 +73,13 @@ if (count($rows)):
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
                                 <?php
-                                $content = html_entity_decode($event->event_desc);
+                                if ($show_excerpt == 1) {
 
-                                echo $con = substr(strip_tags(stripslashes($content)), 0, 110) . "...";
-                                //echo EventPlus_Helpers_Funx::truncateGrid(html_entity_decode(stripslashes($event->event_desc)), 60, ' '); 
+                                    echo substr(strip_tags(stripslashes($content)), 0, 110) . "...";
+                                }
                                 ?>
                             </div>
-                            <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">Read more</a> </div>
+                            <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>"><?php _e('Read more', 'evrplus_language'); ?></a> </div>
                         </div>
                     </div>
     <?php endforeach; ?>
@@ -87,4 +87,6 @@ if (count($rows)):
         </div>
     </div>
     <?php
+
+
  endif; 

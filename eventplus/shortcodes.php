@@ -27,6 +27,7 @@ class EventPlus_ShortCodes {
         wp_enqueue_style('magnific-popup');
 
         extract(shortcode_atts(array(
+            'show_excerpt' => '1',
             'columns' => '4',
             'ordered' => 'yes',
             'init_events' => '8',
@@ -43,6 +44,7 @@ class EventPlus_ShortCodes {
                     'ordered' => $ordered,
                     'init_events' => $init_events,
                     'load_new_events' => $load_new_events,
+                    'show_excerpt' => $show_excerpt,
         ));
     }
 

@@ -40,6 +40,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $init_events = $this->_invokeArgs['init_events'];
         $load_new_events = $this->_invokeArgs['load_new_events'];
         $custom = $this->_invokeArgs['custom'];
+        $show_excerpt = $this->_invokeArgs['show_excerpt'];
 
         $company_options = EventPlus_Models_Settings::getSettings();
 
