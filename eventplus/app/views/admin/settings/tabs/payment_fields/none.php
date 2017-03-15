@@ -15,19 +15,3 @@
     </select>
 </div>
 </p>
-
-<p style='display: none;'>
-    <label for="accept_donations">
-        <?php _e('Will you accept donations?', 'evrplus_language'); ?>
-    </label>
-    <br />
-<div class="styled">
-    <select name = 'donations' class="regular-select">
-        <!--<option value="<?php echo $company_options['donations']; ?>"><?php echo $company_options['donations']; ?> </option>-->
-        <option value="Yes" <?php if ($company_options['donations'] == 'Yes') echo ' selected'; ?>>
-            <?php _e('Yes', 'evrplus_language'); ?>
-        </option>
-        <option value="No" <?php if ($company_options['donations'] == 'No') echo ' selected'; ?>>No</option>
-    </select>
-</div>
-</p>
