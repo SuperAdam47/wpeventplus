@@ -8,7 +8,7 @@ class EventPlus_Url {
 
     function __construct(array $params = array('site_url' => '', 'assets_url' => '')) {
         $this->site_url = $params['site_url'];
-        $this->admin_url = $params['admin_url'];
+        $this->admin_url = admin_url() . 'admin.php';
         $this->assets_url = $params['assets_url'];
         $this->menu_slug = $params['menu_slug'];
     }
