@@ -76,7 +76,7 @@
 
                                     $today = strtotime($current_dt);
 
-                                    if ($expiration_date <= $today) {
+                                    if ($expiration_date < $today) {
 
                                         $active_event = '<span class="event_ex">' . __('EXPIRED', 'evrplus_language') . '</span>';
                                     } else {
