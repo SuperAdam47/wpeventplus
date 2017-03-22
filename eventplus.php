@@ -12,6 +12,7 @@ if (!defined('ABSPATH')) {
     exit; //block direct access
 }
 
+define('EVENT_PLUS_DS', '/');
 define('EVENT_PLUS_FRAMEWORK_NAMESPACE', 'eplus');
 define('EVENT_PLUS_FRAMEWORK_FOLDER', 'eventplus');
 define("EVR_PLUGINPATH", "/" . plugin_basename(dirname(__file__)) . "/");

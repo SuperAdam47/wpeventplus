@@ -466,6 +466,9 @@ class EventPlus_Helpers_Installer {
             $company_options['cancel_return'] = "";
             $company_options['return_method'] = "";
             $company_options['use_sandbox'] = "N";
+            $company_options['show_social_icons'] = "Y";
+            $company_options['show_register_button'] = "Y";
+            $company_options['disable_event_reg'] = "N";
             $company_options['image_url'] = $ER_org_data['image_url'];
             $company_options['admin_message'] = "";
             $company_options['payment_subj'] = "Payment Received";
@@ -587,7 +590,7 @@ class EventPlus_Helpers_Installer {
 
         $sql = "CREATE TABLE " . $table_name . " (
           id MEDIUMINT NOT NULL AUTO_INCREMENT,
-          event_name VARCHAR(100) DEFAULT NULL,
+          event_name VARCHAR(120) DEFAULT NULL,
           event_desc TEXT DEFAULT NULL,
           location_list VARCHAR(4) DEFAULT NULL,
           event_location VARCHAR(300) DEFAULT NULL,
@@ -618,9 +621,7 @@ class EventPlus_Helpers_Installer {
           reg_form_defaults VARCHAR(200) DEFAULT NULL,
           allow_checks VARCHAR(45) DEFAULT NULL,
           
-		  
-		  
-		  counter_checks VARCHAR(45) DEFAULT NULL,
+        counter_checks VARCHAR(45) DEFAULT NULL,
           send_mail VARCHAR (2) DEFAULT NULL,
           send_contact VARCHAR (2) DEFAULT NULL,
           contact_email VARCHAR(65) DEFAULT NULL,

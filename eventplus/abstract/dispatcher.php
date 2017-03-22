@@ -258,12 +258,12 @@ abstract class EventPlus_Abstract_Dispatcher {
         }
 
         
-        $this->_oControllerFile = $this->getControllerDirectory() . DIRECTORY_SEPARATOR . $controller . '.php';
+        $this->_oControllerFile = $this->getControllerDirectory() . EVENT_PLUS_DS . $controller . '.php';
 
         if (file_exists($this->_oControllerFile) == false)
-            $this->_oControllerFile = $this->getControllerDirectory() . str_replace('_', DIRECTORY_SEPARATOR, $controller) . '.php'; // Class Name to Directory Mapping
+            $this->_oControllerFile = $this->getControllerDirectory() . str_replace('_', EVENT_PLUS_DS, $controller) . '.php'; // Class Name to Directory Mapping
 
-        $this->_oControllerFile = str_replace(DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $this->_oControllerFile);
+        $this->_oControllerFile = str_replace(EVENT_PLUS_DS . EVENT_PLUS_DS, EVENT_PLUS_DS, $this->_oControllerFile);
   
         if (file_exists($this->_oControllerFile) == false) {
             return false;
