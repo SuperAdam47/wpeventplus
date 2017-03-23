@@ -40,6 +40,8 @@ class eplus_front_event_parts_paypal_controller extends EventPlus_Abstract_Contr
             } else {
                 $amount_pd = $_REQUEST['payment_gross'];
             }
+            
+            $amount_pd = esc_sql($amount_pd);
             $mc_currency = $p->ipn_data['mc_currency'];
             $address_name = $p->ipn_data['address_name'];
             $address_street = nl2br($p->ipn_data['address_street']);
