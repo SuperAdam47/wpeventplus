@@ -39,7 +39,7 @@ class EventPlus_Filters {
             return true;
         }
 
-        if (preg_match('[PLUS_CALENDAR:([A-Za-z0-9])\w+]', $content, $matches)) {
+        if (preg_match('[PLUS_CALENDAR:((.*))\w+]', $content, $matches)) {
             return true;
         } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
             return true;
