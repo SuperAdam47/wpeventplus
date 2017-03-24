@@ -91,11 +91,12 @@ class EventPlus_Filters {
 
         $pieces = explode("]", $content);
         foreach ($pieces as $val) {
-            if (preg_match('[PLUS_CALENDAR:([A-Za-z0-9])\w+]', $content, $matches)) {
+           
+            if (preg_match('[PLUS_CALENDAR:((.*))\w+]', $content, $matches)) {
 
                 $evr = $matches[0];
                 $pos = strpos($evr, ':');
-                $cat = substr($evr, $pos + 1);
+                $cat = trim(substr($evr, $pos + 1));
                 ob_start();
 
                 evrplus_display_calendar($cat); //function with main content
