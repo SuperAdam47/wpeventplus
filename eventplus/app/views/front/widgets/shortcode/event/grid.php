@@ -73,7 +73,7 @@ if (count($rows)):
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
                                 <?php
-                                if (intVal($show_excerpt) == 1) {
+                                if ($show_excerpt == 'yes') {
 
                                     echo substr(strip_tags(stripslashes($content)), 0, 110) . "...";
                                 }
@@ -82,11 +82,12 @@ if (count($rows)):
                             <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>"><?php _e('Read more', 'evrplus_language'); ?></a> </div>
                         </div>
                     </div>
-    <?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
     <?php
+
 
 
  endif; 

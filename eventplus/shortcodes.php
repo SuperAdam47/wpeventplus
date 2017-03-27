@@ -27,7 +27,7 @@ class EventPlus_ShortCodes {
         wp_enqueue_style('magnific-popup');
 
         extract(shortcode_atts(array(
-            'show_excerpt' => '1',
+            'show_excerpt' => 'yes',
             'columns' => '4',
             'ordered' => 'yes',
             'init_events' => '8',
@@ -37,6 +37,12 @@ class EventPlus_ShortCodes {
 
 
         $col = ($columns == 2) ? 2 : 4 - ($columns - 1);
+        
+        if($show_excerpt == '1'){
+            $show_excerpt = 'yes';
+        }
+        
+        $show_excerpt = strtolower($show_excerpt);
 
         return EventPlus::dispatch('front_shortcode_event_grid/index', array(
                     'col' => $col,
