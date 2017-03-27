@@ -21,9 +21,9 @@ if (isset($conf_mail) == false || $conf_mail == '') {
                 <p><label  class="tooltip">
                         <?php _e('Do you want to use a custom email for this event?', 'evrplus_language'); ?></label><p class="cs2" title="<?php _e('If you have send mail option enabled in the company settings, you can override the default mail by creating a custom mail for this event.', 'evrplus_language'); ?>"></p><br/>
                 <input id="ver1" type="radio" name="send_mail" class="radio"  value="Y" <?php
-                if ($send_mail == "Y") {
+                if ($send_mail == "Y" || $send_mail == '') {
                     echo "checked";
-                };
+                }
                 ?> /><label for="ver1" > <?php _e('Yes', 'evrplus_language'); ?></label>
                 <input id="ver2" type="radio" name="send_mail" class="radio"  value="N" <?php
                 if ($send_mail == "N") {

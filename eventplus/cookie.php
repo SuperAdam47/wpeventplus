@@ -85,7 +85,7 @@ class EventPlus_Cookie {
      * @return  boolean
      * @uses    self::salt
      */
-    public static function set($name, $value, $expiration = NULL) {
+    public static function set($name, $value, $expiration = 0) {
         if ($expiration === NULL) {
             // Use the default expiration
             $expiration = self::$expiration;
@@ -99,7 +99,7 @@ class EventPlus_Cookie {
         // Add the salt to the cookie value
         $value = self::salt($name, $value) . '~' . $value;
 
-        return setcookie($name, $value, $expiration, self::$path, self::$domain, self::$secure, self::$httponly);
+        return setcookie($name, $value, (int)$expiration, self::$path, self::$domain, self::$secure, self::$httponly);
     }
 
     /**
