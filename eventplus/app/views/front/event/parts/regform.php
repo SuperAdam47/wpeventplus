@@ -185,9 +185,9 @@ if (isset($event_meta_data)) {
                     $event_state_map = str_replace(" ", "+", $event_state);
                     $event_country_map = str_replace(" ", "+", $event_country);
                     if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']))
-                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' .  $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                     else
-                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' .  $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                     ?>
                 <?php endif; ?>
 
@@ -202,12 +202,12 @@ if (isset($event_meta_data)) {
                             if ($event_location != '') {
                                 $eventLocationStr .= stripslashes($event_location);
                             }
-                            
+
                             if ($event_address != '') {
-                                if($eventLocationStr != ''){
+                                if ($eventLocationStr != '') {
                                     $eventLocationStr .= ', ';
                                 }
-                                $eventLocationStr =  $eventLocationStr . ' ' . stripslashes($event_address);
+                                $eventLocationStr = $eventLocationStr . ' ' . stripslashes($event_address);
                             }
 
                             if ($event_city != '') {
@@ -288,7 +288,7 @@ if (isset($event_meta_data)) {
                         ?>
                         <div class="coun8 ev3nt-coun73r-wra993r" id="details">
                             <div class="evrplus_counter">
-                                <div id="evrplus_counter" class="redCountdownDemo"></div>
+                                <div id="evrplus_counter" data-end-date="<?php echo EventPlus_Helpers_Funx::getTimestamp($resultEndDate) ?>" class="redCountdownDemo"></div>
                                 <div class="timer">
                                     <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
                                     <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
@@ -298,55 +298,6 @@ if (isset($event_meta_data)) {
                             </div>
                         </div>
                     <?php endif; ?>
-
-                    <script type="text/javascript">
-                        jQuery(document).ready(function ($) {
-
-                            var endDate = new Date(<?php echo EventPlus_Helpers_Funx::getTimestamp($resultEndDate) ?>);
-                            $('#evrplus_counter').redCountdown({
-                                end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
-                                labels: true,
-                                style: {
-                                    element: "",
-                                    textResponsive: .5,
-                                    daysElement: {
-                                        gauge: {
-                                            thickness: .2,
-                                            bgColor: "#cccccc",
-                                            fgColor: "#1ABC9C"
-                                        },
-                                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                    },
-                                    hoursElement: {
-                                        gauge: {
-                                            thickness: .2,
-                                            bgColor: "#cccccc",
-                                            fgColor: "#2980B9"
-                                        },
-                                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                    },
-                                    minutesElement: {
-                                        gauge: {
-                                            thickness: .2,
-                                            bgColor: "#cccccc",
-                                            fgColor: "#8E44AD"
-                                        },
-                                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                    },
-                                    secondsElement: {
-                                        gauge: {
-                                            thickness: .2,
-                                            bgColor: "#cccccc",
-                                            fgColor: "#F39C12"
-                                        },
-                                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
-                                    }
-                                },
-                                onEndCallback: function () {
-
-                                }});
-                        });
-                    </script>
                     <?php
                 endif;
                 ?>
@@ -685,7 +636,7 @@ if (isset($event_meta_data)) {
 
                                                 <div class="col-xs-12">
                                                     <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
-                                                         <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
+                                                        <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
                                                         <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
                                                     </div>
                                                 </div>  
@@ -746,16 +697,17 @@ if (isset($event_meta_data)) {
 <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-                                        jQuery(document).ready(function () {
-                                            jQuery("#mySubmit").click(function () {
-                                                if (grecaptcha.getResponse() == "") {
-                                                    alert("Please fill the captcha !");
-                                                    return false;
-                                                }
-                                            });
-                                        });
+                                                            jQuery(document).ready(function () {
+                                                                jQuery("#mySubmit").click(function () {
+                                                                    if (grecaptcha.getResponse() == "") {
+                                                                        alert("Please fill the captcha !");
+                                                                        return false;
+                                                                    }
+                                                                });
+                                                            });
     </script>
     <?php
+
 
 
 

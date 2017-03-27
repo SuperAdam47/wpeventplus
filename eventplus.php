@@ -90,7 +90,6 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_filter('the_content', $oFilters, 'grid_the_content_filter');
         $this->add_filter('the_content', $oFilters, 'upcoming_event_list');
         $this->add_filter('the_content', $oFilters, 'remove_wpautop', 8);
-        $this->add_filter('the_content', $oFilters, 'do_wpautop', 12);
         $this->add_filter('the_content', $oFilters, 'evrplus_content_replace', 9);
         $this->add_filter('the_content', $oFilters, 'evrplus_calendar_replace');
         $this->add_filter('page_template', $oFilters, 'wpa3396_page_template');

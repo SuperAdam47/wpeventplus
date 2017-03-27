@@ -44,8 +44,8 @@ function checkInternationalPhone(strPhone) {
     if (strPhone.indexOf("(") > bracket) {
         return false;
     }
-  
- 
+
+
     s = stripCharsInBag(strPhone, validWorldPhoneChars);
     return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
 }
@@ -558,6 +558,56 @@ jQuery(document).ready(function ($) {
             oValidationMsg.fadeOut();
         }
     });
+
+    try {
+        var _endDate = parseInt(jQuery('#evrplus_counter').attr('data-end-date'));
+        if (_endDate) {
+            var endDate = new Date(_endDate);
+            $('#evrplus_counter').redCountdown({
+                end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
+                labels: true,
+                style: {
+                    element: "",
+                    textResponsive: .5,
+                    daysElement: {
+                        gauge: {
+                            thickness: .2,
+                            bgColor: "#cccccc",
+                            fgColor: "#1ABC9C"
+                        },
+                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                    },
+                    hoursElement: {
+                        gauge: {
+                            thickness: .2,
+                            bgColor: "#cccccc",
+                            fgColor: "#2980B9"
+                        },
+                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                    },
+                    minutesElement: {
+                        gauge: {
+                            thickness: .2,
+                            bgColor: "#cccccc",
+                            fgColor: "#8E44AD"
+                        },
+                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                    },
+                    secondsElement: {
+                        gauge: {
+                            thickness: .2,
+                            bgColor: "#cccccc",
+                            fgColor: "#F39C12"
+                        },
+                        textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
+                    }
+                },
+                onEndCallback: function () {
+
+                }});
+        }
+    } catch (ex) {
+    }
 });
 
     
