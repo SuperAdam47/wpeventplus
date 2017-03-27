@@ -73,7 +73,7 @@ if (count($rows)):
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
                                 <?php
-                                if ($show_excerpt == 1) {
+                                if (intVal($show_excerpt) == 1) {
 
                                     echo substr(strip_tags(stripslashes($content)), 0, 110) . "...";
                                 }

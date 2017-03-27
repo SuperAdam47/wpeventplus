@@ -60,6 +60,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $viewParams['rows'] = $rows;
         $viewParams['categories'] = $categories;
         $viewParams['cats'] = $categories;
+        $viewParams['show_excerpt'] = $show_excerpt;
 
         $output = $this->oView->View('front/widgets/shortcode/event/grid', $viewParams);
 
