@@ -1,6 +1,7 @@
 <?php
 extract($invoke_params);
 
+
 if (count($rows)):
     ?>
 
@@ -24,6 +25,7 @@ if (count($rows)):
 
                 <?php
                 foreach ($rows as $event) :
+                    
                     if ($ordered != 'yes')
                         $height = rand(150, 300);
                     $this_cats = maybe_unserialize($event->category_id);
@@ -74,8 +76,13 @@ if (count($rows)):
                             <div class="media-box-text">
                                 <?php
                                 if ($show_excerpt == 'yes') {
-
-                                    echo substr(strip_tags(stripslashes($content)), 0, 110) . "...";
+                                    
+                                    $content = strip_tags(stripslashes($event->event_desc));
+                                    $endChar = '';
+                                    if(strlen($content) > $character_limit){
+                                        $endChar = '...';
+                                    }
+                                    echo substr($content, 0, $character_limit) . $endChar;
                                 }
                                 ?>
                             </div>

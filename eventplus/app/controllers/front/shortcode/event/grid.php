@@ -41,6 +41,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $load_new_events = $this->_invokeArgs['load_new_events'];
         $custom = $this->_invokeArgs['custom'];
         $show_excerpt = $this->_invokeArgs['show_excerpt'];
+        $character_limit = $this->_invokeArgs['character_limit'];
 
         $company_options = EventPlus_Models_Settings::getSettings();
 
@@ -61,6 +62,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $viewParams['categories'] = $categories;
         $viewParams['cats'] = $categories;
         $viewParams['show_excerpt'] = $show_excerpt;
+        $viewParams['character_limit'] = $character_limit;
 
         $output = $this->oView->View('front/widgets/shortcode/event/grid', $viewParams);
 

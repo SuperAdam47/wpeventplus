@@ -28,6 +28,7 @@ class EventPlus_ShortCodes {
 
         extract(shortcode_atts(array(
             'show_excerpt' => 'yes',
+            'character_limit' => '110',
             'columns' => '4',
             'ordered' => 'yes',
             'init_events' => '8',
@@ -51,6 +52,7 @@ class EventPlus_ShortCodes {
                     'init_events' => $init_events,
                     'load_new_events' => $load_new_events,
                     'show_excerpt' => $show_excerpt,
+                    'character_limit' => $character_limit,
         ));
     }
 
