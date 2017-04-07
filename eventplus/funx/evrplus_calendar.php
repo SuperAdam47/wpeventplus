@@ -268,7 +268,7 @@ function evrplus_display_calendar($cat = null) {
                 if ($i % 8 != 0) {
                     $calendar_body .= '<td colspan="1" style="background-color:' . $category_color . ';font-size:0.9em; color:' . $font_color . '; ">' . $category_name . '</td>';
                 } else {
-                    $calendar_body.='</tr><tr><td colspan="1" style="background-color:' . $category_color . ';font-size:0.9em; color:' . $font_color . '; ">' . $category_name . '</td>';
+                    $calendar_body.='</tr><tr class="eventplus--calendar-legend"><td colspan="1" style="background-color:' . $category_color . ';font-size:0.9em; color:' . $font_color . '; ">' . $category_name . '</td>';
                 }
             }
         }

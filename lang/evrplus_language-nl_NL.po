@@ -1,2341 +1,3615 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: Timo de Winter <timo@blackcoffeemedia.com>\n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Language: nl_NL\n"
-"X-Generator: Poedit 1.8.5\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: WP Events Plus\n"
+"Language: nl\n"
 
-#. Text in echo
-#: evrplus_admin_questions.php:70
-msgid " . . .Now returning you to Question Management . . "
-msgstr ". . .Nu terug naar Vragen beheer. ."
+#: eventplus/app/controllers/admin/attendees.php:22
+#: eventplus/app/controllers/admin/attendees.php:122
+#: eventplus/app/controllers/admin/events/items.php:22
+#: eventplus/app/controllers/admin/payments.php:28
+#: eventplus/app/controllers/admin/questions.php:22
+#, fuzzy
+msgid "Invalid event id."
+msgstr "Ongeldige gebeurtenis-id."
 
-#. Text in echo
-#: evrplus_admin_questions.php:67
-msgid " . . .Now returning you to Question Managment . . "
-msgstr ". . .Nu terug naar Vragen beheer. ."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:796 evrplus_admin_attendee.php:844
-msgid " . . .Now returning you to attendee list . . "
-msgstr ". . .Terug naar bezoekerslijst . ."
-
-#. Text in echo
-#: evrplus_event.php:966 evrplus_event.php:969 evrplus_event.php:1538
-#: evrplus_event.php:1542 evrplus_event.php:1573 evrplus_event.php:1676
-#: evrplus_event.php:1679
-msgid " . . .Now returning you to event list . . "
-msgstr "...Terug naar de lijst met evenementen.."
-
-#. Text in echo
-#: evrplus_admin_payments.php:794 evrplus_admin_payments.php:914
-msgid " . . .Now returning you to the payment section . . "
-msgstr ". . .Terug naar betalingen . ."
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid " attendes registered for this event.  The event cannot be deleted."
-msgstr ""
-"bezoekers geregistreerd voor dit evenement. Het evenement kan niet worden "
-"verwijderd."
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "REGISTER"
-msgstr "AANMELDEN"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Submit"
-msgstr "Meld Aan"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Registration Fees"
-msgstr "Inschrijving"
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "Select One"
-msgstr "Selecteer"
-
-#. Text in echo
-#: evrplus_event.php:1537
-msgid " has been updated!"
-msgstr "zijn opgeslagen"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1264 evrplus_admin_payments.php:310
-msgid "# People"
-msgstr "# mensen"
-
-#. Text in echo
-#: evrplus_company.php:192
-msgid "(For your logo on PayPal page)"
-msgstr "(Voor uw logo op de PayPal pagina)"
-
-#. Text in echo
-#: eventsplus/evrplus_company.php:
-msgid "Choose the date format for your events:"
-msgstr "Kies de datumnotatie voor uw evenementen:"
-
-#. Text in echo
-#: eventsplus/evrplus_company.php:
-msgid "Choose the time format for your events:"
-msgstr "Kies het tijd formaat voor uw evenementen:"
-
-#. Text in echo
-#: eventsplus/event/evrplus_event_new.php:
-msgid "Will this event run indefinitely?"
-msgstr "Zal dit evenement lopen voor onbepaalde tijd?"
-
-#. Text in echo
-#: evrplus_company.php:208
-msgid "(used for cancelled payments)"
-msgstr "(gebruikt voor het annuleren van betalingen)"
-
-#. Text in echo
-#: evrplus_company.php:227
-msgid "(used for testing/debug)"
-msgstr "(gebruikt voor het testen)"
-
-#. Text in echo
-#: evrplus_company.php:212
-msgid "(used to process payments)"
-msgstr "(gebruikt om betalingen mogelijk te maken)"
-
-#. Text in echo
-#: evrplus_registration.php:1724 evrplus_content.php:113
-msgid ""
-"*Payments could take several days to post to this page. Please check back in "
-"several days if you made a payment and your payment is not showing at this "
-"time."
-msgstr ""
-"*Betalingen kunnen soms enige vertraging kennen. Controleer over een paar "
-"dagen of u een betaling heeft gedaan als deze niet verschijnt."
-
-#. Text in echo
-#: evrplus_public_form.php evrplus_event.php:1560
-msgid ". . .Now returning you to event list . . "
-msgstr "...Terug naar de lijst met evenementen.."
-
-#. Text in echo
-#: evrplus_event.php:488
-msgid "ADD EVENT"
-msgstr "VOEG EVENEMENT TOE"
-
-#. Text in echo
-#: evrplus_event.php:2165
-msgid "ADD NEW COST/TICKET"
-msgstr "Voeg nieuwe kosten/ticket toe"
-
-#. Text in echo
-#: evrplus_event.php:594
-msgid "ADD NEW EVENT"
-msgstr "VOEG NIEUW EVENEMENT TOE"
-
-#. Text in echo
-#: evrplus_admin_questions.php:211
-msgid "ADD NEW QUESTION"
-msgstr "VOEG EEN NIEUWE VRAAG TOE"
-
-#. Text in echo
-#: evrplus_admin_questions.php:252
-msgid "ADD QUESTION"
-msgstr "VOEG VRAAG TOE"
-
-#. Text in echo
-#: evrplus_event.php:2304
-msgid "AVAILABILITY TIMES OF COST/ITEM"
-msgstr "Beschikbaarheidstijden van  Kosten/Item"
-
-#. Text in echo
-#: evrplus_admin_category.php:346 evrplus_admin_attendee.php:1264
-#: evrplus_admin_payments.php:310
-msgid "Action"
-msgstr "Actie"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:868 evrplus_event.php:108
-msgid "Active Events"
-msgstr "Actieve evenementen"
-
-#. Text in echo
-#: evrplus_admin_category.php:35
-msgid "Add A Category"
-msgstr "Voeg categorie toe"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1242
+#: eventplus/app/controllers/admin/attendees.php:95
+#: eventplus/app/controllers/admin/attendees.php:96
+#: eventplus/app/views/admin/layouts/attendees.php:9
 msgid "Add Attendee"
 msgstr "Voeg bezoeker toe:"
 
-#. Text in echo
-#: evrplus_admin_attendee.php:91
-msgid "Add Attendee:"
-msgstr "Voeg bezoeker toe:"
+#: eventplus/app/controllers/admin/attendees.php:108
+#: eventplus/app/controllers/admin/attendees.php:164
+#: eventplus/app/controllers/admin/attendees.php:185
+#: eventplus/app/controllers/admin/payments.php:87
+#, fuzzy
+msgid "Attendee doesn't exist."
+msgstr "Deelnemer bestaat niet."
 
-#. Text in echo
-#: evrplus_admin_category.php:127
+#: eventplus/app/controllers/admin/attendees.php:150
+#, fuzzy
+msgid "Edit Attendee"
+msgstr "Bewerk bezoeker:"
+
+#: eventplus/app/controllers/admin/attendees.php:151
+#, fuzzy
+msgid "Update Attendee"
+msgstr "Update deelnemers"
+
+#: eventplus/app/controllers/admin/attendees.php:172
+#, fuzzy
+msgid "Details Attendee"
+msgstr "Gegevens deelnemer"
+
+#: eventplus/app/controllers/admin/categories.php:23
+#: eventplus/app/controllers/admin/categories.php:24
 msgid "Add Category"
 msgstr "Voeg categorie toe"
 
-#. Text in echo
-#: evrplus_event.php:2090
-msgid "Add Event Cost/Item for "
-msgstr "Voeg Evenement kosten/items toe voor"
-
-#. Text in echo
-#: evrplus_admin_payments.php:364
-msgid "Add Payment"
-msgstr "Voeg betaling toe"
-
-#. Text in echo
-#: evrplus_admin_payments.php:639
-msgid "Add Payment:"
-msgstr "Voeg betaling toe:"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:103 evrplus_admin_attendee.php:386
-msgid "Address"
-msgstr "Adres"
-
-#. Text in echo
-#: evrplus_event.php:1293
-msgid ""
-"All location information must be complete for Google Map feature to work."
-msgstr ""
-"Alle locatie informatie moet ingevuld zijn om Google Map te laten werken"
-
-#. Text in echo
-#: evrplus_admin_payments.php:469 evrplus_admin_payments.php:648
-msgid "Amount Paid"
-msgstr "Totale betaling"
-
-#. Text in echo
-#: evrplus_admin_menu.php:63
-msgid "Answer Table Name:"
-msgstr "Naam van de antwoordetabel:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:66
-msgid "Answer Table Version:"
-msgstr "Antwoorden tabel versie:"
-
-#. Text in echo
-#: evrplus_event.php:2584 evrplus_admin_questions.php:446
-msgid "Apply Changes"
-msgstr "Pas veranderingen toe"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "April"
-msgstr "April"
-
-#. Text in echo
-#: evrplus_event.php:259
-msgid "Are you sure you want to copy"
-msgstr "Weet u zeker dat u wilt kopiëren ?"
-
-#. Text in echo
-#: evrplus_event.php:266
-msgid "Are you sure you want to delete"
-msgstr "Weet u zeker dat u wilt verwijderen?"
-
-#. Text in echo
-#: evrplus_admin_category.php:371
-msgid "Are you sure you want to delete category?"
-msgstr "Weet u zeker dat u deze categorie wilt verwijderen?"
-
-#. Text in echo
-#: evrplus_event.php:1351
-msgid "Are you using an external registration?"
-msgstr "Gebruikt u externe registratie?"
-
-#. Text in echo
-#: evrplus_registration.php:1172
-msgid ""
-"At this time, all seats for the event have been taken.  Your information has "
-"been placed on our waiting list.  The waiting list is on a first come, first "
-"serve basis.  You will be notified by email should a seat become available."
-msgstr ""
-"Op dit  moment zijn er geen plaatsen beschikbaar. Uw informatie is "
-"toegevoegd aan de wachtlijst. De wachtlijst is op volgorde van binnenkomst. "
-"U krijgt een e-mail als er plaatsen beschikbaar komen."
-
-#. Text in echo
-#: evrplus_admin_menu.php:42
-msgid "Attendee Table Name:"
-msgstr "Tabel met de namen van bezoekers"
-
-#. Text in echo
-#: evrplus_admin_menu.php:45
-msgid "Attendee Table Version:"
-msgstr "Bezoekers tabel versie:"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:989 evrplus_event.php:244
-msgid "Attendees"
-msgstr "Bezoekers"
-
-#. Text in echo
-#: evrplus_company.php:245
-msgid "Attention"
-msgstr "Let op"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "August"
-msgstr "Augustus"
-
-#. Text in echo
-#: evrplus_company.php:152
-msgid "Authorized.Net Txn Key"
-msgstr "Authorized.Net Txn Key"
-
-#. Text in echo
-#: evrplus_event.php:2247
-msgid "Available items/cost per registration/order?"
-msgstr "Beschikbare items/kosten per registratie/order?"
-
-#. Text in echo
-#: evrplus_admin_payments.php:639
-msgid "Balance Owed:"
-msgstr "Verschuldigd saldo"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Between"
-msgstr "tussen de"
-
-#. Text in echo
-#: evrplus_company.php:208
-msgid "Cancel Return URL"
-msgstr "Annuleer Return URL"
-
-#. Text in echo
-#: evrplus_admin_payments.php:666 evrplus_admin_payments.php:657
-msgid "Cancelation"
-msgstr "Annulering"
-
-#. Text in echo
-#: evrplus_admin_payments.php:679 evrplus_admin_payments.php:674
-msgid "Cash"
-msgstr "Contant"
-
-#. Text in echo
-#: evrplus_admin_category.php:47 evrplus_admin_category.php:171
-msgid "Category Description"
-msgstr "Beschrijving van de categorie"
-
-#. Text in echo
-#: evrplus_admin_category.php:12
-msgid "Category Management"
-msgstr "Categorie beheer"
-
-#. Text in echo
-#: evrplus_admin_category.php:42 evrplus_admin_category.php:164
-msgid "Category Name"
-msgstr "Categorie naam"
-
-#. Text in echo
-#: evrplus_admin_menu.php:70
-msgid "Category Table Name:"
-msgstr "Categorie tabel naam:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:73
-msgid "Category Table Version:"
-msgstr "Categorie tabel versie:"
-
-#. Text in echo
-#: evrplus_admin_payments.php:678 evrplus_admin_payments.php:673
-msgid "Check"
-msgstr "Controleer"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:106 evrplus_admin_attendee.php:389
-#: evrplus_registration.php:581 evrplus_event.php:706 evrplus_event.php:797
-#: evrplus_event.php:1278 evrplus_event.php:1374
-msgid "City"
-msgstr "Woonplaats"
-
-#. Text in echo
-#: evrplus_company.php:51
-msgid "Company & Plugin Settings"
-msgstr "Bedrijfs & Plugin instellingen"
-
-#. Text in echo
-#: evrplus_company.php:89
-msgid "Company City:"
-msgstr "Bedrijfsstad:"
-
-#. Text in echo
-#: evrplus_company.php:110
-msgid "Company Information"
-msgstr "Bedrijfsinformatie"
-
-#. Text in echo
-#: evrplus_company.php:77
-msgid "Company Name:"
-msgstr "Bedrijfsnaam:"
-
-#. Text in echo
-#: evrplus_company.php:97
-msgid "Company Postal Code:"
-msgstr "Bedrijfspostcode:"
-
-#. Text in echo
-#: evrplus_company.php:93
-msgid "Company State:"
-msgstr "Bedrijfsprovincie:"
-
-#. Text in echo
-#: evrplus_company.php:81
-msgid "Company Street 1:"
-msgstr "Bedrijfsstraat 1:"
-
-#. Text in echo
-#: evrplus_company.php:85
-msgid "Company Street 2:"
-msgstr "Bedrijfsstraat 2:"
-
-#. Text in echo
-#: evrplus_company.php:370
-msgid "Company details saved"
-msgstr "Bedrijfsgegevens opgeslagen"
-
-#. Text in echo
-#: evrplus_event.php:1166
-msgid "Confirmation Mail"
-msgstr "Bevestigingsmail"
-
-#. Text in echo
-#: evrplus_event.php:1416
-msgid "Confirmation eMail"
-msgstr "Bevestiging e-mail"
-
-#. Text in echo
-#: evrplus_event.php:259
-msgid "Copy"
-msgstr "Kopieer"
-
-#. Text in echo
-#: evrplus_admin_menu.php:77
-msgid "Cost Table Name:"
-msgstr "Kosten tabel naam:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:80
-msgid "Cost Table Version:"
-msgstr "Kosten tabel versie:"
-
-#. Text in echo
-#: evrplus_company.php:160
-msgid "Currency Format:"
-msgstr "Koers format:"
-
-#. Text in echo
-#: evrplus_admin_category.php:325
-msgid "Current Categories"
-msgstr "Huidige categorieën"
-
-#. Text in echo
-#: evrplus_event.php:1424
-msgid "Custom Confirmation Email"
-msgstr "Aangepaste bevestiging e-mail"
-
-#. Text in echo
-#: evrplus_event.php:2274
-msgid "Custom Currency"
-msgstr "Huidige valuta"
-
-#. Text in echo
-#: evrplus_admin_questions.php:140
-msgid "Custom Questions"
-msgstr "Eigen vragen"
-
-#. Text in echo
-#: evrplus_admin_category.php:371 evrplus_admin_questions.php:423
-msgid "DELETE"
-msgstr "Verwijder"
-
-#. Text in echo
-#: evrplus_admin_menu.php:38
-msgid "Data Table Information"
-msgstr "Data tabel informatie"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "December"
-msgstr "December"
-
-#. Text in echo
-#: evrplus_event.php:1368
-msgid "Default Registration Information (Name and Email Required)"
-msgstr "Standaard Registratie Informatie (naam en E-mail zijn verplicht)"
-
-#. Text in echo
-#: evrplus_event.php:266
-msgid "Delete"
-msgstr "Verwijder"
-
-#. Text in echo
-#: evrplus_admin_payments.php:663 evrplus_admin_payments.php:654
-msgid "Deposit"
-msgstr "Storting"
-
-#. Text in echo
-#: evrplus_admin_category.php:343 evrplus_admin_questions.php:139
-msgid "Description"
-msgstr "Beschrijving"
-
-#. Text in echo
-#: evrplus_event.php:2243
-msgid "Description of Cost"
-msgstr "Beschrijving van de kosten"
-
-#. Text in echo
-#: evrplus_event.php:1203
-msgid "Detailed Event Description"
-msgstr "Gedetailleerde beschrijving van het evenement"
-
-#. Text in echo
-#: evrplus_event.php:2233 evrplus_event.php:2208
-msgid "Discount"
-msgstr "korting"
-
-#. Text in echo
-#: evrplus_admin_category.php:344
-msgid "Display Description"
-msgstr "Laat beschrijving zien"
-
-#. Text in echo
-#: evrplus_event.php:1194
-msgid "Display description on registration form page? "
-msgstr "De beschrijving laten zien op de registratiepagina?"
-
-#. Text in echo
-#: evrplus_admin_category.php:44
-msgid "Do you want to display the category description on the events page?"
-msgstr ""
-"Wilt u de categoriebeschrijving weergeven op de pagina van het evenement?"
-
-#. Text in echo
-#: evrplus_admin_category.php:167
-msgid "Do you want to display the event description on the events page?"
-msgstr "Wilt u de beschrijving van het evenement op de evenement pagina?"
-
-#. Text in echo
-#: evrplus_admin_payments.php:492
-msgid "Do you want to send a payment received notice to the payer?"
-msgstr "Wilt u een betalingsbevestiging versturen naar de klant?"
-
-#. Text in echo
-#: evrplus_admin_payments.php:687
-msgid "Do you want to send a revised payment received notice to the payer?"
-msgstr "Wilt u een melding van herziene betaling versturen naar de klant?"
-
-#. Text in echo
-#: evrplus_event.php:1418
-msgid "Do you want to use a custom email for this event?"
-msgstr "Wilt u een eigen email gebruiken voor dit evenement?"
-
-#. Text in echo
-#: evrplus_admin_payments.php:664 evrplus_admin_payments.php:655
-msgid "Donation"
-msgstr "Donatie"
-
-#. Text in echo
-#: evrplus_admin_questions.php:422
-msgid "Drag Line Up or Down to ReArrange."
-msgstr "Trek een lijn van of naar herschikken"
-
-#. Text in echo
-#: evrplus_admin_questions.php:302
-msgid "Drop Down"
-msgstr "Drop Down"
-
-#. Text in echo
-#: evrplus_admin_category.php:370 evrplus_event.php:1160
-#: evrplus_admin_questions.php:422
-msgid "EDIT"
-msgstr "Bewerk"
-
-#. Text in echo
-#: evrplus_admin_questions.php:279
-msgid "EDIT QUESTION"
-msgstr "BEWERK VRAAG"
-
-#. Text in echo
-#: evrplus_registration.php:1048
-msgid "ERROR: Invalid Security Code."
-msgstr "FOUT: Veiligheidscode is onjuist."
-
-#. Text in echo
-#: evrplus_event.php:1248
-msgid "EVENT VENUE"
-msgstr "Plaats van het Evenement"
-
-#. Text in echo
-#: evrplus_event.php:252
-msgid "Edit"
-msgstr "Bewerk"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:374
-msgid "Edit Attendee:"
-msgstr "Bewerk bezoeker:"
-
-#. Text in echo
-#: evrplus_admin_category.php:157
+#: eventplus/app/controllers/admin/categories.php:53
+#: eventplus/app/controllers/admin/categories.php:89
+#, fuzzy
+msgid "Category doesn't exist."
+msgstr "De categorie bestaat niet."
+
+#: eventplus/app/controllers/admin/categories.php:60
 msgid "Edit Category"
 msgstr "Categorie bewerken"
 
-#. Text in echo
-#: evrplus_event.php:2201
-msgid "Edit Event Cost/Item for "
-msgstr "Bewerk Evenement kosten/item voor"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1264
-msgid "Email"
-msgstr "E-mail"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:98 evrplus_admin_attendee.php:381
-#: evrplus_registration.php:560
-msgid "Email Address"
-msgstr "E-mail"
-
-#. Text in echo
-#: evrplus_company.php:280
-msgid "Email Settings - Confirmation Email"
-msgstr "E-mail instellingen - Bevestigingsmail"
-
-#. Text in echo
-#: evrplus_registration.php:959
-msgid "Email format not correct!"
-msgstr "Het e-mailadres klopt niet!"
-
-#. Text in echo
-#: evrplus_event.php:747 evrplus_event.php:1323
-msgid "End Date"
-msgstr "Einddatum"
-
-#. Text in echo
-#: evrplus_event.php:1324
-msgid "End Time"
-msgstr "Eindtijd"
-
-#. Text in echo
-#: evrplus_registration.php:622
-msgid "Enter coupon code for discount"
-msgstr "Vul uw couponcode in voor korting"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:115 evrplus_admin_attendee.php:398
-msgid "Enter coupon code for discount off primary registration?"
-msgstr "Vul uw couponcode in voor korting"
-
-#. Text in echo
-#: evrplus_event.php:1261
-msgid ""
-"Enter the name of the business or facility where the event is being held"
-msgstr ""
-"Vul de naam bedrijfsnaam of de naam van de faciliteit in waar het evenement "
-"gaat plaatsvinden"
-
-#. Text in echo
-#: evrplus_event.php:1252
-msgid ""
-"Enter the number of available seats at your event venue. Leave blank if "
-"their is no limit on registrations."
-msgstr ""
-"Geef het aantal beschikbare plaatsen op voor uw evenementenlocatie. Laat "
-"leeg als er geen limit is."
-
-#. Text in echo
-#: evrplus_registration.php:811
-msgid "Enter the security code as it is shown (required)"
-msgstr "Vul de veiligheidscode in zoals getoond (verplicht)"
-
-#. Text in echo
-#: evrplus_event.php:1423
-msgid ""
-"Enter the text for the confirmation email.  This email will be sent in text "
-"format.  See User Manual for data tags."
-msgstr ""
-"Vul de tekst in voor de bevestigingsmail. Deze mail wordt verstuurd in "
-"tekstformaat. Zie de gebruikershandleiding voor data tags."
-
-#. Text in echo
-#: evrplus_event.php:1358
-msgid ""
-"Enter the url hyperlink to another webpage or website external registration"
-msgstr "Vul de URL hyperlink naar de externe  webpagina of website in"
-
-#. Text in echo
-#: evrplus_event.php:1395
-msgid ""
-"Enter the url hyperlink to another webpage or website with more event "
-"information"
-msgstr ""
-"Vul een URL hyperlink naar een andere webpagina of website met meer "
-"informatie in"
-
-#. Text in echo
-#: evrplus_event.php:1409
-msgid ""
-"Enter the url of an image you wish displayed above the registration form.  "
-"The image should be no wider than 450."
-msgstr ""
-"Vul de URL van een plaatje in dat u zou willen laten zien boven het "
-"registratieformulier. Het plaatje mag niet breder zijn dan 450."
-
-#. Text in echo
-#: evrplus_event.php:1403
-msgid ""
-"Enter the url to an image you would like displayed next to the event in the "
-"event listings. Size should be 150 x112"
-msgstr ""
-"Vul de URL in van een plaatje dat u zou willen laten zien naast de "
-"evenementgegevens. De maten moeten 150x112 zijn."
-
-#. Text in echo
-#: evrplus_admin_questions.php:138
-msgid "Event"
-msgstr "Evenement"
-
-#. Text in echo
-#: evrplus_event.php:1223
-msgid "Event Categories"
-msgstr "Evenement categorieën"
-
-#. Text in echo
-#: evrplus_admin_payments.php:680 evrplus_admin_payments.php:675
-msgid "Event Credit"
-msgstr "Evenementkorting"
-
-#. Text in echo
-#: evrplus_event.php:1164
-msgid "Event Date/Time"
-msgstr "Datum/tijd van het evenement"
-
-#. Text in echo
-#: evrplus_event.php:1162
-msgid "Event Description"
-msgstr "Evenement beschijving"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1109 evrplus_registration.php:317
-#: evrplus_content.php:609
-msgid "Event Fees"
-msgstr "Kosten"
-
-#. Text in echo
-#: evrplus_event.php:1862
-msgid "Event Items:"
-msgstr "Evenementen items:"
-
-#. Text in echo
-#: evrplus_event.php:1391
-msgid "Event Listing Options"
-msgstr "Evenementen optieslijst"
-
-#. Text in echo
-#: evrplus_event.php:1262
-msgid "Event Location/Venue"
-msgstr "Evenementslocatie"
-
-#. Text in echo
-#: evrplus_event.php:1262
-msgid "Event Location"
-msgstr "Evenementslocatie"
-
-#. Text in echo
-#: evrplus_event.php:2544
-msgid "Event Management"
-msgstr "Evenementenbeheer"
-
-#. Text in echo
-#: evrplus_event.php:1177
-msgid "Event Name/Title "
-msgstr "Evenement Naam/Titel"
-
-#. Text in echo
-#: evrplus_admin_questions.php:401
-msgid "Event Question Management"
-msgstr "Evenement Vragen Beheer"
-
-#. Text in echo
-#: evrplus_admin_questions.php:82
-msgid "Event Questions"
-msgstr "Vragen over het evenement"
-
-#. Text in echo
-#: evrplus_admin_menu.php:30
-msgid "Event Registration Plugin - Current Information"
-msgstr "Event Registration Plugin - Huidige Informatie"
-
-#. Text in echo
-#: evrplus_event.php:1253
-msgid "Event Seating Capacity"
-msgstr "Beschikbare plaatsen"
-
-#. Text in echo
-#: evrplus_admin_menu.php:49
-msgid "Event Table Name:"
-msgstr "Tabel met de namen van evenementen:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:52
-msgid "Event Table Version:"
-msgstr "Evenement tabel versie:"
-
-#. Text in echo
-#: evrplus_event.php:1163
-msgid "Event Venue"
-msgstr "Evenementslocatie"
-
-#. Text in echo
-#: evrplus_admin_payments.php:77 Dashboard.php:172
-msgid "Events"
-msgstr "Evenementen"
-
-#. Text in echo
-#: evrplus_event.php:782 evrplus_event.php:1359
-msgid "External registration URL"
-msgstr "Externe registratie URL"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "February"
-msgstr "Februari"
-
-#. Text in echo
-#: evrplus_event.php:230
-msgid "Fees/Items"
-msgstr "Betalingen/Items"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:96 evrplus_admin_attendee.php:379
-#: evrplus_registration.php:550
-msgid "First Name"
-msgstr "Voornaam"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Fri"
-msgstr "vrij"
-
-#. Text in echo
-#: evrplus_admin_payments.php:661 evrplus_admin_payments.php:652
-msgid "Full Payment"
-msgstr "Volledige betaling"
-
-#. Text in echo
-#: evrplus_company.php:222
-msgid "GET"
-msgstr "GET"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Go"
-msgstr "Zoek"
-
-#. Text in echo
-#: evrplus_event.php:833 evrplus_event.php:1410
-msgid "Header Image URL"
-msgstr "Hoofdafbeelding URL"
-
-#. Text in echo
-#: evrplus_admin_category.php:340
-msgid "ID"
-msgstr "ID"
-
-#. Text in echo
-#: evrplus_admin_category.php:342
-msgid "Identifier"
-msgstr "Identificatienummer"
-
-#. Text in echo
-#: evrplus_event.php:1417
-msgid ""
-"If you have send mail option enabled in the company settings, you can "
-"override the default mail by creating a custom mail for this event."
-msgstr ""
-"Als u de verzendoptie heeft aangezet in de bedrijfsinstellingen, dan kunt u "
-"de standaard mail overschrijven met uw eigen mail voor dit evenement."
-
-#. Text in echo
-#: evrplus_event.php:1193
-msgid ""
-"If you want the description to display under the event title on the "
-"registration form, select yes."
-msgstr ""
-"Als u de beschrijving onder de evenementtitel opzet registratieformulier "
-"wilt, kies dan ja."
-
-#. Text in echo
-#: evrplus_event.php:840
-msgid ""
-"If you will accept checks or cash, usually when accepting payment at event/"
-"on-site"
-msgstr ""
-"Als u cheques of contant geld accepteert, meestal als mensen ter plaatse "
-"kunnen betalen"
-
-#. Text in echo
-#: evrplus_event.php:1339
-msgid ""
-"If you will accept checks or cash, usually when accepting payment at event/"
-"on-site."
-msgstr ""
-"Als u cheques of contant geld accepteert, meestal wanneer u betaling ter "
-"plaatse accepteert."
-
-#. Text in echo
-#: evrplus_company.php:192
-msgid "Image URL"
-msgstr "Afbeelding URL"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "In "
-msgstr "In"
-
-#. Text in echo
-#: evrplus_event.php:2576
-msgid "Item Sales Begin:"
-msgstr "Item korting begin:"
-
-#. Text in echo
-#: evrplus_event.php:2576
-msgid "Item Sales End:"
-msgstr "Item Sales einde:"
-
-#. Text in echo
-#: evrplus_event.php:2299
-msgid "Item/Cost Value"
-msgstr "Item/Kosten waarde"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "January"
-msgstr "Januari"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "July"
-msgstr "Juli"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "June"
-msgstr "Juni"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:97 evrplus_admin_attendee.php:380
-#: evrplus_registration.php:555
-msgid "Last Name"
-msgstr "Achternaam"
-
-#. Text in echo
-#: evrplus_company.php:59
-msgid "Make A Donation to Events Registration"
-msgstr "Doe een donatie voor Evenementen registratie"
-
-#. Text in echo
-#: evrplus_admin_category.php:25
-msgid "Manage Categories"
-msgstr "Categorieën bewerken..."
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "March"
-msgstr "Maart"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "May"
-msgstr "Mag"
-
-#. Text in echo
-#: evrplus_event.php:2235 evrplus_event.php:2208
-msgid "Meal or Food"
-msgstr "Maaltijd / eten"
-
-#. Text in echo
-#: evrplus_event.php:2232 evrplus_event.php:2208
-msgid "Merchandise"
-msgstr "Merchandise"
-
-#. Text in echo
-#: evrplus_admin_payments.php:665 evrplus_admin_payments.php:656
-msgid "Modification"
-msgstr "Modificatie"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Mon"
-msgstr "ma"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Month"
-msgstr "Maand"
-
-#. Text in echo
-#: evrplus_event.php:1396
-msgid "More Info URL"
-msgstr "Meer informatie URL"
-
-#. Text in echo
-#: evrplus_admin_questions.php:301
-msgid "Multiple"
-msgstr "Meervoudig"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1264 evrplus_admin_payments.php:310
-msgid "Name"
-msgstr "Naam"
-
-#. Text in echo
-#: evrplus_admin_category.php:341
-msgid "Name "
-msgstr "Naam"
-
-#. Text in echo
-#: evrplus_event.php:2239
-msgid "Name of Cost/Item"
-msgstr "Naam van de kosten/item"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Next"
-msgstr "Volgende"
-
-#. Text in echo
-#: evrplus_admin_category.php:46 evrplus_admin_category.php:169
-#: evrplus_company.php:117 evrplus_company.php:229
-#: evrplus_admin_payments.php:689 evrplus_event.php:629 evrplus_event.php:726
-#: evrplus_event.php:776 evrplus_event.php:843 evrplus_event.php:1196
-#: evrplus_event.php:1298 evrplus_event.php:1353 evrplus_event.php:1420
-msgid "No"
-msgstr "Nee"
-
-#. Text in echo
-#: evrplus_event.php:765 evrplus_event.php:1342
-msgid "No "
-msgstr "Nee"
-
-#. Text in echo
-#: evrplus_admin_questions.php:173
-msgid "No Custom Questions"
-msgstr "Geen eigen vragen"
-
-#. Text in echo
-#: evrplus_registration.php:697
-msgid "No Fees Have Been Setup For This Event!"
-msgstr "Er worden geen kosten in rekening gebracht voor dit evenement"
-
-#. Text in echo
-#: evrplus_admin_export.php:1 evrplus_admin_payments.php:313
-#: evrplus_registration.php:1724 evrplus_content.php:113
-msgid "No Payments Received!"
-msgstr "Geen betalingen ontvangen!"
-
-#. Text in echo
-#: evrplus_admin_category.php:375
-msgid "No Record Found!"
-msgstr "Geen registratie gevonden"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "No event till now!"
-msgstr "Geen Evenement tot nu toe!"
-
-#. Text in echo
-#: evrplus_company.php:212
-msgid "Notify URL"
-msgstr "Kennisgevings URL"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "November"
-msgstr "November"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:807
-msgid "Now adding extra question responses."
-msgstr "Er worden extra antwoorden op vragen toegevoegd."
-
-#. Text in echo
-#: evrplus_event.php:2369 evrplus_event.php:2428
-msgid "Now taking you back . . ."
-msgstr "U gaat nu terug ...."
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "October"
-msgstr "Oktober"
-
-#. Text in echo
-#: evrplus_company.php:148
-msgid "Online Payment ID"
-msgstr "Online Betalings ID"
-
-#. Text in echo
-#: evrplus_company.php:132
-msgid "Online Payment Vendor:"
-msgstr "Online Betalings Organisatie:"
-
-#. Text in echo
-#: evrplus_admin_payments.php:677 evrplus_admin_payments.php:672
-msgid "Online/Credit Card"
-msgstr "Online/Credit Card"
-
-#. Text in echo
-#: evrplus_event.php:1391
-msgid "Optional"
-msgstr "Niet verplicht"
-
-#. Text in echo
-#: evrplus_event.php:1165
-msgid "Options"
-msgstr "Opties"
-
-#. Text in echo
-#: evrplus_admin_payments.php:310
-msgid "Order Detail"
-msgstr "Bestelinformatie"
-
-#. Text in echo
-#: evrplus_company.php:157
-msgid "PAY NOW"
-msgstr "Betaal nu"
-
-#. Text in echo
-#: evrplus_company.php:223
-msgid "POST"
-msgstr "POST"
-
-#. Text in echo
-#: evrplus_admin_payments.php:519
-msgid "POST PAYMENT"
-msgstr "Vooruitbetaling"
-
-#. Text in echo
-#: evrplus_company.php:239
-msgid "Page Settings"
-msgstr "Pagina instellingen"
-
-#. Text in echo
-#: evrplus_admin_payments.php:662 evrplus_admin_payments.php:653
-msgid "Partial Payment"
-msgstr "Gedeeltelijke betaling"
-
-#. Text in echo
-#: evrplus_company.php:156
-msgid "Payment Button Text"
-msgstr "Betalings knop tekst"
-
-#. Text in echo
-#: evrplus_company.php:313
-msgid "Payment Confirmation Settings - Confirmation Email"
-msgstr "Betaling bevestigings instellingen - Bevestigings E-mail"
-
-#. Text in echo
-#: evrplus_admin_payments.php:632
-msgid "Payment Management"
-msgstr "Betalingsbeheer"
-
-#. Text in echo
-#: evrplus_company.php:318
-msgid "Payment Message Subject"
-msgstr "Onderwerp van de betalingsboodschap"
-
-#. Text in echo
-#: evrplus_admin_payments.php:670
-msgid "Payment Method"
-msgstr "Betaalmethode"
-
-#. Text in echo
-#: evrplus_admin_payments.php:468 evrplus_admin_payments.php:647
-msgid "Payment Received Date"
-msgstr "Betalingsdatum"
-
-#. Text in echo
-#: evrplus_admin_payments.php:956
-msgid "Payment Received Notification sent."
-msgstr "Melding ontvangen betaling is verzonden."
-
-#. Text in echo
-#: evrplus_company.php:127
-msgid "Payment Settings"
-msgstr "Betalingsinstellingen"
-
-#. Text in echo
-#: evrplus_admin_menu.php:84
-msgid "Payment Table Name:"
-msgstr "Betaling tabel naam:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:87
-msgid "Payment Table Version:"
-msgstr "Betaling tabel versie:"
-
-#. Text in echo
-#: evrplus_admin_payments.php:649
-msgid "Payment Type"
-msgstr "Type betaling"
-
-#. Text in echo
-#: evrplus_admin_payments.php:202 evrplus_admin_payments.php:310
-msgid "Payments"
-msgstr "Betalingen"
-
-#. Text in echo
-#: evrplus_registration.php:1724 evrplus_content.php:113
-msgid "Payments received:"
-msgstr "Betaling ontvangen:"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1264
-msgid "Phone"
-msgstr "Telefoon"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:100 evrplus_admin_attendee.php:383
-#: evrplus_registration.php:567
-msgid "Phone Number"
-msgstr "Telefoon"
-
-#. Text in echo
-#: evrplus_event.php:800 evrplus_event.php:1377
-msgid "Phone Number</label>"
-msgstr "Telefoonnummer"
-
-#. Text in echo
-#: evrplus_content.php:373
-msgid ""
-"Please check your email for payment information. Click the link provided in "
-"the registration confirmation."
-msgstr ""
-"Controleer uw e-mail op betaling informatie. Klik op de link in de "
-"registratiebevestiging."
-
-#. Text in echo
-#: evrplus_event.php:2298
-msgid ""
-"Please enter the amount using 2 decimal point (i.e. 10.00) for the "
-"registration cost.  Use minus symbol before for discount amounts (i.e. "
-"-5.00)."
-msgstr ""
-"Vul het bedrag in met 2 decimale cijfers achter de komma (10.00) voor "
-"registratiekosten. Gebruik het min symbool voor kortingsbedragen ( -5.00)"
-
-#. Text in echo
-#: evrplus_registration.php:974
-msgid "Please enter your address."
-msgstr "Vul uw adres in."
-
-#. Text in echo
-#: evrplus_registration.php:979
-msgid "Please enter your city."
-msgstr "Vul de woonplaats in."
-
-#. Text in echo
-#: evrplus_registration.php:951
-msgid "Please enter your first name."
-msgstr "Vul uw voornaam in."
-
-#. Text in echo
-#: evrplus_registration.php:954
-msgid "Please enter your last name."
-msgstr "Vul uw achternaam in."
-
-#. Text in echo
-#: evrplus_registration.php:963
-msgid "Please enter your phone number."
-msgstr "Vul uw telefoonnummer in."
-
-#. Text in echo
-#: evrplus_registration.php:983
-msgid "Please enter your state."
-msgstr "Vul uw provincie in."
-
-#. Text in echo
-#: evrplus_registration.php:989
-msgid "Please enter your zip/postal code."
-msgstr "Vul uw postcode in"
-
-#. Text in echo
-#: evrplus_event.php:1436
-msgid "Please make sure you complete each section before submitting!"
-msgstr "Let op dat u elk onderdeel invult voor u bevestigt!"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:473 evrplus_registration.php:709
-msgid "Please provide your information to be placed on the waiting list."
-msgstr "Vul uw gegevens in en u komt op een wachtlijst terecht"
-
-#. Text in echo
-#: evrplus_admin_questions.php:335
-msgid "Please select a question to edit!"
-msgstr "Kies een vraag om te bewerken!"
-
-#. Text in echo
-#: evrplus_event.php:2253
-msgid "Please select no for event pricing setup, select yes for free event"
-msgstr "Kies nee bij een betaald evenement. kies ja voor een gratis evenement."
-
-#. Text in echo
-#: evrplus_registration.php:1172
-msgid ""
-"Please select the Pay Now button to be taken to our payment vendor's site "
-"for online-payment."
-msgstr ""
-"Kies de Betaal nu knop om naar de betaalsite te gaan voor online betalen."
-
-#. Text in echo
-#: evrplus_event.php:2274
-msgid "Please select the country in which the currency format will be used"
-msgstr "Kies het land  waarvoor de valuta wordt gekozen"
-
-#. Text in echo
-#: evrplus_registration.php:967
-msgid "Please use correct format for your phone number."
-msgstr "Uw telefoonnummer klopt niet."
-
-#. Text in echo
-#: evrplus_registration.php:595
-msgid "Postal/Zip Code"
-msgstr "Postcode"
-
-#. Text in echo
-#: evrplus_event.php:1285
-msgid "Postcode"
-msgstr "Postcode"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Prev"
-msgstr "Preview"
-
-#. Text in echo
-#: evrplus_company.php:101
-msgid "Primary contact email:"
-msgstr "Standaard contact e-mail:"
-
-#. Text in echo
-#: evrplus_event.php:2243
-msgid "Provide a description of the cost/ticket."
-msgstr "Geef een beschrijving van de kosten/ticket."
-
-#. Text in echo
-#: evrplus_event.php:1201
-msgid ""
-"Provide a detailed description of the event, include key details other than "
-"when and where. Do not use any html code. This is a text only display"
-msgstr ""
-"Een gedetailleerde beschrijving van de gebeurtenis omvatten behalve wanneer "
-"en waar belangrijke details. Gebruik geen html code gebruiken. Dit is een "
-"tekst slechts beeldscherm"
-
-#. Text in echo
-#: evrplus_event.php:1184
-msgid "Provide a short Unique ID for this event. i.e. BOB001"
-msgstr "Vul een korte unieke ID voor dit evenement bijvoorbeeld BOB001"
-
-#. Text in echo
-#: evrplus_event.php:2247
-msgid ""
-"Provide the number of available item/cost types per registration form. If it "
-"is a REG item, available seats will impact overall amount available. Leave "
-"blank if no limit."
-msgstr ""
-"Geef het aantal beschikbare item/kosten types per registratieformulier. Als "
-"het een REG item is, beschikbare plaatsen heeft invloed op de totale "
-"hoeveelheid beschikbare plaatsen. Laat leeg als er geen limit is."
-
-#. Text in echo
-#: evrplus_admin_questions.php:432
-msgid "QUESTION"
-msgstr "VRAAG"
-
-#. Text in echo
-#: evrplus_admin_questions.php:290
-msgid "Question"
-msgstr "Vraag"
-
-#. Text in echo
-#: evrplus_admin_menu.php:56
-msgid "Question Table Name:"
-msgstr "Tabel met vragen:"
-
-#. Text in echo
-#: evrplus_admin_menu.php:59
-msgid "Question Table Version:"
-msgstr "Vragentabel versie:"
-
-#. Text in echo
-#: evrplus_event.php:237
-msgid "Questions"
-msgstr "Vragen"
-
-#. Text in echo
-#: evrplus_registration.php:642
-msgid "REGISTRATION FEES"
-msgstr "Registratiekosten"
-
-#. Text in echo
-#: evrplus_admin_questions.php:427
-msgid "REQUIRED"
-msgstr "VERPLICHT"
-
-#. Text in echo
-#: evrplus_admin_questions.php:433
-msgid "RESPONSES"
-msgstr "ANTWOORDEN"
-
-#. Text in echo
-#: evrplus_event.php:2551
-msgid "ReOrder Event Items/Cost for display:"
-msgstr "Verander de volgorde van de Items/kosten van dit evenement"
-
-#. Text in echo
-#: evrplus_admin_questions.php:408
-msgid "ReOrder Event Questions for display order:"
-msgstr "Verander de volgorde voor de Evenement Vragen:"
-
-#. Text in echo
-#: evrplus_admin_payments.php:667 evrplus_admin_payments.php:658
-msgid "Refund"
-msgstr "Terugbetaling"
-
-#. Text in echo
-#: evrplus_event.php:2231 evrplus_event.php:2208
-msgid "Registration Attendee"
-msgstr "Registratie bezoekers"
-
-#. Text in echo
-#: evrplus_registration.php:695
-msgid "Registration TOTAL"
-msgstr "Registratie TOTAL"
-
-#. Text in echo
-#: evrplus_registration.php:1172
-msgid ""
-"Registration, however, is not complete until we have received your payment."
-msgstr ""
-"Registratie, is nog niet compleet totdat wij uw betaling hebben ontvangen."
-
-#. Text in echo
-#: evrplus_registration.php:697
-msgid "Registrations will be placed on the wait list!"
-msgstr "Registraties worden op een wachtlijst gezet!"
-
-#. Text in echo
-#: evrplus_admin_questions.php:312
-msgid "Required"
-msgstr "Verplicht"
-
-#. Text in echo
-#: evrplus_company.php:216
-msgid "Return Method:"
-msgstr "Return methode:"
-
-#. Text in echo
-#: evrplus_admin_questions.php:504
-msgid "SELECT ANOTHER EVENT"
-msgstr "Kies een ander evenement"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:582
-msgid "SUBMIT"
-msgstr "Toevoegen"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Sat"
-msgstr "Za"
-
-#. Text in echo
-#: evrplus_company.php:332
-msgid "Save Options"
-msgstr "Bewaar opties"
-
-#. Text in echo
-#: evrplus_admin_payments.php:259
-msgid "Select A Different Event"
-msgstr "Selecteer een ander evenement"
-
-#. Text in echo
-#: evrplus_admin_questions.php:89
-msgid "Select An Event"
-msgstr "Kies een evenement"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1246
-msgid "Select Another Event"
-msgstr "Kies een ander evenement"
-
-#. Text in echo
-#: evrplus_event.php:2204
-msgid ""
-"Select a Item/Cost category.  Note that category REG is used for attendance "
-"count, all others are not included in attendance count."
-msgstr ""
-"Kies een Item/Kosten categorie. Let op. De categorie REG wordt gebruikt voor "
-"het tellen van de bezoekers, alle ander worden niet meegenomen bij de "
-"bezoekersaantallen."
-
-#. Text in echo
-#: evrplus_event.php:1222
-msgid "Select one or many categories for an event"
-msgstr "Kies een of meerdere categorieën voor dit evenement"
-
-#. Text in echo
-#: evrplus_event.php:1367
-msgid ""
-"Select the default fields for the registration form.  Note that name and "
-"email or not optional"
-msgstr ""
-"Kies de standaard velden voor het registratieformulier.  Let op! Naam en e-"
-"mail zijn niet optioneel"
-
-#. Text in echo
-#: evrplus_admin_questions.php:307
-msgid "Selections"
-msgstr "Keuzes"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "September"
-msgstr "September"
-
-#. Text in function
-#: Dashboard.php:172
-msgid "Settings"
-msgstr "Instellingen"
-
-#. Text in echo
-#: evrplus_admin_category.php:345
-msgid "Shortcode"
-msgstr "Shortcode"
-
-#. Text in echo
-#: evrplus_admin_questions.php:300
-msgid "Single"
-msgstr "Enkel"
-
-#. Text in echo
-#: evrplus_event.php:1306 evrplus_admin_questions.php:137
-msgid "Start Date"
-msgstr "Startdatum"
-
-#. Text in echo
-#: evrplus_event.php:1314
-msgid "Start Time"
-msgstr "Starttijd"
-
-#. Text in echo
-#: evrplus_registration.php:588 evrplus_event.php:709 evrplus_event.php:1281
-msgid "State"
-msgstr "Provincie"
-
-#. Text in echo
-#: evrplus_event.php:798 evrplus_event.php:1375
-msgid "State or Province"
-msgstr "Provincie"
-
-#. Text in echo
-#: evrplus_admin_attendee.php:109 evrplus_admin_attendee.php:392
-msgid "State/Province"
-msgstr "Provincie"
-
-#. Text in echo
-#: evrplus_event.php:1270
-msgid "Street"
-msgstr "Straat"
-
-#. Text in echo
-#: evrplus_event.php:796 evrplus_event.php:1373
-msgid "Street Address"
-msgstr "Straat"
-
-#. Text in echo
-#: evrplus_registration.php:574
-msgid "Street/PO Address"
-msgstr "Straat"
-
-#. Text in echo
-#: evrplus_event.php:860
-msgid "Submit New Event"
-msgstr "Pas nieuw evenement toe"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Sun"
-msgstr "Zo"
-
-#. Text in echo
-#: evrplus_admin_questions.php:431
-msgid "TYPE"
-msgstr "TYPE"
-
-#. Text in echo
-#: evrplus_admin_questions.php:298
-msgid "Text"
-msgstr "Tekst"
-
-#. Text in echo
-#: evrplus_admin_questions.php:299
-msgid "Text Area"
-msgstr "Tekstvak"
-
-#. Text in echo
-#: evrplus_event.php:1537
-msgid "The Event details saved for "
-msgstr "De details van dit evenement zijn opgeslagen voor"
-
-#. Text in echo
-#: evrplus_admin_questions.php:476
-msgid "The Question has been deleted. Returning to Question Management."
-msgstr "De vraag is verwijderd. Ga terug naar Vragen Beheer."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:840
-msgid "The attendee extra questions responses have been added."
-msgstr "De extra antwoorden op de vragen van bezoekers zijn toegevoegd."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:792
-msgid "The attendee has been added."
-msgstr "De bezoeker is toegevoegd."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:1313
-msgid "The attendee information has been successfully deleted from the event."
-msgstr "De aanwezige informatie is met succes verwijderd uit het evenement."
-
-#. Text in echo
-#: evrplus_admin_category.php:278
-msgid "The category has been added."
-msgstr "De categorie is toegevoegd."
-
-#. Text in echo
-#: evrplus_admin_category.php:378
-msgid "The category has been successfully deleted."
-msgstr "De categorie is succesvol verwijderd."
-
-#. Text in echo
-#: evrplus_admin_category.php:303
-msgid "The category has been updated."
-msgstr "De categorie is geüpdatet."
-
-#. Text in echo
-#: evrplus_admin_category.php:280
-msgid "The category was not saved."
-msgstr "De categorie is niet opgeslagen."
-
-#. Text in echo
-#: evrplus_admin_category.php:305
-msgid "The category was not updated."
-msgstr "De categorie is niet geüpdatet."
-
-#. Text in echo
-#: evrplus_event.php:1667
-msgid "The cost "
-msgstr "De kosten"
-
-#. Text in echo
-#: evrplus_event.php:2387
-msgid "The cost item/ has been deleted."
-msgstr "Het kosten item is verwijderd."
-
-#. Text in echo
-#: evrplus_event.php:2457
-msgid ""
-"The coupon code information has been updated.  You will now be returned to "
-"the Event Pricing Page"
-msgstr ""
-"De couponcode informatie is geüpdatet. U gaat terug naar de prijspagina van "
-"dit evenement"
-
-#. Text in echo
-#: evrplus_event.php:965 evrplus_event.php:1641
-msgid "The event "
-msgstr "Het evenement"
-
-#. Text in echo
-#: evrplus_event.php:2424
-msgid ""
-"The event cost/ticket item has been added.  You will now be taken back to "
-"the Event Pricing Page"
-msgstr ""
-"Het evenement kosten/ticket is toegevoegd. U gaat nu terug naar de "
-"prijspagina van het evenement"
-
-#. Text in echo
-#: evrplus_event.php:2365
-msgid ""
-"The event cost/ticket item has been updated.  You will now be taken back to "
-"the Event Pricing Page"
-msgstr ""
-"Het evenement kosten/ticket item is geüpdatet. U gaat nu terug naar de prijs "
-"pagina van dit evenement"
-
-#. Text in echo
-#: evrplus_event.php:1568
-msgid "The event has been deleted."
-msgstr "Het evenement is verwijderd."
-
-#. Text in echo
-#: evrplus_registration.php:1052
-msgid "The following fields need to be completed before you can submit."
-msgstr "De volgende velden zijn verplicht."
-
-#. Text in echo
-#: evrplus_admin_payments.php:790
-msgid "The payment has been added."
-msgstr "De betaling is toegevoegd."
-
-#. Text in echo
-#: evrplus_admin_payments.php:386
-msgid "The payment has been successfully deleted from the attendee."
-msgstr "De betaling is succesvol verwijderd door de bezoeker."
-
-#. Text in echo
-#: evrplus_admin_payments.php:910
-msgid "The payment has been updated."
-msgstr "De betaling is bijgewerkt."
-
-#. Text in echo
-#: evrplus_admin_questions.php:66
-msgid "The question has been added."
-msgstr "De vraag is toegevoegd."
-
-#. Text in echo
-#: evrplus_event.php:1558
-msgid "There are currently "
-msgstr "Er zijn op dit moment"
-
-#. Text in echo
-#: evrplus_registration.php:1169
-msgid "There was an error in your submission, please try again."
-msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:795
-msgid ""
-"There was an error in your submission, please try again. The attendee was "
-"not saved!"
-msgstr ""
-"Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De bezoeker "
-"is niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_event.php:1669
-msgid ""
-"There was an error in your submission, please try again. The cost was not "
-"saved!"
-msgstr ""
-"Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. De kosten "
-"zijn niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_event.php:2460
-msgid ""
-"There was an error in your submission, please try again. The coupon code "
-"changes were not saved!"
-msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. De veranderingen aan "
-"de couponcode zijn niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_event.php:2428
-msgid ""
-"There was an error in your submission, please try again. The event cost/"
-"ticket item was not saved!"
-msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het kosten/ticket "
-"item van dit evenement is niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_event.php:2369
-msgid ""
-"There was an error in your submission, please try again. The event cost/"
-"ticket item was not updated!"
-msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. De kosten/ticket "
-"item van dit evenement is niet geüpdatet."
-
-#. Text in echo
-#: evrplus_event.php:1572
-msgid ""
-"There was an error in your submission, please try again. The event was not "
-"deleted!"
-msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het evenement is "
-"niet verwijderd!"
-
-#. Text in echo
-#: evrplus_event.php:968 evrplus_event.php:1678
-msgid ""
-"There was an error in your submission, please try again. The event was not "
-"saved!"
-msgstr ""
-"Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. Het "
-"evenement is niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_event.php:1541
-msgid ""
-"There was an error in your submission, please try again. The event was not "
-"updated!"
-msgstr ""
-"Er heeft zich een fout voorgedaan, probeer het opnieuw. Het evenement is "
-"niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_admin_payments.php:793
-msgid ""
-"There was an error in your submission, please try again. The payment was not "
-"saved!"
-msgstr ""
-"Er heeft zich een fout voorgedaan in uw aanmelding, probeer het opnieuw. De "
-"betaling is niet verwerkt."
-
-#. Text in echo
-#: evrplus_admin_payments.php:913
-msgid ""
-"There was an error in your submission, please try again. The payment was not "
-"updated!"
-msgstr ""
-"Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De betaling "
-"is niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_admin_questions.php:69
-msgid ""
-"There was an error in your submission, please try again. The question was "
-"not saved!"
-msgstr ""
-"Er is een fout opgetreden in uw aanvulling, probeer het opnieuw. De vraag is "
-"niet opgeslagen!"
-
-#. Text in echo
-#: evrplus_company.php:246
-msgid "These settings must be configured for the plugin to function correctly."
-msgstr ""
-"Deze instellingen moeten goed zijn ingevuld. Anders werkt deze plugin niet "
-"correct."
-
-#. Text in echo
-#: evrplus_admin_attendee.php:473 evrplus_registration.php:709
-msgid "This event has reached registration capacity."
-msgstr "Dit evenement is volgeboekt."
-
-#. Text in echo
-#: evrplus_registration.php:813
-msgid "This resource requires a Javascript enabled browser."
-msgstr "Deze hulpbron vereist dat Javascript aan staat in de browser."
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Thu"
-msgstr "Do"
-
-#. Text in echo
-#: evrplus_event.php:827 evrplus_event.php:1404
-msgid "Thumbnail Image URL"
-msgstr "Kleine afbeelding URL"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Time"
-msgstr "Tijd"
-
-#. Text in echo
-#: evrplus_registration.php:1724 evrplus_content.php:113
-msgid "Total Outstanding Payment Due*:"
-msgstr "Totaal nog te voldoen*:"
-
-#. Text in echo
-#: evrplus_registration.php:1724 evrplus_content.php:113
-msgid "Total Payment Due*:"
-msgstr "Totaal voldaan*:"
-
-#. Text in echo
-#: evrplus_admin_payments.php:682
-msgid "Transaction ID"
-msgstr "Transactie ID"
-
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Tue"
-msgstr "di"
-
-#. Text in echo
-#: evrplus_admin_questions.php:295
-msgid "Type"
-msgstr "Type"
-
-#. Text in echo
-#: evrplus_event.php:2315
-msgid "UPDATE COST/TICKET"
-msgstr "Update Kosten/Ticket"
-
-#. Text in echo
-#: evrplus_admin_payments.php:714
-msgid "UPDATE PAYMENT"
-msgstr "Update betaling"
-
-#. Text in echo
-#: evrplus_admin_questions.php:327
-msgid "UPDATE QUESTION"
-msgstr "UPDATE VRAAG"
-
-#. Text in echo
-#: evrplus_admin_category.php:165
-msgid "Unique Category Identifier"
-msgstr "Unieke categorie ID"
-
-#. Text in echo
-#: evrplus_event.php:1185
-msgid "Unique Event Identifier"
-msgstr "Uniek Identificatienummer van Evenement"
-
-#. Text in echo
-#: evrplus_admin_category.php:43
-msgid "Unique ID For Category"
-msgstr "Uniek ID voor categorie"
-
-#. Text in echo
-#: evrplus_admin_category.php:256
+#: eventplus/app/controllers/admin/categories.php:61
 msgid "Update Category"
 msgstr "Update categorie"
 
-#. Text in echo
-#: evrplus_event.php:1431
+#: eventplus/app/controllers/admin/events.php:98
+#: eventplus/app/controllers/admin/events.php:99
+#: eventplus/helpers/admin/menu.php:39
+#, fuzzy
+msgid "Add Event"
+msgstr "Evenement toevoegen"
+
+#: eventplus/app/controllers/admin/events.php:113
+#: eventplus/app/controllers/admin/events.php:158
+#: eventplus/app/controllers/admin/events.php:188
+#, fuzzy
+msgid "Event doesn't exist."
+msgstr "Gebeurtenis bestaat niet."
+
+#: eventplus/app/controllers/admin/events.php:139
+#: eventplus/app/views/admin/layouts/attendees.php:12
+#: eventplus/app/views/admin/layouts/events/items.php:13
+#: eventplus/app/views/admin/layouts/payments.php:9
+#: eventplus/app/views/admin/layouts/questions.php:12
+#, fuzzy
+msgid "Edit Event"
+msgstr "Agenda-item bewerken"
+
+#: eventplus/app/controllers/admin/events.php:140
 msgid "Update Event"
 msgstr "Update  evenement"
 
-#. Text in echo
-#: evrplus_company.php:115
-msgid "Use Captcha on registration form?"
-msgstr "Captcha gebruiken bij registratie?"
+#: eventplus/app/controllers/admin/events.php:165
+msgid "There are currently "
+msgstr "Er zijn op dit moment"
 
-#. Text in echo
-#: evrplus_event.php:1294
-msgid "Use Google Maps On Registration Page"
-msgstr "Gebruik Google Maps op Registratie pagina"
+#: eventplus/app/controllers/admin/events.php:165
+msgid " attendes registered for this event.  The event cannot be deleted."
+msgstr "bezoekers geregistreerd voor dit evenement. Het evenement kan niet worden verwijderd."
 
-#. Text in echo
-#: evrplus_company.php:227
-msgid "Use PayPal Sandbox"
-msgstr "Gebruik Paypal Sandbox"
+#: eventplus/app/controllers/admin/events/items.php:96
+#: eventplus/app/controllers/admin/events/items.php:97
+#, fuzzy
+msgid "Add Item"
+msgstr "Voeg Item toe"
 
-#. Text in echo
-#: evrplus_event.php:1176 evrplus_event.php:2239
-msgid "Use a concise but descriptive name."
-msgstr "Gebruik een bondige, beschrijvende naam."
+#: eventplus/app/controllers/admin/events/items.php:109
+#: eventplus/app/controllers/admin/events/items.php:152
+#, fuzzy
+msgid "Item doesn't exist."
+msgstr "Object bestaat niet."
 
-#. Text in echo
-#: evrplus_event.php:2251
-msgid "VALUE/COST"
-msgstr "Waarde/Kosten"
+#: eventplus/app/controllers/admin/events/items.php:138
+#, fuzzy
+msgid "Edit Item"
+msgstr "Bewerk item"
 
-#. Text in echo
-#: evrplus_admin_attendee.php:1256
-msgid "View Attendee:"
-msgstr "Bekijk de bezoekers:"
+#: eventplus/app/controllers/admin/events/items.php:139
+#, fuzzy
+msgid "Update Item"
+msgstr "Item Bijwerken"
 
-#. Text in echo
-#: evrplus_admin_payments.php:267
-msgid "View Payments:"
-msgstr "Bekijk betalingen:"
+#: eventplus/app/controllers/admin/payments.php:107
+#: eventplus/app/views/admin/payments/manage.php:124
+msgid "Add Payment"
+msgstr "Voeg betaling toe"
 
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Wed"
-msgstr "Wo"
+#: eventplus/app/controllers/admin/payments.php:121
+#: eventplus/app/controllers/admin/payments.php:165
+#, fuzzy
+msgid "Payment record doesn't exist."
+msgstr "Betaling record bestaat niet."
 
-#. Text in echo
-#: evrplus_event.php:2205
-msgid "What type of Item/Cost is this?"
-msgstr "Wat voor type Item/kosten is dit ?"
+#: eventplus/app/controllers/admin/payments.php:151
+#, fuzzy
+msgid "Update Payment"
+msgstr "Betaling bijwerken"
 
-#. Text in echo
-#: evrplus_admin_attendee.php:429
-msgid "What type of Registration?"
-msgstr "Welk type registratie?"
+#: eventplus/app/controllers/admin/payments.php:174
+#: eventplus/helpers/payment.php:370
+#, fuzzy
+msgid "Payment Details"
+msgstr "Betalingsdetails"
 
-#. Text in echo
-#: evrplus_event.php:2254
-msgid "Will this be a free item?"
-msgstr "Is dit item gratis?"
+#: eventplus/app/controllers/admin/payments.php:187
+#, fuzzy
+msgid "Record doesn't exist."
+msgstr "Record bestaat niet."
 
-#. Text in echo
-#: evrplus_event.php:1340
-msgid "Will you accept checks/cash for this event? "
-msgstr "Accepteert u cheques/"
+#: eventplus/app/controllers/admin/questions.php:94
+#: eventplus/app/controllers/admin/questions.php:95
+msgid "ADD QUESTION"
+msgstr "VOEG VRAAG TOE"
 
-#. Text in echo
-#: evrplus_company.php:184
-msgid "Will you accept donations?"
-msgstr "Accepteert u donaties?"
+#: eventplus/app/controllers/admin/questions.php:107
+#: eventplus/app/controllers/admin/questions.php:150
+#, fuzzy
+msgid "Question doesn't exist."
+msgstr "Vraag bestaat niet."
 
-#. Text in echo
-#: evrplus_event.php:2234 evrplus_event.php:2208
-msgid "Workshop"
-msgstr "Workshop"
+#: eventplus/app/controllers/admin/questions.php:136
+#, fuzzy
+msgid "Edit Question"
+msgstr "Vraag bewerken"
 
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "Year"
-msgstr "Jaar"
+#: eventplus/app/controllers/admin/questions.php:137
+#, fuzzy
+msgid "Update Question"
+msgstr "Vraag bijwerken"
 
-#. Text in echo
-#: evrplus_admin_category.php:45 evrplus_admin_category.php:168
-#: evrplus_company.php:116 evrplus_company.php:228
-#: evrplus_admin_payments.php:688 evrplus_event.php:628 evrplus_event.php:725
-#: evrplus_event.php:764 evrplus_event.php:775 evrplus_event.php:842
-#: evrplus_event.php:1195 evrplus_event.php:1297 evrplus_event.php:1341
-#: evrplus_event.php:1352 evrplus_event.php:1419
-msgid "Yes"
-msgstr "Ja"
+#: eventplus/app/controllers/admin/widgets.php:27
+#: eventplus/app/views/admin/settings/tabs/tab5.php:37
+#: eventplus/app/views/admin/settings/tabs/tab5.php:91
+#: eventplus/app/views/admin/settings/tabs/tab6.php:12
+msgid "Settings"
+msgstr "Instellingen"
 
-#. Text in echo
-#: evrplus_event.php:1350
-msgid ""
-"You can point your register now button to an external registration site/page "
-"by selecting yes and entering the url!"
-msgstr ""
-"U kunt de registreer nu knop laten doorverwijzen naar een externe site of "
-"pagina door ja te kiezen en de url in te geven."
+#: eventplus/app/controllers/admin/widgets.php:28
+msgid "Events"
+msgstr "Evenementen"
 
-#. Text in echo
-#: evrplus_registration.php:1172
-msgid ""
-"You may pay online or by check.  If you are paying by check, please mail "
-"your check today to:"
-msgstr ""
-"U kunt online betalen of met een cheque. . Als u betaalt met een cheque "
-"stuurt u deze vandaag op naar:"
+#: eventplus/app/controllers/front/event/parts/confirmation.php:20
+#, fuzzy
+msgid "Invalid event request"
+msgstr "Ongeldige gebeurtenis verzoek"
 
-#. Text in echo
-#: evrplus_registration.php:1172
-msgid "You're information has been received."
-msgstr "Uw informatie is ontvangen."
+#: eventplus/app/controllers/front/event/parts/confirmation.php:29
+#: public/paypal/1pn.php:32 public/paypal/canc3l.php:32
+#: public/paypal/re7urn.php:39
+#, fuzzy
+msgid "Invalid request"
+msgstr "#452"
 
-#. Text in echo
-#: evrplus_event.php:799 evrplus_event.php:1376
-msgid "Zip or Postal Code"
-msgstr "Postcode"
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:10
+#, fuzzy
+msgid "Event id not supplied"
+msgstr "Gebeurtenis-id niet meegeleverd"
 
-#. Text in echo
-#: evrplus_admin_attendee.php:112 evrplus_admin_attendee.php:395
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:20
+#, fuzzy
+msgid "Attendee List for "
+msgstr "Deelnemerslijst"
+
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:52
+#, fuzzy
+msgid "Attendee #"
+msgstr "Deelnemer #"
+
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:53
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:20
+#, fuzzy
+msgid "Attendee Name"
+msgstr "Volledige naam bezoeker"
+
+#: eventplus/app/controllers/front/shortcode/event/category.php:9
+#, fuzzy
+msgid "Category not supplied"
+msgstr "Categorie niet meegeleverd"
+
+#: eventplus/app/controllers/front/shortcode/event/category.php:21
+#, fuzzy
+msgid "Invalid Category supplied"
+msgstr "Ongeldige rubriek kopen"
+
+#: eventplus/app/controllers/front/shortcode/payment.php:26
+msgid "Please check your email for payment information. Click the link provided in the registration confirmation."
+msgstr "Controleer uw e-mail op betaling informatie. Klik op de link in de registratiebevestiging."
+
+#: eventplus/app/views/admin/attendees/add_form.php:43
+#: eventplus/app/views/admin/attendees/details.php:68
+#: eventplus/app/views/admin/attendees/details.php:125
+#: eventplus/app/views/admin/attendees/edit_form.php:71
+#: eventplus/app/views/admin/attendees/edit_form.php:102
+#: eventplus/app/views/front/event/parts/confirm.php:415
+#: eventplus/app/views/front/event/parts/regform.php:384
+msgid "First Name"
+msgstr "Voornaam"
+
+#: eventplus/app/views/admin/attendees/add_form.php:44
+#: eventplus/app/views/admin/attendees/details.php:69
+#: eventplus/app/views/admin/attendees/details.php:126
+#: eventplus/app/views/admin/attendees/edit_form.php:72
+#: eventplus/app/views/admin/attendees/edit_form.php:109
+#: eventplus/app/views/front/event/parts/confirm.php:419
+#: eventplus/app/views/front/event/parts/regform.php:387
+msgid "Last Name"
+msgstr "Achternaam"
+
+#: eventplus/app/views/admin/attendees/add_form.php:45
+#: eventplus/app/views/admin/attendees/details.php:70
+#: eventplus/app/views/admin/attendees/edit_form.php:73
+#: eventplus/app/views/front/event/parts/regform.php:392
+msgid "Email Address"
+msgstr "E-mail"
+
+#: eventplus/app/views/admin/attendees/add_form.php:47
+#: eventplus/app/views/admin/attendees/details.php:76
+#: eventplus/app/views/admin/attendees/edit_form.php:75
+#: eventplus/app/views/admin/events/form.parts/options.php:158
+#: eventplus/app/views/front/event/parts/regform.php:396
+msgid "Phone Number"
+msgstr "Telefoon"
+
+#: eventplus/app/views/admin/attendees/add_form.php:50
+#: eventplus/app/views/admin/attendees/details.php:79
+#: eventplus/app/views/admin/attendees/edit_form.php:78
+msgid "Address"
+msgstr "Adres"
+
+#: eventplus/app/views/admin/attendees/add_form.php:53
+#: eventplus/app/views/admin/attendees/details.php:82
+#: eventplus/app/views/admin/attendees/edit_form.php:81
+#: eventplus/app/views/admin/events/form.parts/options.php:131
+#: eventplus/app/views/admin/events/form.parts/venue.php:76
+#: eventplus/app/views/admin/events/form.parts/venue.php:107
+#: eventplus/app/views/admin/settings/tabs/tab1.php:34
+#: eventplus/app/views/front/event/parts/regform.php:417
+msgid "City"
+msgstr "Woonplaats"
+
+#: eventplus/app/views/admin/attendees/add_form.php:56
+#: eventplus/app/views/admin/attendees/details.php:85
+#: eventplus/app/views/admin/attendees/edit_form.php:84
+msgid "State/Province"
+msgstr "Provincie"
+
+#: eventplus/app/views/admin/attendees/add_form.php:59
+#: eventplus/app/views/admin/attendees/details.php:88
+#: eventplus/app/views/admin/attendees/edit_form.php:87
 msgid "Zip/Postal Code"
 msgstr "Postcode"
 
-#. Text in function
-#: evrplus_calendar.php:1
-msgid "all day"
-msgstr "Gehele dag"
+#: eventplus/app/views/admin/attendees/add_form.php:62
+#: eventplus/app/views/admin/attendees/edit_form.php:90
+#, fuzzy
+msgid "Enter coupon code"
+msgstr "Coupon code invullen"
 
-#. Text in echo
-#: evrplus_event.php:965 evrplus_event.php:1641 evrplus_event.php:1667
-msgid "has been added."
-msgstr "is toegevoegd"
+#: eventplus/app/views/admin/attendees/add_form.php:80
+#: eventplus/app/views/admin/attendees/details.php:145
+#: eventplus/app/views/admin/attendees/edit_form.php:130
+#: eventplus/app/views/front/event/parts/regform.php:487
+#: eventplus/app/views/front/event/parts/regform.php:582
+msgid "Registration Fees"
+msgstr "Inschrijving"
 
-#. Text in echo
-#: eventsplus/public/evrplus_public-form.php:508
-msgid "I accept the terms and conditions"
-msgstr "Ik accepteer de algemene voorwaarden"
+#: eventplus/app/views/admin/attendees/add_form.php:145
+#: eventplus/app/views/admin/attendees/details.php:172
+#: eventplus/app/views/admin/attendees/edit_form.php:254
+msgid "Registration TOTAL"
+msgstr "Registratie TOTAL"
 
-#. Text in function
-#: eventsplus/public/evrplus_public-form.php:301
-msgid "MORE INFO"
-msgstr "Meer informatie."
+#: eventplus/app/views/admin/attendees/add_form.php:152
+#: eventplus/app/views/admin/attendees/details.php:184
+#: eventplus/app/views/admin/attendees/edit_form.php:279
+#: eventplus/app/views/front/event/parts/regform.php:639
+msgid "This event has reached registration capacity."
+msgstr "Dit evenement is volgeboekt."
 
-#. Text in function
-#: eventsplus/public/evrplus_public-form.php:301
-msgid "Registration "
-msgstr "Registratie"
+#: eventplus/app/views/admin/attendees/add_form.php:154
+#: eventplus/app/views/front/event/parts/regform.php:640
+msgid "Please provide your information to be placed on the waiting list."
+msgstr "Vul uw gegevens in en u komt op een wachtlijst terecht"
 
-#. Text in function
-#: eventsplus/public/evrplus_public-form.php:301
-msgid "Add to your calendar"
-msgstr "Voeg toe aan je agenda"
+#: eventplus/app/views/admin/attendees/details.php:72
+#: eventplus/app/views/admin/events/form.parts/options.php:180
+#, fuzzy
+msgid "Company"
+msgstr "Bedrijf"
 
-#. Text in function
-#: eventsplus/public/evrplus_public-form.php:301
-msgid "Registration Fees "
-msgstr "Registratiekosten"
+#: eventplus/app/views/admin/attendees/details.php:91
+#, fuzzy
+msgid "Coupon code"
+msgstr "Coupon code "
 
-#. Text in function
-#: eventsplus/public/evrplus_public-form.php:301
-msgid "You must select at least one item!"
-msgstr "U moet minstens één item te selecteren!"
+#: eventplus/app/views/admin/attendees/details.php:97
+#: eventplus/app/views/admin/events/form.parts/datetime.php:9
+#: eventplus/app/views/admin/events/manage.php:31
+msgid "Start Date"
+msgstr "Startdatum"
 
-#. Text in echo
-#: eventsplus/Dashboard.php:
+#: eventplus/app/views/admin/attendees/details.php:98
+#: eventplus/app/views/admin/events/form.parts/datetime.php:31
+msgid "End Date"
+msgstr "Einddatum"
+
+#: eventplus/app/views/admin/attendees/details.php:99
+#, fuzzy
+msgid "Registration Date"
+msgstr "Registratie datum"
+
+#: eventplus/app/views/admin/attendees/details.php:100
+#, fuzzy
+msgid "Cutom Fields"
+msgstr "Cutom velden"
+
+#: eventplus/app/views/admin/attendees/details.php:114
+#, fuzzy
+msgid "No records found"
+msgstr "Geen gegevens gevonden"
+
+#: eventplus/app/views/admin/attendees/details.php:120
+#: eventplus/app/views/admin/attendees/edit_form.php:96
+#: eventplus/app/views/admin/attendees/manage.php:55
+#: eventplus/app/views/admin/events/manage.php:36
+#: eventplus/app/views/admin/events/manage.php:139
+msgid "Attendees"
+msgstr "Bezoekers"
+
+#: eventplus/app/views/admin/attendees/details.php:125
+#: eventplus/app/views/admin/attendees/edit_form.php:102
+#: eventplus/app/views/front/event/parts/confirm.php:412
+#, fuzzy
+msgid "Attendee"
+msgstr "Deelnemend Koppel"
+
+#: eventplus/app/views/admin/attendees/details.php:146
+#: eventplus/app/views/admin/attendees/edit_form.php:131
+msgid "What type of Registration?"
+msgstr "Welk type registratie?"
+
+#: eventplus/app/views/admin/attendees/details.php:164
+#: eventplus/app/views/admin/payments/manage.php:37
+#: eventplus/app/views/front/event/parts/regform.php:608
+#, fuzzy
+msgid "Total"
+msgstr "Totaal:"
+
+#: eventplus/app/views/admin/attendees/details.php:167
+#: eventplus/app/views/admin/events/items/form.php:17
+#: eventplus/app/views/front/event/parts/regform.php:593
+msgid "Discount"
+msgstr "korting"
+
+#: eventplus/app/views/admin/attendees/edit_form.php:135
+#, fuzzy
+msgid "Wait List"
+msgstr "Wachtlijst"
+
+#: eventplus/app/views/admin/attendees/edit_form.php:140
+#, fuzzy
+msgid "Standard"
+msgstr "Standaard"
+
+#: eventplus/app/views/admin/attendees/edit_form.php:266
+#: eventplus/app/views/admin/attendees/manage.php:58
+#: eventplus/app/views/admin/dashboard/widgets/events.php:29
+#: eventplus/app/views/admin/events/manage.php:35
+#, fuzzy
+msgid "Status"
+msgstr "Status"
+
+#: eventplus/app/views/admin/attendees/landing.php:4
+#, fuzzy
+msgid "Please select event to manage attendees"
+msgstr "Selecteer gebeurtenis genodigden beheren"
+
+#: eventplus/app/views/admin/attendees/manage.php:28
+#, fuzzy
+msgid "Manage Attendees"
+msgstr "Genodigden beheren"
+
+#: eventplus/app/views/admin/attendees/manage.php:30
+#, fuzzy
+msgid "Delete All"
+msgstr "Alles Verwijderen"
+
+#: eventplus/app/views/admin/attendees/manage.php:40
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:16
+#, fuzzy
+msgid "All"
+msgstr "Alles"
+
+#: eventplus/app/views/admin/attendees/manage.php:52
+#, fuzzy
+msgid "Event Name/Title"
+msgstr "Evenement Naam/Titel"
+
+#: eventplus/app/views/admin/attendees/manage.php:53
+#, fuzzy
+msgid "People"
+msgstr "Personen"
+
+#: eventplus/app/views/admin/attendees/manage.php:54
+#, fuzzy
+msgid "Registered Name"
+msgstr " "
+
+#: eventplus/app/views/admin/attendees/manage.php:56
+msgid "Email"
+msgstr "E-mail"
+
+#: eventplus/app/views/admin/attendees/manage.php:57
+msgid "Phone"
+msgstr "Telefoon"
+
+#: eventplus/app/views/admin/attendees/manage.php:59
+#: eventplus/app/views/admin/attendees/manage.php:105
+#: eventplus/app/views/admin/categories/manage.php:10
+#: eventplus/app/views/admin/categories/manage.php:21
+#: eventplus/app/views/admin/events/manage.php:38
+#: eventplus/app/views/admin/events/manage.php:147
+#: eventplus/app/views/admin/payments/manage.php:40
+msgid "Action"
+msgstr "Actie"
+
+#: eventplus/app/views/admin/attendees/manage.php:109
+#: eventplus/app/views/admin/categories/manage.php:48
+#: eventplus/app/views/admin/events/items/manage.php:89
+#: eventplus/app/views/admin/events/manage.php:150
+#: eventplus/app/views/admin/payments/manage.php:107
+#: eventplus/app/views/admin/questions/manage.php:76
+msgid "Edit"
+msgstr "Bewerk"
+
+#: eventplus/app/views/admin/attendees/manage.php:111
+#, fuzzy
+msgid "View"
+msgstr "Bekijk"
+
+#: eventplus/app/views/admin/attendees/manage.php:114
+#: eventplus/app/views/admin/events/items/manage.php:94
+#: eventplus/app/views/admin/events/manage.php:152
+#: eventplus/app/views/admin/questions/manage.php:88
+msgid "Are you sure you want to delete"
+msgstr "Weet u zeker dat u wilt verwijderen?"
+
+#: eventplus/app/views/admin/attendees/manage.php:114
+#: eventplus/app/views/admin/categories/manage.php:50
+#: eventplus/app/views/admin/events/items/manage.php:94
+#: eventplus/app/views/admin/events/manage.php:152
+#: eventplus/app/views/admin/payments/manage.php:106
+#: eventplus/app/views/admin/questions/manage.php:88
+msgid "Delete"
+msgstr "Verwijder"
+
+#: eventplus/app/views/admin/attendees/manage.php:128
+#: eventplus/app/views/admin/events/items/manage.php:111
+#: eventplus/app/views/admin/payments/manage.php:139
+#: eventplus/app/views/admin/questions/manage.php:107
+#, fuzzy
+msgid "No records found."
+msgstr "Geen gegevens gevonden"
+
+#: eventplus/app/views/admin/categories/form.php:23
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:22
+msgid "Category Name"
+msgstr "Categorie naam"
+
+#: eventplus/app/views/admin/categories/form.php:27
+msgid "Unique ID For Category"
+msgstr "Uniek ID voor categorie"
+
+#: eventplus/app/views/admin/categories/form.php:33
+msgid "Do you want to display the category description on the events page?"
+msgstr "Wilt u de categoriebeschrijving weergeven op de pagina van het evenement?"
+
+#: eventplus/app/views/admin/categories/form.php:42
+#: eventplus/app/views/admin/events/form.parts/datetime.php:50
+#: eventplus/app/views/admin/events/form.parts/datetime.php:54
+#: eventplus/app/views/admin/events/form.parts/datetime.php:58
+#: eventplus/app/views/admin/events/form.parts/discounts.php:23
+#: eventplus/app/views/admin/events/form.parts/email.php:27
+#: eventplus/app/views/admin/events/form.parts/options.php:18
+#: eventplus/app/views/admin/events/form.parts/options.php:35
+#: eventplus/app/views/admin/events/form.parts/options.php:52
+#: eventplus/app/views/admin/events/form.parts/options.php:69
+#: eventplus/app/views/admin/events/form.parts/options.php:97
+#: eventplus/app/views/admin/events/form.parts/options.php:227
+#: eventplus/app/views/admin/events/form.parts/options.php:259
+#: eventplus/app/views/admin/events/form.parts/options.php:296
+#: eventplus/app/views/admin/events/form.parts/venue.php:132
+#: eventplus/app/views/admin/events/items/coupon_form.php:20
+#: eventplus/app/views/admin/events/items/form.php:119
+#: eventplus/app/views/admin/payments/add_form.php:137
+#: eventplus/app/views/admin/payments/edit_form.php:204
+#: eventplus/app/views/admin/questions/form.php:61
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:15
+#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:10
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:13
+#: eventplus/app/views/admin/settings/tabs/tab3.php:18
+#: eventplus/app/views/admin/settings/tabs/tab4.php:99
+#: eventplus/app/views/admin/settings/tabs/tab5.php:20
+#: eventplus/app/views/admin/settings/tabs/tab5.php:74
+#: eventplus/app/views/admin/settings/tabs/tab5.php:129
+#: eventplus/app/views/admin/settings/tabs/tab7.php:136
+#: eventplus/app/views/admin/settings/tabs/tab7.php:158
+#: eventplus/app/views/admin/settings/tabs/tab7.php:222
+#: eventplus/app/views/admin/settings/tabs/tab7.php:244
+#: eventplus/app/views/admin/settings/tabs/tab8.php:21
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:20
+msgid "Yes"
+msgstr "Ja"
+
+#: eventplus/app/views/admin/categories/form.php:49
+#: eventplus/app/views/admin/events/form.parts/datetime.php:50
+#: eventplus/app/views/admin/events/form.parts/datetime.php:54
+#: eventplus/app/views/admin/events/form.parts/datetime.php:60
+#: eventplus/app/views/admin/events/form.parts/discounts.php:20
+#: eventplus/app/views/admin/events/form.parts/email.php:32
+#: eventplus/app/views/admin/events/form.parts/options.php:74
+#: eventplus/app/views/admin/events/form.parts/options.php:102
+#: eventplus/app/views/admin/events/form.parts/options.php:232
+#: eventplus/app/views/admin/events/form.parts/options.php:264
+#: eventplus/app/views/admin/events/form.parts/venue.php:137
+#: eventplus/app/views/admin/events/items/coupon_form.php:25
+#: eventplus/app/views/admin/events/items/form.php:124
+#: eventplus/app/views/admin/payments/add_form.php:138
+#: eventplus/app/views/admin/payments/edit_form.php:205
+#: eventplus/app/views/admin/questions/form.php:64
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:18
+#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:13
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:16
+#: eventplus/app/views/admin/settings/tabs/tab3.php:26
+#: eventplus/app/views/admin/settings/tabs/tab4.php:102
+#: eventplus/app/views/admin/settings/tabs/tab5.php:28
+#: eventplus/app/views/admin/settings/tabs/tab5.php:82
+#: eventplus/app/views/admin/settings/tabs/tab5.php:137
+#: eventplus/app/views/admin/settings/tabs/tab7.php:144
+#: eventplus/app/views/admin/settings/tabs/tab7.php:166
+#: eventplus/app/views/admin/settings/tabs/tab7.php:230
+#: eventplus/app/views/admin/settings/tabs/tab7.php:252
+#: eventplus/app/views/admin/settings/tabs/tab8.php:29
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:17
+msgid "No"
+msgstr "Nee"
+
+#: eventplus/app/views/admin/categories/form.php:53
+msgid "Category Description"
+msgstr "Beschrijving van de categorie"
+
+#: eventplus/app/views/admin/categories/form.php:75
+#: eventplus/app/views/admin/settings/tabs/tab7.php:172
+#, fuzzy
+msgid "Select color for Calendar Display"
+msgstr "Kleur selecteren voor de weergave Kalender"
+
+#: eventplus/app/views/admin/categories/form.php:93
+#, fuzzy
+msgid "Category Background Color"
+msgstr "Achtergrondkleur voor Categorie Naam"
+
+#: eventplus/app/views/admin/categories/form.php:106
+#, fuzzy
+msgid "Category Text Color"
+msgstr "Categorie Tekst Kleur"
+
+#: eventplus/app/views/admin/categories/form.php:111
+#: eventplus/app/views/admin/settings/tabs/tab7.php:286
+#: eventplus/app/views/admin/settings/tabs/tab7.php:327
+#: eventplus/app/views/admin/settings/tabs/tab7.php:368
+#, fuzzy
+msgid "Black"
+msgstr "Zwart"
+
+#: eventplus/app/views/admin/categories/form.php:112
+#: eventplus/app/views/admin/settings/tabs/tab7.php:293
+#: eventplus/app/views/admin/settings/tabs/tab7.php:334
+#: eventplus/app/views/admin/settings/tabs/tab7.php:375
+#, fuzzy
+msgid "White"
+msgstr "Wit"
+
+#: eventplus/app/views/admin/categories/manage.php:1
+msgid "Current Categories"
+msgstr "Huidige categorieën"
+
+#: eventplus/app/views/admin/categories/manage.php:6
+#: eventplus/app/views/admin/categories/manage.php:17
+#: eventplus/app/views/admin/events/manage.php:18
+msgid "ID"
+msgstr "ID"
+
+#: eventplus/app/views/admin/categories/manage.php:7
+#: eventplus/app/views/admin/categories/manage.php:18
+msgid "Name "
+msgstr "Naam"
+
+#: eventplus/app/views/admin/categories/manage.php:8
+#: eventplus/app/views/admin/categories/manage.php:19
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:27
+msgid "Identifier"
+msgstr "Identificatienummer"
+
+#: eventplus/app/views/admin/categories/manage.php:9
+#: eventplus/app/views/admin/categories/manage.php:20
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: eventplus/app/views/admin/categories/manage.php:50
+msgid "Are you sure you want to delete category?"
+msgstr "Weet u zeker dat u deze categorie wilt verwijderen?"
+
+#: eventplus/app/views/admin/categories/manage.php:60
+msgid "No Record Found!"
+msgstr "Geen registratie gevonden"
+
+#: eventplus/app/views/admin/dashboard/events.php:4
+#, fuzzy
+msgid "Add New Event"
+msgstr "﻿Nieuw evenement toevoegen"
+
+#: eventplus/app/views/admin/dashboard/events.php:5
+#: eventplus/helpers/admin/menu.php:25
 msgid "General Settings"
 msgstr "Algemeen instellingen"
 
-#. Text in echo
-#: eventsplus/Dashboard.php:
-msgid "Manage Events"
-msgstr "Beheer Evenementen"
+#: eventplus/app/views/admin/dashboard/events.php:6
+#: eventplus/app/views/admin/events/form.parts/description.php:50
+#: eventplus/helpers/admin/menu.php:38
+msgid "Event Categories"
+msgstr "Evenement categorieën"
 
-#. Text in echo
-#: eventsplus/Dashboard.php:
-msgid "Registration Fields"
-msgstr "Aanmelding Velden"
+#: eventplus/app/views/admin/dashboard/events.php:7
+#, fuzzy
+msgid "View Events"
+msgstr "Gebeurtenissen bekijken"
 
-#. Text in echo
-#: eventsplus/evrplus_event_edit.php:
-msgid "Event Options"
-msgstr "Event Opties"
+#: eventplus/app/views/admin/dashboard/events.php:12
+#, fuzzy
+msgid "Next 5 Upcoming Events"
+msgstr "Volgende 5 evenementen"
 
-msgid "A confirmation email has been sent to:"
-msgstr "Een bevestigings e-mail is verzonden naar:"
+#: eventplus/app/views/admin/dashboard/events.php:47
+#: eventplus/app/views/admin/dashboard/widgets/events.php:81
+#: eventplus/app/views/admin/events/manage.php:98
+#, fuzzy
+msgid "EXPIRED"
+msgstr "VERLOPEN"
 
-msgid "Registration Detail Summary:"
-msgstr "Registratie Detail Samenvatting :"
+#: eventplus/app/views/admin/dashboard/events.php:49
+#: eventplus/app/views/admin/dashboard/widgets/events.php:84
+#: eventplus/app/views/admin/events/manage.php:100
+#, fuzzy
+msgid "ACTIVE"
+msgstr "ACTIEF"
 
-msgid "Event Name/Cost:"
-msgstr "Event Naam / Kosten:"
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:7
+#, fuzzy
+msgid "LATEST ATTENDEES"
+msgstr "NIEUWSTE DEELNEMERS"
 
-msgid "Attendee Name:"
-msgstr "Deelnemer Naam:"
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:25
+msgid "Event"
+msgstr "Evenement"
 
-msgid "Email Address:"
-msgstr "E-mailadres:"
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:30
+#, fuzzy
+msgid "Tickets"
+msgstr "Tickets"
 
-msgid "Number of Attendees:"
-msgstr "Aantal deelnemers :"
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:54
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:58
+#: eventplus/app/views/admin/dashboard/widgets/events.php:97
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:48
+#, fuzzy
+msgid "View All"
+msgstr "Bekijk alles"
 
-msgid "Order Details:"
-msgstr "Bestel Details:"
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:57
+#, fuzzy
+msgid "No Attendees Found!"
+msgstr "Geen deelnemers gevonden"
 
-# #####################
-msgid "Please verify your registration details:"
-msgstr "Controleer uw registratie gegevens :"
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:7
+#, fuzzy
+msgid "LATEST CATEGORIES"
+msgstr "NIEUWSTE CATEGORIEËN"
 
-msgid "Registering Name:"
-msgstr "Registreren Naam:"
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:8
+#, fuzzy
+msgid "weekly stats..."
+msgstr "per statistieken..."
 
-msgid "Event Name / Total Cost:"
-msgstr "Event Naam / Total Cost :"
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:53
+#, fuzzy
+msgid "No Categoies Found!"
+msgstr "Geen Categoies gevonden!"
 
-msgid "You are registering for"
-msgstr "U zich inschrijft voor"
+#: eventplus/app/views/admin/dashboard/widgets/events.php:7
+#, fuzzy
+msgid "Latest Events"
+msgstr "Nieuwste evenementen"
 
-msgid "person(s)."
-msgstr "persoon ( s ) ."
+#: eventplus/app/views/admin/dashboard/widgets/events.php:17
+#, fuzzy
+msgid "Event Name"
+msgstr "Naam van Evenement"
 
-msgid "Please provide the first and last name of each person:"
-msgstr "Geef de voor- en achternaam van elke persoon :"
-
-msgid "Open Seats"
-msgstr "Open Stoelen"
-
-msgid "FREE"
-msgstr "GRATIS"
-
-msgid "Event Full"
-msgstr "event Volledige"
-
-msgid "Unlimited"
-msgstr "Onbeperkt"
-
-msgid "go"
-msgstr "Ga"
-
-msgid "jan"
-msgstr "januari"
-
-msgid "feb"
-msgstr "februari"
-
-msgid "mar"
-msgstr "ontsieren"
-
-msgid "apr"
-msgstr "april"
-
-msgid "may"
-msgstr "mei"
-
-msgid "jun"
-msgstr "juni"
-
-msgid "jul"
-msgstr "juli"
-
-msgid "aug"
-msgstr "augustus"
-
-msgid "sept"
-msgstr "september"
-
-msgid "sep"
-msgstr "september"
-
-msgid "oct"
-msgstr "oktober"
-
-msgid "nov"
-msgstr "november"
-
-msgid "dec"
-msgstr "december"
-
-msgid "Jan"
-msgstr "jan"
-
-msgid "Feb"
-msgstr "februari"
-
-msgid "Mar"
-msgstr "ontsieren"
-
-msgid "Apr"
-msgstr "april"
-
-msgid "Jun"
-msgstr "juni"
-
-msgid "Jul"
-msgstr "juli"
-
-msgid "Aug"
-msgstr "augustus"
-
-msgid "Sept"
-msgstr "september"
-
-msgid "Sep"
-msgstr "september"
-
-msgid "Oct"
-msgstr "oktober"
-
-msgid "Nov"
-msgstr "november"
-
-msgid "Dec"
-msgstr "december"
-
-msgid "YEAR"
-msgstr "JAAR"
-
-msgid "january"
-msgstr "januari"
-
-msgid "february"
-msgstr "februari"
-
-msgid "march"
-msgstr "maart"
-
-msgid "april"
-msgstr "april"
-
-msgid "june"
-msgstr "juni"
-
-msgid "july"
-msgstr "juli"
-
-msgid "august"
-msgstr "augustus"
-
-msgid "september"
-msgstr "september"
-
-msgid "october"
-msgstr "oktober"
-
-msgid "november"
-msgstr "November"
-
-msgid "december"
-msgstr "december"
-
-msgid "seats"
-msgstr "zetels"
-
+#: eventplus/app/views/admin/dashboard/widgets/events.php:21
+#: eventplus/funx/evrplus_calendar.php:374
 msgid "Seats"
 msgstr "stoelen"
 
-msgid "Type your confirmation message below"
-msgstr "Typ hieronder uw bevestigingsbericht"
+#: eventplus/app/views/admin/dashboard/widgets/events.php:25
+#, fuzzy
+msgid "Available Seats"
+msgstr "beschikbare plaatsen"
 
-msgid "You must select at least one registration item."
-msgstr "U moet minstens één registratie te selecteren."
+#: eventplus/app/views/admin/dashboard/widgets/events.php:100
+#, fuzzy
+msgid "No Events Found!"
+msgstr "Geen Evenementen gevonden"
 
-msgid "Please go back and select an item!"
-msgstr "Ga terug en selecteer een item!"
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:7
+#, fuzzy
+msgid "TOTAL PAYMENTS"
+msgstr "Totaal betalingen"
 
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:16
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:21
+#, fuzzy
+msgid "progress"
+msgstr "vooruitgang"
 
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:35
+#, fuzzy
+msgid "TOTAL EVENTS"
+msgstr "TOTALE EVENEMENTEN"
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:44
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:49
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:100
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:105
+#, fuzzy
+msgid "change"
+msgstr "verander"
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:63
+#, fuzzy
+msgid "TOTAL CATEGORIES"
+msgstr "TOTAAL AANTAL CATEGORIËEN"
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:72
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:77
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:91
+#, fuzzy
+msgid "grow"
+msgstr "groeien"
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:7
+#, fuzzy
+msgid "LATEST PAYMENTS"
+msgstr "LAATSTE BETALINGEN"
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:18
+#, fuzzy
+msgid "Payer"
+msgstr "Betaler"
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:22
+#, fuzzy
+msgid "Amount"
+msgstr "Bedrag"
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:25
+#, fuzzy
+msgid "Item Quantity"
+msgstr "Artikelaantal"
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:52
+#, fuzzy
+msgid "No Payments Found!"
+msgstr "Geen aankopen gevonden"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:4
+#: eventplus/app/views/admin/settings/tabs/tab3.php:6
+#, fuzzy
+msgid "Step 3"
+msgstr "Stap 3"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:6
+#, fuzzy
+msgid "Choose Event's Time"
+msgstr "Kies het evenement tijd"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:15
+msgid "Start Time"
+msgstr "Starttijd"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:32
+msgid "End Time"
+msgstr "Eindtijd"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:48
+#, fuzzy
+msgid "Do you want the event to be recurring?"
+msgstr "Is het event terugkerend?"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:59
+msgid "Will this event run indefinitely?"
+msgstr "Zal dit evenement lopen voor onbepaalde tijd?"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:63
+#, fuzzy
+msgid "Recurrence Period"
+msgstr "Herhaling periode"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:68
+#, fuzzy
+msgid "Select Period"
+msgstr "Selecteer periode"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:74
+#, fuzzy
+msgid "Weekly"
+msgstr "Wekelijks"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:79
+#, fuzzy
+msgid "Monthly"
+msgstr "Maandelijks"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:84
+#, fuzzy
+msgid "Yearly"
+msgstr "Jaarlijks"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:89
+#, fuzzy
+msgid "Repeat number of times"
+msgstr "Aantal keren herhalen"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:89
+#, fuzzy
+msgid "Enter the number of times you want the event to occur."
+msgstr "Voer het aantal keren dat u de gebeurtenis plaatsvindt."
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:93
+#, fuzzy
+msgid "Gaps per repeat"
+msgstr "Tijd tussen de evenementen"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:93
+#, fuzzy
+msgid "Enter the repetition period"
+msgstr "Voer de periode van herhaling in"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:96
+#, fuzzy
+msgid "Close Registration on"
+msgstr "Sluit registratie op"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:99
+#: eventplus/app/views/admin/events/form.parts/datetime.php:102
+#: eventplus/app/views/admin/events/form.parts/datetime.php:105
+#, fuzzy
+msgid "Start of Event"
+msgstr "Aanvang van evenement"
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:100
+#: eventplus/app/views/admin/events/form.parts/datetime.php:103
+#: eventplus/app/views/admin/events/form.parts/datetime.php:106
+#, fuzzy
+msgid "End of Event"
+msgstr "Einde van evenement"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:5
+#: eventplus/app/views/admin/settings/tabs/tab1.php:6
+#, fuzzy
+msgid "Step 1"
+msgstr "Stap 1"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:7
+msgid "Event Description"
+msgstr "Evenement beschijving"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:12
+msgid "Event Name/Title "
+msgstr "Evenement Naam/Titel"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:12
+#, fuzzy
+msgid "Use a concise but descriptive name"
+msgstr "Gebruik een bondige, beschrijvende naam."
+
+#: eventplus/app/views/admin/events/form.parts/description.php:19
+msgid "Unique Event Identifier"
+msgstr "Uniek Identificatienummer van Evenement"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:19
+msgid "Provide a short Unique ID for this event. i.e. BOB001"
+msgstr "Vul een korte unieke ID voor dit evenement bijvoorbeeld BOB001"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:29
+msgid "Detailed Event Description"
+msgstr "Gedetailleerde beschrijving van het evenement"
+
+#: eventplus/app/views/admin/events/form.parts/description.php:29
+#, fuzzy
+msgid "Provide a detailed description of the event, include key details other than when and where. Do not use any html code. This is a text only display To create new display lines just press Enter"
+msgstr "Geef een gedetailleerde beschrijving van het evenement, geef belangrijke informatie in plaats van waar en wanneer. Gebruik geen html code. Alleen platte tekst. \\nOm nieuwe regels toe te voegen drukt u op Enter."
+
+#: eventplus/app/views/admin/events/form.parts/description.php:50
+msgid "Select one or many categories for an event"
+msgstr "Kies een of meerdere categorieën voor dit evenement"
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:6
+msgid "Optional"
+msgstr "Niet verplicht"
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:13
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:13
+#, fuzzy
+msgid "Would you like to offer quantity based discounts? "
+msgstr "Wenst u te bieden hoeveelheid gebaseerd kortingen?"
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:16
+#, fuzzy
+msgid "Use Global Settings"
+msgstr "Gebruik algemene instellingen"
+
+#: eventplus/app/views/admin/events/form.parts/email.php:17
+#: eventplus/app/views/admin/settings/tabs/tab5.php:6
+#, fuzzy
+msgid "Step 5"
+msgstr "Stap 5"
+
+#: eventplus/app/views/admin/events/form.parts/email.php:19
+#: eventplus/app/views/admin/events/form.parts/email.php:34
+msgid "Custom Confirmation Email"
+msgstr "Aangepaste bevestiging e-mail"
+
+#: eventplus/app/views/admin/events/form.parts/email.php:22
+msgid "Do you want to use a custom email for this event?"
+msgstr "Wilt u een eigen email gebruiken voor dit evenement?"
+
+#: eventplus/app/views/admin/events/form.parts/email.php:22
+msgid "If you have send mail option enabled in the company settings, you can override the default mail by creating a custom mail for this event."
+msgstr "Als u de verzendoptie heeft aangezet in de bedrijfsinstellingen, dan kunt u de standaard mail overschrijven met uw eigen mail voor dit evenement."
+
+#: eventplus/app/views/admin/events/form.parts/email.php:34
+#, fuzzy
+msgid "Enter the text for the confirmation email. This email will be sent in text format. See User Manual for data tags"
+msgstr "Vul de tekst in voor de bevestigingsmail. Deze mail wordt verstuurd in tekstformaat. Zie de gebruikershandleiding voor data tags."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:5
+#: eventplus/app/views/admin/settings/tabs/tab4.php:7
+#, fuzzy
+msgid "Step 4"
+msgstr "Stap 4"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:7
+#, fuzzy
+msgid "Choose Event Options"
+msgstr "Evenement opgeven"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:12
+#, fuzzy
+msgid "Show Registration Button"
+msgstr "﻿ Registratie Button"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:13
+#, fuzzy
+msgid "If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed."
+msgstr "Als u Ja selecteert, dan zal de knop tonen en gebruiker moet klikken om weer te geven van het formulier. In het geval van Nee, wordt registratieformulier weergegeven."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:23
+#: eventplus/app/views/admin/events/form.parts/options.php:40
+#: eventplus/app/views/admin/events/form.parts/options.php:57
+#: eventplus/app/views/admin/events/form.parts/options.php:301
+msgid "No "
+msgstr "Nee"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:29
+#, fuzzy
+msgid "Skip Registration Step2"
+msgstr "Skip registratie Step2"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:30
+#, fuzzy
+msgid "Whether to skip step2 if attendee quantity is 1."
+msgstr "Of stap 2 overslaan als deelnemer aantal 1 is."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:47
+msgid "Will you accept checks/cash for this event? "
+msgstr "Accepteert u cheques/"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:47
+msgid "If you will accept checks or cash, usually when accepting payment at event/on-site."
+msgstr "Als u cheques of contant geld accepteert, meestal wanneer u betaling ter plaatse accepteert."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:64
+msgid "Are you using an external registration?"
+msgstr "Gebruikt u externe registratie?"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:64
+msgid "You can point your register now button to an external registration site/page by selecting yes and entering the url!"
+msgstr "U kunt de registreer nu knop laten doorverwijzen naar een externe site of pagina door ja te kiezen en de url in te geven."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:82
+msgid "External registration URL"
+msgstr "Externe registratie URL"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:82
+msgid "Enter the url hyperlink to another webpage or website external registration"
+msgstr "Vul de URL hyperlink naar de externe  webpagina of website in"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:90
 msgid "Do you wish to disable registration for this event?"
 msgstr "Wilt u de registratie voor dit evenement uit te schakelen?"
 
-msgid "To pay online, please select the Payment button to be taken to our payment vendor's site."
-msgstr "Om online te betalen, selecteer dan de Betaling knop te nemen naar de site van onze betaling leverancier."
+#: eventplus/app/views/admin/events/form.parts/options.php:110
+#, fuzzy
+msgid "Default Registration Information"
+msgstr "Standaard registratie-informatie"
 
-msgid "Pay Now"
-msgstr "Betaal nu"
+#: eventplus/app/views/admin/events/form.parts/options.php:110
+#, fuzzy
+msgid "Choose the fields you would like visitors to fill out when registering for your event. Note that name and email are mandatory."
+msgstr "Kies de velden die u wilt dat bezoekers moeten in te vullen bij de registratie voor uw evenement. Let op:  naam en email zijn verplicht."
 
-msgid "Registration has been processed already."
-msgstr "Registratie is al verwerkt."
+#: eventplus/app/views/admin/events/form.parts/options.php:122
+#: eventplus/app/views/admin/settings/tabs/tab1.php:20
+msgid "Street Address"
+msgstr "Straat"
 
-msgid "Invalid request - Payment couldn't be processed."
-msgstr "Ongeldig verzoek - Betaling kan niet worden verwerkt."
+#: eventplus/app/views/admin/events/form.parts/options.php:140
+msgid "State or Province"
+msgstr "Provincie"
 
-msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr "Gefeliciteerd! Transactie is voltooid en de betaling is ontvangen. Bedankt voor uw betaling."
+#: eventplus/app/views/admin/events/form.parts/options.php:149
+msgid "Zip or Postal Code"
+msgstr "Postcode"
 
-msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr "Transactie is voltooid, maar de betaling is mislukt. Probeer opnieuw te registreren."
+#: eventplus/app/views/admin/events/form.parts/options.php:167
+#: eventplus/app/views/admin/events/form.parts/venue.php:117
+#: eventplus/app/views/front/event/parts/regform.php:409
+#, fuzzy
+msgid "Country"
+msgstr "Land"
 
-msgid "Payment details"
-msgstr "Betalings details"
+#: eventplus/app/views/admin/events/form.parts/options.php:189
+#, fuzzy
+msgid "Co. Addr"
+msgstr "Adres"
 
-msgid "View details"
-msgstr "Bekijk details"
+#: eventplus/app/views/admin/events/form.parts/options.php:198
+#, fuzzy
+msgid "Co. City"
+msgstr "Plaats"
 
+#: eventplus/app/views/admin/events/form.parts/options.php:207
+#, fuzzy
+msgid "Co. State/Prov"
+msgstr "Provincie"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:216
+#, fuzzy
+msgid "Co. Postal"
+msgstr "Postcode"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:222
+#, fuzzy
+msgid "Do you want to display terms and conditions?"
+msgstr "Wilt u algemene verkoopvoorwaarden weergeven?"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:252
+#, fuzzy
+msgid "Do you want to force terms and conditions?"
+msgstr "Wilt u algemene verkoopsvoorwaarden van kracht?"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:253
+#, fuzzy
+msgid "If yes, registration form will only be displayed once attendee agrees the terms and conditions"
+msgstr "Zo ja, wordt registratieformulier alleen weergegeven zodra de genodigde stemt ermee in de voorwaarden en bepalingen"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:281
+msgid "Event Listing Options"
+msgstr "Evenementen optieslijst"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:283
+msgid "More Info URL"
+msgstr "Meer informatie URL"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:283
+msgid "Enter the url hyperlink to another webpage or website with more event information"
+msgstr "Vul een URL hyperlink naar een andere webpagina of website met meer informatie in"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:291
+#, fuzzy
+msgid "Would you like to display countdown timer? Yes  No "
+msgstr "En aftel functie tonen? Ja Nee "
+
+#: eventplus/app/views/admin/events/form.parts/options.php:308
+msgid "Thumbnail Image URL"
+msgstr "Kleine afbeelding URL"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:308
+#, fuzzy
+msgid "Enter the url to an image you would like displayed next to the event in the event listings. Size should be 300 x300"
+msgstr "Vul de URL in van een plaatje dat u zou willen laten zien naast de evenementgegevens. De maten moeten 150x112 zijn."
+
+#: eventplus/app/views/admin/events/form.parts/options.php:351
+msgid "Header Image URL"
+msgstr "Hoofdafbeelding URL"
+
+#: eventplus/app/views/admin/events/form.parts/options.php:351
+#, fuzzy
+msgid "Enter the url of an image you wish displayed above the registration form.  The image should be at least 700px wide hight does not metter."
+msgstr "Voer de url van een afbeelding die u wilt weergegeven boven het registratieformulier.  De afbeelding moet ten minste 700px breed hoogte doet niet toe."
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:4
+#: eventplus/app/views/admin/settings/tabs/tab2.php:10
+#, fuzzy
+msgid "Step 2"
+msgstr "Stap 2"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:6
+#, fuzzy
+msgid "Choose your event venue"
+msgstr "Kies uw locatie"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:9
+msgid "Event Seating Capacity"
+msgstr "Beschikbare plaatsen"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:9
+#, fuzzy
+msgid "Enter the number of available seats at your event venue. Leave blank if their is no limit on registrations"
+msgstr "Geef het aantal beschikbare plaatsen op voor uw evenementenlocatie. Laat leeg als er geen limit is."
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:64
+#: eventplus/app/views/admin/events/form.parts/venue.php:95
+msgid "Event Location/Venue"
+msgstr "Evenementslocatie"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:64
+msgid "Enter the name of the business or facility where the event is being held"
+msgstr "Vul de naam bedrijfsnaam of de naam van de faciliteit in waar het evenement gaat plaatsvinden"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:69
+#: eventplus/app/views/admin/events/form.parts/venue.php:101
+msgid "Street"
+msgstr "Straat"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:79
+#: eventplus/app/views/admin/events/form.parts/venue.php:109
+#: eventplus/app/views/admin/settings/tabs/tab1.php:41
+#: eventplus/app/views/front/event/parts/regform.php:422
+msgid "State"
+msgstr "Provincie"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:83
+#: eventplus/app/views/admin/events/form.parts/venue.php:112
+msgid "Postcode"
+msgstr "Postcode"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:126
+msgid "Use Google Maps On Registration Page"
+msgstr "Gebruik Google Maps op Registratie pagina"
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:126
+#, fuzzy
+msgid "All location information must be complete for Google Map feature to work"
+msgstr "Alle locatie informatie moet ingevuld zijn om Google Map te laten werken"
+
+#: eventplus/app/views/admin/events/form.php:180
+#, fuzzy
+msgid "EXPIRED EVENT"
+msgstr "VERLOPEN EVENEMENT"
+
+#: eventplus/app/views/admin/events/form.php:182
+#, fuzzy
+msgid "ACTIVE EVENT"
+msgstr "ACTIEVE GEBEURTENIS"
+
+#: eventplus/app/views/admin/events/form.php:204
+msgid "EDIT"
+msgstr "Bewerk"
+
+#: eventplus/app/views/admin/events/form.php:210
+msgid "Description"
+msgstr "Beschrijving"
+
+#: eventplus/app/views/admin/events/form.php:211
+msgid "Event Venue"
+msgstr "Evenementslocatie"
+
+#: eventplus/app/views/admin/events/form.php:212
+msgid "Event Date/Time"
+msgstr "Datum/tijd van het evenement"
+
+#: eventplus/app/views/admin/events/form.php:213
+msgid "Event Options"
+msgstr "Event Opties"
+
+#: eventplus/app/views/admin/events/form.php:216
+msgid "Confirmation Mail"
+msgstr "Bevestigingsmail"
+
+#: eventplus/app/views/admin/events/form.php:218
+#: eventplus/helpers/admin/menu.php:73
+#, fuzzy
+msgid "Bulk Discounts"
+msgstr "bulk Kortingen"
+
+#: eventplus/app/views/admin/events/form.php:243
+msgid "Please make sure you complete each section before submitting!"
+msgstr "Let op dat u elk onderdeel invult voor u bevestigt!"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:11
+#, fuzzy
+msgid "Coupon Code"
+msgstr "Voucher Code"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:15
+#, fuzzy
+msgid "Do you want to use a coupon code for this event?"
+msgstr "Wilt u een couponcode te gebruiken voor dit evenement?"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:15
+#, fuzzy
+msgid "A coupon code is a promotional code you can tie to your event. The code is valid for a discount off the total registration cost"
+msgstr "Een kortingscode is een promotionele code die u aan uw evenement binden kunt. De code is geldig voor een korting op de totale registratie kosten"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:29
+#, fuzzy
+msgid "Enter the Code"
+msgstr "Enter de code"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:29
+#, fuzzy
+msgid "This should be a one word code with no spaces or extra characters. Recommend ALL CAPS"
+msgstr "Dit moet een code van één woord zonder spaties of extra tekens. Raden alle CAPS"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:33
+#, fuzzy
+msgid "Discount amount for Coupon Code"
+msgstr "Korting Coupon code"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:33
+#, fuzzy
+msgid "Enter the amount with two decimal places.&nbsp;You MUST put a - sign before the value, otherwise this will add to the total during calculations. i.e. -10.00"
+msgstr "Voer het bedrag met twee decimalen. moet je een - teken vóór de waarde, anders dit zal toevoegen aan het totaal bij berekeningen. d.w.z.-10.00"
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:42
+#, fuzzy
+msgid "UPDATE COUPON CODE"
+msgstr "COUPONCODE BIJWERKEN"
+
+#: eventplus/app/views/admin/events/items/form.php:15
+msgid "Registration Attendee"
+msgstr "Registratie bezoekers"
+
+#: eventplus/app/views/admin/events/items/form.php:16
+msgid "Merchandise"
+msgstr "Merchandise"
+
+#: eventplus/app/views/admin/events/items/form.php:18
+msgid "Workshop"
+msgstr "Workshop"
+
+#: eventplus/app/views/admin/events/items/form.php:19
+msgid "Meal or Food"
+msgstr "Maaltijd / eten"
+
+#: eventplus/app/views/admin/events/items/form.php:79
+msgid "Name of Cost/Item"
+msgstr "Naam van de kosten/item"
+
+#: eventplus/app/views/admin/events/items/form.php:85
+msgid "Description of Cost"
+msgstr "Beschrijving van de kosten"
+
+#: eventplus/app/views/admin/events/items/form.php:94
+msgid "Available items/cost per registration/order?"
+msgstr "Beschikbare items/kosten per registratie/order?"
+
+#: eventplus/app/views/admin/events/items/form.php:106
+#, fuzzy
+msgid "Value/Cost"
+msgstr "Waarde/Kosten"
+
+#: eventplus/app/views/admin/events/items/form.php:110
+msgid "Will this be a free item?"
+msgstr "Is dit item gratis?"
+
+#: eventplus/app/views/admin/events/items/form.php:129
+msgid "Custom Currency"
+msgstr "Huidige valuta"
+
+#: eventplus/app/views/admin/events/items/form.php:172
+msgid "Item/Cost Value"
+msgstr "Item/Kosten waarde"
+
+#: eventplus/app/views/admin/events/items/form.php:183
+msgid "AVAILABILITY TIMES OF COST/ITEM"
+msgstr "Beschikbaarheidstijden van  Kosten/Item"
+
+#: eventplus/app/views/admin/events/items/landing.php:4
+#, fuzzy
+msgid "Please select event to manage items"
+msgstr "Selecteer gebeurtenis om items te beheren"
+
+#: eventplus/app/views/admin/events/items/manage.php:24
+#, fuzzy
+msgid "Manage Items/Cost"
+msgstr "Items/kosten beheren"
+
+#: eventplus/app/views/admin/events/items/manage.php:26
+#, fuzzy
+msgid "Sort Items"
+msgstr "Items sorteren"
+
+#: eventplus/app/views/admin/events/items/manage.php:35
+#: eventplus/app/views/admin/events/manage.php:32
+#: eventplus/app/views/admin/payments/manage.php:36
+msgid "Name"
+msgstr "Naam"
+
+#: eventplus/app/views/admin/events/items/manage.php:36
+#, fuzzy
+msgid "Price"
+msgstr "Prijs"
+
+#: eventplus/app/views/admin/events/items/manage.php:37
+#, fuzzy
+msgid "Start"
+msgstr "Vanaf"
+
+#: eventplus/app/views/admin/events/items/manage.php:38
+#, fuzzy
+msgid "End"
+msgstr "Tot"
+
+#: eventplus/app/views/admin/events/items/manage.php:39
+#: eventplus/app/views/admin/questions/manage.php:37
+#: eventplus/app/views/admin/questions/manage.php:44
+#, fuzzy
+msgid "Actions"
+msgstr "Acties"
+
+#: eventplus/app/views/admin/events/items/sort.php:33
+#, fuzzy
+msgid "ReArrange Items for display order: "
+msgstr "Items anders rangschikken voor weergavevolgorde:"
+
+#: eventplus/app/views/admin/events/items/sort.php:66
+#: eventplus/app/views/admin/questions/sort.php:44
+msgid "Drag Line Up or Down to ReArrange."
+msgstr "Trek een lijn van of naar herschikken"
+
+#: eventplus/app/views/admin/events/manage.php:15
+#, fuzzy
+msgid "Sort By"
+msgstr "Sorteer op"
+
+#: eventplus/app/views/admin/events/manage.php:17
+#, fuzzy
+msgid "Select"
+msgstr "Selecteer"
+
+#: eventplus/app/views/admin/events/manage.php:19
+#, fuzzy
+msgid "Date"
+msgstr "Datum"
+
+#: eventplus/app/views/admin/events/manage.php:22
+#: eventplus/app/views/admin/settings/tabs/tab4.php:81
+#, fuzzy
+msgid "ASC"
+msgstr "ASC"
+
+#: eventplus/app/views/admin/events/manage.php:23
+#: eventplus/app/views/admin/settings/tabs/tab4.php:89
+#, fuzzy
+msgid "DESC"
+msgstr "DESC"
+
+#: eventplus/app/views/admin/events/manage.php:30
+#, fuzzy
+msgid "Event ID"
+msgstr "Event ID"
+
+#: eventplus/app/views/admin/events/manage.php:33
+#, fuzzy
+msgid "Category"
+msgstr "Categorie"
+
+#: eventplus/app/views/admin/events/manage.php:34
+#, fuzzy
+msgid "ShortCode"
+msgstr "Shortcode"
+
+#: eventplus/app/views/admin/events/manage.php:37
+#: eventplus/app/views/admin/events/manage.php:134
+#, fuzzy
+msgid "Manage"
+msgstr "Beheer Pagina-elementen"
+
+#: eventplus/app/views/admin/events/manage.php:137
+msgid "Fees/Items"
+msgstr "Betalingen/Items"
+
+#: eventplus/app/views/admin/events/manage.php:138
+msgid "Questions"
+msgstr "Vragen"
+
+#: eventplus/app/views/admin/events/manage.php:140
+#: eventplus/app/views/admin/payments/manage.php:39
+#: eventplus/helpers/admin/menu.php:46
+msgid "Payments"
+msgstr "Betalingen"
+
+#: eventplus/app/views/admin/events/manage.php:151
+msgid "Are you sure you want to copy"
+msgstr "Weet u zeker dat u wilt kopiëren ?"
+
+#: eventplus/app/views/admin/events/manage.php:151
+msgid "Copy"
+msgstr "Kopieer"
+
+#: eventplus/app/views/admin/layouts/attendees.php:5
+#, fuzzy
+msgid "Event Attendees Management"
+msgstr "Deelnemers Evenementenbeheer"
+
+#: eventplus/app/views/admin/layouts/attendees.php:16
+#, fuzzy
+msgid "Back to Attendees"
+msgstr "Terug naar genodigden"
+
+#: eventplus/app/views/admin/layouts/attendees.php:21
+#: eventplus/app/views/admin/layouts/events/items.php:22
+#: eventplus/app/views/admin/layouts/payments.php:18
+#: eventplus/app/views/admin/layouts/questions.php:21
+#, fuzzy
+msgid "View All Events"
+msgstr "Bekijk Alle Workshops"
+
+#: eventplus/app/views/admin/layouts/categories.php:110
+msgid "Category Management"
+msgstr "Categorie beheer"
+
+#: eventplus/app/views/admin/layouts/categories.php:114
+#, fuzzy
+msgid "ADD NEW CATEGORY"
+msgstr "Voeg nieuwe categorie toe"
+
+#: eventplus/app/views/admin/layouts/events.php:5
+msgid "Event Management"
+msgstr "Evenementenbeheer"
+
+#: eventplus/app/views/admin/layouts/events.php:9
+msgid "ADD EVENT"
+msgstr "VOEG EVENEMENT TOE"
+
+#: eventplus/app/views/admin/layouts/events/items.php:5
+#, fuzzy
+msgid "Event Items/Cost Management"
+msgstr "Evenementenbeheer Items/kosten"
+
+#: eventplus/app/views/admin/layouts/events/items.php:6
+#, fuzzy
+msgid "Add tickets to set pricing for your event (Adult, Child, VIP, etc.)"
+msgstr "Toevoegen van tickets om in te stellen prijzen voor uw evenement (volwassene, kind, VIP, enz.)"
+
+#: eventplus/app/views/admin/layouts/events/items.php:10
+#, fuzzy
+msgid "Add Cost/Item"
+msgstr "Kosten/Item toevoegen"
+
+#: eventplus/app/views/admin/layouts/events/items.php:17
+#, fuzzy
+msgid "Back to Items"
+msgstr "Terug naar objecten"
+
+#: eventplus/app/views/admin/layouts/payments.php:5
+#, fuzzy
+msgid "Event Payments Management"
+msgstr "Evenementenbeheer betalingen"
+
+#: eventplus/app/views/admin/layouts/payments.php:13
+#, fuzzy
+msgid "Back to Payments"
+msgstr "Terug naar betalingen"
+
+#: eventplus/app/views/admin/layouts/questions.php:5
+msgid "Event Question Management"
+msgstr "Evenement Vragen Beheer"
+
+#: eventplus/app/views/admin/layouts/questions.php:9
+#, fuzzy
+msgid "Add new Question"
+msgstr "Nieuwe Vraag toevoegen"
+
+#: eventplus/app/views/admin/layouts/questions.php:16
+#, fuzzy
+msgid "Back to Questions"
+msgstr "Terug naar vragen"
+
+#: eventplus/app/views/admin/payments/add_form.php:82
+#: eventplus/app/views/admin/payments/details.php:119
+#: eventplus/app/views/admin/payments/edit_form.php:114
+msgid "Balance Owed:"
+msgstr "Verschuldigd saldo"
+
+#: eventplus/app/views/admin/payments/add_form.php:113
+#: eventplus/app/views/admin/payments/details.php:132
+#: eventplus/app/views/admin/payments/edit_form.php:127
+msgid "Payment Received Date"
+msgstr "Betalingsdatum"
+
+#: eventplus/app/views/admin/payments/add_form.php:114
+#: eventplus/app/views/admin/payments/details.php:136
+#: eventplus/app/views/admin/payments/edit_form.php:131
+msgid "Amount Paid"
+msgstr "Totale betaling"
+
+#: eventplus/app/views/admin/payments/add_form.php:115
+#: eventplus/app/views/admin/payments/details.php:141
+#: eventplus/app/views/admin/payments/edit_form.php:136
+msgid "Payment Type"
+msgstr "Type betaling"
+
+#: eventplus/app/views/admin/payments/add_form.php:117
+#: eventplus/app/views/admin/payments/edit_form.php:139
+#: eventplus/app/views/admin/payments/edit_form.php:159
+msgid "Full Payment"
+msgstr "Volledige betaling"
+
+#: eventplus/app/views/admin/payments/add_form.php:118
+#: eventplus/app/views/admin/payments/edit_form.php:142
+#: eventplus/app/views/admin/payments/edit_form.php:160
+msgid "Partial Payment"
+msgstr "Gedeeltelijke betaling"
+
+#: eventplus/app/views/admin/payments/add_form.php:119
+#: eventplus/app/views/admin/payments/edit_form.php:145
+#: eventplus/app/views/admin/payments/edit_form.php:161
+msgid "Deposit"
+msgstr "Storting"
+
+#: eventplus/app/views/admin/payments/add_form.php:120
+#: eventplus/app/views/admin/payments/edit_form.php:148
+#: eventplus/app/views/admin/payments/edit_form.php:162
+msgid "Donation"
+msgstr "Donatie"
+
+#: eventplus/app/views/admin/payments/add_form.php:121
+#: eventplus/app/views/admin/payments/edit_form.php:151
+#: eventplus/app/views/admin/payments/edit_form.php:163
+msgid "Modification"
+msgstr "Modificatie"
+
+#: eventplus/app/views/admin/payments/add_form.php:122
+#: eventplus/app/views/admin/payments/edit_form.php:154
+#: eventplus/app/views/admin/payments/edit_form.php:164
+msgid "Cancelation"
+msgstr "Annulering"
+
+#: eventplus/app/views/admin/payments/add_form.php:123
+#: eventplus/app/views/admin/payments/edit_form.php:157
+#: eventplus/app/views/admin/payments/edit_form.php:165
+msgid "Refund"
+msgstr "Terugbetaling"
+
+#: eventplus/app/views/admin/payments/add_form.php:126
+#: eventplus/app/views/admin/payments/details.php:158
+#: eventplus/app/views/admin/payments/edit_form.php:171
+#: eventplus/helpers/payment.php:400
+msgid "Payment Method"
+msgstr "Betaalmethode"
+
+#: eventplus/app/views/admin/payments/add_form.php:127
+#: eventplus/app/views/admin/payments/edit_form.php:174
+#: eventplus/app/views/admin/payments/edit_form.php:185
+msgid "Online/Credit Card"
+msgstr "Online/Credit Card"
+
+#: eventplus/app/views/admin/payments/add_form.php:128
+#: eventplus/app/views/admin/payments/edit_form.php:177
+#: eventplus/app/views/admin/payments/edit_form.php:186
+msgid "Check"
+msgstr "Controleer"
+
+#: eventplus/app/views/admin/payments/add_form.php:129
+#: eventplus/app/views/admin/payments/edit_form.php:180
+#: eventplus/app/views/admin/payments/edit_form.php:187
+msgid "Cash"
+msgstr "Contant"
+
+#: eventplus/app/views/admin/payments/add_form.php:130
+#: eventplus/app/views/admin/payments/edit_form.php:183
+#: eventplus/app/views/admin/payments/edit_form.php:188
+msgid "Event Credit"
+msgstr "Evenementkorting"
+
+#: eventplus/app/views/admin/payments/add_form.php:132
+#: eventplus/app/views/admin/payments/details.php:164
+#: eventplus/app/views/admin/payments/edit_form.php:192
+msgid "Transaction ID"
+msgstr "Transactie ID"
+
+#: eventplus/app/views/admin/payments/add_form.php:136
+msgid "Do you want to send a payment received notice to the payer?"
+msgstr "Wilt u een betalingsbevestiging versturen naar de klant?"
+
+#: eventplus/app/views/admin/payments/add_form.php:163
+msgid "POST PAYMENT"
+msgstr "Vooruitbetaling"
+
+#: eventplus/app/views/admin/payments/details.php:150
+#: eventplus/helpers/payment.php:373
 msgid "Payment Status"
 msgstr "Betalingsstatus"
 
-msgid "Payment Methods"
-msgstr "Betaalmethoden"
+#: eventplus/app/views/admin/payments/edit_form.php:201
+msgid "Do you want to send a revised payment received notice to the payer?"
+msgstr "Wilt u een melding van herziene betaling versturen naar de klant?"
 
+#: eventplus/app/views/admin/payments/edit_form.php:235
+msgid "UPDATE PAYMENT"
+msgstr "Update betaling"
 
+#: eventplus/app/views/admin/payments/landing.php:4
+#, fuzzy
+msgid "Please select event to manage payments"
+msgstr "Selecteer gebeurtenis voor het beheren van betalingen"
+
+#: eventplus/app/views/admin/payments/manage.php:23
+#, fuzzy
+msgid "Event Payments"
+msgstr "Gebeurtenis betalingen"
+
+#: eventplus/app/views/admin/payments/manage.php:25
+#, fuzzy
+msgid "Email Payment Reminders"
+msgstr "Herinneringen van de betaling per e-mail"
+
+#: eventplus/app/views/admin/payments/manage.php:35
+msgid "# People"
+msgstr "# mensen"
+
+#: eventplus/app/views/admin/payments/manage.php:38
+msgid "Order Detail"
+msgstr "Bestelinformatie"
+
+#: eventplus/app/views/admin/payments/manage.php:109
+#: eventplus/helpers/payment.php:241 eventplus/helpers/payment.php:286
+#, fuzzy
+msgid "View Details"
+msgstr "Bekijk details"
+
+#: eventplus/app/views/admin/payments/manage.php:117
+#: eventplus/app/views/front/event/parts/pay.php:129
+#: eventplus/app/views/front/shortcode/payment.php:91
+msgid "No Payments Received!"
+msgstr "Geen betalingen ontvangen!"
+
+#: eventplus/app/views/admin/questions/form.php:14
+#: eventplus/app/views/admin/questions/form.php:76
+msgid "Text"
+msgstr "Tekst"
+
+#: eventplus/app/views/admin/questions/form.php:15
+#: eventplus/app/views/admin/questions/form.php:77
+msgid "Text Area"
+msgstr "Tekstvak"
+
+#: eventplus/app/views/admin/questions/form.php:16
+#: eventplus/app/views/admin/questions/form.php:78
+msgid "Single"
+msgstr "Enkel"
+
+#: eventplus/app/views/admin/questions/form.php:17
+#: eventplus/app/views/admin/questions/form.php:80
+msgid "Multiple"
+msgstr "Meervoudig"
+
+#: eventplus/app/views/admin/questions/form.php:18
+msgid "Drop Down"
+msgstr "Drop Down"
+
+#: eventplus/app/views/admin/questions/form.php:35
+#, fuzzy
+msgid "Field Question"
+msgstr "Veld vraag"
+
+#: eventplus/app/views/admin/questions/form.php:37
+#, fuzzy
+msgid "Choose a title for your custom field do you have pets? How did you hear about us?etc"
+msgstr "Kies een titel voor uw aangepaste veld heb je huisdieren? Hoe hoorde u over ons? enz"
+
+#: eventplus/app/views/admin/questions/form.php:40
+#, fuzzy
+msgid "Field Type"
+msgstr "Veld type"
+
+#: eventplus/app/views/admin/questions/form.php:42
+#, fuzzy
+msgid "Choose the type of field you would like your visitor to fill out:text, textarea, single radio button, multiple radio buttons and dropdown"
+msgstr "Kies het type van veld u zou zoals uw bezoeker te vullen out: text, textarea, één keuzerondje, meerdere keuzerondjes en dropdown"
+
+#: eventplus/app/views/admin/questions/form.php:52
+#, fuzzy
+msgid "Field option(for multiple radio and dropdown)"
+msgstr "De optie van het veld (voor meerdere radio en dropdown)"
+
+#: eventplus/app/views/admin/questions/form.php:53
+#, fuzzy
+msgid "Create the choices for the visitor separated by comma i.e google, yahoo, bing etc."
+msgstr "Maak de keuzes voor de bezoeker die zijn gescheiden door komma dwz google, yahoo, bing enz."
+
+#: eventplus/app/views/admin/questions/form.php:56
+#, fuzzy
+msgid "Do You want this field to be mandatory?"
+msgstr "Wilt u dit veld verplicht?"
+
+#: eventplus/app/views/admin/questions/form.php:67
+#, fuzzy
+msgid "Comments"
+msgstr "Commentaar"
+
+#: eventplus/app/views/admin/questions/form.php:75
+#, fuzzy
+msgid "Definitions of the fields that you can create for your registration form"
+msgstr "Definities van de velden die u voor uw inschrijvingsformulier maken kunt"
+
+#: eventplus/app/views/admin/questions/form.php:76
+#, fuzzy
+msgid "This is generally what I would call short answer questions, typically consisting of a single sentence. Where the registering person would type in their response. You do not need to put anything in the Selections field for this question type."
+msgstr "Dit is over het algemeen wat ik noem kort antwoord vragen, meestal bestaande uit een enkele zin. Waar zou de registrerende persoon typen in hun reactie. U hoeft niet om iets te plaatsen in het veld van de selecties voor dit vraagtype."
+
+#: eventplus/app/views/admin/questions/form.php:77
+#, fuzzy
+msgid "This is similar to the Text, except you are looking more for an paragraph/multiple sentence response. You do not need to put anything in the Selections field for this question type."
+msgstr "Dit is vergelijkbaar met de tekst, tenzij u op zoek bent voor een alinea meer / meerdere zin reactie. U hoeft niet om iets te plaatsen in het veld van de selecties voor dit vraagtype."
+
+#: eventplus/app/views/admin/questions/form.php:78
+#, fuzzy
+msgid "This will provide radio button answers where the registering person will select one of several options. Yes/No, True/False are good examples of this type of question. Basically a multiple choice question with one possible choice. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: True, False etc."
+msgstr "Dit zal antwoorden radio knop waar de registrerende persoon zal een van meerdere opties selecteren. Ja/Nee, waar/onwaar zijn goede voorbeelden van dit soort vragen. In principe een meerdere keuze vraag met één mogelijke keuze. Bij het invoeren van deze vraag moet u de lijst van keuzes die zal verschijnen. Uw keuzes door een komma scheiden: True, False enz."
+
+#: eventplus/app/views/admin/questions/form.php:79
+#: eventplus/app/views/admin/questions/form.php:81
+#, fuzzy
+msgid "Do not provide answer choices that have a comma in the response"
+msgstr "Geef geen antwoord keuzes die een komma in het antwoord hebben"
+
+#: eventplus/app/views/admin/questions/form.php:80
+#, fuzzy
+msgid "This is similar to Single Type questions but gives them the option of selecting several of the choices instead of just selecting one item. Basically a multiple choice question with several  possible choices. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: Newspaper, Web, A Friend, Billboard etc."
+msgstr "Dit is vergelijkbaar met één Type vragen maar geeft hen de mogelijkheid te kiezen aantal van de keuzes in plaats van slechts één item te selecteren. In principe een meerdere keuze vraag met verschillende mogelijke keuzes. Bij het invoeren van deze vraag moet u de lijst van keuzes die zal verschijnen. Uw keuzes door een komma scheiden: krant, website, een vriend, Billboard enz."
+
+#: eventplus/app/views/admin/questions/form.php:82
+#, fuzzy
+msgid "Dropdown"
+msgstr "Dropdown"
+
+#: eventplus/app/views/admin/questions/form.php:82
+#, fuzzy
+msgid "This question type is similar in nature to the Single, exept instead of providing the choices in radio buttons, it provides them in a drop down box. This is handy if you have a lot of choices the person needs to choose from, it prevents them from taking up a lot space on your registration form."
+msgstr "Dit vraagtype is vergelijkbaar in de natuur met de Single, behalve in plaats van de keuzes in de keuzerondjes, het biedt hen in een drop-down box. Dit is handig als u hebt heel wat keuzen die de persoon nodig heeft om uit te kiezen, het hen verhindert nemen veel ruimte in beslag op uw inschrijfformulier."
+
+#: eventplus/app/views/admin/questions/landing.php:4
+#, fuzzy
+msgid "Please select event to manage questions"
+msgstr "Selecteer gebeurtenis voor het beheren van vragen"
+
+#: eventplus/app/views/admin/questions/manage.php:23
+#, fuzzy
+msgid "Manage Questions"
+msgstr "Beheren Vragen"
+
+#: eventplus/app/views/admin/questions/manage.php:25
+#, fuzzy
+msgid "Sort Questions"
+msgstr "Soort vragen"
+
+#: eventplus/app/views/admin/questions/manage.php:35
+#: eventplus/app/views/admin/questions/manage.php:42
+#, fuzzy
+msgid "Question Id"
+msgstr "Vraag-Id"
+
+#: eventplus/app/views/admin/questions/manage.php:36
+#: eventplus/app/views/admin/questions/manage.php:43
+msgid "Question"
+msgstr "Vraag"
+
+#: eventplus/app/views/admin/questions/sort.php:33
+#, fuzzy
+msgid "ReArrange Questions for display order: "
+msgstr "Vragen voor de weergavevolgorde wijzigen:"
+
+#: eventplus/app/views/admin/questions/sort.php:48
+msgid "REQUIRED"
+msgstr "VERPLICHT"
+
+#: eventplus/app/views/admin/questions/sort.php:52
+msgid "TYPE"
+msgstr "TYPE"
+
+#: eventplus/app/views/admin/questions/sort.php:53
+msgid "QUESTION"
+msgstr "VRAAG"
+
+#: eventplus/app/views/admin/questions/sort.php:54
+msgid "RESPONSES"
+msgstr "ANTWOORDEN"
+
+#: eventplus/app/views/admin/settings.php:61
+#, fuzzy
+msgid "Lets get your plugin setup!"
+msgstr "Setup de plugin!"
+
+#: eventplus/app/views/admin/settings.php:83
+#: eventplus/app/views/admin/settings.php:121
+#, fuzzy
+msgid "Email Settings"
+msgstr "Emailinstellingen"
+
+#: eventplus/app/views/admin/settings.php:86
+#, fuzzy
+msgid "Email Confirmations"
+msgstr "E-mail bevestigingen"
+
+#: eventplus/app/views/admin/settings.php:88
+#, fuzzy
+msgid "For customized confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
+msgstr "Voor aangepaste bevestiging e-mails, de volgende tags kunnen worden geplaatst in de vorm van e-mail en zij zal gegevens ophalen uit de database op te nemen in de e-mail"
+
+#: eventplus/app/views/admin/settings.php:96
+#, fuzzy
+msgid "Sample Mail Send"
+msgstr "Monster Mail verzenden"
+
+#: eventplus/app/views/admin/settings.php:99
+#: eventplus/app/views/admin/settings.php:170
+#, fuzzy
+msgid "***This is an automated response - Do Not Reply***"
+msgstr "Dit is een automatische reactie - gelieve niet te antwoorden ***"
+
+#: eventplus/app/views/admin/settings.php:102
+#, fuzzy
+msgid "Thank you [fname] [lname] for registering for [event]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]"
+msgstr "Dank u [fname] [lname] voor het registreren voor [evenement]. Wij hopen dat u het een informatief evenement vond. Heeft u nog vragen, neem contact op met [contact]"
+
+#: eventplus/app/views/admin/settings.php:105
+#, fuzzy
+msgid "If you have not done so already, please submit your payment in the amount of [cost]"
+msgstr "Als u dit nog niet hebt gedaan, kunt u uw betaling van het bedrag van [kosten] voldoen"
+
+#: eventplus/app/views/admin/settings.php:108
+#: eventplus/app/views/admin/settings.php:176
+#, fuzzy
+msgid "Your unique registration ID is: [id]"
+msgstr "Uw unieke registratie-ID is: [id]"
+
+#: eventplus/app/views/admin/settings.php:111
+#: eventplus/app/views/admin/settings.php:179
+#, fuzzy
+msgid "Click here to review your payment information [payment_url]"
+msgstr "Klik hier om uw betalingsgegevens te controleren [payment_url]"
+
+#: eventplus/app/views/admin/settings.php:114
+#: eventplus/app/views/admin/settings.php:147
+#: eventplus/app/views/admin/settings.php:182
+#: eventplus/app/views/front/event/parts/email/confirmation.php:60
+#: eventplus/helpers/mail/registration.php:51
+#, fuzzy
+msgid "Thank You"
+msgstr "Dank je wel"
+
+#: eventplus/app/views/admin/settings.php:124
+#: eventplus/helpers/admin/menu.php:70
+#, fuzzy
+msgid "Waitlist"
+msgstr "Wachtlijst"
+
+#: eventplus/app/views/admin/settings.php:126
+#, fuzzy
+msgid "For customized wait list emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
+msgstr "Voor aangepaste wacht lijst e-mails, de volgende tags kunnen worden geplaatst in de vorm van e-mail en zij zal gegevens ophalen uit de database op te nemen in de e-mail"
+
+#: eventplus/app/views/admin/settings.php:129
+#, fuzzy
+msgid "[fname], [lname], [event]"
+msgstr "[fname], [lname], [event]"
+
+#: eventplus/app/views/admin/settings.php:136
+#, fuzzy
+msgid "Thank you [fname] [lname] for your interest in registering for [event]"
+msgstr "Dank u [fname] [lname] voor uw interesse in het [evenement]"
+
+#: eventplus/app/views/admin/settings.php:139
+#, fuzzy
+msgid "At this time, all seats for the event have been taken.  \n"
+"    Your information has been placed on our waiting list.  \n"
+"    The waiting list is on a first come, first serve basis."
+msgstr "Op dit moment zijn alle plaatsen voor dit evenement gezet.  \\n   Uw aanmelding is op onze wachtlijst geplaatst.  \\n"
+
+#: eventplus/app/views/admin/settings.php:144
+#, fuzzy
+msgid "You will be notified by email with directions for completing registration and payment should a seat become available"
+msgstr "Zodra er een plaats vrij komt wordt u per e-mail op de hoogte gebracht om uw registratie compleet te maken."
+
+#: eventplus/app/views/admin/settings.php:154
+#, fuzzy
+msgid "Payment Confirmation Email Settings"
+msgstr "Bevestigingsmail-instellingen"
+
+#: eventplus/app/views/admin/settings.php:157
+#, fuzzy
+msgid "Payment Confirmations"
+msgstr "Betaling bevestigingen"
+
+#: eventplus/app/views/admin/settings.php:159
+#, fuzzy
+msgid "For customized payment confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
+msgstr "Voor aangepaste betaling bevestiging e-mails, de volgende tags kunnen worden geplaatst in de vorm van e-mail en zij zal gegevens ophalen uit de database op te nemen in de e-mail"
+
+#: eventplus/app/views/admin/settings.php:167
+#, fuzzy
+msgid "Sample Payment Mail Send"
+msgstr "Voorbeeld betaling Mail verzenden"
+
+#: eventplus/app/views/admin/settings.php:173
+#, fuzzy
+msgid "Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) for [event_name]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]."
+msgstr "Dank u [fname] [lname] voor uw betaling van [amnt_pd] ([txn_id]) voor [event_name]. Wij hopen dat u er van heeft genoten. Heeft u nog vragen, neem contact op met [contact]."
+
+#: eventplus/app/views/admin/settings.php:197
+#, fuzzy
+msgid "Update Configuration Settings"
+msgstr "Configuratie-instellingen bijwerken"
+
+#: eventplus/app/views/admin/settings.php:252
+#, fuzzy
+msgid "Let's get your events plugin configured!"
+msgstr "Let's get uw evenementen plugin geconfigureerd!"
+
+#: eventplus/app/views/admin/settings.php:255
+#, fuzzy
+msgid "Event Registration Configuration Settings"
+msgstr "Evenementen registratie configuratie instellingen"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:5
+#, fuzzy
+msgid "Sanbox Mode?"
+msgstr "Sanbox modus?"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:7
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:5
+msgid "(used for testing/debug)"
+msgstr "(gebruikt voor het testen)"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:26
+#, fuzzy
+msgid "Authorized.Net API Login ID"
+msgstr "Authorized.Net API aanmeldings-ID"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:34
+msgid "Authorized.Net Txn Key"
+msgstr "Authorized.Net Txn Key"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:3
+#, fuzzy
+msgid "Will you accept checks/cash?"
+msgstr "Accepteert u cheques en contant"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:3
+msgid "Use PayPal Sandbox"
+msgstr "Gebruik Paypal Sandbox"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:24
+#, fuzzy
+msgid "Paypal Email"
+msgstr "Paypal E-posta"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:31
+#, fuzzy
+msgid "PDT Auth Token:"
+msgstr "PDT Auth Token:"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:4
+#, fuzzy
+msgid "Secret key"
+msgstr "Geheime sleutel"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:11
+#, fuzzy
+msgid "Publishable key"
+msgstr "Publiceerbare sleutel"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:19
+#, fuzzy
+msgid "Stripe Return Url"
+msgstr "Stripe retour-Url"
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:42
+#, fuzzy
+msgid "Warning! Stripe will not work as intended. Please activate following PHP extensions:"
+msgstr "Waarschuwing! Streep zal niet werken zoals de bedoeling is. Activeer na PHP uitbreidingen:"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:9
+#, fuzzy
+msgid "Contact Information"
+msgstr "Contactgegevens"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:13
+#, fuzzy
+msgid "Your Company Name"
+msgstr "Uw bedrijfsnaam"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:27
+#, fuzzy
+msgid "Street Address 2"
+msgstr "Adresregel 2"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:48
+#, fuzzy
+msgid "Postal Code"
+msgstr "Post Code"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:55
+#, fuzzy
+msgid "Primary Contact email:"
+msgstr "Contact e-mail"
+
+#: eventplus/app/views/admin/settings/tabs/tab1.php:62
+#, fuzzy
+msgid "Secondary Contact emails(Separated By Commas[,]):"
+msgstr "Secundaire Contact e-mails (gescheiden door kommas[,]):"
+
+#: eventplus/app/views/admin/settings/tabs/tab2.php:12
+#, fuzzy
+msgid "Payment Information"
+msgstr "Betaal informatie"
+
+#: eventplus/app/views/admin/settings/tabs/tab2.php:17
+msgid "Currency Format:"
+msgstr "Koers format:"
+
+#: eventplus/app/views/admin/settings/tabs/tab2.php:23
+#, fuzzy
+msgid "Select Currency"
+msgstr "Kies muntsoort"
+
+#: eventplus/app/views/admin/settings/tabs/tab2.php:67
+#, fuzzy
+msgid "Off"
+msgstr "Uit"
+
+#: eventplus/app/views/admin/settings/tabs/tab2.php:71
+#, fuzzy
+msgid "On"
+msgstr "Aan"
+
+#: eventplus/app/views/admin/settings/tabs/tab3.php:8
+#, fuzzy
+msgid "Captcha Integration"
+msgstr "CAPTCHA integratie"
+
+#: eventplus/app/views/admin/settings/tabs/tab3.php:10
+msgid "Use Captcha on registration form?"
+msgstr "Captcha gebruiken bij registratie?"
+
+#: eventplus/app/views/admin/settings/tabs/tab3.php:32
+#, fuzzy
+msgid "Google Captcha site Key?"
+msgstr "Google Captcha site sleutel?"
+
+#: eventplus/app/views/admin/settings/tabs/tab3.php:42
+#, fuzzy
+msgid "CSS Overrides for registration form?"
+msgstr "Eigen CSS voor inschrijvingsformulier?"
+
+#: eventplus/app/views/admin/settings/tabs/tab3.php:45
+#, fuzzy
+msgid "Help"
+msgstr "Help"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:9
+#, fuzzy
+msgid "Choose Pages"
+msgstr "Kies pagina''s"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:14
+msgid "Attention"
+msgstr "Let op"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:16
+msgid "These settings must be configured for the plugin to function correctly."
+msgstr "Deze instellingen moeten goed zijn ingevuld. Anders werkt deze plugin niet correct."
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:20
+#, fuzzy
+msgid "Main registration page"
+msgstr "Registratiepagina"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:38
+#, fuzzy
+msgid "This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden from navigation, if desired"
+msgstr "Deze pagina moet bevatten de {EVRREGIS} filter. Deze pagina kan worden verborgen in de navigatie, indien gewenst."
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:43
+#, fuzzy
+msgid "Return URL for Payments"
+msgstr "Retour-URL voor betalingen"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:46
+#, fuzzy
+msgid "Main page"
+msgstr "Hoofdpagina"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:54
+#, fuzzy
+msgid "This page should be hidden and will contain the [eventsplus_payment] payment shortcode.&nbsp; This page should be hidden from navigation"
+msgstr "Deze pagina moet worden verborgen en bevat de [eventsplus_payment] betaling stortcode. Deze pagina moet worden verborgen in de navigatie"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:73
+#, fuzzy
+msgid "Choose if you would like to display events in Ascending or Descending order"
+msgstr "Kies als u gebeurtenissen wilt weergeven in de volgorde van oplopend of aflopend"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:93
+#, fuzzy
+msgid "Social Icons"
+msgstr "Social media iconen"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:96
+#, fuzzy
+msgid "Show Social sharing icons in event page?"
+msgstr "Sociale delen pictogrammen in de gebeurtenis pagina weergeven?"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:108
+#, fuzzy
+msgid "Google Map"
+msgstr "Google Map"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:112
+#, fuzzy
+msgid "Add Google map Api key"
+msgstr "Google maps API-sleutel"
+
+#: eventplus/app/views/admin/settings/tabs/tab4.php:117
+#, fuzzy
+msgid "If your website gets huge high traffic we highly recommend to use API key."
+msgstr "Als uw website veel hoge verkeer krijgt bevelen we gebruik API-sleutel aan."
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:9
+#, fuzzy
+msgid "Email Confirmation"
+msgstr "E-mail configuratie"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:12
+#, fuzzy
+msgid "Do you want to send Registration Confirmation emails?"
+msgstr "Wilt u een registratie bevestiging e-mail verzenden?"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:33
+#, fuzzy
+msgid "(This option must be enable to send custom mails in events)"
+msgstr "(Deze optie inschakelen voor het verzenden van aangepaste mails in gebeurtenissen)"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:39
+#: eventplus/app/views/admin/settings/tabs/tab5.php:93
+#: eventplus/app/views/admin/settings/tabs/tab6.php:14
+#, fuzzy
+msgid "Example"
+msgstr "Voorbeeld"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:42
+#: eventplus/app/views/admin/settings/tabs/tab5.php:103
+#: eventplus/app/views/admin/settings/tabs/tab5.php:146
+#, fuzzy
+msgid "Email Body"
+msgstr "Email inhoud"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:66
+#, fuzzy
+msgid "Do you want to send Payment Confirmation emails?"
+msgstr "Wilt u een bevestiging van betaling per e-mail verzenden?"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:87
+#, fuzzy
+msgid "(This option must be enable to send payment confrimation emails)"
+msgstr "(Deze optie inschakelen voor het verzenden van bevestiging e-mails van betaling)"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:98
+#, fuzzy
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:121
+#, fuzzy
+msgid "Do you want to receive email notifications when someone registers?"
+msgstr "Wilt u e-mailberichten ontvangen wanneer iemand zich registreert?"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:142
+#, fuzzy
+msgid "(This option must be enable to send email to admin)"
+msgstr "(Deze optie moet inschakelen om e-mails te verzenden naar admin)"
+
+#: eventplus/app/views/admin/settings/tabs/tab5.php:170
+msgid "Type your confirmation message below"
+msgstr "Typ hieronder uw bevestigingsbericht"
+
+#: eventplus/app/views/admin/settings/tabs/tab6.php:6
+#, fuzzy
+msgid "Step 6"
+msgstr "Stap 6"
+
+#: eventplus/app/views/admin/settings/tabs/tab6.php:9
+#, fuzzy
+msgid "Wait list Message"
+msgstr "Wachtlijst bericht"
+
+#: eventplus/app/views/admin/settings/tabs/tab6.php:17
+#, fuzzy
+msgid "Waitlist Email Body"
+msgstr "Waitlist Email Body"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:6
+#, fuzzy
+msgid "Step 7"
+msgstr "Stap 7"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:9
+#, fuzzy
+msgid "Choose calendar colors"
+msgstr "Kalender kleuren kiezen"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:13
+#, fuzzy
+msgid "Calendar Settings"
+msgstr "Kalender instellingen"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:20
+msgid "Choose the time format for your events:"
+msgstr "Kies het tijd formaat voor uw evenementen:"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:29
+#, fuzzy
+msgid "AM - PM"
+msgstr "AM/PM"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:37
+#, fuzzy
+msgid "24 Hours"
+msgstr "24 uur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:45
+msgid "Choose the date format for your events:"
+msgstr "Kies de datumnotatie voor uw evenementen:"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:72
+#, fuzzy
+msgid "Would you like to display amount of seats available?"
+msgstr "Wilt u de hoeveelheid beschikbare plaatsen weergeven?"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:94
+#, fuzzy
+msgid "Start Day of Week"
+msgstr "Begin van week"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:98
+#: eventplus/app/views/admin/settings/tabs/tab7.php:105
+#, fuzzy
+msgid "Sunday"
+msgstr "Zondag"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:100
+#: eventplus/app/views/admin/settings/tabs/tab7.php:108
+#, fuzzy
+msgid "Monday"
+msgstr "Maandag"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:128
+#, fuzzy
+msgid "Would you like to display the category colors in the calendar?"
+msgstr "Wilt u de categorie kleuren weergeven in de agenda?"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:150
+#, fuzzy
+msgid "Do you want to show add to calendar button?"
+msgstr "Wilt u weergeven naar de knop Agenda toevoegen?"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:174
+#, fuzzy
+msgid "Click on each field to display the color picker. Click again to close it"
+msgstr "Klik op elk veld om de Kleurkiezer weer te geven. Klik nogmaals om te sluiten"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:210
+#, fuzzy
+msgid "Date Picker"
+msgstr "Datum Kiezer"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:214
+#, fuzzy
+msgid "Do you want to use the Date selector?"
+msgstr "Wilt u de datum selecteer gebruiken?"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:236
+#, fuzzy
+msgid "Do you want to Show Tool tip on the Calendar?"
+msgstr "Wilt u knopinfo weergeven in de agenda?"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:259
+#, fuzzy
+msgid "Calendar Date Selector Background Color"
+msgstr "Kalender datum Selector achtergrondkleur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:277
+#: eventplus/app/views/admin/settings/tabs/tab7.php:318
+#, fuzzy
+msgid "Selector Text Color"
+msgstr "Selecteer tekstkleur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:301
+#, fuzzy
+msgid "Calendar Header"
+msgstr "Kalender kop"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:306
+#, fuzzy
+msgid "Calendar Day Header Background Color"
+msgstr "Kalender dag kop achtergrondkleur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:342
+#, fuzzy
+msgid "Current Day Color"
+msgstr "Kleur van de huidige dag"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:347
+#, fuzzy
+msgid "Current Day Background Color"
+msgstr "Huidige pagina Achtergrondkleur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:359
+#, fuzzy
+msgid "Current Day Text Color"
+msgstr "Huidige dag tekstkleur"
+
+#: eventplus/app/views/admin/settings/tabs/tab7.php:382
+#, fuzzy
+msgid "Description Pop Border Color"
+msgstr "De kleur van de rand van de Pop van de beschrijving"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:6
+#, fuzzy
+msgid "Step 8"
+msgstr "Stap 8"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:9
+#, fuzzy
+msgid "Tax Configuration"
+msgstr "De configuratie van de belasting"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:12
+#, fuzzy
+msgid "Do you want to charge sales tax"
+msgstr "Wilt u BTW in rekening brengen"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:34
+#, fuzzy
+msgid "(This option must be enable to charge sales tax)"
+msgstr "(Deze optie moet inschakelen in rekening te brengen van BTW)"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:40
+#, fuzzy
+msgid "Sales Tax Rate:"
+msgstr "Omzetbelasting:"
+
+#: eventplus/app/views/admin/settings/tabs/tab8.php:42
+#, fuzzy
+msgid "(must be decimal, i.e. .085 )"
+msgstr "(moet decimaal, dat wil zeggen.085)"
+
+#: eventplus/app/views/admin/settings/tabs/tab9.php:6
+#, fuzzy
+msgid "Congratulations"
+msgstr "Gefeliciteerd"
+
+#: eventplus/app/views/admin/settings/tabs/tab9.php:9
+#, fuzzy
+msgid "You have setup your company information. Please click the"
+msgstr "U hebt ingesteld uw bedrijfsinformatie. Klik op de"
+
+#: eventplus/app/views/admin/settings/tabs/tab9.php:11
+#, fuzzy
+msgid "UPDATE COMPANY SETTINGS"
+msgstr "Bijwerken factuurinstellingen bedrijf"
+
+#: eventplus/app/views/admin/settings/tabs/tab9.php:13
+#, fuzzy
+msgid "button, below the tabs"
+msgstr "knop, onder de tabs"
+
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:6
+#, fuzzy
+msgid "Step 9"
+msgstr "Stap 9:"
+
+#: eventplus/app/views/front/event/parts/accordion.php:34
+#, fuzzy
+msgid "&nbsp;&nbsp;&nbsp;&nbsp;Time: "
+msgstr "tijd:"
+
+#: eventplus/app/views/front/event/parts/accordion.php:40
+#: eventplus/funx/evrplus_calendar.php:575
+#, fuzzy
+msgid "Location"
+msgstr "Locatie"
+
+#: eventplus/app/views/front/event/parts/accordion.php:49
+#: eventplus/app/views/front/event/parts/regform.php:229
+#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:17
+#: eventplus/funx/evrplus_calendar.php:587
+msgid "Event Fees"
+msgstr "Kosten"
+
+#: eventplus/app/views/front/event/parts/confirm.php:3
+#: eventplus/app/views/front/event/parts/regform.php:9
+#, fuzzy
+msgid "Invalid"
+msgstr "Ongeldig [ license status ]"
+
+#: eventplus/app/views/front/event/parts/confirm.php:4
+#: eventplus/app/views/front/event/parts/regform.php:10
+msgid "Required"
+msgstr "Verplicht"
+
+#: eventplus/app/views/front/event/parts/confirm.php:16
+#: eventplus/app/views/front/event/parts/pay.php:9
+#, fuzzy
+msgid "Failure - please retry!"
+msgstr "Fout - probeer het opnieuw"
+
+#: eventplus/app/views/front/event/parts/confirm.php:24
+#: eventplus/app/views/front/event/parts/post.php:18
+#: public/authorize/payment.php:37 public/paypal/re7urn.php:27
+#: public/stripe/payment.php:32
+#, fuzzy
+msgid "Couldn't proceed! registration already processed."
+msgstr "Kon niet doorgaan! registratie al verwerkt."
+
+#: eventplus/app/views/front/event/parts/confirm.php:264
+#, fuzzy
+msgid "You are on the waiting list."
+msgstr "U staat op de wachtlijst."
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "You are registering for"
+msgstr "U zich inschrijft voor"
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "person(s)."
+msgstr "persoon ( s ) ."
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "Please provide the first and last name of each person:"
+msgstr "Geef de voor- en achternaam van elke persoon :"
+
+#: eventplus/app/views/front/event/parts/confirm.php:281
+msgid "Please verify your registration details:"
+msgstr "Controleer uw registratie gegevens :"
+
+#: eventplus/app/views/front/event/parts/confirm.php:286
+#: eventplus/app/views/front/event/parts/pay.php:77
+#: eventplus/app/views/front/shortcode/payment.php:33
+#: eventplus/helpers/payment.php:510
+msgid "Event Name/Cost:"
+msgstr "Event Naam / Kosten:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:291
+msgid "Registering Name:"
+msgstr "Registreren Naam:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:296
+#: eventplus/app/views/front/event/parts/pay.php:85
+#: eventplus/app/views/front/shortcode/payment.php:41
+#: eventplus/helpers/payment.php:152 eventplus/helpers/payment.php:514
+#: eventplus/helpers/payment.php:634
+msgid "Email Address:"
+msgstr "E-mailadres:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:301
+#: eventplus/app/views/front/event/parts/pay.php:89
+#: eventplus/app/views/front/shortcode/payment.php:45
+#: eventplus/helpers/payment.php:157 eventplus/helpers/payment.php:516
+#: eventplus/helpers/payment.php:639
+msgid "Number of Attendees:"
+msgstr "Aantal deelnemers :"
+
+#: eventplus/app/views/front/event/parts/confirm.php:306
+#: eventplus/app/views/front/event/parts/pay.php:93
+#: eventplus/app/views/front/shortcode/payment.php:49
+#: eventplus/helpers/payment.php:164 eventplus/helpers/payment.php:518
+#: eventplus/helpers/payment.php:646
+msgid "Order Details:"
+msgstr "Bestel Details:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:307
+#, fuzzy
+msgid "Waiting List"
+msgstr "Wachtlijst"
+
+#: eventplus/app/views/front/event/parts/confirm.php:330
+#, fuzzy
+msgid "Free"
+msgstr "gratis"
+
+#: eventplus/app/views/front/event/parts/confirm.php:344
+#: eventplus/app/views/front/event/parts/confirm.php:348
+#, fuzzy
+msgid "Coupon:"
+msgstr "Actiecode:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:349
+#, fuzzy
+msgid "Invalid Code!"
+msgstr "Ongeldige code."
+
+#: eventplus/app/views/front/event/parts/confirm.php:358
+#, fuzzy
+msgid "Sales Tax:"
+msgstr "Omzetbelasting:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:367
+#, fuzzy
+msgid "Order Total:"
+msgstr "Betselling totaal:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:372
+#, fuzzy
+msgid "Discount:"
+msgstr "Korting:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:378
+#: eventplus/helpers/payment.php:187 eventplus/helpers/payment.php:536
+#: eventplus/helpers/payment.php:669
+#, fuzzy
+msgid "Total Cost:"
+msgstr "Totale kost:"
+
+#: eventplus/app/views/front/event/parts/confirm.php:434
+#, fuzzy
+msgid "BACK"
+msgstr "TERUG"
+
+#: eventplus/app/views/front/event/parts/confirm.php:442
+msgid "You must select at least one registration item."
+msgstr "U moet minstens één registratie te selecteren."
+
+#: eventplus/app/views/front/event/parts/confirm.php:443
+msgid "Please go back and select an item!"
+msgstr "Ga terug en selecteer een item!"
+
+#: eventplus/app/views/front/event/parts/confirm.php:460
+#, fuzzy
+msgid "Confirmed"
+msgstr "Bevestigd"
+
+#: eventplus/app/views/front/event/parts/confirmation.php:94
+#: eventplus/app/views/front/event/parts/email/confirmation.php:97
+msgid "A confirmation email has been sent to:"
+msgstr "Een bevestigings e-mail is verzonden naar:"
+
+#: eventplus/app/views/front/event/parts/confirmation.php:102
+msgid "At this time, all seats for the event have been taken.  Your information has been placed on our waiting list.  The waiting list is on a first come, first serve basis.  You will be notified by email should a seat become available."
+msgstr "Op dit  moment zijn er geen plaatsen beschikbaar. Uw informatie is toegevoegd aan de wachtlijst. De wachtlijst is op volgorde van binnenkomst. U krijgt een e-mail als er plaatsen beschikbaar komen."
+
+#: eventplus/app/views/front/event/parts/confirmation.php:114
+#, fuzzy
+msgid "Your information has been received."
+msgstr "Uw informatie heeft ontvangen."
+
+#: eventplus/app/views/front/event/parts/confirmation.php:117
+msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
+msgstr "Gefeliciteerd! Transactie is voltooid en de betaling is ontvangen. Bedankt voor uw betaling."
+
+#: eventplus/app/views/front/event/parts/confirmation.php:119
+msgid "Transaction has been completed but payment failed. Please try registering again."
+msgstr "Transactie is voltooid, maar de betaling is mislukt. Probeer opnieuw te registreren."
+
+#: eventplus/app/views/front/event/parts/email/confirmation.php:57
+#: eventplus/helpers/mail/registration.php:47
+#, fuzzy
+msgid "Thank you for registering for"
+msgstr "Bedankt voor uw registratie voor"
+
+#: eventplus/app/views/front/event/parts/email/confirmation.php:57
+#, fuzzy
+msgid "At this time, all seats for the event have been taken.  \n"
+"        Your information has been placed on our waiting list.  \n"
+"        The waiting list is on a first come, first serve basis.  \n"
+"        You will be notified by email should a seat become available."
+msgstr "Op dit  moment zijn er geen plaatsen beschikbaar. Uw informatie is toegevoegd aan de wachtlijst. De wachtlijst is op volgorde van binnenkomst. U krijgt een e-mail als er plaatsen beschikbaar komen."
+
+#: eventplus/app/views/front/event/parts/inc/form_fields/dropdown.php:5
+msgid "Select One"
+msgstr "Selecteer"
+
+#: eventplus/app/views/front/event/parts/list.php:19
+#, fuzzy
+msgid "The list of upcoming events."
+msgstr "De lijst van aankomende evenementen."
+
+#: eventplus/app/views/front/event/parts/list.php:94
+#: eventplus/app/views/front/widgets/shortcode/event/category.php:88
+#: eventplus/app/views/front/widgets/shortcode/event/list.php:96
+msgid "Open Seats"
+msgstr "Open Stoelen"
+
+#: eventplus/app/views/front/event/parts/list.php:210
+#: eventplus/app/views/front/widgets/shortcode/event/category.php:84
+#: eventplus/app/views/front/widgets/shortcode/event/list.php:92
+#: eventplus/funx/evrplus_calendar.php:380
+msgid "Unlimited"
+msgstr "Onbeperkt"
+
+#: eventplus/app/views/front/event/parts/pay.php:14
+#, fuzzy
+msgid "Please check your email for payment information."
+msgstr "Controleer je email voor meer betalingsgegevens."
+
+#: eventplus/app/views/front/event/parts/pay.php:71
+#: eventplus/app/views/front/shortcode/payment.php:27
+#, fuzzy
+msgid "Payment Page for"
+msgstr "Betalingspagina voor"
+
+#: eventplus/app/views/front/event/parts/pay.php:71
+#: eventplus/app/views/front/shortcode/payment.php:27
+#, fuzzy
+msgid "for event"
+msgstr "voor evenement"
+
+#: eventplus/app/views/front/event/parts/pay.php:74
+#: eventplus/app/views/front/shortcode/payment.php:30
+msgid "Registration Detail Summary:"
+msgstr "Registratie Detail Samenvatting :"
+
+#: eventplus/app/views/front/event/parts/pay.php:81
+#: eventplus/app/views/front/shortcode/payment.php:37
+#: eventplus/helpers/payment.php:147 eventplus/helpers/payment.php:512
+#: eventplus/helpers/payment.php:629
+msgid "Attendee Name:"
+msgstr "Deelnemer Naam:"
+
+#: eventplus/app/views/front/event/parts/pay.php:113
+#: eventplus/app/views/front/shortcode/payment.php:66
+#, fuzzy
+msgid "Payments Received:"
+msgstr "Betaling ontvangen:"
+
+#: eventplus/app/views/front/event/parts/pay.php:117
+#: eventplus/app/views/front/shortcode/payment.php:75
+#: eventplus/helpers/admin/menu.php:66
+#, fuzzy
+msgid "Payment"
+msgstr "Betaling"
+
+#: eventplus/app/views/front/event/parts/pay.php:123
+#: eventplus/app/views/front/shortcode/payment.php:85
+msgid "Total Outstanding Payment Due*:"
+msgstr "Totaal nog te voldoen*:"
+
+#: eventplus/app/views/front/event/parts/pay.php:131
+#: eventplus/app/views/front/shortcode/payment.php:93
+msgid "Total Payment Due*:"
+msgstr "Totaal voldaan*:"
+
+#: eventplus/app/views/front/event/parts/pay.php:137
+#: eventplus/app/views/front/shortcode/payment.php:100
+msgid "*Payments could take several days to post to this page. Please check back in several days if you made a payment and your payment is not showing at this time."
+msgstr "*Betalingen kunnen soms enige vertraging kennen. Controleer over een paar dagen of u een betaling heeft gedaan als deze niet verschijnt."
+
+#: eventplus/app/views/front/event/parts/regform.php:11
+#, fuzzy
+msgid "Please enter your first name"
+msgstr "Voer uw voornaam in"
+
+#: eventplus/app/views/front/event/parts/regform.php:12
+#, fuzzy
+msgid "Please enter your last name"
+msgstr "Voer je achternaam in"
+
+#: eventplus/app/views/front/event/parts/regform.php:13
+msgid "Email format not correct!"
+msgstr "Het e-mailadres klopt niet!"
+
+#: eventplus/app/views/front/event/parts/regform.php:14
+#, fuzzy
+msgid "Please enter your phone number"
+msgstr "Voer uw telefoonnummer in"
+
+#: eventplus/app/views/front/event/parts/regform.php:15
+#, fuzzy
+msgid "Please use correct format for your phone number"
+msgstr "Uw telefoonnummer klopt niet."
+
+#: eventplus/app/views/front/event/parts/regform.php:16
+#, fuzzy
+msgid "Please enter your address"
+msgstr "Vul uw adres"
+
+#: eventplus/app/views/front/event/parts/regform.php:17
+#, fuzzy
+msgid "Please enter your city"
+msgstr "Vul uw woonplaats in."
+
+#: eventplus/app/views/front/event/parts/regform.php:18
+#, fuzzy
+msgid "Please enter your state"
+msgstr "Voer uw staat in"
+
+#: eventplus/app/views/front/event/parts/regform.php:19
+#, fuzzy
+msgid "Please enter your zip/postal code"
+msgstr "Je moet je postcode invullen"
+
+#: eventplus/app/views/front/event/parts/regform.php:20
+#, fuzzy
+msgid "You didn't accept terms and conditions!"
+msgstr "U accepteren voorwaarden niet!"
+
+#: eventplus/app/views/front/event/parts/regform.php:137
+#: eventplus/funx/evrplus_calendar.php:547
+msgid "Add to your calendar"
+msgstr "Voeg toe aan je agenda"
+
+#: eventplus/app/views/front/event/parts/regform.php:198
+msgid "Event Location"
+msgstr "Evenementslocatie"
+
+#: eventplus/app/views/front/event/parts/regform.php:263
+#: eventplus/app/views/front/event/parts/regform.php:274
+msgid "FREE"
+msgstr "GRATIS"
+
+#: eventplus/app/views/front/event/parts/regform.php:293
+#, fuzzy
+msgid "Days"
+msgstr "Dagen"
+
+#: eventplus/app/views/front/event/parts/regform.php:294
+#, fuzzy
+msgid "Hours"
+msgstr "uren"
+
+#: eventplus/app/views/front/event/parts/regform.php:295
+#, fuzzy
+msgid "Minutes"
+msgstr "Minuten"
+
+#: eventplus/app/views/front/event/parts/regform.php:296
+#, fuzzy
+msgid "Seconds"
+msgstr "seconden"
+
+#: eventplus/app/views/front/event/parts/regform.php:308
+#: eventplus/app/views/front/event/parts/regform.php:310
+#: eventplus/funx/evrplus_calendar.php:622
+msgid "REGISTER"
+msgstr "AANMELDEN"
+
+#: eventplus/app/views/front/event/parts/regform.php:315
+#: eventplus/funx/evrplus_calendar.php:615
+msgid "MORE INFO"
+msgstr "Meer informatie."
+
+#: eventplus/app/views/front/event/parts/regform.php:355
+#: eventplus/funx/evrplus_calendar.php:606
+#, fuzzy
+msgid "Registration is closed for this event."
+msgstr "Inschrijving is gesloten voor dit evenement."
+
+#: eventplus/app/views/front/event/parts/regform.php:356
+#: eventplus/funx/evrplus_calendar.php:608
+#, fuzzy
+msgid "For more information or questions, please email: "
+msgstr "Voor meer informatie of vragen, stuur een email naar:"
+
+#: eventplus/app/views/front/event/parts/regform.php:374
+#: eventplus/app/views/front/event/parts/regform.php:661
+msgid "I accept the terms and conditions"
+msgstr "Ik accepteer de algemene voorwaarden"
+
+#: eventplus/app/views/front/event/parts/regform.php:404
+msgid "Street/PO Address"
+msgstr "Straat"
+
+#: eventplus/app/views/front/event/parts/regform.php:427
+msgid "Postal/Zip Code"
+msgstr "Postcode"
+
+#: eventplus/app/views/front/event/parts/regform.php:434
+#, fuzzy
+msgid "Company Name"
+msgstr "Bedrijsnaam"
+
+#: eventplus/app/views/front/event/parts/regform.php:435
+#, fuzzy
+msgid "Company Address"
+msgstr "Adres kantoor"
+
+#: eventplus/app/views/front/event/parts/regform.php:436
+#, fuzzy
+msgid "Company City"
+msgstr "Stad bedrijf"
+
+#: eventplus/app/views/front/event/parts/regform.php:437
+#, fuzzy
+msgid "Company State/Province"
+msgstr "Bedrijf staat/provincie"
+
+#: eventplus/app/views/front/event/parts/regform.php:438
+#, fuzzy
+msgid "Company Postal Code"
+msgstr "Postcode bedrijf"
+
+#: eventplus/app/views/front/event/parts/regform.php:439
+#, fuzzy
+msgid "Company Phone"
+msgstr "Telefoon kantoor"
+
+#: eventplus/app/views/front/event/parts/regform.php:469
+msgid "Enter coupon code for discount"
+msgstr "Vul uw couponcode in voor korting"
+
+#: eventplus/app/views/front/event/parts/regform.php:491
+msgid "You must select at least one item!"
+msgstr "U moet minstens één item te selecteren!"
+
+#: eventplus/app/views/front/event/parts/regform.php:572
+#, fuzzy
+msgid "No Fees/Items available for todays date!"
+msgstr "Geen kosten/objecten beschikbaar voor de datum van vandaag!"
+
+#: eventplus/app/views/front/event/parts/regform.php:587
+#, fuzzy
+msgid "Sales Tax"
+msgstr "Omzetbelasting"
+
+#: eventplus/app/views/front/event/parts/regform.php:628
+msgid "No Fees Have Been Setup For This Event!"
+msgstr "Er worden geen kosten in rekening gebracht voor dit evenement"
+
+#: eventplus/app/views/front/event/parts/regform.php:629
+#, fuzzy
+msgid "Registration for this event can not be taken at this time."
+msgstr "Registratie voor dit evenement kan niet op dit moment worden genomen."
+
+#: eventplus/app/views/front/event/parts/regform.php:679
+msgid "Submit"
+msgstr "Meld Aan"
+
+#: eventplus/app/views/front/event/parts/regform.php:680
+#, fuzzy
+msgid "Reset"
+msgstr "Reset"
+
+#: eventplus/app/views/front/shortcode/payment.php:108
+#: eventplus/helpers/payment.php:305 eventplus/payments/paypal.php:1
+#: eventplus/payments/stripe.php:1 eventplus/vendor/paypal.php:1
+msgid "Pay Now"
+msgstr "Betaal nu"
+
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:14
+#, fuzzy
+msgid "Search By Title"
+msgstr "Zoeken op titel"
+
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:89
+#, fuzzy
+msgid "Read more"
+msgstr "Lees meer"
+
+#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:12
+#, fuzzy
+msgid "Time: "
+msgstr "Tijd:"
+
+#: eventplus/functions.php:211 eventplus/functions.php:213
+#: eventplus/functions.php:239
+msgid "Jan"
+msgstr "jan"
+
+#: eventplus/functions.php:211
+msgid "Feb"
+msgstr "februari"
+
+#: eventplus/functions.php:213 eventplus/functions.php:237
+#: eventplus/functions.php:239
+msgid "Dec"
+msgstr "december"
+
+#: eventplus/functions.php:237
+msgid "Nov"
+msgstr "november"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Sun"
+msgstr "Zo"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Mon"
+msgstr "ma"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Tue"
+msgstr "di"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Wed"
+msgstr "Wo"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Thu"
+msgstr "Do"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Fri"
+msgstr "vrij"
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Sat"
+msgstr "Za"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:145
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:107
+msgid "January"
+msgstr "Januari"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:146
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:108
+msgid "February"
+msgstr "Februari"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:147
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:109
+msgid "March"
+msgstr "Maart"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:148
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:110
+msgid "April"
+msgstr "April"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:149
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:111
+msgid "May"
+msgstr "Mag"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:150
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:112
+msgid "June"
+msgstr "Juni"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:151
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:113
+msgid "July"
+msgstr "Juli"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:152
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:114
+msgid "August"
+msgstr "Augustus"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:153
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:115
+msgid "September"
+msgstr "September"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:154
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:116
+msgid "October"
+msgstr "Oktober"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:155
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:117
+msgid "November"
+msgstr "November"
+
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:156
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:118
+msgid "December"
+msgstr "December"
+
+#: eventplus/funx/evrplus_calendar.php:144
+#: eventplus/funx/evrplus_three_cal.php:106
+msgid "Month"
+msgstr "Maand"
+
+#: eventplus/funx/evrplus_calendar.php:157
+#: eventplus/funx/evrplus_three_cal.php:120
+msgid "Year"
+msgstr "Jaar"
+
+#: eventplus/funx/evrplus_calendar.php:184
+#: eventplus/funx/evrplus_three_cal.php:141
+msgid "Go"
+msgstr "Zoek"
+
+#: eventplus/funx/evrplus_calendar.php:377
+msgid "Event Full"
+msgstr "event Volledige"
+
+#: eventplus/funx/evrplus_calendar.php:445
+#: eventplus/funx/evrplus_calendar.php:478
+msgid "read more"
+msgstr "Lees verder"
+
+#: eventplus/funx/evrplus_calendar.php:561
+msgid "Time"
+msgstr "Tijd"
+
+#: eventplus/funx/evrplus_calendar.php:564
+#, fuzzy
+msgid "Tweet"
+msgstr "Tweet"
+
+#: eventplus/funx/evrplus_calendar.php:565
+#, fuzzy
+msgid "Share"
+msgstr "Delen"
+
+#: eventplus/funx/evrplus_calendar.php:619
+#, fuzzy
+msgid "External Registration"
+msgstr "Externe registratie"
+
+#: eventplus/funx/evrplus_calendar.php:743 eventplus/helpers/event.php:100
+msgid "all day"
+msgstr "Gehele dag"
+
+#: eventplus/funx/evrplus_calendar.php:745 eventplus/helpers/event.php:102
+msgid "Between"
+msgstr "tussen de"
+
+#: eventplus/funx/evrplus_calendar.php:756 eventplus/helpers/event.php:114
+msgid "No event till now!"
+msgstr "Geen Evenement tot nu toe!"
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#, fuzzy
+msgid "S"
+msgstr "S"
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#, fuzzy
+msgid "M"
+msgstr "M"
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#, fuzzy
+msgid "T"
+msgstr "D"
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#, fuzzy
+msgid "W"
+msgstr "W"
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#, fuzzy
+msgid "F"
+msgstr "F"
+
+#: eventplus/helpers/admin/menu.php:40
+msgid "Manage Events"
+msgstr "Beheer Evenementen"
+
+#: eventplus/helpers/admin/menu.php:43
+#, fuzzy
+msgid "Event Fees/Tickets"
+msgstr "Kosten/kaartjes voor evenementen"
+
+#: eventplus/helpers/admin/menu.php:44
+msgid "Event Questions"
+msgstr "Vragen over het evenement"
+
+#: eventplus/helpers/admin/menu.php:45
+#, fuzzy
+msgid "Event Attendees"
+msgstr "Festivalgangers"
+
+#: eventplus/helpers/admin/menu.php:65
+#, fuzzy
+msgid "Contact"
+msgstr "Contact"
+
+#: eventplus/helpers/admin/menu.php:67
+#, fuzzy
+msgid "Captcha"
+msgstr "Veiligheidscode"
+
+#: eventplus/helpers/admin/menu.php:68
+#, fuzzy
+msgid "Page Config"
+msgstr "Configuratie pagina"
+
+#: eventplus/helpers/admin/menu.php:69
+#, fuzzy
+msgid "Confirmation"
+msgstr "Bevestiging"
+
+#: eventplus/helpers/admin/menu.php:71
+#, fuzzy
+msgid "Calendar"
+msgstr "Kalender"
+
+#: eventplus/helpers/admin/menu.php:72
+#, fuzzy
+msgid "Tax"
+msgstr "Tax"
+
+#: eventplus/helpers/admin/menu.php:74
+#, fuzzy
+msgid "Done"
+msgstr "Gereed"
+
+#: eventplus/helpers/app.php:98
+#, fuzzy
+msgid "Events Plus Dashboard"
+msgstr "<a href=“admin.php?page=eventsplus/Dashboard.php”><b>Gebeurtenissen Plus Dashboard</b></a>"
+
+#: eventplus/helpers/installer.php:544 eventplus/helpers/installer.php:577
+#: eventplus/helpers/installer.php:662 eventplus/helpers/installer.php:710
+#: eventplus/helpers/installer.php:765 eventplus/helpers/installer.php:810
+#: eventplus/helpers/installer.php:841 eventplus/install.php:544
+#: eventplus/install.php:577 eventplus/install.php:664
+#: eventplus/install.php:704 eventplus/install.php:744
+#: eventplus/install.php:798 eventplus/install.php:843
+#: eventplus/install.php:874
+#, fuzzy
+msgid "Success Updating table - "
+msgstr "Succes Updating tabel-"
+
+#: eventplus/helpers/installer.php:546 eventplus/helpers/installer.php:579
+#: eventplus/helpers/installer.php:664 eventplus/helpers/installer.php:712
+#: eventplus/helpers/installer.php:767 eventplus/helpers/installer.php:812
+#: eventplus/helpers/installer.php:843 eventplus/install.php:546
+#: eventplus/install.php:579 eventplus/install.php:666
+#: eventplus/install.php:706 eventplus/install.php:746
+#: eventplus/install.php:800 eventplus/install.php:845
+#: eventplus/install.php:876
+#, fuzzy
+msgid "Failure Updating table - "
+msgstr "Mislukking Updating tabel-"
+
+#: eventplus/helpers/mail/registration.php:48
+#, fuzzy
+msgid "At this time, all seats for the event have been taken. Your information has been placed on our waiting list.  \n"
+"        The waiting list is on a first come, first serve basis.  \n"
+"        You will be notified by email should a seat become available."
+msgstr "Op dit  moment zijn er geen plaatsen beschikbaar. Uw informatie is toegevoegd aan de wachtlijst. De wachtlijst is op volgorde van binnenkomst. U krijgt een e-mail als er plaatsen beschikbaar komen."
+
+#: eventplus/helpers/payment.php:80 eventplus/helpers/payment.php:553
+#, fuzzy
+msgid "Invalid event - please retry!"
+msgstr "Ongeldige gebeurtenis - gelieve opnieuw te proberen!"
+
+#: eventplus/helpers/payment.php:87 eventplus/helpers/payment.php:560
+#, fuzzy
+msgid "Invalid registration - please retry!"
+msgstr "Ongeldige registratie - gelieve opnieuw te proberen!"
+
+#: eventplus/helpers/payment.php:135 eventplus/helpers/payment.php:617
 msgid "Order details"
 msgstr "Bestel Details"
 
+#: eventplus/helpers/payment.php:142 eventplus/helpers/payment.php:624
+#, fuzzy
+msgid "Event Name:"
+msgstr "Workshopnaam:"
+
+#: eventplus/helpers/payment.php:182 eventplus/helpers/payment.php:531
+#: eventplus/helpers/payment.php:664
+#, fuzzy
+msgid "Sales Tax  "
+msgstr "Omzetbelasting"
+
+#: eventplus/helpers/payment.php:197
+#, fuzzy
+msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site"
+msgstr "Gelieve te selecteren één van de volgende methoden en door te klikken op de button Nu betalen klikt zal u worden genomen om de site van de leverancier van onze betaling"
+
+#: eventplus/helpers/payment.php:201
+msgid "Payment Methods"
+msgstr "Betaalmethoden"
+
+#: eventplus/helpers/payment.php:244
+#, fuzzy
+msgid "Please mail your check to:"
+msgstr "Verstuur uw cheque naar:"
+
+#: eventplus/helpers/payment.php:286
+#, fuzzy
+msgid "Sandbox Mode"
+msgstr "Sandbox Modus"
+
+#: eventplus/helpers/payment.php:395
+#, fuzzy
+msgid "Transaction Id"
+msgstr "Transactie ID"
+
+#: eventplus/helpers/payment.php:509
+#, fuzzy
+msgid "Order details:"
+msgstr "Details bestelling:"
+
+#: eventplus/models/attendees.php:114
+msgid "The attendee has been added."
+msgstr "De bezoeker is toegevoegd."
+
+#: eventplus/models/attendees.php:117 eventplus/models/attendees.php:192
+msgid "There was an error in your submission, please try again. The attendee was not saved!"
+msgstr "Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De bezoeker is niet opgeslagen!"
+
+#: eventplus/models/attendees.php:196
+#, fuzzy
+msgid "Attendee has been updated."
+msgstr "Deelnemer is bijgewerkt."
+
+#: eventplus/models/attendees.php:226
+#, fuzzy
+msgid "Attendee has been deleted."
+msgstr "Deelnemer is verwijderd."
+
+#: eventplus/models/attendees.php:226
+#, fuzzy
+msgid "Attendee couldn't deleted."
+msgstr "Deelnemer kon niet verwijderd."
+
+#: eventplus/models/attendees.php:231
+#, fuzzy
+msgid "All the attendee information has been successfully deleted from the event."
+msgstr "Alle gegevens van de deelnemer is verwijderd van het evenement."
+
+#: eventplus/models/attendees.php:231
+#, fuzzy
+msgid "Attendees couldn't deleted."
+msgstr "Deelnemers kon niet verwijderd."
+
+#: eventplus/models/categories.php:68 eventplus/models/categories.php:108
+#, fuzzy
+msgid "Please fill in category name."
+msgstr "Vul de categorienaam van de."
+
+#: eventplus/models/categories.php:72 eventplus/models/categories.php:112
+#, fuzzy
+msgid "Please fill in category unique id."
+msgstr "Vul unieke id van de categorie."
+
+#: eventplus/models/categories.php:74 eventplus/models/categories.php:115
+#, fuzzy
+msgid "Category unique id already exists."
+msgstr "Categorie unieke-id bestaat al."
+
+#: eventplus/models/categories.php:88
+msgid "The category has been added."
+msgstr "De categorie is toegevoegd."
+
+#: eventplus/models/categories.php:91
+#, fuzzy
+msgid "The category couldn't be added."
+msgstr "De categorie kon niet worden toegevoegd."
+
+#: eventplus/models/categories.php:134
+#, fuzzy
+msgid "The category couldn't updated."
+msgstr "De categorie kon niet bijgewerkt."
+
+#: eventplus/models/categories.php:137
+msgid "The category has been updated."
+msgstr "De categorie is geüpdatet."
+
+#: eventplus/models/categories.php:143
+#, fuzzy
+msgid "The category has been deleted."
+msgstr "De categorie is succesvol verwijderd."
+
+#: eventplus/models/categories.php:143
+#, fuzzy
+msgid "The category couldn't deleted."
+msgstr "De categorie kon niet verwijderd."
+
+#: eventplus/models/events.php:241
+msgid "The event "
+msgstr "Het evenement"
+
+#: eventplus/models/events.php:241
+#, fuzzy
+msgid " has been added."
+msgstr "is toegevoegd."
+
+#: eventplus/models/events.php:253 eventplus/models/events.php:430
+msgid "There was an error in your submission, please try again. The event was not saved!"
+msgstr "Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. Het evenement is niet opgeslagen!"
+
+#: eventplus/models/events.php:433
+msgid "The Event details saved for "
+msgstr "De details van dit evenement zijn opgeslagen voor"
+
+#: eventplus/models/events.php:433
+msgid " has been updated!"
+msgstr "zijn opgeslagen"
+
+#: eventplus/models/events.php:504
+msgid "The event has been deleted."
+msgstr "Het evenement is verwijderd."
+
+#: eventplus/models/events.php:504
+#, fuzzy
+msgid "The event couldn't deleted."
+msgstr "De gebeurtenis kon niet verwijderd."
+
+#: eventplus/models/events.php:573
+#, fuzzy
+msgid "The copy of event "
+msgstr "De kopie van de gebeurtenis"
+
+#: eventplus/models/events.php:573 eventplus/models/events.php:609
+msgid "has been added."
+msgstr "is toegevoegd"
+
+#: eventplus/models/events.php:585
+#, fuzzy
+msgid "The questions have been added."
+msgstr "De vragen zijn toegevoegd."
+
+#: eventplus/models/events.php:609
+msgid "The cost "
+msgstr "De kosten"
+
+#: eventplus/models/events.php:615
+msgid "There was an error in your submission, please try again. The cost was not saved!"
+msgstr "Er is een fout opgetreden in uw toevoeging, probeer het opnieuw. De kosten zijn niet opgeslagen!"
+
+#: eventplus/models/events.php:643
+msgid "There was an error in your submission, please try again. The coupon code changes were not saved!"
+msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw. De veranderingen aan de couponcode zijn niet opgeslagen!"
+
+#: eventplus/models/events.php:646
+#, fuzzy
+msgid "The coupon code information has been updated."
+msgstr "De coupon code-informatie is bijgewerkt."
+
+#: eventplus/models/events/items.php:56
+#, fuzzy
+msgid "The event cost/ticket item has been added."
+msgstr "Het evenement kosten/ticket item is toegevoegd."
+
+#: eventplus/models/events/items.php:59
+msgid "There was an error in your submission, please try again. The event cost/ticket item was not saved!"
+msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw. Het kosten/ticket item van dit evenement is niet opgeslagen!"
+
+#: eventplus/models/events/items.php:102
+msgid "The event cost/ticket item has been updated.  You will now be taken back to the Event Pricing Page"
+msgstr "Het evenement kosten/ticket item is geüpdatet. U gaat nu terug naar de prijs pagina van dit evenement"
+
+#: eventplus/models/events/items.php:105
+msgid "There was an error in your submission, please try again. The event cost/ticket item was not updated!"
+msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw. De kosten/ticket item van dit evenement is niet geüpdatet."
+
+#: eventplus/models/events/items.php:128
+#, fuzzy
+msgid "Item has been deleted."
+msgstr "werd verwijderd"
+
+#: eventplus/models/events/items.php:128
+#, fuzzy
+msgid "Item couldn't deleted."
+msgstr "Object kon niet worden verwijderd."
+
+#: eventplus/models/payments.php:20
+#, fuzzy
+msgid "Authorize.net"
+msgstr "Authorize.net"
+
+#: eventplus/models/payments.php:21
+#, fuzzy
+msgid "PayPal"
+msgstr "PayPal"
+
+#: eventplus/models/payments.php:22
+#, fuzzy
+msgid "Stripe"
+msgstr "Stripe"
+
+#: eventplus/models/payments.php:23
+#, fuzzy
+msgid "Payment Offline"
+msgstr "Betaalwijze offline"
+
+#: eventplus/models/payments.php:167
+#, fuzzy
+msgid "To make payment or view your payment information go to"
+msgstr "Om de betaling of uw betalingsgegevens bekijken ga naar"
+
+#: eventplus/models/payments.php:229
+#, fuzzy
+msgid "The payment has now been added and Payment notification has been sent. "
+msgstr "De betaling is nu toegevoegd en betaalbericht heeft verstuurd."
+
+#: eventplus/models/payments.php:231
+#, fuzzy
+msgid "The payment has now been added."
+msgstr "De betaling is toegevoegd."
+
+#: eventplus/models/payments.php:235
+msgid "There was an error in your submission, please try again. The payment was not saved!"
+msgstr "Er heeft zich een fout voorgedaan in uw aanmelding, probeer het opnieuw. De betaling is niet verwerkt."
+
+#: eventplus/models/payments.php:314
+msgid "There was an error in your submission, please try again. The payment was not updated!"
+msgstr "Er is een fout opgetreden in uw aanmelding, probeer het opnieuw. De betaling is niet opgeslagen!"
+
+#: eventplus/models/payments.php:321
+msgid "The payment has been updated."
+msgstr "De betaling is bijgewerkt."
+
+#: eventplus/models/payments.php:388
+msgid "The payment has been successfully deleted from the attendee."
+msgstr "De betaling is succesvol verwijderd door de bezoeker."
+
+#: eventplus/models/payments.php:388
+#, fuzzy
+msgid "Payment entry couldn't deleted."
+msgstr "Betalingspost kon niet verwijderd."
+
+#: eventplus/models/payments.php:415
+#, fuzzy
+msgid "A balance is outstanding on your event registration fees.  Please pay to complete your registration process."
+msgstr "Er staat nog een bedrag open op de inschrijvingskosten.  Betaal eerst om het registratieproces te voltooien."
+
+#: eventplus/models/payments.php:417
+#, fuzzy
+msgid "Payment Reminder"
+msgstr "Betalingsherinnering"
+
+#: eventplus/models/payments.php:449
+#, fuzzy
+msgid "Payment Reminder Notification sent to"
+msgstr "Betalingsherinnering verzonden aan"
+
+#: eventplus/models/payments.php:460
+#, fuzzy
+msgid "No pending payments reminders to send"
+msgstr "No in afwachting van betalingen herinneringen te sturen"
+
+#: eventplus/models/questions.php:43
+msgid "The question has been added."
+msgstr "De vraag is toegevoegd."
+
+#: eventplus/models/questions.php:46
+msgid "There was an error in your submission, please try again. The question was not saved!"
+msgstr "Er is een fout opgetreden in uw aanvulling, probeer het opnieuw. De vraag is niet opgeslagen!"
+
+#: eventplus/models/questions.php:64
+#, fuzzy
+msgid "The question has been updated."
+msgstr "De vraag is bijgewerkt."
+
+#: eventplus/models/questions.php:88
+#, fuzzy
+msgid "Question has been deleted."
+msgstr "De vraag is verwijderd."
+
+#: eventplus/models/questions.php:88
+#, fuzzy
+msgid "Question couldn't deleted."
+msgstr "Vraag kon niet verwijderd."
+
+#: eventplus/models/settings.php:112
+#, fuzzy
+msgid "Configuration settings saved"
+msgstr "Configuratie-instellingen opgeslagen"
+
+#: eventplus/models/settings.php:115
+#, fuzzy
+msgid "There was an error in your submission, please try again. The configuration data was not updated!"
+msgstr "Er heeft zich een fout voorgedaan, probeer het opnieuw. De instellingen zijn niet opgeslagen!"
+
+#: eventplus/payments.php:1
 msgid "PayPal Sandbox Mode Is Active"
 msgstr "PayPal Sandbox mode actief"
 
-msgid "Sandbox"
-msgstr "sandbox"
+#: eventplus/payments.php:1
+#, fuzzy
+msgid "Payments will not be processed"
+msgstr "Betalingen zullen niet verwerkt worden"
 
-msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site."
-msgstr "Selecteer een van de volgende methoden en door te klikken op Nu betalen knop wordt u naar de site van onze betaling leverancier."
+#: eventplus/vendor/paypal.php:1
+#, fuzzy
+msgid "Pay using PayPal"
+msgstr "Betalen met PayPal"
 
+#: eventplus/vendor/paypal.php:1
+#, fuzzy
+msgid "Pay using your credit/debit card"
+msgstr "Betaal met uw credit/debit card"
 
-msgid "read more"
-msgstr "Lees verder"
+#: eventplus/vendor/paypal.php:1
+#, fuzzy
+msgid "Pay via Stripe"
+msgstr "Betalen via Stripe"
+
+#: public/authorize/payment.php:44 public/stripe/payment.php:42
+msgid "Invalid request - Payment couldn't be processed."
+msgstr "Ongeldig verzoek - Betaling kan niet worden verwerkt."
+
+#: public/paypal/1pn.php:37 public/paypal/re7urn.php:44
+#, fuzzy
+msgid "Already processed"
+msgstr "Al verwerkt"
+
+#: public/paypal/re7urn.php:79
+#, fuzzy
+msgid "Payment already processed"
+msgstr "Betaling reeds verwerkt"
+
