@@ -53,7 +53,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                     <hr />
                                     <br />
                                     <ul>
-                                         <?php /*<li>
+                                        <li>
                                             <div class="pass1"> 
                                                 <label class="er_ticket_info" >
                                                     <?php _e('What type of Item/Cost is this?', 'evrplus_language'); ?>
@@ -72,9 +72,9 @@ $item_custom_cur = $row['item_custom_cur'];
                                                         <option value="<?php echo $optionKey; ?>"<?php echo ($row['item_cat'] == $optionKey) ? " selected='selected'" : ""; ?>><?php echo $optionKey; ?> - <?php echo $itemOption; ?></option>                            				
                                                     <?php endforeach; ?>           
                                                 </select>
-                                             * </div>
+                                            </div>
                                             
-                                        </li> */ ?>
+                                        </li> 
                                         <li>
                                             <div class="pass1"><label class="er_ticket_info" ><?php _e('Name of Cost/Item', 'evrplus_language'); ?></label></div>
                                             <div class="pass1"><p title="Use a concise but descriptive name. Limit is 69 Characters."></p></div>
