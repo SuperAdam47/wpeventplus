@@ -117,6 +117,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_action('wp_dashboard_setup', $this->oApp, 'dashboardWidget');
         $this->add_filter('plugin_action_links', $this, 'actionLinks', 10, 2);
         $this->add_action('admin_footer', $this->oApp, 'insert_footer_wpse_51023');
+        $this->add_action('admin_notices', $this->oApp, 'eventsplus_registration_setup_notice');
+         
+         
     }
 
     function initFront() {
@@ -141,6 +144,10 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
                 return $eventRow['event_name'];
             }
         }
+        
+        
+                        //$isValid = EventPlus_Helpers_Funx::isValidRegistrationPage();
+                        
     }
 
     function eventplus_confirmation_registration() {

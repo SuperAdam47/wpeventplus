@@ -175,7 +175,59 @@ class EventPlus_Helpers_Funx {
     }
 
     static function getTimestamp($datetime_string) {
-         return strtotime($datetime_string);
+        return strtotime($datetime_string);
+    }
+
+    static function getRegistrationPages() {
+
+        $args = array('sort_order' => 'ASC', 'sort_column' => 'post_title', 'hierarchical' => 1, 'exclude' => '', 'include' => '', 'meta_key' => '', 'meta_value' => '', 'authors' => '', 'child_of' => 0, 'parent' => -1, 'exclude_tree' => '', 'number' => '', 'offset' => 0, 'post_type' => 'page', 'post_status' => 'trash');
+        $trash_pages = get_pages($args);
+        $list_trash = '';
+        $exclude = array();
+        foreach ($trash_pages as $p) {
+            $exclude[] = $p->ID;
+        }
+
+        $defaults = array(
+            'child_of' => 0,
+            'sort_order' => 'ASC',
+            'sort_column' => 'post_title',
+            'hierarchical' => 1,
+            'exclude' => $exclude,
+            'include' => array(),
+        );
+        $pages = get_pages($defaults);
+
+        $pObjets = array();
+
+        foreach ($pages as $page) {
+            if (preg_match('{EVRREGIS}', $page->post_content)) {
+                $pObjets[] = $page;
+            }
+        }
+
+        return $pObjets;
+    }
+
+    static function getRegistrationPage() {
+
+        $evrplus_page_id = EventPlus_Models_Settings::getSettings('evrplus_page_id');
+
+        return get_post($evrplus_page_id);
+    }
+
+    static function isValidRegistrationPage() {
+
+        $page = self::getRegistrationPage();
+
+        $is_valid = false;
+        if (is_object($page)) {
+            if (preg_match('{EVRREGIS}', $page->post_content)) {
+                $is_valid = true;
+            }
+        }
+        
+        return $is_valid;
     }
 
 }

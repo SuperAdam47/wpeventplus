@@ -2,9 +2,7 @@
 
 class eplus_admin_widgets_controller extends EventPlus_Abstract_Controller {
 
-    function index() {
-        
-    }
+    function index() {}
 
     function action_flash_messages() {
         $response = $this->oView->View('admin/widgets/flash_messages', array(
@@ -26,8 +24,9 @@ class eplus_admin_widgets_controller extends EventPlus_Abstract_Controller {
  
         $settings_link = "<a href='".$this->oView->adminUrl('admin_settings')."'>".__('Settings', 'evrplus_language')."</a>";
         $events_link = "<a href='".$this->oView->adminUrl('admin_events')."'>".__('Events', 'evrplus_language')."</a>";
+        $docs_link = "<a href='http://wpeventsplus.com/documentation/'>".__('Documentation', 'evrplus_language')."</a>";
 
-        array_unshift($links, $settings_link, $events_link); // before other links
+        array_unshift($links, $settings_link, $events_link, $docs_link); // before other links
 
         $this->setResponse($links);
     }

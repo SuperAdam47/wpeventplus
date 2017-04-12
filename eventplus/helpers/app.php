@@ -28,8 +28,8 @@ class EventPlus_Helpers_App {
                     $sql = "ALTER TABLE `" . get_option('evr_event') . "` ADD `disable_event_reg` ENUM('Y','N') NOT NULL DEFAULT 'N' AFTER `event_name`;";
                     $q = $wpdb->query($sql);
                 }
-                
-                $wpdb->query('ALTER TABLE '. get_option('evr_payment').' CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
+
+                $wpdb->query('ALTER TABLE ' . get_option('evr_payment') . ' CHANGE `txn_id` `txn_id` VARCHAR(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;');
             }
 
             EventPlus_Helpers_Funx::updateBuildVersion($currentBuildVersion);
@@ -172,7 +172,16 @@ class EventPlus_Helpers_App {
             }
         </script>
         <?php
+    }
 
+    function eventsplus_registration_setup_notice() {
+        if (EventPlus_Helpers_Funx::isValidRegistrationPage() == false) {
+            ?>
+            <div class="notice notice-error">
+                <p><?php _e('Warning: {EVRREGIS} shortcode is missing. Please configure page and paste the shortcode. If you fail to add this shortcode non of your event links will work as <a href="http://wpeventsplus.com/documentation/knowledge-base/registration-page-shortcode/">explained in this article</a>.', 'evrplus_language'); ?></p>
+            </div>
+            <?php
+        }
     }
 
 }

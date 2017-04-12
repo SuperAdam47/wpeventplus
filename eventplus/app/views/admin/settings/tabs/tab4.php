@@ -20,31 +20,36 @@
                         <?php _e('Main registration page', 'evrplus_language'); ?>
                     </label>
                     <div class="styled cs1"> 
-                        <!--                            <select name="evrplus_page_id">
-                        <option value="0">
-                        <?php //_e ('Main page','evrplus_language');   ?>
-                        </option></select>-->
+
                         <?php
-                        $args = array('sort_order' => 'ASC', 'sort_column' => 'post_title', 'hierarchical' => 1, 'exclude' => '', 'include' => '', 'meta_key' => '', 'meta_value' => '', 'authors' => '', 'child_of' => 0, 'parent' => -1, 'exclude_tree' => '', 'number' => '', 'offset' => 0, 'post_type' => 'page', 'post_status' => 'trash');
-                        $trash_pages = get_pages($args);
-                        $list_trash = '';
-                        foreach ($trash_pages as $p) {
-                            $list_trash .= $p->ID . ',';
-                        } $list_trash = rtrim($list_trash, ",");
-                        $args1 = array('exclude' => $list_trash, 'selected' => $company_options['evrplus_page_id'], 'name' => 'evrplus_page_id');
-                        wp_dropdown_pages($args1);       //parent_dropdown ($default=$company_options['evrplus_page_id']); 
+                        $pages = EventPlus_Helpers_Funx::getRegistrationPages();
+
+                        $outputDDL = "<select name='evrplus_page_id" . $class . " id='evrplus_page_id'>\n";
+
+                        if (count($pages)) {
+                            foreach ($pages as $p => $pageObj) {
+                                $selectedStr = '';
+                                if ($company_options['evrplus_page_id'] == $pageObj->ID) {
+                                    $selectedStr = ' selected="selected"';
+                                }
+                                $outputDDL .= "\t<option value=\"" . esc_attr($pageObj->ID) . '"' . $selectedStr . '>[ID: ' . $pageObj->ID . '] ' . $pageObj->post_title . "</option>\n";
+                            }
+                        } else {
+                            $outputDDL .= "\t<option>Configure page with {EVRREGIS} shortcode.</option>\n";
+                        }
+                        $outputDDL .= "</select>\n";
+
+                        echo $outputDDL;
                         ?>
                     </div>
                     <p class="cs2" title="<?php _e('This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden from navigation, if desired', 'evrplus_language'); ?>"></p>
-                    <!--  <a class="ev_reg-fancylink" href="#registration_page_info">
-                      <img src="<?php /* echo EVR_PLUGINFULLURL */ ?>/images/question-frame.png" width="16" height="16" /></a><br />
-                        <font  size="-2">(This page should contain the <strong>{EVRREGIS}</strong> filter. This page can be hidden from navigation, if desired.)</font> -->
-                    <p class="pay">
+                    
+                    <?php /* <p class="pay">
                         <?php _e('Return URL for Payments', 'evrplus_language'); ?>
                     <div class="styled cs1"> 
                         <!--  <select name="return_url">
                         <option value="0"><?php _e('Main page', 'evrplus_language'); ?></option>-->
-                        <?php //parent_dropdown ($default=$company_options['return_url']);   ?>
+                        <?php //parent_dropdown ($default=$company_options['return_url']);     ?>
                         </select>
                         <?php
                         $args2 = array('exclude' => $list_trash, 'selected' => $company_options['return_url'], 'name' => 'return_url');
@@ -52,20 +57,14 @@
                         ?>
                     </div>
                     <p class="cs2" title="<?php _e('This page should be hidden and will contain the [eventsplus_payment] payment shortcode.&nbsp; This page should be hidden from navigation', 'evrplus_language'); ?>"></p>
-                    <!--   <a class="ev_reg-fancylink" href="#payment_page_info"><img src="<?php //echo EVR_PLUGINFULLURL           ?>/images/question-frame.png" width="16" height="16" /></a><br />
+                    <!--   <a class="ev_reg-fancylink" href="#payment_page_info"><img src="<?php //echo EVR_PLUGINFULLURL              ?>/images/question-frame.png" width="16" height="16" /></a><br />
                         <font  size="-2">(This page should be hidden and will contain the EVR_PAYMENT payment shortcode. This page should be hidden from navigation.)</font>  -->
-                    </p>
+                    </p>*/?>
                     <div id="registration_page_info" style="display:none">
                         <h2>Main Events Page</h2>
                         <p>This is the page that displays your events.</p>
                         <p>Additionally, all registration process pages will use this page as well.</p>
                         <p>This page should contain the <strong>{EVRREGIS}</strong> shortcode.</p>
-                    </div>
-                    <div id="payment_page_info" style="display:none">
-                        <h2>Return Payment Page</h2>
-                        <p>This is the page that attendees return to view/make payments.</p>
-                        <p>This is the page that PayPal IPN uses to post payments.</p>
-                        <p>This page should contain the <strong>[EVR_PAYMENT]</strong> shortcode.</p>
                     </div>
                 </div>
                 <div class="padding">
