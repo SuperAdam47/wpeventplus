@@ -45,7 +45,6 @@ $item_custom_cur = $row['item_custom_cur'];
                                     <input type="hidden" name="event_id" value="<?php echo $event_id; ?>"/>
                                     <input type="hidden" name="item_id" value="<?php echo $item_id; ?>"/>
                                     <input type="hidden" name="event_end" value="<?php echo $end_date; ?>"/>
-                                      <input type="hidden" name="item_cat" value='REG' />
                                     <h3><?php
                                         echo $form_heading . ' - ';
                                         echo stripslashes($event_name);
