@@ -654,8 +654,9 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $sql = "SELECT * FROM " . $this->_table . " "
                 . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() "
-                . " ORDER BY str_to_date(start_date, '%Y-%m-%e') " . $orderby;
-
+                . " ORDER BY DATE(start_date) " . $orderby;
+        
+        
         return $this->getWpDb()->get_results($sql);
     }
 

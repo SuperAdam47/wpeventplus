@@ -222,7 +222,7 @@ class EventPlus_Helpers_Funx {
 
         $is_valid = false;
         if (is_object($page)) {
-            if (preg_match('{EVRREGIS}', $page->post_content)) {
+            if (strstr($page->post_content,'{EVRREGIS}')) {
                 $is_valid = true;
             }
         }

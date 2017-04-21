@@ -106,11 +106,11 @@ if (is_object($oEvent)) {
                         </button>
                         <ul class="dropdown-menu pull-right">
                             <?php if ($payment_status != 'success'): ?>
-                                <li class="edit"><a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
+                                <li class="edit"><a href="<?php echo $this->adminUrl('admin_attendees/edit', array('event_id' => $attendee->event_id, 'attendee_id' => $attendee->id)); ?>"><?php _e('Edit', 'evrplus_language'); ?></a></li>
                             <?php endif; ?>
-                            <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>"><?php _e('View', 'evrplus_language'); ?></a></li>
+                            <li class="attendees"><a href="<?php echo $this->adminUrl('admin_attendees/details', array('event_id' => $attendee->event_id, 'attendee_id' => $attendee->id)); ?>"><?php _e('View', 'evrplus_language'); ?></a></li>
 
-                            <li class="delete"><a href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $oEvent->id, 'attendee_id' => $attendee->id)); ?>" 
+                            <li class="delete"><a href="<?php echo $this->adminUrl('admin_attendees/delete', array('event_id' => $attendee->event_id, 'attendee_id' => $attendee->id)); ?>" 
                                                   onclick="return confirm('Are you sure you want to delete attendee <?php echo $attendee->fname . " " . $attendee->lname; ?>?')" id="delete_event-<?php echo $event_id ?>" onclick="return confirm('<?php _e('Are you sure you want to delete', 'evrplus_language'); ?> <?php echo $event_name ?>?')"><?php _e('Delete', 'evrplus_language'); ?></a></li>
                         </ul>
                     </div>
