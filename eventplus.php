@@ -2,7 +2,7 @@
 
 /** Plugin Name: WP EventsPlus
  * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
- * Version: 2.2.5
+ * Version: 2.2.6
  * Author: wpeventsplus.com
  * Author URI: http://wpeventsplus.com/
  * License: GPL2
@@ -29,7 +29,6 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     protected $_plugin_title = 'Events+';
     protected $_build_version = '6.00.33';
     protected $_plugin_version = '2.0.6';
-
     protected $_plugin_slug = 'eventplus';
     protected $oApp = null;
 
@@ -118,12 +117,11 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_filter('plugin_action_links', $this, 'actionLinks', 10, 2);
         $this->add_action('admin_footer', $this->oApp, 'insert_footer_wpse_51023');
         $this->add_action('admin_notices', $this->oApp, 'eventsplus_registration_setup_notice');
-         
-         
     }
 
     function initFront() {
         $this->add_filter('pre_get_document_title', $this, 'filterMetaTitle');
+        $this->add_action('wp_head', $this, 'event_social_meta', 9);
         $this->add_action('wp_head', $this, 'pluginInfo');
         $this->add_action('init', $this->oApp, 'frontInit');
         $this->add_action('template_redirect', $this, 'eventplus_confirmation_registration');
@@ -144,10 +142,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
                 return $eventRow['event_name'];
             }
         }
-        
-        
-                        //$isValid = EventPlus_Helpers_Funx::isValidRegistrationPage();
-                        
+
+
+        //$isValid = EventPlus_Helpers_Funx::isValidRegistrationPage();
     }
 
     function eventplus_confirmation_registration() {
@@ -174,6 +171,50 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     function pluginInfo() {
         echo '<!--WPEventPlus ' . $this->_plugin_version . '-->';
+    }
+
+    function event_social_meta() {
+
+        if (!is_singular()) {
+            return;
+        }
+
+        if (isset($_GET['event_id'])) {
+
+            if (intval($_GET['event_id']) > 0) {
+                $oEvents = new EventPlus_Models_Events();
+                $eventRow = $oEvents->getRow((int) $_GET['event_id']);
+
+                if ($eventRow['id'] > 0) {
+
+                    echo '<meta property="og:title" content="' . esc_attr($eventRow['event_name']) . '"/>';
+
+                    $event_desc = stripslashes($eventRow['event_desc']);
+                    $content = strip_tags(stripslashes($event_desc));
+                    $endChar = '';
+                    $character_limit = 80;
+                    if (strlen($content) > $character_limit) {
+                        $endChar = '...';
+                    }
+                    $content = substr($content, 0, $character_limit) . $endChar;
+                    echo '<meta property="og:description" content="' . $content . '"/>';
+
+                    $url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $eventRow['id']), get_permalink(get_page_by_path('evrplus_registration')));
+                    echo '<meta property="og:url" content="' . $url . '"/>';
+
+                    if ($eventRow['header_image'] != '') {
+                        echo '<meta property="og:image" content="' . $eventRow['header_image'] . '"/>';
+                    }
+
+                    echo'<meta name="twitter:card" content="summary" />';
+                    echo '<meta property="twitter:title" content="' . esc_attr($eventRow['event_name']) . '"/>';
+                    echo '<meta property="twitter:description" content="' . $content . '"/>';
+                    if ($eventRow['header_image'] != '') {
+                        echo '<meta property="twitter:image" content="' . $eventRow['header_image'] . '"/>';
+                    }
+                }
+            }
+        }
     }
 
     function actionLinks($links, $file) {
