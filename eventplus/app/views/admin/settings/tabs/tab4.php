@@ -24,7 +24,7 @@
                         <?php
                         $pages = EventPlus_Helpers_Funx::getRegistrationPages();
 
-                        $outputDDL = "<select name='evrplus_page_id" . $class . " id='evrplus_page_id'>\n";
+                        $outputDDL = "<select name='evrplus_page_id' id='evrplus_page_id' " . $class . ">\n";
 
                         if (count($pages)) {
                             foreach ($pages as $p => $pageObj) {
