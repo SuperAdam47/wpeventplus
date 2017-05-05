@@ -54,6 +54,11 @@ table td.even {
     background-color: #F8F8F8;
 }
 
+table.calendar-table {
+ overflow: scroll;
+ display: block;
+}
+
 /**/
 /*End Style for Event List Table Layout */
 /**/
