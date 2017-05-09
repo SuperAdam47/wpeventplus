@@ -12,8 +12,8 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span class="progress-bar progress-bar-success green-sharp" style="width: 76%;">
-                        <span class="sr-only">76% <?php _e('progress', 'evrplus_language'); ?></span>
+                    <span class="progress-bar progress-bar-success green-sharp" style="width: 0%;">
+                        <span class="sr-only">0% <?php _e('progress', 'evrplus_language'); ?></span>
                     </span>
                 </div>
                 <div class="status">
@@ -21,7 +21,7 @@
                         <?php _e('progress', 'evrplus_language'); ?> 
                     </div>
                     <div class="status-number">
-                        76%
+                        0%
                     </div>
                 </div>
             </div>
@@ -40,8 +40,8 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span class="progress-bar progress-bar-success red-haze" style="width: 85%;">
-                        <span class="sr-only">85% <?php _e('change', 'evrplus_language'); ?></span>
+                    <span class="progress-bar progress-bar-success red-haze" style="width: 0%;">
+                        <span class="sr-only">0% <?php _e('change', 'evrplus_language'); ?></span>
                     </span>
                 </div>
                 <div class="status">
@@ -49,7 +49,7 @@
                         <?php _e('change', 'evrplus_language'); ?>
                     </div>
                     <div class="status-number">
-                        85%
+                        0%
                     </div>
                 </div>
             </div>
@@ -68,8 +68,8 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span class="progress-bar progress-bar-success blue-sharp" style="width: 45%;">
-                        <span class="sr-only">45% <?php _e('grow', 'evrplus_language'); ?></span>
+                    <span class="progress-bar progress-bar-success blue-sharp" style="width: 0%;">
+                        <span class="sr-only">0% <?php _e('grow', 'evrplus_language'); ?></span>
                     </span>
                 </div>
                 <div class="status">
@@ -77,7 +77,7 @@
                         <?php _e('grow', 'evrplus_language'); ?>
                     </div>
                     <div class="status-number">
-                        45%
+                        0%
                     </div>
                 </div>
             </div>
@@ -96,8 +96,8 @@
             </div>
             <div class="progress-info">
                 <div class="progress">
-                    <span class="progress-bar progress-bar-success purple-soft" style="width: 57%;">
-                        <span class="sr-only">56% <?php _e('change', 'evrplus_language'); ?></span>
+                    <span class="progress-bar progress-bar-success purple-soft" style="width: 0%;">
+                        <span class="sr-only">0% <?php _e('change', 'evrplus_language'); ?></span>
                     </span>
                 </div>
                 <div class="status">
@@ -105,7 +105,7 @@
                         <?php _e('change', 'evrplus_language'); ?>
                     </div>
                     <div class="status-number">
-                        57%
+                        0%
                     </div>
                 </div>
             </div>
