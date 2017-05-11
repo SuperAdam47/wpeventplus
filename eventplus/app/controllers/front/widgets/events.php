@@ -39,34 +39,35 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
         $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() $category_query ORDER BY str_to_date(start_date, '%Y-%m-%e') " . $orderby . " LIMIT 0," . $record_limit;
         $rows = $wpdb->get_results($sql);
 
+        $codeToReturn = "";
+
         if ($rows) {
             $count = 1;
             foreach ($rows as $event) {
-                if ($record_template == '') {
-                    $codeToReturn .= '<div class="i8em">
-            <div class="col-md-4 col-sm-3 col-xs-4 t7umb">
-                <a href="{EVENT_URL}"><img src="{EVENT_THUMBNAIL}" alt="{EVENT_NAME}"></a>
-            </div>
-            <div class="col-md-8 col-sm-9 col-xs-8">
-                <h2 class="ti8le"><a href="{EVENT_URL}">{EVENT_NAME}</a></a></h2>
-                <div class="me8a">
-                    <span>
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                        {EVENT_DATE_START}
-                    </span>
-                    <span>
-                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                        {EVENT_TIME_START}
-                    </span>
-                </div>
-                <p class="d3sc">{EVENT_DESC}</p>
-            </div>
-            <div class="clearfix"></div>
-        </div>';
-                } else {
-                    $codeToReturn .= $record_template;
-                }
-
+            	if ($record_template == '') {
+            		$codeToReturn .= '<div class="i8em">
+	            		<div class="col-md-4 col-sm-3 col-xs-4 t7umb">
+	            			<a href="{EVENT_URL}"><img src="{EVENT_THUMBNAIL}" alt="{EVENT_NAME}"></a>
+	            		</div>
+	            		<div class="col-md-8 col-sm-9 col-xs-8">
+	            			<h2 class="ti8le"><a href="{EVENT_URL}">{EVENT_NAME}</a></a></h2>
+	            			<div class="me8a">
+	            				<span>
+	            					<i class="fa fa-calendar" aria-hidden="true"></i>
+	            					{EVENT_DATE_START}
+	            				</span>
+	            				<span>
+	            					<i class="fa fa-clock-o" aria-hidden="true"></i>
+	            					{EVENT_TIME_START}
+	            				</span>
+	            			</div>
+	            			<p class="d3sc">{EVENT_DESC}</p>
+	            		</div>
+	            		<div class="clearfix"></div>
+	            	</div>';
+	            } else {
+	            	$codeToReturn .= $record_template;
+	            }
 
                 $post_id = (int) $company_options['evrplus_page_id'];
                 $permaLink = get_permalink(get_page_by_path('evrplus_registration'));
@@ -75,7 +76,6 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 }
 
                 $event_url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), $permaLink);
-
 
                 $event_name = stripslashes($event->event_name);
                 $event_desc = stripslashes($event->event_desc);
@@ -88,6 +88,24 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 
                 if (strlen($desc) > $event_desc_count) {
                     $desc = substr($desc, 0, $event_desc_count) . '...';
+                }
+
+                $opt = EventPlus_Models_Settings::getSettings();
+
+                if (isset($opt['date_format']) && $opt['date_format'] == 'eur') {
+                    $date_start = date('j M Y', strtotime($event->start_date));
+                    $date_end = date('j M Y', strtotime($event->end_date));
+                } else {
+                    $date_start = $event->start_date;
+                    $date_end = $event->end_date;
+                }
+
+                if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {
+                    $time_start = date('H:i', strtotime($event->start_time));
+                    $time_end = date('H:i', strtotime($event->end_time));
+                } else {
+                    $time_start = $event->start_time;
+                    $time_end = $event->end_time;
                 }
 
                 $codeToReturn = str_replace("{EVENT_DESC}", html_entity_decode($desc), $codeToReturn);
@@ -103,8 +121,8 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 $codeToReturn = str_replace("{EVENT_DAY_START_NAME}", date("l", strtotime($event->start_date)), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_DAY_START_NAME_3}", date("D", strtotime($event->start_date)), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_YEAR_START}", $event->start_year, $codeToReturn);
-                $codeToReturn = str_replace("{EVENT_TIME_START}", $event->start_time, $codeToReturn);
-                $codeToReturn = str_replace("{EVENT_DATE_START}", $event->start_date, $codeToReturn);
+                $codeToReturn = str_replace("{EVENT_TIME_START}", $time_start, $codeToReturn);
+                $codeToReturn = str_replace("{EVENT_DATE_START}", $date_start, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_MONTH_END_NUMBER}", $event->end_month, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_MONTH_START_NAME}", date("F", strtotime($event->end_date)), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_MONTH_END_NAME_3}", date("M", strtotime($event->end_date)), $codeToReturn);
@@ -112,8 +130,8 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
                 $codeToReturn = str_replace("{EVENT_DAY_END_NAME}", date("l", strtotime($event->start_date)), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_DAY_END_NAME_3}", date("D", strtotime($event->start_date)), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_YEAR_END}", $event->end_year, $codeToReturn);
-                $codeToReturn = str_replace("{EVENT_DATE_END}", $event->end_date, $codeToReturn);
-                $codeToReturn = str_replace("{EVENT_TIME_END}", $event->end_time, $codeToReturn);
+                $codeToReturn = str_replace("{EVENT_DATE_END}", $date_end, $codeToReturn);
+                $codeToReturn = str_replace("{EVENT_TIME_END}", $time_end, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_AVAIL_SPOTS}", $event->reg_limit, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_DESC1}", substr(stripslashes($event->event_desc), 0, 24), $codeToReturn);
 
