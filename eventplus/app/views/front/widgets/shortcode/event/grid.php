@@ -70,7 +70,7 @@ if (count($rows)):
                         </div>
 
                         <div class="media-box-content" style="background-color: #f5f5f5;">
-                            <div class="media-box-title"><?php echo $event->event_name; ?></div>
+                            <div class="media-box-title"><?php echo stripslashes($event->event_name); ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">

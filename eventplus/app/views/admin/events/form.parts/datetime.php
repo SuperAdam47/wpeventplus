@@ -55,7 +55,7 @@
                         }
                         //else {echo '<option value="no">No</option>';}                       
                         ?></select></p>
-                <label for="infinate_event_1"><input style="display:inline-block !important;" type="radio" id="infinate_event_1" <?php if ($infinate_event == 'y') echo 'checked'; ?> class="infinate_event" value="yes" name="infinate_event" disabled/> <?php _e('Yes') ?></label>
+                <label for="infinate_event_1"><input style="display:inline-block !important;" type="radio" id="infinate_event_1" <?php if ($infinate_event == 'yes') echo 'checked'; ?> class="infinate_event" value="yes" name="infinate_event" disabled/> <?php _e('Yes') ?></label>
                 <p style="clear: both; display: block; margin-top: 10px;"><span style="display: block;"><?php _e('Will this event run indefinitely?') ?></span>
                     <label for="infinate_event_2"><input style="display:inline-block !important;" type="radio" id="infinate_event_2" <?php if ($infinate_event == 'no') echo 'checked'; ?> class="infinate_event" value="no" name="infinate_event" disabled/> <?php _e('No') ?></label>
                 </p>
