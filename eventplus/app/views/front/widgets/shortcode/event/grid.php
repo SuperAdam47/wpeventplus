@@ -5,8 +5,6 @@ extract($invoke_params);
 if (count($rows)):
     ?>
 
-
-
     <div class="grid-section">
         <div class="content grid-container">
             <?php if ($cats): ?>
@@ -60,8 +58,7 @@ if (count($rows)):
                         $defaultImage = $this->assetUrl('images/calendar-icon.png');
                         ?>
                         <div class="media-box-image">
-                            <div data-thumbnail="<?php echo ($event->image_link) ? $event->image_link : $defaultImage; ?>">
-                            </div>
+                            <div data-thumbnail="<?php echo ($event->image_link) ? $event->image_link : $defaultImage; ?>" data-width="240" data-height="151"></div>
                             <div class="thumbnail-overlay">
                                 <a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">
                                     <i class="fa fa-link"></i>
@@ -70,7 +67,7 @@ if (count($rows)):
                         </div>
 
                         <div class="media-box-content" style="background-color: #f5f5f5;">
-                            <div class="media-box-title"><?php echo $event->event_name; ?></div>
+                            <div class="media-box-title"><?php echo stripslashes($event->event_name); ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
