@@ -144,7 +144,20 @@ $rows = $wpdb->get_results($sql);
                     $parms['recurr'] = $curr;
                 }
 
-                $codeToReturn = str_replace("{EVENT_URL}", add_query_arg($parms, get_permalink(get_page_by_path('evrplus_registration'))), $codeToReturn);
+                echo "<pre>";
+                print_r($event);
+                echo "</pre>";
+
+                if( isset($event->outside_reg) && $event->outside_reg == 'Y' ) {
+                    $permaLink = !empty( $event->external_site ) ? $event->external_site : get_permalink( get_page_by_path('evrplus_registration') );
+                } else {
+                    $permaLink = get_permalink(get_page_by_path('evrplus_registration'));
+                    if ($post_id > 0) {
+                        $permaLink = get_permalink( get_page_by_path('evrplus_registration') );
+                    }
+                }
+
+                $codeToReturn = str_replace("{EVENT_URL}", add_query_arg($parms, $permaLink), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_ID}", $event->id, $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_NAME}", stripslashes($event->event_name), $codeToReturn);
                 $codeToReturn = str_replace("{EVENT_SHORTNAME}", evrplus_truncateWords(stripslashes($event->event_name), 8, "..."), $codeToReturn);

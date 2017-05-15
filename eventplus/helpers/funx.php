@@ -171,7 +171,8 @@ class EventPlus_Helpers_Funx {
     static function getAttachmentId($image_url) {
         global $wpdb;
         $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s' LIMIT 1", $image_url));
-        return $attachment[0];
+        
+        return isset( $attachment[0] ) ? $attachment[0] : '';
     }
 
     static function getTimestamp($datetime_string) {

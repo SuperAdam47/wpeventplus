@@ -36,7 +36,7 @@
                 }
 
                 $event_link = evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event->id . ( ($curr) ? '&recurr=' . $curr : '' );
-                if ($outside_reg == "Y") {
+                if( isset($event->outside_reg) && $event->outside_reg == "Y" ) {
                     $event_link = $event->external_site;
                 }
 
