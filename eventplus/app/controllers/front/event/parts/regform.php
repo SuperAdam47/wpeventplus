@@ -13,7 +13,7 @@ class eplus_front_event_parts_regform_controller extends EventPlus_Abstract_Cont
         $output = $this->oView->View('front/event/parts/regform',array(
             'event_id' => $this->_invokeArgs['event_id'],
             'event_meta_data' => $event_meta_data,
-            'recurr' => $this->_invokeArgs['recurr'],
+            'recurr' => isset( $this->_invokeArgs['recurr'] ) ? $this->_invokeArgs['recurr'] : array(),
             'rows' => $eventRow,
         ));
 

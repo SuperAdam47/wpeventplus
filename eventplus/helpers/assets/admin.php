@@ -73,7 +73,6 @@ class EventPlus_Helpers_Assets_Admin {
 
         wp_enqueue_style('evrplus_fancy_css');
         wp_enqueue_style('evrplus_admin_css');
-
         wp_enqueue_style('farbtastic');
 
         wp_register_script($handle = 'evrplus_admin_script', $src = plugins_url('/assets/scripts/evrplus.js', $file), $deps = array(), $ver = '1.0.0', $media = 'all');
@@ -89,19 +88,12 @@ class EventPlus_Helpers_Assets_Admin {
         wp_register_script($handle = 'jquery-ui', $src = "//code.jquery.com/ui/1.11.4/jquery-ui.js", $deps = array(), $ver = '1.10.4', $media = 'all');
 
         wp_enqueue_script('jquery');
-
         wp_enqueue_script('evrplus_admin_script');
-
         wp_enqueue_script('evrplus_admin_fancy');
-
         wp_enqueue_script('evrplus_tab_script');
-
         wp_enqueue_script('evrplus_tooltip_script');
-
         wp_enqueue_script('farbtastic');
-
         wp_enqueue_script('bootstrap');
-
         wp_enqueue_script('jquery-ui');
     }
 
@@ -134,29 +126,26 @@ class EventPlus_Helpers_Assets_Admin {
     }
 
     function isAdminRequest() {
-        if ($this->isWidget()) {
+        if( $this->isWidget() ) {
             return true;
         }
 
-        if (strstr(strtolower($_GET['page']), 'eventplus')) {
+        if( isset($_GET['page']) && strstr(strtolower($_GET['page']), 'eventplus') ) {
             return true;
         }
-
         return false;
     }
 
-    function init() {
+	function init() {
 
+		if ($this->isAdminRequest() == false) {
+			return;
+		}
 
-        if ($this->isAdminRequest() == false) {
-            return;
-        }
+		$this->initAssets();
 
-        $this->initAssets();
-
-        add_action('admin_head', array($this, 'loadTinyMce'));
-        add_action('admin_head', array($this, 'adminHeader'));
-        add_action('admin_head', array($this, 'loadScripts'));
-    }
-
+		add_action('admin_head', array($this, 'loadTinyMce'));
+		add_action('admin_head', array($this, 'adminHeader'));
+		add_action('admin_head', array($this, 'loadScripts'));
+	}
 }

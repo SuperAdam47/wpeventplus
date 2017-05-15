@@ -69,9 +69,14 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 				}
 
 				$post_id = (int) $company_options['evrplus_page_id'];
-				$permaLink = get_permalink(get_page_by_path('evrplus_registration'));
-				if ($post_id > 0) {
-					$permaLink = get_permalink($post_id);
+
+				if( isset($event->outside_reg) && $event->outside_reg == 'Y' ) {
+					$permaLink = !empty( $event->external_site ) ? $event->external_site : get_permalink($post_id);
+				} else {
+					$permaLink = get_permalink(get_page_by_path('evrplus_registration'));
+					if ($post_id > 0) {
+						$permaLink = get_permalink($post_id);
+					}
 				}
 
 				$event_url = add_query_arg(array('action' => 'evrplusegister', 'event_id' => $event->id), $permaLink);

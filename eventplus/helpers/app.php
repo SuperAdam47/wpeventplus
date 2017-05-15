@@ -82,7 +82,7 @@ class EventPlus_Helpers_App {
 
             if (is_object($oPlugin)) {
                 $slug = $oPlugin->getSlug();
-                if (strstr($_GET['page'], $slug)) {
+                if (isset( $_GET['page'] ) && strstr($_GET['page'], $slug)) {
                     ob_start();
                 }
             }

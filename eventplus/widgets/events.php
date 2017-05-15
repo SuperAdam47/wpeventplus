@@ -10,7 +10,7 @@ class EventPlus_Widgets_Events extends WP_Widget {
             'classname' => 'evrplus-widget-list-events',
             'description' => 'Creates a list of most recent events from the Event Registration Plugin to display in the sidebar.  List can use default template or you can create custom display templates.'
         );
-        $this->WP_Widget('evrplus-widget-list-events', 'Event Registration Upcoming Events', $widget_opts);
+        parent::__construct('evrplus-widget-list-events', 'Event Registration Upcoming Events', $widget_opts);
     }
 
     // Widget output to the User
