@@ -4,7 +4,19 @@ extract($invoke_params);
 
 if (count($rows)):
     ?>
-
+<?php /*
+<style>
+.media-box [data-width][data-height] img{
+    top: 0 !important; 
+    left: -100% !important; 
+    right: -100% !important; 
+    bottom: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    height: 100%;
+}
+</style>
+*/ ?>
     <div class="grid-section">
         <div class="content grid-container">
             <?php if ($cats): ?>
