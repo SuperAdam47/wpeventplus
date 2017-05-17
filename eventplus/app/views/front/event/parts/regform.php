@@ -317,6 +317,12 @@ if (isset($event_meta_data)) {
                     </div>
                 <?php endif; ?>
 
+                <?php
+                if( $counter_checks == 'Y' || $disable_event_reg != "Y" ) { ?>
+
+                    <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
+                <?php } ?>
+
                 <?php if ($disable_event_reg != "Y"): ?>
                     <script type="text/javascript" src="<?php echo $md5_url; ?>"></script>
                     <script>
@@ -333,15 +339,13 @@ if (isset($event_meta_data)) {
                         if (count($discountDataset) > 0) {
                             ?>
                             <script>
-            <?php foreach ($discountDataset as $qty => $percentage): ?>
+                                <?php foreach ($discountDataset as $qty => $percentage): ?>
                                     discountSettings['<?php echo $qty; ?>'] = "<?php echo $qty; ?>:<?php echo $percentage; ?>";
-            <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </script>
                             <?php
                         }
-                    }
-                    ?>
-                    <script type="text/javascript" src="<?php echo $this->assetUrl('front/funx.js?v=' . time()); ?>"></script> 
+                    } ?>
 
                     <?php
                     if ($disable_event_reg != 'Y'):
