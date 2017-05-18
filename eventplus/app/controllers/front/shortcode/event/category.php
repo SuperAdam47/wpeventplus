@@ -10,7 +10,7 @@ class eplus_front_shortcode_event_category_controller extends EventPlus_Abstract
             return;
         }
 
-        $curdate = date("Y-m-j");
+        $curdate = date_i18n("Y-m-j");
 
         $oEvent = new EventPlus_Models_Events();
         $oAttendee = new EventPlus_Models_Attendees();

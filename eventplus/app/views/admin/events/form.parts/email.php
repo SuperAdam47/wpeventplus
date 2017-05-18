@@ -33,7 +33,16 @@ if (isset($conf_mail) == false || $conf_mail == '') {
                 </p>
                 <p class="qa"><label class="tooltip"><?php _e('Custom Confirmation Email', 'evrplus_language'); ?></label><p class="cs2" title="<?php _e('Enter the text for the confirmation email. This email will be sent in text format. See User Manual for data tags', 'evrplus_language'); ?>"></p><br/>
                 <?php
-                if (function_exists('the_editor')) {
+                global $wp_version;
+
+                 if (!version_compare($wp_version, '3.3', '>=')) {
+                    echo "</p>";
+                    the_editor(htmlspecialchars_decode($conf_mail), 'conf_mail', $editor_settings);
+                } else {
+                    wp_editor(htmlspecialchars_decode($conf_mail), 'conf_mail', $editor_settings);
+                }
+
+               /* if (function_exists('the_editor')) {
                     echo "</p>";
                     the_editor(htmlspecialchars_decode($conf_mail), 'conf_mail', $editor_settings);
                 } else {
@@ -42,7 +51,7 @@ if (isset($conf_mail) == false || $conf_mail == '') {
                     </p>
                     <textarea name="conf_mail" id="conf_mail" style="width: 100%; height: 200px;"><?php echo $conf_mail; ?></textarea>
 
-                <?php } ?>
+                <?php }*/ ?>
 
                 <br />
                 <br />         

@@ -23,7 +23,7 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 
 		$wpdb = EventPlus::getRegistry()->db->getDb();
 
-		$curdate = date("Y-m-d");
+		$curdate = date_i18n("Y-m-d");
 		$company_options = EventPlus_Models_Settings::getSettings();
 		$category_query = '';
 
@@ -97,16 +97,16 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 				$opt = EventPlus_Models_Settings::getSettings();
 
 				if (isset($opt['date_format']) && $opt['date_format'] == 'eur') {
-					$date_start = date('j M Y', strtotime($event->start_date));
-					$date_end = date('j M Y', strtotime($event->end_date));
+					$date_start = date_i18n('j M Y', strtotime($event->start_date));
+					$date_end = date_i18n('j M Y', strtotime($event->end_date));
 				} else {
 					$date_start = $event->start_date;
 					$date_end = $event->end_date;
 				}
 
 				if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {
-					$time_start = date('H:i', strtotime($event->start_time));
-					$time_end = date('H:i', strtotime($event->end_time));
+					$time_start = date_i18n('H:i', strtotime($event->start_time));
+					$time_end = date_i18n('H:i', strtotime($event->end_time));
 				} else {
 					$time_start = $event->start_time;
 					$time_end = $event->end_time;
@@ -119,20 +119,20 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 				$codeToReturn = str_replace("{EVENT_STATE}", stripslashes($event->event_state), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_POSTAL}", stripslashes($event->event_postal), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_MONTH_START_NUMBER}", $event->start_month, $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME}", date("F", strtotime($event->start_date)), $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME_3}", date("M", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME}", date_i18n("F", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME_3}", date_i18n("M", strtotime($event->start_date)), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_DAY_START_NUMBER}", $event->start_day, $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_DAY_START_NAME}", date("l", strtotime($event->start_date)), $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_DAY_START_NAME_3}", date("D", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_DAY_START_NAME}", date_i18n("l", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_DAY_START_NAME_3}", date_i18n("D", strtotime($event->start_date)), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_YEAR_START}", $event->start_year, $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_TIME_START}", $time_start, $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_DATE_START}", $date_start, $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_MONTH_END_NUMBER}", $event->end_month, $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME}", date("F", strtotime($event->end_date)), $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_MONTH_END_NAME_3}", date("M", strtotime($event->end_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_MONTH_START_NAME}", date_i18n("F", strtotime($event->end_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_MONTH_END_NAME_3}", date_i18n("M", strtotime($event->end_date)), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_DAY_END_NUMBER}", $event->end_day, $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_DAY_END_NAME}", date("l", strtotime($event->start_date)), $codeToReturn);
-				$codeToReturn = str_replace("{EVENT_DAY_END_NAME_3}", date("D", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_DAY_END_NAME}", date_i18n("l", strtotime($event->start_date)), $codeToReturn);
+				$codeToReturn = str_replace("{EVENT_DAY_END_NAME_3}", date_i18n("D", strtotime($event->start_date)), $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_YEAR_END}", $event->end_year, $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_DATE_END}", $date_end, $codeToReturn);
 				$codeToReturn = str_replace("{EVENT_TIME_END}", $time_end, $codeToReturn);

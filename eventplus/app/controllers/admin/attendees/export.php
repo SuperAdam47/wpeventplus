@@ -52,7 +52,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
     private function doXLS() {
 
 
-        $today = date("Y-m-d_Hi", time());
+        $today = date_i18n("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
         list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
@@ -142,7 +142,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
     private function doCsv() {
 
 
-        $today = date("Y-m-d_Hi", time());
+        $today = date_i18n("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
         list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;

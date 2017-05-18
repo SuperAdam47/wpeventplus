@@ -76,6 +76,11 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function i8ln() {
+
+        $locale = apply_filters( 'plugin_locale', get_locale(), 'evrplus_language' );
+
+        load_textdomain( 'evrplus_language', WP_LANG_DIR . '/wpeventsplus/evrplus_language-' . $locale . '.mo' );
+
         load_plugin_textdomain('evrplus_language', false, dirname(plugin_basename($this->getFile())) . '/lang/');
     }
 

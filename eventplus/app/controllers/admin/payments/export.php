@@ -39,7 +39,7 @@ class eplus_admin_payments_export_controller extends EventPlus_Abstract_Controll
         $oEvent = $this->_invokeArgs['oEvent'];
         $this->event_id = $this->_invokeArgs['event_id'];
 
-        $today = date("Y-m-d_Hi", time());
+        $today = date_i18n("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
 

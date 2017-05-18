@@ -50,12 +50,12 @@
                 }
 
                 if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {
-                    $time_start = date('H:i', strtotime($event->start_time));
-                    $time_end = date('H:i', strtotime($event->end_time));
+                    $time_start = date_i18n('H:i', strtotime($event->start_time));
+                    $time_end = date_i18n('H:i', strtotime($event->end_time));
                 }
 
-                $startDate = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->start_date));
-                $endDate = ($curr) ? date($date_format, $curr) : date($date_format, strtotime($event->end_date));
+                $startDate = ($curr) ? date_i18n($date_format, $curr) : date_i18n($date_format, strtotime($event->start_date));
+                $endDate = ($curr) ? date_i18n($date_format, $curr) : date_i18n($date_format, strtotime($event->end_date));
                 $event_name = stripslashes($event->event_name);
 
                 $icoDate = '';

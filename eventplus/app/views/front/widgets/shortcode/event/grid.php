@@ -54,7 +54,7 @@ if (count($rows)):
 
                     $start_time = $event->start_time;
                     if (isset($company_options['time_format']) && $company_options['time_format'] == '24hrs') {
-                        $start_time = date('H:i', strtotime($start_time));
+                        $start_time = date_i18n('H:i', strtotime($start_time));
                     }
 
                     $catStr = '';
