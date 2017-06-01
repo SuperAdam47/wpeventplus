@@ -65,7 +65,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $end_month = $params['end_month'];
         $end_day = $params['end_day'];
         $infinate_event = isset($params['infinate_event']) ? $params['infinate_event'] : '';
-        if (!empty($infinate_event) and $infinate_event = $params['infinate_event']) {
+         if (!empty($infinate_event) && $infinate_event = 'yes'){
             $end_year = 2050;
         } else {
             $end_year = $params['end_year'];
@@ -654,8 +654,8 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
         $sql = "SELECT * FROM " . $this->_table . " "
                 . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() "
-                . " ORDER BY DATE(start_date) " . $orderby;
-        
+                . " ORDER BY DATE(start_date), start_time " . $orderby;
+   
         
         return $this->getWpDb()->get_results($sql);
     }
