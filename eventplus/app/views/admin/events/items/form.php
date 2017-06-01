@@ -162,6 +162,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                                     <option value="SEK" >SEK</option>
                                                     <option value="CHF" >CHF</option>
                                                     <option value="PHP" >PHP</option>
+                                                    <option value="LEV" >LEV</option>
                                                 </select>
                                             </div>
                                         </li>

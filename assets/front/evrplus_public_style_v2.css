@@ -55,8 +55,8 @@ table td.even {
 }
 
 table.calendar-table {
- overflow: scroll;
- display: block;
+    overflow: scroll;
+    display: table;
 }
 
 /**/

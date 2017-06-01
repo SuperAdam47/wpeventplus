@@ -117,8 +117,8 @@ if (isset($event_meta_data)) {
                 <div class="bann3r">
                     <?php if (isset($company_options['show_social_icons']) && !empty($company_options['show_social_icons']) && $company_options['show_social_icons'] != '2'): ?>
                         <div class="s0cial">
-                            <a href="<?php echo 'https://twitter.com/home?status=' . $event_name . ' - ' . $url . ''; ?>" class="twitter evrplus_socialtwitter"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" class="facebook evrplus_socialfacebook"><i class="fa fa-facebook-f"></i></a>
+                            <a target="_Blank" href="<?php echo 'https://twitter.com/home?status=' . $event_name . ' - ' . $url . ''; ?>" class="twitter evrplus_socialtwitter"><i class="fa fa-twitter"></i></a>
+                            <a target="_Blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" class="facebook evrplus_socialfacebook"><i class="fa fa-facebook-f"></i></a>
                         </div>
                     <?php endif; ?>
 
