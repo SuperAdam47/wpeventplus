@@ -401,14 +401,12 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
 
             foreach ($attendees as $attendee) {
                 if ($attendee->payment >= '.01') {
-                    $payment_recieved = $wpdb->get_var($wpdb->prepare("SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payment_sttus = 'success' AND payer_id= %d", $attendee->id));
+                    $payment_recieved = $wpdb->get_var($wpdb->prepare("SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payment_sttus = 'success' AND payer_id= %d LIMIT 1", $attendee->id));
                     $payment_dtl = $wpdb->get_row($wpdb->prepare("SELECT * FROM " . get_option('evr_payment') . " WHERE payment_sttus = 'success' AND payer_id= %d", $attendee->id), ARRAY_A);
                     $balance_due = $attendee->payment - $payment_recieved;
-                    if ($balance_due >= '.01') {
-                        //echo $attendee->fname." ".$attendee->lname." owes ".$balance_due."<br/>";
+                    if ($balance_due > 0) {
+                        
                         $company_options = EventPlus_Models_Settings::getSettings();
-
-                        //$payment_link = EventPlus_Helpers_Event::permalink($company_options['return_url']) . "id=" . $attendee->id . "&fname=" . $attendee->fname;
 
                         $payment_link = evrplus_permalink($company_options['evrplus_page_id']) . 'action=confirmation&event_id=' . $attendee->event_id . '&eventplus_token=' . $attendee->token;
 
@@ -454,9 +452,10 @@ class EventPlus_Models_Payments extends EventPlus_Abstract_Model {
             }
         }
 
-        $response = (count($messages) > 0);
+        $sent_count = intVal(count($messages));
+        $response = ($sent_count > 0);
 
-        if (count($messages) == 0) {
+        if ($sent_count == 0) {
             $messages[] = __('No pending payments reminders to send', 'evrplus_language');
         }
 
