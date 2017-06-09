@@ -74,11 +74,13 @@ class EventPlus_ShortCodes {
 
     function byCategory($atts, $content = null) {
 
-        extract(shortcode_atts(array('event_category_id' => 'No Category ID Supplied'), $atts));
+        extract(shortcode_atts(array('event_category_id' => 'No Category ID Supplied', 'limit' => 0), $atts));
         $event_category_id = "{$event_category_id}";
+        $limit = "{$limit}";
 
         return EventPlus::dispatch('front_shortcode_event_category/index', array(
                     'event_category_id' => $event_category_id,
+                    'limit' => $limit,
         ));
     }
 
