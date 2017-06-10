@@ -47,11 +47,11 @@ if ($eventRow['id'] <= 0 || $attendeeRow['id'] <= 0) {
 $event_id = $eventRow['id'];
 
 $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
-$mc_gross = $amount;
+$mc_gross = 0;
 if (intVal($responseCode) === 1) {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
-    $amountPaid = 0;
-    $mc_gross = 0;
+    $amountPaid = $amount;
+    $mc_gross = $amount;
 }
 
 $payment_date = date('Y-m-d G:i:s', time());
