@@ -830,10 +830,9 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
     .event-cont table {
         min-width: 320px;
     }
-
-    body {
+    /*body {
         border: red solid;
-    }
+    }*/
 }
 
 .time-cont br {
