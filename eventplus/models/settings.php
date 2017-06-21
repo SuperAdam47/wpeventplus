@@ -68,7 +68,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
             $company_options['image_url'] = $params['image_url'];
             $company_options['admin_message'] = ($params['admin_message']);
             $company_options['pay_confirm'] = $params['pay_confirm'];
-            $company_options['payment_subj'] = $params['payment_subj'];
+            $company_options['payment_subj'] = stripslashes( $params['payment_subj'] );
             $company_options['payment_message'] = ($params['payment_message']);
             $company_options['c_message'] = ($params['c_message']);
             $company_options['info_recieved'] = ($params['info_recieved']);
