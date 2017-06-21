@@ -92,7 +92,12 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
         $admin_email_body = $message_top . $admin_body . $message_bottom;
 
-        $toAdminEmails = array(get_option('admin_email'));
+        $toAdminEmails = array();
+
+        if( $is_admin_email = apply_filters( 'eventsplus_send_attendee_reg_mail_to_admin_email', true ) ) {
+            $toAdminEmails = array(get_option('admin_email'));
+        }
+
         if (isset($this->company_options['email']) && !empty($this->company_options['email'])) {
             $toAdminEmails[] = trim($this->company_options['email']);
         }
