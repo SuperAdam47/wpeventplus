@@ -563,8 +563,8 @@ jQuery(document).ready(function ($) {
         var _endDate = parseInt(jQuery('#evrplus_counter').attr('data-end-date'));
         if (_endDate) {
             var endDate = new Date(_endDate);
-            $('#evrplus_counter').redCountdown({
-                end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
+            jQuery('#evrplus_counter').redCountdown({
+                end: jQuery.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                 labels: true,
                 style: {
                     element: "",
@@ -607,6 +607,7 @@ jQuery(document).ready(function ($) {
                 }});
         }
     } catch (ex) {
+       
     }
 });
 
