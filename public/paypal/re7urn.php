@@ -62,6 +62,7 @@ $pdtData = $oPayPal->validatePdt($_REQUEST['tx'], $company_options['paypal_pdt_t
 
 $txn_data = array_merge($_REQUEST, $pdtData);
 
+$amount_pd = 0;
 if (isset($txn_data['txn_id'])) {
     $txn_id = trim($txn_data['txn_id']);
     $first_name = $txn_data['first_name'];
@@ -85,6 +86,7 @@ if ($pdt_payment_status == 'FAIL') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
 } else if ($pdt_payment_status == 'COMPLETED') {
     $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
+    $amountPaid = $amount_pd;
 } else {
     $payment_status = $pdt_payment_status;
 }
