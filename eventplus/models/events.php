@@ -51,10 +51,10 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         }
 
         $reg_limit = $params['reg_limit'];
-        $event_location = $params['event_location'];
-        $event_address = $params['event_street'];
-        $event_city = stripslashes($params['event_city']);
-        $event_state = $params['event_state'];
+        $event_location = stripslashes( $params['event_location'] );
+        $event_address = stripslashes( $params['event_street'] );
+        $event_city = stripslashes( $params['event_city'] );
+        $event_state = stripslashes( $params['event_state'] );
         $event_postal = $params['event_postcode'];
         if (!empty($params['location_list'])) {
             $location_list = $params['location_list'];
@@ -287,10 +287,10 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $location_list = "";
         }
 
-        $event_location = esc_sql($params['event_location']);
-        $event_address = $params['event_street'];
-        $event_city = stripslashes($params['event_city']);
-        $event_state = $params['event_state'];
+        $event_location = esc_sql( stripslashes($params['event_location']) );
+        $event_address = stripslashes( $params['event_street'] );
+        $event_city = stripslashes( $params['event_city'] );
+        $event_state = stripslashes( $params['event_state'] );
         $event_postal = $params['event_postcode'];
 
         $google_map = $params['google_map'];  // Y or N
