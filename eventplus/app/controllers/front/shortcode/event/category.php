@@ -11,11 +11,11 @@ class eplus_front_shortcode_event_category_controller extends EventPlus_Abstract
         }
 
         $limit = $this->_invokeArgs['limit'];
+        $order_by = $this->_invokeArgs['order_by'];
          
         $curdate = date_i18n("Y-m-j");
 
         $oEvent = new EventPlus_Models_Events();
-        $oAttendee = new EventPlus_Models_Attendees();
 
         $oEventCategories = new EventPlus_Models_Categories();
         $categoryRow = $oEventCategories->getDataByIdentifier($event_category_id);
@@ -24,7 +24,7 @@ class eplus_front_shortcode_event_category_controller extends EventPlus_Abstract
             return;
         }
 
-        $rows = $oEvent->getEventsByCategory($categoryRow['id'],$limit);
+        $rows = $oEvent->getEventsByCategory($categoryRow['id'], $order_by, $limit);
 
         $viewParams = array();
         $viewParams['invoke_params'] = $this->_invokeArgs;

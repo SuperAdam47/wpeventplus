@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
 
     if (jQuery('#eventplus_register_btn').length) {
         var oRegisterBtn = jQuery('#eventplus_register_btn');
-        oRegisterBtn.on('click', function (e) {
+        oRegisterBtn.on('click touchend', function (e) {
             e.preventDefault();
             jQuery(this).hide();
             jQuery('#evrplusRegForm').slideDown();
