@@ -568,10 +568,10 @@ jQuery(document).ready(function ($) {
                 labels: true,
                 style: {
                     element: "",
-                    textResponsive: .5,
+                    textResponsive: 0.5,
                     daysElement: {
                         gauge: {
-                            thickness: .2,
+                            thickness: 0.2,
                             bgColor: "#cccccc",
                             fgColor: "#1ABC9C"
                         },
@@ -579,7 +579,7 @@ jQuery(document).ready(function ($) {
                     },
                     hoursElement: {
                         gauge: {
-                            thickness: .2,
+                            thickness: 0.2,
                             bgColor: "#cccccc",
                             fgColor: "#2980B9"
                         },
@@ -601,9 +601,6 @@ jQuery(document).ready(function ($) {
                         },
                         textCSS: 'font-family:Arial; font-size:25px; font-weight:300; color:#262626;'
                     }
-                },
-                onEndCallback: function () {
-
                 }});
         }
     } catch (ex) {
