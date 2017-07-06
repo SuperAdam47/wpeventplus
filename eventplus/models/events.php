@@ -264,6 +264,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $message = __('There was an error in your submission, please try again. The event was not saved!', 'evrplus_language');
         }
 
+
         $this->setMessage($message);
 
         return $response;

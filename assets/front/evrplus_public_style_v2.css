@@ -1193,6 +1193,7 @@ input[type="submit"],button[type="submit"],input[type="reset"] {
     opacity: 10;
     display: inline;
     position: relative;
+    padding: 0;
 }
 
 table.calendar-table {
@@ -1353,36 +1354,31 @@ table.calendar-table {
     font-weight: 600;
     text-shadow: none !important;
 }
-
 .events .tool_img {
     width: 125px;
 }
-
 .events .tooltip-text {
     font-size: 12px;
     color: #333;
     margin-top: 0;
 }
-
 .events .tooltip-text.heading {
     margin-top: 13px !important;
 }
-
 .events span.event_title {
     letter-spacing: 0;
     line-height: 1.1;
     font-weight: 600;
     color: #333;
     font-size: 14px;
+    white-space: pre-wrap;
 }
-
 .events .event_date {
     font-size: 11px;
     line-height: 15px;
     color: #e54e53;
     margin-top: 5px;
 }
-
 .events .event_time {
     font-size: 11px;
     line-height: 15px;
