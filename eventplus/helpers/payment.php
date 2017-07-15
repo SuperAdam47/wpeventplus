@@ -598,14 +598,16 @@ class EventPlus_Helpers_Payment {
         $row_count = count($ticket_order);
 
         // Print the Order Verification to the screen.
-
-        if (isset($this->companyOptions['c_message']) && trim($this->companyOptions['c_message']) != '') {
+        
+        if (isset($this->companyOptions['info_recieved']) && trim($this->companyOptions['info_recieved']) != '') {
             $oMail = new EventPlus_Helpers_Mail(array(
                 'attendeeRow' => $this->attendeeRow,
                 'eventRow' => $this->eventRow,
             ));
 
-            $confirmation_message_str = html_entity_decode(stripslashes($this->companyOptions['c_message']));
+            $confirmation_message_str = html_entity_decode(stripslashes($this->companyOptions['info_recieved']));
+            
+            
             echo '<div class="col-xs-12">
             <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> ' . $oMail->bindParams($confirmation_message_str) . '</div>
         </div>';
