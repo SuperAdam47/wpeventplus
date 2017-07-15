@@ -402,7 +402,8 @@ function evrplus_show_event($event, $day = 0) {
 
     $event_url = stripslashes( evrplus_permalink($company_options['evrplus_page_id']) . 'action=evrplusegister&event_id=' . $event_id );
     if (empty($event_img)) {
-        $event_img = plugins_url( 'images/calendar-icon.png', __FILE__ );
+        //$event_img = plugins_url( 'images/calendar-icon.png', __FILE__ );
+        $event_img = plugins_url( '../../assets/images/calendar-icon.png', __FILE__ );
     }
 
     $extraParam = '';
