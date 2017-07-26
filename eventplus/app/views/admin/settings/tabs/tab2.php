@@ -22,7 +22,6 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             <option value="<?php echo $company_options['default_currency']; ?>">
                                 <?php _e('Select Currency', 'evrplus_language'); ?>
                             </option>
-                            <!--<option value="<?php echo $company_options['default_currency']; ?>" ><?php echo $company_options['default_currency']; ?> </option>-->
                             <option value="USD" <?php if ($company_options['default_currency'] == 'USD') echo ' selected'; ?>>USD</option>
                             <option value="JOD" <?php if ($company_options['default_currency'] == 'JOD') echo ' selected'; ?>>JOD</option>
                             <option value="TWD" <?php if ($company_options['default_currency'] == 'TWD') echo ' selected'; ?>>TWD</option>
@@ -53,6 +52,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             <option value="BOB" <?php if ($company_options['default_currency'] == 'BOB') echo ' selected'; ?>>BOB</option>
                             <option value="MUR" <?php if ($company_options['default_currency'] == 'MUR') echo ' selected'; ?>>MUR</option>
                             <option value="RON" <?php if ($company_options['default_currency'] == 'RON') echo ' selected'; ?>>RON</option>
+                            <option value="RON" <?php if ($company_options['default_currency'] == 'KWR') echo ' selected'; ?>>KWR</option>
                         </select>
                     </div>
                     </p> <br />
