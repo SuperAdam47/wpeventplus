@@ -87,7 +87,9 @@ if (isset($_GET['ct'])) {
                                     :</strong><br>
                                 <?php _e('For customized confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email', 'evrplus_language'); ?>
                                 .</p>
-                            <p>[id], [fname], [lname], [phone], [event],[description], [cost], [company], [co_add1], [co_add2], [co_city],[co_state], [co_zip],[contact], [payment_url], [start_date], [start_time], [end_date], [end_time], [category_list]</p>
+                            <p>[id], [fname], [lname], [phone], [event],[description], [cost],[contact], [payment_url], [start_date], [start_time], [end_date], [end_time], [category_list]</p>
+                            <p>Your Company: [company], [co_add1], [co_add2], [co_city],[co_state], [co_zip]</p>
+                            <p>Attendee: [attendee_company],  [attendee_company_address],  [attendee_company_state],  [attendee_company_city],  [attendee_zip],  [attendee_state],  [attendee_address],  [attendee_coupon],  [attendee_email],  [attendee_phone],  [attendee_quantity]</p>
                         </div>
                     </div>
                     <div style="display:none;">
