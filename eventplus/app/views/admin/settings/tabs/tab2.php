@@ -53,6 +53,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             <option value="BOB" <?php if ($company_options['default_currency'] == 'BOB') echo ' selected'; ?>>BOB</option>
                             <option value="MUR" <?php if ($company_options['default_currency'] == 'MUR') echo ' selected'; ?>>MUR</option>
                             <option value="RON" <?php if ($company_options['default_currency'] == 'RON') echo ' selected'; ?>>RON</option>
+                            <option value="LPS" <?php if ($company_options['default_currency'] == 'LPS') echo ' selected'; ?>>LPS</option>
                         </select>
                     </div>
                     </p> <br />
