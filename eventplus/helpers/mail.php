@@ -173,9 +173,24 @@ class EventPlus_Helpers_Mail {
             "[num_people]" => number_format($this->attendeeRow['quantity'], 0),
             "[attendees]" => $attendee_names,
             "[tickets]" => $ticket_list,
-            "[ADMIN_ATTENDEE_LINK]" => $this->adminUrl('admin_attendees/details', array('event_id' => $this->eventRow['id'], 'attendee_id' => $this->attendeeRow['id']))
+            "[ADMIN_ATTENDEE_LINK]" => $this->adminUrl('admin_attendees/details', array('event_id' => $this->eventRow['id'], 'attendee_id' => $this->attendeeRow['id'])),
         );
-
+        
+        
+        
+        if($this->attendeeRow['id'] > 0){
+            $bindParams['[attendee_company]'] =  stripslashes($this->attendeeRow['company']);
+            $bindParams['[attendee_company_address]'] =  stripslashes($this->attendeeRow['co_address']);
+            $bindParams['[attendee_company_state]'] =  stripslashes($this->attendeeRow['co_state']);
+            $bindParams['[attendee_company_city]'] =  stripslashes($this->attendeeRow['co_city']);
+            $bindParams['[attendee_zip]'] =  stripslashes($this->attendeeRow['zip']);
+            $bindParams['[attendee_state]'] =  stripslashes($this->attendeeRow['state']);
+            $bindParams['[attendee_address]'] =  stripslashes($this->attendeeRow['address']);
+            $bindParams['[attendee_coupon]'] =  stripslashes($this->attendeeRow['coupon']);
+            $bindParams['[attendee_email]'] =  stripslashes($this->attendeeRow['email']);
+            $bindParams['[attendee_phone]'] =  stripslashes($this->attendeeRow['phone']);
+            $bindParams['[attendee_quantity]'] =  stripslashes($this->attendeeRow['quantity']);
+        }
 
         foreach ($bindParams as $searchValue => $replaceValue) {
             $str = str_replace($searchValue, $replaceValue, $str);
