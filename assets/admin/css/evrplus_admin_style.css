@@ -1344,7 +1344,7 @@ input[type="radio"] + label:before {
 	}
 	.events-plus_page_attendee .padding {
 	    padding: 10px;
-	    overflow: hidden;
+	    /*overflow: hidden;*/
 	}
 	.events-plus_page_attendee .evrplus_plugin .evrplus_content_half li,
 	.evrplus_plugin .evrplus_content_half p {
