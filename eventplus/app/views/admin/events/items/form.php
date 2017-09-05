@@ -164,6 +164,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                                     <option value="PHP" >PHP</option>
                                                     <option value="LEV" >LEV</option>
                                                     <option value="LPS" >LPS</option>
+                                                    <option value="ZAR" >ZAR</option>
                                                 </select>
                                             </div>
                                         </li>
