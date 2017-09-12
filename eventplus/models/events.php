@@ -557,26 +557,30 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $end_time = $row['end_time'];
             $conf_mail = $row['conf_mail'];
             $send_mail = $row['send_mail'];
-            $event_category = $row['event_category'];
+            $event_category = $row['category_id'];
             $start_date = $row['start_date'];
             $end_date = $row['end_date'];
             $reg_form_defaults = $row['reg_form_defaults'];
             $use_coupon = $row['use_coupon'];
             $coupon_code = $row['coupon_code'];
             $coupon_code_price = $row['coupon_code_price'];
+            $term_c = $row['term_c'];
+            $term_desc = $row['term_desc'];
+            $recurrence_choice = $row['recurrence_choice'];
 
-            $sql = array('event_name' => $event_name, 'event_desc' => $event_desc, 'event_location' => $event_location, 'event_address' => $event_address,
+            $sql = array( 'event_name' => $event_name, 'event_desc' => $event_desc, 'event_location' => $event_location, 'event_address' => $event_address,
                 'event_city' => $event_city, 'event_state' => $event_state, 'event_postal' => $event_postal, 'display_desc' => $display_desc,
                 'image_link' => $image_link, 'header_image' => $header_image, 'event_identifier' => $event_identifier, 'more_info' => $more_info,
                 'start_month' => $start_month, 'start_day' => $start_day, 'start_year' => $start_year, 'start_time' => $start_time, 'start_date' => $start_date,
                 'end_month' => $end_month, 'end_day' => $end_day, 'end_year' => $end_year, 'end_date' => $end_date, 'end_time' => $end_time, 'reg_limit' => $reg_limit,
                 'custom_cur' => $custom_cur, 'reg_form_defaults' => $reg_form_defaults, 'allow_checks' => $allow_checks,
                 'send_mail' => $send_mail, 'conf_mail' => $conf_mail, 'is_active' => $is_active, 'category_id' => $event_category, 'use_coupon' => $use_coupon,
-                'coupon_code' => $coupon_code, 'coupon_code_price' => $coupon_code_price);
+                'coupon_code' => $coupon_code, 'coupon_code_price' => $coupon_code_price, 
+                'term_c' => $term_c, 'term_desc' => $term_desc, 'recurrence_choice' => $recurrence_choice );
 
             $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
                 '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
-                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
 
             $messages = array();
             if ($this->getWpDb()->insert(get_option('evr_event'), $sql, $sql_data)) {
