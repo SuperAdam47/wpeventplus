@@ -41,7 +41,7 @@
                 <td class="cname"><span style="<?php echo $style; ?>"><?php echo $category_name ?></span></td>
                 <td><?php echo $category_identifier ?></td>
                 <td style="white-space: nowrap;">
-                    [eventsplus_category event_category_id="<?php echo $category_identifier ?>"]
+                    [eventsplus_list event_category_id="<?php echo $category_id; ?>"]
                     [PLUS_CALENDAR:<?php echo $category_identifier ?>]
                 </td>
                 <td class="catc">
