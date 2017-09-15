@@ -3203,3 +3203,28 @@ msgstr "Já processadas"
 #: public/paypal/re7urn.php:79
 msgid "Payment already processed"
 msgstr "Pagamento já processado"
+
+#: eventplus/functions.php:239
+msgid "Mar"
+msgstr ""
+
+msgid "Apr"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Jun"
+msgstr ""
+
+msgid "Jul"
+msgstr ""
+
+msgid "Aug"
+msgstr ""
+
+msgid "Sep"
+msgstr ""
+
+msgid "Oct"
+msgstr ""

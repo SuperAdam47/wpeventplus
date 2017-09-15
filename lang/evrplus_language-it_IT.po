@@ -3881,3 +3881,27 @@ msgstr "Già elaborato"
 msgid "Payment already processed"
 msgstr "Pagamento già elaborato"
 
+#: eventplus/functions.php:239
+msgid "Mar"
+msgstr ""
+
+msgid "Apr"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Jun"
+msgstr ""
+
+msgid "Jul"
+msgstr ""
+
+msgid "Aug"
+msgstr ""
+
+msgid "Sep"
+msgstr ""
+
+msgid "Oct"
+msgstr ""
