@@ -207,7 +207,7 @@ if (!function_exists('evrplus_next_link')) {
         $mod_rewrite_months = array(1 => 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec');
         $next_year = $cur_year + 1;
 
-        $fragment = apply_filters( 'evrplus_link_fragment', '#calendar-table', array(
+        $fragment = apply_filters( 'evrplus_link_fragment', '', array(
                                         'link' => 'next',
                                         'cur_year' => $cur_year,
                                         'cur_month' => $cur_month
@@ -241,7 +241,7 @@ if (!function_exists('evrplus_prev_link')) {
         $mod_rewrite_months = array(1 => 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sept', 'oct', 'nov', 'dec');
         $last_year = $cur_year - 1;
 
-        $fragment = apply_filters( 'evrplus_link_fragment', '#calendar-table', array(
+        $fragment = apply_filters( 'evrplus_link_fragment', '', array(
                                         'link' => 'prev',
                                         'cur_year' => $cur_year,
                                         'cur_month' => $cur_month
