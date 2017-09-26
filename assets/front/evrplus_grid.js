@@ -6,6 +6,9 @@ jQuery(function ($) {
         boxesToLoadStart: oEvrGrid.attr('data-boxesToLoadStart'),
         boxesToLoad: oEvrGrid.attr('data-boxesToLoad'),
         horizontalSpaceBetweenBoxes: 20,
-        verticalSpaceBetweenBoxes: 20
+        verticalSpaceBetweenBoxes: 20,
+        LoadingWord: EvrGrid.LoadingWord,
+        loadMoreWord: EvrGrid.loadMoreWord,
+        noMoreEntriesWord: EvrGrid.noMoreEntriesWord
     });
 });

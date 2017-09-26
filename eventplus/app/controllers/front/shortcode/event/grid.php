@@ -18,6 +18,13 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         wp_enqueue_script('jquery.mediaBoxes');
 
         wp_register_script('evrplus_grid', plugins_url('/assets/front/evrplus_grid.js', $file), array('jquery'), '1.0.0', true);
+
+        wp_localize_script( 'evrplus_grid', EvrGrid, array(
+                                'LoadingWord'       => __( 'Loading...', 'evrplus_language' ),
+                                'loadMoreWord'      => __( 'Load More', 'evrplus_language' ),
+                                'noMoreEntriesWord' => __( 'No More Entries', 'evrplus_language' )
+                            ) );
+
         wp_enqueue_script('evrplus_grid');
 
         wp_register_script('jquery.transit.min', plugins_url('/assets/scripts/gridview/js/jquery.transit.min.js', $file), array('jquery'), '1.0.0', 'all');
