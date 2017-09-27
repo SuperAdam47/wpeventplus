@@ -1,7 +1,7 @@
 jQuery(function ($) {
     var oEvrGrid = $('#evr-grid');
     oEvrGrid.mediaBoxes({
-        filterContainer: '#evr-filter',
+        filterContainer: '.eventplus-grid-filter',
         search: '#evr-search',
         boxesToLoadStart: oEvrGrid.attr('data-boxesToLoadStart'),
         boxesToLoad: oEvrGrid.attr('data-boxesToLoad'),

@@ -21,8 +21,13 @@ if (count($rows)):
         <div class="content grid-container">
             <?php if ($cats): ?>
                 <div class="filters-container">
-                    <input type="text" id="evr-search" class="media-boxes-search" placeholder="<?php _e('Search By Title', 'evrplus_language'); ?>">
-                    <ul class="media-boxes-filter" id="evr-filter">
+     
+                    <?php
+                    $html = '<input type="text" id="evr-search" class="media-boxes-search" placeholder="'.__('Search By Title', 'evrplus_language').'">';
+                    echo apply_filters('evrplus_filter_container_html', $html, $rows);
+                    ?>
+                    
+                    <ul class="media-boxes-filter eventplus-grid-filter" id="evr-filter">
                         <li><a class="selected" href="#" data-filter="*"><?php _e('All', 'evrplus_language'); ?></a></li>
                         <?php foreach ($categories as $cat) { ?>
                             <li><a href="#" data-filter=".<?php echo $cat->category_identifier; ?>"><?php echo $cat->category_name; ?></a></li>
@@ -63,8 +68,17 @@ if (count($rows)):
                             $catStr .= EventPlus_Helpers_Event::get_category_identifier_by_id($cat) . ' ';
                         }
                     }
+                    
+                    $extraClasses = apply_filters('evrplus_filter_extra_classes', [], $event);
+                    $extraStr = '';
+                    if(is_array($extraClasses)){
+                        if(count($extraClasses)){
+                            $extraStr = ' ' . implode(' ', $extraStr);
+                        }
+                    }
+                    
                     ?>
-                    <div class="media-box <?php echo $catStr; ?>" data-columns="<?php echo $col; ?>">
+                    <div class="media-box <?php echo $catStr; echo $extraStr; ?>" data-columns="<?php echo $col; ?>">
 
                         <?php
                         $defaultImage = $this->assetUrl('images/calendar-icon.png');
