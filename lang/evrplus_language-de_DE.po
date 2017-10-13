@@ -3693,3 +3693,27 @@ msgstr "Bereits verarbeitet"
 msgid "Payment already processed"
 msgstr "Zahlung ist bereits erfolgt."
 
+#: eventplus/functions.php:239
+msgid "Mar"
+msgstr ""
+
+msgid "Apr"
+msgstr ""
+
+msgid "May"
+msgstr ""
+
+msgid "Jun"
+msgstr ""
+
+msgid "Jul"
+msgstr ""
+
+msgid "Aug"
+msgstr ""
+
+msgid "Sep"
+msgstr ""
+
+msgid "Oct"
+msgstr ""

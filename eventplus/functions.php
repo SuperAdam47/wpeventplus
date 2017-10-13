@@ -199,6 +199,27 @@ if (!function_exists('evrplus_permalink')) {
 
 }
 
+if (!function_exists('evrplus_get_month_shortname')) {
+     function evrplus_get_month_shortname($month_code) {
+         $months = array(
+             'jan' => __('Jan', 'evrplus_language'),
+             'feb' => __('Feb', 'evrplus_language'), 
+             'mar' => __('Mar', 'evrplus_language'), 
+             'apr' => __('Apr', 'evrplus_language'), 
+             'may' => __('May', 'evrplus_language'), 
+             'jun' => __('Jun', 'evrplus_language'), 
+             'jul' => __('Jul', 'evrplus_language'), 
+             'aug' => __('Aug', 'evrplus_language'), 
+             'sept' => __('Sep', 'evrplus_language'), 
+             'oct' => __('Oct', 'evrplus_language'), 
+             'nov' => __('Nov', 'evrplus_language'), 
+             'dec' => __('Dec', 'evrplus_language')
+            );
+         
+         return $months[strtolower($month_code)];
+     }
+}
+
 if (!function_exists('evrplus_next_link')) {
     /*     * ****** Configure the "Next" link in the calendar  ************ */
 
@@ -223,9 +244,9 @@ if (!function_exists('evrplus_next_link')) {
             $next_next_month = $cur_month + 2;
             $month = $mod_rewrite_months[$next_month];
             $month_after = $mod_rewrite_months[$next_next_month];
-            $t_month = strtoupper(__($month, 'evrplus_language'));
+            $t_month = strtoupper(evrplus_get_month_shortname($month));
 
-            $t_month_after = strtoupper(__($month_after, 'evrplus_language'));
+            $t_month_after = strtoupper(evrplus_get_month_shortname($month_after));
             $next_links = '<a href="' . evrplus_permalink_prefix() . 'month=' . $month . '&amp;yr=' . $cur_year .$fragment. '">' . $t_month . ' &raquo;</a>' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . '<a href="' . evrplus_permalink_prefix() . 'month=' . $month_after . '&amp;yr=' . $cur_year .$fragment. '">' . $t_month_after. ' &raquo;</a>';
         }
         return $next_links;
@@ -256,7 +277,7 @@ if (!function_exists('evrplus_prev_link')) {
             $prev_prev_month = $cur_month - 2;
             $month = $mod_rewrite_months[$prev_month];
             $prev_month = $mod_rewrite_months[$prev_prev_month];
-            $prev_links = '<a href="' . evrplus_permalink_prefix() . 'month=' . $prev_month . '&amp;yr=' . $cur_year .$fragment. '">&laquo; ' . strtoupper(__($prev_month, 'evrplus_language')) . '</a>' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . '<a href="' . evrplus_permalink_prefix() . 'month=' . $month . '&amp;yr=' . $cur_year . $fragment.'">&laquo; ' . strtoupper(__($month, 'evrplus_language')) . '</a>';
+            $prev_links = '<a href="' . evrplus_permalink_prefix() . 'month=' . $prev_month . '&amp;yr=' . $cur_year .$fragment. '">&laquo; ' . strtoupper(evrplus_get_month_shortname($prev_month)) . '</a>' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . '<a href="' . evrplus_permalink_prefix() . 'month=' . $month . '&amp;yr=' . $cur_year . $fragment.'">&laquo; ' . strtoupper(evrplus_get_month_shortname($month)) . '</a>';
         }
         return $prev_links;
     }
