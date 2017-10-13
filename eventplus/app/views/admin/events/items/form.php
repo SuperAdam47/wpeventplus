@@ -129,42 +129,15 @@ $item_custom_cur = $row['item_custom_cur'];
                                             <div class="pass1"><p class="cs2" title="Please select the country in which the currency format will be used"></p></div><br/>
                                             <div class="pass2">
                                                 <select class="select" name="custom_cur">
-                                                    <?php
-                                                    if ($item_custom_cur != "") {
-                                                        echo "<option value='" . $item_custom_cur . "'>" . $item_custom_cur . "</option>";
-                                                    }
-                                                    ?>
-                                                    <option value="USD" >USD</option>
-                                                    <option value="TWD" >TWD</option>
-                                                    <option value="JOD" >JOD</option>
-                                                    <option value="AED" >AED</option>
-                                                    <option value="TRY" >TRY</option>
-                                                    <option value="THB" >THB</option>
-                                                    <option value="RUB" >RUB</option>
-                                                    <option value="NOK" >NOK</option>
-                                                    <option value="MYR" >MYR</option>
-                                                    <option value="BRL" >BRL</option>
-                                                    <option value="AUD" >AUD</option>
-                                                    <option value="GBP" >GBP</option>
-                                                    <option value="CAD" >CAD</option>
-                                                    <option value="CZK" >CZK</option>
-                                                    <option value="DKK" >DKK</option>
-                                                    <option value="EUR" >EUR</option>
-                                                    <option value="HKD" >HKD</option>
-                                                    <option value="HUF" >HUF</option>
-                                                    <option value="ILS" >ILS</option>
-                                                    <option value="JPY" >JPY</option>
-                                                    <option value="MXN" >MXN</option>
-                                                    <option value="NZD" >NZD</option>
-                                                    <option value="NOK" >NOK</option>
-                                                    <option value="PLN" >PLN</option>
-                                                    <option value="SGD" >SGD</option>
-                                                    <option value="SEK" >SEK</option>
-                                                    <option value="CHF" >CHF</option>
-                                                    <option value="PHP" >PHP</option>
-                                                    <option value="LEV" >LEV</option>
-                                                    <option value="LPS" >LPS</option>
-                                                    <option value="ZAR" >ZAR</option>
+                                                 
+                                                      <?php
+                                                    $currency_codes = EventPlus_Helpers_Currency::get_currency_list();
+                                                    if (is_array($currency_codes)):
+                                                        foreach ($currency_codes as $k => $currency_code):
+                                                            ?>
+                                                            <option value="<?php echo $currency_code; ?>" <?php if ($item_custom_cur == $currency_code) echo ' selected'; ?>><?php echo $currency_code; ?></option>
+                                                        <?php endforeach; ?>`
+                                                    <?php endif; ?>`
                                                 </select>
                                             </div>
                                         </li>

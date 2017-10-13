@@ -22,39 +22,16 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             <option value="<?php echo $company_options['default_currency']; ?>">
                                 <?php _e('Select Currency', 'evrplus_language'); ?>
                             </option>
-                            <option value="USD" <?php if ($company_options['default_currency'] == 'USD') echo ' selected'; ?>>USD</option>
-                            <option value="JOD" <?php if ($company_options['default_currency'] == 'JOD') echo ' selected'; ?>>JOD</option>
-                            <option value="TWD" <?php if ($company_options['default_currency'] == 'TWD') echo ' selected'; ?>>TWD</option>
-                            <option value="TRY" <?php if ($company_options['default_currency'] == 'TRY') echo ' selected'; ?>>TRY</option>
-                            <option value="TRY" <?php if ($company_options['default_currency'] == 'AED') echo ' selected'; ?>>AED</option>
-                            <option value="THB" <?php if ($company_options['default_currency'] == 'THB') echo ' selected'; ?>>THB</option>
-                            <option value="RUB" <?php if ($company_options['default_currency'] == 'RUB') echo ' selected'; ?>>RUB</option>
-                            <option value="NOK" <?php if ($company_options['default_currency'] == 'NOK') echo ' selected'; ?>>NOK</option>
-                            <option value="MYR" <?php if ($company_options['default_currency'] == 'MYR') echo ' selected'; ?>>MYR</option>
-                            <option value="BRL" <?php if ($company_options['default_currency'] == 'BRL') echo ' selected'; ?>>BRL</option>
-                            <option value="AUD" <?php if ($company_options['default_currency'] == 'AUD') echo ' selected'; ?>>AUD</option>
-                            <option value="GBP" <?php if ($company_options['default_currency'] == 'GBP') echo ' selected'; ?>>GBP</option>
-                            <option value="CAD" <?php if ($company_options['default_currency'] == 'CAD') echo ' selected'; ?>>CAD</option>
-                            <option value="CZK" <?php if ($company_options['default_currency'] == 'CZK') echo ' selected'; ?>>CZK</option>
-                            <option value="DKK" <?php if ($company_options['default_currency'] == 'DKK') echo ' selected'; ?>>DKK</option>
-                            <option value="EUR" <?php if ($company_options['default_currency'] == 'EUR') echo ' selected'; ?>>EUR</option>
-                            <option value="HKD" <?php if ($company_options['default_currency'] == 'HKD') echo ' selected'; ?>>HKD</option>
-                            <option value="HUF" <?php if ($company_options['default_currency'] == 'HUF') echo ' selected'; ?>>HUF</option>
-                            <option value="ILS" <?php if ($company_options['default_currency'] == 'ILS') echo ' selected'; ?>>ILS</option>
-                            <option value="JPY" <?php if ($company_options['default_currency'] == 'JPY') echo ' selected'; ?>>JPY</option>
-                            <option value="MXN" <?php if ($company_options['default_currency'] == 'MXN') echo ' selected'; ?>>MXN</option>
-                            <option value="NZD" <?php if ($company_options['default_currency'] == 'NZD') echo ' selected'; ?>>NZD</option>
-                            <option value="NOK" <?php if ($company_options['default_currency'] == 'NOK') echo ' selected'; ?>>NOK</option>
-                            <option value="PLN" <?php if ($company_options['default_currency'] == 'PLN') echo ' selected'; ?>>PLN</option>
-                            <option value="SGD" <?php if ($company_options['default_currency'] == 'SGD') echo ' selected'; ?>>SGD</option>
-                            <option value="SEK" <?php if ($company_options['default_currency'] == 'SEK') echo ' selected'; ?>>SEK</option>
-                            <option value="CHF" <?php if ($company_options['default_currency'] == 'CHF') echo ' selected'; ?>>CHF</option>
-                            <option value="BOB" <?php if ($company_options['default_currency'] == 'BOB') echo ' selected'; ?>>BOB</option>
-                            <option value="MUR" <?php if ($company_options['default_currency'] == 'MUR') echo ' selected'; ?>>MUR</option>
-                            <option value="RON" <?php if ($company_options['default_currency'] == 'RON') echo ' selected'; ?>>RON</option>
-                            <option value="LPS" <?php if ($company_options['default_currency'] == 'LPS') echo ' selected'; ?>>LPS</option>
-                            <option value="RON" <?php if ($company_options['default_currency'] == 'KWR') echo ' selected'; ?>>KWR</option>
-                            <option value="ZAR" <?php if ($company_options['default_currency'] == 'ZAR') echo ' selected'; ?>>ZAR</option>
+
+                            <?php
+                            $currency_codes = EventPlus_Helpers_Currency::get_currency_list();
+                            if (is_array($currency_codes)):
+                                foreach ($currency_codes as $k => $currency_code):
+                                    ?>
+                                    <option value="<?php echo $currency_code; ?>" <?php if ($company_options['default_currency'] == $currency_code) echo ' selected'; ?>><?php echo $currency_code; ?></option>
+                                <?php endforeach; ?>`
+                            <?php endif; ?>`
+
                         </select>
                     </div>
                     </p> <br />
