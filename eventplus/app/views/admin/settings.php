@@ -46,7 +46,7 @@
 </style>
 
 <?php
-$currentTab = 'tab1';
+$currentTab = 'tab1_contact';
 if (isset($_GET['ct'])) {
     $currentTab = $_GET['ct'];
 }
@@ -250,7 +250,7 @@ if (isset($_GET['ct'])) {
     jQuery(document).ready(function () {
         jQuery('.tabs li a').click(function () {
 
-            if (jQuery(this).attr('href') == '#tab9') {
+            if (jQuery(this).attr('href') == '#tab9_done') {
                 jQuery('.disp').html("<?php echo _e("Let's get your events plugin configured!", 'evrplus_language'); ?>");
 
             } else {

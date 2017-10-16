@@ -21,7 +21,7 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
             }
 
             //$params
-            $currentTab = 'tab1';
+            $currentTab = 'tab1_contact';
             if (isset($params['eplus_current_tab'])) {
                 $currentTab = $params['eplus_current_tab'];
             }
