@@ -62,16 +62,16 @@ class EventPlus_Helpers_Admin_Menu {
     
     static function getSettingTabs(){
         return array(
-            'tab1' => __('Contact', 'evrplus_language'),
-            'tab2' => __('Payment', 'evrplus_language'),
-            'tab3' => __('Captcha', 'evrplus_language'),
-            'tab4' => __('Page Config', 'evrplus_language'),
-            'tab5' => __('Confirmation', 'evrplus_language'),
-            'tab6' => __('Waitlist', 'evrplus_language'),
-            'tab7' => __('Calendar', 'evrplus_language'),
-            'tab8' => __('Tax', 'evrplus_language'),
+            'tab1_contact' => __('Contact', 'evrplus_language'),
+            'tab2_payment' => __('Payment', 'evrplus_language'),
+            'tab3_captcha' => __('Captcha', 'evrplus_language'),
+            'tab4_page_config' => __('Page Config', 'evrplus_language'),
+            'tab5_confirmation' => __('Confirmation', 'evrplus_language'),
+            'tab6_waitlist' => __('Waitlist', 'evrplus_language'),
+            'tab7_calendar' => __('Calendar', 'evrplus_language'),
+            'tab8_tax' => __('Tax', 'evrplus_language'),
             'tabdiscount' => __('Bulk Discounts', 'evrplus_language'),
-            'tab9' => __('Done', 'evrplus_language'),
+            'tab9_done' => __('Done', 'evrplus_language'),
         );
     }
 
