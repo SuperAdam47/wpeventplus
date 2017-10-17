@@ -73,6 +73,23 @@ class EventPlus_Helpers_Mail {
         $use_coupon = $this->eventRow['use_coupon'];
         $reg_limit = $this->eventRow['reg_limit'];
         $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
+
+		// Get options for get / set date time format
+		$opt = EventPlus_Models_Settings::getSettings();
+		$date_format = 'M j, Y'; $time_format = 'h:i A';
+		if( isset($opt['date_format']) && $opt['date_format'] == 'eur' ) {
+			$date_format = 'j M Y';
+		}
+		if( isset($opt['time_format']) && $opt['time_format'] == '24hrs' ) {
+			$time_format = 'H:i';
+		}
+
+		// Convert dates and time into format
+		$start_date = date_i18n( $date_format, strtotime($this->eventRow['start_date']) );
+		$start_time = date_i18n( $time_format, strtotime($this->eventRow['start_time']) );
+		$end_date   = date_i18n( $date_format, strtotime($this->eventRow['end_date']) );
+		$end_time   = date_i18n( $time_format, strtotime($this->eventRow['end_time']) );
+
         $mail_subject = evrplus_htmlchanger($this->eventRow['event_name']);
         $invoice_event = $this->eventRow['event_name'];
         $event_identifier = stripslashes($this->eventRow['event_identifier']);
@@ -91,8 +108,8 @@ class EventPlus_Helpers_Mail {
         $end_month = $this->eventRow['end_month'];
         $end_day = $this->eventRow['end_day'];
         $end_year = $this->eventRow['end_year'];
-        $start_time = $this->eventRow['start_time'];
-        $end_time = $this->eventRow['end_time'];
+        $start_time = $start_time;
+        $end_time = $end_time;
         $allow_checks = $this->eventRow['allow_checks'];
         $counter_checks = $this->eventRow['counter_checks'];
         $outside_reg = $this->eventRow['outside_reg'];  // Yor N
@@ -102,8 +119,8 @@ class EventPlus_Helpers_Mail {
         $header_image = $this->eventRow['header_image'];
         $is_active = $this->eventRow['is_active'];
         $send_mail = $this->eventRow['send_mail'];  // Y or N
-        $start_date = $this->eventRow['start_date'];
-        $end_date = $this->eventRow['end_date'];
+        $start_date = $start_date;
+        $end_date = $end_date;
         $category_id = $this->eventRow['category_id'];
 
 
