@@ -6,6 +6,7 @@ $wpdb = $this->wpDb();
 <a href="<?php echo $this->adminUrl('admin_categories'); ?>" class="page-title-action"><?php _e('Event Categories', 'evrplus_language'); ?></a>
 <a href="<?php echo $this->adminUrl('admin_events'); ?>" class="page-title-action"><?php _e('View Events', 'evrplus_language'); ?></a>
 <hr />
+<?php echo EventPlus_Helpers_Funx::promoBanner(300); ?>
 <div class="inside">
     <div id="activity-widget">
         <div class="activity-block" id="published-posts">

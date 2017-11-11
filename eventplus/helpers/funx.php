@@ -231,4 +231,10 @@ class EventPlus_Helpers_Funx {
         return $is_valid;
     }
 
+    static function promoBanner($width=''){
+        if($width == ''){
+            $width = '460';
+        }
+        return '<div style="text-align:center;"><a href="https://wpeventsplus.com/theme/"><img width="'.$width.'" src="'.EVENT_PLUS_PLUGIN_URL.'assets/images/promo/eventsuite-banner.gif" /></a></div>';
+    }
 }

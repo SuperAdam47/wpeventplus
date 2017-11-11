@@ -56,7 +56,8 @@ if (isset($_GET['ct'])) {
     <div class="evrplus_container">
 
         <div class="wrap">
-            <h2><img src="<?php echo $this->assetUrl('images/evrplus_icon.png'); ?>" alt="Event Registration for Wordpress" /></h2>
+            <h2><img src="<?php echo $this->assetUrl('images/evrplus_icon.png'); ?>" alt="Event Registration for Wordpress" /></h2> 
+
             <h2 class="disp">
                 <?php _e('Lets get your plugin setup!', 'evrplus_language'); ?>
             </h2>
@@ -303,3 +304,11 @@ if (isset($_GET['ct'])) {
     }
 
 </script>
+
+<div style='position: absolute; top: 5%; right: 5%;'>
+    <?php echo EventPlus_Helpers_Funx::promoBanner(); ?>
+</div>
+
+ <div style='position: absolute; top: 5%; right: 5%;'>
+                <?php echo EventPlus_Helpers_Funx::promoBanner(); ?>
+            </div>
