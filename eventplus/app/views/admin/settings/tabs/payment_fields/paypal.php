@@ -43,7 +43,7 @@
     <li>Click the <strong>Profile</strong> subtab.</li>
     <li>Click <strong>Website Payment Preferences</strong> in the Seller Preferences column.</li>
     <li>Under Auto Return for Website Payments, click the <strong>On</strong> radio button.</li>
-    <li>For the Return URL, enter the URL on your site that will receive the transaction ID posted by PayPal after a customer payment.</li>
+    <li>For the Return URL, keep it blank.</li>
     <li>Under Payment Data Transfer, click the <strong>On</strong> radio button.</li>
     <li>Click <strong>Save</strong>.</li>
     <li>Click <strong>Website Payment Preferences</strong> in the Seller Preferences column.</li>
