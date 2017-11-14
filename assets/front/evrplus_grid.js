@@ -9,6 +9,7 @@ jQuery(function ($) {
         verticalSpaceBetweenBoxes: 20,
         LoadingWord: EvrGrid.LoadingWord,
         loadMoreWord: EvrGrid.loadMoreWord,
-        noMoreEntriesWord: EvrGrid.noMoreEntriesWord
+        noMoreEntriesWord: EvrGrid.noMoreEntriesWord,
+        columnWidth: 250
     });
 });
