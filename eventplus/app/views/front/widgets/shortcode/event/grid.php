@@ -93,7 +93,12 @@ if (count($rows)):
                         </div>
 
                         <div class="media-box-content" style="background-color: #f5f5f5;">
-                            <div class="media-box-title"><?php echo stripslashes($event->event_name); ?></div>
+                            <div class="media-box-title">
+                                <a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">
+                                    
+                                    <?php echo stripslashes($event->event_name); ?>
+                                </a>
+                            </div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">

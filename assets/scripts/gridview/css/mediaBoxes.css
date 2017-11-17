@@ -101,12 +101,18 @@
   	width: 100%;
   }
 
-  .media-box-title{
+  .media-box-title, .media-box-title a{
     letter-spacing: 0px;
     line-height: 1.1;
     font-weight: 800;
     color: #333333;
     font-size: 14px;
+    text-decoration: none;
+    box-shadow: none;
+  }
+  .media-box-title a:hover {
+  	text-decoration: none;
+    box-shadow: none;
   }
 
   .media-box-title small{
