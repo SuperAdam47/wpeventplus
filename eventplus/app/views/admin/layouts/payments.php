@@ -23,6 +23,6 @@
 
 </div>
 
- <div style='position: absolute; top: 5%; right: 5%;'>
-                <?php echo EventPlus_Helpers_Funx::promoBanner(); ?>
-            </div>
+<div style='text-align: center;'>
+    <?php echo EventPlus_Helpers_Funx::promoBanner(); ?>
+</div>
