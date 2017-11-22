@@ -174,7 +174,9 @@ if (isset($event_meta_data)) {
                 </div>
 
                 <div class="d3sc" id="eventplus_event_description">
-                    <p><?php echo html_entity_decode(nl2br($event_desc)); ?></p>
+                    <p><?php
+                    $event_desc = apply_filters( 'the_content', $event_desc );
+                    echo html_entity_decode(nl2br($event_desc)); ?></p>
                 </div>
 
                 <?php if ($google_map == "Y"): ?>
