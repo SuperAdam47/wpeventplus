@@ -623,6 +623,7 @@
     display: none; /* hidden by default, the plugin will take care of showing it */
     float: left;
     /*width: 20%;*/
+    /*min-width: 220px;*/
   }
 
   .media-box-hidden, .not-loaded-before-search{

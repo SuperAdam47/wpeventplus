@@ -34,9 +34,11 @@ if (count($rows)):
                         <?php } ?>
                     </ul>
                 </div>
-            <?php endif; ?>
+            <?php endif;
 
-            <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>">
+            $box_width = apply_filters( 'evr_event_grrid_box_width', '250' ); ?>
+
+            <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>" data-boxesWidth="<?php echo $box_width; ?>">
 
                 <?php
                 foreach ($rows as $event) :

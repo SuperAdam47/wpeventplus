@@ -10,6 +10,6 @@ jQuery(function ($) {
         LoadingWord: EvrGrid.LoadingWord,
         loadMoreWord: EvrGrid.loadMoreWord,
         noMoreEntriesWord: EvrGrid.noMoreEntriesWord,
-        columnWidth: 250
+        columnWidth: oEvrGrid.attr('data-boxesWidth'),
     });
 });
