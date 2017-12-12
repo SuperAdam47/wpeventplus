@@ -36,7 +36,7 @@ if (count($rows)):
                 </div>
             <?php endif;
 
-            $box_width = apply_filters( 'evr_event_grrid_box_width', '250' ); ?>
+            $box_width = apply_filters( 'evrplus_event_grid_box_width', '250' ); ?>
 
             <div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $init_events; ?>" data-boxesWidth="<?php echo $box_width; ?>">
 
@@ -83,8 +83,8 @@ if (count($rows)):
                     <div class="media-box <?php echo $catStr; echo $extraStr; ?>" data-columns="<?php echo $col; ?>">
 
                         <?php
-                        $defaultImage = $this->assetUrl('images/calendar-icon.png');
-                        ?>
+                        $defaultImage = $this->assetUrl('images/calendar-icon.png'); ?>
+
                         <div class="media-box-image">
                             <div data-thumbnail="<?php echo ($event->image_link) ? $event->image_link : $defaultImage; ?>" data-width="240" data-height="151"></div>
                             <div class="thumbnail-overlay">
@@ -95,12 +95,18 @@ if (count($rows)):
                         </div>
 
                         <div class="media-box-content" style="background-color: #f5f5f5;">
+                            <?php
+                            do_action( 'evrplus_grid_before_box_conent', $event ) ?>
+
                             <div class="media-box-title">
                                 <a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>">
-                                    
                                     <?php echo stripslashes($event->event_name); ?>
                                 </a>
                             </div>
+
+                            <?php
+                            do_action( 'evrplus_grid_after_box_title', $event ) ?>
+
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
                             <div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
                             <div class="media-box-text">
@@ -113,18 +119,21 @@ if (count($rows)):
                                         $endChar = '...';
                                     }
                                     echo substr($content, 0, $character_limit) . $endChar;
-                                }
-                                ?>
+                                } ?>
                             </div>
+
+                            <?php
+                            do_action( 'evrplus_grid_after_box_text', $event ) ?>
+
                             <div class="media-box-more"><a href="<?php echo EventPlus_Helpers_Event::permalink($company_options['evrplus_page_id']); ?>action=evrplusegister&event_id=<?php echo $event->id . ( ($recurr) ? '&recurr=' . $recurr : '' ) ?>"><?php _e('Read more', 'evrplus_language'); ?></a> </div>
+
+                            <?php
+                            do_action( 'evrplus_grid_after_box_content', $event ) ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
             </div>
         </div>
     </div>
-    <?php
-
-
-
- endif; 
+<?php
+endif;
