@@ -6,16 +6,15 @@ class EventPlus_Helpers_Event {
 
     static function permalink($page_id) {
 
-        if (is_home()) {
+        if( $page_id == get_option('show_on_front') ) {
             $p_link = get_bloginfo('url');
 
-            if ($p_link[strlen($p_link) - 1] != '/') {
+            if( $p_link[strlen($p_link) - 1] != '/' ) {
                 $p_link = $p_link . '/';
             }
         } else {
             $p_link = get_permalink($page_id);
         }
-
 
         if (!(strstr($p_link, '?'))) {
             $link_part = $p_link . '?';
