@@ -40,7 +40,6 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         wp_enqueue_style('mediaBoxes');
         wp_enqueue_style('magnific-popup');
 
-
         $col = $this->_invokeArgs['col'];
         $columns = $this->_invokeArgs['columns'];
         $ordered = $this->_invokeArgs['ordered'];
@@ -49,6 +48,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $custom = $this->_invokeArgs['custom'];
         $show_excerpt = $this->_invokeArgs['show_excerpt'];
         $character_limit = $this->_invokeArgs['character_limit'];
+        $category_id = $this->_invokeArgs['category_id'];
 
         $company_options = EventPlus_Models_Settings::getSettings();
 
@@ -56,11 +56,15 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
 
         $oEvent = new EventPlus_Models_Events();
         $rows = $oEvent->getRecords(array(
+            'category_id' => $category_id,
             'orderby' => $orderby
         ));
 
-        $oEventCategories = new EventPlus_Models_Categories();
-        $categories = $oEventCategories->getCategories();
+        $categories = array();
+        if( empty($category_id) ) {
+            $oEventCategories = new EventPlus_Models_Categories();
+            $categories = $oEventCategories->getCategories();
+        }
 
         $viewParams = array();
         $viewParams['invoke_params'] = $this->_invokeArgs;
@@ -70,6 +74,7 @@ class eplus_front_shortcode_event_grid_controller extends EventPlus_Abstract_Con
         $viewParams['cats'] = $categories;
         $viewParams['show_excerpt'] = $show_excerpt;
         $viewParams['character_limit'] = $character_limit;
+        $viewParams['category_id'] = $category_id;
 
         $output = $this->oView->View('front/widgets/shortcode/event/grid', $viewParams);
 

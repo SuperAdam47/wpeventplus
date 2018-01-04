@@ -32,10 +32,9 @@ class EventPlus_ShortCodes {
             'columns' => '4',
             'ordered' => 'yes',
             'init_events' => '8',
-            'load_new_events' => '5'
-                        ), $atts));
-
-
+            'load_new_events' => '5',
+            'category_id' => ''
+        ), $atts));
 
         $col = ($columns == 2) ? 2 : 4 - ($columns - 1);
         
@@ -46,13 +45,14 @@ class EventPlus_ShortCodes {
         $show_excerpt = strtolower($show_excerpt);
 
         return EventPlus::dispatch('front_shortcode_event_grid/index', array(
-                    'col' => $col,
-                    'columns' => $columns,
-                    'ordered' => $ordered,
-                    'init_events' => $init_events,
-                    'load_new_events' => $load_new_events,
-                    'show_excerpt' => $show_excerpt,
-                    'character_limit' => $character_limit,
+            'col' => $col,
+            'columns' => $columns,
+            'ordered' => $ordered,
+            'init_events' => $init_events,
+            'load_new_events' => $load_new_events,
+            'show_excerpt' => $show_excerpt,
+            'character_limit' => $character_limit,
+            'category_id' => $category_id,
         ));
     }
 
