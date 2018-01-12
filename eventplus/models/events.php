@@ -667,11 +667,16 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function getRecords(array $params) {
 
         $orderby = $params['orderby'];
+        $category_id = $params['category_id'];
 
         $sql = "SELECT * FROM " . $this->_table . " "
-                . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() "
-                . " ORDER BY DATE(start_date), start_time " . $orderby;
-   
+                . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate()";
+
+        if( !empty($category_id) ) {
+            $sql .= " AND category_id LIKE '%:\"".$category_id."\";%'";
+        }
+
+        $sql .= " ORDER BY DATE(start_date) ".$orderby.", start_time " . $orderby;
         
         return $this->getWpDb()->get_results($sql);
     }

@@ -56,9 +56,13 @@
         if( settings.overlayEasing == 'default' ){
             settings.overlayEasing = (animation=='transition')?'_default':'swing'; /* 'default' is for CSS3 and 'swing' for jQuery animate */
         }
-        
+
         /* LOAD MORE BUTTON */
-        var loadMoreButton              = $('<div class="media-boxes-load-more media-boxes-load-more-button"></div>').insertAfter($container);
+        if( options.boxesToLoad == '0' ) {
+            var loadMoreButton = $('<div class="media-boxes-load-more media-boxes-load-more-button" style="display:none;"></div>').insertAfter($container);
+        } else {
+            var loadMoreButton = $('<div class="media-boxes-load-more media-boxes-load-more-button"></div>').insertAfter($container);
+        }
 
         /* Sort the resolutions from lower to higher */
         settings.resolutions.sort(function(a,b){ return a.maxWidth - b.maxWidth; });
@@ -1414,12 +1418,6 @@
             url = 'http://pinterest.com/pin/create/button/?url=' + url + '&media=' + url;
             openWindow(url);
         });
-
-
-
-
-
-
 
         return this;
 

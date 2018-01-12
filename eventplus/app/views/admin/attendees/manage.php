@@ -39,7 +39,7 @@ if (is_object($oEvent)) {
             <select name="event_id" class="event_id_filter" data-current-uri="eventplus_admin_attendees">
                 <option value=""> <?php _e('All', 'evrplus_language'); ?> </option>
                 <?php foreach ($events as $ei => $eventRow): ?>
-                    <option value="<?php echo $eventRow['id']; ?>" <?php if ($_REQUEST['event_id'] == $eventRow['id']) echo 'selected="selected"' ?>> <?php echo $eventRow['event_name']; ?></option>
+                    <option value="<?php echo $eventRow['id']; ?>" <?php if ($_REQUEST['event_id'] == $eventRow['id']) echo 'selected="selected"' ?>> <?php echo '#'.$eventRow['id'].' - '.$eventRow['event_name']; ?></option>
                 <?php endforeach; ?>
             </select>
         </p>
