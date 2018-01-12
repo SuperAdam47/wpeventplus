@@ -676,7 +676,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $sql .= " AND category_id LIKE '%:\"".$category_id."\";%'";
         }
 
-        $sql .= " ORDER BY DATE(start_date), start_time " . $orderby;
+        $sql .= " ORDER BY DATE(start_date) ".$orderby.", start_time " . $orderby;
         
         return $this->getWpDb()->get_results($sql);
     }
