@@ -720,7 +720,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     }
 
     function getComboDataset($params = array()) {
-        $sql = "SELECT id, event_name FROM " . $this->_table . "  ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
+        $sql = "SELECT id, event_name, event_identifier FROM " . $this->_table . "  ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
         return $this->getWpDb()->get_results($sql, ARRAY_A);
     }
 
