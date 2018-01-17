@@ -78,17 +78,17 @@
 
         font: bold 13px "Helvetica Neue", Sans-Serif;
     }
-    input[type="checkbox"] {
+    .evrplus_tab_container .tab_content input[type="checkbox"] {
         display: none;
     }
-    input[type="checkbox"] + label {
+    .evrplus_tab_container .tab_content input[type="checkbox"] + label {
         background: url("http://i.stack.imgur.com/S4p2R.png") no-repeat scroll 0 50% transparent;
         height: 21px;
         margin: 0 8px 0 0 !important;
         padding: 0;
         width: 23px;
     }
-    input[type="checkbox"]:checked + label {
+    .evrplus_tab_container .tab_content input[type="checkbox"]:checked + label {
         background: url("http://i.stack.imgur.com/S4p2R.png") no-repeat scroll 80% 50% transparent;
         height: 21px;
         margin: 0 8px 0 0 !important;
