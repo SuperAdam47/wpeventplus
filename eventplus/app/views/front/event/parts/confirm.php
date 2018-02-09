@@ -267,7 +267,7 @@ if ($reg_type == "RGLR") {
     $type = __('You are registering for', 'evrplus_language') . " " . $quantity . " " . __('person(s).', 'evrplus_language') . "   " . __('Please provide the first and last name of each person:', 'evrplus_language');
 }
 
-if (has_filter('eventplus_registration_type_message')) {
+if(has_filter('eventplus_registration_type_message')) {
     $type = apply_filters('eventplus_registration_type_message', $reg_type);
 }
 

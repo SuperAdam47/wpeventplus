@@ -33,7 +33,7 @@
         background: #5BA4A4;
         border:1px #fff solid !important;
     }
-    input[type="checkbox"] {
+    .evrplus_tab_container .tab_content input[type="checkbox"] {
         display: none;
     }
     .ui-tooltip {
@@ -78,7 +78,7 @@
     .checked{
         background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 80% 50%;
     } */
-    input[type=checkbox]:checked + label { 
+    .evrplus_tab_container .tab_content input[type=checkbox]:checked + label { 
         background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 80% 50%;
         width: 23px;
         height: 21px;
@@ -86,7 +86,7 @@
         padding: 0;
 
     }
-    input[type=checkbox] + label{
+    .evrplus_tab_container .tab_content input[type=checkbox] + label{
         background: transparent url(http://i.stack.imgur.com/S4p2R.png ) no-repeat 0 50%;
         width: 23px;
         height: 21px;
