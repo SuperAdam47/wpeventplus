@@ -38,7 +38,7 @@ class EventPlus_Helpers_Mail {
 
     function send_wp_mail($to, $subject, $message, $headers = '', $attachments = array()) {
 
-        $message = nl2br($message);
+        $message = nl2br(stripslashes($message));
 
         $totSent = 0;
         if (is_string($to)) {
