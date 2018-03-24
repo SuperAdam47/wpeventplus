@@ -179,17 +179,22 @@ if (isset($event_meta_data)) {
                     echo html_entity_decode(nl2br($event_desc)); ?></p>
                 </div>
 
-                <?php if ($google_map == "Y"): ?>
-                    <?php
+                <?php if ($google_map == "Y" || true): 
+                   
                     $event_location_map = str_replace(" ", "+", $event_location);
                     $event_address_map = str_replace(" ", "+", $event_address);
                     $event_city_map = str_replace(" ", "+", $event_city);
                     $event_state_map = str_replace(" ", "+", $event_state);
                     $event_country_map = str_replace(" ", "+", $event_country);
-                    if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']))
-                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
-                    else
-                        echo '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                    $map_str = '';
+                    if (isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key'])){
+                        $map_str = '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                    }else{
+                        $map_str = '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                    }
+                    
+                    echo apply_filters('wpeventsplus_map', $map_str, $event_id);
+                    
                     ?>
                 <?php endif; ?>
 
