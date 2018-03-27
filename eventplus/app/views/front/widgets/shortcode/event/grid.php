@@ -74,7 +74,7 @@ if (count($rows)):
                         }
                     }
                     
-                    $extraClasses = apply_filters('evrplus_filter_extra_classes', [], $event);
+                    $extraClasses = apply_filters('evrplus_filter_extra_classes', array(), $event);
                     $extraStr = '';
                     if(is_array($extraClasses)){
                         if(count($extraClasses)){
