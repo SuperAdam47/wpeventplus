@@ -14,11 +14,12 @@
                 $sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . (int) $cat_id . "' LIMIT 1";
                 $cat_details = $wpdb->get_row($sql);
 
-                $style_event_catgry = '#999';
+                $style_event_catgry = '#999999'; $event_catgry_fnt_clr = '#ffffff';
                 if ($cat_details != "") {
                     $category_identifier = $cat_details->category_identifier;
                     if ($category_identifier != '') {
                         $style_event_catgry = ($cat_details->category_color);
+                        $event_catgry_fnt_clr = ($cat_details->font_color);
                     }
                 }
 
@@ -94,7 +95,7 @@
                             ?>
                             <div class="sea8s">
                                 <?php echo __('Open Seats', 'evrplus_language'); ?>
-                                <label style="background-color: <?php echo $style_event_catgry; ?>;"><?php echo $available_spaces; ?></label>
+                                <label style="background-color: <?php echo $style_event_catgry; ?>; color: <?php echo $event_catgry_fnt_clr; ?>;"><?php echo $available_spaces; ?></label>
                             </div>
                         <?php endif; ?>
                     </div>
