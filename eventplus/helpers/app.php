@@ -176,11 +176,11 @@ class EventPlus_Helpers_App {
 
     function eventsplus_registration_setup_notice() {
         if (EventPlus_Helpers_Funx::isValidRegistrationPage() == false) {
-            ?>
+            /*?>
             <div class="notice notice-error">
                 <p><?php _e('Warning: {EVRREGIS} shortcode is missing. Please configure page and paste the shortcode. If you fail to add this shortcode non of your event links will work as <a href="http://wpeventsplus.com/documentation/knowledge-base/registration-page-shortcode/">explained in this article</a>.', 'evrplus_language'); ?></p>
             </div>
-            <?php
+            <?php*/
         }
     }
 
