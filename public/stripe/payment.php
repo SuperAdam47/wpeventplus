@@ -14,7 +14,7 @@ include_once($wpDir . 'wp-includes/wp-db.php');
 
 global $wpdb;
 
-if (isset($_POST['stripeToken']) == false) {
+if( isset($_POST['stripeToken']) == false ) {
     die("Invalid request.");
 }
 

@@ -704,9 +704,9 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         
         # Get events that end date is later than today and order by start date
         if ($company_options['order_event_list'] == 'DESC') {
-            $sql .= " ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC";
+            $sql .= " ORDER BY str_to_date(start_date, '%Y-%m-%e') DESC, start_time DESC";
         } else {
-            $sql .= " ORDER BY str_to_date(start_date, '%Y-%m-%e') ASC";
+            $sql .= " ORDER BY str_to_date(start_date, '%Y-%m-%e') ASC, start_time ASC";
         }
         
        
