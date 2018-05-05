@@ -5,16 +5,16 @@ class EventPlus_Helpers_Assets_Front {
     function enqueueStylesheets() {
         $file = EventPlus::getPlugin()->getFile();
 
-        wp_register_style('evrplus_public', plugins_url('assets/front/evrplus_public_style_v2.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('evrplus_calendar', plugins_url('assets/front/evrplus_calendar_v19.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('custom-style', plugins_url('assets/front/custom-style.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('evrplus_pop_style', plugins_url('assets/front/evrplus_pop_style_v1.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('evrplus_fancy_style', plugins_url('assets/scripts/fancybox/jquery.fancybox-1.3.4.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('evrplus_colorbox_style', plugins_url('assets/scripts/colorbox/css/colorbox.css', $file), array(), '1.0.0', 'all');
+        wp_register_style('evrplus_public', plugins_url('assets/front/evrplus_public_style_v2.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('evrplus_calendar', plugins_url('assets/front/evrplus_calendar_v19.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('custom-style', plugins_url('assets/front/custom-style.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('evrplus_pop_style', plugins_url('assets/front/evrplus_pop_style_v1.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('evrplus_fancy_style', plugins_url('assets/scripts/fancybox/jquery.fancybox-1.3.4.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('evrplus_colorbox_style', plugins_url('assets/scripts/colorbox/css/colorbox.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
         
-        wp_register_style('eventplus-front', plugins_url('assets/front/style.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('eventplus-responsive', plugins_url('assets/front/responsive.css', $file), array(), '1.0.0', 'all');
-        wp_register_style('eventplus-fonts-fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '1.0.0', 'all');
+        wp_register_style('eventplus-front', plugins_url('assets/front/style.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('eventplus-responsive', plugins_url('assets/front/responsive.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
+        wp_register_style('eventplus-fonts-fa', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), EVENT_PLUS_PLUS_V, 'all');
         
         wp_enqueue_style('evrplus_public');
 
@@ -26,7 +26,7 @@ class EventPlus_Helpers_Assets_Front {
 
         wp_enqueue_style('evrplus_colorbox_style');
 
-        wp_register_style('bootstrabCSS', plugins_url('assets/front/bootstrap.css', $file), array(), '1.0.0', 'all');
+        wp_register_style('bootstrabCSS', plugins_url('assets/front/bootstrap.css', $file), array(), EVENT_PLUS_PLUS_V, 'all');
         wp_enqueue_style('bootstrabCSS');
 
         wp_enqueue_style('custom-style');

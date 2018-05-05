@@ -232,9 +232,15 @@ class EventPlus_Helpers_Funx {
     }
 
     static function promoBanner($width=''){
+        
+        $hide_ads = intVal(get_option('eventplus_hide_ads', false));
+        if($hide_ads === 1){
+            return '';
+        }
+                
         if($width == ''){
             $width = '460';
         }
-        return '<div style="text-align:center;"><a href="https://wpeventsplus.com/theme/"><img width="'.$width.'" src="'.EVENT_PLUS_PLUGIN_URL.'assets/images/promo/eventsuite-banner.gif" /></a></div>';
+        return '<div style="text-align:center;"><a href="http://bit.ly/eventastic-banner" target="_blank"><img width="'.$width.'" src="'.EVENT_PLUS_PLUGIN_URL.'assets/images/promo/eventsuite-banner.gif" /></a> <br /><small>[<a href="'. EventPlus::get('registry')->get('url')->admin('admin_settings', array('hide_ad' => 1)).'">Hide Ad</a>]</small></div>';
     }
 }

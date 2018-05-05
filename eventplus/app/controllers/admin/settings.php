@@ -8,6 +8,13 @@ class eplus_admin_settings_controller extends EventPlus_Abstract_Controller {
 
     function index() {
 
+        if (isset($_GET['hide_ad'])) {
+            if ($_GET['hide_ad'] == 1) {
+                update_option('eventplus_hide_ads', 1);
+                $this->setSuccessMessage('Ad has been disabled.');
+                $this->redirect($this->adminUrl('admin_settings'));
+            }
+        }
 
         if ($this->_request->isPost()) {
 
