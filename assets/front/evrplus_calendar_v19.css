@@ -426,6 +426,7 @@
     color: #fff;
     text-shadow: 0 1px rgba(33,33,33,0.7);
     white-space: pre-wrap;
+    word-break: keep-all;
 }
 
 .no-events {

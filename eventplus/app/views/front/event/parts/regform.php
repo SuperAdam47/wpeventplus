@@ -206,27 +206,26 @@ if (isset($event_meta_data)) {
 
                             <?php
                             $eventLocationStr = '';
-                            if ($event_location != '') {
-                                $eventLocationStr .= stripslashes($event_location);
+                            if( $event_location != '' ) {
+                                $eventLocationStr .= stripslashes( $event_location );
                             }
 
-                            if ($event_address != '') {
-                                if ($eventLocationStr != '') {
+                            if( $event_address != '' ) {
+                                /*if( $eventLocationStr != '' ) {
                                     $eventLocationStr .= ', ';
-                                }
-                                $eventLocationStr = $eventLocationStr . ' ' . stripslashes($event_address);
+                                }*/
+                                $eventLocationStr = $eventLocationStr . '<br />' . stripslashes( $event_address );
                             }
 
-                            if ($event_city != '') {
+                            if( $event_city != '' ) {
                                 $eventLocationStr .= '<br />' . $event_city;
-                                if ($event_state != '') {
+                                if( $event_state != '' ) {
                                     $eventLocationStr .= ', ' . $event_state;
                                 }
-                                if ($event_postal != '') {
-                                    $eventLocationStr .= ', ' . $event_postal;
+                                if( $event_postal != '' ) {
+                                    $eventLocationStr .= $event_postal;
                                 }
-                            }
-                            ?>
+                            } ?>
                             <?php echo $eventLocationStr; ?>
                         </div>
                     </div>
@@ -237,9 +236,11 @@ if (isset($event_meta_data)) {
                             <?php
                             $curdate = date("Y-m-d");
                             $sql2 = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . $event_id . " ORDER BY sequence ASC";
-                            $result2 = $wpdb->get_results($sql2, ARRAY_A);
 
-                            foreach ($result2 as $row2) {
+                            $result2 = $wpdb->get_results( $sql2, ARRAY_A );
+
+                            foreach( $result2 as $row2 ) {
+
                                 $item_id = $row2['id'];
                                 $item_sequence = $row2['sequence'];
                                 $event_id = $row2['event_id'];
