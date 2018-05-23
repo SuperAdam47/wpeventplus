@@ -113,6 +113,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         add_shortcode('eventsplus_attendee', array($oShortCodes, 'attendeeShort'));
         add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
         add_shortcode('eventsplus_single', array($oShortCodes, 'singleEvent'));
+        add_shortcode('eventsplus_registration', array($oShortCodes, 'eventRegistration'));
     }
 
     function initAdmin() {

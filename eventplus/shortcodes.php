@@ -110,5 +110,9 @@ class EventPlus_ShortCodes {
                     'shortcode_attributes' => $attributes
         ));
     }
+    
+    function eventRegistration($atts) {
+        return  EventPlus::dispatch('front_event_registration/index', array());
+    }
 
 }
