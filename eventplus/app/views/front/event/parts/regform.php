@@ -189,10 +189,11 @@ if (isset($event_meta_data)) {
                     $event_country_map = str_replace(" ", "+", $event_country);
                     $map_str = '';
 
+                    $mapHeight = apply_filters( 'wpeventsplus_regform_map_height', '220' );
                     if( isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']) ){
-                        $map_str = '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        $map_str = '<iframe class="ma9" width="100%" height="'.$mapHeight.'" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                     } else {
-                        $map_str = '<iframe class="ma9" width="100%" height="220" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        $map_str = '<iframe class="ma9" width="100%" height="'.$mapHeight.'" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
                     }
                     
                     echo apply_filters( 'wpeventsplus_map', $map_str, $event_id ); ?>
@@ -706,27 +707,18 @@ if (isset($event_meta_data)) {
     </div>
 </div>
 
-<?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
+<?php
+if( $company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != "" ): ?>
     <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
     <script type="text/javascript">
-                                                            jQuery(document).ready(function () {
-                                                                jQuery("#mySubmit").click(function () {
-                                                                    if (grecaptcha.getResponse() == "") {
-                                                                        alert("Please fill the captcha !");
-                                                                        return false;
-                                                                    }
-                                                                });
-                                                            });
+        jQuery(document).ready(function () {
+            jQuery("#mySubmit").click(function () {
+                if (grecaptcha.getResponse() == "") {
+                    alert("Please fill the captcha !");
+                    return false;
+                }
+            });
+        });
     </script>
-    <?php
-
-
-
-
-
-
-
-
-
-
- endif;
+<?php
+endif;
