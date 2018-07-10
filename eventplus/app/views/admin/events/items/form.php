@@ -149,7 +149,7 @@ $item_custom_cur = $row['item_custom_cur'];
                                             <div class="pass1">
                                                 <p class="cs2" title="Please enter the amount using 2 decimal point (i.e. 10.00) for the registration cost.&nbsp; Use minus symbol before for discount amounts (i.e. -5.00)"></p></div>
                                             <div class="pass2">
-                                                <input class="price" id="item_price" name="item_price" type="text" maxlength="10" value="<?php echo $item_price; ?>" />
+                                                <input class="price" id="item_price" name="item_price" type="text" maxlength="14" value="<?php echo $item_price; ?>" />
                                             </div>
                                         </li>
                                         <br/>
