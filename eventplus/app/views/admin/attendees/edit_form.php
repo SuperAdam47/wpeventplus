@@ -133,16 +133,17 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                             echo "checked";
                                         }
                                         ?> /><label for="rt1" style="width:auto !important;"><?php _e('Wait List', 'evrplus_language'); ?></label><br/>
-                                                                                                                                                                                                        <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
+                                        <input id="rt2" type="radio" id="reg_type" name="reg_type" value="RGLR" <?php
                                                     if ($reg_type == "RGLR") {
                                                         echo "checked";
                                                     }
-                                        ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li>
-                                                                                                                                                                                                                      <?php
-                                                $open_seats = $available;
-                                                $curdate = date("Y-m-d");
-                                                $row_count = count($ticket_order);
-                                                if ($ticket_order != "") {
+                                        ?> /><label for="rt2"><?php _e('Standard', 'evrplus_language'); ?></label></div></li> 
+
+                                        <?php
+                                        $open_seats = $available;
+                                        $curdate = date("Y-m-d");
+                                        $row_count = count($ticket_order);
+                                        if ($ticket_order != "") {
                                                     for ($row = 0; $row < $row_count; $row++) {
                                                         ?>
                                                     <li><div class="pass1"><?php echo $ticket_order[$row]['ItemName'] . "    " . $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost']; ?></div><div class="pass2"><select name="PROD_<?php echo $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost']; ?>" id = "PROD_<?php
