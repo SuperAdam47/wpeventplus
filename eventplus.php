@@ -2,7 +2,7 @@
 
 /** Plugin Name: WP EventsPlus
  * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
- * Version: 2.4.0
+ * Version: 2.4.1
  * Author: wpeventsplus.com
  * Author URI: http://wpeventsplus.com/
  * License: GPL2
