@@ -12,8 +12,7 @@ class EventPlus_Filters {
 
         if ($this->removeAutoPCheck($content)) {
             remove_filter( 'the_content', 'wpautop' );
-            add_filter( 'the_content', 'wpautop' , 99);
-            add_filter( 'the_content', 'shortcode_unautop',100 );
+            remove_filter( 'the_excerpt', 'wpautop' );
         }
 
         return $content;
@@ -22,7 +21,8 @@ class EventPlus_Filters {
     function do_wpautop($content) {
 
         if ($this->autopActive) {
-            add_filter('the_content', 'wpautop');
+            add_filter( 'the_content', 'wpautop' , 99);
+            add_filter( 'the_content', 'shortcode_unautop',100 );
         }
 
         return $content;
