@@ -10896,7 +10896,7 @@ input[type="radio"] + label:before {
 	    padding: 9px;
 	    border-radius: 3px
 	}
-	.close {
+	.modal-header .close {
 	    float: right;
 	    font-size: 21px;
 	    font-weight: 700;
@@ -10906,8 +10906,8 @@ input[type="radio"] + label:before {
 	    filter: alpha(opacity=20);
 	    opacity: .2
 	}
-	.close:focus,
-	.close:hover {
+	.modal-header .close:focus,
+	.modal-header .close:hover {
 	    color: #000;
 	    text-decoration: none;
 	    cursor: pointer;
@@ -14329,7 +14329,7 @@ Chats
 Customized Bootstrap Close Icon 
 ***/
 	
-	.close {
+	.modal-header .close {
 	    display: inline-block;
 	    margin-top: 0px;
 	    margin-right: 0px;
@@ -29156,7 +29156,7 @@ Chats
 Customized Bootstrap Close Icon 
 ***/
 	
-	.close {
+	.modal-header .close {
 	    display: inline-block;
 	    margin-top: 0px;
 	    margin-right: 0px;
