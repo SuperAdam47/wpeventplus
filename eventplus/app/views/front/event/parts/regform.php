@@ -224,7 +224,7 @@ if (isset($event_meta_data)) {
                                     $eventLocationStr .= ', ' . $event_state;
                                 }
                                 if( $event_postal != '' ) {
-                                    $eventLocationStr .= $event_postal;
+                                    $eventLocationStr .= ', ' . $event_postal;
                                 }
                             } ?>
                             <?php echo $eventLocationStr; ?>
