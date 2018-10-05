@@ -348,7 +348,7 @@ class EventPlus_Helpers_Installer {
                             item_description VARCHAR(150) DEFAULT NULL,
                             item_cat VARCHAR (10) DEFAULT NULL,
                             item_limit VARCHAR (10) DEFAULT NULL,
-                            item_price decimal(7,2) DEFAULT NULL,
+                            item_price decimal(14,2) DEFAULT NULL,
                             free_item VARCHAR (4) DEFAULT NULL,
                             item_available_start_date VARCHAR (15) DEFAULT NULL,
                             item_available_end_date VARCHAR (15) DEFAULT NULL,
