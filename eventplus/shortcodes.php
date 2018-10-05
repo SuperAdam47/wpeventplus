@@ -68,7 +68,7 @@ class EventPlus_ShortCodes {
         extract(shortcode_atts(array('event_id' => 0), $atts));
 
         return EventPlus::dispatch('front_shortcode_attendees_short/index', array(
-                    'event_id' => $event_id,
+            'event_id' => $event_id,
         ));
     }
 

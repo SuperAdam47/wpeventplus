@@ -529,7 +529,8 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $sql = "SELECT * FROM " . $this->_table . " WHERE id =" . $event_id;
 
         $result = $this->getWpDb()->get_results($sql, ARRAY_A);
-        foreach ($result as $row) {
+        foreach( $result as $row ) {
+        	
             $event_name = "Copy of " . $row['event_name'];
             $event_identifier = "CPY-" . $row['event_identifier'];
             $event_desc = $row['event_desc'];
@@ -567,9 +568,10 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $term_c = $row['term_c'];
             $term_desc = $row['term_desc'];
             $recurrence_choice = $row['recurrence_choice'];
+            $google_map = $row['google_map'];
 
             $sql = array( 'event_name' => $event_name, 'event_desc' => $event_desc, 'event_location' => $event_location, 'event_address' => $event_address,
-                'event_city' => $event_city, 'event_state' => $event_state, 'event_postal' => $event_postal, 'display_desc' => $display_desc,
+                'event_city' => $event_city, 'event_state' => $event_state, 'event_postal' => $event_postal, 'google_map' => $google_map, 'display_desc' => $display_desc,
                 'image_link' => $image_link, 'header_image' => $header_image, 'event_identifier' => $event_identifier, 'more_info' => $more_info,
                 'start_month' => $start_month, 'start_day' => $start_day, 'start_year' => $start_year, 'start_time' => $start_time, 'start_date' => $start_date,
                 'end_month' => $end_month, 'end_day' => $end_day, 'end_year' => $end_year, 'end_date' => $end_date, 'end_time' => $end_time, 'reg_limit' => $reg_limit,
@@ -578,13 +580,31 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
                 'coupon_code' => $coupon_code, 'coupon_code_price' => $coupon_code_price, 
                 'term_c' => $term_c, 'term_desc' => $term_desc, 'recurrence_choice' => $recurrence_choice );
 
-            $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
+            $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
                 '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',
                 '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s' );
 
             $messages = array();
-            if ($this->getWpDb()->insert(get_option('evr_event'), $sql, $sql_data)) {
+            if( $this->getWpDb()->insert(get_option('evr_event'), $sql, $sql_data) ) {
+
                 $lastID = $this->getWpDb()->insert_id;
+
+                // Get event meta
+				$oMeta = new EventPlus_Models_Events_Meta();
+				$show_register_button	= $oMeta->getOption($row['id'], 'show_register_button');
+				$qty_discount			= $oMeta->getOption( $row['id'], 'qty_discount' );
+				$qty_discount_settings	= $oMeta->getOption( $row['id'], 'qty_discount_settings' );
+				$show_register_button	= $oMeta->getOption( $row['id'], 'show_register_button' );
+				$term_c_force			= $oMeta->getOption( $row['id'], 'term_c_force' );
+				$skip_step_2			= $oMeta->getOption( $row['id'], 'skip_step_2' );
+
+				// Update event meta
+				$oMeta->updateOption( $lastID, 'show_register_button', $show_register_button);
+				$oMeta->updateOption( $lastID, 'qty_discount', $qty_discount );
+				$oMeta->updateOption( $lastID, 'qty_discount_settings', (array) $qty_discount_settings );
+				$oMeta->updateOption( $lastID, 'show_register_button', $show_register_button );
+				$oMeta->updateOption( $lastID, 'term_c_force', $term_c_force );
+				$oMeta->updateOption( $lastID, 'skip_step_2', $skip_step_2 );
 
                 $messages[] = __('The copy of event ', 'evrplus_language') . ' ' . $row['event_name'] . ' ' . __('has been added.', 'evrplus_language');
 

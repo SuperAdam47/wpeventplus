@@ -109,6 +109,9 @@ if( count($rows) ): ?>
 							<div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span><?php echo $d_format; ?></div>
 							<div class="media-box-date"><span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span><?php echo $start_time; ?></div>
 
+							<?php
+							do_action( 'evrplus_grid_after_datetime', $event ) ?>
+
 							<div class="media-box-text">
 								<?php
 								if ($show_excerpt == 'yes') {
