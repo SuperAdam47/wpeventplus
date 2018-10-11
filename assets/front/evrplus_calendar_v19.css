@@ -937,7 +937,7 @@ iframe .pluginShareButtonLink img {
     padding: 8px;
 }
 
-.thumb {
+.eve-details .thumb {
     width: 120px;
     height: 120px;
     background-size: cover;
