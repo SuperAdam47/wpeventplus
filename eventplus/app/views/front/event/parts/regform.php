@@ -339,7 +339,7 @@ if (isset($event_meta_data)) {
                     </script>
                     <?php
                     $oEventDiscounts = new EventPlus_Models_Events_Discounts();
-                    $discountSettings = array(); //$oEventDiscounts->getSettings($event_id);
+                    $discountSettings = $oEventDiscounts->getSettings($event_id);
 
                     $discountPercentage = 0;
                     if (count($discountSettings) > 0 && is_array($discountSettings)) {
