@@ -2,7 +2,7 @@
 
 /** Plugin Name: WP EventsPlus
  * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
- * Version: 2.4.0
+ * Version: 2.4.2
  * Author: wpeventsplus.com
  * Author URI: http://wpeventsplus.com/
  * License: GPL2
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit; //block direct access
 }
 
-define('EVENT_PLUS_PLUS_V', '2.4.0');
+define('EVENT_PLUS_PLUS_V', '2.4.2');
 define('EVENT_PLUS_DS', '/');
 define('EVENT_PLUS_FRAMEWORK_NAMESPACE', 'eplus');
 define('EVENT_PLUS_FRAMEWORK_FOLDER', 'eventplus');
@@ -29,7 +29,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
     protected $_plugin_title = 'Events+';
     protected $_build_version = '6.00.33';
-    protected $_plugin_version = '2.4.0';
+    protected $_plugin_version = EVENT_PLUS_PLUS_V;
     protected $_plugin_slug = 'eventplus';
     protected $oApp = null;
 
@@ -98,7 +98,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_filter('the_content', $oFilters, 'evrplus_content_replace', 9);
         $this->add_filter('the_content', $oFilters, 'evrplus_calendar_replace', 15);
         $this->add_filter('page_template', $oFilters, 'wpa3396_page_template');
-        $this->add_filter('the_content', $oFilters, 'do_wpautop', 12);
+        $this->add_filter('the_content', $oFilters, 'do_wpautop', 99);
 
         add_filter('the_content', 'evrplus_mini_cal_calendar_replace');
     }
@@ -113,6 +113,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         add_shortcode('eventsplus_attendee', array($oShortCodes, 'attendeeShort'));
         add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
         add_shortcode('eventsplus_single', array($oShortCodes, 'singleEvent'));
+        add_shortcode('eventsplus_registration', array($oShortCodes, 'eventRegistration'));
     }
 
     function initAdmin() {
@@ -141,15 +142,12 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
         if (isset($_GET['event_id'])) {
 
-            if (is_object($post) && is_singular() && is_singular() && $post->ID == EventPlus_Models_Settings::getSettings('evrplus_page_id')) {
+            if (is_object($post) && is_singular() && $post->ID == EventPlus_Models_Settings::getSettings('evrplus_page_id')) {
                 $oEvent = new EventPlus_Models_Events();
                 $eventRow = $oEvent->getRow((int) $_GET['event_id']);
                 return $eventRow['event_name'];
             }
         }
-
-
-        //$isValid = EventPlus_Helpers_Funx::isValidRegistrationPage();
     }
 
     function eventplus_confirmation_registration() {
@@ -241,7 +239,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
     }
 
     function deactivate() {
-        
+        update_option( 'wpeventsplus_deactivated_on', time(), 0 );
     }
 
 }
