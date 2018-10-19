@@ -175,8 +175,10 @@ if (isset($event_meta_data)) {
 
                 <div class="d3sc" id="eventplus_event_description">
                     <?php
+                    add_filter('the_content', 'wpautop');
                     echo apply_filters( 'the_content', $event_desc );
-                    //echo html_entity_decode(nl2br($event_desc)); ?>
+                    //echo html_entity_decode(nl2br($event_desc));
+                    remove_filter('the_content', 'wpautop'); ?>
                 </div>
 
                 <?php
