@@ -41,7 +41,7 @@ if( count($rows) ): ?>
 				$load_new_events = $init_events;
 			} ?>
 
-			<div id="evr-grid" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $load_new_events; ?>" data-boxesWidth="<?php echo $box_width; ?>">
+			<div id="evr-grid" class="evr-grid-container" data-boxesToLoadStart="<?php echo $init_events; ?>" data-boxesToLoad="<?php echo $load_new_events; ?>" data-boxesWidth="<?php echo $box_width; ?>">
 
 				<?php
 				foreach( $rows as $event ) :
