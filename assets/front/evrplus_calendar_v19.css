@@ -616,21 +616,18 @@ a.tooltip:hover em {
 }
 
 /*.help { background: #9FDAEE; border: 1px solid #2BB0D7;	}*/
-.help {
+.calendar-table .help {
     background: #fff;
     border: 2px solid #2BB0D7;
 }
-
-.info {
+.calendar-table .info {
     background: #9FDAEE;
     border: 1px solid #2BB0D7;
 }
-
-.warning {
+.calendar-table .warning {
     background: #FFA;
     border: 1px solid #FFAD33;
 }
-
 .catgry {
     border-left: solid 0 #000;
 /* sold out class */
@@ -638,7 +635,6 @@ a.tooltip:hover em {
     margin-left: 1px;
     margin-bottom: 1px;
 }
-
 .catgry h3 {
     font-weight: 400;
 /* class title */
@@ -829,7 +825,6 @@ a.tooltip:hover em {
 .evrplus_mini_cal_event:hover,.day-with-datedrt:hover .evrplus_mini_cal_event {
     display: block;
 }
-
 .evrplus_mini_cal_new_stylinnnng.evrplus_events thead tr th {
     background: none repeat scroll 0 0 #6FA9BE !important;
     color: #56534c;
@@ -837,23 +832,18 @@ a.tooltip:hover em {
     line-height: 22px;
     text-transform: lowercase;
 }
-
 .evrplus_mini_cal_new_stylinnnng.evrplus_events tbody {
     border-bottom: 1px solid #C2B9A8;
 }
-
 .evrplus_mini_cal_new_stylinnnng.evrplus_events thead tr th:first-letter {
     text-transform: uppercase;
 }
-
 .event a {
     color: #fff !important;
 }
-
 iframe .pluginShareButtonLink img {
     display: none;
 }
-
 .evrplus_fb_icon:before {
     content: "\f305";
     color: #fff;
@@ -870,7 +860,6 @@ iframe .pluginShareButtonLink img {
     vertical-align: top;
     width: 20px;
 }
-
 .evrplus_tw_icon:before {
     content: "\f301";
     color: #fff;
@@ -888,7 +877,6 @@ iframe .pluginShareButtonLink img {
     width: 20px;
     margin-left: 4px;
 }
-
 .evrplus_addcal_icon:before {
     content: "\f508";
     color: #fff;
@@ -908,7 +896,6 @@ iframe .pluginShareButtonLink img {
     vertical-align: top;
     width: 20px;
 }
-
 .evrplus_socialf {
     background-color: #3b5998;
     border: medium none;
@@ -917,7 +904,6 @@ iframe .pluginShareButtonLink img {
     cursor: pointer;
     padding: 4px;
 }
-
 .evrplus_socialt {
     background-color: #00ACED;
     border: medium none;
@@ -926,7 +912,6 @@ iframe .pluginShareButtonLink img {
     cursor: pointer;
     padding: 4px;
 }
-
 .evrplus_addcal {
     background-color: #5aa4a3;
     border: medium none;
@@ -936,7 +921,6 @@ iframe .pluginShareButtonLink img {
     font-weight: 700;
     padding: 8px;
 }
-
 .eve-details .thumb {
     width: 120px;
     height: 120px;

@@ -54,14 +54,14 @@
 
 
  	/* GLOBAL FONT */
-	.mfp-container, 
+	/*.mfp-container, 
 	.media-box, 
 	.media-boxes-load-more-button, 
 	.media-boxes-filter,
 	.media-boxes-drop-down-menu > li > a, .media-boxes-drop-down-header > a {
-    	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    	font-family: 'Open Sans';*/
-  	}
+    	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    	font-family: 'Open Sans';
+  	}*/
 
 /* ====================================================================== *
       [1] MEDIA BOX CONTENT
