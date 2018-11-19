@@ -257,22 +257,22 @@ if (isset($event_meta_data)) {
                                 $item_end_date = $row2['item_available_end_date'];
                                 $item_custom_cur = $row2['item_custom_cur'];
 
-                                if ($item_custom_cur == "GBP") {
-                                    $item_custom_cur = "&pound;";
-                                }
-
-                                if ($item_custom_cur == "USD") {
-                                    $item_custom_cur = "$";
-                                }
-
-                                if ($fee->item_custom_cur == "BRL") {
-                                    $item_custom_cur = "R$";
-                                }
-
-                                if ((float) $item_price == 0.0) {
-                                    $item_custom_cur = "";
-                                    $item_price = __('FREE', 'evrplus_language');
-                                }
+								if ($item_custom_cur == "GBP") {
+									$item_custom_cur = "&pound;";
+								}
+								if ($item_custom_cur == "USD") {
+									$item_custom_cur = "$";
+								}
+								if ($fee->item_custom_cur == "BRL") {
+									$item_custom_cur = "R$";
+								}
+								if( $item_custom_cur == "EUR" ) {
+									$item_custom_cur = "€";
+								}
+								if ((float) $item_price == 0.0) {
+									$item_custom_cur = "";
+									$item_price = __('FREE', 'evrplus_language');
+								}
 
                                 echo '<div class="row">'
                                 . ' <div class="col-xs-6">' . $item_title . '</div>'

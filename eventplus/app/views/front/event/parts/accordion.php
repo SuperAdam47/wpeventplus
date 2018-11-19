@@ -54,12 +54,14 @@ if ($rows) {
         if ($fee_rows) {
             foreach ($fee_rows as $fee) {
                 $item_custom_cur = $fee->item_custom_cur;
-                if ($item_custom_cur == "GBP") {
+                if( $item_custom_cur == "GBP" ) {
                     $item_custom_cur = "&pound;";
-                }
-                if ($item_custom_cur == "USD") {
+                } else if( $item_custom_cur == "USD" ) {
                     $item_custom_cur = "$";
+                } else if( $item_custom_cur == "EUR" ) {
+                    $item_custom_cur = "€";
                 }
+
                 $codeToReturn .=$fee->item_title . '   ' . $item_custom_cur . ' ' . $fee->item_price . '<br />';
                 /*
                   while ($row2 = mysql_fetch_assoc ($result2)){
