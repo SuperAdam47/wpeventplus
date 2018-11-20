@@ -254,11 +254,9 @@ function evrplus_display_calendar($cat = null) {
         $sql = "SELECT * FROM " . get_option('evr_category') . " ORDER BY id ASC";
 
         $result = $wpdb->get_results($sql, ARRAY_A);
-        if ($wpdb->num_rows > 0) {
+        if( $wpdb->num_rows > 0 ) {
             $i = 0;
-
-            foreach ($result as $row) {
-                $i++;
+            foreach( $result as $row ) {
                 $category_id = $row['id'];
                 $category_name = $row['category_name'];
                 $category_identifier = $row['category_identifier'];
@@ -266,11 +264,12 @@ function evrplus_display_calendar($cat = null) {
                 $display_category_desc = $row['display_desc'];
                 $category_color = $row['category_color'];
                 $font_color = $row['font_color'];
-                if ($i % 8 != 0) {
+                if( $i % 7 != 0 ) {
                     $calendar_body .= '<td colspan="1" style="background-color:' . $category_color . ';font-size:0.9em; color:' . $font_color . '; ">' . $category_name . '</td>';
                 } else {
                     $calendar_body.='</tr><tr class="eventplus--calendar-legend"><td colspan="1" style="background-color:' . $category_color . ';font-size:0.9em; color:' . $font_color . '; ">' . $category_name . '</td>';
                 }
+                $i++;
             }
         }
     }
