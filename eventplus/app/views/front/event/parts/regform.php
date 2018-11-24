@@ -110,7 +110,7 @@ if (isset($event_meta_data)) {
 }
 ?>
 
-<div class="events-plus-2">
+<div class="events-plus-2 event-id-<?php echo esc_attr($event_id); ?>">
     <div class="event-single" id="event-slug">
         <div class="row">
             <div class="col-xs-12">
