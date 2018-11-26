@@ -528,6 +528,9 @@ if (isset($event_meta_data)) {
                                                                     if ($fee->item_custom_cur == "BRL") {
                                                                         $item_custom_cur = "R$";
                                                                     }
+                                                                    if( $fee->item_custom_cur == "EUR" ) {
+                                                                        $item_custom_cur = "€";
+                                                                    }
                                                                     echo $fee->item_title . "    " . $item_custom_cur . " " . $fee->item_price;
                                                                     ?></p>
                                                                 <select name = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
