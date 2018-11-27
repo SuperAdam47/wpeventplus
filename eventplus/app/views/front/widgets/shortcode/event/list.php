@@ -110,6 +110,11 @@
                               </span> */ ?>
                         </div>
                         <p class="d3sc"><?php echo evrplus_Truncate(strip_tags(html_entity_decode(stripslashes($event->event_desc))), 150, ' '); ?></p>
+
+                        <?php
+                        do_action( 'evrplus_after_event_list_description', $event, array(
+                            'event_url' => $event_link
+                        ) ); ?>
                     </div>
                     <div class="clearfix"></div>
                 </div>
