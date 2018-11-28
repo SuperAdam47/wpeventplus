@@ -107,6 +107,18 @@ class EventPlus_ShortCodes {
             'shortcode_attributes' => $attributes
         ));
     }
+
+    function eventExpiredList($atts) {
+
+        $attributes = (shortcode_atts(array(
+            'limit' => 0,
+            'event_category_id' => 0,
+        ), $atts));
+      
+        return EventPlus::dispatch('front_shortcode_event_list_expired/index', array(
+            'shortcode_attributes' => $attributes
+        ));
+    }
     
     function eventRegistration($atts) {
         return  EventPlus::dispatch('front_event_registration/index', array());

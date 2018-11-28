@@ -109,6 +109,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         add_shortcode('EVR_CUSTOM_ATTENDEE', array($oShortCodes, 'attendeeDetails'));
         add_shortcode('eventsplus_grid', array($oShortCodes, 'eventGrid'));
         add_shortcode('eventsplus_list', array($oShortCodes, 'eventList'));
+        add_shortcode('eventsplus_expired_list', array($oShortCodes, 'eventExpiredList'));
         add_shortcode('eventsplus_payment', array($oShortCodes, 'paymentPage'));
         add_shortcode('eventsplus_attendee', array($oShortCodes, 'attendeeShort'));
         add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
