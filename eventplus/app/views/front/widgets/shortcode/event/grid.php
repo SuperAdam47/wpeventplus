@@ -114,11 +114,13 @@ if( count($rows) ): ?>
 
 							<div class="media-box-text">
 								<?php
-								if ($show_excerpt == 'yes') {
+								if( $show_excerpt == 'yes' ) {
 
-									$content = strip_tags(stripslashes($event->event_desc));
+									$content = strip_tags( stripslashes($event->event_desc) );
+									$content = strip_shortcodes( $content );
+
 									$endChar = '';
-									if(strlen($content) > $character_limit){
+									if( strlen($content) > $character_limit ) {
 										$endChar = '...';
 									}
 									echo substr($content, 0, $character_limit) . $endChar;

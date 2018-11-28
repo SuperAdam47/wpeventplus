@@ -88,31 +88,27 @@ class EventPlus_ShortCodes {
     function singleEvent($atts) {
         extract(shortcode_atts(array('event_id' => 'No ID Supplied'), $atts));
         $id = "{$event_id}";
-
         $curr = EventPlus_Helpers_Event::check_recurrence($id);
-
         $buffer = EventPlus::dispatch('front_event_parts_regform/index', array(
-                    'event_id' => $id,
-                    'recurr' => $curr,
+            'event_id' => $id,
+            'recurr' => $curr,
         ));
-
         return $buffer;
     }
 
     function eventList($atts) {
 
         $attributes = (shortcode_atts(array(
-                    'limit' => 0,
-                    'event_category_id' => 0,
-                        ), $atts));
+            'limit' => 0,
+            'event_category_id' => 0,
+        ), $atts));
       
         return EventPlus::dispatch('front_shortcode_event_list/index', array(
-                    'shortcode_attributes' => $attributes
+            'shortcode_attributes' => $attributes
         ));
     }
     
     function eventRegistration($atts) {
         return  EventPlus::dispatch('front_event_registration/index', array());
     }
-
 }
