@@ -20,7 +20,7 @@ if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['event
 $eventplus_token = $_POST['eventplus_token'];
 
 $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
-if ($isPending === false) {
+if( $isPending === false ) {
     _e("Couldn't proceed! registration already processed.", 'evrplus_language');
     return;
 }

@@ -715,7 +715,12 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function getEventsBySettings($params = array()) {
         $company_options = EventPlus_Models_Settings::getSettings();
 
-        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate()";
+        $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE 1 = 1";
+
+        $show_expire = isset( $params['show_expire'] ) ? $params['show_expire'] : 'no';
+        if( $show_expire != 'yes' ) {
+            $sql .= " AND str_to_date(end_date, '%Y-%m-%e') >= curdate()";
+        }
         
         if($params['event_category_id'] > 0){
             $sql .= " AND category_id LIKE '%\"" . esc_sql($params['event_category_id']) . "\"%' ";

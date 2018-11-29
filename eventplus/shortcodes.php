@@ -101,6 +101,7 @@ class EventPlus_ShortCodes {
         $attributes = (shortcode_atts(array(
             'limit' => 0,
             'event_category_id' => 0,
+            'show_expire' => 'no',
         ), $atts));
       
         return EventPlus::dispatch('front_shortcode_event_list/index', array(
