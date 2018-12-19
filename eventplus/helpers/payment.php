@@ -242,7 +242,7 @@ class EventPlus_Helpers_Payment {
 
                             echo'<div id="evplus--offline-details" style="display:none;">';
                             _e("Please mail your check to:", 'evrplus_language');
-                            echo "<p>" .
+                            echo "<p class='evplus-offline-payment-address'>" .
                             stripslashes($this->companyOptions['company']) . "<br />" .
                             $this->companyOptions['company_street1'] . "<br />";
                             if ($this->companyOptions['company_street2'] != "") {

@@ -96,20 +96,19 @@ class eplus_front_widgets_events_controller extends EventPlus_Abstract_Controlle
 
 				$opt = EventPlus_Models_Settings::getSettings();
 
-				if (isset($opt['date_format']) && $opt['date_format'] == 'eur') {
-					$date_start = date_i18n('j M Y', strtotime($event->start_date));
-					$date_end = date_i18n('j M Y', strtotime($event->end_date));
-				} else {
-					$date_start = $event->start_date;
-					$date_end = $event->end_date;
-				}
+				$date_format = "M j, Y";
+				if( isset($opt['date_format']) && $opt['date_format'] == 'eur' ) {
+                    $date_format = "j M Y";
+                }
 
-				if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {
+				$date_start = date_i18n( $date_format, strtotime($event->start_date) );
+				$date_end = date_i18n( $date_format, strtotime($event->end_date) );
+
+				$time_start = $event->start_time;
+				$time_end = $event->end_time;
+				if( isset($opt['time_format']) && $opt['time_format'] == '24hrs' ) {
 					$time_start = date_i18n('H:i', strtotime($event->start_time));
 					$time_end = date_i18n('H:i', strtotime($event->end_time));
-				} else {
-					$time_start = $event->start_time;
-					$time_end = $event->end_time;
 				}
 
 				$codeToReturn = str_replace("{EVENT_DESC}", html_entity_decode($desc), $codeToReturn);
