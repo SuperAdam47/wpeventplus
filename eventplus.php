@@ -132,6 +132,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_action('wp_head', $this, 'pluginInfo');
         $this->add_action('init', $this->oApp, 'frontInit');
         $this->add_action('template_redirect', $this, 'eventplus_confirmation_registration');
+        
+        $oPayPalHandler = new EventPlus_Payments_Paypal_Handler();
+        $this->add_action('template_redirect', $oPayPalHandler, 'handleResponse');
     }
 
     function filterMetaTitle() {
@@ -168,6 +171,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
             }
         }
     }
+    
 
     function registerWidgets() {
         register_widget('EventPlus_Widgets_Events');
