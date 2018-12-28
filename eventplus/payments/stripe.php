@@ -1,6 +1,6 @@
 <?php
 
-/*****
+/**
 Stripe Payment
 */
 class EventPlus_Payments_Stripe extends EventPlus_Payments {
