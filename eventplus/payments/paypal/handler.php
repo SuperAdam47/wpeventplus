@@ -160,7 +160,7 @@ class EventPlus_Payments_Paypal_Handler {
         echo'<script>window.location.href="' . $urlToGo . '";</script>';
         exit;
     }
-
+		/*Handle cancel*/
     private function do_cancel() {
 
         global $wpdb;
