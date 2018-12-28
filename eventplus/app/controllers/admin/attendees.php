@@ -187,16 +187,18 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
             return false;
         }
 
+		$response = $this->_model->deleteRecord( $attendee_id );
 
-        $response = $this->_model->deleteRecord($attendee_id);
+		if( $response ) {
+			// Delete attendee answers also
+			$this->_model->query("DELETE FROM " . get_option('evr_answer') . " WHERE registration_id = '" . (int) $attendee_id . "'");
 
-        if ($response) {
-            $this->setSuccessMessage($this->_model->getMessage());
-        } else {
-            $this->setErrorMessage($this->_model->getMessage());
-        }
+			$this->setSuccessMessage($this->_model->getMessage());
+		} else {
+			$this->setErrorMessage($this->_model->getMessage());
+		}
 
-        $this->redirect($this->adminUrl('admin_attendees', array('event_id' => $row['event_id'])));
+        $this->redirect($this->adminUrl('admin_attendees', array('event_id'=>$row['event_id'])));
     }
 
     function action_delete_all() {
