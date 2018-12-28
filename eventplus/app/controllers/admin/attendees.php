@@ -203,9 +203,19 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
 
     function action_delete_all() {
 
-        $response = $this->_model->deleteRecordsByEventId($this->oEvent->id);
+    	$attendees = $this->_model->getByEventId( $this->oEvent->id );
+        $response = $this->_model->deleteRecordsByEventId( $this->oEvent->id );
 
-        if ($response) {
+        if( $response ) {
+        	if( !empty($attendees) ) {
+        		foreach( $attendees as $attendee ) {
+        			if( empty($attendee['id']) ) continue;
+
+             		// Delete attendee answers also
+					$this->_model->query("DELETE FROM " . get_option('evr_answer') . " WHERE registration_id = '" . (int) $attendee['id'] . "'");
+        		}
+        	}
+
             $this->setSuccessMessage($this->_model->getMessage());
         } else {
             $this->setErrorMessage($this->_model->getMessage());
