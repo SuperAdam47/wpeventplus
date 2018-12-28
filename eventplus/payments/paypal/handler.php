@@ -1,7 +1,6 @@
 <?php
 
 class EventPlus_Payments_Paypal_Handler {
-	
 
     function handleResponse(){
 
@@ -31,7 +30,7 @@ class EventPlus_Payments_Paypal_Handler {
 
     }
 
-	/*Handle return*/
+    /*Handle return*/
     private function do_return() {
          
 
@@ -42,7 +41,7 @@ class EventPlus_Payments_Paypal_Handler {
         $eventplus_token = $_REQUEST['eventplus_token'];
         $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
         if ($isPending === false) {
-            wp_die(__("Couldn't proceed! registration already processed.", 'evrplus_language'));
+            wp_die(__("Couldn't proceed. Registration already processed.", 'evrplus_language'));
             return;
         }
 
@@ -63,7 +62,7 @@ class EventPlus_Payments_Paypal_Handler {
         }
 
 
-        $event_id = $eventRow['id'];
+        $event_id = intVal($eventRow['id']);
 
         $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
         $amountPaid = 0;
@@ -74,7 +73,6 @@ class EventPlus_Payments_Paypal_Handler {
         $payer_email = '';
         $mc_gross = 0;
         $mc_currency = '';
-
 
         $pdtData = $oPayPal->validatePdt($_REQUEST['tx'], $company_options['paypal_pdt_token']);
 
@@ -160,7 +158,8 @@ class EventPlus_Payments_Paypal_Handler {
         echo'<script>window.location.href="' . $urlToGo . '";</script>';
         exit;
     }
-		/*Handle cancel*/
+	
+    /*Handle cancel*/
     private function do_cancel() {
 
         global $wpdb;
