@@ -1,5 +1,9 @@
 <?php
-/**Abstract Payment Class**/
+
+/**
+*
+Abstract Payment Class
+**/
 
 abstract class EventPlus_Payments {
 
@@ -27,6 +31,7 @@ abstract class EventPlus_Payments {
         return $this->valid();
     }
 
+    /*Abstract Method*/
     abstract protected function valid();
 
     function dump_fields($print = 1) {
