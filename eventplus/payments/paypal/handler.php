@@ -1,5 +1,7 @@
 <?php
-
+/**
+Paypal handler
+*/
 class EventPlus_Payments_Paypal_Handler {
 
     function handleResponse(){
@@ -185,5 +187,4 @@ class EventPlus_Payments_Paypal_Handler {
         echo'<script>window.location.href="' . $returnUrl . '";</script>';
         exit;
     }
-
 }
