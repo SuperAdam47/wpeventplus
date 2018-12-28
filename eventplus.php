@@ -2,7 +2,7 @@
 
 /** Plugin Name: WP EventsPlus
  * Description: Events Plus allows you to easily create and manage your events. Allow visitors to register and pay online for events, manage attendees, discount coupons, export attendees list, and much more.
- * Version: 2.4.2
+ * Version: 2.4.4
  * Author: wpeventsplus.com
  * Author URI: http://wpeventsplus.com/
  * License: GPL2
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
     exit; //block direct access
 }
 
-define('EVENT_PLUS_PLUS_V', '2.4.2');
+define('EVENT_PLUS_PLUS_V', '2.4.4');
 define('EVENT_PLUS_DS', '/');
 define('EVENT_PLUS_FRAMEWORK_NAMESPACE', 'eplus');
 define('EVENT_PLUS_FRAMEWORK_FOLDER', 'eventplus');
@@ -109,6 +109,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         add_shortcode('EVR_CUSTOM_ATTENDEE', array($oShortCodes, 'attendeeDetails'));
         add_shortcode('eventsplus_grid', array($oShortCodes, 'eventGrid'));
         add_shortcode('eventsplus_list', array($oShortCodes, 'eventList'));
+        add_shortcode('eventsplus_expired_list', array($oShortCodes, 'eventExpiredList'));
         add_shortcode('eventsplus_payment', array($oShortCodes, 'paymentPage'));
         add_shortcode('eventsplus_attendee', array($oShortCodes, 'attendeeShort'));
         add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
