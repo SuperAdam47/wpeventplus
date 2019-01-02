@@ -5,8 +5,10 @@ Paypal handler
 class EventPlus_Payments_Paypal_Handler {
 
     function handleResponse(){
-
+		
         if (isset($_REQUEST['eventplus_pm'])) {
+			
+			
 			
             if (strtolower($_REQUEST['eventplus_pm']) == 'paypal') {
                 if (isset($_REQUEST['eventplus_token']) == false) {
@@ -26,6 +28,7 @@ class EventPlus_Payments_Paypal_Handler {
                 }
                 
                 $method = $validActions[$_REQUEST['eventplus_pm_action']];
+			
                 $this->$method();
             }
         }
@@ -33,7 +36,7 @@ class EventPlus_Payments_Paypal_Handler {
     }
 
     /*Handle return*/
-    private function do_return() {
+    function do_return() {
          
 
         global $wpdb;
@@ -162,10 +165,11 @@ class EventPlus_Payments_Paypal_Handler {
     }
 	
     /*Handle cancel*/
-    private function do_cancel() {
+    function do_cancel() {
 
         global $wpdb;
-       
+		
+	
         $eventplus_token = $_REQUEST['eventplus_token'];
 
         $company_options = EventPlus_Models_Settings::getSettings();
