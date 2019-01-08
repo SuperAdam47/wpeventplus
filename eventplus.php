@@ -135,6 +135,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         
         $oPayPalHandler = new EventPlus_Payments_Paypal_Handler();
         $this->add_action('template_redirect', $oPayPalHandler, 'handleResponse');
+        
+        $oStripeHandler = new EventPlus_Payments_Stripe_Handler();
+        $this->add_action('template_redirect', $oStripeHandler, 'handleResponse');
     }
 
     function filterMetaTitle() {

@@ -218,8 +218,13 @@ class EventPlus_Helpers_Payment {
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
 
                             $oStripe = new EventPlus_Payments_Stripe(); // initiate an instance of the class
-
-                            $oStripe->add_field('stripe_process_url', EVENT_PLUS_PUBLIC_URL . 'stripe/payment.php');
+                                
+                            $stripe_process_url = add_query_arg(array(
+                                'eventplus_token' => $this->attendeeRow['token'],
+                                'eventplus_pm' => 'stripe',
+                                    ), site_url());
+                            
+                            $oStripe->add_field('stripe_process_url', $stripe_process_url);
                             $oStripe->add_field('amount', $payment);
                             $oStripe->add_field('token', $token);
                             $oStripe->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
