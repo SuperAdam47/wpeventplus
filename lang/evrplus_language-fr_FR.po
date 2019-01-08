@@ -3,9 +3,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
+"X-Generator: Poedit 2.2\n"
 "Project-Id-Version: WP Events Plus\n"
-"Language: fr\n"
+"Language: fr_FR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-02 23:39+0000\n"
+"PO-Revision-Date: 2019-01-05 15:38+0100\n"
+"Last-Translator: JJLETOT <info@informatex.be>\n"
+"Language-Team: Français\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Loco-Version: 2.2.0; wp-5.0.2\n"
 
 #: eventplus/app/controllers/admin/attendees.php:22
 #: eventplus/app/controllers/admin/attendees.php:122
@@ -13,28 +20,28 @@ msgstr ""
 #: eventplus/app/controllers/admin/payments.php:28
 #: eventplus/app/controllers/admin/questions.php:22
 msgid "Invalid event id."
-msgstr "ID de l’évènement non valide"
+msgstr "ID de l’évènement non valide."
 
 #: eventplus/app/controllers/admin/attendees.php:95
 #: eventplus/app/controllers/admin/attendees.php:96
 #: eventplus/app/views/admin/layouts/attendees.php:9
 msgid "Add Attendee"
-msgstr "Ajouter Participant"
+msgstr "Ajouter un Participant"
 
 #: eventplus/app/controllers/admin/attendees.php:108
 #: eventplus/app/controllers/admin/attendees.php:164
 #: eventplus/app/controllers/admin/attendees.php:185
 #: eventplus/app/controllers/admin/payments.php:87
 msgid "Attendee doesn't exist."
-msgstr "Participant n’existe pas."
+msgstr "Le participant n’existe pas."
 
 #: eventplus/app/controllers/admin/attendees.php:150
 msgid "Edit Attendee"
-msgstr "Modifier Participant"
+msgstr "Modifier le participant"
 
 #: eventplus/app/controllers/admin/attendees.php:151
 msgid "Update Attendee"
-msgstr "Mise à jour participant"
+msgstr "Mise à jour du participant"
 
 #: eventplus/app/controllers/admin/attendees.php:172
 msgid "Details Attendee"
@@ -56,7 +63,7 @@ msgstr "Modifier une catégorie"
 
 #: eventplus/app/controllers/admin/categories.php:61
 msgid "Update Category"
-msgstr "Mise à jour la catégorie"
+msgstr "Mise à jour de la catégorie"
 
 #: eventplus/app/controllers/admin/events.php:98
 #: eventplus/app/controllers/admin/events.php:99
@@ -68,7 +75,7 @@ msgstr "Ajouter un événement"
 #: eventplus/app/controllers/admin/events.php:158
 #: eventplus/app/controllers/admin/events.php:188
 msgid "Event doesn't exist."
-msgstr "Événement n’existe pas."
+msgstr "L'événement n’existe pas."
 
 #: eventplus/app/controllers/admin/events.php:139
 #: eventplus/app/views/admin/layouts/attendees.php:12
@@ -84,11 +91,13 @@ msgstr "Mise à jour de l'événement"
 
 #: eventplus/app/controllers/admin/events.php:165
 msgid "There are currently "
-msgstr "Il ya actuellement"
+msgstr "Il y a actuellement "
 
 #: eventplus/app/controllers/admin/events.php:165
 msgid " attendes registered for this event.  The event cannot be deleted."
-msgstr "participants inscrits à cet événement. L'événement ne peut pas être supprimé."
+msgstr ""
+" participants inscrits à cet événement. L'événement ne peut pas être "
+"supprimé."
 
 #: eventplus/app/controllers/admin/events/items.php:96
 #: eventplus/app/controllers/admin/events/items.php:97
@@ -98,7 +107,7 @@ msgstr "Ajouter un élément"
 #: eventplus/app/controllers/admin/events/items.php:109
 #: eventplus/app/controllers/admin/events/items.php:152
 msgid "Item doesn't exist."
-msgstr "Cette référence n'existe pas"
+msgstr "Cette référence n'existe pas."
 
 #: eventplus/app/controllers/admin/events/items.php:138
 msgid "Edit Item"
@@ -106,7 +115,7 @@ msgstr "Éditer cette référence"
 
 #: eventplus/app/controllers/admin/events/items.php:139
 msgid "Update Item"
-msgstr "Mettre-à-jour cette référence"
+msgstr "Mise-à-jour de cette référence"
 
 #: eventplus/app/controllers/admin/payments.php:107
 #: eventplus/app/views/admin/payments/manage.php:124
@@ -115,23 +124,19 @@ msgstr "Ajouter un paiement"
 
 #: eventplus/app/controllers/admin/payments.php:121
 #: eventplus/app/controllers/admin/payments.php:165
-#, fuzzy
 msgid "Payment record doesn't exist."
-msgstr "Copie de paiement n’existe pas."
+msgstr "L'enregistrement de paiement n'existe pas."
 
 #: eventplus/app/controllers/admin/payments.php:151
-#, fuzzy
 msgid "Update Payment"
 msgstr "Mise à jour du paiement"
 
 #: eventplus/app/controllers/admin/payments.php:174
 #: eventplus/helpers/payment.php:370
-#, fuzzy
 msgid "Payment Details"
 msgstr "Détails du paiement"
 
 #: eventplus/app/controllers/admin/payments.php:187
-#, fuzzy
 msgid "Record doesn't exist."
 msgstr "Aucun enregistrement n’existe."
 
@@ -142,17 +147,14 @@ msgstr "Ajouter une question"
 
 #: eventplus/app/controllers/admin/questions.php:107
 #: eventplus/app/controllers/admin/questions.php:150
-#, fuzzy
 msgid "Question doesn't exist."
-msgstr "Question n’existe pas."
+msgstr "La question n’existe pas."
 
 #: eventplus/app/controllers/admin/questions.php:136
-#, fuzzy
 msgid "Edit Question"
 msgstr "Éditer la question"
 
 #: eventplus/app/controllers/admin/questions.php:137
-#, fuzzy
 msgid "Update Question"
 msgstr "Mise à jour de la question"
 
@@ -168,31 +170,26 @@ msgid "Events"
 msgstr "Événements"
 
 #: eventplus/app/controllers/front/event/parts/confirmation.php:20
-#, fuzzy
 msgid "Invalid event request"
 msgstr "Demande d'événement non valide"
 
 #: eventplus/app/controllers/front/event/parts/confirmation.php:29
 #: public/paypal/1pn.php:32 public/paypal/canc3l.php:32
 #: public/paypal/re7urn.php:39
-#, fuzzy
 msgid "Invalid request"
 msgstr "Requête invalide"
 
 #: eventplus/app/controllers/front/shortcode/attendees/short.php:10
-#, fuzzy
 msgid "Event id not supplied"
 msgstr "Id d’événement non fourni"
 
 #: eventplus/app/controllers/front/shortcode/attendees/short.php:20
-#, fuzzy
 msgid "Attendee List for "
-msgstr "Liste des participants"
+msgstr "Liste des participants pour "
 
 #: eventplus/app/controllers/front/shortcode/attendees/short.php:52
-#, fuzzy
 msgid "Attendee #"
-msgstr "Participant"
+msgstr "Participant #"
 
 #: eventplus/app/controllers/front/shortcode/attendees/short.php:53
 #: eventplus/app/views/admin/dashboard/widgets/attendees.php:20
@@ -200,18 +197,20 @@ msgid "Attendee Name"
 msgstr "Nom du participant"
 
 #: eventplus/app/controllers/front/shortcode/event/category.php:9
-#, fuzzy
 msgid "Category not supplied"
-msgstr "Catégorie non fourni"
+msgstr "Catégorie non fournie"
 
 #: eventplus/app/controllers/front/shortcode/event/category.php:21
-#, fuzzy
 msgid "Invalid Category supplied"
-msgstr "Catégorie non valide fourni"
+msgstr "Catégorie non valide fournie"
 
 #: eventplus/app/controllers/front/shortcode/payment.php:26
-msgid "Please check your email for payment information. Click the link provided in the registration confirmation."
-msgstr "S'il vous plaît vérifier votre courriel pour les informations de paiement. Cliquez sur le lien dans la confirmation d'inscription."
+msgid ""
+"Please check your email for payment information. Click the link provided in "
+"the registration confirmation."
+msgstr ""
+"S'il vous plaît vérifier votre courriel pour les informations de paiement. "
+"Cliquez sur le lien dans la confirmation d'inscription."
 
 #: eventplus/app/views/admin/attendees/add_form.php:43
 #: eventplus/app/views/admin/attendees/details.php:68
@@ -252,7 +251,7 @@ msgstr "Numéro de téléphone"
 #: eventplus/app/views/admin/attendees/details.php:79
 #: eventplus/app/views/admin/attendees/edit_form.php:78
 msgid "Address"
-msgstr "Rue"
+msgstr "Adresse"
 
 #: eventplus/app/views/admin/attendees/add_form.php:53
 #: eventplus/app/views/admin/attendees/details.php:82
@@ -279,7 +278,6 @@ msgstr "Code postal / Zip"
 
 #: eventplus/app/views/admin/attendees/add_form.php:62
 #: eventplus/app/views/admin/attendees/edit_form.php:90
-#, fuzzy
 msgid "Enter coupon code"
 msgstr "Saisissez votre code de promotion"
 
@@ -307,18 +305,18 @@ msgstr "Cet événement a atteint sa capacité maximale d'inscription."
 #: eventplus/app/views/admin/attendees/add_form.php:154
 #: eventplus/app/views/front/event/parts/regform.php:640
 msgid "Please provide your information to be placed on the waiting list."
-msgstr "S'il vous plaît fournir vos informations à être placé sur la liste d'attente."
+msgstr ""
+"S'il vous plaît fournir vos informations à être placées sur la liste "
+"d'attente."
 
 #: eventplus/app/views/admin/attendees/details.php:72
 #: eventplus/app/views/admin/events/form.parts/options.php:180
-#, fuzzy
 msgid "Company"
-msgstr "Compagnie"
+msgstr "Entreprise"
 
 #: eventplus/app/views/admin/attendees/details.php:91
-#, fuzzy
 msgid "Coupon code"
-msgstr "Coupons et codes"
+msgstr "Code promo"
 
 #: eventplus/app/views/admin/attendees/details.php:97
 #: eventplus/app/views/admin/events/form.parts/datetime.php:9
@@ -332,19 +330,16 @@ msgid "End Date"
 msgstr "Date de fin"
 
 #: eventplus/app/views/admin/attendees/details.php:99
-#, fuzzy
 msgid "Registration Date"
 msgstr "Date d'inscription"
 
 #: eventplus/app/views/admin/attendees/details.php:100
-#, fuzzy
 msgid "Cutom Fields"
 msgstr "Champs personnalisés"
 
 #: eventplus/app/views/admin/attendees/details.php:114
-#, fuzzy
 msgid "No records found"
-msgstr "Aucun résultat trouvé"
+msgstr "Aucuns résultats trouvés"
 
 #: eventplus/app/views/admin/attendees/details.php:120
 #: eventplus/app/views/admin/attendees/edit_form.php:96
@@ -369,13 +364,13 @@ msgstr "Quel type d'inscription?"
 #: eventplus/app/views/admin/payments/manage.php:37
 #: eventplus/app/views/front/event/parts/regform.php:608
 msgid "Total"
-msgstr "Total "
+msgstr "Total"
 
 #: eventplus/app/views/admin/attendees/details.php:167
 #: eventplus/app/views/admin/events/items/form.php:17
 #: eventplus/app/views/front/event/parts/regform.php:593
 msgid "Discount"
-msgstr "Rabais"
+msgstr "Remise"
 
 #: eventplus/app/views/admin/attendees/edit_form.php:135
 msgid "Wait List"
@@ -383,7 +378,7 @@ msgstr "Liste d'attente"
 
 #: eventplus/app/views/admin/attendees/edit_form.php:140
 msgid "Standard"
-msgstr "Normal "
+msgstr "Normal"
 
 #: eventplus/app/views/admin/attendees/edit_form.php:266
 #: eventplus/app/views/admin/attendees/manage.php:58
@@ -393,12 +388,10 @@ msgid "Status"
 msgstr "Statut"
 
 #: eventplus/app/views/admin/attendees/landing.php:4
-#, fuzzy
 msgid "Please select event to manage attendees"
-msgstr "S’il vous plaît sélectionnez l’événement à gérer des participants"
+msgstr "S’il vous plaît sélectionnez l’événement pour gérer des participants"
 
 #: eventplus/app/views/admin/attendees/manage.php:28
-#, fuzzy
 msgid "Manage Attendees"
 msgstr "Gérer les participants"
 
@@ -412,7 +405,6 @@ msgid "All"
 msgstr "Tous"
 
 #: eventplus/app/views/admin/attendees/manage.php:52
-#, fuzzy
 msgid "Event Name/Title"
 msgstr "Nom de l'événement / Titre"
 
@@ -440,7 +432,7 @@ msgstr "Téléphone"
 #: eventplus/app/views/admin/events/manage.php:147
 #: eventplus/app/views/admin/payments/manage.php:40
 msgid "Action"
-msgstr "Appliquer"
+msgstr "Action"
 
 #: eventplus/app/views/admin/attendees/manage.php:109
 #: eventplus/app/views/admin/categories/manage.php:48
@@ -452,7 +444,6 @@ msgid "Edit"
 msgstr "Modifier"
 
 #: eventplus/app/views/admin/attendees/manage.php:111
-#, fuzzy
 msgid "View"
 msgstr "Visualiser"
 
@@ -461,7 +452,7 @@ msgstr "Visualiser"
 #: eventplus/app/views/admin/events/manage.php:152
 #: eventplus/app/views/admin/questions/manage.php:88
 msgid "Are you sure you want to delete"
-msgstr "Êtes-vous sûr de vouloir supprimer?"
+msgstr "Êtes-vous sûr de vouloir supprimer"
 
 #: eventplus/app/views/admin/attendees/manage.php:114
 #: eventplus/app/views/admin/categories/manage.php:50
@@ -476,9 +467,8 @@ msgstr "Supprimer"
 #: eventplus/app/views/admin/events/items/manage.php:111
 #: eventplus/app/views/admin/payments/manage.php:139
 #: eventplus/app/views/admin/questions/manage.php:107
-#, fuzzy
 msgid "No records found."
-msgstr "Pas enregistrement"
+msgstr "Pas enregistrements trouvés."
 
 #: eventplus/app/views/admin/categories/form.php:23
 #: eventplus/app/views/admin/dashboard/widgets/categories.php:22
@@ -491,7 +481,8 @@ msgstr "ID unique pour la catégorie"
 
 #: eventplus/app/views/admin/categories/form.php:33
 msgid "Do you want to display the category description on the events page?"
-msgstr "Voulez-vous afficher la description de la catégorie sur la page événement?"
+msgstr ""
+"Voulez-vous afficher la description de la catégorie sur la page événement?"
 
 #: eventplus/app/views/admin/categories/form.php:42
 #: eventplus/app/views/admin/events/form.parts/datetime.php:50
@@ -570,11 +561,11 @@ msgstr "Description de la catégorie"
 #: eventplus/app/views/admin/categories/form.php:75
 #: eventplus/app/views/admin/settings/tabs/tab7.php:172
 msgid "Select color for Calendar Display"
-msgstr "Choisissez les couleurs du calendrier"
+msgstr "Choisir la couleur pour l'affichage du calendrier"
 
 #: eventplus/app/views/admin/categories/form.php:93
 msgid "Category Background Color"
-msgstr "Couleur arrière plan de la catégorie"
+msgstr "Couleur de fond de la catégorie"
 
 #: eventplus/app/views/admin/categories/form.php:106
 msgid "Category Text Color"
@@ -607,7 +598,7 @@ msgstr "ID"
 #: eventplus/app/views/admin/categories/manage.php:7
 #: eventplus/app/views/admin/categories/manage.php:18
 msgid "Name "
-msgstr "Nom␣"
+msgstr "Nom "
 
 #: eventplus/app/views/admin/categories/manage.php:8
 #: eventplus/app/views/admin/categories/manage.php:19
@@ -618,7 +609,7 @@ msgstr "Identifiant"
 #: eventplus/app/views/admin/categories/manage.php:9
 #: eventplus/app/views/admin/categories/manage.php:20
 msgid "Shortcode"
-msgstr "Shortcode "
+msgstr "Code court"
 
 #: eventplus/app/views/admin/categories/manage.php:50
 msgid "Are you sure you want to delete category?"
@@ -629,14 +620,13 @@ msgid "No Record Found!"
 msgstr "Aucun enregistrement trouvé!"
 
 #: eventplus/app/views/admin/dashboard/events.php:4
-#, fuzzy
 msgid "Add New Event"
 msgstr "Ajouter un nouvel événement"
 
 #: eventplus/app/views/admin/dashboard/events.php:5
 #: eventplus/helpers/admin/menu.php:25
 msgid "General Settings"
-msgstr "Paramètres générales"
+msgstr "Paramètres généraux"
 
 #: eventplus/app/views/admin/dashboard/events.php:6
 #: eventplus/app/views/admin/events/form.parts/description.php:50
@@ -645,19 +635,16 @@ msgid "Event Categories"
 msgstr "Catégories d'événements"
 
 #: eventplus/app/views/admin/dashboard/events.php:7
-#, fuzzy
 msgid "View Events"
-msgstr "Afficher les événements"
+msgstr "Voir les événements"
 
 #: eventplus/app/views/admin/dashboard/events.php:12
-#, fuzzy
 msgid "Next 5 Upcoming Events"
 msgstr "5 prochains événements"
 
 #: eventplus/app/views/admin/dashboard/events.php:47
 #: eventplus/app/views/admin/dashboard/widgets/events.php:81
 #: eventplus/app/views/admin/events/manage.php:98
-#, fuzzy
 msgid "EXPIRED"
 msgstr "EXPIRÉ"
 
@@ -669,14 +656,13 @@ msgstr "ACTIF"
 
 #: eventplus/app/views/admin/dashboard/widgets/attendees.php:7
 msgid "LATEST ATTENDEES"
-msgstr "Derniers participants"
+msgstr "DERNIERS PARTICIPANTS"
 
 #: eventplus/app/views/admin/dashboard/widgets/attendees.php:25
 msgid "Event"
 msgstr "Événement"
 
 #: eventplus/app/views/admin/dashboard/widgets/attendees.php:30
-#, fuzzy
 msgid "Tickets"
 msgstr "Billets"
 
@@ -688,7 +674,6 @@ msgid "View All"
 msgstr "Tous afficher"
 
 #: eventplus/app/views/admin/dashboard/widgets/attendees.php:57
-#, fuzzy
 msgid "No Attendees Found!"
 msgstr "Pas de participants trouvés !"
 
@@ -697,17 +682,14 @@ msgid "LATEST CATEGORIES"
 msgstr "DERNIÈRES CATÉGORIES"
 
 #: eventplus/app/views/admin/dashboard/widgets/categories.php:8
-#, fuzzy
 msgid "weekly stats..."
 msgstr "statistiques hebdomadaires..."
 
 #: eventplus/app/views/admin/dashboard/widgets/categories.php:53
-#, fuzzy
 msgid "No Categoies Found!"
-msgstr "Aucune catégorie trouvée !"
+msgstr "Aucunes catégories trouvées !"
 
 #: eventplus/app/views/admin/dashboard/widgets/events.php:7
-#, fuzzy
 msgid "Latest Events"
 msgstr "Derniers Événements"
 
@@ -725,9 +707,8 @@ msgid "Available Seats"
 msgstr "Places libres"
 
 #: eventplus/app/views/admin/dashboard/widgets/events.php:100
-#, fuzzy
 msgid "No Events Found!"
-msgstr "Aucun évènement trouvé !"
+msgstr "Aucuns évènements trouvés !"
 
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:7
 msgid "TOTAL PAYMENTS"
@@ -747,11 +728,11 @@ msgstr "TOTAL DES ÉVÉNEMENTS"
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:100
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:105
 msgid "change"
-msgstr "Modifier"
+msgstr "modifier"
 
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:63
 msgid "TOTAL CATEGORIES"
-msgstr "TOTALES DES CATÉGORIES"
+msgstr "TOTAL DES CATÉGORIES"
 
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:72
 #: eventplus/app/views/admin/dashboard/widgets/icons.php:77
@@ -761,7 +742,7 @@ msgstr "croître"
 
 #: eventplus/app/views/admin/dashboard/widgets/payments.php:7
 msgid "LATEST PAYMENTS"
-msgstr "DERNIÈRES PAIEMENTS"
+msgstr "DERNIERS PAIEMENTS"
 
 #: eventplus/app/views/admin/dashboard/widgets/payments.php:18
 msgid "Payer"
@@ -826,11 +807,12 @@ msgstr "Annuel"
 
 #: eventplus/app/views/admin/events/form.parts/datetime.php:89
 msgid "Repeat number of times"
-msgstr "Répéter nombre de fois"
+msgstr "Répéter un nombre de fois"
 
 #: eventplus/app/views/admin/events/form.parts/datetime.php:89
 msgid "Enter the number of times you want the event to occur."
-msgstr "Entrez le nombre de fois que vous souhaitez que l'événement se produise"
+msgstr ""
+"Entrez le nombre de fois que vous souhaitez que l'événement se produise."
 
 #: eventplus/app/views/admin/events/form.parts/datetime.php:93
 msgid "Gaps per repeat"
@@ -867,7 +849,7 @@ msgstr "Description de l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/description.php:12
 msgid "Event Name/Title "
-msgstr "Nom de l'événement / Titre"
+msgstr "Nom de l'événement / Titre "
 
 #: eventplus/app/views/admin/events/form.parts/description.php:12
 msgid "Use a concise but descriptive name"
@@ -879,15 +861,24 @@ msgstr "Identificateur unique de l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/description.php:19
 msgid "Provide a short Unique ID for this event. i.e. BOB001"
-msgstr "Donnez un nom unique court pour cet événement. Exemple: EVENTUN, EVENTDEUX, etc"
+msgstr ""
+"Donnez un identifiant unique et court pour cet événement. Exemple: EVENTUN, "
+"EVENTDEUX, etc"
 
 #: eventplus/app/views/admin/events/form.parts/description.php:29
 msgid "Detailed Event Description"
 msgstr "Description détaillée de l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/description.php:29
-msgid "Provide a detailed description of the event, include key details other than when and where. Do not use any html code. This is a text only display To create new display lines just press Enter"
-msgstr "Fournir une description détaillée de l'événement outre que quand et où. Ne pas utiliser de code html. Ceci est un texte d'affichage unique. Pour créer de nouvelles lignes, appuyer sur Entrée."
+msgid ""
+"Provide a detailed description of the event, include key details other than "
+"when and where. Do not use any html code. This is a text only display To "
+"create new display lines just press Enter"
+msgstr ""
+"Fournissez une description détaillée de l'événement et indiquez les "
+"informations clés autres que quand et où. Ne pas utiliser de code HTML. Ceci "
+"est un affichage en texte seulement. Pour créer de nouvelles lignes "
+"d’affichage, appuyez simplement sur Entrée"
 
 #: eventplus/app/views/admin/events/form.parts/description.php:50
 msgid "Select one or many categories for an event"
@@ -899,14 +890,12 @@ msgstr "Optionnel"
 
 #: eventplus/app/views/admin/events/form.parts/discounts.php:13
 #: eventplus/app/views/admin/settings/tabs/tabdiscount.php:13
-#, fuzzy
 msgid "Would you like to offer quantity based discounts? "
-msgstr "Souhaitez-vous offrir un rabais en fonction de la quantité?"
+msgstr "Souhaitez-vous offrir des remises en fonction de la quantité? "
 
 #: eventplus/app/views/admin/events/form.parts/discounts.php:16
-#, fuzzy
 msgid "Use Global Settings"
-msgstr "Utiliser les paramètres générales"
+msgstr "Utiliser les paramètres généraux"
 
 #: eventplus/app/views/admin/events/form.parts/email.php:17
 #: eventplus/app/views/admin/settings/tabs/tab5.php:6
@@ -916,19 +905,28 @@ msgstr "Étape 5"
 #: eventplus/app/views/admin/events/form.parts/email.php:19
 #: eventplus/app/views/admin/events/form.parts/email.php:34
 msgid "Custom Confirmation Email"
-msgstr "Confirmation Personnalisée Courriel"
+msgstr "Courriel de Confirmation Personnalisé"
 
 #: eventplus/app/views/admin/events/form.parts/email.php:22
 msgid "Do you want to use a custom email for this event?"
 msgstr "Souhaitez-vous utiliser un courriel personnalisé pour cet événement?"
 
 #: eventplus/app/views/admin/events/form.parts/email.php:22
-msgid "If you have send mail option enabled in the company settings, you can override the default mail by creating a custom mail for this event."
-msgstr "Si vous avez l'option envoie de courriel activée dans les configurations de la compagnie, vous pouvez remplacer la valeur par défaut par la création d'un courriel personnalisé pour cet événement."
+msgid ""
+"If you have send mail option enabled in the company settings, you can "
+"override the default mail by creating a custom mail for this event."
+msgstr ""
+"Si vous avez l'option envoie de courriel activée dans les paramètres de la "
+"compagnie, vous pouvez remplacer la valeur par défaut par la création d'un "
+"courriel personnalisé pour cet événement."
 
 #: eventplus/app/views/admin/events/form.parts/email.php:34
-msgid "Enter the text for the confirmation email. This email will be sent in text format. See User Manual for data tags"
-msgstr "Entrez le texte pour le courriel de confirmation. Ce courriel sera envoyé en format texte. Voir le manuel de l'utilisateur pour les étiquettes de données"
+msgid ""
+"Enter the text for the confirmation email. This email will be sent in text "
+"format. See User Manual for data tags"
+msgstr ""
+"Entrez le texte pour le courriel de confirmation. Ce courriel sera envoyé en "
+"format texte. Voir le manuel de l'utilisateur pour les étiquettes de données"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:5
 #: eventplus/app/views/admin/settings/tabs/tab4.php:7
@@ -940,55 +938,68 @@ msgid "Choose Event Options"
 msgstr "Choisissez les options de l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:12
-#, fuzzy
 msgid "Show Registration Button"
 msgstr "Afficher le bouton d'enregistrement"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:13
-#, fuzzy
-msgid "If you select yes, then it will show the button and user must click it to reveal the form. In case of No, registration form will be displayed."
-msgstr "Si vous sélectionnez Oui, le bouton s'affichera et l’utilisateur doit cliquer dessus pour faire apparaître le formulaire. Si non, leformulaire d’inscription s’affichera automatiquement."
+msgid ""
+"If you select yes, then it will show the button and user must click it to "
+"reveal the form. In case of No, registration form will be displayed."
+msgstr ""
+"Si vous sélectionnez Oui, le bouton s'affichera et l’utilisateur doit "
+"cliquer dessus pour faire apparaître le formulaire. Si non, le formulaire "
+"d’inscription s’affichera automatiquement."
 
 #: eventplus/app/views/admin/events/form.parts/options.php:23
 #: eventplus/app/views/admin/events/form.parts/options.php:40
 #: eventplus/app/views/admin/events/form.parts/options.php:57
 #: eventplus/app/views/admin/events/form.parts/options.php:301
 msgid "No "
-msgstr "Non"
+msgstr "Non "
 
 #: eventplus/app/views/admin/events/form.parts/options.php:29
-#, fuzzy
 msgid "Skip Registration Step2"
 msgstr "Sauter l'étape 2 de l'inscription"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:30
-#, fuzzy
 msgid "Whether to skip step2 if attendee quantity is 1."
-msgstr "Ignorer l'étape si le nombre de participant est à 1."
+msgstr "Ignorer l'étape 2 si le nombre de participant est à 1."
 
 #: eventplus/app/views/admin/events/form.parts/options.php:47
 msgid "Will you accept checks/cash for this event? "
-msgstr "Accepterez-vous les chèques/argent pour cet événement?"
+msgstr "Accepterez-vous les chèques/argent pour cet événement? "
 
 #: eventplus/app/views/admin/events/form.parts/options.php:47
-msgid "If you will accept checks or cash, usually when accepting payment at event/on-site."
-msgstr "Accepterez-vous les paiements par chèque ou argent comptant sur place de l'événement."
+msgid ""
+"If you will accept checks or cash, usually when accepting payment at event/"
+"on-site."
+msgstr ""
+"Accepterez-vous les paiements par chèque ou argent comptant sur place de "
+"l'événement."
 
 #: eventplus/app/views/admin/events/form.parts/options.php:64
 msgid "Are you using an external registration?"
 msgstr "Utilisez-vous une inscription externe?"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:64
-msgid "You can point your register now button to an external registration site/page by selecting yes and entering the url!"
-msgstr "Vous pouvez rediriger les utilisateurs vers un site Web externe pour vous inscrire à votre événement"
+msgid ""
+"You can point your register now button to an external registration site/page "
+"by selecting yes and entering the url!"
+msgstr ""
+"Vous pouvez diriger votre bouton d’enregistrement maintenant vers un site / "
+"une page d’enregistrement externe en sélectionnant \"oui\" et en entrant "
+"l’URL!"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:82
 msgid "External registration URL"
 msgstr "Hyperlien d'inscription externe"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:82
-msgid "Enter the url hyperlink to another webpage or website external registration"
-msgstr "Entrez le hyperlien vers une autre page ou site Web avec plus d'informations sur votre événement."
+msgid ""
+"Enter the url hyperlink to another webpage or website external registration"
+msgstr ""
+"Entrez le lien hypertexte vers une autre page ou site Web avec inscription "
+"externe"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:90
 msgid "Do you wish to disable registration for this event?"
@@ -999,13 +1010,18 @@ msgid "Default Registration Information"
 msgstr "Détails de l'inscription par défaut"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:110
-msgid "Choose the fields you would like visitors to fill out when registering for your event. Note that name and email are mandatory."
-msgstr "Choisissez les champs que vous voulez que les utilisateurs remplissent lors de leur inscription pour votre événement. Notez que le nom et l'email sont obligatoires."
+msgid ""
+"Choose the fields you would like visitors to fill out when registering for "
+"your event. Note that name and email are mandatory."
+msgstr ""
+"Choisissez les champs que vous voulez que les utilisateurs remplissent lors "
+"de leur inscription pour votre événement. Notez que le nom et l'email sont "
+"obligatoires."
 
 #: eventplus/app/views/admin/events/form.parts/options.php:122
 #: eventplus/app/views/admin/settings/tabs/tab1.php:20
 msgid "Street Address"
-msgstr "Rue"
+msgstr "Rue de l'adresse"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:140
 msgid "State or Province"
@@ -1018,79 +1034,85 @@ msgstr "Zip ou Code postal"
 #: eventplus/app/views/admin/events/form.parts/options.php:167
 #: eventplus/app/views/admin/events/form.parts/venue.php:117
 #: eventplus/app/views/front/event/parts/regform.php:409
-#, fuzzy
 msgid "Country"
 msgstr "Pays"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:189
-#, fuzzy
 msgid "Co. Addr"
-msgstr "Adresse de l'équipe"
+msgstr "Adresse de la société"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:198
-#, fuzzy
 msgid "Co. City"
-msgstr "Ville de l'équipe"
+msgstr "Ville de la société"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:207
-#, fuzzy
 msgid "Co. State/Prov"
-msgstr "Etat/Province de l'équipe"
+msgstr "Etat/Province de la société"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:216
-#, fuzzy
 msgid "Co. Postal"
-msgstr "Code postal de l'équipe"
+msgstr "Code postal de la société"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:222
-#, fuzzy
 msgid "Do you want to display terms and conditions?"
 msgstr "Voulez-vous afficher les termes et conditions ?"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:252
-#, fuzzy
 msgid "Do you want to force terms and conditions?"
 msgstr "Voulez-vous imposer des modalités et conditions ?"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:253
-#, fuzzy
-msgid "If yes, registration form will only be displayed once attendee agrees the terms and conditions"
-msgstr "Si Oui, le formulaire d’inscription ne s’affichera après que le participant accepte les termes et conditions générales"
+msgid ""
+"If yes, registration form will only be displayed once attendee agrees the "
+"terms and conditions"
+msgstr ""
+"Si Oui, le formulaire d’inscription ne s’affichera qu'après que le "
+"participant accepte les termes et conditions générales"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:281
 msgid "Event Listing Options"
-msgstr "Liste des option de l'événement"
+msgstr "Liste des options de l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:283
 msgid "More Info URL"
 msgstr "Plus d'Infos URL"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:283
-msgid "Enter the url hyperlink to another webpage or website with more event information"
-msgstr "Entrez le hyperlien vers une autre page web ou un site Web avec plus d'informations sur l'événement"
+msgid ""
+"Enter the url hyperlink to another webpage or website with more event "
+"information"
+msgstr ""
+"Entrez le hyperlien vers une autre page web ou un site Web avec plus "
+"d'informations sur l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:291
-#, fuzzy
 msgid "Would you like to display countdown timer? Yes  No "
-msgstr "Souhaitez-vous afficher le compte à rebours? Oui Non"
+msgstr "Souhaitez-vous afficher le compte à rebours? Oui Non "
 
 #: eventplus/app/views/admin/events/form.parts/options.php:308
 msgid "Thumbnail Image URL"
 msgstr "URL de la vignette"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:308
-#, fuzzy
-msgid "Enter the url to an image you would like displayed next to the event in the event listings. Size should be 300 x300"
-msgstr "Entrez l'url d'une image que vous désirez affichée à côté de l'événement dans la liste des événements. Doit être de format 300 x 300"
+msgid ""
+"Enter the url to an image you would like displayed next to the event in the "
+"event listings. Size should be 300 x300"
+msgstr ""
+"Entrez l'url d'une image que vous désirez afficher à côté de l'événement "
+"dans la liste des événements. Doit être de format 300 x 300"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:351
 msgid "Header Image URL"
-msgstr "Lien de l'image entête"
+msgstr "Lien de l'image d'entête"
 
 #: eventplus/app/views/admin/events/form.parts/options.php:351
-#, fuzzy
-msgid "Enter the url of an image you wish displayed above the registration form.  The image should be at least 700px wide hight does not metter."
-msgstr "Entrez l'url d'une image que vous souhaitez afficher au-dessus du formulaire d'inscription. L'image doit être au moins 700px de large peu importe la hauteur."
+msgid ""
+"Enter the url of an image you wish displayed above the registration form.  "
+"The image should be at least 700px wide hight does not metter."
+msgstr ""
+"Entrez l'url d'une image que vous souhaitez afficher au-dessus du formulaire "
+"d'inscription. L'image doit être au moins 700px de large peu importe la "
+"hauteur."
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:4
 #: eventplus/app/views/admin/settings/tabs/tab2.php:10
@@ -1106,8 +1128,12 @@ msgid "Event Seating Capacity"
 msgstr "Places disponible pour l'événement"
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:9
-msgid "Enter the number of available seats at your event venue. Leave blank if their is no limit on registrations"
-msgstr "Entrez le nombre de places disponibles pour l'événement. Laissez ce champ vide s'il y a aucune limitation de places."
+msgid ""
+"Enter the number of available seats at your event venue. Leave blank if "
+"their is no limit on registrations"
+msgstr ""
+"Entrez le nombre de places disponibles pour l'événement. Laissez ce champ "
+"vide s'il y a aucune limitation de places"
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:64
 #: eventplus/app/views/admin/events/form.parts/venue.php:95
@@ -1115,8 +1141,10 @@ msgid "Event Location/Venue"
 msgstr "Emplacement de l'événement / Lieu"
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:64
-msgid "Enter the name of the business or facility where the event is being held"
-msgstr "Entrez le nom de l'entreprise ou de l'institution où l'événement aura lieu"
+msgid ""
+"Enter the name of the business or facility where the event is being held"
+msgstr ""
+"Entrez le nom de l'entreprise ou de l'institution où l'événement aura lieu"
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:69
 #: eventplus/app/views/admin/events/form.parts/venue.php:101
@@ -1140,8 +1168,11 @@ msgid "Use Google Maps On Registration Page"
 msgstr "Utilisez Google Maps sur la page d'inscription"
 
 #: eventplus/app/views/admin/events/form.parts/venue.php:126
-msgid "All location information must be complete for Google Map feature to work"
-msgstr "Toutes les informations sur l'emplacement doivent être complètes afin que Google Map fonctionne correctement"
+msgid ""
+"All location information must be complete for Google Map feature to work"
+msgstr ""
+"Toutes les informations sur l'emplacement doivent être complètes afin que "
+"Google Map fonctionne correctement"
 
 #: eventplus/app/views/admin/events/form.php:180
 msgid "EXPIRED EVENT"
@@ -1161,7 +1192,7 @@ msgstr "Description"
 
 #: eventplus/app/views/admin/events/form.php:211
 msgid "Event Venue"
-msgstr "Lieu"
+msgstr "Lieu de l'événement"
 
 #: eventplus/app/views/admin/events/form.php:212
 msgid "Event Date/Time"
@@ -1173,45 +1204,60 @@ msgstr "Options de l'événement"
 
 #: eventplus/app/views/admin/events/form.php:216
 msgid "Confirmation Mail"
-msgstr "Confirmer par courriel"
+msgstr "Confirmation par courriel"
 
 #: eventplus/app/views/admin/events/form.php:218
 #: eventplus/helpers/admin/menu.php:73
-#, fuzzy
 msgid "Bulk Discounts"
-msgstr "Rabais"
+msgstr "Remises"
 
 #: eventplus/app/views/admin/events/form.php:243
 msgid "Please make sure you complete each section before submitting!"
-msgstr "S'il vous plaît assurez-vous de remplir chaque section avant de soumettre!"
+msgstr ""
+"S'il vous plaît assurez-vous de remplir chaque section avant de soumettre!"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:11
 msgid "Coupon Code"
-msgstr "Code de rabais"
+msgstr "Code promo"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:15
 msgid "Do you want to use a coupon code for this event?"
 msgstr "Voulez-vous d'utiliser un code de réduction pour cet événement?"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:15
-msgid "A coupon code is a promotional code you can tie to your event. The code is valid for a discount off the total registration cost"
-msgstr "Un code promo est un code promotionnel que vous pouvez utiliser pour votre événement. Le code est valable pour une réduction du coût total de l'inscription"
+msgid ""
+"A coupon code is a promotional code you can tie to your event. The code is "
+"valid for a discount off the total registration cost"
+msgstr ""
+"Un code promo est un code promotionnel que vous pouvez utiliser pour votre "
+"événement. Le code est valable pour une réduction du coût total de "
+"l'inscription"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:29
 msgid "Enter the Code"
 msgstr "Entrez le code"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:29
-msgid "This should be a one word code with no spaces or extra characters. Recommend ALL CAPS"
-msgstr "Cela devrait être un mot de code sans espaces ni symboles supplémentaires. nous vous recommandons MAJUSCULES"
+msgid ""
+"This should be a one word code with no spaces or extra characters. Recommend "
+"ALL CAPS"
+msgstr ""
+"Cela devrait être un mot de code sans espaces ni symboles supplémentaires.  "
+"Nous vous recommandons MAJUSCULES"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:33
 msgid "Discount amount for Coupon Code"
-msgstr "Montant de réduction pour Coupon de rabais"
+msgstr "Montant de réduction pour le coupon promo"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:33
-msgid "Enter the amount with two decimal places.&nbsp;You MUST put a - sign before the value, otherwise this will add to the total during calculations. i.e. -10.00"
-msgstr "Entrez le montant à deux décimales. Vous devez mettre un signe - avant la valeur, sinon cela va ajouter au total pendant les calculs. Exemple -10.00 (ajouter symbole moins)"
+msgid ""
+"Enter the amount with two decimal places.&nbsp;You MUST put a - sign before "
+"the value, otherwise this will add to the total during calculations. i.e. "
+"-10.00"
+msgstr ""
+"Entrez le montant à deux décimales. Vous DEVEZ mettre un signe - avant la "
+"valeur, sinon cela va ajouter au total pendant les calculs. Exemple -10.00 "
+"(ajouter symbole moins)"
 
 #: eventplus/app/views/admin/events/items/coupon_form.php:42
 msgid "UPDATE COUPON CODE"
@@ -1223,7 +1269,7 @@ msgstr "Participant inscrit"
 
 #: eventplus/app/views/admin/events/items/form.php:16
 msgid "Merchandise"
-msgstr "Marchandises"
+msgstr "Marchandise"
 
 #: eventplus/app/views/admin/events/items/form.php:18
 msgid "Workshop"
@@ -1239,7 +1285,7 @@ msgstr "Nom du coût / article"
 
 #: eventplus/app/views/admin/events/items/form.php:85
 msgid "Description of Cost"
-msgstr "Description des coûts"
+msgstr "Description du coût"
 
 #: eventplus/app/views/admin/events/items/form.php:94
 msgid "Available items/cost per registration/order?"
@@ -1255,29 +1301,25 @@ msgstr "L'événement est gratuit?"
 
 #: eventplus/app/views/admin/events/items/form.php:129
 msgid "Custom Currency"
-msgstr "monnaie personnalisé"
+msgstr "Monnaie personnalisé"
 
 #: eventplus/app/views/admin/events/items/form.php:172
 msgid "Item/Cost Value"
 msgstr "Article / Valeur Coût"
 
 #: eventplus/app/views/admin/events/items/form.php:183
-#, fuzzy
 msgid "AVAILABILITY TIMES OF COST/ITEM"
 msgstr "DISPONIBILITÉ DE TEMPS COUT / UNITE"
 
 #: eventplus/app/views/admin/events/items/landing.php:4
-#, fuzzy
 msgid "Please select event to manage items"
 msgstr "S’il vous plaît sélectionnez l’événement pour gérer les éléments"
 
 #: eventplus/app/views/admin/events/items/manage.php:24
-#, fuzzy
 msgid "Manage Items/Cost"
-msgstr "Gérer les articles"
+msgstr "Gérer les éléments/coûts"
 
 #: eventplus/app/views/admin/events/items/manage.php:26
-#, fuzzy
 msgid "Sort Items"
 msgstr "Trier les éléments"
 
@@ -1303,12 +1345,11 @@ msgstr "Fin"
 #: eventplus/app/views/admin/questions/manage.php:37
 #: eventplus/app/views/admin/questions/manage.php:44
 msgid "Actions"
-msgstr "Modifier"
+msgstr "Actions"
 
 #: eventplus/app/views/admin/events/items/sort.php:33
-#, fuzzy
 msgid "ReArrange Items for display order: "
-msgstr "Réorganiser l’ordre d’affichage des événements :"
+msgstr "Réorganiser l’ordre d’affichage des événements : "
 
 #: eventplus/app/views/admin/events/items/sort.php:66
 #: eventplus/app/views/admin/questions/sort.php:44
@@ -1320,7 +1361,6 @@ msgid "Sort By"
 msgstr "Trier par"
 
 #: eventplus/app/views/admin/events/manage.php:17
-#, fuzzy
 msgid "Select"
 msgstr "Sélectionner"
 
@@ -1330,28 +1370,25 @@ msgstr "Date"
 
 #: eventplus/app/views/admin/events/manage.php:22
 #: eventplus/app/views/admin/settings/tabs/tab4.php:81
-#, fuzzy
 msgid "ASC"
-msgstr " Croissant"
+msgstr "Croissant"
 
 #: eventplus/app/views/admin/events/manage.php:23
 #: eventplus/app/views/admin/settings/tabs/tab4.php:89
-#, fuzzy
 msgid "DESC"
-msgstr " Décroissant"
+msgstr "Décroissant"
 
 #: eventplus/app/views/admin/events/manage.php:30
 msgid "Event ID"
-msgstr "ID d'événement"
+msgstr "ID de l'événement"
 
 #: eventplus/app/views/admin/events/manage.php:33
-#, fuzzy
 msgid "Category"
-msgstr "ID unique pour la catégorie"
+msgstr "Catégorie"
 
 #: eventplus/app/views/admin/events/manage.php:34
 msgid "ShortCode"
-msgstr "ShortCode"
+msgstr "Code court"
 
 #: eventplus/app/views/admin/events/manage.php:37
 #: eventplus/app/views/admin/events/manage.php:134
@@ -1374,19 +1411,17 @@ msgstr "Paiements"
 
 #: eventplus/app/views/admin/events/manage.php:151
 msgid "Are you sure you want to copy"
-msgstr "Etes-vous sûr que vous voulez copier?"
+msgstr "Etes-vous sûr que vous voulez copier"
 
 #: eventplus/app/views/admin/events/manage.php:151
 msgid "Copy"
 msgstr "Copier"
 
 #: eventplus/app/views/admin/layouts/attendees.php:5
-#, fuzzy
 msgid "Event Attendees Management"
-msgstr "Gérer les participants de l'événement"
+msgstr "Gestion des participants de l'événement"
 
 #: eventplus/app/views/admin/layouts/attendees.php:16
-#, fuzzy
 msgid "Back to Attendees"
 msgstr "Retour aux participants"
 
@@ -1394,13 +1429,12 @@ msgstr "Retour aux participants"
 #: eventplus/app/views/admin/layouts/events/items.php:22
 #: eventplus/app/views/admin/layouts/payments.php:18
 #: eventplus/app/views/admin/layouts/questions.php:21
-#, fuzzy
 msgid "View All Events"
 msgstr "Voir tous les événements"
 
 #: eventplus/app/views/admin/layouts/categories.php:110
 msgid "Category Management"
-msgstr "Gérer la catégorie"
+msgstr "Gestion de la catégorie"
 
 #: eventplus/app/views/admin/layouts/categories.php:114
 msgid "ADD NEW CATEGORY"
@@ -1415,45 +1449,40 @@ msgid "ADD EVENT"
 msgstr "AJOUTER UN ÉVÉNEMENT"
 
 #: eventplus/app/views/admin/layouts/events/items.php:5
-#, fuzzy
 msgid "Event Items/Cost Management"
-msgstr "Gérer coût de l'événement"
+msgstr "Gestion du coût de l'événement"
 
 #: eventplus/app/views/admin/layouts/events/items.php:6
 msgid "Add tickets to set pricing for your event (Adult, Child, VIP, etc.)"
-msgstr "Ajouter prix d'entrée pour votre événement (Adulte, Enfant, VIP, etc)"
+msgstr ""
+"Ajoutez des billets pour définir les prix d'entrée de votre événement "
+"(adulte, enfant, VIP, etc.)"
 
 #: eventplus/app/views/admin/layouts/events/items.php:10
-#, fuzzy
 msgid "Add Cost/Item"
-msgstr "Ajouter Prix/inscription"
+msgstr "Ajouter Prix/Inscription"
 
 #: eventplus/app/views/admin/layouts/events/items.php:17
-#, fuzzy
 msgid "Back to Items"
 msgstr "Retour aux articles"
 
 #: eventplus/app/views/admin/layouts/payments.php:5
-#, fuzzy
 msgid "Event Payments Management"
-msgstr "Gérer les paiements de l'événement"
+msgstr "Gestion des paiements de l'événement"
 
 #: eventplus/app/views/admin/layouts/payments.php:13
-#, fuzzy
 msgid "Back to Payments"
 msgstr "Retour aux paiements"
 
 #: eventplus/app/views/admin/layouts/questions.php:5
 msgid "Event Question Management"
-msgstr "Gérer les Questions de l'événement"
+msgstr "Gestion des Questions de l'événement"
 
 #: eventplus/app/views/admin/layouts/questions.php:9
-#, fuzzy
 msgid "Add new Question"
-msgstr "Ajouter nouvelle Question"
+msgstr "Ajouter une nouvelle Question"
 
 #: eventplus/app/views/admin/layouts/questions.php:16
-#, fuzzy
 msgid "Back to Questions"
 msgstr "Retour aux Questions"
 
@@ -1467,7 +1496,7 @@ msgstr "Solde dû:"
 #: eventplus/app/views/admin/payments/details.php:132
 #: eventplus/app/views/admin/payments/edit_form.php:127
 msgid "Payment Received Date"
-msgstr "Date de Paiement reçue"
+msgstr "Date de Paiement reçu"
 
 #: eventplus/app/views/admin/payments/add_form.php:114
 #: eventplus/app/views/admin/payments/details.php:136
@@ -1497,7 +1526,7 @@ msgstr "Paiement partiel"
 #: eventplus/app/views/admin/payments/edit_form.php:145
 #: eventplus/app/views/admin/payments/edit_form.php:161
 msgid "Deposit"
-msgstr "Déposé"
+msgstr "Dépôt"
 
 #: eventplus/app/views/admin/payments/add_form.php:120
 #: eventplus/app/views/admin/payments/edit_form.php:148
@@ -1552,7 +1581,7 @@ msgstr "Espèces"
 #: eventplus/app/views/admin/payments/edit_form.php:183
 #: eventplus/app/views/admin/payments/edit_form.php:188
 msgid "Event Credit"
-msgstr "Crédit"
+msgstr "Crédit de l'événement"
 
 #: eventplus/app/views/admin/payments/add_form.php:132
 #: eventplus/app/views/admin/payments/details.php:164
@@ -1579,25 +1608,23 @@ msgstr "Voulez envoyer un reçu de paiement révisé au débiteur?"
 
 #: eventplus/app/views/admin/payments/edit_form.php:235
 msgid "UPDATE PAYMENT"
-msgstr "MISE À JOUR LE PAIEMENT"
+msgstr "MISE À JOUR DU PAIEMENT"
 
 #: eventplus/app/views/admin/payments/landing.php:4
-#, fuzzy
 msgid "Please select event to manage payments"
 msgstr "S’il vous plaît sélectionnez l’événement pour gérer les paiements"
 
 #: eventplus/app/views/admin/payments/manage.php:23
-#, fuzzy
 msgid "Event Payments"
 msgstr "Paiements de l’événement"
 
 #: eventplus/app/views/admin/payments/manage.php:25
 msgid "Email Payment Reminders"
-msgstr "Envoyer des rappels de paiement"
+msgstr "Courriel des rappels de paiement"
 
 #: eventplus/app/views/admin/payments/manage.php:35
 msgid "# People"
-msgstr "# De personnes"
+msgstr "# Des personnes"
 
 #: eventplus/app/views/admin/payments/manage.php:38
 msgid "Order Detail"
@@ -1605,7 +1632,6 @@ msgstr "Détail de l'inscription"
 
 #: eventplus/app/views/admin/payments/manage.php:109
 #: eventplus/helpers/payment.php:241 eventplus/helpers/payment.php:286
-#, fuzzy
 msgid "View Details"
 msgstr "Voir les détails"
 
@@ -1644,97 +1670,152 @@ msgid "Field Question"
 msgstr "Champs de Question"
 
 #: eventplus/app/views/admin/questions/form.php:37
-msgid "Choose a title for your custom field do you have pets? How did you hear about us?etc"
-msgstr "Choisir un titre à votre question personnalisé. Par exemple: Avez-vous des animaux de compagnie? Comment avez-vous entendu parler de nous? etc"
+msgid ""
+"Choose a title for your custom field do you have pets? How did you hear "
+"about us?etc"
+msgstr ""
+"Choisir un titre à votre question personnalisé. Par exemple: Avez-vous des "
+"animaux de compagnie? Comment avez-vous entendu parler de nous? etc"
 
 #: eventplus/app/views/admin/questions/form.php:40
 msgid "Field Type"
 msgstr "Type de question"
 
 #: eventplus/app/views/admin/questions/form.php:42
-msgid "Choose the type of field you would like your visitor to fill out:text, textarea, single radio button, multiple radio buttons and dropdown"
-msgstr "choisir le type de champ que vous souhaitez remplir utilisateurs: texte d'une seule ligne, zone de texte, une case d'option, plusieurs bouton d'options, et de la pop."
+msgid ""
+"Choose the type of field you would like your visitor to fill out:text, "
+"textarea, single radio button, multiple radio buttons and dropdown"
+msgstr ""
+"Choisir le type de champ que vous souhaitez que vos utilisateurs "
+"remplissent: texte d'une seule ligne, zone de texte, une case d'option, "
+"plusieurs bouton d'options, et de la pop"
 
 #: eventplus/app/views/admin/questions/form.php:52
 msgid "Field option(for multiple radio and dropdown)"
 msgstr "Champ d'option (pour plusieurs radio pop)"
 
 #: eventplus/app/views/admin/questions/form.php:53
-msgid "Create the choices for the visitor separated by comma i.e google, yahoo, bing etc."
-msgstr "Créer des options pour les visiteurs séparées par des virgules: Google, Bing, Yahoo, etc"
+msgid ""
+"Create the choices for the visitor separated by comma i.e google, yahoo, "
+"bing etc."
+msgstr ""
+"Créer des options pour les visiteurs séparées par des virgules: Google, "
+"Bing, Yahoo, etc..."
 
 #: eventplus/app/views/admin/questions/form.php:56
 msgid "Do You want this field to be mandatory?"
-msgstr "Voulez-vous ce domaine nécessaire?"
+msgstr "Voulez-vous que ce champ soit obligatoire?"
 
 #: eventplus/app/views/admin/questions/form.php:67
 msgid "Comments"
 msgstr "Commentaires"
 
 #: eventplus/app/views/admin/questions/form.php:75
-msgid "Definitions of the fields that you can create for your registration form"
-msgstr "Définitions des champs que vous pouvez créer pour votre formulaire d'inscription"
+msgid ""
+"Definitions of the fields that you can create for your registration form"
+msgstr ""
+"Définitions des champs que vous pouvez créer pour votre formulaire "
+"d'inscription"
 
 #: eventplus/app/views/admin/questions/form.php:76
-msgid "This is generally what I would call short answer questions, typically consisting of a single sentence. Where the registering person would type in their response. You do not need to put anything in the Selections field for this question type."
-msgstr "C'est généralement ce que j'appellerais questions à réponse courte, généralement constitué d'une seule phrase. Lorsque la personne qui s'inscrit écrit dans sa réponse."
+msgid ""
+"This is generally what I would call short answer questions, typically "
+"consisting of a single sentence. Where the registering person would type in "
+"their response. You do not need to put anything in the Selections field for "
+"this question type."
+msgstr ""
+"C’est généralement ce que j’appellerais des questions à réponse courte, "
+"consistant généralement en une seule phrase. Où la personne qui s'enregistre "
+"va taper sa réponse? Vous n'avez rien besoin de mettre dans le champ "
+"Sélections pour ce type de question."
 
 #: eventplus/app/views/admin/questions/form.php:77
-msgid "This is similar to the Text, except you are looking more for an paragraph/multiple sentence response. You do not need to put anything in the Selections field for this question type."
-msgstr "Ceci est similaire au texte, la différence est que vous pouvez ajouter beaucoup plus de texte dans le champ."
+msgid ""
+"This is similar to the Text, except you are looking more for an paragraph/"
+"multiple sentence response. You do not need to put anything in the "
+"Selections field for this question type."
+msgstr ""
+"Ceci est similaire au texte, sauf que vous pouvez mettre davantage comme "
+"réponse dans un paragraphe / phrase multiple. Vous n'avez rien besoin de "
+"mettre dans le champ Sélections pour ce type de question."
 
 #: eventplus/app/views/admin/questions/form.php:78
-msgid "This will provide radio button answers where the registering person will select one of several options. Yes/No, True/False are good examples of this type of question. Basically a multiple choice question with one possible choice. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: True, False etc."
-msgstr "Cela fournira plusieurs boutons qui les données seront sélectionner l'une des options. Oui / Non, Vrai / Faux sont de bons exemples de ce type de question. Fondamentalement, une question à choix multiples avec une option possible. Saisie de cette question devra fournir la liste des options qui apparaissent. Décisions séparées par une virgule: True, False, etc"
+msgid ""
+"This will provide radio button answers where the registering person will "
+"select one of several options. Yes/No, True/False are good examples of this "
+"type of question. Basically a multiple choice question with one possible "
+"choice. When entering this question you will need to provide the list of "
+"choices that will appear. Separate your choices by a comma: True, False etc."
+msgstr ""
+"Cela fournira des réponses aux boutons radio.  La personne qui s'enregistre "
+"choisira l'une des nombreuses options. Oui / Non, Vrai / Faux sont de bons "
+"exemples de ce type de question. Fondamentalement, une question à choix "
+"multiples avec un choix possible. Lorsque vous entrez cette question, vous "
+"devrez fournir la liste de choix qui apparaîtra. Séparez vos choix par une "
+"virgule: Vrai, Faux, etc."
 
 #: eventplus/app/views/admin/questions/form.php:79
 #: eventplus/app/views/admin/questions/form.php:81
 msgid "Do not provide answer choices that have a comma in the response"
-msgstr "Pas fournir des options de réponse qui ont une virgule dans la réponse"
+msgstr "Ne pas fournir de choix de réponse avec une virgule dans la réponse"
 
 #: eventplus/app/views/admin/questions/form.php:80
-msgid "This is similar to Single Type questions but gives them the option of selecting several of the choices instead of just selecting one item. Basically a multiple choice question with several  possible choices. When entering this question you will need to provide the list of choices that will appear. Separate your choices by a comma: Newspaper, Web, A Friend, Billboard etc."
-msgstr "Ce type est semblable à des questions simples, mais leur donne la possibilité de sélectionner plusieurs options plutôt que sélectionnez un objet. Fondamentalement, une question à choix multiples avec plusieurs options possibles. Saisie de cette question devra fournir la liste des options qui apparaissent. Décisions séparées par une virgule: journaux, Web, ami, etc"
+msgid ""
+"This is similar to Single Type questions but gives them the option of "
+"selecting several of the choices instead of just selecting one item. "
+"Basically a multiple choice question with several  possible choices. When "
+"entering this question you will need to provide the list of choices that "
+"will appear. Separate your choices by a comma: Newspaper, Web, A Friend, "
+"Billboard etc."
+msgstr ""
+"Ce type est semblable à des questions simples, mais leur donne la "
+"possibilité de sélectionner plusieurs options plutôt que sélectionnez un "
+"objet. Fondamentalement, une question à choix multiples avec plusieurs "
+"options possibles.  La saisie de cette question devra fournir la liste des "
+"options qui apparaissent.  Séparez vos choix par une virgule: journaux, Web, "
+"ami, etc..."
 
 #: eventplus/app/views/admin/questions/form.php:82
-#, fuzzy
 msgid "Dropdown"
 msgstr "Liste déroulante"
 
 #: eventplus/app/views/admin/questions/form.php:82
-msgid "This question type is similar in nature to the Single, exept instead of providing the choices in radio buttons, it provides them in a drop down box. This is handy if you have a lot of choices the person needs to choose from, it prevents them from taking up a lot space on your registration form."
-msgstr "Ce type de question est semblable à l'individu, exepté au lieu de fournir les options des boutons radio, ils sont placés dans la boîte de dépôt nature. Ceci est utile si vous avez beaucoup d'options à choisir les besoins de la personne, les empêchant occupent beaucoup d'espace sur votre formulaire d'inscription."
+msgid ""
+"This question type is similar in nature to the Single, exept instead of "
+"providing the choices in radio buttons, it provides them in a drop down box. "
+"This is handy if you have a lot of choices the person needs to choose from, "
+"it prevents them from taking up a lot space on your registration form."
+msgstr ""
+"Ce type de question est semblable à l'individu, excepté qu'au lieu de "
+"fournir comme options des boutons radio, il les fournit dans une liste "
+"déroulante. C'est pratique si vous avez beaucoup de choix à faire, cela les "
+"empêche de prendre beaucoup de place sur votre formulaire d'inscription."
 
 #: eventplus/app/views/admin/questions/landing.php:4
-#, fuzzy
 msgid "Please select event to manage questions"
 msgstr "S’il vous plaît sélectionnez l’événement pour gérer les questions"
 
 #: eventplus/app/views/admin/questions/manage.php:23
-#, fuzzy
 msgid "Manage Questions"
 msgstr "Gérer les questions"
 
 #: eventplus/app/views/admin/questions/manage.php:25
-#, fuzzy
 msgid "Sort Questions"
-msgstr "Questions de genre"
+msgstr "Trier les questions"
 
 #: eventplus/app/views/admin/questions/manage.php:35
 #: eventplus/app/views/admin/questions/manage.php:42
-#, fuzzy
 msgid "Question Id"
 msgstr "ID de la question"
 
 #: eventplus/app/views/admin/questions/manage.php:36
 #: eventplus/app/views/admin/questions/manage.php:43
 msgid "Question"
-msgstr "Interroger"
+msgstr "Question"
 
 #: eventplus/app/views/admin/questions/sort.php:33
-#, fuzzy
 msgid "ReArrange Questions for display order: "
-msgstr "Réorganiser les Questions à l’ordre d’affichage :"
+msgstr "Réorganiser l’ordre d’affichage des Questions: "
 
 #: eventplus/app/views/admin/questions/sort.php:48
 msgid "REQUIRED"
@@ -1754,7 +1835,7 @@ msgstr "RÉPONSES"
 
 #: eventplus/app/views/admin/settings.php:61
 msgid "Lets get your plugin setup!"
-msgstr "Mettons-nous votre configuration de plugin!"
+msgstr "Permet d'obtenir la configuration de votre plugin!"
 
 #: eventplus/app/views/admin/settings.php:83
 #: eventplus/app/views/admin/settings.php:121
@@ -1762,14 +1843,17 @@ msgid "Email Settings"
 msgstr "Paramètres de messagerie"
 
 #: eventplus/app/views/admin/settings.php:86
-#, fuzzy
 msgid "Email Confirmations"
 msgstr "Confirmations par Courriel"
 
 #: eventplus/app/views/admin/settings.php:88
-#, fuzzy
-msgid "For customized confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
-msgstr "Pour envoyer des courriels personnalisés à recevoir des paiements, ces balises peuvent être placées sur le message et qu'ils extraient des données de la base de données à inclure dans le courrier électronique"
+msgid ""
+"For customized confirmation emails, the following tags can be placed in the "
+"email form and they will pull data from the database to include in the email"
+msgstr ""
+"Pour les courriels de confirmation personnalisés, les balises suivantes "
+"peuvent être placées dans le formulaire de courriel et elles extrairont des "
+"données de la base de données pour les inclure dans le courriel"
 
 #: eventplus/app/views/admin/settings.php:96
 msgid "Sample Mail Send"
@@ -1778,15 +1862,26 @@ msgstr "Exemple de Courriel Envoyé"
 #: eventplus/app/views/admin/settings.php:99
 #: eventplus/app/views/admin/settings.php:170
 msgid "***This is an automated response - Do Not Reply***"
-msgstr "*** Il s'agit d'une réponse automatique - Ne pas répondre à cet courriel***"
+msgstr ""
+"*** Il s'agit d'une réponse automatique - Ne pas répondre à cet courriel***"
 
 #: eventplus/app/views/admin/settings.php:102
-msgid "Thank you [fname] [lname] for registering for [event]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]"
-msgstr "Merci [fname] [lname] pour votre inscription à notre [event]. J'espère que vous trouverez cet événement à la fois instructif et agréable. Si vous avez des questions, s'il vous plaît contacter [contact]."
+msgid ""
+"Thank you [fname] [lname] for registering for [event]. We hope that you will "
+"find this event both informative and enjoyable. Should have any questions, "
+"please contact [contact]"
+msgstr ""
+"Merci [fname] [lname] pour votre inscription à notre [event]. Nous espérons "
+"que vous trouverez cet événement à la fois instructif et agréable. Si vous "
+"avez des questions, veuillez s'il vous plaît nous contacter [contact]."
 
 #: eventplus/app/views/admin/settings.php:105
-msgid "If you have not done so already, please submit your payment in the amount of [cost]"
-msgstr "Si vous n'avez pas déjà fait, s'il vous plaît envoyer votre paiement au montant de [coût]"
+msgid ""
+"If you have not done so already, please submit your payment in the amount of "
+"[cost]"
+msgstr ""
+"Si vous n'avez pas déjà fait, s'il vous plaît envoyer votre paiement au "
+"montant de [coût]"
 
 #: eventplus/app/views/admin/settings.php:108
 #: eventplus/app/views/admin/settings.php:176
@@ -1812,11 +1907,15 @@ msgid "Waitlist"
 msgstr "Liste d'attente"
 
 #: eventplus/app/views/admin/settings.php:126
-msgid "For customized wait list emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
-msgstr "Pour envoyer des courriels à la liste d'attente, les balises suivantes peuvent être placés sur la forme de diffusion et d'extraire des données à partir de la base de données à inclure dans le courriel."
+msgid ""
+"For customized wait list emails, the following tags can be placed in the "
+"email form and they will pull data from the database to include in the email"
+msgstr ""
+"Pour les e-mails de liste d'attente personnalisés, les balises suivantes "
+"peuvent être placées dans le formulaire d'e-mail. Elles extrairont des "
+"données de la base de données à inclure dans l'e-mail"
 
 #: eventplus/app/views/admin/settings.php:129
-#, fuzzy
 msgid "[fname], [lname], [event]"
 msgstr "[fname], [lname], [event]"
 
@@ -1825,15 +1924,23 @@ msgid "Thank you [fname] [lname] for your interest in registering for [event]"
 msgstr "Merci [fname] [lname] de votre intérêt pour l'inscription à [event]"
 
 #: eventplus/app/views/admin/settings.php:139
-#, fuzzy
-msgid "At this time, all seats for the event have been taken.  \n"
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
 "    Your information has been placed on our waiting list.  \n"
 "    The waiting list is on a first come, first serve basis."
-msgstr "Nous n'avons plus de places pour cet événement. Vos informations ont été placés sur la liste d'attente. La liste d'attente est du premier arrivé, premier servi. Vous serez averti par courriel dès qu'une place est disponible."
+msgstr ""
+"À ce moment, toutes les places pour l'événement ont été prises.\n"
+"     Vos informations ont été placées sur notre liste d'attente.\n"
+"     La liste d'attente est basée sur le principe du premier arrivé, premier "
+"servi."
 
 #: eventplus/app/views/admin/settings.php:144
-msgid "You will be notified by email with directions for completing registration and payment should a seat become available"
-msgstr "Quand une place est disponible, vous serez averti par courriel avec les instructions pour remplir le formulaire d'inscription et de paiement."
+msgid ""
+"You will be notified by email with directions for completing registration "
+"and payment should a seat become available"
+msgstr ""
+"Vous serez averti par email avec les instructions pour compléter "
+"l’enregistrement et le paiement, si une place devient disponible"
 
 #: eventplus/app/views/admin/settings.php:154
 msgid "Payment Confirmation Email Settings"
@@ -1844,34 +1951,45 @@ msgid "Payment Confirmations"
 msgstr "Confirmations de paiement"
 
 #: eventplus/app/views/admin/settings.php:159
-msgid "For customized payment confirmation emails, the following tags can be placed in the email form and they will pull data from the database to include in the email"
-msgstr "Pour envoyer des courriels personnalisés à recevoir des paiements, ces balises peuvent être placées sur le message et qu'ils extraient des données de la base de données à inclure dans le courrier électronique"
+msgid ""
+"For customized payment confirmation emails, the following tags can be placed "
+"in the email form and they will pull data from the database to include in "
+"the email"
+msgstr ""
+"Pour les e-mails de confirmation de paiement personnalisés, les balises "
+"suivantes peuvent être placées dans le formulaire d'e-mail. Elles extrairont "
+"des données de la base de données à inclure dans l'e-mail"
 
 #: eventplus/app/views/admin/settings.php:167
 msgid "Sample Payment Mail Send"
-msgstr "Envoyer Spectacles courrier payante"
+msgstr "Courriel exemple pour l'envoi de paiement"
 
 #: eventplus/app/views/admin/settings.php:173
-msgid "Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) for [event_name]. We hope that you will find this event both informative and enjoyable. Should have any questions, please contact [contact]."
-msgstr "Vous [fname] [lname] Merci pour votre récente paiement d'un montant de [amnt_pd] ([txn_id]) sur [EVENT_NAME]. J'espère que vous trouverez cet événement à la fois instructif et agréable. Si vous avez des questions, s'il vous plaît contacter [contact]."
+msgid ""
+"Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) "
+"for [event_name]. We hope that you will find this event both informative and "
+"enjoyable. Should have any questions, please contact [contact]."
+msgstr ""
+"Merci [fname] [lname] pour votre récent paiement d'un montant de [amnt_pd] "
+"([txn_id]) pour [event_name]. J'espère que vous trouverez cet événement à la "
+"fois instructif et agréable. Si vous avez des questions, veuillez s'il vous "
+"plaît nous contacter [contact]."
 
 #: eventplus/app/views/admin/settings.php:197
 msgid "Update Configuration Settings"
-msgstr "Mise à jour des paramètres"
+msgstr "Mettre à jour les paramètres de configuration"
 
 #: eventplus/app/views/admin/settings.php:252
-#, fuzzy
 msgid "Let's get your events plugin configured!"
-msgstr "Let's get votre plugin d’événements configuré !"
+msgstr "Faisons en sorte que votre plugin d'événements soit configuré!"
 
 #: eventplus/app/views/admin/settings.php:255
 msgid "Event Registration Configuration Settings"
-msgstr "Paramètres de configuration événements"
+msgstr "Paramètres de configuration de l'inscription à l'événement"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:5
-#, fuzzy
 msgid "Sanbox Mode?"
-msgstr "Sanbox Mode ?"
+msgstr "Mode bac à sable?"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:7
 #: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:5
@@ -1879,7 +1997,6 @@ msgid "(used for testing/debug)"
 msgstr "(Utilisé pour le test / debug)"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:26
-#, fuzzy
 msgid "Authorized.Net API Login ID"
 msgstr "ID de connexion Authorized.Net API"
 
@@ -1889,7 +2006,7 @@ msgstr "Authorized.Net clé Txn"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:3
 msgid "Will you accept checks/cash?"
-msgstr "Voulex-v"
+msgstr "Accepterez-vous les chèques/argent liquide?"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:3
 msgid "Use PayPal Sandbox"
@@ -1900,33 +2017,32 @@ msgid "Paypal Email"
 msgstr "Courriel PayPal"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:31
-#, fuzzy
 msgid "PDT Auth Token:"
-msgstr "PDT Auth Token:"
+msgstr "Jeton d’authentification PDT:"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:4
-#, fuzzy
 msgid "Secret key"
 msgstr "Clé secrète"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:11
-#, fuzzy
 msgid "Publishable key"
 msgstr "Clé publique"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:19
-#, fuzzy
 msgid "Stripe Return Url"
-msgstr "Url de renvoi Stripe"
+msgstr "Url de renvoi pour Stripe"
 
 #: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:42
-#, fuzzy
-msgid "Warning! Stripe will not work as intended. Please activate following PHP extensions:"
-msgstr "Mise en garde ! Stripe ne fonctionnera pas comme prévu. S’il vous plaît activer après extensions PHP :"
+msgid ""
+"Warning! Stripe will not work as intended. Please activate following PHP "
+"extensions:"
+msgstr ""
+"Mise en garde ! Stripe ne fonctionnera pas comme prévu. S’il vous plaît "
+"activer les extensions PHP suivantes:"
 
 #: eventplus/app/views/admin/settings/tabs/tab1.php:9
 msgid "Contact Information"
-msgstr "Coordonnées"
+msgstr "Coordonnée"
 
 #: eventplus/app/views/admin/settings/tabs/tab1.php:13
 msgid "Your Company Name"
@@ -1934,7 +2050,7 @@ msgstr "Nom de votre société"
 
 #: eventplus/app/views/admin/settings/tabs/tab1.php:27
 msgid "Street Address 2"
-msgstr "Autre adresse"
+msgstr "Rue de l'adresse  2"
 
 #: eventplus/app/views/admin/settings/tabs/tab1.php:48
 msgid "Postal Code"
@@ -1954,19 +2070,17 @@ msgstr "L'information de paiement"
 
 #: eventplus/app/views/admin/settings/tabs/tab2.php:17
 msgid "Currency Format:"
-msgstr "Format Devise:"
+msgstr "Format de Devise:"
 
 #: eventplus/app/views/admin/settings/tabs/tab2.php:23
 msgid "Select Currency"
 msgstr "Choisissez la devise"
 
 #: eventplus/app/views/admin/settings/tabs/tab2.php:67
-#, fuzzy
 msgid "Off"
 msgstr "Éteint"
 
 #: eventplus/app/views/admin/settings/tabs/tab2.php:71
-#, fuzzy
 msgid "On"
 msgstr "Ouvert"
 
@@ -1979,13 +2093,12 @@ msgid "Use Captcha on registration form?"
 msgstr "Utilisation de Captcha dans le formulaire d'inscription?"
 
 #: eventplus/app/views/admin/settings/tabs/tab3.php:32
-#, fuzzy
 msgid "Google Captcha site Key?"
 msgstr "Clé de Captcha de Google?"
 
 #: eventplus/app/views/admin/settings/tabs/tab3.php:42
 msgid "CSS Overrides for registration form?"
-msgstr "Utiliser les CSS pour sa propre forme?"
+msgstr "Un remplacement de CSS pour le formulaire d'inscription?"
 
 #: eventplus/app/views/admin/settings/tabs/tab3.php:45
 msgid "Help"
@@ -1993,7 +2106,7 @@ msgstr "Aide"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:9
 msgid "Choose Pages"
-msgstr "Choisissez Pages"
+msgstr "Choisissez les pages"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:14
 msgid "Attention"
@@ -2001,15 +2114,22 @@ msgstr "Attention"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:16
 msgid "These settings must be configured for the plugin to function correctly."
-msgstr "Ces paramètres doivent être configurés pour que le plugin fonctionne correctement."
+msgstr ""
+"Ces paramètres doivent être configurés pour que le plugin fonctionne "
+"correctement."
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:20
 msgid "Main registration page"
 msgstr "Page accueil d'inscription"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:38
-msgid "This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden from navigation, if desired"
-msgstr "Cette page doit contenir le EVRREGIS de code {} pour afficher le formulaire d'inscription."
+msgid ""
+"This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden "
+"from navigation, if desired"
+msgstr ""
+"Cette page doit contenir le filter.&nbsp;  {EVRREGIS} pour afficher le "
+"formulaire d'inscription. Cette page peut être masquée de la navigation, si "
+"vous le souhaitez"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:43
 msgid "Return URL for Payments"
@@ -2020,39 +2140,43 @@ msgid "Main page"
 msgstr "Page d'accueil"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:54
-#, fuzzy
-msgid "This page should be hidden and will contain the [eventsplus_payment] payment shortcode.&nbsp; This page should be hidden from navigation"
-msgstr "Cette page doit être masquée et contiendra le shortcode de paiement  [eventsplus_payment] . cette page doit être cachée à la navigation."
+msgid ""
+"This page should be hidden and will contain the [eventsplus_payment] payment "
+"shortcode.&nbsp; This page should be hidden from navigation"
+msgstr ""
+"Cette page doit être masquée et contiendra le \"code court\".&nbsp; de "
+"paiement  [eventsplus_payment] . Cette page doit être cachée lors de la "
+"navigation"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:73
-#, fuzzy
-msgid "Choose if you would like to display events in Ascending or Descending order"
-msgstr "Choisissez si vous souhaitez afficher les événements par ordre croissant ou décroissant"
+msgid ""
+"Choose if you would like to display events in Ascending or Descending order"
+msgstr ""
+"Choisissez si vous souhaitez afficher les événements par ordre croissant ou "
+"décroissant"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:93
-#, fuzzy
 msgid "Social Icons"
 msgstr "Icônes réseaux sociaux"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:96
-#, fuzzy
 msgid "Show Social sharing icons in event page?"
-msgstr "Afficher partage icônes sociales sur la page de l'événement?"
+msgstr "Afficher les icônes sociales de partage sur la page de l'événement?"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:108
-#, fuzzy
 msgid "Google Map"
 msgstr "Google Map"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:112
-#, fuzzy
 msgid "Add Google map Api key"
 msgstr "Ajouter la clé API Google map"
 
 #: eventplus/app/views/admin/settings/tabs/tab4.php:117
-#, fuzzy
-msgid "If your website gets huge high traffic we highly recommend to use API key."
-msgstr "Si votre site reçoit un trafic élevé, nous vous recommandons fortement d'utiliser une clé API."
+msgid ""
+"If your website gets huge high traffic we highly recommend to use API key."
+msgstr ""
+"Si votre site reçoit un trafic élevé, nous vous recommandons fortement "
+"d'utiliser une clé API."
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:9
 msgid "Email Confirmation"
@@ -2064,7 +2188,9 @@ msgstr "Vous voulez envoyer un e-mail pour chaque personne qui s'inscrit?"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:33
 msgid "(This option must be enable to send custom mails in events)"
-msgstr "(Cette option doit être activée pour envoyer des emails personnalisés pour chaque événement.)"
+msgstr ""
+"(Cette option doit être activée pour envoyer des emails personnalisés pour "
+"chaque événement.)"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:39
 #: eventplus/app/views/admin/settings/tabs/tab5.php:93
@@ -2080,23 +2206,25 @@ msgstr "Contenu du courriel"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:66
 msgid "Do you want to send Payment Confirmation emails?"
-msgstr "Vous voulez envoyer une confirmation par courriel de paiements?"
+msgstr "Vous voulez envoyer des courriels de confirmation de paiements?"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:87
 msgid "(This option must be enable to send payment confrimation emails)"
-msgstr "(Cette option doit être activée pour envoyer des emails de confirmation de recevoir des paiements)"
+msgstr ""
+"(Cette option doit être activée pour envoyer des emails de confirmation des "
+"paiements reçus)"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:98
 msgid "Subject"
 msgstr "Sujet"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:121
-#, fuzzy
 msgid "Do you want to receive email notifications when someone registers?"
-msgstr "Voulez-vous recevoir des notifications par e-mail lorsque quelqu'un s'enregistre?"
+msgstr ""
+"Voulez-vous recevoir des notifications par e-mail lorsque quelqu'un "
+"s'enregistre?"
 
 #: eventplus/app/views/admin/settings/tabs/tab5.php:142
-#, fuzzy
 msgid "(This option must be enable to send email to admin)"
 msgstr "(Cette option doit être activée pour envoyer l'email à l'admin)"
 
@@ -2126,19 +2254,17 @@ msgstr "Choisissez des couleurs Calendrier"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:13
 msgid "Calendar Settings"
-msgstr "Paramètres de l'agenda"
+msgstr "Paramètres du calendrier"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:20
 msgid "Choose the time format for your events:"
 msgstr "Choisissez le format de l'heure pour vos événements:"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:29
-#, fuzzy
 msgid "AM - PM"
 msgstr "MATIN - APRÈS-MIDI"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:37
-#, fuzzy
 msgid "24 Hours"
 msgstr "24 heures"
 
@@ -2147,7 +2273,6 @@ msgid "Choose the date format for your events:"
 msgstr "Choisissez le format de date pour vos événements:"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:72
-#, fuzzy
 msgid "Would you like to display amount of seats available?"
 msgstr "Souhaitez-vous afficher les quantité de places disponibles?"
 
@@ -2166,44 +2291,44 @@ msgid "Monday"
 msgstr "Lundi"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:128
-#, fuzzy
 msgid "Would you like to display the category colors in the calendar?"
 msgstr "Souhaitez-vous afficher les couleurs des catégorie dans le calendrier?"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:150
-#, fuzzy
 msgid "Do you want to show add to calendar button?"
-msgstr "Vous voulez montrer Ajouter bouton calendrier ?"
+msgstr "Voulez-vous montrer Ajouter un bouton calendrier ?"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:174
-msgid "Click on each field to display the color picker. Click again to close it"
-msgstr "Cliquez sur le champ pour afficher le sélecteur de couleurs. Cliquez à nouveau pour fermer."
+msgid ""
+"Click on each field to display the color picker. Click again to close it"
+msgstr ""
+"Cliquez sur le champ pour afficher le sélecteur de couleurs. Cliquez à "
+"nouveau pour fermer"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:210
 msgid "Date Picker"
-msgstr "Choisissez la Date"
+msgstr "Sélecteur de date"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:214
 msgid "Do you want to use the Date selector?"
-msgstr "Vous souhaitez utiliser le sélecteur de date?"
+msgstr "Souhaitez-vous utiliser le sélecteur de date?"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:236
-#, fuzzy
 msgid "Do you want to Show Tool tip on the Calendar?"
-msgstr "Vous voulez montrer info-bulle sur le calendrier ?"
+msgstr "Voulez-vous montrer info-bulle sur le calendrier ?"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:259
 msgid "Calendar Date Selector Background Color"
-msgstr "La couleur de fond du sélecteur de date"
+msgstr "La couleur de fond du sélecteur de date du calendrier"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:277
 #: eventplus/app/views/admin/settings/tabs/tab7.php:318
 msgid "Selector Text Color"
-msgstr "Texte date de sélecteur de couleur"
+msgstr "Couleur du texte du sélecteur"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:301
 msgid "Calendar Header"
-msgstr "En-tête du Calendrier"
+msgstr "Couleur de fond de l'en-tête du Calendrier"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:306
 msgid "Calendar Day Header Background Color"
@@ -2222,7 +2347,6 @@ msgid "Current Day Text Color"
 msgstr "Couleur du texte de la journée en cours"
 
 #: eventplus/app/views/admin/settings/tabs/tab7.php:382
-#, fuzzy
 msgid "Description Pop Border Color"
 msgstr "Description de la couleur de la bordure"
 
@@ -2236,11 +2360,11 @@ msgstr "Paramètres des taxes"
 
 #: eventplus/app/views/admin/settings/tabs/tab8.php:12
 msgid "Do you want to charge sales tax"
-msgstr "Vous souhaitez percevoir une taxe"
+msgstr "Voulez-vous facturer la taxe de vente"
 
 #: eventplus/app/views/admin/settings/tabs/tab8.php:34
 msgid "(This option must be enable to charge sales tax)"
-msgstr "(Cette option doit être activée afin de collecter une taxe)"
+msgstr "(Cette option doit être activée pour facturer la taxe de vente)"
 
 #: eventplus/app/views/admin/settings/tabs/tab8.php:40
 msgid "Sales Tax Rate:"
@@ -2256,43 +2380,42 @@ msgstr "Félicitations"
 
 #: eventplus/app/views/admin/settings/tabs/tab9.php:9
 msgid "You have setup your company information. Please click the"
-msgstr "Vous avez configuré les informations de votre entreprise. S'il vous plaît"
+msgstr ""
+"Vous avez configuré les informations de votre entreprise. S'il vous plaît, "
+"cliquez le"
 
 #: eventplus/app/views/admin/settings/tabs/tab9.php:11
 msgid "UPDATE COMPANY SETTINGS"
-msgstr "cliquez sur le bouton Mettre à jour les paramètres"
+msgstr "MISE À JOUR DES PARAMÈTRES DE LA SOCIÉTÉ"
 
 #: eventplus/app/views/admin/settings/tabs/tab9.php:13
 msgid "button, below the tabs"
-msgstr "bouton située au-dessous des languettes"
+msgstr "bouton située au-dessous des onglets"
 
 #: eventplus/app/views/admin/settings/tabs/tabdiscount.php:6
-#, fuzzy
 msgid "Step 9"
 msgstr "Étape 9"
 
 #: eventplus/app/views/front/event/parts/accordion.php:34
-#, fuzzy
 msgid "&nbsp;&nbsp;&nbsp;&nbsp;Time: "
 msgstr "&nbsp;&nbsp;&nbsp;&nbsp;Heure : "
 
 #: eventplus/app/views/front/event/parts/accordion.php:40
 #: eventplus/funx/evrplus_calendar.php:575
 msgid "Location"
-msgstr "Emplacement..."
+msgstr "Emplacement"
 
 #: eventplus/app/views/front/event/parts/accordion.php:49
 #: eventplus/app/views/front/event/parts/regform.php:229
 #: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:17
 #: eventplus/funx/evrplus_calendar.php:587
 msgid "Event Fees"
-msgstr "Événements tarifaires"
+msgstr "Tarifs de l'événement"
 
 #: eventplus/app/views/front/event/parts/confirm.php:3
 #: eventplus/app/views/front/event/parts/regform.php:9
-#, fuzzy
 msgid "Invalid"
-msgstr "Requête invalide - Paiement n'a pas pu être traitée."
+msgstr "Invalide"
 
 #: eventplus/app/views/front/event/parts/confirm.php:4
 #: eventplus/app/views/front/event/parts/regform.php:10
@@ -2301,7 +2424,6 @@ msgstr "Requis"
 
 #: eventplus/app/views/front/event/parts/confirm.php:16
 #: eventplus/app/views/front/event/parts/pay.php:9
-#, fuzzy
 msgid "Failure - please retry!"
 msgstr "Échec - recommencez !"
 
@@ -2309,12 +2431,10 @@ msgstr "Échec - recommencez !"
 #: eventplus/app/views/front/event/parts/post.php:18
 #: public/authorize/payment.php:37 public/paypal/re7urn.php:27
 #: public/stripe/payment.php:32
-#, fuzzy
 msgid "Couldn't proceed! registration already processed."
-msgstr "Impossible de procéder! inscription déjà traitée."
+msgstr "Impossible de procéder! Inscription déjà traitée."
 
 #: eventplus/app/views/front/event/parts/confirm.php:264
-#, fuzzy
 msgid "You are on the waiting list."
 msgstr "Vous êtes sur une liste d’attente."
 
@@ -2338,7 +2458,6 @@ msgstr "S'il vous plaît vérifier les détails de votre inscription:"
 #: eventplus/app/views/front/event/parts/pay.php:77
 #: eventplus/app/views/front/shortcode/payment.php:33
 #: eventplus/helpers/payment.php:510
-#, fuzzy
 msgid "Event Name/Cost:"
 msgstr "Nom de l'événement / Coût :"
 
@@ -2371,7 +2490,6 @@ msgid "Order Details:"
 msgstr "Détails de la commande:"
 
 #: eventplus/app/views/front/event/parts/confirm.php:307
-#, fuzzy
 msgid "Waiting List"
 msgstr "Liste d’attente"
 
@@ -2381,29 +2499,24 @@ msgstr "Gratuit"
 
 #: eventplus/app/views/front/event/parts/confirm.php:344
 #: eventplus/app/views/front/event/parts/confirm.php:348
-#, fuzzy
 msgid "Coupon:"
-msgstr "Entrez le code coupon de réduction"
+msgstr "Coupon:"
 
 #: eventplus/app/views/front/event/parts/confirm.php:349
-#, fuzzy
 msgid "Invalid Code!"
 msgstr "Code Invalide !"
 
 #: eventplus/app/views/front/event/parts/confirm.php:358
-#, fuzzy
 msgid "Sales Tax:"
 msgstr "Taxes de vente:"
 
 #: eventplus/app/views/front/event/parts/confirm.php:367
-#, fuzzy
 msgid "Order Total:"
-msgstr "Total à payer (TTC) :"
+msgstr "Total à payer :"
 
 #: eventplus/app/views/front/event/parts/confirm.php:372
-#, fuzzy
 msgid "Discount:"
-msgstr "Réduction"
+msgstr "Réduction:"
 
 #: eventplus/app/views/front/event/parts/confirm.php:378
 #: eventplus/helpers/payment.php:187 eventplus/helpers/payment.php:536
@@ -2413,15 +2526,15 @@ msgstr "Coût total:"
 
 #: eventplus/app/views/front/event/parts/confirm.php:434
 msgid "BACK"
-msgstr "ARRIÈRE"
+msgstr "RETOUR"
 
 #: eventplus/app/views/front/event/parts/confirm.php:442
 msgid "You must select at least one registration item."
-msgstr "Vous devez sélectionner au moins un élément d'enregistrement."
+msgstr "Vous devez sélectionner au moins un élément d'inscription."
 
 #: eventplus/app/views/front/event/parts/confirm.php:443
 msgid "Please go back and select an item!"
-msgstr "S'il vous plaît revenir en arrière et choisir un article!"
+msgstr "S'il vous plaît revenir en arrière et choisir un élément!"
 
 #: eventplus/app/views/front/event/parts/confirm.php:460
 msgid "Confirmed"
@@ -2429,25 +2542,39 @@ msgstr "Confirmé"
 
 #: eventplus/app/views/front/event/parts/confirmation.php:94
 #: eventplus/app/views/front/event/parts/email/confirmation.php:97
-#, fuzzy
 msgid "A confirmation email has been sent to:"
-msgstr "Un courriel de confirmation a été envoyé à "
+msgstr "Un courriel de confirmation a été envoyé à :"
 
 #: eventplus/app/views/front/event/parts/confirmation.php:102
-msgid "At this time, all seats for the event have been taken.  Your information has been placed on our waiting list.  The waiting list is on a first come, first serve basis.  You will be notified by email should a seat become available."
-msgstr "A cette époque, nous avons pris toutes les places pour l'événement. Vos informations ont été placés sur la liste d'attente. La liste d'attente est du premier arrivé, premier servi. Vous serez averti par email doit être un siège disponible."
+msgid ""
+"At this time, all seats for the event have been taken.  Your information has "
+"been placed on our waiting list.  The waiting list is on a first come, first "
+"serve basis.  You will be notified by email should a seat become available."
+msgstr ""
+"À ce moment, toutes les places pour l'événement ont été prises. Vos "
+"informations ont été placées sur notre liste d'attente. La liste d'attente "
+"est basée sur le principe du premier arrivé, premier servi. Vous serez "
+"averti par email si un siège devenait disponible."
 
 #: eventplus/app/views/front/event/parts/confirmation.php:114
 msgid "Your information has been received."
-msgstr "Votre information n'a été reçue."
+msgstr "Votre information a été reçue."
 
 #: eventplus/app/views/front/event/parts/confirmation.php:117
-msgid "Congratulations! Transaction has been completed and payment has been received. Thank you for your payment."
-msgstr "Félicitations à vous! Transaction a été rempli et le paiement a été reçu. Merci pour votre paiement."
+msgid ""
+"Congratulations! Transaction has been completed and payment has been "
+"received. Thank you for your payment."
+msgstr ""
+"Félicitations à vous! La transaction s'est bien déroulée et le paiement a "
+"été reçu. Merci pour votre paiement."
 
 #: eventplus/app/views/front/event/parts/confirmation.php:119
-msgid "Transaction has been completed but payment failed. Please try registering again."
-msgstr "Transaction a été effectuée, mais le paiement a échoué. S'il vous plaît essayer de vous inscrire à nouveau."
+msgid ""
+"Transaction has been completed but payment failed. Please try registering "
+"again."
+msgstr ""
+"Transaction a été effectuée, mais le paiement a échoué. S'il vous plaît "
+"essayer de vous inscrire à nouveau."
 
 #: eventplus/app/views/front/event/parts/email/confirmation.php:57
 #: eventplus/helpers/mail/registration.php:47
@@ -2455,25 +2582,25 @@ msgid "Thank you for registering for"
 msgstr "Merci de vous inscrire pour"
 
 #: eventplus/app/views/front/event/parts/email/confirmation.php:57
-#, fuzzy
-msgid "At this time, all seats for the event have been taken.  \n"
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
 "        Your information has been placed on our waiting list.  \n"
 "        The waiting list is on a first come, first serve basis.  \n"
 "        You will be notified by email should a seat become available."
-msgstr "A cette époque, nous avons pris toutes les places pour l'événement. \n"
-" Vos informations ont été placés sur la liste d'attente. \n"
-" La liste d'attente est du premier arrivé, premier servi. \n"
-" Vous serez averti par email doit être un siège disponible."
+msgstr ""
+"À ce moment, toutes les places pour l'événement ont été prises.\n"
+"         Vos informations ont été placées sur notre liste d'attente.\n"
+"         La liste d'attente est basée sur le principe du premier arrivé, "
+"premier servi.\n"
+"         Vous serez averti par email si un siège devenait disponible."
 
 #: eventplus/app/views/front/event/parts/inc/form_fields/dropdown.php:5
-#, fuzzy
 msgid "Select One"
 msgstr "Sélectionnez Un"
 
 #: eventplus/app/views/front/event/parts/list.php:19
-#, fuzzy
 msgid "The list of upcoming events."
-msgstr "Liste des événements à venir."
+msgstr "La liste des événements à venir."
 
 #: eventplus/app/views/front/event/parts/list.php:94
 #: eventplus/app/views/front/widgets/shortcode/event/category.php:88
@@ -2485,12 +2612,10 @@ msgstr "Places disponibles"
 #: eventplus/app/views/front/widgets/shortcode/event/category.php:84
 #: eventplus/app/views/front/widgets/shortcode/event/list.php:92
 #: eventplus/funx/evrplus_calendar.php:380
-#, fuzzy
 msgid "Unlimited"
 msgstr "Illimité"
 
 #: eventplus/app/views/front/event/parts/pay.php:14
-#, fuzzy
 msgid "Please check your email for payment information."
 msgstr "Merci de vérifier votre courriel pour les informations de paiement."
 
@@ -2506,7 +2631,6 @@ msgstr "pour l'événement"
 
 #: eventplus/app/views/front/event/parts/pay.php:74
 #: eventplus/app/views/front/shortcode/payment.php:30
-#, fuzzy
 msgid "Registration Detail Summary:"
 msgstr "Résumé de l'inscription :"
 
@@ -2531,66 +2655,64 @@ msgstr "Paiement"
 #: eventplus/app/views/front/event/parts/pay.php:123
 #: eventplus/app/views/front/shortcode/payment.php:85
 msgid "Total Outstanding Payment Due*:"
-msgstr "Total en cours *:"
+msgstr "Paiement total restant dû *:"
 
 #: eventplus/app/views/front/event/parts/pay.php:131
 #: eventplus/app/views/front/shortcode/payment.php:93
 msgid "Total Payment Due*:"
-msgstr "Paiement intégral*:"
+msgstr "Paiement total dû *:"
 
 #: eventplus/app/views/front/event/parts/pay.php:137
 #: eventplus/app/views/front/shortcode/payment.php:100
-msgid "*Payments could take several days to post to this page. Please check back in several days if you made a payment and your payment is not showing at this time."
-msgstr "* Les paiements peuvent prendre plusieurs jours pour poster sur cette page. S'il vous plaît revenez dans quelques jours si vous faites un paiement et votre paiement n'est pas affiché à ce moment."
+msgid ""
+"*Payments could take several days to post to this page. Please check back in "
+"several days if you made a payment and your payment is not showing at this "
+"time."
+msgstr ""
+"* Les paiements peuvent prendre plusieurs jours pour être posté sur cette "
+"page. S'il vous plaît revenez dans quelques jours si vous faites un paiement "
+"maintenant et que celui-ci n'est pas affiché à ce moment."
 
 #: eventplus/app/views/front/event/parts/regform.php:11
-#, fuzzy
 msgid "Please enter your first name"
-msgstr "S'il vous plaît entrer votre nom."
+msgstr "S'il vous plaît entrer votre prénom"
 
 #: eventplus/app/views/front/event/parts/regform.php:12
-#, fuzzy
 msgid "Please enter your last name"
-msgstr "Entrez votre nom"
+msgstr "Entrez votre nom SVP"
 
 #: eventplus/app/views/front/event/parts/regform.php:13
 msgid "Email format not correct!"
-msgstr "Format de courriel n'est pas correct!"
+msgstr "Le format du courriel n'est pas correct!"
 
 #: eventplus/app/views/front/event/parts/regform.php:14
-#, fuzzy
 msgid "Please enter your phone number"
-msgstr "S'il vous plaît entrer votre numéro de téléphone."
+msgstr "S'il vous plaît entrer votre numéro de téléphone"
 
 #: eventplus/app/views/front/event/parts/regform.php:15
-#, fuzzy
 msgid "Please use correct format for your phone number"
-msgstr "S'il vous plaît utiliser correcte pour le format de votre numéro de téléphone."
+msgstr ""
+"S'il vous plaît utiliser le format correcte pour votre numéro de téléphone"
 
 #: eventplus/app/views/front/event/parts/regform.php:16
-#, fuzzy
 msgid "Please enter your address"
-msgstr "Entrez votre adresse."
+msgstr "Entrez votre adresse SVP"
 
 #: eventplus/app/views/front/event/parts/regform.php:17
-#, fuzzy
 msgid "Please enter your city"
-msgstr "S'il vous plaît entrez votre ville."
+msgstr "S'il vous plaît entrez votre ville"
 
 #: eventplus/app/views/front/event/parts/regform.php:18
-#, fuzzy
 msgid "Please enter your state"
 msgstr "S'il vous plaît entrez votre province/état"
 
 #: eventplus/app/views/front/event/parts/regform.php:19
-#, fuzzy
 msgid "Please enter your zip/postal code"
-msgstr "S'il vous plaît entrer votre code postal/zip."
+msgstr "S'il vous plaît entrer votre code postal"
 
 #: eventplus/app/views/front/event/parts/regform.php:20
-#, fuzzy
 msgid "You didn't accept terms and conditions!"
-msgstr "Vous n’acceptez les termes et conditions !"
+msgstr "Vous n’acceptez pas les termes et conditions !"
 
 #: eventplus/app/views/front/event/parts/regform.php:137
 #: eventplus/funx/evrplus_calendar.php:547
@@ -2626,7 +2748,7 @@ msgstr "Secondes"
 #: eventplus/app/views/front/event/parts/regform.php:310
 #: eventplus/funx/evrplus_calendar.php:622
 msgid "REGISTER"
-msgstr "Inscrire"
+msgstr "INSCRIRE"
 
 #: eventplus/app/views/front/event/parts/regform.php:315
 #: eventplus/funx/evrplus_calendar.php:615
@@ -2635,15 +2757,13 @@ msgstr "PLUS D'INFORMATIONS"
 
 #: eventplus/app/views/front/event/parts/regform.php:355
 #: eventplus/funx/evrplus_calendar.php:606
-#, fuzzy
 msgid "Registration is closed for this event."
 msgstr "Les inscriptions sont fermées pour cet événement."
 
 #: eventplus/app/views/front/event/parts/regform.php:356
 #: eventplus/funx/evrplus_calendar.php:608
-#, fuzzy
 msgid "For more information or questions, please email: "
-msgstr "Pour plus d'informations ou questions, veuillez envoyer un e-mail à :"
+msgstr "Pour plus d'informations ou questions, veuillez envoyer un e-mail à "
 
 #: eventplus/app/views/front/event/parts/regform.php:374
 #: eventplus/app/views/front/event/parts/regform.php:661
@@ -2659,31 +2779,26 @@ msgid "Postal/Zip Code"
 msgstr "Code postal / Zip"
 
 #: eventplus/app/views/front/event/parts/regform.php:434
-#, fuzzy
 msgid "Company Name"
-msgstr "Nom de l'entreprise:"
+msgstr "Nom de l'entreprise"
 
 #: eventplus/app/views/front/event/parts/regform.php:435
 msgid "Company Address"
 msgstr "Adresse de la société"
 
 #: eventplus/app/views/front/event/parts/regform.php:436
-#, fuzzy
 msgid "Company City"
-msgstr "Ville:"
+msgstr "Ville de l'entreprise"
 
 #: eventplus/app/views/front/event/parts/regform.php:437
-#, fuzzy
 msgid "Company State/Province"
-msgstr "État/province de l'équipe"
+msgstr "État/province de l'entreprise"
 
 #: eventplus/app/views/front/event/parts/regform.php:438
-#, fuzzy
 msgid "Company Postal Code"
-msgstr "Société Code postal:"
+msgstr "Code postal de la société"
 
 #: eventplus/app/views/front/event/parts/regform.php:439
-#, fuzzy
 msgid "Company Phone"
 msgstr "Téléphone de la société"
 
@@ -2693,24 +2808,21 @@ msgstr "Entrez le code coupon de réduction"
 
 #: eventplus/app/views/front/event/parts/regform.php:491
 msgid "You must select at least one item!"
-msgstr "Vous devez sélectionner au moins un article!"
+msgstr "Vous devez sélectionner au moins un élément!"
 
 #: eventplus/app/views/front/event/parts/regform.php:572
-#, fuzzy
 msgid "No Fees/Items available for todays date!"
-msgstr "Pas de billets/d'articles disponibles pour la date du jour !"
+msgstr "Pas de billets/d'événements disponibles pour la date du jour !"
 
 #: eventplus/app/views/front/event/parts/regform.php:587
-#, fuzzy
 msgid "Sales Tax"
-msgstr "Taxe de ventes"
+msgstr "Taxes de ventes"
 
 #: eventplus/app/views/front/event/parts/regform.php:628
 msgid "No Fees Have Been Setup For This Event!"
-msgstr "Aucune commission n'a été défini pour cet événement!"
+msgstr "Aucun frais n'a été défini pour cet événement!"
 
 #: eventplus/app/views/front/event/parts/regform.php:629
-#, fuzzy
 msgid "Registration for this event can not be taken at this time."
 msgstr "L'inscription à cet événement ne peut être faite pour l'instant."
 
@@ -2733,32 +2845,30 @@ msgid "Search By Title"
 msgstr "Recherche par titre"
 
 #: eventplus/app/views/front/widgets/shortcode/event/grid.php:89
-#, fuzzy
 msgid "Read more"
 msgstr "Lire la suite"
 
 #: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:12
-#, fuzzy
 msgid "Time: "
-msgstr "Heure:"
+msgstr "Heure: "
 
 #: eventplus/functions.php:211 eventplus/functions.php:213
 #: eventplus/functions.php:239
 msgid "Jan"
-msgstr "Janv"
+msgstr "Jan"
 
 #: eventplus/functions.php:211
 msgid "Feb"
-msgstr "Février"
+msgstr "Fev"
 
 #: eventplus/functions.php:213 eventplus/functions.php:237
 #: eventplus/functions.php:239
 msgid "Dec"
-msgstr "Décembre"
+msgstr "Déc"
 
 #: eventplus/functions.php:237
 msgid "Nov"
-msgstr "Novembre"
+msgstr "Nov"
 
 #: eventplus/funx/evrplus_calendar.php:74
 #: eventplus/funx/evrplus_calendar.php:76
@@ -2901,7 +3011,7 @@ msgstr "Événement Complet"
 #: eventplus/funx/evrplus_calendar.php:445
 #: eventplus/funx/evrplus_calendar.php:478
 msgid "read more"
-msgstr "Lire la suite"
+msgstr "lire la suite"
 
 #: eventplus/funx/evrplus_calendar.php:561
 msgid "Time"
@@ -2916,81 +3026,69 @@ msgid "Share"
 msgstr "Partager"
 
 #: eventplus/funx/evrplus_calendar.php:619
-#, fuzzy
 msgid "External Registration"
-msgstr "Enregistrement URL externe"
+msgstr "Enregistrement externe"
 
 #: eventplus/funx/evrplus_calendar.php:743 eventplus/helpers/event.php:100
-#, fuzzy
 msgid "all day"
 msgstr "toute la journée"
 
 #: eventplus/funx/evrplus_calendar.php:745 eventplus/helpers/event.php:102
-#, fuzzy
 msgid "Between"
 msgstr "Entre"
 
 #: eventplus/funx/evrplus_calendar.php:756 eventplus/helpers/event.php:114
-#, fuzzy
 msgid "No event till now!"
 msgstr "Jusqu'à maintenant, aucun événement !"
 
 #: eventplus/funx/evrplus_three_cal.php:38
 #: eventplus/funx/evrplus_three_cal.php:40
-#, fuzzy
 msgid "S"
 msgstr "S"
 
 #: eventplus/funx/evrplus_three_cal.php:38
 #: eventplus/funx/evrplus_three_cal.php:40
-#, fuzzy
 msgid "M"
-msgstr "L"
+msgstr "M"
 
 #: eventplus/funx/evrplus_three_cal.php:38
 #: eventplus/funx/evrplus_three_cal.php:40
-#, fuzzy
 msgid "T"
 msgstr "T"
 
 #: eventplus/funx/evrplus_three_cal.php:38
 #: eventplus/funx/evrplus_three_cal.php:40
-#, fuzzy
 msgid "W"
-msgstr "O"
+msgstr "W"
 
 #: eventplus/funx/evrplus_three_cal.php:38
 #: eventplus/funx/evrplus_three_cal.php:40
-#, fuzzy
 msgid "F"
 msgstr "F"
 
 #: eventplus/helpers/admin/menu.php:40
 msgid "Manage Events"
-msgstr "Gestion des événements"
+msgstr "Gérer des événements"
 
 #: eventplus/helpers/admin/menu.php:43
-#, fuzzy
 msgid "Event Fees/Tickets"
-msgstr "Frais/billets"
+msgstr "Tarifs/billets de l’événement"
 
 #: eventplus/helpers/admin/menu.php:44
 msgid "Event Questions"
-msgstr "Questions événement"
+msgstr "Questions de l'événement"
 
 #: eventplus/helpers/admin/menu.php:45
-#, fuzzy
 msgid "Event Attendees"
 msgstr "Participants à l’évènement"
 
 #: eventplus/helpers/admin/menu.php:65
 msgid "Contact"
-msgstr "Contactez"
+msgstr "Contact"
 
 #: eventplus/helpers/admin/menu.php:67
-#, fuzzy
 msgid "Captcha"
-msgstr "Utilisation Captcha dans le formulaire d'inscription?"
+msgstr "Captcha"
 
 #: eventplus/helpers/admin/menu.php:68
 msgid "Page Config"
@@ -2998,7 +3096,7 @@ msgstr "Page de configuration"
 
 #: eventplus/helpers/admin/menu.php:69
 msgid "Confirmation"
-msgstr "Confirmer"
+msgstr "Confirmation"
 
 #: eventplus/helpers/admin/menu.php:71
 msgid "Calendar"
@@ -3013,9 +3111,8 @@ msgid "Done"
 msgstr "Terminé"
 
 #: eventplus/helpers/app.php:98
-#, fuzzy
 msgid "Events Plus Dashboard"
-msgstr "Événements et tableau de bord"
+msgstr "Tableau de bord des événements"
 
 #: eventplus/helpers/installer.php:544 eventplus/helpers/installer.php:577
 #: eventplus/helpers/installer.php:662 eventplus/helpers/installer.php:710
@@ -3025,9 +3122,8 @@ msgstr "Événements et tableau de bord"
 #: eventplus/install.php:704 eventplus/install.php:744
 #: eventplus/install.php:798 eventplus/install.php:843
 #: eventplus/install.php:874
-#, fuzzy
 msgid "Success Updating table - "
-msgstr "Mise à jour des données effectuée -"
+msgstr "Mise à jour des données effectuée "
 
 #: eventplus/helpers/installer.php:546 eventplus/helpers/installer.php:579
 #: eventplus/helpers/installer.php:664 eventplus/helpers/installer.php:712
@@ -3037,71 +3133,69 @@ msgstr "Mise à jour des données effectuée -"
 #: eventplus/install.php:706 eventplus/install.php:746
 #: eventplus/install.php:800 eventplus/install.php:845
 #: eventplus/install.php:876
-#, fuzzy
 msgid "Failure Updating table - "
-msgstr "Erreur lors de la mise à jour des données -"
+msgstr "Erreur lors de la mise à jour des données "
 
 #: eventplus/helpers/mail/registration.php:48
-#, fuzzy
-msgid "At this time, all seats for the event have been taken. Your information has been placed on our waiting list.  \n"
+msgid ""
+"At this time, all seats for the event have been taken. Your information has "
+"been placed on our waiting list.  \n"
 "        The waiting list is on a first come, first serve basis.  \n"
 "        You will be notified by email should a seat become available."
-msgstr "A cette époque, nous avons pris toutes les places pour l'événement. \n"
-" Vos informations ont été placés sur la liste d'attente. \n"
-" La liste d'attente est du premier arrivé, premier servi. \n"
-" Vous serez averti par email doit être un siège disponible."
+msgstr ""
+"À ce moment, toutes les places pour l'événement ont été prises. Vos "
+"informations ont été placées sur notre liste d'attente.\n"
+"         La liste d'attente est basée sur le principe du premier arrivé, "
+"premier servi.\n"
+"         Vous serez averti par email si un siège devenait disponible."
 
 #: eventplus/helpers/payment.php:80 eventplus/helpers/payment.php:553
-#, fuzzy
 msgid "Invalid event - please retry!"
 msgstr "Événement non valide - recommencez !"
 
 #: eventplus/helpers/payment.php:87 eventplus/helpers/payment.php:560
-#, fuzzy
 msgid "Invalid registration - please retry!"
-msgstr "Enregistrement non valide - recommencez !"
+msgstr "Inscription non valide - recommencez !"
 
 #: eventplus/helpers/payment.php:135 eventplus/helpers/payment.php:617
 msgid "Order details"
 msgstr "Détails de la commande"
 
 #: eventplus/helpers/payment.php:142 eventplus/helpers/payment.php:624
-#, fuzzy
 msgid "Event Name:"
-msgstr "NOM DE L'ÉVÉNEMENT"
+msgstr "Nom de l'événement:"
 
 #: eventplus/helpers/payment.php:182 eventplus/helpers/payment.php:531
 #: eventplus/helpers/payment.php:664
-#, fuzzy
 msgid "Sales Tax  "
-msgstr "Taxes de vente:"
+msgstr "Taxes de vente"
 
 #: eventplus/helpers/payment.php:197
-#, fuzzy
-msgid "Please select one of the following methods and by clicking Pay Now button you will be taken to our payment vendor's site"
-msgstr "S'il vous plaît sélectionnez l'une des méthodes suivantes et en cliquant sur le bouton Payer maintenant, vous serez redirigé vers le site de notre fournisseur de paiement."
+msgid ""
+"Please select one of the following methods and by clicking Pay Now button "
+"you will be taken to our payment vendor's site"
+msgstr ""
+"S'il vous plaît sélectionnez l'une des méthodes suivantes et, en cliquant "
+"sur le bouton Payer maintenant, vous serez redirigé vers le site de notre "
+"fournisseur de paiement"
 
 #: eventplus/helpers/payment.php:201
 msgid "Payment Methods"
 msgstr "Moyens de paiement"
 
 #: eventplus/helpers/payment.php:244
-#, fuzzy
 msgid "Please mail your check to:"
 msgstr "Veuillez expédier votre chèque à :"
 
 #: eventplus/helpers/payment.php:286
-#, fuzzy
 msgid "Sandbox Mode"
-msgstr "Mode sandbox"
+msgstr "Mode Sandbox"
 
 #: eventplus/helpers/payment.php:395
-#, fuzzy
 msgid "Transaction Id"
 msgstr "Transaction ID"
 
 #: eventplus/helpers/payment.php:509
-#, fuzzy
 msgid "Order details:"
 msgstr "Détails de la commande:"
 
@@ -3110,182 +3204,189 @@ msgid "The attendee has been added."
 msgstr "Un participant a été ajouté."
 
 #: eventplus/models/attendees.php:117 eventplus/models/attendees.php:192
-msgid "There was an error in your submission, please try again. The attendee was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. Le participant n'a pas été enregistré!"
+msgid ""
+"There was an error in your submission, please try again. The attendee was "
+"not saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"Le participant n'a pas été enregistré!"
 
 #: eventplus/models/attendees.php:196
-#, fuzzy
 msgid "Attendee has been updated."
-msgstr "Participant a été mis à jour."
+msgstr "Le participant a été mis à jour."
 
 #: eventplus/models/attendees.php:226
-#, fuzzy
 msgid "Attendee has been deleted."
-msgstr "Participant a été supprimé."
+msgstr "Le participant a été supprimé."
 
 #: eventplus/models/attendees.php:226
-#, fuzzy
 msgid "Attendee couldn't deleted."
-msgstr "Participant n’a pas pu supprimer."
+msgstr "Le participant n’a pas pu être supprimé."
 
 #: eventplus/models/attendees.php:231
-#, fuzzy
-msgid "All the attendee information has been successfully deleted from the event."
-msgstr "Toutes les informations sur le participant ont été supprimées avec succès de l’événement."
+msgid ""
+"All the attendee information has been successfully deleted from the event."
+msgstr ""
+"Toutes les informations sur le participant ont été supprimées de l’événement "
+"avec succès  ."
 
 #: eventplus/models/attendees.php:231
-#, fuzzy
 msgid "Attendees couldn't deleted."
-msgstr "Les participants ne pouvaient pas supprimé."
+msgstr "Les participants n'ont pas pu être supprimés."
 
 #: eventplus/models/categories.php:68 eventplus/models/categories.php:108
-#, fuzzy
 msgid "Please fill in category name."
-msgstr "Veuillez remplir le nom de catégorie."
+msgstr "Veuillez remplir le nom de catégorie SVP."
 
 #: eventplus/models/categories.php:72 eventplus/models/categories.php:112
-#, fuzzy
 msgid "Please fill in category unique id."
-msgstr "S’il vous plaît remplir dans l’id unique de la catégorie."
+msgstr "Veuillez s’il vous plaît remplir, dans  la catégorie, l’id unique."
 
 #: eventplus/models/categories.php:74 eventplus/models/categories.php:115
-#, fuzzy
 msgid "Category unique id already exists."
 msgstr "Id unique de la catégorie existe déjà."
 
 #: eventplus/models/categories.php:88
 msgid "The category has been added."
-msgstr "La catégorie a été ajoutée"
+msgstr "La catégorie a été ajoutée."
 
 #: eventplus/models/categories.php:91
-#, fuzzy
 msgid "The category couldn't be added."
 msgstr "La catégorie n’a pas pu être ajoutée."
 
 #: eventplus/models/categories.php:134
-#, fuzzy
 msgid "The category couldn't updated."
-msgstr "La catégorie ne pouvait pas mis à jour."
+msgstr "La catégorie n'a pas pu se mettre à jour."
 
 #: eventplus/models/categories.php:137
 msgid "The category has been updated."
 msgstr "La catégorie a été mis à jour."
 
 #: eventplus/models/categories.php:143
-#, fuzzy
 msgid "The category has been deleted."
 msgstr "La catégorie a été supprimée."
 
 #: eventplus/models/categories.php:143
-#, fuzzy
 msgid "The category couldn't deleted."
-msgstr "La catégorie n’a pas pu supprimer."
+msgstr "La catégorie n’a pas pu être supprimée."
 
 #: eventplus/models/events.php:241
 msgid "The event "
-msgstr "l'événement"
+msgstr "L'événement "
 
 #: eventplus/models/events.php:241
-#, fuzzy
 msgid " has been added."
-msgstr "ont été ajoutées."
+msgstr " a été ajouté."
 
 #: eventplus/models/events.php:253 eventplus/models/events.php:430
-msgid "There was an error in your submission, please try again. The event was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. L'événement n'a pas été épargné!"
+msgid ""
+"There was an error in your submission, please try again. The event was not "
+"saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"L'événement n'a pas été sauvegardé!"
 
 #: eventplus/models/events.php:433
 msgid "The Event details saved for "
-msgstr "Détails des événements enregistrés pour"
+msgstr "Détails des événements enregistrés pour "
 
 #: eventplus/models/events.php:433
 msgid " has been updated!"
-msgstr "A été mis à jour!"
+msgstr "a été mis à jour!"
 
 #: eventplus/models/events.php:504
 msgid "The event has been deleted."
 msgstr "L'événement a été supprimé."
 
 #: eventplus/models/events.php:504
-#, fuzzy
 msgid "The event couldn't deleted."
-msgstr "L'événement ne pouvait pas supprimé."
+msgstr "L'événement n'a pas pu être supprimé."
 
 #: eventplus/models/events.php:573
-#, fuzzy
 msgid "The copy of event "
-msgstr "La copie de l’événement"
+msgstr "La copie de l’événement "
 
 #: eventplus/models/events.php:573 eventplus/models/events.php:609
 msgid "has been added."
-msgstr "ont été ajoutées."
+msgstr "a été ajouté."
 
 #: eventplus/models/events.php:585
-#, fuzzy
 msgid "The questions have been added."
 msgstr "Les questions ont été ajoutées."
 
 #: eventplus/models/events.php:609
 msgid "The cost "
-msgstr "Coût"
+msgstr "Le coût "
 
 #: eventplus/models/events.php:615
-msgid "There was an error in your submission, please try again. The cost was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. Le coût n'a pas été enregistré!"
+msgid ""
+"There was an error in your submission, please try again. The cost was not "
+"saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"Le coût n'a pas été enregistré!"
 
 #: eventplus/models/events.php:643
-msgid "There was an error in your submission, please try again. The coupon code changes were not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. Aucun changement n'a été enregistré dans le code de coupon!"
+msgid ""
+"There was an error in your submission, please try again. The coupon code "
+"changes were not saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"Le code promo n'a pas été enregistré!"
 
 #: eventplus/models/events.php:646
-#, fuzzy
 msgid "The coupon code information has been updated."
-msgstr "Les informations de code promo a été mis à jour."
+msgstr "L'information du code promo a été mis à jour."
 
 #: eventplus/models/events/items.php:56
-#, fuzzy
 msgid "The event cost/ticket item has been added."
 msgstr "L’élément de coût/billets d’événement a été ajouté."
 
 #: eventplus/models/events/items.php:59
-msgid "There was an error in your submission, please try again. The event cost/ticket item was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. L'élément de coût / achats de billets d'événement n'a pas été enregistré!"
+msgid ""
+"There was an error in your submission, please try again. The event cost/"
+"ticket item was not saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"L'élément de coût / achats de billets d'événement n'a pas été enregistré!"
 
 #: eventplus/models/events/items.php:102
-msgid "The event cost/ticket item has been updated.  You will now be taken back to the Event Pricing Page"
-msgstr "Le poste de dépenses / achats de billets de l'événement a été mis à jour. Vous allez être redirigé vers la page de taux d'événements"
+msgid ""
+"The event cost/ticket item has been updated.  You will now be taken back to "
+"the Event Pricing Page"
+msgstr ""
+"Le coût / ticket de l'événement a été mis à jour. Vous allez maintenant "
+"revenir à la page de tarification des événements"
 
 #: eventplus/models/events/items.php:105
-msgid "There was an error in your submission, please try again. The event cost/ticket item was not updated!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. L'élément de coût / achats de billets d'événement n'a pas été mis à jour!"
+msgid ""
+"There was an error in your submission, please try again. The event cost/"
+"ticket item was not updated!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"L'élément de coût / achats de billets d'événement n'a pas été mis à jour!"
 
 #: eventplus/models/events/items.php:128
-#, fuzzy
 msgid "Item has been deleted."
-msgstr "L'élément de coût / a été supprimé."
+msgstr "L'élément a été supprimé."
 
 #: eventplus/models/events/items.php:128
-#, fuzzy
 msgid "Item couldn't deleted."
-msgstr "Élément ne pouvait pas supprimé."
+msgstr "L'élément n'a pas pu être supprimé."
 
 #: eventplus/models/payments.php:20
-#, fuzzy
 msgid "Authorize.net"
 msgstr "Authorize.net"
 
 #: eventplus/models/payments.php:21
-#, fuzzy
 msgid "PayPal"
-msgstr "(Pour votre logo sur la page PayPal)"
+msgstr "PayPal"
 
 #: eventplus/models/payments.php:22
-#, fuzzy
 msgid "Stripe"
 msgstr "Stripe"
 
 #: eventplus/models/payments.php:23
-#, fuzzy
 msgid "Payment Offline"
 msgstr "Paiement Hors ligne"
 
@@ -3294,22 +3395,30 @@ msgid "To make payment or view your payment information go to"
 msgstr "Pour payer, ou voir les informations de paiement aller à"
 
 #: eventplus/models/payments.php:229
-#, fuzzy
 msgid "The payment has now been added and Payment notification has been sent. "
-msgstr "Le paiement a été ajouté et la notification de paiement a été envoyé."
+msgstr ""
+"Le paiement a maintenant été ajouté et la notification de paiement a été "
+"envoyée"
 
 #: eventplus/models/payments.php:231
-#, fuzzy
 msgid "The payment has now been added."
-msgstr "Le paiement a été ajouté."
+msgstr "Le paiement a maintenant été ajouté."
 
 #: eventplus/models/payments.php:235
-msgid "There was an error in your submission, please try again. The payment was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. Aucun paiement ne sera sauvé!"
+msgid ""
+"There was an error in your submission, please try again. The payment was not "
+"saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"Le paiement n'a été sauvegardé!"
 
 #: eventplus/models/payments.php:314
-msgid "There was an error in your submission, please try again. The payment was not updated!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. Paiement ne sera pas mise à jour!"
+msgid ""
+"There was an error in your submission, please try again. The payment was not "
+"updated!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"Le paiement n'a pas été mis à jour!"
 
 #: eventplus/models/payments.php:321
 msgid "The payment has been updated."
@@ -3317,125 +3426,118 @@ msgstr "Le paiement a été mis à jour."
 
 #: eventplus/models/payments.php:388
 msgid "The payment has been successfully deleted from the attendee."
-msgstr "Le paiement est supprimé de l'assistant."
+msgstr "Le paiement du participant a bien été supprimé."
 
 #: eventplus/models/payments.php:388
-#, fuzzy
 msgid "Payment entry couldn't deleted."
-msgstr "entrée de paiement ne pouvait pas supprimé."
+msgstr "L'entrée de paiement n'a pas pu être supprimée."
 
 #: eventplus/models/payments.php:415
-#, fuzzy
-msgid "A balance is outstanding on your event registration fees.  Please pay to complete your registration process."
-msgstr "Un paiement est en attente pour votre inscription à l'événement. Veuillez effectuer ce paiement pour terminer le processus."
+msgid ""
+"A balance is outstanding on your event registration fees.  Please pay to "
+"complete your registration process."
+msgstr ""
+"Un paiement est en attente pour votre inscription à l'événement. Veuillez "
+"effectuer ce paiement pour terminer le processus d'inscription."
 
 #: eventplus/models/payments.php:417
-#, fuzzy
 msgid "Payment Reminder"
 msgstr "Rappel de paiement"
 
 #: eventplus/models/payments.php:449
-#, fuzzy
 msgid "Payment Reminder Notification sent to"
 msgstr "Notification de rappel de paiement adressée à"
 
 #: eventplus/models/payments.php:460
-#, fuzzy
 msgid "No pending payments reminders to send"
-msgstr "No en attendant d’envoyer des rappels de paiements"
+msgstr "Aucun rappel de paiement en attente à envoyer"
 
 #: eventplus/models/questions.php:43
 msgid "The question has been added."
 msgstr "La question a été ajoutée."
 
 #: eventplus/models/questions.php:46
-msgid "There was an error in your submission, please try again. The question was not saved!"
-msgstr "Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. La question n'a pas été épargné!"
+msgid ""
+"There was an error in your submission, please try again. The question was "
+"not saved!"
+msgstr ""
+"Il y avait une erreur dans votre demande, s'il vous plaît essayer à nouveau. "
+"La question n'a pas été sauvegardée!"
 
 #: eventplus/models/questions.php:64
-#, fuzzy
 msgid "The question has been updated."
 msgstr "La question a été mise à jour."
 
 #: eventplus/models/questions.php:88
-#, fuzzy
 msgid "Question has been deleted."
-msgstr "Question a été supprimée."
+msgstr "La question a été supprimée."
 
 #: eventplus/models/questions.php:88
-#, fuzzy
 msgid "Question couldn't deleted."
-msgstr "Question n’a pas pu supprimer."
+msgstr "La question n'a pas pu être supprimée."
 
 #: eventplus/models/settings.php:112
-#, fuzzy
 msgid "Configuration settings saved"
-msgstr "Les paramètres de configuration sauvegardés"
+msgstr "Les paramètres de configuration sont sauvegardés"
 
 #: eventplus/models/settings.php:115
-#, fuzzy
-msgid "There was an error in your submission, please try again. The configuration data was not updated!"
-msgstr "Il y a eu une erreur lors de la soumission, essayez à nouveau. La configuration n'a pas été mise à jour !"
+msgid ""
+"There was an error in your submission, please try again. The configuration "
+"data was not updated!"
+msgstr ""
+"Une erreur s'est produite dans votre soumission. Veuillez réessayer. Les "
+"données de configuration n'ont pas été mises à jour!"
 
 #: eventplus/payments.php:1
 msgid "PayPal Sandbox Mode Is Active"
 msgstr "Mode Sandbox PayPal est actif"
 
 #: eventplus/payments.php:1
-#, fuzzy
 msgid "Payments will not be processed"
 msgstr "Les paiements ne seront pas traitées"
 
 #: eventplus/vendor/paypal.php:1
-#, fuzzy
 msgid "Pay using PayPal"
 msgstr "Procéder au paiement via PayPal"
 
 #: eventplus/vendor/paypal.php:1
-#, fuzzy
 msgid "Pay using your credit/debit card"
 msgstr "Payez avec votre carte de crédit/débit"
 
 #: eventplus/vendor/paypal.php:1
-#, fuzzy
 msgid "Pay via Stripe"
-msgstr "via Stripe"
+msgstr "Payer via Stripe"
 
 #: public/authorize/payment.php:44 public/stripe/payment.php:42
 msgid "Invalid request - Payment couldn't be processed."
-msgstr "Requête invalide - Paiement n'a pas pu être traitée."
+msgstr "Requête invalide - Le paiement n'a pas pu être traitée."
 
 #: public/paypal/1pn.php:37 public/paypal/re7urn.php:44
-#, fuzzy
 msgid "Already processed"
 msgstr "Déjà traité"
 
 #: public/paypal/re7urn.php:79
-#, fuzzy
 msgid "Payment already processed"
-msgstr "Le paiement est déjà traité."
+msgstr "Le paiement est déjà traité"
 
 #: eventplus/functions.php:239
 msgid "Mar"
-msgstr ""
+msgstr "Mar"
 
 msgid "Apr"
-msgstr ""
-
-msgid "May"
-msgstr ""
+msgstr "Avr"
 
 msgid "Jun"
-msgstr ""
+msgstr "Juin"
 
 msgid "Jul"
-msgstr ""
+msgstr "Jul"
 
 msgid "Aug"
-msgstr ""
+msgstr "Août"
 
 msgid "Sep"
-msgstr ""
+msgstr "Sep"
 
 msgid "Oct"
-msgstr ""
+msgstr "Oct"
