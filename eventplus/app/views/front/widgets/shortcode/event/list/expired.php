@@ -113,7 +113,8 @@
 
                         <?php
                         do_action( 'evrplus_after_event_list_description', $event, array(
-                            'event_url' => $event_link
+                            'event_url' => $event_link,
+                            'seats' => $available_spaces
                         ) ); ?>
                     </div>
                     <div class="clearfix"></div>

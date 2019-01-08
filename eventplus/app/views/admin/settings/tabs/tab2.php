@@ -62,6 +62,7 @@ $paymentMethods = EventPlus_Models_Payments::getPaymentMethods();
                             <option value="AOA" <?php if ($company_options['default_currency'] == 'AOA') echo ' selected'; ?>>AOA</option>
                             <option value="IDR" <?php if ($company_options['default_currency'] == 'IDR') echo ' selected'; ?>>IDR</option>
                             <option value="XOF" <?php if ($company_options['default_currency'] == 'XOF') echo ' selected'; ?>>IDR</option>
+                            <option value="NGN" <?php if ($company_options['default_currency'] == 'NGN') echo ' selected'; ?>>IDR</option>
                         </select>
                     </div>
                     </p> <br />

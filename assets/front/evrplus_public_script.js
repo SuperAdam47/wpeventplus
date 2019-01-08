@@ -23,7 +23,7 @@ jQuery(document).ready(function ($) {
         if (oCbox.is(':checked') || oCbox.prop('checked')) {
             jQuery('#eventplus_form_fields').fadeIn();
             jQuery('html, body').animate({
-                scrollTop: $("#eventplus_form_fields").offset().top - 40
+                scrollTop: $("#eventplus_form_fields").offset().top - 150
             }, 500);
         } else {
             jQuery('#eventplus_form_fields').fadeOut();

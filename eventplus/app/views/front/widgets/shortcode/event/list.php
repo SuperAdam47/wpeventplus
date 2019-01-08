@@ -50,7 +50,7 @@
                     $date_format = "j M Y";
                 }
 
-                if (isset($opt['time_format']) && $opt['time_format'] == '24hrs') {
+                if( isset($opt['time_format']) && $opt['time_format'] == '24hrs' ) {
                     $time_start = date_i18n('H:i', strtotime($event->start_time));
                     $time_end = date_i18n('H:i', strtotime($event->end_time));
                 }
@@ -113,7 +113,8 @@
 
                         <?php
                         do_action( 'evrplus_after_event_list_description', $event, array(
-                            'event_url' => $event_link
+                            'event_url' => $event_link,
+                            'seats' => $available_spaces
                         ) ); ?>
                     </div>
                     <div class="clearfix"></div>
