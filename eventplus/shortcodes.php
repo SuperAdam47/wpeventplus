@@ -34,25 +34,25 @@ class EventPlus_ShortCodes {
             'init_events' => '8',
             'load_new_events' => '5',
             'category_id' => ''
-        ), $atts));
+                        ), $atts));
 
         $col = ($columns == 2) ? 2 : 4 - ($columns - 1);
-        
-        if($show_excerpt == '1'){
+
+        if ($show_excerpt == '1') {
             $show_excerpt = 'yes';
         }
-        
+
         $show_excerpt = strtolower($show_excerpt);
 
         return EventPlus::dispatch('front_shortcode_event_grid/index', array(
-            'col' => $col,
-            'columns' => $columns,
-            'ordered' => $ordered,
-            'init_events' => $init_events,
-            'load_new_events' => $load_new_events,
-            'show_excerpt' => $show_excerpt,
-            'character_limit' => $character_limit,
-            'category_id' => $category_id,
+                    'col' => $col,
+                    'columns' => $columns,
+                    'ordered' => $ordered,
+                    'init_events' => $init_events,
+                    'load_new_events' => $load_new_events,
+                    'show_excerpt' => $show_excerpt,
+                    'character_limit' => $character_limit,
+                    'category_id' => $category_id,
         ));
     }
 
@@ -68,7 +68,7 @@ class EventPlus_ShortCodes {
         extract(shortcode_atts(array('event_id' => 0), $atts));
 
         return EventPlus::dispatch('front_shortcode_attendees_short/index', array(
-            'event_id' => $event_id,
+                    'event_id' => $event_id,
         ));
     }
 
@@ -90,8 +90,8 @@ class EventPlus_ShortCodes {
         $id = "{$event_id}";
         $curr = EventPlus_Helpers_Event::check_recurrence($id);
         $buffer = EventPlus::dispatch('front_event_parts_regform/index', array(
-            'event_id' => $id,
-            'recurr' => $curr,
+                    'event_id' => $id,
+                    'recurr' => $curr,
         ));
         return $buffer;
     }
@@ -99,29 +99,52 @@ class EventPlus_ShortCodes {
     function eventList($atts) {
 
         $attributes = (shortcode_atts(array(
-            'limit' => 0,
-            'event_category_id' => 0,
-            'show_expire' => 'no',
-        ), $atts));
-      
+                    'limit' => 0,
+                    'event_category_id' => 0,
+                    'show_expire' => 'no',
+                        ), $atts));
+
         return EventPlus::dispatch('front_shortcode_event_list/index', array(
-            'shortcode_attributes' => $attributes
+                    'shortcode_attributes' => $attributes
         ));
     }
 
     function eventExpiredList($atts) {
 
         $attributes = (shortcode_atts(array(
-            'limit' => 0,
-            'event_category_id' => 0,
-        ), $atts));
-      
+                    'limit' => 0,
+                    'event_category_id' => 0,
+                        ), $atts));
+
         return EventPlus::dispatch('front_shortcode_event_list_expired/index', array(
-            'shortcode_attributes' => $attributes
+                    'shortcode_attributes' => $attributes
         ));
     }
-    
+
     function eventRegistration($atts) {
-        return  EventPlus::dispatch('front_event_registration/index', array());
+        return EventPlus::dispatch('front_event_registration/index', array());
     }
+
+    function eventCalendar($atts) {
+        $shortcode_params = (shortcode_atts(array(
+                    'category' => '',
+                        ), $atts));
+
+        $category = '';
+
+        $event_category_id = 0;
+        if (isset($shortcode_params['category'])) {
+            if (trim($shortcode_params['category']) != '') {
+                $category = trim($shortcode_params['category']);
+            }
+        }
+
+        ob_start();
+        evrplus_display_calendar($category); //function with main content
+        $buffer = ob_get_contents();
+        ob_end_clean();
+
+        return $buffer;
+    }
+
 }
