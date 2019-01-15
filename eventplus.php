@@ -80,9 +80,9 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
         $locale = apply_filters( 'plugin_locale', get_locale(), 'evrplus_language' );
 
-        load_textdomain( 'evrplus_language', WP_LANG_DIR . '/wpeventsplus/evrplus_language-' . $locale . '.mo' );
+        load_textdomain( 'evrplus_language', WP_LANG_DIR . '/wpeventplus/evrplus_language-' . $locale . '.mo' );
 
-		load_plugin_textdomain('evrplus_language', false, EVENT_PLUS_PLUGIN_PATH . 'lang');
+		load_plugin_textdomain('evrplus_language', false, EVENT_PLUS_PLUGIN_PATH . 'languages');
     }
 
     private function addCommonActions() {
