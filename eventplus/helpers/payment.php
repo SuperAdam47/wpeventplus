@@ -218,8 +218,13 @@ class EventPlus_Helpers_Payment {
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
 
                             $oStripe = new EventPlus_Payments_Stripe(); // initiate an instance of the class
-
-                            $oStripe->add_field('stripe_process_url', EVENT_PLUS_PUBLIC_URL . 'stripe/payment.php');
+                                
+                            $stripe_process_url = add_query_arg(array(
+                                'eventplus_token' => $this->attendeeRow['token'],
+                                'eventplus_pm' => 'stripe',
+                                    ), site_url());
+                            
+                            $oStripe->add_field('stripe_process_url', $stripe_process_url);
                             $oStripe->add_field('amount', $payment);
                             $oStripe->add_field('token', $token);
                             $oStripe->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
@@ -260,8 +265,21 @@ class EventPlus_Helpers_Payment {
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
                             $oPayPal = new EventPlus_Payments_Paypal();
 
-                            $returnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/re7urn.php?eventplus_token=' . $this->attendeeRow['token'];
-                            $cancelUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/canc3l.php?eventplus_token=' . $this->attendeeRow['token'];
+                            //$returnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/re7urn.php?eventplus_token=' . $this->attendeeRow['token'];
+                            //$cancelUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/canc3l.php?eventplus_token=' . $this->attendeeRow['token'];
+
+                            $returnUrl = add_query_arg(array(
+                                'eventplus_token' => $this->attendeeRow['token'],
+                                'eventplus_pm' => 'paypal',
+                                'eventplus_pm_action' => 're7urn',
+                                    ), site_url());
+
+                            $cancelUrl = add_query_arg(array(
+                                'eventplus_token' => $this->attendeeRow['token'],
+                                'eventplus_pm' => 'paypal',
+                                'eventplus_pm_action' => 'canc3l',
+                                    ), site_url());
+
                             //$ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
 
                             $oPayPal->add_field('business', $this->companyOptions['payment_vendor_id']);
@@ -598,7 +616,7 @@ class EventPlus_Helpers_Payment {
         $row_count = count($ticket_order);
 
         // Print the Order Verification to the screen.
-        
+
         if (isset($this->companyOptions['info_recieved']) && trim($this->companyOptions['info_recieved']) != '') {
             $oMail = new EventPlus_Helpers_Mail(array(
                 'attendeeRow' => $this->attendeeRow,
@@ -606,8 +624,8 @@ class EventPlus_Helpers_Payment {
             ));
 
             $confirmation_message_str = html_entity_decode(stripslashes($this->companyOptions['info_recieved']));
-            
-            
+
+
             echo '<div class="col-xs-12">
             <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> ' . $oMail->bindParams($confirmation_message_str) . '</div>
         </div>';
@@ -669,14 +687,14 @@ class EventPlus_Helpers_Payment {
         }
 
         echo '<tr><td><strong>' . __('Total Cost:', 'evrplus_language') . '</strong></td>';
-        
-        if($payment > 0){
+
+        if ($payment > 0) {
             echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . number_format($payment, 2) . '</strong></td>';
-        }else{
-             echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . $payment . '</strong></td>';
+        } else {
+            echo '<td>' . $ticket_order[0]['ItemCurrency'] . ' <strong>' . $payment . '</strong></td>';
         }
-        
-         echo '</tr></table>';
+
+        echo '</tr></table>';
     }
 
 }

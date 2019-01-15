@@ -41,6 +41,10 @@ class EventPlus_Filters {
             return true;
         } elseif (preg_match('[PLUS_CALENDAR]', $content)) {
             return true;
+        }elseif (preg_match('[eventsplus_calendar]', $content)) {
+            return true;
+        }else if( has_shortcode( $content, 'eventsplus_calendar' ) ) {
+             return true;
         }
 
         return false;

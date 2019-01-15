@@ -115,6 +115,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         add_shortcode('eventsplus_category', array($oShortCodes, 'byCategory'));
         add_shortcode('eventsplus_single', array($oShortCodes, 'singleEvent'));
         add_shortcode('eventsplus_registration', array($oShortCodes, 'eventRegistration'));
+        add_shortcode('eventsplus_calendar', array($oShortCodes, 'eventCalendar'));
     }
 
     function initAdmin() {
@@ -132,6 +133,12 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $this->add_action('wp_head', $this, 'pluginInfo');
         $this->add_action('init', $this->oApp, 'frontInit');
         $this->add_action('template_redirect', $this, 'eventplus_confirmation_registration');
+        
+        $oPayPalHandler = new EventPlus_Payments_Paypal_Handler();
+        $this->add_action('template_redirect', $oPayPalHandler, 'handleResponse');
+        
+        $oStripeHandler = new EventPlus_Payments_Stripe_Handler();
+        $this->add_action('template_redirect', $oStripeHandler, 'handleResponse');
     }
 
     function filterMetaTitle() {
@@ -168,6 +175,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
             }
         }
     }
+    
 
     function registerWidgets() {
         register_widget('EventPlus_Widgets_Events');
