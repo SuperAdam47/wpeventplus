@@ -107,8 +107,7 @@ if (isset($event_meta_data)) {
     if (isset($event_meta_data['term_c_force'])) {
         $term_c_force = $event_meta_data['term_c_force'];
     }
-}
-?>
+} ?>
 
 <div class="events-plus-2 event-id-<?php echo esc_attr($event_id); ?>">
     <div class="event-single" id="event-slug">
@@ -130,20 +129,16 @@ if (isset($event_meta_data)) {
                         }
                     }
 
-                    if ($showButtonCalendar):
-                        ?>
-
+                    if( $showButtonCalendar ): ?>
                         <div class="acti0n">
                             <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>add_to_calednar.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo __('Add to your calendar', 'evrplus_language'); ?></a>
                         </div>
-
-                    <?php endif; ?>
                     <?php
+                    endif;
+                    
                     $noImage = false;
-
-                    if ($header_image != "header_image" && $header_image != "") {
-                        $noImage = true;
-                        ?>
+                    if( $header_image != "header_image" && $header_image != "" ) {
+                        $noImage = true; ?>
                         <img src="<?php echo $header_image; ?>" alt="<?php echo $event_name; ?>" />
                     <?php } else { ?>
                         <div style="height:100px;">&nbsp;</div>
@@ -165,9 +160,7 @@ if (isset($event_meta_data)) {
                     <div id="eventplus_event_time" class="col-xs-6 it3m">
                         <i class="fa fa-2x fa-clock-o"></i>
                         <div class="d3sc">
-                            <h4>
-                                <?php echo $start_time . " - " . $end_time; ?>
-                            </h4>
+                            <h4><?php echo $start_time . " - " . $end_time; ?></h4>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -374,16 +367,16 @@ if (isset($event_meta_data)) {
                                 ?>
                             <?php else: ?>
 
-                                <form  name="regform"  class="evrplus_regform" method="post" 
+                                <form name="regform" class="evrplus_regform" method="post" 
                                        action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  
                                        onSubmit="mySubmit.disabled = true;
                                         return validateForm(this)">
 
                                     <?php
                                     $formFieldStyle = ' ';
-                                    if ($term_c_force == 'Y' && $term_c == 'Y'):
-                                        $formFieldStyle = ' style="display:none;"';
-                                        ?>
+                                    if( $term_c_force == 'Y' && $term_c == 'Y' ):
+                                        $formFieldStyle = ' style="display:none;"'; ?>
+
                                         <div class="row">
                                             <div class="col-xs-12 fi3ld">
                                                 <label class="checkb0x"><input checked="false" type="checkbox" id="eventplus_terms_cbox" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
@@ -391,7 +384,6 @@ if (isset($event_meta_data)) {
                                             </div>
                                         </div>
                                     <?php endif; ?>
-
 
                                     <div id="eventplus_form_fields"<?php echo $formFieldStyle; ?>>
                                         <div class="row">
@@ -414,7 +406,6 @@ if (isset($event_meta_data)) {
                                         </div>
                                         <div class="row">
                                             <?php if ($inc_address == "Y"): ?>
-
                                                 <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
                                                     <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
                                                 </div>
@@ -426,18 +417,18 @@ if (isset($event_meta_data)) {
                                             <?php endif; ?>
                                         </div>
                                         <div class="row">
-
-                                            <?php if ($inc_city == "Y"): ?>
+                                            <?php
+                                            if( $inc_city == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
                                                     <input class="eplus-required" type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
                                                 </div>
-                                            <?php endif; ?>
-                                            <?php if ($inc_state == "Y"): ?>
+                                            <?php endif;
+                                            if( $inc_state == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
                                                     <input class="eplus-required" type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
                                                 </div>
-                                            <?php endif; ?>
-                                            <?php if ($inc_zip == "Y"): ?>
+                                            <?php endif;
+                                            if( $inc_zip == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
                                                     <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
                                                 </div>
@@ -453,51 +444,53 @@ if (isset($event_meta_data)) {
                                                 'co_zip' => array('title' => __('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
                                                 'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
                                             );
-                                            ?>
 
-                                            <?php foreach ($company_form_fields as $field => $fieldSet): ?>
-                                                <?php if ($fieldSet['flag']): ?>
+                                            foreach( $company_form_fields as $field=>$fieldSet ):
+                                                if( $fieldSet['flag'] ): ?>
                                                     <div class="col-sm-6 col-xs-12 fi3ld">
                                                         <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
                                                     </div>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
+                                                <?php
+                                                endif;
+                                            endforeach;
 
+                                            do_action( 'wpeventsplus_before_regform_questions' );
 
-                                            <?php
                                             $questions = $wpdb->get_results("SELECT * from " . get_option('evr_question') . " where event_id = '" . (int) $event_id . "' order by sequence");
-                                            if ($questions) :
-                                                foreach ($questions as $question):
+
+                                            if( $questions ) :
+                                                foreach( $questions as $question ):
                                                     $title = '';
                                                     if ($question->remark) {
                                                         $title = $question->remark;
-                                                    }
-                                                    ?>
+                                                    } ?>
+
                                                     <div class="col-xs-12 fi3ld"  title="<?php echo $title; ?>">
                                                         <?php echo $this->View('front/event/parts/inc/form_fields', array('question' => $question)); ?>
                                                     </div>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
+                                                <?php
+                                                endforeach;
+                                            endif;
 
-                                            <?php if ($use_coupon == "Y"): ?>
+                                            do_action( 'wpeventsplus_after_regform_questions' );
+
+                                            if( $use_coupon == "Y" ): ?>
                                                 <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
                                                     <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
                                                     <input type="text" name="coupon" id="coupon" value="" />
                                                 </div>
                                             <?php endif;
-                                            ?>
 
-                                            <?php
-                                            #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.                               
-                                            if ($available >= 1):
+                                            #If there is at least one seat available then begin display of event pricing and allow registration, else no fees notice.
+                                            if( $available >= 1 ):
                                                 $sql = "SELECT * FROM " . get_option('evr_cost') . " WHERE event_id = " . (int) $event_id . " ORDER BY sequence ASC";
                                                 $rows = $wpdb->get_results($sql);
                                                 if ($rows):
                                                     $open_seats = $available;
                                                     $curdate = date("Y-m-d");
                                                     $fee_count = 0;
-                                                    $isfees = "N";
-                                                    ?>
+                                                    $isfees = "N"; ?>
+
                                                     <div class="col-xs-12 fi3ld">
                                                         <h3 class="section-ti8le"><i class="fa fa-calculator"></i> <?php _e('Registration Fees', 'evrplus_language'); ?></h3>
                                                     </div>
@@ -506,18 +499,18 @@ if (isset($event_meta_data)) {
                                                         <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('You must select at least one item!', 'evrplus_language'); ?></div>
                                                     </div>
 
-
                                                     <?php
-                                                    foreach ($rows as $fee):
+                                                    foreach( $rows as $fee ):
                                                         #check fee dates and if date range is valid, display fee
-                                                        if ((evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate))):
+                                                        if( (evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate)) ):
+                                                            
                                                             $req = '';
-                                                            $isfees = "Y";
-                                                            ?>
+                                                            $isfees = "Y";?>
+
                                                             <input type="hidden" name="reg_type" value="RGLR"/>  
 
                                                             <div class="col-lg-3 col-md-4 col-sm-5 col-xs-6 fi3ld" title="<?php echo $fee->item_description; ?>">
-                                                                <p>  <?php
+                                                                <p><?php
                                                                     #Display Fee description and cost.
                                                                     if ($fee->item_custom_cur == "GBP") {
                                                                         $item_custom_cur = "&pound;";
@@ -562,6 +555,7 @@ if (isset($event_meta_data)) {
                                                                             <?php
                                                                         }
                                                                     }
+                                                                    
                                                                     #If item is not REG type, and no limit was set, limit options to 10
                                                                     if ($fee->item_cat != "REG") {
                                                                         $num_select = "10";
@@ -573,17 +567,13 @@ if (isset($event_meta_data)) {
                                                                             <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
                                                                             <?php
                                                                         }
-                                                                    }
-                                                                    ?>
+                                                                    } ?>
                                                                 </select>
-
 
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         <?php endif; ?>
                                                     <?php endforeach; ?>
-
-
 
                                                     <?php if ($isfees == "N"): ?>
                                                         <div class="col-xs-12">
@@ -638,7 +628,6 @@ if (isset($event_meta_data)) {
                                                                 </tfoot>
                                                             </table>
                                                         </div>
-
                                                     <?php endif; ?>
                                                 <?php else: ?>
                                                     <div class="col-xs-12">
@@ -649,22 +638,16 @@ if (isset($event_meta_data)) {
                                                     </div>
                                                 <?php endif; ?>
 
-
                                             <?php else: ?>
-
                                                 <div class="col-xs-12">
                                                     <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> 
                                                         <?php _e('This event has reached registration capacity.', 'evrplus_language'); ?>
                                                         <?php _e('Please provide your information to be placed on the waiting list.', 'evrplus_language'); ?>
                                                     </div>
                                                 </div>  
-
                                                 <input type="hidden" name="request" value="Waitlist" /> 
                                                 <input type="hidden" name="reg_type" value="WAIT" />
-
-
                                             <?php endif; ?>
-
 
                                             <div class="clearfix"></div>
                                             <?php if ($company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != ""): ?>
@@ -673,14 +656,12 @@ if (isset($event_meta_data)) {
                                                 </div>
                                             <?php endif; ?>
 
-
                                             <?php if ($term_c == 'Y' && $term_c_force != 'Y'): ?>
                                                 <div class="col-xs-12 fi3ld">
                                                     <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                     <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                                 </div>
                                             <?php endif; ?>
-
 
                                             <div class="col-xs-12" id="action_message_eplus_container" style="display:none;">
                                                 <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i>
@@ -689,14 +670,13 @@ if (isset($event_meta_data)) {
                                             </div>
 
                                             <div class="col-xs-12 fi3ld-buttons">
-                                                <input type="hidden" name="action" value="confirm"/>
-                                                <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
-                                                <input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
-                                                <input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
+                                            	<input type="hidden" name="action" value="confirm"/>
+                                            	<input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
+                                            	<input type="hidden" name="eventplus_token" value="<?php echo $eventplus_token; ?>" />
+                                            	<input type="hidden" id="tax_rate" value="<?php echo $tax_rate; ?>" />
 
-                                                <input type="submit" name="mySubmit" id="mySubmit" value="<?php _e('Submit', 'evrplus_language'); ?>" />
-                                                <input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
-
+                                            	<input type="submit" name="mySubmit" id="mySubmit" value="<?php _e('Submit', 'evrplus_language'); ?>" />
+                                            	<input type="reset" value="<?php _e('Reset', 'evrplus_language'); ?>" />
                                             </div>
 
                                         </div>
@@ -714,16 +694,16 @@ if (isset($event_meta_data)) {
 
 <?php
 if( $company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) != "" ): ?>
-    <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery("#mySubmit").click(function () {
-                if (grecaptcha.getResponse() == "") {
-                    alert("Please fill the captcha !");
-                    return false;
-                }
-            });
-        });
-    </script>
+	<script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function () {
+			jQuery("#mySubmit").click(function () {
+				if( grecaptcha.getResponse() == "" ) {
+					alert("Please fill the captcha !");
+					return false;
+				}
+			});
+		});
+	</script>
 <?php
 endif;
