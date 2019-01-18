@@ -6,7 +6,7 @@ class EventPlus_Payments_Paypal_Handler {
 
     function handleResponse(){
 		
-        if (isset($_REQUEST['eventplus_pm'])) {
+        if (isset($_REQUEST['eventplus_pm']) && isset($_REQUEST['tx'])) {
 			
 			
 			
@@ -21,7 +21,7 @@ class EventPlus_Payments_Paypal_Handler {
                     wp_die("Oops! Invalid paypal action.");
                 }
 
-                $_REQUEST['eventplus_pm_action'] = strtolower($_REQUEST['eventplus_pm_action']);
+                $_REQUEST['eventplus_pm_action'] = trim(strtolower($_REQUEST['eventplus_pm_action']));
 
                 if (isset($validActions[$_REQUEST['eventplus_pm_action']]) == false) {
                     wp_die("Invalid paypal action.");
