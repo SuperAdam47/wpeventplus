@@ -5,8 +5,8 @@ if (file_exists('../../../../wp-config.php')) {
     
     require_once( '../../../../wp-config.php');
     global $wpdb;
-    $curdate = date("Ymd");
-    $curtime = date("His");
+    $curdate = date_i18n("Ymd");
+    $curtime = date_i18n("His");
     (is_numeric($_REQUEST['event_id'])) ? $event_id = $_REQUEST['event_id'] : $event_id = 0;
     $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id=" . (int)$event_id;
     $result = $wpdb->get_results($sql, ARRAY_A);
@@ -30,15 +30,16 @@ if (file_exists('../../../../wp-config.php')) {
     
     header("Content-Type: text/Calendar");
     header("Content-Disposition: inline; filename=" . rawurlencode($event_name) . ".ics");
+
     echo "BEGIN:VCALENDAR\n";
     echo "BEGIN:VEVENT\n";
     echo "CLASS:PUBLIC\n";
-    echo "CREATED:" . $curdate . "T" . $curtime . "\n";
-    echo "DESCRIPTION:" . wp_filter_nohtml_kses($event_desc) . "\n";
-    echo "DTEND:" . date("Ymd", strtotime($end_date)) . "T" . date("His", strtotime($end_time)) . "\n";
-    echo "DTSTAMP:" . $curdate . "T" . $curtime . "\n";
+    echo "CREATED:" . $curdate . "T" . $curtime . "Z\n";
+    echo "DESCRIPTION:" . str_replace("\r\n", "\\n", $event_desc) . "\n";
+    echo "DTEND:" . date("Ymd", strtotime($end_date)) . "T" . date("His", strtotime($end_time)) . "Z\n";
+    echo "DTSTAMP:" . $curdate . "T" . $curtime . "Z\n";
     
-    echo "DTSTART:" . date("Ymd", strtotime($start_date)) . "T" . date("His", strtotime($start_time)) . "\n";
+    echo "DTSTART:" . date("Ymd", strtotime($start_date)) . "T" . date("His", strtotime($start_time)) . "Z\n";
     echo "LAST-MODIFIED:20091109T101015Z\n";
     echo "LOCATION:" . $event_location . ", " . $event_address . ", " . $event_city . ", " . $event_state . ", " . $event_postal . "\n";
     
