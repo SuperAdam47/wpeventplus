@@ -32,6 +32,7 @@ if (file_exists('../../../../wp-config.php')) {
     header("Content-Disposition: inline; filename=" . rawurlencode($event_name) . ".ics");
 
     echo "BEGIN:VCALENDAR\n";
+    echo "TZID:". get_option('timezone_string')."\n";
     echo "BEGIN:VEVENT\n";
     echo "CLASS:PUBLIC\n";
     echo "CREATED:" . $curdate . "T" . $curtime . "Z\n";
