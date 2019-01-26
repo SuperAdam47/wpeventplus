@@ -40,7 +40,7 @@ msgstr "Tornant a la secció de pagament"
 
 #. Text in echo
 #: evrplus_event.php:1558
-msgid " attendes registered for this event.  The event cannot be deleted."
+msgid " attendees registered for this event.  The event cannot be deleted."
 msgstr "Hi ha assistents registrats a aquest esdeveniment, no pot ser eliminat"
 
 #. Text in echo
