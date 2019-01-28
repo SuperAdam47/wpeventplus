@@ -53,42 +53,46 @@ if (isset($company_options['time_format']) and $company_options['time_format'] =
 }
 
 $captcha = "N";
-if ($company_options['captcha'] == 'Y') {
+if( $company_options['captcha'] == 'Y' ) {
     $captcha = "Y";
 }
 
 $tax_rate = .0;
-if ($company_options['use_sales_tax'] == "Y") {
+if( $company_options['use_sales_tax'] == "Y" ) {
     $tax_rate = .0875;
     if ($company_options['sales_tax_rate'] != "") {
         $tax_rate = $company_options['sales_tax_rate'];
     }
 }
 
+$resultEndTime = $start_time;
 $current_dt = date('Y-m-d H:i', current_time('timestamp', 0));
-if ($event_close == "start") {
+if( $event_close == "start" ) {
     $close_dt = $start_date . " " . $start_time;
-} else if ($event_close == "end") {
+} else if( $event_close == "end" ) {
     $close_dt = $end_date . " " . $end_time;
-} else if ($event_close == "") {
+    $resultEndTime = $end_time;
+} else if( $event_close == "" ) {
     $close_dt = $start_date . " " . $start_time;
 }
 
 $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
 $expiration_date = strtotime($stp);
-if (isset($_GET['recurr']) and $_GET['recurr'])
+if( isset($_GET['recurr']) and $_GET['recurr'] ) {
     $expiration_date = $_GET['recurr'];
-elseif ($recurr)
+} else if( $recurr ) {
     $expiration_date = $recurr;
+}
 $today = strtotime($current_dt);
 
 $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
-$resultEndDate = $wpdb->get_var($sqlEndDate);
+$resultEndDate = $wpdb->get_var( $sqlEndDate );
 
-if (isset($_GET['recurr']))
-    $resultEndDate = date_i18n('d-m-Y', $_GET['recurr']);
-elseif ($recurr)
-    $resultEndDate = date_i18n('d-m-Y', $recurr);
+if( isset($_GET['recurr']) ) {
+    $resultEndDate = date_i18n('d-m-Y H:m', $_GET['recurr']);
+} else if( $recurr ) {
+    $resultEndDate = date_i18n('d-m-Y H:m', $recurr);
+}
 $close_dt = $end_date . " " . $end_time;
 
 #See how many seats are left available
@@ -284,15 +288,15 @@ if (isset($event_meta_data)) {
                     <div class="clearfix"></div>
                 </div>
                 <?php
-                if ($counter_checks == 'Y'):
+                if( $counter_checks == 'Y' ):
                     $sql_status = "SELECT * FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";
                     $recurring_status_ex = $wpdb->get_results($sql_status);
                     $recurring_status = $recurring_status_ex[0]->recurrence_choice;
-                    if ($recurring_status == 'no'):
-                        ?>
+
+                    if( $recurring_status == 'no' ): ?>
                         <div class="coun8 ev3nt-coun73r-wra993r" id="details">
                             <div class="evrplus_counter">
-                                <div id="evrplus_counter" data-end-date="<?php echo EventPlus_Helpers_Funx::getTimestamp($resultEndDate) ?>" class="redCountdownDemo"></div>
+                                <div id="evrplus_counter" data-end-date="<?php echo EventPlus_Helpers_Funx::getTimestamp( $resultEndDate.' '.$resultEndTime ); ?>" class="redCountdownDemo"></div>
                                 <div class="timer">
                                     <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
                                     <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
