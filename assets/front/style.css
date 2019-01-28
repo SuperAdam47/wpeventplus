@@ -53,7 +53,7 @@
 
 .events-plus-2	.event-single	{ background-color: #f5f5f5; border: 1px solid #ccc; box-shadow: 0 0 6px #ccc; margin: 0 0 30px; }
 
-.events-plus-2	.event-single	.bann3r	{ position: relative; height: 100%; text-align: center; }
+.events-plus-2	.event-single	.bann3r	{ position: relative; height: auto; text-align: center; }
 .events-plus-2	.event-single	.bann3r	img	{ position: relative; z-index: 1; max-width: 100%; height: auto; }
 
 .events-plus-2	.event-single	.s0cial	{ position: absolute; top: 20px; left: 20px; z-index: 2; }

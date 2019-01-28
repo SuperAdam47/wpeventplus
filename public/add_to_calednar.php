@@ -35,13 +35,13 @@ if (file_exists('../../../../wp-config.php')) {
     echo "TZID:". get_option('timezone_string')."\n";
     echo "BEGIN:VEVENT\n";
     echo "CLASS:PUBLIC\n";
-    echo "CREATED:" . $curdate . "T" . $curtime . "Z\n";
+    echo "CREATED:" . $curdate . "T" . $curtime . "\n";
     echo "DESCRIPTION:" . str_replace("\r\n", "\\n", $event_desc) . "\n";
     echo "DTEND:" . date("Ymd", strtotime($end_date)) . "T" . date("His", strtotime($end_time)) . "Z\n";
-    echo "DTSTAMP:" . $curdate . "T" . $curtime . "Z\n";
+    echo "DTSTAMP:" . $curdate . "T" . $curtime . "\n";
     
-    echo "DTSTART:" . date("Ymd", strtotime($start_date)) . "T" . date("His", strtotime($start_time)) . "Z\n";
-    echo "LAST-MODIFIED:20091109T101015Z\n";
+    echo "DTSTART:" . date("Ymd", strtotime($start_date)) . "T" . date("His", strtotime($start_time)) . "\n";
+    echo "LAST-MODIFIED:20091109T101015\n";
     echo "LOCATION:" . $event_location . ", " . $event_address . ", " . $event_city . ", " . $event_state . ", " . $event_postal . "\n";
     
     echo "SUMMARY;LANGUAGE=en-us:" . $event_name . "\n";
