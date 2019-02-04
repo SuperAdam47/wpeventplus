@@ -13,12 +13,11 @@ $wpdb = $this->wpDb();
             <h3><?php _e('Next 5 Upcoming Events', 'evrplus_language'); ?></h3>
             <?php
             $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE str_to_date(end_date, '%Y-%m-%e') >= curdate() ORDER BY str_to_date(start_date, '%Y-%m-%e') LIMIT 5";
-            $rows = $wpdb->get_results($sql);
-            if ($rows) :
-                ?>
+            $rows = $wpdb->get_results( $sql );
+            if( $rows ): ?>
                 <ul>
                     <?php
-                    foreach ($rows as $event):
+                    foreach( $rows as $event ):
                         $event_id = $event->id;
                         $event_name = stripslashes($event->event_name);
                         $event_location = stripslashes($event->event_location);
@@ -29,7 +28,7 @@ $wpdb = $this->wpDb();
                         $start_time = $event->start_time;
                         $end_time = $event->end_time;
                         $conf_mail = $event->conf_mail;
-                        $custom_mail = $event->custom_mail;
+                        $custom_mail = isset( $event->custom_mail ) ? $event->custom_mail : '';
                         $start_date = $event->start_date;
                         $end_date = $event->end_date;
                         $number_attendees = $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '" . EventPlus_Models_Payments::PAYMENT_SUCCESS . "' AND event_id=%d", $event_id));
@@ -44,12 +43,11 @@ $wpdb = $this->wpDb();
                         $todays_date = date("Y-m-d");
                         $today = strtotime($todays_date);
                         $expiration_date = strtotime($exp_date);
-                        if ($expiration_date <= $today) {
+                        if( $expiration_date <= $today ) {
                             $active_event = '<span style="color: #F00; font-weight:bold;">' . __('EXPIRED', 'evrplus_language') . '</span>';
                         } else {
                             $active_event = '<span style="color: #090; font-weight:bold;">' . __('ACTIVE', 'evrplus_language') . '</span>';
-                        }
-                        ?>
+                        } ?>
 
                         <li>
                             <span><?php echo $start_date; ?> @ <?php echo $start_time ?> </span> 
