@@ -84,10 +84,8 @@ class EventPlus_Payments_Stripe_Handler {
                 $amountPaid = $amount;
             }
             
-            @mail('pluginpunch@gmail.com', 'Stripe Response', maybe_serialize($oCharge));
         } catch (Exception $e) {
 
-            @mail('pluginpunch@gmail.com', 'Stripe Response', $e->getMessage());
             $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
             $amountPaid = 0;
         }
