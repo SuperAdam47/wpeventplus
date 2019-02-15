@@ -162,7 +162,7 @@ class eplus_admin_events_controller extends EventPlus_Abstract_Controller {
 
         $total_attendees = $this->_model->atendeesCount($id);
         if ($total_attendees > 0) {
-            $this->setErrorMessage(__('There are currently ', 'evrplus_language') . $total_attendees . ' ' . __(' attendes registered for this event.  The event cannot be deleted.', 'evrplus_language'));
+            $this->setErrorMessage(__('There are currently ', 'evrplus_language') . $total_attendees . ' ' . __(' attendees registered for this event.  The event cannot be deleted.', 'evrplus_language'));
             $this->redirect($this->adminUrl('admin_events'));
             return false;
         }

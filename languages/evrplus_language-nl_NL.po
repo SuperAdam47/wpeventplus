@@ -2930,7 +2930,7 @@ msgid "There are currently "
 msgstr "Er zijn op dit moment"
 
 #: eventplus/app/controllers/admin/events.php:165
-msgid " attendes registered for this event.  The event cannot be deleted."
+msgid " attendees registered for this event.  The event cannot be deleted."
 msgstr ""
 "bezoekers geregistreerd voor dit evenement. Het evenement kan niet worden "
 "verwijderd."

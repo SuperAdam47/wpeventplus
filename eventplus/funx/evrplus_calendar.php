@@ -47,8 +47,8 @@ function evrplus_display_calendar($cat = null) {
     $date_switcher = $company_options['evrplus_date_select'];
     $cal_day_hdr_clr = $company_options['evrplus_cal_day_head'];
     $cal_day_hdr_txt_clr = $company_options['cal_day_head_txt_clr'];
-    if ($cal_head_clr != "") {
-        ?>
+
+    if( $cal_head_clr != "" ) { ?>
         <style type="text/css">
             .calendar-date-switcher {background-color:<?php echo $cal_head_clr; ?>;color: <?php echo $cal_head_txt_clr; ?>;}
         </style>
@@ -227,7 +227,7 @@ function evrplus_display_calendar($cat = null) {
                 } else {
 
                     $grabbed_events = evrplus_fetch_events($c_year, $c_month, $i);
-                    foreach ($grabbed_events as $event) {
+                    foreach( $grabbed_events as $event ) {
                         array_push($grabbed_events_popup, $event);
                     }
                     $no_events_class = '';
@@ -406,25 +406,31 @@ function evrplus_show_event($event, $day = 0) {
     }
 
     $extraParam = '';
-    if ($event->recurrence_choice == "yes") {
-        if (isset($_GET['month']))
+    $event_startdate = strtotime( $event->start_date );
+    if( $event->recurrence_choice == "yes" ) {
+        if( isset($_GET['month']) ) {
             $this_month = $_GET['month'];
-        else
+        } else {
             $this_month = date('n');
-        if (isset($_GET['yr']))
+        }
+
+        if( isset($_GET['yr']) ) {
             $this_year = $_GET['yr'];
-        else
+        } else {
             $this_year = date('Y');
+        }
+
         $date = strtotime($day . '-' . $this_month . '-' . $this_year);
         $extraParam = '&recurr=' . $date;
+        $event_startdate = $date;
     }
     
     if( $category_identifier != '' ) {
         
         $style_event_catgry = 'background:' . (stripslashes($cat_details->category_color)) . '!important; color:' . (stripslashes($cat_details->font_color)) . '!important;';
   
-        $d_format = '<p class="dashiconsText">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</P>';
-        $d_format = date_i18n($evrplus_date_format, strtotime($event->start_date));
+        $d_format = '<p class="dashiconsText">' . date_i18n($evrplus_date_format, $event_startdate) . '</P>';
+        $d_format = date_i18n($evrplus_date_format, $event_startdate);
         $start_time = $event->start_time;
         $end_time = $event->end_time;
         if (isset($company_options['time_format']) and $company_options['time_format'] == '24hrs') {
@@ -441,7 +447,7 @@ function evrplus_show_event($event, $day = 0) {
                             <span class="tooltip-text heading">
                                 <span class="event_title">' . $event_name . '</span><br><br>'
                                 .'<span style="font-size:15px;color: #666;" class="dashicons dashicons-calendar-alt"></span>
-                                <span class="event_date">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</span><br/>
+                                <span class="event_date">' . date_i18n($evrplus_date_format, $event_startdate) . '</span><br/>
                                 <span style="font-size:15px;color: #666;" class="dashicons dashicons-clock"></span>
                                 <span class="event_time">' . $start_time . ' - ' . $end_time . '</span>
                                 <span class="tooltip-text">' . evrplus_Truncate_grid(html_entity_decode(stripslashes($event->event_desc)), 50, ' ') . '</span>
@@ -456,7 +462,7 @@ function evrplus_show_event($event, $day = 0) {
         }
     } else {
         $d_format = '<p class="dashiconsText">' . date_i18n($evrplus_date_format, strtotime($event->start_date)) . '</P>';
-        $d_format = date_i18n($evrplus_date_format, strtotime($event->start_date));
+        $d_format = date_i18n($evrplus_date_format, $event_startdate);
 
         if ($tooltip_status == 'Y') {
             $style_event_catgry = 'background:' . ($cat_details->category_color) . '!important;color:' . ($cat_details->font_color) . '!important;';
@@ -500,7 +506,7 @@ function evrplus_show_event($event, $day = 0) {
     
     $start_time = $event->start_time;
     $end_time = $event->end_time;
-    if (isset($company_options['time_format']) and $company_options['time_format'] == '24hrs') {
+    if( isset($company_options['time_format']) and $company_options['time_format'] == '24hrs' ) {
         $start_time = date('H:i', strtotime($start_time));
         $end_time = date('H:i', strtotime($end_time));
     }

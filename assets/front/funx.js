@@ -561,10 +561,10 @@ jQuery(document).ready(function ($) {
 
     try {
         var _endDate = parseInt(jQuery('#evrplus_counter').attr('data-end-date'));
-        if (_endDate) {
+        if( _endDate ) {
             var endDate = new Date(_endDate);
             jQuery('#evrplus_counter').redCountdown({
-                end: jQuery.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
+                end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                 labels: true,
                 style: {
                     element: "",

@@ -46,7 +46,7 @@
                 $time_end = $event->end_time;
                 $opt = EventPlus_Models_Settings::getSettings();
 
-                if (isset($opt['date_format']) && $opt['date_format'] == 'eur') {
+                if( isset($opt['date_format']) && $opt['date_format'] == 'eur' ) {
                     $date_format = "j M Y";
                 }
 
@@ -60,39 +60,37 @@
                 $event_name = stripslashes($event->event_name);
 
                 $icoDate = '';
-                if ($event->end_date == $event->start_date) {
+                if( $event->end_date == $event->start_date ) {
                     $icoDate = $startDate;
                 } else {
                     $icoDate = $startDate . ' - ' . $endDate;
                 }
 
-                $icoTimeEnd = ($event->end_date == $event->start_date) ? ' - ' . $time_end : '';
-                ?>
+                $icoTimeEnd = ($event->end_date == $event->start_date) ? ' - ' . $time_end : ''; ?>
 
                 <div class="i8em" style="border-right-color: <?php echo $style_event_catgry; ?>;">
                     <div class="col-lg-2 col-sm-3 col-xs-4 t7umb">
                         <a href="<?php echo $event_link; ?>"><img src="<?php echo $imgSrc; ?>" alt="<?php echo $event_name; ?>"></a>
                         <?php
-                        if ($company_options['show_num_seats'] !== 'no'):
+                        $available_spaces = 0;
+                        if( $company_options['show_num_seats'] !== 'no' ):
 
                             $sql2 = "SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = 'success' AND event_id='$event->id'";
 
                             $num = 0;
-
-                            $attendee_count = $wpdb->get_var($sql2);
+                            $attendee_count = $wpdb->get_var( $sql2 );
                             If ($attendee_count >= 1) {
                                 $num = $attendee_count;
                             }
 
                             $available_spaces = 0;
-                            if ($event->reg_limit != "") {
+                            if( $event->reg_limit != "" ) {
                                 $available_spaces = $event->reg_limit - $num;
                             }
 
-                            if (!isset($event->reg_limit) or empty($event->reg_limit) or $event->reg_limit == 999999) {
+                            if( !isset($event->reg_limit) or empty($event->reg_limit) or $event->reg_limit == 999999 ) {
                                 $available_spaces = __("Unlimited", 'evrplus_language');
-                            }
-                            ?>
+                            } ?>
                             <div class="sea8s">
                                 <?php echo __('Open Seats', 'evrplus_language'); ?>
                                 <label style="background-color: <?php echo $style_event_catgry; ?>; color: <?php echo $event_catgry_fnt_clr; ?>;"><?php echo $available_spaces; ?></label>

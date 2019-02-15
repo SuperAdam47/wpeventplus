@@ -94,7 +94,7 @@ msgid "There are currently "
 msgstr "Il y a actuellement "
 
 #: eventplus/app/controllers/admin/events.php:165
-msgid " attendes registered for this event.  The event cannot be deleted."
+msgid " attendees registered for this event.  The event cannot be deleted."
 msgstr ""
 " participants inscrits à cet événement. L'événement ne peut pas être "
 "supprimé."
