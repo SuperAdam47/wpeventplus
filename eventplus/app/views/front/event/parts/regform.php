@@ -356,10 +356,10 @@ if (isset($event_meta_data)) {
                     } ?>
 
                     <?php
-                    if ($disable_event_reg != 'Y'):
+                    if( $disable_event_reg != 'Y' ):
                         $eventplus_token = EventPlus_Helpers_Token::doToken($event_id);
-                        $pendingTokenRow = EventPlus_Helpers_Token::getPendingRow();
-                        ?>
+                        $pendingTokenRow = EventPlus_Helpers_Token::getPendingRow(); ?>
+
                         <div class="col-md-10 col-md-offset-1 col-xs-12 regis8er-form" id="evrplusRegForm" style="display: none;">
                             <?php if ($expiration_date <= $today): ?>
                                 <?php
@@ -392,31 +392,31 @@ if (isset($event_meta_data)) {
                                     <div id="eventplus_form_fields"<?php echo $formFieldStyle; ?>>
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo $pendingTokenRow['fname']; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo isset($pendingTokenRow['fname']) ? $pendingTokenRow['fname'] : ''; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
                                             </div>
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo $pendingTokenRow['lname']; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo isset($pendingTokenRow['lname']) ? $pendingTokenRow['lname'] : ''; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
-                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo $pendingTokenRow['email']; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo isset($pendingTokenRow['email']) ? $pendingTokenRow['email'] : ''; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
                                             </div>
                                             <?php if ($inc_phone == "Y"): ?>
                                                 <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
-                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo $pendingTokenRow['phone']; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo isset($pendingTokenRow['phone']) ? $pendingTokenRow['phone'] : ''; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                         </div>
                                         <div class="row">
                                             <?php if ($inc_address == "Y"): ?>
                                                 <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
-                                                    <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo $pendingTokenRow['address']; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo isset($pendingTokenRow['address']) ? $pendingTokenRow['address'] : ''; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                             <?php if ($inc_country == "Y"): ?>
                                                 <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
-                                                    <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo $pendingTokenRow['country']; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo isset($pendingTokenRow['country']) ? $pendingTokenRow['country'] : ''; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                         </div>
@@ -424,17 +424,17 @@ if (isset($event_meta_data)) {
                                             <?php
                                             if( $inc_city == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required" type="text" name="city" id="city" value="<?php echo $pendingTokenRow['city']; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required" type="text" name="city" id="city" value="<?php echo isset($pendingTokenRow['city']) ? $pendingTokenRow['city'] : ''; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif;
                                             if( $inc_state == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required" type="text" name="state" id="state" value="<?php echo $pendingTokenRow['state']; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required" type="text" name="state" id="state" value="<?php echo isset($pendingTokenRow['state']) ? $pendingTokenRow['state'] : ''; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif;
                                             if( $inc_zip == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo $pendingTokenRow['zip']; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
+                                                    <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo isset($pendingTokenRow['zip']) ? $pendingTokenRow['zip'] : ''; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
                                                 </div>
                                             <?php endif; ?>
                                         </div>
@@ -452,7 +452,7 @@ if (isset($event_meta_data)) {
                                             foreach( $company_form_fields as $field=>$fieldSet ):
                                                 if( $fieldSet['flag'] ): ?>
                                                     <div class="col-sm-6 col-xs-12 fi3ld">
-                                                        <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo $pendingTokenRow[$field]; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
+                                                        <input type="text" name="<?php echo $field; ?>" id="country" value="<?php echo isset($pendingTokenRow[$field]) ? $pendingTokenRow[$field] : ''; ?>" placeholder="<?php echo $fieldSet['title']; ?>">
                                                     </div>
                                                 <?php
                                                 endif;
@@ -534,58 +534,54 @@ if (isset($event_meta_data)) {
                                                                         id = "PROD_<?php echo $fee->event_id; ?>-<?php echo $fee->id; ?>_<?php echo $fee->item_price; ?>"
                                                                         class="eventplus-ddl-items" 
                                                                         onChange="<?php
-                                                                        if ($company_options['use_sales_tax'] == "Y") {
+                                                                        if( $company_options['use_sales_tax'] == "Y" ) {
                                                                             echo 'CalculateTotalTax(this.form)';
                                                                         } else {
                                                                             echo 'CalculateTotal(this.form)';
-                                                                        }
-                                                                        ?>"
+                                                                        } ?>"
                                                                         >
                                                                     <option value="0">0</option>
                                                                     <?php
                                                                     #Begin generation of DropDown Box - Options
                                                                     #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
-                                                                    if ($fee->item_cat == "REG") {
-                                                                        if ($fee->item_limit != "") {
-                                                                            if ($available >= $fee->item_limit) {
+                                                                    if( $fee->item_cat == "REG" ) {
+                                                                        if( $fee->item_limit != "" ) {
+                                                                            if( $available >= $fee->item_limit ) {
                                                                                 $units_available = $fee->item_limit;
                                                                             } else {
                                                                                 $units_available = $available;
                                                                             }
                                                                         }
-                                                                        for ($i = 1; $i <= $units_available; $i++) {
-                                                                            ?>
+                                                                        for( $i = 1; $i <= $units_available; $i++ ) { ?>
                                                                             <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
                                                                             <?php
                                                                         }
                                                                     }
                                                                     
                                                                     #If item is not REG type, and no limit was set, limit options to 10
-                                                                    if ($fee->item_cat != "REG") {
+                                                                    if( $fee->item_cat != "REG" ) {
                                                                         $num_select = "10";
-                                                                        if ($fee->item_limit != "") {
+                                                                        if( $fee->item_limit != "" ) {
                                                                             $num_select = $fee->item_limit;
                                                                         }
-                                                                        for ($i = 1; $i < $num_select + 1; $i++) {
-                                                                            ?> 
+                                                                        for( $i = 1; $i < $num_select + 1; $i++ ) { ?> 
                                                                             <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
                                                                             <?php
                                                                         }
                                                                     } ?>
                                                                 </select>
-
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         <?php endif; ?>
                                                     <?php endforeach; ?>
 
-                                                    <?php if ($isfees == "N"): ?>
+                                                    <?php
+                                                    if( $isfees == "N" ): ?>
                                                         <div class="col-xs-12">
                                                             <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php _e('No Fees/Items available for todays date!', 'evrplus_language'); ?></div>
                                                         </div>
                                                         <input type="hidden" name="reg_type" value="WAIT" />
                                                     <?php else: ?>
-
                                                         <div class="clearfix"></div>
                                                         <div class="col-md-8 col-sm-8 col-xs-12" id="eplus-data-summary-container">
                                                             <table width="100%" cellpadding="0" cellspacing="0" class="data-summary">
@@ -594,7 +590,8 @@ if (isset($event_meta_data)) {
                                                                         <td width="60%"><?php _e('Registration Fees', 'evrplus_language'); ?></td>
                                                                         <td width="40%" align="right"><input style="width: 100px" type="text" name="fees" id="fees" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
                                                                     </tr>
-                                                                    <?php if ($company_options['use_sales_tax'] == "Y"): ?>
+                                                                    <?php
+                                                                    if( $company_options['use_sales_tax'] == "Y" ): ?>
                                                                         <tr>
                                                                             <td><?php _e('Sales Tax', 'evrplus_language'); ?></td>
                                                                             <td align="right"><input style="width: 100px" type="text" name="tax" id="tax" size="10" value="0.00" onFocus="this.form.elements[0].focus()"/></td>
