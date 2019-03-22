@@ -1,6 +1,5 @@
 <?php
-if (function_exists('evrplus_issetor') == false) {
-
+if( function_exists('evrplus_issetor') == false ) {
     function evrplus_issetor($variable, $or = NULL) {
         return $variable === NULL ? $or : $variable;
     }

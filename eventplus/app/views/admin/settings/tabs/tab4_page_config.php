@@ -8,7 +8,7 @@
                     </h1>
                     <span class="steptitle"> <img class="stepimg" src="<?php echo $this->assetUrl(); ?>images/choose-page-icon.png"> <?php echo _e('Choose Pages', 'evrplus_language'); ?> </span>
                     <?php
-                    if (evrplus_issetor($_POST['evrplus_page_id']) || $company_options['evrplus_page_id'] == '0') {
+                    if( !isset($_POST['evrplus_page_id']) || evrplus_issetor($_POST['evrplus_page_id']) || $company_options['evrplus_page_id'] == '0' ) {
                         ?>
                         <p class="updated fade red_text" align="center"><strong><span>**
                                     <?php _e('Attention', 'evrplus_language'); ?>

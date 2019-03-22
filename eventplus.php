@@ -82,7 +82,7 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
         load_textdomain( 'evrplus_language', WP_LANG_DIR . '/wpeventplus/evrplus_language-' . $locale . '.mo' );
 
-		load_plugin_textdomain('evrplus_language', false, EVENT_PLUS_PLUGIN_PATH . 'languages');
+		load_plugin_textdomain( 'evrplus_language', false, basename( dirname( __FILE__ ) ) . '/languages' );
     }
 
     private function addCommonActions() {

@@ -50,22 +50,22 @@ function evrplus_display_calendar($cat = null) {
 
     if( $cal_head_clr != "" ) { ?>
         <style type="text/css">
-            .calendar-date-switcher {background-color:<?php echo $cal_head_clr; ?>;color: <?php echo $cal_head_txt_clr; ?>;}
+             #calendar-table tr .calendar-date-switcher{background-color:<?php echo $cal_head_clr; ?>;color: <?php echo $cal_head_txt_clr; ?>;}
         </style>
         <?php
     }
     if ($cal_day_clr != "") {
         ?>
         <style type="text/css">
-            .current-day { background-color:<?php echo $cal_day_clr; ?>;color: <?php echo $cal_day_txt_clr; ?>;}
+            #calendar-table tr .current-day{ background-color:<?php echo $cal_day_clr; ?>;color: <?php echo $cal_day_txt_clr; ?>;}
         </style>
         <?php
     }
     if ($cal_day_hdr_clr != "") {
         ?>
         <style type="text/css">
-            .normal-day-heading { background-color:<?php echo $cal_day_hdr_clr; ?>;color: <?php echo $cal_day_hdr_txt_clr; ?>;}
-            .weekend-heading { background-color:<?php echo $cal_day_hdr_clr; ?>;color: <?php echo $cal_day_hdr_txt_clr; ?>;}
+            #calendar-table tr .normal-day-heading{ background-color:<?php echo $cal_day_hdr_clr; ?>;color: <?php echo $cal_day_hdr_txt_clr; ?>;}
+            #calendar-table tr .weekend-heading{ background-color:<?php echo $cal_day_hdr_clr; ?>;color: <?php echo $cal_day_hdr_txt_clr; ?>;}
         </style>
     <?php } ?>
     <?php
