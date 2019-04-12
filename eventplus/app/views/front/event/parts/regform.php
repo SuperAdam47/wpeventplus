@@ -190,12 +190,31 @@ if (isset($event_meta_data)) {
                     $event_country_map = str_replace(" ", "+", $event_country);
                     $map_str = '';
 
-                    $mapHeight = apply_filters( 'wpeventsplus_regform_map_height', '220' );
                     if( isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']) ){
-                        $map_str = '<iframe class="ma9" width="100%" height="'.$mapHeight.'" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=' . $company_options['googleMap_api_key'] . '&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        $key = $company_options['googleMap_api_key'];
                     } else {
-                        $map_str = '<iframe class="ma9" width="100%" height="'.$mapHeight.'" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM&q=' . $event_location . ', ' . $event_address_map . ',' . $event_city_map . ',' . ( (!$event_state_map) ? $event_postal : $event_state_map) . ',' . $event_country_map . '"></iframe>';
+                        $key = 'AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM';
                     }
+
+                    $address = array();
+                    $address[] = $event_location;
+                    $address[] = $event_address_map;
+                    $address[] = $event_city_map;
+                    $address[] = ( (!$event_state_map) ? $event_postal : $event_state_map);
+                    $address[] = $event_country_map;
+
+                    $address = array_filter( $address );
+                    $address = implode( ', ', $address );
+
+                    $mapHeight = apply_filters( 'wpeventsplus_regform_map_height', '220' );
+
+                    $mapURL = 'https://www.google.com/maps/embed/v1/place';
+                    $mapURL = add_query_arg( array(
+                        'key' =>  $key,
+                        'q' =>  urlencode($address)
+                     ), $mapURL );
+
+                     $map_str = '<iframe class="ma9" width="100%" height="'.$mapHeight.'" frameborder="0" src="' . esc_url($mapURL) . '"></iframe>';
                     
                     echo apply_filters( 'wpeventsplus_map', $map_str, $event_id ); ?>
                 <?php endif; ?>
