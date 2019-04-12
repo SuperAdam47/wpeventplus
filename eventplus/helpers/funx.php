@@ -176,7 +176,27 @@ class EventPlus_Helpers_Funx {
     }
 
     static function getTimestamp($datetime_string) {
-        return strtotime($datetime_string);
+
+		$tz_string = get_option('timezone_string');
+		$tz_offset = get_option('gmt_offset', 0);
+
+		if( !empty($tz_string) ) {
+			// If site timezone option string exists, use it
+			$timezone = $tz_string;
+		} elseif( $tz_offset == 0 ) {
+			// get UTC offset, if it isn’t set then return UTC
+			$timezone = 'UTC';
+		} else {
+			$timezone = $tz_offset;
+			if(substr($tz_offset, 0, 1) != "-" && substr($tz_offset, 0, 1) != "+" && substr($tz_offset, 0, 1) != "U") {
+				$timezone = "+" . $tz_offset;
+			}
+		}
+		$datetime = new DateTime($datetime_string, new DateTimeZone($timezone));
+		
+		return $datetime->format('U');
+
+        //return strtotime($datetime_string);
     }
 
     static function getRegistrationPages() {

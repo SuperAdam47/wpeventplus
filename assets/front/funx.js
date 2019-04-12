@@ -561,8 +561,13 @@ jQuery(document).ready(function ($) {
 
     try {
         var _endDate = parseInt(jQuery('#evrplus_counter').attr('data-end-date'));
+        var _now = parseInt(jQuery('#evrplus_counter').attr('data-now'));
         if( _endDate ) {
             var endDate = new Date(_endDate);
+
+            if( jQuery('#evrplus_counter').hasClass('initialize') ) return;
+            jQuery('#evrplus_counter').addClass('initialize');
+
             jQuery('#evrplus_counter').redCountdown({
                 end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                 labels: true,

@@ -89,9 +89,11 @@ $sqlEndDate = "SELECT start_date FROM " . get_option('evr_event') . " WHERE id =
 $resultEndDate = $wpdb->get_var( $sqlEndDate );
 
 if( isset($_GET['recurr']) ) {
-    $resultEndDate = date_i18n('d-m-Y H:m', $_GET['recurr']);
+    $resultEndDate = date_i18n('d-m-Y H:i', $_GET['recurr']);
 } else if( $recurr ) {
-    $resultEndDate = date_i18n('d-m-Y H:m', $recurr);
+    $resultEndDate = date_i18n('d-m-Y H:i', $recurr);
+} else{
+    $resultEndDate = date_i18n('d-m-Y H:i', strtotime($resultEndDate.' '.$resultEndTime));
 }
 $close_dt = $end_date . " " . $end_time;
 
@@ -296,7 +298,7 @@ if (isset($event_meta_data)) {
                     if( $recurring_status == 'no' ): ?>
                         <div class="coun8 ev3nt-coun73r-wra993r" id="details">
                             <div class="evrplus_counter">
-                                <div id="evrplus_counter" data-end-date="<?php echo EventPlus_Helpers_Funx::getTimestamp( $resultEndDate.' '.$resultEndTime ); ?>" class="redCountdownDemo"></div>
+                                <div id="evrplus_counter" data-end-date="<?php echo EventPlus_Helpers_Funx::getTimestamp( $resultEndDate ); ?>" data-now="<?php echo time(); ?>" class="redCountdownDemo"></div>
                                 <div class="timer">
                                     <div class="days"><?php _e('Days', 'evrplus_language'); ?></div>
                                     <div class="hours"><?php _e('Hours', 'evrplus_language'); ?></div>
