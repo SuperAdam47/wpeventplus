@@ -183,28 +183,29 @@ if (isset($event_meta_data)) {
                 <?php
                 if( $google_map == "Y" ): 
     
-                    $event_location_map = str_replace(" ", "+", $event_location);
+                    /*$event_location_map = str_replace(" ", "+", $event_location);
                     $event_address_map = str_replace(" ", "+", $event_address);
                     $event_city_map = str_replace(" ", "+", $event_city);
                     $event_state_map = str_replace(" ", "+", $event_state);
-                    $event_country_map = str_replace(" ", "+", $event_country);
-                    $map_str = '';
+                    $event_country_map = str_replace(" ", "+", $event_country);*/
 
-                    if( isset($company_options['googleMap_api_key']) and ! empty($company_options['googleMap_api_key']) ){
+                    $map_str = '';
+                    $key = 'AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM';
+                    if( ! empty($company_options['googleMap_api_key']) ){
                         $key = $company_options['googleMap_api_key'];
-                    } else {
-                        $key = 'AIzaSyDblf6OIl46COqBYUo2DBaxo0-PRl9SZEM';
                     }
 
                     $address = array();
-                    $address[] = $event_location;
-                    $address[] = $event_address_map;
-                    $address[] = $event_city_map;
-                    $address[] = ( (!$event_state_map) ? $event_postal : $event_state_map);
-                    $address[] = $event_country_map;
+                    $address[] = str_replace(" ", "+", $event_location);
+                    $address[] = str_replace(" ", "+", $event_address);
+                    $address[] = str_replace(" ", "+", $event_city);
+                    //$address[] = ( (!$event_state_map) ? $event_postal : $event_state_map);
+                    $address[] = str_replace(" ", "+", $event_state);
+                    $address[] = str_replace(" ", "+", $event_postal);
+                    $address[] = str_replace(" ", "+", $event_country);
 
                     $address = array_filter( $address );
-                    $address = implode( ', ', $address );
+                    $address = implode( ',', $address );
 
                     $mapHeight = apply_filters( 'wpeventsplus_regform_map_height', '220' );
 
