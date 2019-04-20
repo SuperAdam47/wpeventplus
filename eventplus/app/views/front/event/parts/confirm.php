@@ -264,7 +264,7 @@ if ($reg_type == "WAIT") {
     $type = __('You are on the waiting list.', 'evrplus_language');
 }
 if ($reg_type == "RGLR") {
-    $type = __('You are registering for', 'evrplus_language') . " " . $quantity . " " . __('person(s).', 'evrplus_language') . "   " . __('Please provide the first and last name of each person:', 'evrplus_language');
+    $type = sprintf( esc_html__('You are registering for %s person(s) Please provide the first and last name of each person:', 'evrplus_language'), $quantity );
 }
 
 if(has_filter('eventplus_registration_type_message')) {
