@@ -426,7 +426,7 @@ function evrplus_upgrade_tables() {
             "OR (post_content LIKE '%[EVENT_REGIS_CATEGORY%' AND post_type = 'page') " .
             "OR (post_content LIKE '%[Event_Registration_Single%' AND post_type = 'page')");
     if ($wpdb->num_rows > 0) {
-        $wpdb->query("UPDATE " . $wpdb->prefix . "posts SET post_content = REPLACE(post_content,'{EVENTREGIS}','{EVRREGIS}')");
+        $wpdb->query("UPDATE " . $wpdb->prefix . "posts SET post_content = REPLACE(post_content,'{EVENTREGIS}','[eventsplus_registration]')");
         $wpdb->query("UPDATE " . $wpdb->prefix . "posts SET post_content = REPLACE(post_content,'{EVENTREGPAY}','[EVR_PAYMENT]')");
         $wpdb->query("UPDATE " . $wpdb->prefix . "posts SET post_content = REPLACE(post_content,'[Event_Registraiton_Calendar]','{EVR_CALENDAR}')");
         $wpdb->query("UPDATE " . $wpdb->prefix . "posts SET post_content = REPLACE(post_content,'[Event_Registration_Single','[EVR_SINGLE')");
@@ -481,7 +481,7 @@ function evrplus_reg_page() {
     $my_post = array(
         'post_title' => 'Registration',
         'post_name' => 'evrplus_registration',
-        'post_content' => do_shortcode('{EVRREGIS}'),
+        'post_content' => do_shortcode('[eventsplus_registration]'),
         'post_status' => 'publish',
         'post_author' => 1,
         'post_type' => 'page', /* this actually makes the entire backend to disappear so I have to put it in $defaults=array( for it to reappear. The page doesn't always want to show up though. */
