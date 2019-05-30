@@ -30,6 +30,10 @@ $free_item = $row['free_item'];
 $item_start_date = $row['item_available_start_date'];
 $item_end_date = $row['item_available_end_date'];
 $item_custom_cur = $row['item_custom_cur'];
+
+if($item_custom_cur == '' && $item_id == 0){
+    $item_custom_cur = EventPlus_Helpers_Currency::getDefaultCurrency();
+}
 ?>
 
 <br /><br />

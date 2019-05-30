@@ -11,5 +11,10 @@ class EventPlus_Helpers_Currency {
         $currency_codes = self::$currency_codes;
         return apply_filters('eventplus_currency_codes', $currency_codes);
     }
+    
+    static function getDefaultCurrency(){
+        $settings = EventPlus_Models_Settings::getSettings();
+        return isset( $settings['default_currency'] ) ?  $settings['default_currency']  : '';
+    }
 
 }
