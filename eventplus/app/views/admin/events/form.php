@@ -185,6 +185,10 @@ if (is_object($row)) {
         $oMeta = new EventPlus_Models_Events_Meta();
         $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
         $skip_step_2 = $oMeta->getOption($event_id, 'skip_step_2');
+        $event_coordinator = $oMeta->getOption($event_id, 'event_coordinator');
+        $closure_day_date = $oMeta->getOption($event_id, 'closure_day_date');
+        $closure_day_time = $oMeta->getOption($event_id, 'closure_day_time');
+
     }
 }
 ?>

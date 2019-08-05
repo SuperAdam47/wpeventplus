@@ -225,6 +225,9 @@ class EventPlus_Helpers_Funx {
             if (preg_match('{EVRREGIS}', $page->post_content)) {
                 $pObjets[] = $page;
             }
+            elseif (preg_match('[eventsplus_registration]', $page->post_content)) {
+                $pObjets[] = $page;
+            }
         }
 
         return $pObjets;

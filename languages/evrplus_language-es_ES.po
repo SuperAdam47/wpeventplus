@@ -3564,3 +3564,17 @@ msgstr ""
 
 msgid "Oct"
 msgstr ""
+
+msgid "Event Category"
+msgstr "Tipo de evento"
+
+
+msgid "Event Coordinator"
+msgstr "Coordinador actividad"
+
+
+msgid "Total Seats"
+msgstr "TOTAL PLAZAS"
+
+msgid "Remaining Seats"
+msgstr "PLAZAS LIBRES"

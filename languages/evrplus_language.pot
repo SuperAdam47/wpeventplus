@@ -3357,3 +3357,15 @@ msgstr ""
 #: eventplus/app/views/admin/attendees/details.php:88
 msgid "Zip/Postal Code"
 msgstr ""
+
+msgid "Event Category"
+msgstr ""
+
+msgid "Event Coordinator"
+msgstr ""
+
+msgid "Total Seats"
+msgstr ""
+
+msgid "Remaining Seats"
+msgstr ""

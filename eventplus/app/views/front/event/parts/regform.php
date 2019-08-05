@@ -29,6 +29,19 @@ foreach ($rows as $event) {
     include "_event_array2string.php";
 }
 
+$cat_id = $event_category[0];
+
+$sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . (int) $cat_id . "' LIMIT 1";
+$cat_details = $wpdb->get_row($sql);
+
+$event_category_name = '';
+if ($cat_details != "") {
+    $_category_name = $cat_details->category_name;
+    if ($_category_name != '') {
+        $event_category_name = $_category_name;
+    }
+}
+
 $cap_url = $this->assetUrl('cimg/');
 $md5_url = $this->assetUrl("js/md5.js");
 
@@ -65,6 +78,9 @@ if( $company_options['use_sales_tax'] == "Y" ) {
     }
 }
 
+
+$oMeta = new EventPlus_Models_Events_Meta();
+
 $resultEndTime = $start_time;
 $current_dt = date('Y-m-d H:i', current_time('timestamp', 0));
 if( $event_close == "start" ) {
@@ -72,11 +88,16 @@ if( $event_close == "start" ) {
 } else if( $event_close == "end" ) {
     $close_dt = $end_date . " " . $end_time;
     $resultEndTime = $end_time;
+}
+else if( $event_close == "selected_day" ) {
+    $close_dt = $oMeta->getOption($event_id, 'closure_day_date') . " " . $oMeta->getOption($event_id, 'closure_day_time');
+    $resultEndTime = $end_time;
 } else if( $event_close == "" ) {
     $close_dt = $start_date . " " . $start_time;
 }
 
-$stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
+
+$stp = DATE("Y-m-d H:i", strtotime($close_dt));
 $expiration_date = strtotime($stp);
 if( isset($_GET['recurr']) and $_GET['recurr'] ) {
     $expiration_date = $_GET['recurr'];
@@ -100,7 +121,6 @@ $close_dt = $end_date . " " . $end_time;
 #See how many seats are left available
 $available = evrplus_get_open_seats($event->id, $event->reg_limit);
 
-$oMeta = new EventPlus_Models_Events_Meta();
 $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
 
 $show_form_bool = 0;
@@ -220,6 +240,39 @@ if (isset($event_meta_data)) {
                     echo apply_filters( 'wpeventsplus_map', $map_str, $event_id ); ?>
                 <?php endif; ?>
 
+                <?php
+                $oMeta = new EventPlus_Models_Events_Meta();
+                $event_coordinator = $oMeta->getOption($event_id, 'event_coordinator');
+                ?>
+                <?php if($event_category_name != '' || $event_coordinator != ''): ?>
+                <div class="row-eq-height me8a al8">
+
+                    <?php if($event_category_name != ''): ?>
+                    <div class="col-xs-6 it3m" id="eventplus_event_location">
+                        <i class="fa fa-2x fa-tag"></i>
+                        <div class="d3sc">
+
+                            <h4><?php _e('Event Category', 'evrplus_language'); ?></h4>
+                            <?php echo $event_category_name; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if($event_coordinator != ''): ?>
+                    <div class="col-xs-6 it3m" id="eventplus_event_coordinator">
+                        <i class="fa fa-2x fa-user"></i>
+                        <div class="d3sc">
+                            <h4><?php _e('Event Coordinator', 'evrplus_language'); ?></h4>
+                            <?php
+                                echo $event_coordinator;
+                            ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <div class="clearfix"></div>
+                </div>
+                <?php endif; ?>
+
                 <div class="row-eq-height me8a al8">
                     <div class="col-xs-6 it3m" id="eventplus_event_location">
                         <i class="fa fa-2x fa-map-marker"></i>
@@ -309,6 +362,34 @@ if (isset($event_meta_data)) {
                     </div>
                     <div class="clearfix"></div>
                 </div>
+
+
+                <?php if($available < 1000 || $available != '1000000'): ?>
+                    <div class="row-eq-height me8a al8">
+
+                            <div class="col-xs-6 it3m" id="eventplus_event_total_seats">
+                                <div class="d3sc">
+                                    <h4><?php _e('Total Seats', 'evrplus_language'); ?></h4>
+                                    <?php
+                                    echo $event->reg_limit;
+                                    ?>
+                                </div>
+                            </div>
+
+
+                        <div class="col-xs-6 it3m" id="eventplus_event_available_seats">
+                            <div class="d3sc">
+
+                                <h4><?php _e('Remaining Seats', 'evrplus_language'); ?></h4>
+                                <?php echo $available; ?>
+                            </div>
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </div>
+                <?php endif; ?>
+
                 <?php
                 if( $counter_checks == 'Y' ):
                     $sql_status = "SELECT * FROM " . get_option('evr_event') . " WHERE id = " . (int) $event_id . "";

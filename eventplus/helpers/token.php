@@ -6,7 +6,10 @@ class EventPlus_Helpers_Token {
     
     static function generate($event_id) {
         $request = EventPlus::factory('Request');
-        return md5(time() . rand(0, 200) . $event_id . $request->getUserAgent() . $request->getClientIp());
+ 
+        $t = md5(time() . rand(0, 999999) . $event_id . $request->getUserAgent() . $request->getClientIp() . wp_generate_password( 20, true, true ));
+     
+        return $t;
     }
 
     static function get($event_id) {

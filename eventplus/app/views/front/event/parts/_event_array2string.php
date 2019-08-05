@@ -64,6 +64,7 @@ $display_desc = $event->display_desc; /* Y or N */
 
 $event_desc = stripslashes($event->event_desc);
 $event_category = unserialize($event->category_id);
+
 $reg_limit = $event->reg_limit;
 
 /*

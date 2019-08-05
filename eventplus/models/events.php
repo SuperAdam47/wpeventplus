@@ -139,6 +139,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
 
 
 
+
         if (!empty($params['coord_email'])) {
             $coord_email = $params['coord_email'];
         } else {
@@ -259,6 +260,21 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
             $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
             $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
+            $oMeta->updateOption($event_id, 'event_coordinator', $params['event_coordinator']);
+
+            $closure_day_date = '';
+            $closure_day_time = '';
+            if($params['close'] == 'selected_day') {
+                $closure_day_date_month = $params['closure_day_date_month'];
+                $closure_day_date_day = $params['closure_day_date_day'];
+                $closure_day_date_year = $params['closure_day_date_year'];
+                $closure_day_date = $closure_day_date_year . "-" . $closure_day_date_month . "-" . $closure_day_date_day;
+                $closure_day_time = $params['closure_day_time'];
+            }
+
+            $oMeta->updateOption($event_id, 'closure_day_date', $closure_day_date);
+            $oMeta->updateOption($event_id, 'closure_day_time', $closure_day_time);
+
         } else {
             $response = false;
             $message = __('There was an error in your submission, please try again. The event was not saved!', 'evrplus_language');
@@ -452,6 +468,20 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
         $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
         $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
+        $oMeta->updateOption($event_id, 'event_coordinator', $params['event_coordinator']);
+
+        $closure_day_date = '';
+        $closure_day_time = '';
+        if($params['close'] == 'selected_day') {
+            $closure_day_date_month = $params['closure_day_date_month'];
+            $closure_day_date_day = $params['closure_day_date_day'];
+            $closure_day_date_year = $params['closure_day_date_year'];
+            $closure_day_date = $closure_day_date_year . "-" . $closure_day_date_month . "-" . $closure_day_date_day;
+            $closure_day_time = $params['closure_day_time'];
+        }
+
+        $oMeta->updateOption($event_id, 'closure_day_date', $closure_day_date);
+        $oMeta->updateOption($event_id, 'closure_day_time', $closure_day_time);
 
         $this->setMessage($message);
 
