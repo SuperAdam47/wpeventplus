@@ -138,7 +138,7 @@ if ($company_options['admin_noti'] == "Y") {
     );
     $headers = implode("\r\n", $headers) . "\r\n";
 
-    $send_email = wp_mail(get_option('admin_email'), stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
+    $send_email = wp_mail(get_option('admin_email'), stripslashes($mail_subject), html_entity_decode($email_body), $headers);
 
     if (isset($company_options['secondary_email']) and ! empty($company_options['secondary_email'])) {
         $emails = explode(',', $company_options['secondary_email']);
@@ -149,7 +149,7 @@ if ($company_options['admin_noti'] == "Y") {
                 "Content-Type: text/html"
             );
             $headers = implode("\r\n", $headers) . "\r\n";
-            wp_mail($em, stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
+            wp_mail($em, stripslashes($mail_subject), html_entity_decode($email_body), $headers);
         }
     }
 }
@@ -224,5 +224,5 @@ if ($send_coord == "Y") {
 
     $headers = implode("\r\n", $headers) . "\r\n";
 
-    wp_mail($coord_email, stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
+    wp_mail($coord_email, stripslashes($mail_subject), html_entity_decode($email_body), $headers);
 }

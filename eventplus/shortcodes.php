@@ -3,7 +3,6 @@
 class EventPlus_ShortCodes {
 
     function attendeeDetails($atts) {
-
         extract(shortcode_atts(array('event_id' => 'No ID Supplied', 'custom' => '1', 'template' => ''), $atts));
 
         $id = "{$event_id}";
@@ -11,10 +10,10 @@ class EventPlus_ShortCodes {
         $template = "{$template}";
 
         return EventPlus::dispatch('front_shortcode_attendees_list/index', array(
-                    'atts' => $atts,
-                    'event_id' => $id,
-                    'custom' => $custom,
-                    'template' => $template,
+            'atts' => $atts,
+            'event_id' => $id,
+            'custom' => $custom,
+            'template' => $template,
         ));
     }
 
@@ -34,25 +33,25 @@ class EventPlus_ShortCodes {
             'init_events' => '8',
             'load_new_events' => '5',
             'category_id' => ''
-                        ), $atts));
+        ), $atts));
 
         $col = ($columns == 2) ? 2 : 4 - ($columns - 1);
 
-        if ($show_excerpt == '1') {
+        if( $show_excerpt == '1' ) {
             $show_excerpt = 'yes';
         }
 
         $show_excerpt = strtolower($show_excerpt);
 
         return EventPlus::dispatch('front_shortcode_event_grid/index', array(
-                    'col' => $col,
-                    'columns' => $columns,
-                    'ordered' => $ordered,
-                    'init_events' => $init_events,
-                    'load_new_events' => $load_new_events,
-                    'show_excerpt' => $show_excerpt,
-                    'character_limit' => $character_limit,
-                    'category_id' => $category_id,
+            'col' => $col,
+            'columns' => $columns,
+            'ordered' => $ordered,
+            'init_events' => $init_events,
+            'load_new_events' => $load_new_events,
+            'show_excerpt' => $show_excerpt,
+            'character_limit' => $character_limit,
+            'category_id' => $category_id,
         ));
     }
 
@@ -146,5 +145,4 @@ class EventPlus_ShortCodes {
 
         return $buffer;
     }
-
 }

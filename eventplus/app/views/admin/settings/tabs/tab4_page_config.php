@@ -23,6 +23,7 @@
 
                         <?php
                         $pages = EventPlus_Helpers_Funx::getRegistrationPages();
+                        $class = !empty( $class ) ? $class : '';
 
                         $outputDDL = "<select name='evrplus_page_id' id='evrplus_page_id' " . $class . ">\n";
 

@@ -382,15 +382,11 @@ $question_post = urlencode(serialize($qanda));
     </table>
 
     <?php
-    if ($type != ""):
-        ?>
-        <div class="col-xs-12">
+    if( $type != "" ): ?>
+        <div class="row"><div class="col-xs-12">
             <div class="info-m3ssages"><i class="fa fa-exclamation-triangle"></i> <?php echo $type; ?></div>
-        </div>
-        <?php
-    endif;
-    ?>
-
+        </div></div>
+    <?php endif; ?>
 
     <div class="row">
         <div class="col-xs-12 regis8er-form" id="regis8er-form">
