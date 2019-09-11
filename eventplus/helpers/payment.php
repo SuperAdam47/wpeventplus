@@ -88,7 +88,6 @@ class EventPlus_Helpers_Payment {
             return;
         }
 
-
         $event_name = stripslashes($this->eventRow['event_name']);
         $event_location = $this->eventRow['event_location'];
         $event_address = $this->eventRow['event_address'];
@@ -204,7 +203,7 @@ class EventPlus_Helpers_Payment {
                 <tbody>';
 
                 $oPaymentMethods = new EventPlus_Models_Payments();
-                foreach ($paymentOptions as $pi => $paymentOption) {
+                foreach( $paymentOptions as $pi => $paymentOption ) {
 
                     $paymentMethodMeta = $oPaymentMethods->getMethodMeta($paymentOption);
 
@@ -213,7 +212,7 @@ class EventPlus_Helpers_Payment {
                         $paymentTitleStr = "<img src='" . EVENT_PLUS_PLUGIN_URL . 'assets/images/pm/' . $paymentMethodMeta['logo'] . "' alt='" . $paymentMethodMeta['title'] . "' />";
                     }
 
-                    if ($paymentOption == EventPlus_Models_Payments::STRIPE) {
+                    if( $paymentOption == EventPlus_Models_Payments::STRIPE ) {
 
                         if ($payment != "0.00" || $payment != "0" || $payment != "" || $payment != " ") {
 
@@ -222,18 +221,19 @@ class EventPlus_Helpers_Payment {
                             $stripe_process_url = add_query_arg(array(
                                 'eventplus_token' => $this->attendeeRow['token'],
                                 'eventplus_pm' => 'stripe',
-                                    ), site_url());
+                            ), site_url());
                             
+                            $oStripe->add_field('event_id', $event_id);
                             $oStripe->add_field('stripe_process_url', $stripe_process_url);
                             $oStripe->add_field('amount', $payment);
                             $oStripe->add_field('token', $token);
                             $oStripe->add_field('currency_code', $ticket_order[0]['ItemCurrency']);
-
+                            $oStripe->add_field('desc', '['.$event_id.'] '.$event_name.' - Payment');
 
                             echo'<tr>
-                            <td><b>' . $paymentTitleStr . '</b></td>
-                            <td>' . $oStripe->submit() . '</td>
-                          </tr>';
+                                <td><b>' . $paymentTitleStr . '</b></td>
+                                <td>' . $oStripe->submit() . '</td>
+                              </tr>';
                         }
                     }
 
@@ -272,13 +272,13 @@ class EventPlus_Helpers_Payment {
                                 'eventplus_token' => $this->attendeeRow['token'],
                                 'eventplus_pm' => 'paypal',
                                 'eventplus_pm_action' => 're7urn',
-                                    ), site_url());
+                            ), site_url());
 
                             $cancelUrl = add_query_arg(array(
                                 'eventplus_token' => $this->attendeeRow['token'],
                                 'eventplus_pm' => 'paypal',
                                 'eventplus_pm_action' => 'canc3l',
-                                    ), site_url());
+                            ), site_url());
 
                             //$ipnUrl = EVENT_PLUS_PUBLIC_URL . 'paypal/1pn.php?eventplus_token=' . $this->attendeeRow['token'];
 
