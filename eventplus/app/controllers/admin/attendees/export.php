@@ -106,7 +106,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
                     . $s . $participant["address"]
                     . $s . $participant["city"]
                     . $s . $participant["state"]
-                    . $s . $participant["zip"]
+                    . $s . "'" . $participant["zip"]
                     . $s . $participant["phone"]
                     . $s . $participant["company"]
                     . $s . $participant["co_address"]
@@ -135,7 +135,8 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
             $csv_output .= $et . "\r\n";
         }
 
-        print $csv_output;
+        $temp = iconv("UTF-8", "ISO-8859-2", $csv_output); 
+        print $temp;
         exit;
     }
 
