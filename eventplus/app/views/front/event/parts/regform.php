@@ -3,6 +3,8 @@
     <?php echo $company_options['form_css']; ?>
     </style>
 <?php endif; ?>
+    
+
 
 <script>
     var validationErrors = {
@@ -241,13 +243,14 @@ if (isset($event_meta_data)) {
                 <?php endif; ?>
 
                 <?php
-                $oMeta = new EventPlus_Models_Events_Meta();
+                
+     
                 $event_coordinator = $oMeta->getOption($event_id, 'event_coordinator');
                 ?>
                 <?php if($event_category_name != '' || $event_coordinator != ''): ?>
                 <div class="row-eq-height me8a al8">
 
-                    <?php if($event_category_name != ''): ?>
+                    <?php if($event_category_name != '' && EventPlus_Helpers_Funx::showEnabled($company_options, 'display_event_category_details') ): ?>
                     <div class="col-xs-6 it3m" id="eventplus_event_location">
                         <i class="fa fa-2x fa-tag"></i>
                         <div class="d3sc">
@@ -258,7 +261,7 @@ if (isset($event_meta_data)) {
                     </div>
                     <?php endif; ?>
 
-                    <?php if($event_coordinator != ''): ?>
+                    <?php if($event_coordinator != '' && EventPlus_Helpers_Funx::showEnabled($company_options, 'display_event_coordinator_details') ): ?>
                     <div class="col-xs-6 it3m" id="eventplus_event_coordinator">
                         <i class="fa fa-2x fa-user"></i>
                         <div class="d3sc">
@@ -364,9 +367,11 @@ if (isset($event_meta_data)) {
                 </div>
 
 
-                <?php if($available < 1000 || $available != '1000000'): ?>
+                <?php 
+                if($available < 1000 || $available != '1000000'): ?>
                     <div class="row-eq-height me8a al8">
 
+                        <?php if( EventPlus_Helpers_Funx::showEnabled($company_options, 'display_event_total_seats') ): ?>
                             <div class="col-xs-6 it3m" id="eventplus_event_total_seats">
                                 <div class="d3sc">
                                     <h4><?php _e('Total Seats', 'evrplus_language'); ?></h4>
@@ -375,8 +380,9 @@ if (isset($event_meta_data)) {
                                     ?>
                                 </div>
                             </div>
+                        <?php endif; ?>
 
-
+                        <?php if( EventPlus_Helpers_Funx::showEnabled($company_options, 'display_event_remaining_seats') ): ?>
                         <div class="col-xs-6 it3m" id="eventplus_event_available_seats">
                             <div class="d3sc">
 
@@ -384,6 +390,7 @@ if (isset($event_meta_data)) {
                                 <?php echo $available; ?>
                             </div>
                         </div>
+                        <?php endif; ?>
 
 
                         <div class="clearfix"></div>

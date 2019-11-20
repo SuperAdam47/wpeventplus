@@ -3871,12 +3871,11 @@ msgstr "Authorized.Net Txn Key"
 msgid "Use PayPal Sandbox"
 msgstr "Gebruik Paypal Sandbox"
 
-<<<<<<< HEAD
+
 #: eventplus/app/views/front/event/parts/inc/form_fields/dropdown.php:5
 msgid "Select One"
 msgstr "Selecteer"
-=======
-#: eventplus/functions.php:239
+
 msgid "Mar"
 msgstr ""
 
@@ -3900,4 +3899,16 @@ msgstr ""
 
 msgid "Oct"
 msgstr ""
->>>>>>> 34293c0003aa77fff3728e39a00bb37294913bc4
+
+
+msgid "Total Seats"
+msgstr ""
+
+msgid "Remaining Seats"
+msgstr ""
+
+msgid "Event Coordinator"
+msgstr ""
+
+msgid "Event Category"
+msgstr ""

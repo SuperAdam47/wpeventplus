@@ -3355,3 +3355,16 @@ msgstr ""
 #. Author URI of the plugin
 msgid "http://wpeventsplus.com/"
 msgstr ""
+
+msgid "Total Seats"
+msgstr ""
+
+msgid "Remaining Seats"
+msgstr ""
+
+msgid "Event Coordinator"
+msgstr ""
+
+msgid "Event Category"
+msgstr ""
+

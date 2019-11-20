@@ -3905,3 +3905,16 @@ msgstr ""
 
 msgid "Oct"
 msgstr ""
+
+
+msgid "Total Seats"
+msgstr ""
+
+msgid "Remaining Seats"
+msgstr ""
+
+msgid "Event Coordinator"
+msgstr ""
+
+msgid "Event Category"
+msgstr ""

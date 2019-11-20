@@ -117,6 +117,46 @@
                     <p class="cs2" title="<?php _e('If your website gets huge high traffic we highly recommend to use API key.'); ?>"></p>
                     </p>
                 </div>
+                
+                <h2><?php _e('Event Details Page', 'evrplus_language'); ?></h2>
+                <?php
+                $show_hide_options = array(
+                    'display_event_category_details' => array('title' => __('Show/Hide Event Category', 'evrplus_language')),
+                    'display_event_coordinator_details' => array('title' => __('Show/Hide Event Coordinator', 'evrplus_language')),
+                    'display_event_total_seats' => array('title' => __('Show/Hide Total Seats', 'evrplus_language')),
+                    'display_event_remaining_seats' => array('title' => __('Show/Hide Remaining Seats', 'evrplus_language')),
+                );
+                ?>
+                
+                <?php foreach( $show_hide_options as $show_hide_option_key => $show_hide_option ): 
+                    if( $company_options[$show_hide_option_key] == '' ){
+                        $company_options[$show_hide_option_key] = 'hide';
+                    }
+                    ?>
+                <div class="padding">
+                    <label for="captcha">
+                        <?php echo $show_hide_option['title']; ?>
+                    </label>
+                    <input name="<?php echo $show_hide_option_key; ?>" id="<?php echo $show_hide_option_key; ?>Show" type="radio" value="show" class="regular-radio" <?php
+                    if ($company_options[$show_hide_option_key] == "show") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="<?php echo $show_hide_option_key; ?>Show" style="margin-right: 20px;">
+                        <?php _e('Show', 'evrplus_language'); ?>
+                    </label>
+                    <input name="<?php echo $show_hide_option_key; ?>" id="<?php echo $show_hide_option_key; ?>Hide" type="radio" value="hide" class="regular-radio" <?php
+                    if ($company_options[$show_hide_option_key] == "hide") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="<?php echo $show_hide_option_key; ?>Hide">
+                        <?php _e('Hide', 'evrplus_language'); ?>
+                    </label>
+                </div>
+                <?php endforeach; ?>
+                
+                
             </div>
         </div>
     </div>
