@@ -97,14 +97,16 @@ class EventPlus_ShortCodes {
 
     function eventList($atts) {
 
-        $attributes = (shortcode_atts(array(
+        $attributes = shortcode_atts(array(
                     'limit' => 0,
                     'event_category_id' => 0,
+                     'character_limit' => 115,
+                     'show_excerpt' => 'no',
                     'show_expire' => 'no',
-                        ), $atts));
+                        ), $atts);
 
         return EventPlus::dispatch('front_shortcode_event_list/index', array(
-                    'shortcode_attributes' => $attributes
+                    'shortcode_attributes' => $attributes,
         ));
     }
 
