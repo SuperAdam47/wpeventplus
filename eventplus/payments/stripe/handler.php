@@ -5,26 +5,28 @@
  */
 class EventPlus_Payments_Stripe_Handler {
 
-	function handleResponse() {
-		if( isset($_REQUEST['stripeToken']) && isset($_REQUEST['stripeTokenType']) ) {
-			// No need library now, the payment process done by wp_safe_remote_post
-			//require_once(EVENT_PLUS_PLUGIN_PATH . 'public/stripe/Stripe/lib/Stripe.php');
-			$this->processResponse();
-		}
-	}
+    function handleResponse() {
+        if( isset($_REQUEST['stripeToken']) && isset($_REQUEST['stripeTokenType']) ) {
+            // No need library now, the payment process done by wp_safe_remote_post
+            //require_once(EVENT_PLUS_PLUGIN_PATH . 'public/stripe/Stripe/lib/Stripe.php');
+            $this->processResponse();
+        }
+    }
 
     /* Handle return */
     public function processResponse() {
 
-    	global $wpdb;
+        global $wpdb;
 
-    	$registraionToken = $_REQUEST['token'];
+        $registraionToken = $_REQUEST['token'];
 
-		$isPending = EventPlus_Helpers_Token::isPending( $registraionToken );
-		if( $isPending === false ) {
-			wp_die(__("Couldn't proceed! registration already processed.", 'evrplus_language'));
-			return;
-		}
+        $company_options = EventPlus_Models_Settings::getSettings();
+
+        $isPending = EventPlus_Helpers_Token::isPending( $registraionToken );
+        if( $isPending === false ) {
+            wp_die(__("Couldn't proceed! registration already processed.", 'evrplus_language'));
+            return;
+        }
 
         $event_id = $_REQUEST['event_id'];
 
@@ -37,30 +39,30 @@ class EventPlus_Payments_Stripe_Handler {
         $amountPaid = 0;
         $txn_id = '';
 
-        $stripeToken	= $_REQUEST['stripeToken'];
-        $stripeEmail	= $_REQUEST['stripeEmail'];
-        $itemName		= $_REQUEST['item_name'];
-        $itemDesc		= $_REQUEST['item_description'];
-        $currency		= $_REQUEST['item_currency'];
-        $amount			= $_REQUEST['amount'];
-        $formatedAmt	= $_REQUEST['item_amount'];
+        $stripeToken    = $_REQUEST['stripeToken'];
+        $stripeEmail    = $_REQUEST['stripeEmail'];
+        $itemName       = $_REQUEST['item_name'];
+        $itemDesc       = $_REQUEST['item_description'];
+        $currency       = $_REQUEST['item_currency'];
+        $amount         = $_REQUEST['amount'];
+        $formatedAmt    = $_REQUEST['item_amount'];
 
         $headers = array(
-            "authorization" => 'Bearer sk_test_fSddd9SjHWfy2AcdQMBQd09e001g1LlPcQ',
+            "authorization" => 'Bearer ' . $company_options['secret_key'],
         );
 
         // Stripe request args
-		$request = array(
-			'receipt_email'	=> $stripeEmail,
-			// name args will give invalid param error and payment will be fail
-			//'name' => $itemName,
-			'description' => $itemDesc,
-			'source' => $stripeToken,
-			'currency' => $currency,
-			'amount' => $formatedAmt
-		);
+        $request = array(
+            'receipt_email' => $stripeEmail,
+            // name args will give invalid param error and payment will be fail
+            //'name' => $itemName,
+            'description' => $itemDesc,
+            'source' => $stripeToken,
+            'currency' => $currency,
+            'amount' => $formatedAmt
+        );
 
-		// Stripe API Request
+        // Stripe API Request
         $response = wp_safe_remote_post(
            'https://api.stripe.com/v1/charges',
             array(
@@ -72,22 +74,22 @@ class EventPlus_Payments_Stripe_Handler {
             )
         );
 
-		if( is_wp_error($response) ) {
-			$payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
-			$amountPaid = 0;
-		} else {
-			$data = json_decode( wp_remote_retrieve_body($response) );
-			if( isset($data->paid) && $data->paid == '1' ) {
-				$payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
-				$amountPaid = $amount;
-				$txn_id = $data->id;
-			} else {
-				$payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
-				$amountPaid = 0;
-			}
-		}
+        if( is_wp_error($response) ) {
+            $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+            $amountPaid = 0;
+        } else {
+            $data = json_decode( wp_remote_retrieve_body($response) );
+            if( isset($data->paid) && $data->paid == '1' ) {
+                $payment_status = EventPlus_Models_Payments::PAYMENT_SUCCESS;
+                $amountPaid = $amount;
+                $txn_id = $data->id;
+            } else {
+                $payment_status = EventPlus_Models_Payments::PAYMENT_FAILED;
+                $amountPaid = 0;
+            }
+        }
 
-		$payment_date = date( 'Y-m-d G:i:s', time() );
+        $payment_date = date( 'Y-m-d G:i:s', time() );
 
         $wpdb->query( $wpdb->prepare("UPDATE " . $atndTable . " SET payment_status = '" . esc_sql($payment_status) . "', amount_pd = '" . esc_sql($amountPaid) . "', payment_date = '" . esc_sql($payment_date) . "' WHERE id = %d", $attendeeRow['id']) );
 
