@@ -1,5 +1,4 @@
 <?php
-
 /**
   Stripe handler
  */
@@ -18,7 +17,6 @@ class EventPlus_Payments_Stripe_Handler {
     }
 
     /* Handle return */
-
     function processResponse() {
 
         global $wpdb;
@@ -129,10 +127,8 @@ class EventPlus_Payments_Stripe_Handler {
         $oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
         $oEmailPayment->send();
 
-
         $urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
         echo'<script>window.location.href="' . $urlToGo . '";</script>';
         exit;
     }
-
 }
