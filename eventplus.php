@@ -140,9 +140,6 @@ class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
         $oStripeHandler = new EventPlus_Payments_Stripe_Handler();
         $this->add_action('template_redirect', $oStripeHandler, 'handleResponse');
 		
-		
-        $oAuthNetHandler = new EventPlus_Payments_Authorizenet_Handler();
-        $this->add_action('template_redirect', $oAuthNetHandler, 'handleResponse');
     }
 
     function filterMetaTitle() {
