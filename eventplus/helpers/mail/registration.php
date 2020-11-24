@@ -28,6 +28,14 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
             }
 
             if ($emailBodyStr != '') {
+                
+                $bindParams = array(
+                    "[company]" => stripslashes($this->attendeeRow['company']),
+                );
+
+                foreach ($bindParams as $searchValue => $replaceValue) {
+                    $emailBodyStr = str_replace($searchValue, $replaceValue, $emailBodyStr);
+                }
 
                 $emailBodyStr = $this->bindParams($emailBodyStr);
 
@@ -55,16 +63,15 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
                 $email_body = $message_top . $email_content . $message_bottom;
 
                 $headers = array(
-                    'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
-                    "Content-Type: text/html"
-                );
-                $headers = implode("\r\n", $headers) . "\r\n";
+                        'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">",
+                        "Content-Type: text/html; charset=UTF-8"
+                    );
+
 
                 $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
                 $mail_subject = $event_name;
 
-
-                $this->boolConfirmation = $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode(nl2br($email_body)), $headers);
+                $this->boolConfirmation = $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode( str_replace( "??", "?", $email_body ) ), $headers);
             }
         }
     }
@@ -85,9 +92,18 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
         $admin_email_body = $message_top . $admin_body . $message_bottom;
 
-        $toAdminEmails = array(get_option('admin_email'));
+        $toAdminEmails = array();
+
+        if( $is_admin_email = apply_filters( 'eventsplus_send_attendee_reg_mail_to_admin_email', true ) ) {
+            $toAdminEmails = array(get_option('admin_email'));
+        }
+
         if (isset($this->company_options['email']) && !empty($this->company_options['email'])) {
             $toAdminEmails[] = trim($this->company_options['email']);
+        }
+        
+        if (isset($this->company_options['company_email']) && !empty($this->company_options['company_email'])) {
+            $toAdminEmails[] = trim($this->company_options['company_email']);
         }
 
         if (isset($this->company_options['secondary_email']) && !empty($this->company_options['secondary_email'])) {
@@ -98,20 +114,18 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
         }
 
         $toAdminEmails = array_unique($toAdminEmails);
-
+        
         if (count($toAdminEmails) > 0) {
 
             $headers = array(
-                'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">\r\n",
-                "Content-Type: text/html"
+                'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">",
+                "Content-Type: text/html; charset=UTF-8"
             );
-
-            $headers = implode("\r\n", $headers) . "\r\n";
 
             $event_name = htmlspecialchars_decode(html_entity_decode(stripslashes($this->eventRow['event_name'])));
             $mail_subject = $event_name;
                 
-            $r = $this->send_wp_mail($toAdminEmails, 'New Registration - ' . stripslashes($mail_subject), html_entity_decode(nl2br($admin_email_body)), $headers);
+            $r = $this->send_wp_mail($toAdminEmails, 'New Registration - ' . stripslashes($mail_subject), html_entity_decode($admin_email_body), $headers);
         }
     }
 
