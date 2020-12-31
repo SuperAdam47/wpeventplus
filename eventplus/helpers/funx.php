@@ -266,20 +266,4 @@ class EventPlus_Helpers_Funx {
         }
         return '<div style="text-align:center;"><a href="http://bit.ly/eventastic-banner" target="_blank"><img width="'.$width.'" src="'.EVENT_PLUS_PLUGIN_URL.'assets/images/promo/eventsuite-banner.gif" /></a> <br /><small>[<a href="'. EventPlus::get('registry')->get('url')->admin('admin_settings', array('hide_ad' => 1)).'">Hide Ad</a>]</small></div>';
     }
-    
-    static function showEnabled( $company_options, $key ){
-        if( !isset($company_options[ $key ]) ){
-            return false;
-        }
-        
-        if( $company_options[ $key ] == '' ){
-            return false;
-        }
-        
-        if( $company_options[ $key ] == 'show' ){
-            return true;
-        }
-        
-        return false;
-    }
 }

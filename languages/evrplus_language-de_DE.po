@@ -4002,16 +4002,3 @@ msgstr "Authorized.Net Txn Key"
 #: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:3
 msgid "Use PayPal Sandbox"
 msgstr "Verwende PayPal Sandbox"
-
-
-msgid "Total Seats"
-msgstr ""
-
-msgid "Remaining Seats"
-msgstr ""
-
-msgid "Event Coordinator"
-msgstr ""
-
-msgid "Event Category"
-msgstr ""

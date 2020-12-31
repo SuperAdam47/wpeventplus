@@ -10,7 +10,6 @@ class eplus_front_shortcode_event_list_controller extends EventPlus_Abstract_Con
             $shortcode_params = $this->_invokeArgs['shortcode_attributes'];
         }
         
-        
         $event_category_id = 0;
         if($shortcode_params['event_category_id'] > 0){
             $event_category_id = $shortcode_params['event_category_id'];
@@ -20,8 +19,7 @@ class eplus_front_shortcode_event_list_controller extends EventPlus_Abstract_Con
         $rows = $oEvents->getEventsBySettings($shortcode_params);
     
         $viewParams = array(
-            'rows' => $rows,
-            'shortcode_params' => $shortcode_params
+            'rows' => $rows 
         );
         
         $output = $this->oView->View('front/widgets/shortcode/event/list',$viewParams);  

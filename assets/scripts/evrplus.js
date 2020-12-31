@@ -112,13 +112,10 @@ jQuery(document).ready(function($){
 	
             /*Close Popups and Fade Layer*/
 
-            $('a.close, #fade').live('click', function() { 
-
-                    $('#fade , .popup_block').fadeOut(function() {
-
-                            $('#fade, a.close').remove();  
-
-            }); 
+            $('body').on('click', 'a.close, #fade', function() { 
+				$('#fade , .popup_block').fadeOut(function() {
+				$('#fade, a.close').remove();  
+			});
 
 		
 

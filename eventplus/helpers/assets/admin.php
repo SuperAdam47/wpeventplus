@@ -22,8 +22,10 @@ class EventPlus_Helpers_Assets_Admin {
 
     function initAssets() {
         $file = EventPlus::getPlugin()->getFile();
-
-        wp_register_script('evrplus_admin_script', plugins_url('/assets/scripts/evrplus.js', $file), array(), '1.0.0', 'all');
+		
+		wp_register_script('evrplus_browser_script', plugins_url('/assets/scripts/jquery.browser.min.js', $file), array(), '1.0.0', 'all');
+        
+		wp_register_script('evrplus_admin_script', plugins_url('/assets/scripts/evrplus.js', $file), array(), '1.0.0', 'all');
 
         wp_register_script('evrplus_fancy', plugins_url('/assets/scripts/fancybox/jquery.fancybox-1.3.4.pack.js', $file), array(), '1.0.0', 'all');
 
@@ -53,6 +55,7 @@ class EventPlus_Helpers_Assets_Admin {
         wp_enqueue_script('jquery-ui-selectable');
         wp_enqueue_script('jquery-ui-core');
         wp_enqueue_script('jquery-ui-tabs');
+		wp_enqueue_script('evrplus_browser_script');
         wp_enqueue_script('jquery-ui-tooltip');
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');

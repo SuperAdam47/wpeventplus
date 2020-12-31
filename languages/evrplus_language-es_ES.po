@@ -3578,16 +3578,3 @@ msgstr "TOTAL PLAZAS"
 
 msgid "Remaining Seats"
 msgstr "PLAZAS LIBRES"
-
-
-msgid "Total Seats"
-msgstr ""
-
-msgid "Remaining Seats"
-msgstr ""
-
-msgid "Event Coordinator"
-msgstr ""
-
-msgid "Event Category"
-msgstr ""
