@@ -37,7 +37,7 @@ class EventPlus_Helpers_Mail_Payment extends EventPlus_Helpers_Mail {
 
             $email_subject = $this->bindParams($email_subject);
             $email_body = $this->bindParams($email_body);
-
+			
             $this->send_wp_mail($this->attendeeRow['email'], html_entity_decode($email_subject), html_entity_decode($email_body), $headers);
         }
     }
