@@ -2759,6 +2759,13 @@ msgstr "Sie akzeptieren nicht allgemeinen Geschäftsbedingungen!"
 msgid "Event Location"
 msgstr "Ort der Veranstaltung"
 
+msgid "Total Seats"
+msgstr "Gesamtzahl der Sitzplätze"
+
+msgid "Remaining Seats"
+msgstr "Verbleibende Sitze"
+
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 #, fuzzy

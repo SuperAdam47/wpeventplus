@@ -3,8 +3,7 @@
 class eplus_front_event_parts_confirmation_controller extends EventPlus_Abstract_Controller {
 
     function index() {
-
-        $event_id = 0;
+		$event_id = 0;
 
         if (is_numeric($_REQUEST['event_id'])) {
             $event_id = (int) $_REQUEST['event_id'];

@@ -65,20 +65,20 @@
                 <p class="net2">
                     <?php _e('Do you want to send Payment Confirmation emails?', 'evrplus_language'); ?>
                 <div class="con">
-                    <input id="pc1" type="radio" name="pay_confirm" class="regular-radio" value="Y"  <?php
+                    <input id="pc11" type="radio" name="pay_confirm" class="regular-radio" value="Y"  <?php
                     if ($company_options['pay_confirm'] == "Y") {
                         echo "checked";
                     }
                     ?> />
-                    <label class="labels" for="pc1">
+                    <label class="labels" for="pc11">
                         <?php _e('Yes', 'evrplus_language'); ?>
                     </label>
-                    <input id="pc2" type="radio" name="pay_confirm" class="regular-radio" value="N"  <?php
+                    <input id="pc21" type="radio" name="pay_confirm" class="regular-radio" value="N"  <?php
                     if ($company_options['pay_confirm'] == "N") {
                         echo "checked";
                     }
                     ?> />
-                    <label class="labels" for="pc2">
+                    <label class="labels" for="pc21">
                         <?php _e('No', 'evrplus_language'); ?>
                     </label>
                     <br />
@@ -117,6 +117,64 @@
                     }
                     ?>
                 </p>
+				
+				<p class="net2">
+                    <?php _e('Do you want to send After Payment emails?', 'evrplus_language'); ?>
+                <div class="con">
+                    <input id="pc1" type="radio" name="after_pay_confirm" class="regular-radio" value="Y"  <?php
+                    if ($company_options['after_pay_confirm'] && $company_options['after_pay_confirm'] == "Y") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="pc1">
+                        <?php _e('Yes', 'evrplus_language'); ?>
+                    </label>
+                    <input id="pc2" type="radio" name="after_pay_confirm" class="regular-radio" value="N"  <?php
+                    if ($company_options['after_pay_confirm']  && $company_options['after_pay_confirm'] == "N") {
+                        echo "checked";
+                    }
+                    ?> />
+                    <label class="labels" for="pc2">
+                        <?php _e('No', 'evrplus_language'); ?>
+                    </label>
+                    <br />
+                </div>
+                <font class="fnt">
+                <?php _e('(This option must be enable to send payment confrimation emails)', 'evrplus_language'); ?>
+                </font>
+                </p>
+                <p class="btn5"><a class="ev_reg-fancylink" href="#custom_payment_email_settings">
+                        <?php _e('Settings', 'evrplus_language'); ?>
+                    </a> <a class="ev_reg-fancylink" href="#custom_payment_email_example">
+                        <?php _e('Example', 'evrplus_language'); ?>
+                    </a></p>
+                <br />
+                <p>
+                    <label for="payment_subj" class="sub">
+                        <?php _e('Subject', 'evrplus_language'); ?>
+                    </label>
+                    <input type="text" name="payment_subj" value="<?php echo $company_options['payment_subj']; ?>" class="regular-text" />
+                </p>
+                <p>
+                    <?php _e('Email Body', 'evrplus_language'); ?>
+                    :
+                    <?php
+                    if (function_exists('wp_editor')) {
+                        wp_editor(html_entity_decode(stripslashes($company_options['after_payment_message'])), 'after_payment_message', $settings);
+                    } else {
+                        ?>
+                        <a href="javascript:void(0)" onclick="tinyfy(1, 'after_after_payment_message')">
+                            <input type="button" value="WYSIWG"/>
+                        </a><br />
+                        <textarea name="after_payment_message" id="after_payment_message" style="width: 100%; height: 200px;">
+                            <?php echo stripslashes($company_options['after_payment_message']); ?></textarea>
+                        <br />
+                        <?php
+                    }
+                    ?>
+                </p>
+				
+				
                 <p class="net2">
                     <?php _e('Do you want to receive email notifications when someone registers?', 'evrplus_language'); ?>
                 <div class="con">

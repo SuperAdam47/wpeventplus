@@ -260,7 +260,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
             $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
             $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
-            $oMeta->updateOption($event_id, 'event_coordinator', $params['event_coordinator']);
+            $oMeta->updateOption($event_id, 'event_coordinator',  addslashes($params['event_coordinator']));
 
             $closure_day_date = '';
             $closure_day_time = '';
@@ -468,7 +468,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
         $oMeta->updateOption($event_id, 'show_register_button', $params['show_register_button']);
         $oMeta->updateOption($event_id, 'term_c_force', $params['term_c_force']);
         $oMeta->updateOption($event_id, 'skip_step_2', $params['skip_step_2']);
-        $oMeta->updateOption($event_id, 'event_coordinator', $params['event_coordinator']);
+        $oMeta->updateOption($event_id, 'event_coordinator', addslashes($params['event_coordinator']));
 
         $closure_day_date = '';
         $closure_day_time = '';

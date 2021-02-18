@@ -2983,6 +2983,14 @@ msgstr "Aggiungi al tuo calendario"
 msgid "Event Location"
 msgstr "Località dell'evento"
 
+
+msgid "Total Seats"
+msgstr "Posti totali"
+
+msgid "Remaining Seats"
+msgstr "Posti rimanenti"
+
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 #, fuzzy

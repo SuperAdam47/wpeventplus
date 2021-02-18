@@ -607,6 +607,7 @@ if (isset($event_meta_data)) {
                                                     </div>
 
                                                     <?php
+													$f = 0;
                                                     foreach( $rows as $fee ):
                                                         #check fee dates and if date range is valid, display fee
                                                         if( (evrplus_greaterDate($curdate, $fee->item_available_start_date)) && (evrplus_greaterDate($fee->item_available_end_date, $curdate)) ):
@@ -643,7 +644,9 @@ if (isset($event_meta_data)) {
                                                                             echo 'CalculateTotal(this.form)';
                                                                         } ?>"
                                                                         >
-                                                                    <option value="0">0</option>
+                                                                    
+																	<option value="0">0</option>
+																	
                                                                     <?php
                                                                     #Begin generation of DropDown Box - Options
                                                                     #Check to see if the item is a REG type.  If REG, set options count based on seating availability/ ticke limits
@@ -656,8 +659,10 @@ if (isset($event_meta_data)) {
                                                                             }
                                                                         }
                                                                         for( $i = 1; $i <= $units_available; $i++ ) { ?>
-                                                                            <option value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
+                                                                            
+																			<option <?php if($f == 0){ echo "selected"; } ?> value="<?php echo ($i); ?>"><?php echo ($i); ?></option>
                                                                             <?php
+																			$f++;
                                                                         }
                                                                     }
                                                                     
@@ -676,7 +681,9 @@ if (isset($event_meta_data)) {
                                                             </div>
                                                             <div class="clearfix"></div>
                                                         <?php endif; ?>
-                                                    <?php endforeach; ?>
+                                                    <?php
+													
+													endforeach; ?>
 
                                                     <?php
                                                     if( $isfees == "N" ): ?>

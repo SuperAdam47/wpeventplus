@@ -5,8 +5,7 @@ Paypal handler
 class EventPlus_Payments_Paypal_Handler {
 
     function handleResponse(){
-		
-        if (isset($_REQUEST['eventplus_pm']) && isset($_REQUEST['tx'])) {
+		if (isset($_REQUEST['eventplus_pm']) && isset($_REQUEST['tx'])) {
 			
 			
 			

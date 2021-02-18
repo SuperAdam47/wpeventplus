@@ -2723,6 +2723,13 @@ msgstr "Ajouter à votre calendrier"
 msgid "Event Location"
 msgstr "Lieu de l'événement"
 
+msgid "Total Seats"
+msgstr "Nombre total de sièges"
+
+msgid "Remaining Seats"
+msgstr "Sièges restants"
+
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 msgid "FREE"

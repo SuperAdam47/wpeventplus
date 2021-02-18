@@ -2361,6 +2361,16 @@ msgstr "No s'ha trobat paga,ents!"
 msgid "Event Location"
 msgstr "Lloc de l'esdeveniment"
 
+
+msgid "Total Seats"
+msgstr "Nombre total de seients"
+
+
+msgid "Remaining Seats"
+msgstr "Nombre total de seients"
+
+
+
 msgid "Attendee"
 msgstr "Assistent"
 

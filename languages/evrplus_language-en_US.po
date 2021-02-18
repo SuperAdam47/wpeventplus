@@ -2100,6 +2100,14 @@ msgstr ""
 msgid "Event Location"
 msgstr ""
 
+msgid "Total Seats"
+msgstr ""
+
+msgid "Remaining Seats"
+msgstr ""
+
+
+
 #: eventplus/app/views/front/event/parts/regform.php:274
 #: eventplus/app/views/front/event/parts/regform.php:285
 msgid "FREE"

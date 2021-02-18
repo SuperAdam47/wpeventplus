@@ -3824,6 +3824,12 @@ msgstr "Het e-mailadres klopt niet!"
 msgid "Event Location"
 msgstr "Evenementslocatie"
 
+msgid "Total Seats"
+msgstr "Totaal aantal zitplaatsen"
+
+msgid "Remaining Seats"
+msgstr "Resterende plaatsen"
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 msgid "FREE"

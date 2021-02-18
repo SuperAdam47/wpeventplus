@@ -2719,6 +2719,13 @@ msgstr "Descargar a Calendario"
 msgid "Event Location"
 msgstr "Lugar del evento"
 
+msgid "Total Seats"
+msgstr "Asientos totales"
+
+msgid "Remaining Seats"
+msgstr "Asientos restantes"
+
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 msgid "FREE"

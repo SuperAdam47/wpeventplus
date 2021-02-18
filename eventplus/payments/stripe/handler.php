@@ -18,7 +18,8 @@ class EventPlus_Payments_Stripe_Handler {
 
     /* Handle return */
     function processResponse() {
-
+		
+		
         global $wpdb;
 
         $stripeToken = $_REQUEST['stripeToken'];
@@ -123,11 +124,9 @@ class EventPlus_Payments_Stripe_Handler {
                 'txn_type' => EventPlus_Models_Payments::STRIPE
             )
         );
-
-        $oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
-        $oEmailPayment->send();
-
-        $urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
+		$oEmailPayment = new EventPlus_Helpers_Mail_Payment($emailData);
+		$oEmailPayment->send();
+		$urlToGo = evrplus_permalink($company_options['evrplus_page_id']) . '?event_id=' . $event_id . '&action=confirmation&eventplus_token=' . $attendeeRow['token'];
         echo'<script>window.location.href="' . $urlToGo . '";</script>';
         exit;
     }

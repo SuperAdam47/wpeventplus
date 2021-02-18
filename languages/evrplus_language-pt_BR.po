@@ -2467,6 +2467,13 @@ msgstr "Adicione ao seu calendário"
 msgid "Event Location"
 msgstr "Local do evento"
 
+msgid "Total Seats"
+msgstr "Total de assentos"
+
+msgid "Remaining Seats"
+msgstr "Assentos Restantes"
+
+
 #: eventplus/app/views/front/event/parts/regform.php:263
 #: eventplus/app/views/front/event/parts/regform.php:274
 msgid "FREE"
