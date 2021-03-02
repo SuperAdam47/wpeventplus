@@ -33,7 +33,7 @@ class eplus_admin_payments_controller extends EventPlus_Abstract_Controller {
 
     function index() {
 
-        if ($this->oEvent->id > 0) {
+        if (!empty($this->oEvent) && $this->oEvent->id > 0) {
             $record_limit = 15;
 
             $p = new EventPlus_Pagination();

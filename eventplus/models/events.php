@@ -500,9 +500,9 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
     function getEvents($params) {
 
         $orderby = " ORDER BY str_to_date(start_time,'%h:%i%p') ";
-
-
-        if (!empty($params['sort'])) {
+		$orderby2 = "";
+        
+		if (!empty($params['sort'])) {
             $orderby = ' ORDER BY ' . $params['sort'];
 
             if ($params['sort'] == 'start_date') {
@@ -752,7 +752,7 @@ class EventPlus_Models_Events extends EventPlus_Abstract_Model {
             $sql .= " AND str_to_date(end_date, '%Y-%m-%e') >= curdate()";
         }
         
-        if($params['event_category_id'] > 0){
+        if(!empty($params['event_category_id'])){
             $sql .= " AND category_id LIKE '%\"" . esc_sql($params['event_category_id']) . "\"%' ";
         }
        

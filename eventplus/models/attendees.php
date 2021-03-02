@@ -10,7 +10,12 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
     
     function numberOfSuccessfulAttendees($event_id) {
         global $wpdb;
-        return $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id= %d LIMIT 1", $event_id));
+        $return_data =  $wpdb->get_var($wpdb->prepare("SELECT SUM(quantity) FROM " . get_option('evr_attendee') . " WHERE payment_status = '".EventPlus_Models_Payments::PAYMENT_SUCCESS."' AND event_id= %d LIMIT 1", $event_id));
+		if($return_data){
+			return $return_data;
+		}else{
+			return 0;
+		}	
     }
     
     function getTotalAttendees($event_id) {
@@ -208,7 +213,7 @@ class EventPlus_Models_Attendees extends EventPlus_Abstract_Model {
             $sql .= " AND a.event_id = '" . (int) $params['event_id'] . "'";
         }
 
-        if ($params['payment_status']) {
+        if (!empty($params['payment_status']) && $params['payment_status']) {
             $sql .= " AND a.payment_status = '" . esc_sql($params['payment_status']) . "'";
         }
 

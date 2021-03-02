@@ -796,12 +796,8 @@ class EventPlus_Request extends EventPlus_Abstract_Request
         {
             $return += $_POST;
         }
+        $return = stripslashes_deep($return);
         
-
-        if(get_magic_quotes_gpc())
-        {
-            $return = stripslashes_deep($return);
-        }
         
         return $return;
     }

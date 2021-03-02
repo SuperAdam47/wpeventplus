@@ -13,8 +13,7 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
                 self::$cache['return_url'] = self::$cache['evrplus_page_id']; /* FAllback page id */
             }
         }
-
-        if ($key !== null) {
+		if ($key !== null) {
             return isset(self::$cache[$key]) ? self::$cache[$key] : null;
         } else {
             return self::$cache;
@@ -110,13 +109,12 @@ class EventPlus_Models_Settings extends EventPlus_Abstract_Model {
 			$company_options['qty_discount_settings'] = $params['qty_discount_settings'];
 			
             //$company_options['evrplus_invoice'] = $params['evrplus_invoice'];
-            update_option('evr_company_settings', $company_options);
+            
+			update_option('evr_company_settings', $company_options);
             update_option('evr_start_of_week', $start_of_week);
             $dwolla_enabled = $params['enable_dwolla'];
-
-            update_option('evr_dwolla', $dwolla_enabled);
-
-            $this->setMessage(__('Configuration settings saved', 'evrplus_language'));
+			update_option('evr_dwolla', $dwolla_enabled);
+			$this->setMessage(__('Configuration settings saved', 'evrplus_language'));
             return true;
         } else {
             $this->setMessage(__('There was an error in your submission, please try again. The configuration data was not updated!', 'evrplus_language'));

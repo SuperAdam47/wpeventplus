@@ -7,9 +7,12 @@
                 $id = $event->id;
                 $isRecurr = $wpdb->get_var("SELECT recurrence_choice FROM " . get_option('evr_event') . " WHERE id=" . (int) $id);
                 $curr = EventPlus_Helpers_Event::check_recurrence($id);
-
-                $cat_array = unserialize($event->category_id);
-                $cat_id = $cat_array[0];
+				if(!empty($event->category_id)){
+					$cat_array = unserialize($event->category_id);
+					$cat_id = $cat_array[0];
+				}else{
+					$cat_id = 0;
+				}
 
                 $sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . (int) $cat_id . "' LIMIT 1";
                 $cat_details = $wpdb->get_row($sql);

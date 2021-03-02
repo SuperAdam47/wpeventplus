@@ -37,8 +37,11 @@ $business = serialize($company_options);
 # Start check to see if guest was already inserted earlier
 $attendee_sql = 'SELECT * FROM ' . get_option('evr_attendee') . " WHERE token='" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "' LIMIT 1";
 $attendee_result = $wpdb->get_results($attendee_sql, ARRAY_A);
-$attendee_row = $attendee_result[0];
-
+if(!empty($attendee_result)){
+	$attendee_row = $attendee_result[0];
+}else{
+	$attendee_row = array();
+}
 
 # Ideally there should be no records with the token, as it should be unique.  
 # If there are no records then we can add this record. 
@@ -98,7 +101,7 @@ if ($attendee_insert_result) {
 
     # In order to post the custom, we need the id of the attendee we are posting for.
     $reg_id = $wpdb->insert_id;
-    if($attendee_row['id'] > 0){
+    if(!empty($attendee_row) && $attendee_row['id'] > 0){
         $reg_id = $attendee_row['id'];
     }
     

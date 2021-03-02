@@ -1,4 +1,3 @@
-
 <style type="text/css">body{overflow-x:hidden;} .ui-tooltip, .arrow:before {background: #5BA4A4 !important;border:1px #fff solid !important;}.ui-tooltip {padding: 10px 10px;color: white !important;font: bold 13px "Helvetica Neue", Sans-Serif;}.arrow {width: 70px;height: 25px;overflow: hidden;position: absolute;bottom: 5px;left: -26px;z-index: -1;}.arrow{display:none !important;}.arrow:before {content: "";position: absolute;left: 20px;top: 0px;width: 25px;height: 25px;-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-o-transform: rotate(45deg);tranform: rotate(45deg);}</style>
 <?php
 $event_name = $oEvent->event_name;
@@ -6,7 +5,7 @@ $event_id = $oEvent->id;
 
 $form_url = $this->adminUrl('admin_questions/add', array('event_id' => $event_id));
 
-if ($question_id > 0) {
+if (!empty($question_id) && $question_id > 0) {
     $form_url = $this->adminUrl('admin_questions/edit', array('event_id' => $event_id, 'id' => $question_id));
 }
 
@@ -17,6 +16,13 @@ $questionOptions = array(
     'MULTIPLE' => __('Multiple', 'evrplus_language'),
     'DROPDOWN' => __('Drop Down', 'evrplus_language'),
 );
+if(empty($row)){
+	$row['question'] = "";
+	$row['question_type'] = "";
+	$row['required'] = "";
+	$row['response'] = "";
+	$row['remark'] = "";
+}	
 ?>
 
 <br /><br />

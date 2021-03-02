@@ -36,8 +36,12 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
     function index() {
 
         $type = $this->_invokeArgs['type'];
-        $oEvent = $this->_invokeArgs['oEvent'];
-        $this->event_id = $this->_invokeArgs['event_id'];
+		if(!empty($this->_invokeArgs['oEvent'])){
+			$oEvent = $this->_invokeArgs['oEvent'];
+		}else{
+			$oEvent = "";
+		}
+		$this->event_id = $this->_invokeArgs['event_id'];
 
 
         if ($type == 'csv') {
@@ -55,7 +59,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
         $today = date_i18n("Y-m-d_Hi", time());
 
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
-        list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
+        @list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
 
         $st = "";
         $et = "\t";
@@ -144,9 +148,9 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
 
 
         $today = date_i18n("Y-m-d_Hi", time());
-
+		$csv_output = "";
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
-        list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
+       @list($event_id, $event_name, $event_description, $event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
 
         $st = "";
         $et = ",";

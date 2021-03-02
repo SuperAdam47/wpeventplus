@@ -64,12 +64,15 @@ class EventPlus_Helpers_Token {
     static function isPending($token) {
         
         $tokenRow = self::getDataByToken($token, true);
-
-        if ($tokenRow['payment_status'] == '' || $tokenRow['payment_status'] == null || $tokenRow['payment_status'] == 'pending') {
-            return true;
-        } else {
-            return false;
-        }
+		if(!empty($tokenRow)){
+			if ($tokenRow['payment_status'] == '' || $tokenRow['payment_status'] == null || $tokenRow['payment_status'] == 'pending') {
+				return true;
+			} else {
+				return false;
+			}
+		}else{
+			return true;
+		}
     }
 
     protected static $dataCache = array();

@@ -1,8 +1,6 @@
 <?php
 $event_name = $oEvent->event_name;
 $event_id = $oEvent->id;
-
-
 $lname = $row['lname'];
 $fname = $row['fname'];
 $address = $row['address'];
@@ -23,8 +21,15 @@ $discount_amount = $row['discount_amount'];
 $event_id = $row['event_id'];
 $coupon = $row['coupon'];
 $attendees = unserialize($row['attendees']);
-
+if(empty($ER_org_data)){
+	$ER_org_data['captcha'] = "";
+}
 $reg_form_defaults = unserialize($oEvent->reg_form_defaults);
+$inc_phone = "";
+$inc_zip = "";
+$inc_state = "";
+$inc_city = "";
+$inc_address = "";
 if ($reg_form_defaults != "") {
     if (in_array("Address", $reg_form_defaults)) {
         $inc_address = "Y";
@@ -42,7 +47,11 @@ if ($reg_form_defaults != "") {
         $inc_phone = "Y";
     }
 }
-$event_category = unserialize($oEvent->event_category);
+if(!empty($oEvent->event_category)){
+	$event_category = unserialize($oEvent->event_category);
+}else{
+	$event_category = "";
+}
 $reg_limit = $oEvent->reg_limit;
 $event_name = stripslashes($oEvent->event_name);
 $use_coupon = $oEvent->use_coupon;

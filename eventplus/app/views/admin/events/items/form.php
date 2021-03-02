@@ -7,7 +7,7 @@ $end_date = $oEvent->end_date;
 
 $form_url = $this->adminUrl('admin_events_items/add', array('event_id' => $event_id));
 
-if ($item_id > 0) {
+if (!empty($item_id) &&  $item_id > 0) {
     $form_url = $this->adminUrl('admin_events_items/edit', array('event_id' => $event_id, 'item_id' => $item_id));
 }
 
@@ -18,21 +18,35 @@ $itemOptions = array(
     'WRK' => __('Workshop', 'evrplus_language'),
     'MLS' => __('Meal or Food', 'evrplus_language'),
 );
+if(!empty($row)){
+	$item_id = $row['id'];
+	$item_sequence = $row['sequence'];
+	$item_title = $row['item_title'];
+	$item_description = $row['item_description'];
+	$item_cat = $row['item_cat'];
+	$item_limit = $row['item_limit'];
+	$item_price = $row['item_price'];
+	$free_item = $row['free_item'];
+	$item_start_date = $row['item_available_start_date'];
+	$item_end_date = $row['item_available_end_date'];
+	$item_custom_cur = $row['item_custom_cur'];
 
-$item_id = $row['id'];
-$item_sequence = $row['sequence'];
-$item_title = $row['item_title'];
-$item_description = $row['item_description'];
-$item_cat = $row['item_cat'];
-$item_limit = $row['item_limit'];
-$item_price = $row['item_price'];
-$free_item = $row['free_item'];
-$item_start_date = $row['item_available_start_date'];
-$item_end_date = $row['item_available_end_date'];
-$item_custom_cur = $row['item_custom_cur'];
-
-if($item_custom_cur == '' && $item_id == 0){
-    $item_custom_cur = EventPlus_Helpers_Currency::getDefaultCurrency();
+	if($item_custom_cur == '' && $item_id == 0){
+		$item_custom_cur = EventPlus_Helpers_Currency::getDefaultCurrency();
+	}
+}else{
+	$item_id = 0;
+	$item_sequence = "";
+	$item_title = "";
+	$item_description = "";
+	$item_cat = "";
+	$item_limit = "";
+	$item_price = "";
+	$free_item = "";
+	$item_start_date = "";
+	$item_end_date = "";
+	$item_custom_cur = EventPlus_Helpers_Currency::getDefaultCurrency();
+	$row['item_cat'] = 0;
 }
 ?>
 

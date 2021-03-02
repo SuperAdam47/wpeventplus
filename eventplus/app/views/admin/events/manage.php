@@ -1,5 +1,11 @@
 <?php
 $total_items = count($rows);
+if(empty($_REQUEST['sort'])){
+	$_REQUEST['sort'] = "";
+}
+if(empty($_REQUEST['sort_direction'])){
+	$_REQUEST['sort_direction'] = "";;
+}
 ?>
 <div class="padding">
     <div class="tablenav">
@@ -69,7 +75,8 @@ $total_items = count($rows);
                     $end_date = $event->end_date;
                     $event_close = $event->close;
                     $close_dt = $event->close;
-                    $number_attendees = EventPlus_Models_Attendees::numberOfSuccessfulAttendees($event_id);
+                    $number_attendees = new EventPlus_Models_Attendees;
+					$number_attendees = $number_attendees->numberOfSuccessfulAttendees($event_id);
                     if ($number_attendees == '' || $number_attendees == 0) {
                         $number_attendees = '0';
                     }

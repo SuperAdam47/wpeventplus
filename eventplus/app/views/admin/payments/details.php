@@ -15,6 +15,7 @@ $last_name = $row['last_name'];
 $payer_email = $row['payer_email'];
 $payer_status = $row['payer_status'];
 $payment_status = $row['payment_type'];
+$payment_type = $row['payment_type'];
 $memo = $row['memo'];
 $item_name = $row['item_name'];
 $item_number = $row['item_number'];

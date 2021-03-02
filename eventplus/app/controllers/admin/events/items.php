@@ -27,7 +27,7 @@ class eplus_admin_events_items_controller extends EventPlus_Abstract_Controller 
 
     function index() {
 
-        if ($this->oEvent->id > 0) {
+        if (!empty($this->oEvent) && $this->oEvent->id > 0) {
             $record_limit = 200;
 
             $p = new EventPlus_Pagination();

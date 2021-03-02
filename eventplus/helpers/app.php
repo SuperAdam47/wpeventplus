@@ -65,6 +65,91 @@ class EventPlus_Helpers_App {
                 }
             }
         }
+		$company_options = get_option('evr_company_settings');
+		if(empty($company_options)){
+			$company_options['company'] = "";
+			$company_options['company_street1'] = "";
+			$company_options['company_street2'] = "";
+			$company_options['company_city'] = "";
+			$company_options['company_state'] = "";
+			$company_options['company_postal'] = "";
+			$company_options['company_email'] = "";
+			$company_options['secondary_email'] = "";
+			$company_options['evrplus_page_id'] = "";
+			$company_options['splash'] = "";
+			$company_options['send_confirm'] = "";
+			$company_options['message'] = "";
+			$company_options['wait_message'] = "";
+			$company_options['thumbnail'] = "";
+			$company_options['calendar_url'] = "";          //$params['calendar_url';
+			$company_options['default_currency'] = "";
+			$company_options['donations'] = "";
+			$company_options['checks'] = "";
+			$company_options['pay_now'] = "";
+			$company_options['payment_vendor'] = "";
+			$company_options['secret_key'] = "";
+			$company_options['publishable_key'] ="";
+			$company_options['stripereturn_url'] = "";
+			$company_options['payment_vendor_id'] ="";
+			$company_options['payment_vendor_key'] = "";
+			$company_options['use_authorize_sandbox'] = "";
+			$company_options['authorize_id'] = "";
+			$company_options['authorize_key'] = "";
+			$company_options['pay_msg'] = "";
+			$company_options['return_url'] = "";
+			$company_options['notify_url'] = "";
+			$company_options['cancel_return'] = "";
+			$company_options['return_method'] = "";
+			$company_options['use_sandbox'] = "";
+			$company_options['paypal_pdt_token'] = "";
+			$company_options['image_url'] = "";
+			$company_options['admin_message'] = "";
+			$company_options['pay_confirm'] = "";
+			$company_options['payment_subj'] = "";
+			$company_options['payment_message'] = "";
+			$company_options['c_message'] = "";
+			$company_options['info_recieved'] = "";
+			$company_options['captcha'] = "";
+			$company_options['captcha_key'] ="";
+			$company_options['event_pop'] = "";
+			$company_options['form_css'] = "";
+			$start_of_week = "";
+			$company_options['use_sales_tax'] = "";
+			$company_options['googleMap_api_key'] = "";
+			$company_options['sales_tax_rate'] = "";
+			$company_options['start_of_week'] = "";
+			$company_options['evrplus_date_select'] = "";
+			$company_options['evrplus_tooltip_select'] = "";
+			$company_options['evrplus_cal_head'] = "";
+			$company_options['time_format'] = "";
+			$company_options['date_format'] = "";
+			$company_options['show_num_seats'] = "";
+			$company_options['cal_head_txt_clr'] = "";
+			$company_options['evrplus_cal_cur_day'] = "";
+			$company_options['evrplus_cal_use_cat'] = "";
+			$company_options['evrplus_flag_add_to_cal_button'] = "";
+			$company_options['evrplus_cal_pop_border'] = "";
+			$company_options['cal_day_txt_clr'] = "";
+			$company_options['show_social_icons'] = "";
+			$company_options['evrplus_cal_day_head'] = "";
+			$company_options['cal_day_head_txt_clr'] = "";
+			$company_options['evrplus_list_format'] = "";
+			$company_options['admin_noti'] = "";
+			$company_options['order_event_list'] = "";
+			$company_options['evrplus_tooltip_show'] = "";
+			$company_options['qty_discount'] = "";
+			$company_options['qty_discount_settings'] = "";
+			$company_options['after_pay_confirm'] = "";
+			$company_options['after_payment_subj'] = "";
+			$company_options['after_payment_message'] = "";
+			$company_options['qty_discount_settings'] = "";
+			$company_options['qty_discount_settings'] = "";
+			$company_options['evrplus_invoice'] = "";
+			update_option('evr_company_settings', $company_options);
+			update_option('evr_start_of_week', "");
+			$dwolla_enabled = "";
+			update_option('evr_dwolla', $dwolla_enabled);
+		}
     }
 
     function adminInit() {

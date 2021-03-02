@@ -29,7 +29,11 @@ foreach ($rows as $event) {
     include "_event_array2string.php";
 }
 
-$cat_id = $event_category[0];
+if(!empty($event_category) ){
+	$cat_id = $event_category[0];
+}else{
+	$cat_id = 0;
+}
 
 $sql = "SELECT * FROM " . get_option('evr_category') . " WHERE id='" . (int) $cat_id . "' LIMIT 1";
 $cat_details = $wpdb->get_row($sql);
@@ -77,7 +81,9 @@ if( $company_options['use_sales_tax'] == "Y" ) {
         $tax_rate = $company_options['sales_tax_rate'];
     }
 }
-
+if(empty($inc_country)){
+	$inc_country = "";
+}
 
 $oMeta = new EventPlus_Models_Events_Meta();
 
@@ -335,7 +341,8 @@ if (isset($event_meta_data)) {
 								if ($item_custom_cur == "USD") {
 									$item_custom_cur = "$";
 								}
-								if ($fee->item_custom_cur == "BRL") {
+								
+								if ($item_custom_cur == "BRL") {
 									$item_custom_cur = "R$";
 								}
 								if( $item_custom_cur == "EUR" ) {

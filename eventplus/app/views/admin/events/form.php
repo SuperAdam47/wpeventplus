@@ -2,7 +2,7 @@
 $editor_settings = array('wpautop', 'media_buttons' => false, 'textarea_rows' => '4');
 $event_id = 0;
 $form_url = $this->adminUrl('admin_events', array('method' => 'add'));
-if (is_object($row)) {
+if (!empty($row) && is_object($row)) {
 
     if ($row->id > 0) {
 
@@ -17,15 +17,7 @@ if (is_object($row)) {
         $term_c = $row->term_c;
         $term_desc = $row->term_desc;
         $meta_data = $row->meta_data;
-
-        /*
-          $event_location = stripslashes($row['event_location']);
-          $event_address = $row['event_address'];
-          $event_city = $row['event_city'];
-          $event_state =$row['event_state'];
-          $event_postal=$row['event_postal'];
-         */
-        $location_list = $row->location_list;
+		$location_list = $row->location_list;
         if ((get_option('evr_location_active') == "Y") && ( $row->location_list >= '1')) {
             $location_list = $row->location_list;
             $sql = "SELECT * FROM " . get_option('evrplus_location') . " WHERE id = $location_list";
@@ -164,7 +156,7 @@ if (is_object($row)) {
         $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
         $expiration_date = strtotime($stp);
 
-        if ($event->recurrence_choice == 'yes') {
+        if ($row->recurrence_choice == 'yes') {
             $dateTime = new DateTime('2030-7-15 8:30pm');
             $expiration_date = $dateTime->format("U");
         } else {
@@ -190,6 +182,144 @@ if (is_object($row)) {
         $closure_day_time = $oMeta->getOption($event_id, 'closure_day_time');
 
     }
+}else{
+		$event_id = 0;
+        $form_url = "";
+        $event_name ="";
+        $event_identifier = "";
+        $display_desc = "";  // Y or N
+        $event_desc = "";
+		$reg_limit = "";
+        $term_c = "";
+        $term_desc = "";
+        $meta_data = "";
+		$location_list = "";
+		$location_tag = "";
+		$event_location = "";
+		$event_address = "";
+		$event_city = "";
+		$event_state ="";
+		$event_postal = "";
+		$event_phone = "";
+		$google_map = "";  // Y or N
+        $start_month = "";
+        $start_day = "";
+        $start_year = "";
+        $end_month = "";
+        $end_day = "";
+        $end_year = "";
+        $infinite_event = '';
+        $start_time = "";
+        $end_time = "";
+        $allow_checks = "";
+        $counter_checks = "";
+        $outside_reg = "";  // Yor N
+        $disable_event_reg = "";  // Y or N
+        $external_site = "";
+        $reg_form_defaults = "";
+        $more_info = "";
+        $image_link = "";
+        $header_image = "";
+        //$event_cost = $row->event_cost;
+		$is_active = "";
+        $send_mail = "";  // Y or N
+        $conf_mail = "";
+
+        $start_date = "";
+        $end_date = "";
+        $recurrence_choice = "";
+        $recurrence_period = "";
+        $recurrence_frequency = "";
+        $recurrence_repeat_period = "";
+        $close = "";
+        $infinate_event = "";
+
+        $event_category = "";
+        if ($event_category == "") {
+            $event_category = array();
+        }
+
+        $coord_email = "";
+        $send_coord = "";
+        $event_country = "";
+        $coord_pay_msg = "";
+        $reg_form_defaults = "";
+
+        $company_options = EventPlus_Models_Settings::getSettings();
+        $time_format = $company_options['time_format'];
+        $date_format = $company_options['date_format'];
+        unset($company_options);
+        if ($reg_form_defaults != "") {
+            if (in_array("Address", $reg_form_defaults)) {
+                $inc_address = "Y";
+            }
+            if (in_array("City", $reg_form_defaults)) {
+                $inc_city = "Y";
+            }
+            if (in_array("State", $reg_form_defaults)) {
+                $inc_state = "Y";
+            }
+            if (in_array("Zip", $reg_form_defaults)) {
+                $inc_zip = "Y";
+            }
+            if (in_array("Phone", $reg_form_defaults)) {
+                $inc_phone = "Y";
+            }
+            if (in_array("Country", $reg_form_defaults)) {
+                $inc_country = "Y";
+            }
+            if (in_array("Company", $reg_form_defaults)) {
+                $inc_comp = "Y";
+            }
+            if (in_array("CoAddress", $reg_form_defaults)) {
+                $inc_coadd = "Y";
+            }
+            if (in_array("CoCity", $reg_form_defaults)) {
+                $inc_cocity = "Y";
+            }
+            if (in_array("CoState", $reg_form_defaults)) {
+                $inc_costate = "Y";
+            }
+            if (in_array("CoPostal", $reg_form_defaults)) {
+                $inc_copostal = "Y";
+            }
+            if (in_array("CoPhone", $reg_form_defaults)) {
+                $inc_cophone = "Y";
+            }
+        }
+
+        //set reg limit if not set
+        if ($reg_limit == '') {
+            $reg_limit = 999999;
+        }
+
+        $number_attendees = 0;
+
+        if ($number_attendees == '' || $number_attendees == 0) {
+            $number_attendees = '0';
+        }
+
+        if ($reg_limit == "" || $reg_limit == " ") {
+            $reg_limit = "Unlimited";
+        }
+        $available_spaces = $reg_limit;
+
+
+        $current_dt = date('Y-m-d H:i', current_time('timestamp', 0));
+        $close_dt = $start_date . " " . $start_time;
+        $stp = DATE("Y-m-d H:i", STRTOTIME($close_dt));
+        $expiration_date = strtotime($stp);
+		$today = strtotime($current_dt);
+
+		$active_event ='';
+        $oMeta = new EventPlus_Models_Events_Meta();
+        $show_register_button = $oMeta->getOption($event_id, 'show_register_button');
+        $skip_step_2 = $oMeta->getOption($event_id, 'skip_step_2');
+        $event_coordinator = $oMeta->getOption($event_id, 'event_coordinator');
+        $closure_day_date = $oMeta->getOption($event_id, 'closure_day_date');
+        $closure_day_time = $oMeta->getOption($event_id, 'closure_day_time');
+	
+	
 }
 ?>
 

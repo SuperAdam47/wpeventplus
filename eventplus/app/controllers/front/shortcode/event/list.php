@@ -12,7 +12,7 @@ class eplus_front_shortcode_event_list_controller extends EventPlus_Abstract_Con
         
         
         $event_category_id = 0;
-        if($shortcode_params['event_category_id'] > 0){
+        if(!empty($shortcode_params['event_category_id']) && $shortcode_params['event_category_id'] > 0){
             $event_category_id = $shortcode_params['event_category_id'];
         }
          

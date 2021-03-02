@@ -36,7 +36,11 @@ class eplus_admin_payments_export_controller extends EventPlus_Abstract_Controll
     function index() {
 
         $type = $this->_invokeArgs['type'];
-        $oEvent = $this->_invokeArgs['oEvent'];
+        if(!empty($this->_invokeArgs['oEvent'])){
+			$oEvent = $this->_invokeArgs['oEvent'];
+		}else{
+			$oEvent = "";
+		}
         $this->event_id = $this->_invokeArgs['event_id'];
 
         $today = date_i18n("Y-m-d_Hi", time());
@@ -44,7 +48,7 @@ class eplus_admin_payments_export_controller extends EventPlus_Abstract_Controll
         $event_data = $this->oModelEvents->getData($this->event_id, ARRAY_A);
 
 
-        list($event_id, $event_name, $event_description, $this->event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
+        @list($event_id, $event_name, $event_description, $this->event_identifier, $event_cost, $allow_checks, $is_active) = $event_data;
 
         $wpdb = $this->oModelPayments->getWpDb();
 

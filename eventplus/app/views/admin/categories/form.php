@@ -1,7 +1,7 @@
 <?php
 $category_id = 0;
 $form_url = $this->adminUrl('admin_categories', array('method' => 'add'));
-if (is_array($row)) {
+if (!empty($row) && is_array($row)) {
     $category_id = (int) $row['id'];
     $category_name = stripslashes(htmlspecialchars_decode($row['category_name']));
     $category_identifier = stripslashes(htmlspecialchars_decode($row['category_identifier']));
@@ -10,6 +10,15 @@ if (is_array($row)) {
     $category_color = $row['category_color'];
     $font_color = $row['font_color'];
     $form_url = $this->adminUrl('admin_categories', array('method' => 'edit', 'id' => $category_id));
+}else{
+	$category_id = 0;
+    $category_name = "";
+    $category_identifier = "";
+    $category_desc = "";
+    $display_category_desc = "";
+    $category_color = "";
+    $font_color = "";
+    $form_url = "";
 }
 ?>
 
@@ -58,12 +67,9 @@ if (is_array($row)) {
                                 'quicktags' => array('buttons' => 'b,i,ul,ol,li,link,close'),
                                 'tinymce' => array('theme_advanced_buttons1' => 'bold,italic,bullist,numlist,|,justifyleft,justifycenter,justifyright,|,link,unlink,|,fullscreen')
                             );
-
-                            if (!version_compare($wp_version, '3.3', '>=')) {
-                                the_editor($category_desc, 'category_desc', false, false);
-                            } else {
-                                wp_editor($category_desc, 'category_desc', $settings);
-                            }
+							
+                            wp_editor($category_desc, 'category_desc', false, false);
+                            
                             ?>                                   
 
                         </p>

@@ -52,6 +52,7 @@
 
                                     $event_close = $event->close;
                                     $end_date = $event->end_date;
+                                    $end_time = $event->end_time;
                                     $start_date = $event->start_date;
                                     $start_time = $event->start_time;
 

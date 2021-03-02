@@ -1,11 +1,10 @@
-
 <div class="events-plus_page_events">
     <div class="wrap">
         <h2><a href="#"><img src="<?php echo $this->assetUrl('images/evrplus_icon.png'); ?>" alt="Event Registration for Wordpress" /></a></h2>
         <h2><img src="<?php echo $this->assetUrl('images/icon_ticket.png'); ?>" alt="Event Registration for Wordpress" width="40" />  <?php _e('Event Items/Cost Management', 'evrplus_language'); ?></h2>
           <p> <?php _e('Add tickets to set pricing for your event (Adult, Child, VIP, etc.)', 'evrplus_language'); ?> </p>
                                       
-        <?php if (is_object($oEvent)): ?>
+        <?php if (!empty($oEvent) && is_object($oEvent)): ?>
             <?php if (isset($_GET['method']) == false): ?>
                 <a href="<?php echo $this->adminUrl('admin_events_items/add', array('event_id' => $oEvent->id)); ?>" class="evrplus_button"><?php _e('Add Cost/Item', 'evrplus_language'); ?></a>
 

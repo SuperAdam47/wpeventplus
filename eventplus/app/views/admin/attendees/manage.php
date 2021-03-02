@@ -75,9 +75,8 @@ if (is_object($oEvent)) {
                 foreach ($rows as $attendee) {
 
                     $attendee_id = (int) $attendee->id;
-                    $event_id = (int) $question->event_id;
-
-                    echo "<tr>"
+                    $event_id = (int) $attendee->event_id;
+					echo "<tr>"
                     . "<td><a href='" . $this->adminUrl('admin_events', array('method' => 'edit', 'id' => $attendee->event_id)) . "'>" . $attendee->event_name . "</a></td>"
                     . "<td>" . $attendee->quantity . "</td>"
                     . "<td align='left'>" . $attendee->lname . ", " . $attendee->fname . " ( ID: " . $attendee->id . ")</td><td>";

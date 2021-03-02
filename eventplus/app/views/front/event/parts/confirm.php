@@ -20,6 +20,7 @@ if (is_numeric($passed_event_id) && $passed_event_id > 0 && (isset($_POST['event
 $eventplus_token = $_POST['eventplus_token'];
 
 $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
+
 if( $isPending === false ) {
     _e("Couldn't proceed! registration already processed.", 'evrplus_language');
     return;
@@ -248,7 +249,11 @@ if (intval($total) > 0) {
     $discountSettings = $oEventDiscounts->getSettings($event_id);
 
     $discountPercentage = 0;
-    if (count($discountSettings) > 0 && is_array($discountSettings)) {
+    $posted_data['discount_percentage'] = $discountPercentage;
+	$posted_data['discount'] = round(($total * $discountPercentage) / 100, 2);
+	$total = $total - $posted_data['discount'];
+	$posted_data['payment'] = $total;
+	if (count($discountSettings) > 0 && is_array($discountSettings)) {
         $discountPercentage = EventPlus_Helpers_Event::getDiscountPercentage($quantity, $discountSettings);
 
         if ($discountPercentage > 0) {

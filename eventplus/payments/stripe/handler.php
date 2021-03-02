@@ -19,16 +19,16 @@ class EventPlus_Payments_Stripe_Handler {
     /* Handle return */
     function processResponse() {
 		
-		
-        global $wpdb;
+		global $wpdb;
 
         $stripeToken = $_REQUEST['stripeToken'];
         $amount = $_REQUEST['amount'];
+		$price = $_REQUEST['item_amount'];
         $eventplus_token = $_REQUEST['token'];
         $stripeEmail = $_REQUEST['stripeEmail'];
         $stripeTokenType = $_REQUEST['stripeTokenType'];
 
-        $price = $amount * 100;
+        //$price = $amount * 100;
         $company_options = EventPlus_Models_Settings::getSettings();
 
         $isPending = EventPlus_Helpers_Token::isPending($eventplus_token);
@@ -52,8 +52,7 @@ class EventPlus_Payments_Stripe_Handler {
         $amountPaid = 0;
         $txn_id = '';
         $payment_date = date('Y-m-d G:i:s', time());
-
-        try {
+		try {
 
             Stripe::setApiKey($company_options['secret_key']);
 
@@ -102,9 +101,7 @@ class EventPlus_Payments_Stripe_Handler {
             'payment_status' => $payment_status,
             'txn_type' => EventPlus_Models_Payments::STRIPE
         );
-
-
-        $sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
+		$sql_data = array('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');
         $wpdb->insert(get_option('evr_payment'), $sqlParams, $sql_data);
 
         EventPlus_Helpers_Token::delete($event_id);

@@ -4,7 +4,7 @@
         <h2><a href="#"><img src="<?php echo $this->assetUrl('images/evrplus_icon.png'); ?>" alt="Event Registration for Wordpress" /></a></h2>
         <h2><?php _e('Event Attendees Management', 'evrplus_language'); ?></h2>
 
-        <?php if (is_object($oEvent)): ?>
+        <?php if (!empty($oEvent) && is_object($oEvent)): ?>
             <?php if (isset($_GET['method']) == false): ?>
                 <a href="<?php echo $this->adminUrl('admin_attendees/add', array('event_id' => $oEvent->id)); ?>" class="evrplus_button"><?php _e('Add Attendee', 'evrplus_language'); ?></a>
 

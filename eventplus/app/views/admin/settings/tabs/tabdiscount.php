@@ -40,10 +40,16 @@
                             </tr>
                             <?php foreach ($qtyMinPlusRange as $ri => $rVal): ?>
                                 <tr>
+								<?php if(isset($company_options['qty_discount_settings'][$rVal]) && $company_options['qty_discount_settings'][$rVal]){
+									$dval = $company_options['qty_discount_settings'][$rVal];
+								}else{
+									$dval = "";
+								} ?>
                                     <td>
                                         <?php echo $rVal; ?>+
                                     </td>
-                                    <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount_settings[<?php echo $rVal; ?>]" value="<?php echo $company_options['qty_discount_settings'][$rVal]; ?>" /></td>
+                                    <td> <input type="text" style="width: 20%;" maxlength="6" name="qty_discount_settings[<?php echo $rVal; ?>]" 
+									value="<?php echo $dval; ?>" /></td>
                                 </tr>
                             <?php endforeach; ?>
 

@@ -41320,3 +41320,10 @@ Transparent Button
 	.google_captcha > input {
 		width: 100% !important;
 	}
+.tablenav-pages a,  .tablenav-pages span{ 
+	padding: 5px 10px;
+	background: #5BA4A4; 
+	color : white;
+	margin-right: 5px; 
+}
+.tablenav-pages span.current{ background: #ffffff; color : #5BA4A4;}

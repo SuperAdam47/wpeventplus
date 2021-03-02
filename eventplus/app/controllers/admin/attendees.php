@@ -58,9 +58,12 @@ class eplus_admin_attendees_controller extends EventPlus_Abstract_Controller {
         $limit_str = "LIMIT " . ($p->page - 1) * $p->limit . ", " . $p->limit;
 
         $params = $this->_request->getParams();
-
-        $params['event_id'] = $this->oEvent->id;
-        $params['limit_str'] = $limit_str;
+		if(!empty($this->oEvent)){
+			$params['event_id'] = $this->oEvent->id;
+        }else{
+			$params['event_id'] = 0;
+		}
+		$params['limit_str'] = $limit_str;
 
         $rows = $this->_model->getRecords($params);
 

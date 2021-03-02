@@ -25,6 +25,14 @@ if ($attendee_id > 0) {
 }
 
 $reg_form_defaults = unserialize($oEvent->reg_form_defaults);
+$inc_address = "";
+$inc_city = "";
+$inc_zip = "";
+$inc_phone = "";
+$inc_state = "";
+if(empty($ER_org_data['captcha'])){
+	$ER_org_data['captcha'] = "";
+}
 if ($reg_form_defaults != "") {
     if (in_array("Address", $reg_form_defaults)) {
         $inc_address = "Y";
@@ -42,7 +50,12 @@ if ($reg_form_defaults != "") {
         $inc_phone = "Y";
     }
 }
-$event_category = unserialize($oEvent->event_category);
+if(!empty($oEvent->event_category)){
+	$event_category = unserialize($oEvent->event_category);
+}else{
+	$event_category = "";
+}
+
 $reg_limit = $oEvent->reg_limit;
 $event_name = stripslashes($oEvent->event_name);
 $use_coupon = $oEvent->use_coupon;

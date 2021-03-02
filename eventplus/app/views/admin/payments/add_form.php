@@ -3,7 +3,9 @@
 <?php
 $event_name = $oEvent->event_name;
 $event_id = $oEvent->id;
-
+if(empty($attendee_id)){
+	$attendee_id = 0;
+}
 $form_url = $this->adminUrl('admin_payments/add', array('event_id' => $event_id, 'attendee_id' => $attendee_id));
 
 $id = $row ['id'];
@@ -43,8 +45,11 @@ foreach ($result as $row) {
 
 $sql2 = "SELECT SUM(mc_gross) FROM " . get_option('evr_payment') . " WHERE payer_id='$attendee_id'";
 $result2 = $wpdb->get_results($sql2, ARRAY_N);
+$total_paid = 0;
 foreach ($result2 as $row) {
-    $total_paid = $row['SUM(mc_gross)'];
+    if(!empty($row)){
+		$total_paid = @$row['SUM(mc_gross)'];
+	}
 }
 
 if ($use_coupon == "Y" && $event_cost > "0") {

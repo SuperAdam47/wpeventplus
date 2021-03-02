@@ -61,10 +61,11 @@ class EventPlus_Models_Events_Meta extends EventPlus_Abstract_Model {
 
         $sql = $this->wpDb()->prepare("SELECT * FROM $this->_table WHERE meta_key = %s AND event_id = %d", $meta_key, $event_id);
         $row = $this->QuickArray($sql);
-
-        $meta_value = maybe_unserialize($row['meta_value']);
-
-        return $meta_value;
+		$meta_value = "";		
+		if(!empty($row)){
+			$meta_value = maybe_unserialize($row['meta_value']);
+		}
+		return $meta_value;
     }
 
     function getAllOptions($event_id) {

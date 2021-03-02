@@ -33,7 +33,7 @@ class EventPlus_Models_Categories extends EventPlus_Abstract_Model {
     function getCategories(array $params = array()) {
         $sql = "SELECT * FROM " . $this->_table . " WHERE 1=1 ";
 
-        if (is_array($params['id_collection']) && count($params['id_collection'])) {
+        if (!empty($params) && is_array($params['id_collection']) && count($params['id_collection'])) {
             $sql .= " AND id IN (" . implode(',', $params['id_collection']) . ") ";
         }
 
