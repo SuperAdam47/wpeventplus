@@ -139,7 +139,7 @@ class eplus_admin_attendees_export_controller extends EventPlus_Abstract_Control
             $csv_output .= $et . "\r\n";
         }
 
-        $temp = iconv("UTF-8", "ISO-8859-2", $csv_output); 
+        $temp = iconv("UTF-8", "utf-8//TRANSLIT", $csv_output); 
         print $temp;
         exit;
     }
