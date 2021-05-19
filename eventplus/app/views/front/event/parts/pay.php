@@ -6,12 +6,12 @@ if (is_numeric($passed_id)) {
     $id = $passed_id;
 } else {
     $passed_id = "";
-    _e('Failure - please retry!', 'evrplus_language');
+    echo esc_html__('Failure - please retry!', 'evrplus_language');
     return;
 }
 
 if ($passed_id == "") {
-    _e('Please check your email for payment information.', 'evrplus_language');
+    echo esc_html__('Please check your email for payment information.', 'evrplus_language');
 } else {
     $query = "SELECT * FROM " . get_option('evr_attendee') . " WHERE id='".(int)$passed_id."'";
 
@@ -36,28 +36,7 @@ if ($passed_id == "") {
         $coupon = $row['coupon'];
         $attendee_name = $fname . " " . $lname;
     }
-    
-    /* 	$company =$company_options['company'];
-      $company_street1 =$company_options['company_street1'];
-      $company_street2=$company_options['company_street2'];
-      $company_city =$company_options['company_city'];
-      $company_state=$company_options['company_state'];
-      $company_zip =$company_options['company_zip'];
-      $contact =$company_options['contact_email'];
-      $registrar = $company_options['contact_email'];
-      $paypal_id =$company_options['paypal_id'];
-      $paypal_cur =$company_options['currency_format'];
-      $events_listing_type =$company_options['events_listing_type'];
-      $message =$company_options['message'];
-      $return_url = $company_options['return_url'];
-      $cancel_return = $company_options['cancel_return'];
-      $notify_url = $company_options['notify_url'];
-      $use_sandbox = $company_options['use_sandbox'];
-      $image_url = $company_options['image_url'];
-      $currency_symbol = $company_options['currency_symbol'];
 
-     */
-    
     //Query Database for event and get variable
     $sql = "SELECT * FROM " . get_option('evr_event') . " WHERE id='".(int)$event_id."'";
     $result = $wpdb->get_results($sql, ARRAY_A);
@@ -69,28 +48,27 @@ if ($passed_id == "") {
         $event_identifier = $row['event_identifier'];
     }
     echo "<br><br><strong>" . __('Payment Page for', 'evrplus_language') . " " . $fname . " " . $lname . " " . __('for event', 'evrplus_language') . " " . $event_name . "</strong><br><br>";
-// Print the Order Verification to the screen.
-    ?>				  
-    <p align="left"><strong><?php _e('Registration Detail Summary:', 'evrplus_language'); ?></strong></p>
+   ?>				  
+    <p align="left"><strong><?php echo esc_html__('Registration Detail Summary:', 'evrplus_language'); ?></strong></p>
     <table width="95%" border="0">
         <tr>
-            <td><strong><?php _e('Event Name/Cost:', 'evrplus_language'); ?></strong></td>
+            <td><strong><?php echo esc_html__('Event Name/Cost:', 'evrplus_language'); ?></strong></td>
             <td><?php echo $event_name; ?> - <?php echo $ticket_order[0]['ItemCurrency']; ?><?php echo $payment; ?></td>
         </tr>
         <tr>
-            <td><strong><?php _e('Attendee Name:', 'evrplus_language'); ?></strong></td>
+            <td><strong><?php echo esc_html__('Attendee Name:', 'evrplus_language'); ?></strong></td>
             <td><?php echo $attendee_name ?></td>
         </tr>
         <tr>
-            <td><strong><?php _e('Email Address:', 'evrplus_language'); ?></strong></td>
+            <td><strong><?php echo esc_html__('Email Address:', 'evrplus_language'); ?></strong></td>
             <td><?php echo $email ?></td>
         </tr>
         <tr>
-            <td><strong><?php _e('Number of Attendees:', 'evrplus_language'); ?></strong></td>
+            <td><strong><?php echo esc_html__('Number of Attendees:', 'evrplus_language'); ?></strong></td>
             <td><?php echo $quantity ?></td>
         </tr>
         <tr>
-            <td><strong><?php _e('Order Details:', 'evrplus_language'); ?></strong></td>
+            <td><strong><?php echo esc_html__('Order Details:', 'evrplus_language'); ?></strong></td>
             <td><?php
                 $row_count = count($ticket_order);
                 for ($row = 0; $row < $row_count; $row++) {
@@ -110,7 +88,7 @@ if ($passed_id == "") {
     if ($made_payments > 0) {
         $payment_made = "0";
         echo '<p align="left"><strong>';
-        _e('Payments Received:', 'evrplus_language');
+        echo esc_html__('Payments Received:', 'evrplus_language');
         echo "</strong></p>";
         // while ( $row3 = mysql_fetch_assoc ( $result3 ) ) {
         foreach ($result3 as $row3) {
@@ -120,21 +98,21 @@ if ($passed_id == "") {
         echo '<font color="red">';
         echo "<br/>";
 
-        _e('Total Outstanding Payment Due*:', 'evrplus_language');
+        echo esc_html__('Total Outstanding Payment Due*:', 'evrplus_language');
         $total_due = $payment - $payment_made;
         echo $ticket_order[0]['ItemCurrency'] . " " . $total_due;
         echo '</font><br/><br/>';
     } else {
         echo '<font color="red">';
-        _e('No Payments Received!', 'evrplus_language');
+        echo esc_html__('No Payments Received!', 'evrplus_language');
         echo "<br/>";
-        _e('Total Payment Due*:', 'evrplus_language');
+        echo esc_html__('Total Payment Due*:', 'evrplus_language');
         $total_due = $payment;
         echo $ticket_order[0]['ItemCurrency'] . " " . $total_due;
         echo '</font><br/><br/>';
     }
 
-    _e('*Payments could take several days to post to this page. Please check back in several days if you made a payment and your payment is not showing at this time.', 'evrplus_language');
+    echo esc_html__('*Payments could take several days to post to this page. Please check back in several days if you made a payment and your payment is not showing at this time.', 'evrplus_language');
     echo "<br><br>";
 //Set payment value for return payments
     $payment = $total_due;

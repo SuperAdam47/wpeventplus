@@ -177,14 +177,14 @@
                         jQuery('#picker').hide();
                         /* jQuery('#picker').farbtastic("#cat_back"); */
                         jQuery.farbtastic('#picker').linkTo('#evrplus_cal_head');
-                        jQuery("#evrplus_cal_head").click(function () {
+                        jQuery("#evrplus_cal_head").on('click',function () {
                             jQuery('#picker').slideToggle()
                         });
                     });
                     jQuery(document).ready(function () {
                         jQuery('#daypicker').hide();
                         jQuery.farbtastic('#daypicker').linkTo('#evrplus_cal_cur_day');
-                        jQuery("#evrplus_cal_cur_day").click(function () {
+                        jQuery("#evrplus_cal_cur_day").on('click',function () {
                             jQuery('#daypicker').slideToggle()
                         });
                     });
@@ -192,14 +192,14 @@
                         jQuery('#brdrpicker').hide();
                         /* jQuery('#picker').farbtastic("#cat_back"); */
                         jQuery.farbtastic('#brdrpicker').linkTo('#evrplus_cal_pop_border');
-                        jQuery("#evrplus_cal_pop_border").click(function () {
+                        jQuery("#evrplus_cal_pop_border").on('click',function () {
                             jQuery('#brdrpicker').slideToggle()
                         });
                     });
                     jQuery(document).ready(function () {
                         jQuery('#hdrpicker').hide();
                         jQuery.farbtastic('#hdrpicker').linkTo('#evrplus_cal_day_head');
-                        jQuery("#evrplus_cal_day_head").click(function () {
+                        jQuery("#evrplus_cal_day_head").on('click',function () {
                             jQuery('#hdrpicker').slideToggle()
                         });
                     });

@@ -6,18 +6,18 @@
 
 <script>
     var validationErrors = {
-        invalid: "<?php echo __('Invalid', 'evrplus_language'); ?>",
-        required: "<?php echo __('Required', 'evrplus_language'); ?>",
-        fname: "<?php echo __('Please enter your first name', 'evrplus_language'); ?>",
-        lname: "<?php echo __('Please enter your last name', 'evrplus_language'); ?>",
-        email: "<?php echo __('Email format not correct!', 'evrplus_language'); ?>",
-        phone: "<?php echo __('Please enter your phone number', 'evrplus_language'); ?>",
-        phone_invalid: "<?php echo __('Please use correct format for your phone number', 'evrplus_language'); ?>",
-        address: "<?php echo __('Please enter your address', 'evrplus_language'); ?>",
-        city: "<?php echo __('Please enter your city', 'evrplus_language'); ?>",
-        state: "<?php echo __('Please enter your state', 'evrplus_language'); ?>",
-        zip: "<?php echo __('Please enter your zip/postal code', 'evrplus_language'); ?>",
-        accept_terms: "<?php echo __("You didn't accept terms and conditions!", 'evrplus_language'); ?>!"
+        invalid: "<?php echo esc_html__('Invalid', 'evrplus_language'); ?>",
+        required: "<?php echo esc_html__('Required', 'evrplus_language'); ?>",
+        fname: "<?php echo esc_html__('Please enter your first name', 'evrplus_language'); ?>",
+        lname: "<?php echo esc_html__('Please enter your last name', 'evrplus_language'); ?>",
+        email: "<?php echo esc_html__('Email format not correct!', 'evrplus_language'); ?>",
+        phone: "<?php echo esc_html__('Please enter your phone number', 'evrplus_language'); ?>",
+        phone_invalid: "<?php echo esc_html__('Please use correct format for your phone number', 'evrplus_language'); ?>",
+        address: "<?php echo esc_html__('Please enter your address', 'evrplus_language'); ?>",
+        city: "<?php echo esc_html__('Please enter your city', 'evrplus_language'); ?>",
+        state: "<?php echo esc_html__('Please enter your state', 'evrplus_language'); ?>",
+        zip: "<?php echo esc_html__('Please enter your zip/postal code', 'evrplus_language'); ?>",
+        accept_terms: "<?php echo esc_html__("You didn't accept terms and conditions!", 'evrplus_language'); ?>!"
     };
 </script>
 <?php
@@ -163,7 +163,7 @@ if (isset($event_meta_data)) {
 
                     if( $showButtonCalendar ): ?>
                         <div class="acti0n">
-                            <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>add_to_calednar.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo __('Add to your calendar', 'evrplus_language'); ?></a>
+                            <a href="<?php echo EVENT_PLUS_PUBLIC_URL; ?>add_to_calednar.php?event_id=<?php echo $event_id; ?>" class="evrplus_addToCalendar btn btn-larg3 btn-ic0n cal3ndar"><?php echo esc_html__('Add to your calendar', 'evrplus_language'); ?></a>
                         </div>
                     <?php
                     endif;
@@ -350,7 +350,7 @@ if (isset($event_meta_data)) {
 								}
 								if ((float) $item_price == 0.0) {
 									$item_custom_cur = "";
-									$item_price = __('FREE', 'evrplus_language');
+									$item_price = esc_html__('FREE', 'evrplus_language');
 								}
 
                                 echo '<div class="row">'
@@ -423,14 +423,14 @@ if (isset($event_meta_data)) {
                     <div class="ac8ion" id="eventplus_actions_registration_btns">
                         <?php if ($disable_event_reg != 'Y'): ?>
                             <?php if ($outside_reg == "Y"): ?>
-                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er eventplus-registration-actions" id="regist3r-action"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                                <a href="<?php echo $external_site; ?>" class="btn btn-ic0n regis8er eventplus-registration-actions" id="regist3r-action"><?php echo esc_html__('REGISTER', 'evrplus_language'); ?></a>
                             <?php else: ?>
-                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er eventplus-registration-actions" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo __('REGISTER', 'evrplus_language'); ?></a>
+                                <a id="eventplus_register_btn" href="#" class="btn btn-ic0n regis8er eventplus-registration-actions" data-show-form-default="<?php echo $show_form_bool; ?>"><?php echo esc_html__('REGISTER', 'evrplus_language'); ?></a>
                             <?php endif; ?>
                         <?php endif; ?>
                         <?php if ($more_info != ""): ?>
                             <a href="#" class="btn btn-ic0n m0re-info eventplus-registration-actions" onClick="window.open('<?php echo $more_info; ?>');
-                                    return false;"><?php echo __('MORE INFO', 'evrplus_language'); ?></a>
+                                    return false;"><?php echo esc_html__('MORE INFO', 'evrplus_language'); ?></a>
                            <?php endif; ?>
                     </div>
                 <?php endif; ?>
@@ -493,7 +493,7 @@ if (isset($event_meta_data)) {
 
                                         <div class="row">
                                             <div class="col-xs-12 fi3ld">
-                                                <label class="checkb0x"><input checked="false" type="checkbox" id="eventplus_terms_cbox" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                <label class="checkb0x"><input checked="false" type="checkbox" id="eventplus_terms_cbox" name="accept_term" value="1" /> <?php echo esc_html__('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                 <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                             </div>
                                         </div>
@@ -502,31 +502,31 @@ if (isset($event_meta_data)) {
                                     <div id="eventplus_form_fields"<?php echo $formFieldStyle; ?>>
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo isset($pendingTokenRow['fname']) ? $pendingTokenRow['fname'] : ''; ?>" placeholder="<?php echo __('First Name', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="text" name="fname" id="fname" value="<?php echo isset($pendingTokenRow['fname']) ? $pendingTokenRow['fname'] : ''; ?>" placeholder="<?php echo esc_html__('First Name', 'evrplus_language'); ?>">
                                             </div>
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon us3r">
-                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo isset($pendingTokenRow['lname']) ? $pendingTokenRow['lname'] : ''; ?>" placeholder="<?php echo __('Last Name', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="text" name="lname" id="lname" value="<?php echo isset($pendingTokenRow['lname']) ? $pendingTokenRow['lname'] : ''; ?>" placeholder="<?php echo esc_html__('Last Name', 'evrplus_language'); ?>">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon emai7">
-                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo isset($pendingTokenRow['email']) ? $pendingTokenRow['email'] : ''; ?>" placeholder="<?php echo __('Email Address', 'evrplus_language'); ?>">
+                                                <input class="eplus-required" type="email" name="email" id="email" value="<?php echo isset($pendingTokenRow['email']) ? $pendingTokenRow['email'] : ''; ?>" placeholder="<?php echo esc_html__('Email Address', 'evrplus_language'); ?>">
                                             </div>
                                             <?php if ($inc_phone == "Y"): ?>
                                                 <div class="col-sm-6 col-xs-12 fi3ld fi3ld-with-icon te7">
-                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo isset($pendingTokenRow['phone']) ? $pendingTokenRow['phone'] : ''; ?>" placeholder="<?php echo __('Phone Number', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required eplus-phone" type="text" name="phone" id="phone" value="<?php echo isset($pendingTokenRow['phone']) ? $pendingTokenRow['phone'] : ''; ?>" placeholder="<?php echo esc_html__('Phone Number', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                         </div>
                                         <div class="row">
                                             <?php if ($inc_address == "Y"): ?>
                                                 <div class="<?php if ($inc_country == 'Y'): ?>col-xs-8<?php else: ?>col-xs-12<?php endif; ?> fi3ld fi3ld-with-icon addr3ss">
-                                                    <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo isset($pendingTokenRow['address']) ? $pendingTokenRow['address'] : ''; ?>" placeholder="<?php echo __('Street/PO Address', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required"  type="text" name="address" id="address" value="<?php echo isset($pendingTokenRow['address']) ? $pendingTokenRow['address'] : ''; ?>" placeholder="<?php echo esc_html__('Street/PO Address', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                             <?php if ($inc_country == "Y"): ?>
                                                 <div class="<?php if ($inc_address == 'Y'): ?>col-xs-4<?php else: ?>col-xs-12<?php endif; ?> fi3ld">
-                                                    <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo isset($pendingTokenRow['country']) ? $pendingTokenRow['country'] : ''; ?>" placeholder="<?php echo __('Country', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required"  type="text" name="country" id="country" value="<?php echo isset($pendingTokenRow['country']) ? $pendingTokenRow['country'] : ''; ?>" placeholder="<?php echo esc_html__('Country', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif; ?>
                                         </div>
@@ -534,29 +534,29 @@ if (isset($event_meta_data)) {
                                             <?php
                                             if( $inc_city == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required" type="text" name="city" id="city" value="<?php echo isset($pendingTokenRow['city']) ? $pendingTokenRow['city'] : ''; ?>" placeholder="<?php echo __('City', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required" type="text" name="city" id="city" value="<?php echo isset($pendingTokenRow['city']) ? $pendingTokenRow['city'] : ''; ?>" placeholder="<?php echo esc_html__('City', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif;
                                             if( $inc_state == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required" type="text" name="state" id="state" value="<?php echo isset($pendingTokenRow['state']) ? $pendingTokenRow['state'] : ''; ?>" placeholder="<?php echo __('State', 'evrplus_language'); ?>">
+                                                    <input class="eplus-required" type="text" name="state" id="state" value="<?php echo isset($pendingTokenRow['state']) ? $pendingTokenRow['state'] : ''; ?>" placeholder="<?php echo esc_html__('State', 'evrplus_language'); ?>">
                                                 </div>
                                             <?php endif;
                                             if( $inc_zip == "Y" ): ?>
                                                 <div class="col-sm-4 col-xs-12 fi3ld">
-                                                    <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo isset($pendingTokenRow['zip']) ? $pendingTokenRow['zip'] : ''; ?>" placeholder="<?php echo __('Postal/Zip Code', 'evrplus_language'); ?>" />
+                                                    <input class="eplus-required"  type="text" name="zip" id="zip" value="<?php echo isset($pendingTokenRow['zip']) ? $pendingTokenRow['zip'] : ''; ?>" placeholder="<?php echo esc_html__('Postal/Zip Code', 'evrplus_language'); ?>" />
                                                 </div>
                                             <?php endif; ?>
                                         </div>
                                         <div class="row">
                                             <?php
                                             $company_form_fields = array(
-                                                'company' => array('title' => __('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
-                                                'co_address' => array('title' => __('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
-                                                'co_city' => array('title' => __('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
-                                                'co_state' => array('title' => __('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
-                                                'co_zip' => array('title' => __('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
-                                                'co_phone' => array('title' => __('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
+                                                'company' => array('title' => esc_html__('Company Name', 'evrplus_language'), 'flag' => $inc_comp),
+                                                'co_address' => array('title' => esc_html__('Company Address', 'evrplus_language'), 'flag' => $inc_coadd),
+                                                'co_city' => array('title' => esc_html__('Company City', 'evrplus_language'), 'flag' => $inc_cocity),
+                                                'co_state' => array('title' => esc_html__('Company State/Province', 'evrplus_language'), 'flag' => $inc_costate),
+                                                'co_zip' => array('title' => esc_html__('Company Postal Code', 'evrplus_language'), 'flag' => $inc_copostal),
+                                                'co_phone' => array('title' => esc_html__('Company Phone', 'evrplus_language'), 'flag' => $inc_cophone),
                                             );
 
                                             foreach( $company_form_fields as $field=>$fieldSet ):
@@ -590,7 +590,7 @@ if (isset($event_meta_data)) {
 
                                             if( $use_coupon == "Y" ): ?>
                                                 <div class="col-xs-6 fi3ld"  title="<?php echo $title; ?>">
-                                                    <p><?php echo __('Enter coupon code for discount', 'evrplus_language'); ?></p>
+                                                    <p><?php echo esc_html__('Enter coupon code for discount', 'evrplus_language'); ?></p>
                                                     <input type="text" name="coupon" id="coupon" value="" />
                                                 </div>
                                             <?php endif;
@@ -776,7 +776,7 @@ if (isset($event_meta_data)) {
 
                                             <?php if ($term_c == 'Y' && $term_c_force != 'Y'): ?>
                                                 <div class="col-xs-12 fi3ld">
-                                                    <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo __('I accept the terms and conditions', 'evrplus_language'); ?></label>
+                                                    <label class="checkb0x"><input type="checkbox" id="accept_term" name="accept_term" value="1" /> <?php echo esc_html__('I accept the terms and conditions', 'evrplus_language'); ?></label>
                                                     <div class="t3rms"><?php echo html_entity_decode($term_desc); ?></div>
                                                 </div>
                                             <?php endif; ?>
@@ -815,7 +815,7 @@ if( $company_options['captcha'] == 'Y' && trim($company_options['captcha_key']) 
 	<script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async defer></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function () {
-			jQuery("#mySubmit").click(function () {
+			jQuery("#mySubmit").on('click',function () {
 				if( grecaptcha.getResponse() == "" ) {
 					alert("Please fill the captcha !");
 					return false;

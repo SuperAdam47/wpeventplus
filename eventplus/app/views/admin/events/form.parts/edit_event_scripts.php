@@ -13,17 +13,17 @@
                 }
             }
         });
-        jQuery(".checkbox").click(function () {
+        jQuery(".checkbox").on('click',function () {
             jQuery(this).toggleClass('checked')
             jQuery(this).prop("checked", true);
         });
     });
     jQuery(document).ready(function ($) {
 
-        $('#term_c_y').click(function () {
+        $('#term_c_y').on('click',function () {
             $('#term_div').show();
         });
-        $('#term_c_n').click(function () {
+        $('#term_c_n').on('click',function () {
             $('#term_div').hide();
         });
     });

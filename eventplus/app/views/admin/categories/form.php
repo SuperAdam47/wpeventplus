@@ -87,7 +87,7 @@ if (!empty($row) && is_array($row)) {
                         jQuery.farbtastic('#picker').linkTo('#cat_back');
 
 
-                        jQuery("#cat_back").click(function () {
+                        jQuery("#cat_back").on('click',function () {
                             jQuery('#picker').slideToggle();
                         });
 

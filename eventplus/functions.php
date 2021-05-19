@@ -246,7 +246,7 @@ if (!function_exists('evrplus_next_link')) {
             $t_month = strtoupper(evrplus_get_month_shortname($month));
 
             $t_month_after = strtoupper(evrplus_get_month_shortname($month_after));
-            $next_links = '<a href="' . evrplus_permalink_prefix() . 'month=' . $month . '&amp;yr=' . $cur_year .$fragment. '">' . $t_month . ' &raquo;</a>' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . '<a href="' . evrplus_permalink_prefix() . 'month=' . $month_after . '&amp;yr=' . $cur_year .$fragment. '">' . $t_month_after. ' &raquo;</a>';
+            $next_links = '<a href="' . evrplus_permalink_prefix() . 'month=' . esc_attr( $month ) . '&amp;yr=' . esc_attr( $cur_year .$fragment). '">' . $t_month . ' &raquo;</a>' . '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' . '<a href="' . evrplus_permalink_prefix() . 'month=' . esc_attr($month_after) . '&amp;yr=' . $cur_year .$fragment. '">' . $t_month_after. ' &raquo;</a>';
         }
         return $next_links;
     }
@@ -288,8 +288,8 @@ if (!function_exists('evrplus_generate_frm_defaults')) {
     function evrplus_generate_frm_defaults($field, $tag, $value = '') {
         ?>
         <li>
-            <label for="<?php echo $field; ?>"><?php echo $tag; ?></label>
-            <span class="fieldbox"><input type="text" id="<?php echo $field; ?>" name="<?php echo $field; ?>" value="<?php echo $value; ?>" /></span>
+            <label for="<?php echo $field; ?>"><?php echo esc_html( $tag ); ?></label>
+            <span class="fieldbox"><input type="text" id="<?php echo $field; ?>" name="<?php echo $field; ?>" value="<?php echo esc_html($value); ?>" /></span>
         </li>
         <?php
     }

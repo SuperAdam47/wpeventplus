@@ -249,7 +249,7 @@ if (isset($_GET['ct'])) {
 </script> 
 <script type="text/javascript">
     jQuery(document).ready(function () {
-        jQuery('.tabs li a').click(function () {
+        jQuery('.tabs li a').on('click',function () {
 
             if (jQuery(this).attr('href') == '#tab9_done') {
                 jQuery('.disp').html("<?php echo _e("Let's get your events plugin configured!", 'evrplus_language'); ?>");
@@ -260,7 +260,7 @@ if (isset($_GET['ct'])) {
             }
         });
 
-        jQuery('li.settingsTab').click(function () {
+        jQuery('li.settingsTab').on('click',function () {
             jQuery('#eventplus_settings_current_tab').val(jQuery(this).attr('data-tab'));
         });
 

@@ -1,6 +1,6 @@
 <?php
 
-class EventPlus_WordPress_Database {
+class EventPlus_Database {
 
     private $lastQ = null;
 

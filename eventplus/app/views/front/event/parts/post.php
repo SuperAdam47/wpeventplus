@@ -1,4 +1,4 @@
-<img src="<?php echo $this->assetUrl('scripts/colorbox/images/loading.gif'); ?>" />
+<img src="<?php echo esc_url( $this->assetUrl('scripts/colorbox/images/loading.gif') ); ?>" />
 
 <?php
 $num_people = 0;
@@ -37,10 +37,9 @@ $business = serialize($company_options);
 # Start check to see if guest was already inserted earlier
 $attendee_sql = 'SELECT * FROM ' . get_option('evr_attendee') . " WHERE token='" . esc_sql($eventplus_token) . "' AND event_id = '" . (int) $event_id . "' LIMIT 1";
 $attendee_result = $wpdb->get_results($attendee_sql, ARRAY_A);
+$attendee_row = array();
 if(!empty($attendee_result)){
 	$attendee_row = $attendee_result[0];
-}else{
-	$attendee_row = array();
 }
 
 # Ideally there should be no records with the token, as it should be unique.  

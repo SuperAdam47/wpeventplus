@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
     }
 
 
-    jQuery('a.poplight').click(function () {
+    jQuery('a.poplight').on('click',function () {
         var popID = jQuery(this).attr('rel');
         var popURL = jQuery(this).attr('href');
 
