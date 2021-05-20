@@ -53,7 +53,7 @@ if( !class_exists('EventPlus_Plugin') ){
 
             $oRegistry = EventPlus::factory('Registry');
             $oRegistry->set('core', $oEventPlusCore);
-            $oRegistry->set('db', EventPlus::factory('EventPlus_Database'));
+            $oRegistry->set('db', EventPlus::factory('Database'));
             $oRegistry->set('url', EventPlus::factory('Url', array(
                         'site_url' => EVENT_PLUS_SITE_URL,
                         'admin_url' => EVENT_PLUS_SITE_URL . 'wp-admin/admin.php',
