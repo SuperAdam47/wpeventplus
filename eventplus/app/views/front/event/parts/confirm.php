@@ -254,7 +254,7 @@ if (intval($total) > 0) {
 	$total = $total - $posted_data['discount'];
 	$posted_data['payment'] = $total;
 	if (count($discountSettings) > 0 && is_array($discountSettings)) {
-        $discountPercentage = EventPlus_Helpers_Event::getDiscountPercentage($quantity, $discountSettings);
+        $discountPercentage = EventPlus_Helpers_Event::eventplus_getDiscountPercentage($quantity, $discountSettings);
 
         if ($discountPercentage > 0) {
             $posted_data['discount_percentage'] = $discountPercentage;
@@ -397,7 +397,7 @@ $question_post = urlencode(serialize($qanda));
         <div class="col-xs-12 regis8er-form" id="regis8er-form">
 
             <form id="eventplus_attendee_form_confirm" method="post" action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>" onSubmit="myConfirmSubmit.disabled = true;
-                    return validateConfirmationForm(this)">
+                    return eventplus_validateConfirmationForm(this)">
                 <div class="row">
                     <?php if ($quantity > 0): ?>
                         <?php

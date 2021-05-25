@@ -1,2135 +1,109 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WP EventsPlus\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-22 05:51+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WPEventsPlus\n"
+"POT-Creation-Date: 2019-01-15 06:22+0000\n"
+"PO-Revision-Date: 2019-01-15 06:23+0000\n"
+"Last-Translator: admin <jaydipnetworld301@gmail.com>\n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.1; wp-5.1.1"
+"X-Poedit-Basepath: wpeventplus\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n;esc_attr__;esc_attr_e;esc_attr_x;"
+"esc_html__;esc_html_e;esc_html_x;_c;_nc\n"
+"X-Poedit-SearchPath-0: public\n"
+"X-Poedit-SearchPath-1: eventplus\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.2.0; wp-4.9.9"
 
-#: eventplus/app/controllers/admin/events.php:165
-msgid " attendees registered for this event.  The event cannot be deleted."
+#: eventplus/payments.php:41
+msgid "PayPal Sandbox Mode Is Active"
 msgstr ""
 
-#: eventplus/models/events.php:252
-msgid " has been added."
+#: eventplus/payments.php:42
+msgid "Payments will not be processed"
 msgstr ""
 
-#: eventplus/models/events.php:445
-msgid " has been updated!"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/manage.php:35
-msgid "# People"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/accordion.php:34
-msgid "&nbsp;&nbsp;&nbsp;&nbsp;Time: "
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:42
-msgid "(must be decimal, i.e. .085 )"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:34
-msgid "(This option must be enable to charge sales tax)"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:33
-msgid "(This option must be enable to send custom mails in events)"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:142
-msgid "(This option must be enable to send email to admin)"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:87
-msgid "(This option must be enable to send payment confrimation emails)"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:7
-#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:5
-msgid "(used for testing/debug)"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:102
-#: eventplus/app/views/admin/settings.php:173
-msgid "***This is an automated response - Do Not Reply***"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:100
-#: eventplus/app/views/front/event/parts/pay.php:137
-msgid ""
-"*Payments could take several days to post to this page. Please check back in "
-"several days if you made a payment and your payment is not showing at this "
-"time."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:37
-msgid "24 Hours"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:132
-msgid "[fname], [lname], [event]"
-msgstr ""
-
-#: eventplus/models/payments.php:413
-msgid ""
-"A balance is outstanding on your event registration fees.  Please pay to "
-"complete your registration process."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirmation.php:94
-#: eventplus/app/views/front/event/parts/email/confirmation.php:97
-msgid "A confirmation email has been sent to:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:15
-msgid ""
-"A coupon code is a promotional code you can tie to your event. The code is "
-"valid for a discount off the total registration cost"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:10
-#: eventplus/app/views/admin/categories/manage.php:21
-#: eventplus/app/views/admin/events/manage.php:38
-#: eventplus/app/views/admin/events/manage.php:147
-#: eventplus/app/views/admin/attendees/manage.php:66
-#: eventplus/app/views/admin/attendees/manage.php:112
-#: eventplus/app/views/admin/payments/manage.php:40
-msgid "Action"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:37
-#: eventplus/app/views/admin/questions/manage.php:44
-#: eventplus/app/views/admin/events/items/manage.php:39
-msgid "Actions"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:100
-#: eventplus/app/views/admin/dashboard/events.php:49
-#: eventplus/app/views/admin/dashboard/widgets/events.php:84
-msgid "ACTIVE"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:182
-msgid "ACTIVE EVENT"
-msgstr ""
-
-#: eventplus/app/controllers/admin/attendees.php:95
-#: eventplus/app/controllers/admin/attendees.php:96
-#: eventplus/app/views/admin/layouts/attendees.php:9
-msgid "Add Attendee"
-msgstr ""
-
-#: eventplus/app/controllers/admin/categories.php:23
-#: eventplus/app/controllers/admin/categories.php:24
-msgid "Add Category"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events/items.php:10
-msgid "Add Cost/Item"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events.php:9
-msgid "ADD EVENT"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:39
-#: eventplus/app/controllers/admin/events.php:98
-#: eventplus/app/controllers/admin/events.php:99
-msgid "Add Event"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:111
-msgid "Add Google map Api key"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events/items.php:96
-#: eventplus/app/controllers/admin/events/items.php:97
-msgid "Add Item"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/categories.php:114
-msgid "ADD NEW CATEGORY"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/events.php:4
-msgid "Add New Event"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/questions.php:9
-msgid "Add new Question"
-msgstr ""
-
-#: eventplus/app/controllers/admin/payments.php:107
-#: eventplus/app/views/admin/payments/manage.php:124
-msgid "Add Payment"
-msgstr ""
-
-#: eventplus/app/controllers/admin/questions.php:94
-#: eventplus/app/controllers/admin/questions.php:95
-msgid "ADD QUESTION"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events/items.php:6
-msgid "Add tickets to set pricing for your event (Adult, Child, VIP, etc.)"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:560
-#: eventplus/app/views/front/event/parts/regform.php:138
-msgid "Add to your calendar"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:50
-#: eventplus/app/views/admin/attendees/edit_form.php:78
-#: eventplus/app/views/admin/attendees/details.php:79
-msgid "Address"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:40
-#: eventplus/app/views/front/widgets/shortcode/event/grid.php:30
-msgid "All"
-msgstr ""
-
-#: eventplus/helpers/event.php:99 eventplus/funx/evrplus_calendar.php:756
-msgid "all day"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:43
-msgid ""
-"All location information must be complete for Google Map feature to work"
-msgstr ""
-
-#: eventplus/models/attendees.php:231
-msgid ""
-"All the attendee information has been successfully deleted from the event."
-msgstr ""
-
-#: public/paypal/re7urn.php:44 public/paypal/1pn.php:37
-#: eventplus/payments/paypal/handler.php:66
-msgid "Already processed"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:29
-msgid "AM - PM"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:22
-msgid "Amount"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:114
-#: eventplus/app/views/admin/payments/edit_form.php:131
-#: eventplus/app/views/admin/payments/details.php:136
-msgid "Amount Paid"
-msgstr ""
-
-#: eventplus/functions.php:207
-msgid "Apr"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:148
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:110
-msgid "April"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:151
-msgid "Are you sure you want to copy"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:152
-#: eventplus/app/views/admin/questions/manage.php:88
-#: eventplus/app/views/admin/attendees/manage.php:121
-#: eventplus/app/views/admin/events/items/manage.php:94
-msgid "Are you sure you want to delete"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:50
-msgid "Are you sure you want to delete category?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:64
-msgid "Are you using an external registration?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:22
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:80
-msgid "ASC"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/email/confirmation.php:57
-msgid ""
-"At this time, all seats for the event have been taken.  \n"
-"        Your information has been placed on our waiting list.  \n"
-"        The waiting list is on a first come, first serve basis.  \n"
-"        You will be notified by email should a seat become available."
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:142
-msgid ""
-"At this time, all seats for the event have been taken.  \n"
-"    Your information has been placed on our waiting list.  \n"
-"    The waiting list is on a first come, first serve basis."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirmation.php:102
-msgid ""
-"At this time, all seats for the event have been taken.  Your information has "
-"been placed on our waiting list.  The waiting list is on a first come, first "
-"serve basis.  You will be notified by email should a seat become available."
-msgstr ""
-
-#: eventplus/helpers/mail/registration.php:48
-msgid ""
-"At this time, all seats for the event have been taken. Your information has "
-"been placed on our waiting list.  \n"
-"        The waiting list is on a first come, first serve basis.  \n"
-"        You will be notified by email should a seat become available."
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/edit_form.php:102
-#: eventplus/app/views/admin/attendees/details.php:125
-#: eventplus/app/views/front/event/parts/confirm.php:412
-msgid "Attendee"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/attendees/short.php:52
-msgid "Attendee #"
-msgstr ""
-
-#: eventplus/models/attendees.php:226
-msgid "Attendee couldn't deleted."
-msgstr ""
-
-#: eventplus/app/controllers/admin/attendees.php:108
-#: eventplus/app/controllers/admin/attendees.php:164
-#: eventplus/app/controllers/admin/attendees.php:185
-#: eventplus/app/controllers/admin/payments.php:87
-msgid "Attendee doesn't exist."
-msgstr ""
-
-#: eventplus/models/attendees.php:226
-msgid "Attendee has been deleted."
-msgstr ""
-
-#: eventplus/models/attendees.php:196
-msgid "Attendee has been updated."
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/attendees/short.php:20
-msgid "Attendee List for "
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:20
-#: eventplus/app/controllers/front/shortcode/attendees/short.php:53
-msgid "Attendee Name"
-msgstr ""
-
-#: eventplus/helpers/payment.php:147 eventplus/helpers/payment.php:530
-#: eventplus/helpers/payment.php:649
-#: eventplus/app/views/front/shortcode/payment.php:37
-#: eventplus/app/views/front/event/parts/pay.php:81
-msgid "Attendee Name:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:36
-#: eventplus/app/views/admin/events/manage.php:139
-#: eventplus/app/views/admin/attendees/edit_form.php:96
-#: eventplus/app/views/admin/attendees/manage.php:62
-#: eventplus/app/views/admin/attendees/details.php:120
-msgid "Attendees"
-msgstr ""
-
-#: eventplus/models/attendees.php:231
-msgid "Attendees couldn't deleted."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:14
-msgid "Attention"
-msgstr ""
-
-#: eventplus/functions.php:211
-msgid "Aug"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:152
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:114
-msgid "August"
-msgstr ""
-
-#: eventplus/models/payments.php:20
-msgid "Authorize.net"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:26
-msgid "Authorized.Net API Login ID"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:34
-msgid "Authorized.Net Txn Key"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:158
-msgid "AVAILABILITY TIMES OF COST/ITEM"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:93
-msgid "Available items/cost per registration/order?"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/events.php:25
-msgid "Available Seats"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:434
-msgid "BACK"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/attendees.php:16
-msgid "Back to Attendees"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events/items.php:17
-msgid "Back to Items"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/payments.php:13
-msgid "Back to Payments"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/questions.php:16
-msgid "Back to Questions"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:82
-#: eventplus/app/views/admin/payments/edit_form.php:114
-#: eventplus/app/views/admin/payments/details.php:119
-msgid "Balance Owed:"
-msgstr ""
-
-#: eventplus/helpers/event.php:101 eventplus/funx/evrplus_calendar.php:758
-msgid "Between"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:111
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:286
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:327
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:368
-msgid "Black"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:73
-#: eventplus/app/views/admin/events/form.php:218
-msgid "Bulk Discounts"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab9_done.php:13
-msgid "button, below the tabs"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:71
-msgid "Calendar"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:259
-msgid "Calendar Date Selector Background Color"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:306
-msgid "Calendar Day Header Background Color"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:301
-msgid "Calendar Header"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:13
-msgid "Calendar Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:122
-#: eventplus/app/views/admin/payments/edit_form.php:154
-#: eventplus/app/views/admin/payments/edit_form.php:164
-msgid "Cancelation"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:67
-msgid "Captcha"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:8
-msgid "Captcha Integration"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:129
-#: eventplus/app/views/admin/payments/edit_form.php:180
-#: eventplus/app/views/admin/payments/edit_form.php:187
-msgid "Cash"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:33
-msgid "Category"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:93
-msgid "Category Background Color"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:53
-msgid "Category Description"
-msgstr ""
-
-#: eventplus/app/controllers/admin/categories.php:53
-#: eventplus/app/controllers/admin/categories.php:89
-msgid "Category doesn't exist."
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/categories.php:110
-msgid "Category Management"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:23
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:22
-msgid "Category Name"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/event/category.php:9
-msgid "Category not supplied"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:106
-msgid "Category Text Color"
-msgstr ""
-
-#: eventplus/models/categories.php:74 eventplus/models/categories.php:115
-msgid "Category unique id already exists."
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:44
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:49
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:100
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:105
-msgid "change"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:128
-#: eventplus/app/views/admin/payments/edit_form.php:177
-#: eventplus/app/views/admin/payments/edit_form.php:186
-msgid "Check"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:37
-msgid ""
-"Choose a title for your custom field do you have pets? How did you hear "
-"about us?etc"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:9
-msgid "Choose calendar colors"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:7
-msgid "Choose Event Options"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:6
-msgid "Choose Event's Time"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:72
-msgid ""
-"Choose if you would like to display events in Ascending or Descending order"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:9
-msgid "Choose Pages"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:45
-msgid "Choose the date format for your events:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:110
-msgid ""
-"Choose the fields you would like visitors to fill out when registering for "
-"your event. Note that name and email are mandatory."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:20
-msgid "Choose the time format for your events:"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:42
-msgid ""
-"Choose the type of field you would like your visitor to fill out:text, "
-"textarea, single radio button, multiple radio buttons and dropdown"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:6
-msgid "Choose your event venue"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:53
-#: eventplus/app/views/admin/attendees/edit_form.php:81
-#: eventplus/app/views/admin/attendees/details.php:82
-#: eventplus/app/views/front/event/parts/regform.php:427
-#: eventplus/app/views/admin/events/form.parts/venue.php:27
-#: eventplus/app/views/admin/events/form.parts/options.php:131
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:34
-msgid "City"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:114
-#: eventplus/app/views/admin/settings.php:182
-msgid "Click here to review your payment information [payment_url]"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:174
-msgid ""
-"Click on each field to display the color picker. Click again to close it"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:96
-msgid "Close Registration on"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:189
-msgid "Co. Addr"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:198
-msgid "Co. City"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:216
-msgid "Co. Postal"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:207
-msgid "Co. State/Prov"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:67
-msgid "Comments"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:72
-#: eventplus/app/views/admin/events/form.parts/options.php:180
-msgid "Company"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:445
-msgid "Company Address"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:446
-msgid "Company City"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:444
-msgid "Company Name"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:449
-msgid "Company Phone"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:448
-msgid "Company Postal Code"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:447
-msgid "Company State/Province"
-msgstr ""
-
-#: eventplus/models/settings.php:112
-msgid "Configuration settings saved"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:69
-msgid "Confirmation"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:216
-msgid "Confirmation Mail"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:460
-msgid "Confirmed"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab9_done.php:6
-msgid "Congratulations"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirmation.php:117
-msgid ""
-"Congratulations! Transaction has been completed and payment has been "
-"received. Thank you for your payment."
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:65
-msgid "Contact"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:9
-msgid "Contact Information"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:151
-msgid "Copy"
-msgstr ""
-
-#: public/authorize/payment.php:37 public/paypal/re7urn.php:27
-#: public/stripe/payment.php:32 eventplus/payments/stripe/handler.php:37
-#: eventplus/app/views/front/event/parts/post.php:18
-#: eventplus/app/views/front/event/parts/confirm.php:24
-msgid "Couldn't proceed! registration already processed."
-msgstr ""
-
-#: eventplus/payments/paypal/handler.php:49
-msgid "Couldn't proceed. Registration already processed."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:419
-#: eventplus/app/views/admin/events/form.parts/venue.php:37
-#: eventplus/app/views/admin/events/form.parts/options.php:167
-msgid "Country"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:11
-msgid "Coupon Code"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:91
-msgid "Coupon code"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:344
-#: eventplus/app/views/front/event/parts/confirm.php:348
-msgid "Coupon:"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:53
-msgid ""
-"Create the choices for the visitor separated by comma i.e google, yahoo, "
-"bing etc."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:42
-msgid "CSS Overrides for registration form?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:17
-#: eventplus/app/views/admin/settings/tabs/tab2.php:17
-msgid "Currency Format:"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:1
-msgid "Current Categories"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:347
-msgid "Current Day Background Color"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:342
-msgid "Current Day Color"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:359
-msgid "Current Day Text Color"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/email.php:19
-#: eventplus/app/views/admin/events/form.parts/email.php:34
-msgid "Custom Confirmation Email"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:128
-msgid "Custom Currency"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:100
-msgid "Cutom Fields"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:19
-msgid "Date"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:210
-msgid "Date Picker"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:301
-msgid "Days"
-msgstr ""
-
-#: eventplus/functions.php:215 eventplus/functions.php:240
-#: eventplus/functions.php:271 eventplus/functions.php:273
-msgid "Dec"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:156
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:118
-msgid "December"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:110
-msgid "Default Registration Information"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:75
-msgid ""
-"Definitions of the fields that you can create for your registration form"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:50
-#: eventplus/app/views/admin/events/manage.php:152
-#: eventplus/app/views/admin/questions/manage.php:88
-#: eventplus/app/views/admin/attendees/manage.php:121
-#: eventplus/app/views/admin/payments/manage.php:106
-#: eventplus/app/views/admin/events/items/manage.php:94
-msgid "Delete"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:30
-msgid "Delete All"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:119
-#: eventplus/app/views/admin/payments/edit_form.php:145
-#: eventplus/app/views/admin/payments/edit_form.php:161
-msgid "Deposit"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:23
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:88
-msgid "DESC"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:210
-msgid "Description"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:84
-msgid "Description of Cost"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:382
-msgid "Description Pop Border Color"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:29
-msgid "Detailed Event Description"
-msgstr ""
-
-#: eventplus/app/controllers/admin/attendees.php:172
-msgid "Details Attendee"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:167
-#: eventplus/app/views/front/event/parts/regform.php:602
-#: eventplus/app/views/admin/events/items/form.php:17
-msgid "Discount"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:33
-msgid "Discount amount for Coupon Code"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:372
-msgid "Discount:"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:79
-#: eventplus/app/views/admin/questions/form.php:81
-msgid "Do not provide answer choices that have a comma in the response"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:48
-msgid "Do you want the event to be recurring?"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:56
-msgid "Do You want this field to be mandatory?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:12
-msgid "Do you want to charge sales tax"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:222
-msgid "Do you want to display terms and conditions?"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:33
-msgid "Do you want to display the category description on the events page?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:252
-msgid "Do you want to force terms and conditions?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:121
-msgid "Do you want to receive email notifications when someone registers?"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:136
-msgid "Do you want to send a payment received notice to the payer?"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/edit_form.php:201
-msgid "Do you want to send a revised payment received notice to the payer?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:66
-msgid "Do you want to send Payment Confirmation emails?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:12
-msgid "Do you want to send Registration Confirmation emails?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:150
-msgid "Do you want to show add to calendar button?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:236
-msgid "Do you want to Show Tool tip on the Calendar?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:15
-msgid "Do you want to use a coupon code for this event?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/email.php:22
-msgid "Do you want to use a custom email for this event?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:214
-msgid "Do you want to use the Date selector?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:90
-msgid "Do you wish to disable registration for this event?"
-msgstr ""
-
-#: eventplus/app/controllers/admin/widgets.php:27
-msgid "Documentation"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:120
-#: eventplus/app/views/admin/payments/edit_form.php:148
-#: eventplus/app/views/admin/payments/edit_form.php:162
-msgid "Donation"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:74
-msgid "Done"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:44
-#: eventplus/app/views/admin/events/items/sort.php:66
-msgid "Drag Line Up or Down to ReArrange."
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:18
-msgid "Drop Down"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:82
-msgid "Dropdown"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:204
-msgid "EDIT"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:48
-#: eventplus/app/views/admin/events/manage.php:150
-#: eventplus/app/views/admin/questions/manage.php:76
-#: eventplus/app/views/admin/attendees/manage.php:116
-#: eventplus/app/views/admin/payments/manage.php:107
-#: eventplus/app/views/admin/events/items/manage.php:89
-msgid "Edit"
-msgstr ""
-
-#: eventplus/app/controllers/admin/attendees.php:150
-msgid "Edit Attendee"
-msgstr ""
-
-#: eventplus/app/controllers/admin/categories.php:60
-msgid "Edit Category"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events.php:139
-#: eventplus/app/views/admin/layouts/questions.php:12
-#: eventplus/app/views/admin/layouts/attendees.php:12
-#: eventplus/app/views/admin/layouts/payments.php:9
-#: eventplus/app/views/admin/layouts/events/items.php:13
-msgid "Edit Event"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events/items.php:138
-msgid "Edit Item"
-msgstr ""
-
-#: eventplus/app/controllers/admin/questions.php:136
-msgid "Edit Question"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:63
-msgid "Email"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:45
-#: eventplus/app/views/admin/attendees/edit_form.php:73
-#: eventplus/app/views/admin/attendees/details.php:70
-#: eventplus/app/views/front/event/parts/regform.php:403
-msgid "Email Address"
-msgstr ""
-
-#: eventplus/helpers/payment.php:152 eventplus/helpers/payment.php:532
-#: eventplus/helpers/payment.php:654
-#: eventplus/app/views/front/shortcode/payment.php:41
-#: eventplus/app/views/front/event/parts/pay.php:85
-#: eventplus/app/views/front/event/parts/confirm.php:296
-msgid "Email Address:"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:42
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:103
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:146
-msgid "Email Body"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:9
-msgid "Email Confirmation"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:87
-msgid "Email Confirmations"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:13
-msgid "Email format not correct!"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/manage.php:25
-msgid "Email Payment Reminders"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:84
-#: eventplus/app/views/admin/settings.php:124
-msgid "Email Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/manage.php:38
-msgid "End"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:98
-#: eventplus/app/views/admin/events/form.parts/datetime.php:31
-msgid "End Date"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:100
-#: eventplus/app/views/admin/events/form.parts/datetime.php:103
-#: eventplus/app/views/admin/events/form.parts/datetime.php:106
-msgid "End of Event"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:32
-msgid "End Time"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:62
-#: eventplus/app/views/admin/attendees/edit_form.php:90
-msgid "Enter coupon code"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:483
-msgid "Enter coupon code for discount"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:33
-msgid ""
-"Enter the amount with two decimal places.&nbsp;You MUST put a - sign before "
-"the value, otherwise this will add to the total during calculations. i.e. -"
-"10.00"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:29
-msgid "Enter the Code"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:9
-msgid ""
-"Enter the number of available seats at your event venue. Leave blank if "
-"their is no limit on registrations"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:89
-msgid "Enter the number of times you want the event to occur."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:93
-msgid "Enter the repetition period"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/email.php:34
-msgid ""
-"Enter the text for the confirmation email. This email will be sent in text "
-"format. See User Manual for data tags"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:82
-msgid ""
-"Enter the url hyperlink to another webpage or website external registration"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:283
-msgid ""
-"Enter the url hyperlink to another webpage or website with more event "
-"information"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:351
-msgid ""
-"Enter the url of an image you wish displayed above the registration form.  "
-"The image should be at least 700px wide hight does not metter."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:308
-msgid ""
-"Enter the url to an image you would like displayed next to the event in the "
-"event listings. Size should be 300 x300"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:25
-msgid "Event"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:45
-msgid "Event Attendees"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/attendees.php:5
-msgid "Event Attendees Management"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:38
-#: eventplus/app/views/admin/dashboard/events.php:6
-#: eventplus/app/views/admin/events/form.parts/description.php:50
-msgid "Event Categories"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:130
-#: eventplus/app/views/admin/payments/edit_form.php:183
-#: eventplus/app/views/admin/payments/edit_form.php:188
-msgid "Event Credit"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:212
-msgid "Event Date/Time"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:7
-msgid "Event Description"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events.php:113
-#: eventplus/app/controllers/admin/events.php:158
-#: eventplus/app/controllers/admin/events.php:188
-msgid "Event doesn't exist."
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:600
-#: eventplus/app/views/front/event/parts/regform.php:235
-#: eventplus/app/views/front/event/parts/accordion.php:49
-#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:17
-msgid "Event Fees"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:43
-msgid "Event Fees/Tickets"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:376
-msgid "Event Full"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:30
-msgid "Event ID"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/attendees/short.php:10
-msgid "Event id not supplied"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events/items.php:5
-msgid "Event Items/Cost Management"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:281
-msgid "Event Listing Options"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:205
-msgid "Event Location"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:15
-msgid "Event Location/Venue"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/events.php:5
-msgid "Event Management"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/events.php:17
-msgid "Event Name"
-msgstr ""
-
-#: eventplus/helpers/payment.php:528
-#: eventplus/app/views/front/shortcode/payment.php:33
-#: eventplus/app/views/front/event/parts/pay.php:77
-#: eventplus/app/views/front/event/parts/confirm.php:286
-msgid "Event Name/Cost:"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:59
-msgid "Event Name/Title"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:12
-msgid "Event Name/Title "
-msgstr ""
-
-#: eventplus/helpers/payment.php:142 eventplus/helpers/payment.php:644
-msgid "Event Name:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:213
-msgid "Event Options"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/manage.php:23
-msgid "Event Payments"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/payments.php:5
-msgid "Event Payments Management"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/questions.php:5
-msgid "Event Question Management"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:44
-msgid "Event Questions"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:258
-msgid "Event Registration Configuration Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:9
-msgid "Event Seating Capacity"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:211
-msgid "Event Venue"
-msgstr ""
-
-#: eventplus/app/controllers/admin/widgets.php:29
-msgid "Eventastic Theme"
-msgstr ""
-
-#: eventplus/app/controllers/admin/widgets.php:26
-msgid "Events"
-msgstr ""
-
-#. Description of the plugin
-msgid ""
-"Events Plus allows you to easily create and manage your events. Allow "
-"visitors to register and pay online for events, manage attendees, discount "
-"coupons, export attendees list, and much more."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:14
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:39
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:93
-msgid "Example"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:98
-#: eventplus/app/views/admin/dashboard/events.php:47
-#: eventplus/app/views/admin/dashboard/widgets/events.php:81
-msgid "EXPIRED"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:180
-msgid "EXPIRED EVENT"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:632
-msgid "External Registration"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:82
-msgid "External registration URL"
-msgstr ""
-
-#: eventplus/funx/evrplus_three_cal.php:38
-#: eventplus/funx/evrplus_three_cal.php:40
-msgid "F"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/pay.php:9
-#: eventplus/app/views/front/event/parts/confirm.php:16
-msgid "Failure - please retry!"
-msgstr ""
-
-#: eventplus/functions.php:205 eventplus/functions.php:238
-msgid "Feb"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:146
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:108
-msgid "February"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:137
-msgid "Fees/Items"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:52
-msgid "Field option(for multiple radio and dropdown)"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:35
-msgid "Field Question"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:40
-msgid "Field Type"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:43
-#: eventplus/app/views/admin/attendees/edit_form.php:71
-#: eventplus/app/views/admin/attendees/edit_form.php:102
-#: eventplus/app/views/admin/attendees/details.php:68
-#: eventplus/app/views/admin/attendees/details.php:125
-#: eventplus/app/views/front/event/parts/regform.php:395
-#: eventplus/app/views/front/event/parts/confirm.php:415
-msgid "First Name"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:89
-msgid ""
-"For customized confirmation emails, the following tags can be placed in the "
-"email form and they will pull data from the database to include in the email"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:162
-msgid ""
-"For customized payment confirmation emails, the following tags can be placed "
-"in the email form and they will pull data from the database to include in "
-"the email"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:129
-msgid ""
-"For customized wait list emails, the following tags can be placed in the "
-"email form and they will pull data from the database to include in the email"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:27
-#: eventplus/app/views/front/event/parts/pay.php:71
-msgid "for event"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:621
-#: eventplus/app/views/front/event/parts/regform.php:368
-msgid "For more information or questions, please email: "
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:271
-#: eventplus/app/views/front/event/parts/regform.php:282
-msgid "FREE"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:330
-msgid "Free"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:74
-#: eventplus/funx/evrplus_calendar.php:76
-msgid "Fri"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:117
-#: eventplus/app/views/admin/payments/edit_form.php:139
-#: eventplus/app/views/admin/payments/edit_form.php:159
-msgid "Full Payment"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:93
-msgid "Gaps per repeat"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:25
-#: eventplus/app/views/admin/dashboard/events.php:5
-msgid "General Settings"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:184
-#: eventplus/funx/evrplus_three_cal.php:141
-msgid "Go"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:32
-msgid "Google Captcha site Key?"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:107
-msgid "Google Map"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:72
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:77
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:91
-msgid "grow"
-msgstr ""
-
-#: eventplus/models/events.php:609 eventplus/models/events.php:645
-msgid "has been added."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:351
-msgid "Header Image URL"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:45
-msgid "Help"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:302
-msgid "Hours"
-msgstr ""
-
-#. Author URI of the plugin
-msgid "http://wpeventsplus.com/"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:386
-#: eventplus/app/views/front/event/parts/regform.php:662
-msgid "I accept the terms and conditions"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:6
-#: eventplus/app/views/admin/categories/manage.php:17
-#: eventplus/app/views/admin/events/manage.php:18
-msgid "ID"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:8
-#: eventplus/app/views/admin/categories/manage.php:19
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:27
-msgid "Identifier"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:253
-msgid ""
-"If yes, registration form will only be displayed once attendee agrees the "
-"terms and conditions"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:108
-msgid ""
-"If you have not done so already, please submit your payment in the amount of "
-"[cost]"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/email.php:22
-msgid ""
-"If you have send mail option enabled in the company settings, you can "
-"override the default mail by creating a custom mail for this event."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:13
-msgid ""
-"If you select yes, then it will show the button and user must click it to "
-"reveal the form. In case of No, registration form will be displayed."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:47
-msgid ""
-"If you will accept checks or cash, usually when accepting payment at "
-"event/on-site."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:9
-#: eventplus/app/views/front/event/parts/confirm.php:3
-msgid "Invalid"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/event/category.php:23
-msgid "Invalid Category supplied"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:349
-msgid "Invalid Code!"
-msgstr ""
-
-#: eventplus/helpers/payment.php:80 eventplus/helpers/payment.php:571
-msgid "Invalid event - please retry!"
-msgstr ""
-
-#: eventplus/app/controllers/admin/questions.php:22
-#: eventplus/app/controllers/admin/attendees.php:22
-#: eventplus/app/controllers/admin/attendees.php:122
-#: eventplus/app/controllers/admin/payments.php:28
-#: eventplus/app/controllers/admin/events/items.php:22
-msgid "Invalid event id."
-msgstr ""
-
-#: eventplus/app/controllers/front/event/parts/confirmation.php:20
-msgid "Invalid event request"
-msgstr ""
-
-#: eventplus/helpers/payment.php:87 eventplus/helpers/payment.php:578
-msgid "Invalid registration - please retry!"
-msgstr ""
-
-#: public/paypal/re7urn.php:39 public/paypal/canc3l.php:32
-#: public/paypal/1pn.php:32 eventplus/payments/paypal/handler.php:61
-#: eventplus/payments/paypal/handler.php:183
-#: eventplus/app/controllers/front/event/parts/confirmation.php:29
-msgid "Invalid request"
-msgstr ""
-
-#: public/authorize/payment.php:44 public/stripe/payment.php:42
-#: eventplus/payments/stripe/handler.php:47
-msgid "Invalid request - Payment couldn't be processed."
-msgstr ""
-
-#: eventplus/models/events/items.php:128
-msgid "Item couldn't deleted."
-msgstr ""
-
-#: eventplus/app/controllers/admin/events/items.php:109
-#: eventplus/app/controllers/admin/events/items.php:152
-msgid "Item doesn't exist."
-msgstr ""
-
-#: eventplus/models/events/items.php:128
-msgid "Item has been deleted."
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:25
-msgid "Item Quantity"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:147
-msgid "Item/Cost Value"
-msgstr ""
-
-#: eventplus/functions.php:204 eventplus/functions.php:238
-#: eventplus/functions.php:240 eventplus/functions.php:273
+#: eventplus/functions.php:205 eventplus/functions.php:239
+#: eventplus/functions.php:241 eventplus/functions.php:274
 msgid "Jan"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:145
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:107
-msgid "January"
+#: eventplus/functions.php:206 eventplus/functions.php:239
+msgid "Feb"
 msgstr ""
 
-#: eventplus/functions.php:210
-msgid "Jul"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:151
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:113
-msgid "July"
-msgstr ""
-
-#: eventplus/functions.php:209
-msgid "Jun"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:150
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:112
-msgid "June"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:44
-#: eventplus/app/views/admin/attendees/edit_form.php:72
-#: eventplus/app/views/admin/attendees/edit_form.php:109
-#: eventplus/app/views/admin/attendees/details.php:69
-#: eventplus/app/views/admin/attendees/details.php:126
-#: eventplus/app/views/front/event/parts/regform.php:398
-#: eventplus/app/views/front/event/parts/confirm.php:419
-msgid "Last Name"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:7
-msgid "LATEST ATTENDEES"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:7
-msgid "LATEST CATEGORIES"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/events.php:7
-msgid "Latest Events"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:7
-msgid "LATEST PAYMENTS"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:255
-msgid "Let's get your events plugin configured!"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:62
-msgid "Lets get your plugin setup!"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/event/grid.php:24
-msgid "Load More"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/event/grid.php:23
-msgid "Loading..."
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:588
-#: eventplus/app/views/front/event/parts/accordion.php:40
-msgid "Location"
-msgstr ""
-
-#: eventplus/funx/evrplus_three_cal.php:38
-#: eventplus/funx/evrplus_three_cal.php:40
-msgid "M"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:20
-msgid "Main registration page"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:37
-#: eventplus/app/views/admin/events/manage.php:134
-msgid "Manage"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:28
-msgid "Manage Attendees"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:40
-msgid "Manage Events"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/manage.php:24
-msgid "Manage Items/Cost"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:23
-msgid "Manage Questions"
-msgstr ""
-
-#: eventplus/functions.php:206
+#: eventplus/functions.php:207
 msgid "Mar"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:147
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:109
-msgid "March"
+#: eventplus/functions.php:208
+msgid "Apr"
 msgstr ""
 
-#: eventplus/functions.php:208 eventplus/funx/evrplus_calendar.php:78
+#: eventplus/functions.php:209 eventplus/funx/evrplus_calendar.php:78
 #: eventplus/funx/evrplus_calendar.php:149
 #: eventplus/funx/evrplus_three_cal.php:42
 #: eventplus/funx/evrplus_three_cal.php:111
 msgid "May"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/form.php:19
-msgid "Meal or Food"
+#: eventplus/functions.php:210
+msgid "Jun"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/form.php:16
-msgid "Merchandise"
+#: eventplus/functions.php:211
+msgid "Jul"
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/regform.php:303
-msgid "Minutes"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:121
-#: eventplus/app/views/admin/payments/edit_form.php:151
-#: eventplus/app/views/admin/payments/edit_form.php:163
-msgid "Modification"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:74
-#: eventplus/funx/evrplus_calendar.php:76
-msgid "Mon"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:100
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:108
-msgid "Monday"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:144
-#: eventplus/funx/evrplus_three_cal.php:106
-msgid "Month"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:79
-msgid "Monthly"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:628
-#: eventplus/app/views/front/event/parts/regform.php:323
-msgid "MORE INFO"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:283
-msgid "More Info URL"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:17
-#: eventplus/app/views/admin/questions/form.php:80
-msgid "Multiple"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:32
-#: eventplus/app/views/admin/payments/manage.php:36
-#: eventplus/app/views/admin/events/items/manage.php:35
-msgid "Name"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:7
-#: eventplus/app/views/admin/categories/manage.php:18
-msgid "Name "
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:78
-msgid "Name of Cost/Item"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/events.php:13
-msgid "Next 5 Upcoming Events"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:49
-#: eventplus/app/views/admin/questions/form.php:64
-#: eventplus/app/views/admin/payments/add_form.php:138
-#: eventplus/app/views/admin/payments/edit_form.php:205
-#: eventplus/app/views/admin/events/items/form.php:123
-#: eventplus/app/views/admin/events/items/coupon_form.php:25
-#: eventplus/app/views/admin/events/form.parts/venue.php:54
-#: eventplus/app/views/admin/events/form.parts/email.php:32
-#: eventplus/app/views/admin/events/form.parts/datetime.php:50
-#: eventplus/app/views/admin/events/form.parts/datetime.php:54
-#: eventplus/app/views/admin/events/form.parts/discounts.php:20
-#: eventplus/app/views/admin/events/form.parts/options.php:74
-#: eventplus/app/views/admin/events/form.parts/options.php:102
-#: eventplus/app/views/admin/events/form.parts/options.php:232
-#: eventplus/app/views/admin/events/form.parts/options.php:264
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:29
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:26
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:144
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:166
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:230
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:252
-#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:17
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:28
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:82
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:137
-#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:13
-#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:18
-#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:16
-msgid "No"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:23
-#: eventplus/app/views/admin/events/form.parts/options.php:40
-#: eventplus/app/views/admin/events/form.parts/options.php:57
-#: eventplus/app/views/admin/events/form.parts/options.php:301
-msgid "No "
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:57
-msgid "No Attendees Found!"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:53
-msgid "No Categoies Found!"
-msgstr ""
-
-#: eventplus/helpers/event.php:113 eventplus/funx/evrplus_calendar.php:769
-msgid "No event till now!"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/events.php:100
-msgid "No Events Found!"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:636
-msgid "No Fees Have Been Setup For This Event!"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:581
-msgid "No Fees/Items available for todays date!"
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/event/grid.php:25
-msgid "No More Entries"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:52
-msgid "No Payments Found!"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:91
-#: eventplus/app/views/admin/payments/manage.php:117
-#: eventplus/app/views/front/event/parts/pay.php:129
-msgid "No Payments Received!"
-msgstr ""
-
-#: eventplus/models/payments.php:459
-msgid "No pending payments reminders to send"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:60
-msgid "No Record Found!"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:114
-msgid "No records found"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:107
-#: eventplus/app/views/admin/attendees/manage.php:135
-#: eventplus/app/views/admin/payments/manage.php:139
-#: eventplus/app/views/admin/events/items/manage.php:111
-msgid "No records found."
-msgstr ""
-
-#: eventplus/functions.php:214 eventplus/functions.php:271
-msgid "Nov"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:155
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:117
-msgid "November"
-msgstr ""
-
-#: eventplus/helpers/payment.php:157 eventplus/helpers/payment.php:534
-#: eventplus/helpers/payment.php:659
-#: eventplus/app/views/front/shortcode/payment.php:45
-#: eventplus/app/views/front/event/parts/pay.php:89
-#: eventplus/app/views/front/event/parts/confirm.php:301
-msgid "Number of Attendees:"
+#: eventplus/functions.php:212
+msgid "Aug"
 msgstr ""
 
 #: eventplus/functions.php:213
+msgid "Sep"
+msgstr ""
+
+#: eventplus/functions.php:214
 msgid "Oct"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:154
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:116
-msgid "October"
+#: eventplus/functions.php:215 eventplus/functions.php:272
+msgid "Nov"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:46
-#: eventplus/app/views/admin/settings/tabs/tab2.php:77
-msgid "Off"
+#: eventplus/functions.php:216 eventplus/functions.php:241
+#: eventplus/functions.php:272 eventplus/functions.php:274
+msgid "Dec"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:50
-#: eventplus/app/views/admin/settings/tabs/tab2.php:81
-msgid "On"
+#: public/authorize/payment.php:37 public/paypal/re7urn.php:27
+#: public/stripe/payment.php:32
+#: eventplus/app/views/front/event/parts/post.php:18
+#: eventplus/app/views/front/event/parts/confirm.php:24
+msgid "Couldn't proceed! registration already processed."
 msgstr ""
 
-#: eventplus/app/views/admin/payments/add_form.php:127
-#: eventplus/app/views/admin/payments/edit_form.php:174
-#: eventplus/app/views/admin/payments/edit_form.php:185
-msgid "Online/Credit Card"
+#: public/authorize/payment.php:44 public/stripe/payment.php:42
+msgid "Invalid request - Payment couldn't be processed."
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/list.php:94
-#: eventplus/app/views/front/widgets/shortcode/event/category.php:89
-#: eventplus/app/views/front/widgets/shortcode/event/list.php:95
-#: eventplus/app/views/front/widgets/shortcode/event/list/expired.php:97
-msgid "Open Seats"
+#: public/paypal/re7urn.php:39 public/paypal/canc3l.php:32
+#: public/paypal/1pn.php:32
+#: eventplus/app/controllers/front/event/parts/confirmation.php:29
+msgid "Invalid request"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/discounts.php:6
-msgid "Optional"
+#: public/paypal/re7urn.php:44 public/paypal/1pn.php:37
+msgid "Already processed"
 msgstr ""
 
-#: eventplus/app/views/admin/payments/manage.php:38
-msgid "Order Detail"
-msgstr ""
-
-#: eventplus/helpers/payment.php:135 eventplus/helpers/payment.php:637
-msgid "Order details"
-msgstr ""
-
-#: eventplus/helpers/payment.php:164 eventplus/helpers/payment.php:536
-#: eventplus/helpers/payment.php:666
-#: eventplus/app/views/front/shortcode/payment.php:49
-#: eventplus/app/views/front/event/parts/pay.php:93
-#: eventplus/app/views/front/event/parts/confirm.php:306
-msgid "Order Details:"
-msgstr ""
-
-#: eventplus/helpers/payment.php:527
-msgid "Order details:"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:367
-msgid "Order Total:"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:68
-msgid "Page Config"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:118
-#: eventplus/app/views/admin/payments/edit_form.php:142
-#: eventplus/app/views/admin/payments/edit_form.php:160
-msgid "Partial Payment"
-msgstr ""
-
-#: eventplus/helpers/payment.php:323 eventplus/vendor/paypal.php:133
-#: eventplus/payments/stripe.php:51 eventplus/payments/paypal.php:58
-msgid "Pay Now"
-msgstr ""
-
-#: eventplus/vendor/paypal.php:132
-msgid "Pay using PayPal"
-msgstr ""
-
-#: eventplus/vendor/paypal.php:282
-msgid "Pay using your credit/debit card"
-msgstr ""
-
-#: eventplus/vendor/paypal.php:295
-msgid "Pay via Stripe"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:18
-msgid "Payer"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:66
-#: eventplus/app/views/front/shortcode/payment.php:75
-#: eventplus/app/views/front/event/parts/pay.php:117
-msgid "Payment"
-msgstr ""
-
-#: public/paypal/re7urn.php:80 eventplus/payments/paypal/handler.php:101
+#: public/paypal/re7urn.php:80
 msgid "Payment already processed"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:157
-msgid "Payment Confirmation Email Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:160
-msgid "Payment Confirmations"
-msgstr ""
-
-#: eventplus/helpers/payment.php:388
-#: eventplus/app/controllers/admin/payments.php:174
-msgid "Payment Details"
-msgstr ""
-
-#: eventplus/models/payments.php:388
-msgid "Payment entry couldn't deleted."
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:12
-#: eventplus/app/views/admin/settings/tabs/tab2.php:12
-msgid "Payment Information"
-msgstr ""
-
-#: eventplus/helpers/payment.php:418
-#: eventplus/app/views/admin/payments/add_form.php:126
-#: eventplus/app/views/admin/payments/edit_form.php:171
-#: eventplus/app/views/admin/payments/details.php:158
-msgid "Payment Method"
-msgstr ""
-
-#: eventplus/helpers/payment.php:201
-msgid "Payment Methods"
-msgstr ""
-
-#: eventplus/models/payments.php:23
-msgid "Payment Offline"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:27
-#: eventplus/app/views/front/event/parts/pay.php:71
-msgid "Payment Page for"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:113
-#: eventplus/app/views/admin/payments/edit_form.php:127
-#: eventplus/app/views/admin/payments/details.php:132
-msgid "Payment Received Date"
-msgstr ""
-
-#: eventplus/app/controllers/admin/payments.php:121
-#: eventplus/app/controllers/admin/payments.php:165
-msgid "Payment record doesn't exist."
-msgstr ""
-
-#: eventplus/models/payments.php:415
-msgid "Payment Reminder"
-msgstr ""
-
-#: eventplus/models/payments.php:447
-msgid "Payment Reminder Notification sent to"
-msgstr ""
-
-#: eventplus/helpers/payment.php:391
-#: eventplus/app/views/admin/payments/details.php:150
-msgid "Payment Status"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:115
-#: eventplus/app/views/admin/payments/edit_form.php:136
-#: eventplus/app/views/admin/payments/details.php:141
-msgid "Payment Type"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:46
-#: eventplus/app/views/admin/events/manage.php:140
-#: eventplus/app/views/admin/payments/manage.php:39
-msgid "Payments"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:66
-#: eventplus/app/views/front/event/parts/pay.php:113
-msgid "Payments Received:"
-msgstr ""
-
-#: eventplus/payments.php:49
-msgid "Payments will not be processed"
-msgstr ""
-
-#: eventplus/models/payments.php:21
-msgid "PayPal"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:24
-msgid "Paypal Email"
-msgstr ""
-
-#: eventplus/payments.php:48
-msgid "PayPal Sandbox Mode Is Active"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:31
-msgid "PDT Auth Token:"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:60
-msgid "People"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:267
-msgid "person(s)."
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:64
-msgid "Phone"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:47
-#: eventplus/app/views/admin/attendees/edit_form.php:75
-#: eventplus/app/views/admin/attendees/details.php:76
-#: eventplus/app/views/front/event/parts/regform.php:407
-#: eventplus/app/views/admin/events/form.parts/options.php:158
-msgid "Phone Number"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/pay.php:14
-msgid "Please check your email for payment information."
-msgstr ""
-
-#: eventplus/app/controllers/front/shortcode/payment.php:26
-msgid ""
-"Please check your email for payment information. Click the link provided in "
-"the registration confirmation."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:16
-msgid "Please enter your address"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:17
-msgid "Please enter your city"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:11
-msgid "Please enter your first name"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:12
-msgid "Please enter your last name"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:14
-msgid "Please enter your phone number"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:18
-msgid "Please enter your state"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:19
-msgid "Please enter your zip/postal code"
 msgstr ""
 
 #: eventplus/models/categories.php:68 eventplus/models/categories.php:108
@@ -2140,689 +114,58 @@ msgstr ""
 msgid "Please fill in category unique id."
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/confirm.php:443
-msgid "Please go back and select an item!"
-msgstr ""
-
-#: eventplus/helpers/payment.php:249
-msgid "Please mail your check to:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.php:243
-msgid "Please make sure you complete each section before submitting!"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:267
-msgid "Please provide the first and last name of each person:"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:154
-#: eventplus/app/views/front/event/parts/regform.php:646
-msgid "Please provide your information to be placed on the waiting list."
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/landing.php:4
-msgid "Please select event to manage attendees"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/landing.php:4
-msgid "Please select event to manage items"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/landing.php:4
-msgid "Please select event to manage payments"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/landing.php:4
-msgid "Please select event to manage questions"
-msgstr ""
-
-#: eventplus/helpers/payment.php:197
-msgid ""
-"Please select one of the following methods and by clicking Pay Now button "
-"you will be taken to our payment vendor's site"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:15
-msgid "Please use correct format for your phone number"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:281
-msgid "Please verify your registration details:"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:163
-msgid "POST PAYMENT"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:48
-msgid "Postal Code"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:437
-msgid "Postal/Zip Code"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:32
-msgid "Postcode"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/manage.php:36
-msgid "Price"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:55
-msgid "Primary Contact email:"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:16
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:21
-msgid "progress"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:29
-msgid ""
-"Provide a detailed description of the event, include key details other than "
-"when and where. Do not use any html code. This is a text only display To "
-"create new display lines just press Enter"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:19
-msgid "Provide a short Unique ID for this event. i.e. BOB001"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:11
-msgid "Publishable key"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:53
-msgid "QUESTION"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:36
-#: eventplus/app/views/admin/questions/manage.php:43
-msgid "Question"
-msgstr ""
-
-#: eventplus/models/questions.php:88
-msgid "Question couldn't deleted."
-msgstr ""
-
-#: eventplus/app/controllers/admin/questions.php:107
-#: eventplus/app/controllers/admin/questions.php:150
-msgid "Question doesn't exist."
-msgstr ""
-
-#: eventplus/models/questions.php:88
-msgid "Question has been deleted."
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:35
-#: eventplus/app/views/admin/questions/manage.php:42
-msgid "Question Id"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:138
-msgid "Questions"
-msgstr ""
-
-#: eventplus/app/views/front/widgets/shortcode/event/grid.php:133
-msgid "Read more"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:455
-#: eventplus/funx/evrplus_calendar.php:491
-msgid "read more"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/sort.php:33
-msgid "ReArrange Items for display order: "
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:33
-msgid "ReArrange Questions for display order: "
-msgstr ""
-
-#: eventplus/app/controllers/admin/payments.php:187
-msgid "Record doesn't exist."
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:63
-msgid "Recurrence Period"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/add_form.php:123
-#: eventplus/app/views/admin/payments/edit_form.php:157
-#: eventplus/app/views/admin/payments/edit_form.php:165
-msgid "Refund"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:635
-#: eventplus/app/views/front/event/parts/regform.php:316
-#: eventplus/app/views/front/event/parts/regform.php:318
-msgid "REGISTER"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:61
-msgid "Registered Name"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:291
-msgid "Registering Name:"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:15
-msgid "Registration Attendee"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/details.php:99
-msgid "Registration Date"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:30
-#: eventplus/app/views/front/event/parts/pay.php:74
-msgid "Registration Detail Summary:"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:80
-#: eventplus/app/views/admin/attendees/edit_form.php:130
-#: eventplus/app/views/admin/attendees/details.php:145
-#: eventplus/app/views/front/event/parts/regform.php:499
-#: eventplus/app/views/front/event/parts/regform.php:590
-msgid "Registration Fees"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:637
-msgid "Registration for this event can not be taken at this time."
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:619
-#: eventplus/app/views/front/event/parts/regform.php:367
-msgid "Registration is closed for this event."
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:145
-#: eventplus/app/views/admin/attendees/edit_form.php:255
-#: eventplus/app/views/admin/attendees/details.php:172
-msgid "Registration TOTAL"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:89
-msgid "Repeat number of times"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:48
-msgid "REQUIRED"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:10
-#: eventplus/app/views/front/event/parts/confirm.php:4
-msgid "Required"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:680
-msgid "Reset"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:54
-msgid "RESPONSES"
-msgstr ""
-
-#: eventplus/funx/evrplus_three_cal.php:38
-#: eventplus/funx/evrplus_three_cal.php:40
-#: eventplus/funx/evrplus_three_cal.php:40
-msgid "S"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:596
-msgid "Sales Tax"
-msgstr ""
-
-#: eventplus/helpers/payment.php:182 eventplus/helpers/payment.php:549
-#: eventplus/helpers/payment.php:684
-msgid "Sales Tax  "
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:40
-msgid "Sales Tax Rate:"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:358
-msgid "Sales Tax:"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:99
-msgid "Sample Mail Send"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:170
-msgid "Sample Payment Mail Send"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:5
-msgid "Sanbox Mode?"
-msgstr ""
-
-#: eventplus/helpers/payment.php:304
-msgid "Sandbox Mode"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:74
-#: eventplus/funx/evrplus_calendar.php:76
-msgid "Sat"
-msgstr ""
-
-#: eventplus/app/controllers/admin/widgets.php:28
-msgid "Screenshots"
-msgstr ""
-
-#: eventplus/app/views/front/widgets/shortcode/event/grid.php:26
-msgid "Search By Title"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:373
-#: eventplus/app/views/admin/dashboard/widgets/events.php:21
-msgid "Seats"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:62
-msgid "Secondary Contact emails(Separated By Commas[,]):"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:304
-msgid "Seconds"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:4
-msgid "Secret key"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:17
-msgid "Select"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:75
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:172
-msgid "Select color for Calendar Display"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:23
-#: eventplus/app/views/admin/settings/tabs/tab2.php:23
-msgid "Select Currency"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/inc/form_fields/dropdown.php:5
-msgid "Select One"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:50
-msgid "Select one or many categories for an event"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:68
-msgid "Select Period"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:277
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:318
-msgid "Selector Text Color"
-msgstr ""
-
-#: eventplus/functions.php:212
-msgid "Sep"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:78
-#: eventplus/funx/evrplus_calendar.php:153
-#: eventplus/funx/evrplus_three_cal.php:42
-#: eventplus/funx/evrplus_three_cal.php:115
-msgid "September"
-msgstr ""
-
-#: eventplus/app/controllers/admin/widgets.php:25
-#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:12
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:37
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:91
-msgid "Settings"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:578
-msgid "Share"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:34
-msgid "ShortCode"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/manage.php:9
-#: eventplus/app/views/admin/categories/manage.php:20
-msgid "Shortcode"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:12
-msgid "Show Registration Button"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:95
-msgid "Show Social sharing icons in event page?"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:16
-#: eventplus/app/views/admin/questions/form.php:78
-msgid "Single"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:29
-msgid "Skip Registration Step2"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:92
-msgid "Social Icons"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:15
-msgid "Sort By"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/manage.php:26
-msgid "Sort Items"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/manage.php:25
-msgid "Sort Questions"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/edit_form.php:140
-msgid "Standard"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/manage.php:37
-msgid "Start"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:31
-#: eventplus/app/views/admin/attendees/details.php:97
-#: eventplus/app/views/admin/events/form.parts/datetime.php:9
-msgid "Start Date"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:94
-msgid "Start Day of Week"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:99
-#: eventplus/app/views/admin/events/form.parts/datetime.php:102
-#: eventplus/app/views/admin/events/form.parts/datetime.php:105
-msgid "Start of Event"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:15
-msgid "Start Time"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:432
-#: eventplus/app/views/admin/events/form.parts/venue.php:29
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:41
-msgid "State"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:140
-msgid "State or Province"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/add_form.php:56
-#: eventplus/app/views/admin/attendees/edit_form.php:84
-#: eventplus/app/views/admin/attendees/details.php:85
-msgid "State/Province"
-msgstr ""
-
-#: eventplus/app/views/admin/events/manage.php:35
-#: eventplus/app/views/admin/attendees/edit_form.php:267
-#: eventplus/app/views/admin/attendees/manage.php:65
-#: eventplus/app/views/admin/dashboard/widgets/events.php:29
-msgid "Status"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:5
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:6
-msgid "Step 1"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:4
-#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:10
-#: eventplus/app/views/admin/settings/tabs/tab2.php:10
-msgid "Step 2"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/datetime.php:4
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:6
-msgid "Step 3"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:5
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:7
-msgid "Step 4"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/email.php:17
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:6
-msgid "Step 5"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:6
-msgid "Step 6"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:6
-msgid "Step 7"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:6
-msgid "Step 8"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:6
-msgid "Step 9"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:21
-msgid "Street"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/options.php:122
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:20
-msgid "Street Address"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:27
-msgid "Street Address 2"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:414
-msgid "Street/PO Address"
-msgstr ""
-
-#: eventplus/models/payments.php:22
-msgid "Stripe"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:19
-msgid "Stripe Return Url"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:98
-msgid "Subject"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:679
-msgid "Submit"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:74
-#: eventplus/funx/evrplus_calendar.php:76
-msgid "Sun"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:98
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:105
-msgid "Sunday"
-msgstr ""
-
-#: eventplus/funx/evrplus_three_cal.php:38
-#: eventplus/funx/evrplus_three_cal.php:40
-#: eventplus/funx/evrplus_three_cal.php:40
-msgid "T"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:72
-msgid "Tax"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:9
-msgid "Tax Configuration"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:14
-#: eventplus/app/views/admin/questions/form.php:76
-msgid "Text"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/form.php:15
-#: eventplus/app/views/admin/questions/form.php:77
-msgid "Text Area"
-msgstr ""
-
-#: eventplus/helpers/mail/registration.php:51
-#: eventplus/app/views/admin/settings.php:117
-#: eventplus/app/views/admin/settings.php:150
-#: eventplus/app/views/admin/settings.php:185
-#: eventplus/app/views/front/event/parts/email/confirmation.php:60
-msgid "Thank You"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:105
-msgid ""
-"Thank you [fname] [lname] for registering for [event]. We hope that you will "
-"find this event both informative and enjoyable. Should have any questions, "
-"please contact [contact]"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:139
-msgid "Thank you [fname] [lname] for your interest in registering for [event]"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:176
-msgid ""
-"Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) "
-"for [event_name]. We hope that you will find this event both informative and "
-"enjoyable. Should have any questions, please contact [contact]."
-msgstr ""
-
-#: eventplus/helpers/mail/registration.php:47
-#: eventplus/app/views/front/event/parts/email/confirmation.php:57
-msgid "Thank you for registering for"
-msgstr ""
-
-#: eventplus/models/attendees.php:114
-msgid "The attendee has been added."
-msgstr ""
-
-#: eventplus/models/categories.php:91
-msgid "The category couldn't be added."
-msgstr ""
-
-#: eventplus/models/categories.php:143
-msgid "The category couldn't deleted."
-msgstr ""
-
-#: eventplus/models/categories.php:134
-msgid "The category couldn't updated."
+#: eventplus/models/categories.php:74 eventplus/models/categories.php:115
+msgid "Category unique id already exists."
 msgstr ""
 
 #: eventplus/models/categories.php:88
 msgid "The category has been added."
 msgstr ""
 
-#: eventplus/models/categories.php:143
-msgid "The category has been deleted."
+#: eventplus/models/categories.php:91
+msgid "The category couldn't be added."
+msgstr ""
+
+#: eventplus/models/categories.php:134
+msgid "The category couldn't updated."
 msgstr ""
 
 #: eventplus/models/categories.php:137
 msgid "The category has been updated."
 msgstr ""
 
-#: eventplus/models/events.php:609
-msgid "The copy of event "
+#: eventplus/models/categories.php:143
+msgid "The category has been deleted."
 msgstr ""
 
-#: eventplus/models/events.php:645
-msgid "The cost "
-msgstr ""
-
-#: eventplus/models/events.php:682
-msgid "The coupon code information has been updated."
-msgstr ""
-
-#: eventplus/models/events.php:252
-msgid "The event "
-msgstr ""
-
-#: eventplus/models/events/items.php:56
-msgid "The event cost/ticket item has been added."
-msgstr ""
-
-#: eventplus/models/events/items.php:102
-msgid ""
-"The event cost/ticket item has been updated.  You will now be taken back to "
-"the Event Pricing Page"
-msgstr ""
-
-#: eventplus/models/events.php:516
-msgid "The event couldn't deleted."
-msgstr ""
-
-#: eventplus/models/events.php:445
-msgid "The Event details saved for "
-msgstr ""
-
-#: eventplus/models/events.php:516
-msgid "The event has been deleted."
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/list.php:19
-msgid "The list of upcoming events."
-msgstr ""
-
-#: eventplus/models/payments.php:388
-msgid "The payment has been successfully deleted from the attendee."
-msgstr ""
-
-#: eventplus/models/payments.php:321
-msgid "The payment has been updated."
-msgstr ""
-
-#: eventplus/models/payments.php:229
-msgid "The payment has now been added and Payment notification has been sent. "
-msgstr ""
-
-#: eventplus/models/payments.php:231
-msgid "The payment has now been added."
+#: eventplus/models/categories.php:143
+msgid "The category couldn't deleted."
 msgstr ""
 
 #: eventplus/models/questions.php:43
 msgid "The question has been added."
 msgstr ""
 
+#: eventplus/models/questions.php:46
+msgid ""
+"There was an error in your submission, please try again. The question was "
+"not saved!"
+msgstr ""
+
 #: eventplus/models/questions.php:64
 msgid "The question has been updated."
 msgstr ""
 
-#: eventplus/models/events.php:621
-msgid "The questions have been added."
+#: eventplus/models/questions.php:88
+msgid "Question has been deleted."
 msgstr ""
 
-#: eventplus/app/controllers/admin/events.php:165
-msgid "There are currently "
+#: eventplus/models/questions.php:88
+msgid "Question couldn't deleted."
+msgstr ""
+
+#: eventplus/models/attendees.php:114
+msgid "The attendee has been added."
 msgstr ""
 
 #: eventplus/models/attendees.php:117 eventplus/models/attendees.php:192
@@ -2831,10 +174,81 @@ msgid ""
 "not saved!"
 msgstr ""
 
+#: eventplus/models/attendees.php:196
+msgid "Attendee has been updated."
+msgstr ""
+
+#: eventplus/models/attendees.php:226
+msgid "Attendee has been deleted."
+msgstr ""
+
+#: eventplus/models/attendees.php:226
+msgid "Attendee couldn't deleted."
+msgstr ""
+
+#: eventplus/models/attendees.php:231
+msgid ""
+"All the attendee information has been successfully deleted from the event."
+msgstr ""
+
+#: eventplus/models/attendees.php:231
+msgid "Attendees couldn't deleted."
+msgstr ""
+
+#: eventplus/models/settings.php:112
+msgid "Configuration settings saved"
+msgstr ""
+
 #: eventplus/models/settings.php:115
 msgid ""
 "There was an error in your submission, please try again. The configuration "
 "data was not updated!"
+msgstr ""
+
+#: eventplus/models/events.php:252
+msgid "The event "
+msgstr ""
+
+#: eventplus/models/events.php:252
+msgid " has been added."
+msgstr ""
+
+#: eventplus/models/events.php:264 eventplus/models/events.php:442
+msgid ""
+"There was an error in your submission, please try again. The event was not "
+"saved!"
+msgstr ""
+
+#: eventplus/models/events.php:445
+msgid "The Event details saved for "
+msgstr ""
+
+#: eventplus/models/events.php:445
+msgid " has been updated!"
+msgstr ""
+
+#: eventplus/models/events.php:516
+msgid "The event has been deleted."
+msgstr ""
+
+#: eventplus/models/events.php:516
+msgid "The event couldn't deleted."
+msgstr ""
+
+#: eventplus/models/events.php:609
+msgid "The copy of event "
+msgstr ""
+
+#: eventplus/models/events.php:609 eventplus/models/events.php:645
+msgid "has been added."
+msgstr ""
+
+#: eventplus/models/events.php:621
+msgid "The questions have been added."
+msgstr ""
+
+#: eventplus/models/events.php:645
+msgid "The cost "
 msgstr ""
 
 #: eventplus/models/events.php:651
@@ -2849,22 +263,36 @@ msgid ""
 "changes were not saved!"
 msgstr ""
 
-#: eventplus/models/events/items.php:59
-msgid ""
-"There was an error in your submission, please try again. The event "
-"cost/ticket item was not saved!"
+#: eventplus/models/events.php:682
+msgid "The coupon code information has been updated."
 msgstr ""
 
-#: eventplus/models/events/items.php:105
-msgid ""
-"There was an error in your submission, please try again. The event "
-"cost/ticket item was not updated!"
+#: eventplus/models/payments.php:20
+msgid "Authorize.net"
 msgstr ""
 
-#: eventplus/models/events.php:264 eventplus/models/events.php:442
-msgid ""
-"There was an error in your submission, please try again. The event was not "
-"saved!"
+#: eventplus/models/payments.php:21
+msgid "PayPal"
+msgstr ""
+
+#: eventplus/models/payments.php:22
+msgid "Stripe"
+msgstr ""
+
+#: eventplus/models/payments.php:23
+msgid "Payment Offline"
+msgstr ""
+
+#: eventplus/models/payments.php:167
+msgid "To make payment or view your payment information go to"
+msgstr ""
+
+#: eventplus/models/payments.php:229
+msgid "The payment has now been added and Payment notification has been sent. "
+msgstr ""
+
+#: eventplus/models/payments.php:231
+msgid "The payment has now been added."
 msgstr ""
 
 #: eventplus/models/payments.php:235
@@ -2879,150 +307,186 @@ msgid ""
 "updated!"
 msgstr ""
 
-#: eventplus/models/questions.php:46
+#: eventplus/models/payments.php:321
+msgid "The payment has been updated."
+msgstr ""
+
+#: eventplus/models/payments.php:388
+msgid "The payment has been successfully deleted from the attendee."
+msgstr ""
+
+#: eventplus/models/payments.php:388
+msgid "Payment entry couldn't deleted."
+msgstr ""
+
+#: eventplus/models/payments.php:413
 msgid ""
-"There was an error in your submission, please try again. The question was "
-"not saved!"
+"A balance is outstanding on your event registration fees.  Please pay to "
+"complete your registration process."
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:16
-msgid "These settings must be configured for the plugin to function correctly."
+#: eventplus/models/payments.php:415
+msgid "Payment Reminder"
 msgstr ""
 
-#: eventplus/app/views/admin/attendees/add_form.php:152
-#: eventplus/app/views/admin/attendees/edit_form.php:280
-#: eventplus/app/views/admin/attendees/details.php:184
-#: eventplus/app/views/front/event/parts/regform.php:645
-msgid "This event has reached registration capacity."
+#: eventplus/models/payments.php:447
+msgid "Payment Reminder Notification sent to"
 msgstr ""
 
-#: eventplus/app/views/admin/questions/form.php:76
-msgid ""
-"This is generally what I would call short answer questions, typically "
-"consisting of a single sentence. Where the registering person would type in "
-"their response. You do not need to put anything in the Selections field for "
-"this question type."
+#: eventplus/models/payments.php:459
+msgid "No pending payments reminders to send"
 msgstr ""
 
-#: eventplus/app/views/admin/questions/form.php:80
-msgid ""
-"This is similar to Single Type questions but gives them the option of "
-"selecting several of the choices instead of just selecting one item. "
-"Basically a multiple choice question with several  possible choices. When "
-"entering this question you will need to provide the list of choices that "
-"will appear. Separate your choices by a comma: Newspaper, Web, A Friend, "
-"Billboard etc."
+#: eventplus/helpers/event.php:99 eventplus/funx/evrplus_calendar.php:750
+msgid "all day"
 msgstr ""
 
-#: eventplus/app/views/admin/questions/form.php:77
-msgid ""
-"This is similar to the Text, except you are looking more for an "
-"paragraph/multiple sentence response. You do not need to put anything in the "
-"Selections field for this question type."
+#: eventplus/helpers/event.php:101 eventplus/funx/evrplus_calendar.php:752
+msgid "Between"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:45
-msgid ""
-"This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden "
-"from navigation, if desired"
+#: eventplus/helpers/event.php:113 eventplus/funx/evrplus_calendar.php:763
+msgid "No event till now!"
 msgstr ""
 
-#: eventplus/app/views/admin/questions/form.php:82
-msgid ""
-"This question type is similar in nature to the Single, exept instead of "
-"providing the choices in radio buttons, it provides them in a drop down box. "
-"This is handy if you have a lot of choices the person needs to choose from, "
-"it prevents them from taking up a lot space on your registration form."
+#: eventplus/helpers/payment.php:80 eventplus/helpers/payment.php:553
+msgid "Invalid event - please retry!"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/coupon_form.php:29
-msgid ""
-"This should be a one word code with no spaces or extra characters. Recommend "
-"ALL CAPS"
+#: eventplus/helpers/payment.php:87 eventplus/helpers/payment.php:560
+msgid "Invalid registration - please retry!"
 msgstr ""
 
-#: eventplus/app/views/admin/questions/form.php:78
-msgid ""
-"This will provide radio button answers where the registering person will "
-"select one of several options. Yes/No, True/False are good examples of this "
-"type of question. Basically a multiple choice question with one possible "
-"choice. When entering this question you will need to provide the list of "
-"choices that will appear. Separate your choices by a comma: True, False etc."
+#: eventplus/helpers/payment.php:135 eventplus/helpers/payment.php:619
+msgid "Order details"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:74
-#: eventplus/funx/evrplus_calendar.php:76
-msgid "Thu"
+#: eventplus/helpers/payment.php:142 eventplus/helpers/payment.php:626
+msgid "Event Name:"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:308
-msgid "Thumbnail Image URL"
+#: eventplus/helpers/payment.php:147 eventplus/helpers/payment.php:512
+#: eventplus/helpers/payment.php:631
+#: eventplus/app/views/front/shortcode/payment.php:37
+#: eventplus/app/views/front/event/parts/pay.php:81
+msgid "Attendee Name:"
 msgstr ""
 
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:30
-msgid "Tickets"
+#: eventplus/helpers/payment.php:152 eventplus/helpers/payment.php:514
+#: eventplus/helpers/payment.php:636
+#: eventplus/app/views/front/shortcode/payment.php:41
+#: eventplus/app/views/front/event/parts/pay.php:85
+#: eventplus/app/views/front/event/parts/confirm.php:296
+msgid "Email Address:"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:574
-msgid "Time"
+#: eventplus/helpers/payment.php:157 eventplus/helpers/payment.php:516
+#: eventplus/helpers/payment.php:641
+#: eventplus/app/views/front/shortcode/payment.php:45
+#: eventplus/app/views/front/event/parts/pay.php:89
+#: eventplus/app/views/front/event/parts/confirm.php:301
+msgid "Number of Attendees:"
 msgstr ""
 
-#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:12
-msgid "Time: "
+#: eventplus/helpers/payment.php:164 eventplus/helpers/payment.php:518
+#: eventplus/helpers/payment.php:648
+#: eventplus/app/views/front/shortcode/payment.php:49
+#: eventplus/app/views/front/event/parts/pay.php:93
+#: eventplus/app/views/front/event/parts/confirm.php:306
+msgid "Order Details:"
 msgstr ""
 
-#: eventplus/models/payments.php:167
-msgid "To make payment or view your payment information go to"
+#: eventplus/helpers/payment.php:182 eventplus/helpers/payment.php:531
+#: eventplus/helpers/payment.php:666
+msgid "Sales Tax  "
 msgstr ""
 
-#: eventplus/app/views/admin/attendees/details.php:164
-#: eventplus/app/views/admin/payments/manage.php:37
-#: eventplus/app/views/front/event/parts/regform.php:617
-msgid "Total"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:63
-msgid "TOTAL CATEGORIES"
-msgstr ""
-
-#: eventplus/helpers/payment.php:187 eventplus/helpers/payment.php:554
-#: eventplus/helpers/payment.php:689
+#: eventplus/helpers/payment.php:187 eventplus/helpers/payment.php:536
+#: eventplus/helpers/payment.php:671
 #: eventplus/app/views/front/event/parts/confirm.php:378
 msgid "Total Cost:"
 msgstr ""
 
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:35
-msgid "TOTAL EVENTS"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:85
-#: eventplus/app/views/front/event/parts/pay.php:123
-msgid "Total Outstanding Payment Due*:"
-msgstr ""
-
-#: eventplus/app/views/front/shortcode/payment.php:93
-#: eventplus/app/views/front/event/parts/pay.php:131
-msgid "Total Payment Due*:"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/icons.php:7
-msgid "TOTAL PAYMENTS"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirmation.php:119
+#: eventplus/helpers/payment.php:197
 msgid ""
-"Transaction has been completed but payment failed. Please try registering "
-"again."
+"Please select one of the following methods and by clicking Pay Now button "
+"you will be taken to our payment vendor's site"
 msgstr ""
 
-#: eventplus/app/views/admin/payments/add_form.php:132
-#: eventplus/app/views/admin/payments/edit_form.php:192
-#: eventplus/app/views/admin/payments/details.php:164
-msgid "Transaction ID"
+#: eventplus/helpers/payment.php:201
+msgid "Payment Methods"
 msgstr ""
 
-#: eventplus/helpers/payment.php:413
+#: eventplus/helpers/payment.php:241 eventplus/helpers/payment.php:286
+#: eventplus/app/views/admin/payments/manage.php:109
+msgid "View Details"
+msgstr ""
+
+#: eventplus/helpers/payment.php:244
+msgid "Please mail your check to:"
+msgstr ""
+
+#: eventplus/helpers/payment.php:286
+msgid "Sandbox Mode"
+msgstr ""
+
+#: eventplus/helpers/payment.php:305 eventplus/vendor/paypal.php:133
+#: eventplus/payments/stripe.php:48 eventplus/payments/paypal.php:58
+msgid "Pay Now"
+msgstr ""
+
+#: eventplus/helpers/payment.php:370
+#: eventplus/app/controllers/admin/payments.php:174
+msgid "Payment Details"
+msgstr ""
+
+#: eventplus/helpers/payment.php:373
+#: eventplus/app/views/admin/payments/details.php:150
+msgid "Payment Status"
+msgstr ""
+
+#: eventplus/helpers/payment.php:395
 msgid "Transaction Id"
+msgstr ""
+
+#: eventplus/helpers/payment.php:400
+#: eventplus/app/views/admin/payments/add_form.php:126
+#: eventplus/app/views/admin/payments/edit_form.php:171
+#: eventplus/app/views/admin/payments/details.php:158
+msgid "Payment Method"
+msgstr ""
+
+#: eventplus/helpers/payment.php:509
+msgid "Order details:"
+msgstr ""
+
+#: eventplus/helpers/payment.php:510
+#: eventplus/app/views/front/shortcode/payment.php:33
+#: eventplus/app/views/front/event/parts/pay.php:77
+#: eventplus/app/views/front/event/parts/confirm.php:286
+msgid "Event Name/Cost:"
+msgstr ""
+
+#: eventplus/vendor/paypal.php:132
+msgid "Pay using PayPal"
+msgstr ""
+
+#: eventplus/vendor/paypal.php:282
+msgid "Pay using your credit/debit card"
+msgstr ""
+
+#: eventplus/vendor/paypal.php:295
+msgid "Pay via Stripe"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Sun"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Mon"
 msgstr ""
 
 #: eventplus/funx/evrplus_calendar.php:74
@@ -3030,229 +494,106 @@ msgstr ""
 msgid "Tue"
 msgstr ""
 
-#: eventplus/funx/evrplus_calendar.php:577
-msgid "Tweet"
-msgstr ""
-
-#: eventplus/app/views/admin/questions/sort.php:52
-msgid "TYPE"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:170
-msgid "Type your confirmation message below"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:19
-msgid "Unique Event Identifier"
-msgstr ""
-
-#: eventplus/app/views/admin/categories/form.php:27
-msgid "Unique ID For Category"
-msgstr ""
-
-#: eventplus/funx/evrplus_calendar.php:379
-#: eventplus/app/views/front/event/parts/list.php:223
-#: eventplus/app/views/front/widgets/shortcode/event/category.php:85
-#: eventplus/app/views/front/widgets/shortcode/event/list.php:92
-#: eventplus/app/views/front/widgets/shortcode/event/list/expired.php:93
-msgid "Unlimited"
-msgstr ""
-
-#: eventplus/app/controllers/admin/attendees.php:151
-msgid "Update Attendee"
-msgstr ""
-
-#: eventplus/app/controllers/admin/categories.php:61
-msgid "Update Category"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab9_done.php:11
-msgid "UPDATE COMPANY SETTINGS"
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:200
-msgid "Update Configuration Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/coupon_form.php:42
-msgid "UPDATE COUPON CODE"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events.php:140
-msgid "Update Event"
-msgstr ""
-
-#: eventplus/app/controllers/admin/events/items.php:139
-msgid "Update Item"
-msgstr ""
-
-#: eventplus/app/views/admin/payments/edit_form.php:235
-msgid "UPDATE PAYMENT"
-msgstr ""
-
-#: eventplus/app/controllers/admin/payments.php:151
-msgid "Update Payment"
-msgstr ""
-
-#: eventplus/app/controllers/admin/questions.php:137
-msgid "Update Question"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/description.php:12
-msgid "Use a concise but descriptive name"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:10
-msgid "Use Captcha on registration form?"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/discounts.php:16
-msgid "Use Global Settings"
-msgstr ""
-
-#: eventplus/app/views/admin/events/form.parts/venue.php:43
-msgid "Use Google Maps On Registration Page"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:3
-msgid "Use PayPal Sandbox"
-msgstr ""
-
-#: eventplus/app/views/admin/events/items/form.php:105
-msgid "Value/Cost"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/manage.php:118
-msgid "View"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:58
-#: eventplus/app/views/admin/dashboard/widgets/attendees.php:54
-#: eventplus/app/views/admin/dashboard/widgets/events.php:97
-#: eventplus/app/views/admin/dashboard/widgets/payments.php:48
-msgid "View All"
-msgstr ""
-
-#: eventplus/app/views/admin/layouts/questions.php:21
-#: eventplus/app/views/admin/layouts/attendees.php:21
-#: eventplus/app/views/admin/layouts/payments.php:18
-#: eventplus/app/views/admin/layouts/events/items.php:22
-msgid "View All Events"
-msgstr ""
-
-#: eventplus/helpers/payment.php:246 eventplus/helpers/payment.php:304
-#: eventplus/app/views/admin/payments/manage.php:109
-msgid "View Details"
-msgstr ""
-
-#: eventplus/app/views/admin/dashboard/events.php:7
-msgid "View Events"
-msgstr ""
-
-#: eventplus/funx/evrplus_three_cal.php:38
-#: eventplus/funx/evrplus_three_cal.php:40
-msgid "W"
-msgstr ""
-
-#: eventplus/app/views/admin/attendees/edit_form.php:135
-msgid "Wait List"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:9
-msgid "Wait list Message"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:307
-msgid "Waiting List"
-msgstr ""
-
-#: eventplus/helpers/admin/menu.php:70
-#: eventplus/app/views/admin/settings.php:127
-msgid "Waitlist"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:17
-msgid "Waitlist Email Body"
-msgstr ""
-
-#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:42
-msgid ""
-"Warning! Stripe will not work as intended. Please activate following PHP "
-"extensions:"
-msgstr ""
-
 #: eventplus/funx/evrplus_calendar.php:74
 #: eventplus/funx/evrplus_calendar.php:76
 msgid "Wed"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/datetime.php:74
-msgid "Weekly"
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Thu"
 msgstr ""
 
-#: eventplus/app/views/admin/dashboard/widgets/categories.php:8
-msgid "weekly stats..."
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Fri"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/form.php:58
-msgid "What type of Item/Cost is this?"
+#: eventplus/funx/evrplus_calendar.php:74
+#: eventplus/funx/evrplus_calendar.php:76
+msgid "Sat"
 msgstr ""
 
-#: eventplus/app/views/admin/attendees/edit_form.php:131
-#: eventplus/app/views/admin/attendees/details.php:146
-msgid "What type of Registration?"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:145
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:107
+msgid "January"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:30
-msgid "Whether to skip step2 if attendee quantity is 1."
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:146
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:108
+msgid "February"
 msgstr ""
 
-#: eventplus/app/views/admin/categories/form.php:112
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:293
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:334
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:375
-msgid "White"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:147
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:109
+msgid "March"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/form.php:109
-msgid "Will this be a free item?"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:148
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:110
+msgid "April"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:47
-msgid "Will you accept checks/cash for this event? "
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:150
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:112
+msgid "June"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:3
-msgid "Will you accept checks/cash?"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:151
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:113
+msgid "July"
 msgstr ""
 
-#: eventplus/app/views/admin/events/items/form.php:18
-msgid "Workshop"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:152
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:114
+msgid "August"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:72
-msgid "Would you like to display amount of seats available?"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:153
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:115
+msgid "September"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:291
-msgid "Would you like to display countdown timer? Yes  No "
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:154
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:116
+msgid "October"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:128
-msgid "Would you like to display the category colors in the calendar?"
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:155
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:117
+msgid "November"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/discounts.php:13
-#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:13
-msgid "Would you like to offer quantity based discounts? "
+#: eventplus/funx/evrplus_calendar.php:78
+#: eventplus/funx/evrplus_calendar.php:156
+#: eventplus/funx/evrplus_three_cal.php:42
+#: eventplus/funx/evrplus_three_cal.php:118
+msgid "December"
 msgstr ""
 
-#. Name of the plugin
-msgid "WP EventsPlus"
-msgstr ""
-
-#. Author of the plugin
-msgid "wpeventsplus.com"
+#: eventplus/funx/evrplus_calendar.php:144
+#: eventplus/funx/evrplus_three_cal.php:106
+msgid "Month"
 msgstr ""
 
 #: eventplus/funx/evrplus_calendar.php:157
@@ -3260,8 +601,617 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/datetime.php:84
-msgid "Yearly"
+#: eventplus/funx/evrplus_calendar.php:184
+#: eventplus/funx/evrplus_three_cal.php:141
+msgid "Go"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:373
+#: eventplus/app/views/admin/dashboard/widgets/events.php:21
+msgid "Seats"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:376
+msgid "Event Full"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:379
+#: eventplus/app/views/front/event/parts/list.php:223
+#: eventplus/app/views/front/widgets/shortcode/event/category.php:85
+#: eventplus/app/views/front/widgets/shortcode/event/list.php:93
+#: eventplus/app/views/front/widgets/shortcode/event/list/expired.php:93
+msgid "Unlimited"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:449
+#: eventplus/funx/evrplus_calendar.php:485
+msgid "read more"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:554
+#: eventplus/app/views/front/event/parts/regform.php:137
+msgid "Add to your calendar"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:568
+msgid "Time"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:571
+msgid "Tweet"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:572
+msgid "Share"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:582
+#: eventplus/app/views/front/event/parts/accordion.php:40
+msgid "Location"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:594
+#: eventplus/app/views/front/event/parts/regform.php:238
+#: eventplus/app/views/front/event/parts/accordion.php:49
+#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:17
+msgid "Event Fees"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:613
+#: eventplus/app/views/front/event/parts/regform.php:370
+msgid "Registration is closed for this event."
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:615
+#: eventplus/app/views/front/event/parts/regform.php:371
+msgid "For more information or questions, please email: "
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:622
+#: eventplus/app/views/front/event/parts/regform.php:326
+msgid "MORE INFO"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:626
+msgid "External Registration"
+msgstr ""
+
+#: eventplus/funx/evrplus_calendar.php:629
+#: eventplus/app/views/front/event/parts/regform.php:319
+#: eventplus/app/views/front/event/parts/regform.php:321
+msgid "REGISTER"
+msgstr ""
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#: eventplus/funx/evrplus_three_cal.php:40
+msgid "S"
+msgstr ""
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+msgid "M"
+msgstr ""
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+#: eventplus/funx/evrplus_three_cal.php:40
+msgid "T"
+msgstr ""
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+msgid "W"
+msgstr ""
+
+#: eventplus/funx/evrplus_three_cal.php:38
+#: eventplus/funx/evrplus_three_cal.php:40
+msgid "F"
+msgstr ""
+
+#: eventplus/models/events/items.php:56
+msgid "The event cost/ticket item has been added."
+msgstr ""
+
+#: eventplus/models/events/items.php:59
+msgid ""
+"There was an error in your submission, please try again. The event "
+"cost/ticket item was not saved!"
+msgstr ""
+
+#: eventplus/models/events/items.php:102
+msgid ""
+"The event cost/ticket item has been updated.  You will now be taken back to "
+"the Event Pricing Page"
+msgstr ""
+
+#: eventplus/models/events/items.php:105
+msgid ""
+"There was an error in your submission, please try again. The event "
+"cost/ticket item was not updated!"
+msgstr ""
+
+#: eventplus/models/events/items.php:128
+msgid "Item has been deleted."
+msgstr ""
+
+#: eventplus/models/events/items.php:128
+msgid "Item couldn't deleted."
+msgstr ""
+
+#: eventplus/helpers/mail/registration.php:47
+#: eventplus/app/views/front/event/parts/email/confirmation.php:57
+msgid "Thank you for registering for"
+msgstr ""
+
+#: eventplus/helpers/mail/registration.php:48
+msgid ""
+"At this time, all seats for the event have been taken. Your information has "
+"been placed on our waiting list.  \n"
+"        The waiting list is on a first come, first serve basis.  \n"
+"        You will be notified by email should a seat become available."
+msgstr ""
+
+#: eventplus/helpers/mail/registration.php:51
+#: eventplus/app/views/admin/settings.php:117
+#: eventplus/app/views/admin/settings.php:150
+#: eventplus/app/views/admin/settings.php:185
+#: eventplus/app/views/front/event/parts/email/confirmation.php:60
+msgid "Thank You"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:25
+#: eventplus/app/views/admin/dashboard/events.php:5
+msgid "General Settings"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:38
+#: eventplus/app/views/admin/dashboard/events.php:6
+#: eventplus/app/views/admin/events/form.parts/description.php:50
+msgid "Event Categories"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:39
+#: eventplus/app/controllers/admin/events.php:98
+#: eventplus/app/controllers/admin/events.php:99
+msgid "Add Event"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:40
+msgid "Manage Events"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:43
+msgid "Event Fees/Tickets"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:44
+msgid "Event Questions"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:45
+msgid "Event Attendees"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:46
+#: eventplus/app/views/admin/events/manage.php:140
+#: eventplus/app/views/admin/payments/manage.php:39
+msgid "Payments"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:65
+msgid "Contact"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:66
+#: eventplus/app/views/front/shortcode/payment.php:75
+#: eventplus/app/views/front/event/parts/pay.php:117
+msgid "Payment"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:67
+msgid "Captcha"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:68
+msgid "Page Config"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:69
+msgid "Confirmation"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:70
+#: eventplus/app/views/admin/settings.php:127
+msgid "Waitlist"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:71
+msgid "Calendar"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:72
+msgid "Tax"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:73
+#: eventplus/app/views/admin/events/form.php:218
+msgid "Bulk Discounts"
+msgstr ""
+
+#: eventplus/helpers/admin/menu.php:74
+msgid "Done"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:62
+msgid "Lets get your plugin setup!"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:84
+#: eventplus/app/views/admin/settings.php:124
+msgid "Email Settings"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:87
+msgid "Email Confirmations"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:89
+msgid ""
+"For customized confirmation emails, the following tags can be placed in the "
+"email form and they will pull data from the database to include in the email"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:99
+msgid "Sample Mail Send"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:102
+#: eventplus/app/views/admin/settings.php:173
+msgid "***This is an automated response - Do Not Reply***"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:105
+msgid ""
+"Thank you [fname] [lname] for registering for [event]. We hope that you will "
+"find this event both informative and enjoyable. Should have any questions, "
+"please contact [contact]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:108
+msgid ""
+"If you have not done so already, please submit your payment in the amount of "
+"[cost]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:111
+#: eventplus/app/views/admin/settings.php:179
+msgid "Your unique registration ID is: [id]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:114
+#: eventplus/app/views/admin/settings.php:182
+msgid "Click here to review your payment information [payment_url]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:129
+msgid ""
+"For customized wait list emails, the following tags can be placed in the "
+"email form and they will pull data from the database to include in the email"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:132
+msgid "[fname], [lname], [event]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:139
+msgid "Thank you [fname] [lname] for your interest in registering for [event]"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:142
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
+"    Your information has been placed on our waiting list.  \n"
+"    The waiting list is on a first come, first serve basis."
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:147
+msgid ""
+"You will be notified by email with directions for completing registration "
+"and payment should a seat become available"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:157
+msgid "Payment Confirmation Email Settings"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:160
+msgid "Payment Confirmations"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:162
+msgid ""
+"For customized payment confirmation emails, the following tags can be placed "
+"in the email form and they will pull data from the database to include in "
+"the email"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:170
+msgid "Sample Payment Mail Send"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:176
+msgid ""
+"Thank you [fname] [lname] for your recent payment of [amnt_pd] ([txn_id]) "
+"for [event_name]. We hope that you will find this event both informative and "
+"enjoyable. Should have any questions, please contact [contact]."
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:200
+msgid "Update Configuration Settings"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:255
+msgid "Let's get your events plugin configured!"
+msgstr ""
+
+#: eventplus/app/views/admin/settings.php:258
+msgid "Event Registration Configuration Settings"
+msgstr ""
+
+#: eventplus/app/controllers/admin/categories.php:23
+#: eventplus/app/controllers/admin/categories.php:24
+msgid "Add Category"
+msgstr ""
+
+#: eventplus/app/controllers/admin/categories.php:53
+#: eventplus/app/controllers/admin/categories.php:89
+msgid "Category doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/categories.php:60
+msgid "Edit Category"
+msgstr ""
+
+#: eventplus/app/controllers/admin/categories.php:61
+msgid "Update Category"
+msgstr ""
+
+#: eventplus/app/controllers/admin/widgets.php:25
+#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:12
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:37
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:91
+msgid "Settings"
+msgstr ""
+
+#: eventplus/app/controllers/admin/widgets.php:26
+msgid "Events"
+msgstr ""
+
+#: eventplus/app/controllers/admin/widgets.php:27
+msgid "Documentation"
+msgstr ""
+
+#: eventplus/app/controllers/admin/widgets.php:28
+msgid "Screenshots"
+msgstr ""
+
+#: eventplus/app/controllers/admin/widgets.php:29
+msgid "Eventastic Theme"
+msgstr ""
+
+#: eventplus/app/controllers/admin/questions.php:22
+#: eventplus/app/controllers/admin/attendees.php:22
+#: eventplus/app/controllers/admin/attendees.php:122
+#: eventplus/app/controllers/admin/payments.php:28
+#: eventplus/app/controllers/admin/events/items.php:22
+msgid "Invalid event id."
+msgstr ""
+
+#: eventplus/app/controllers/admin/questions.php:94
+#: eventplus/app/controllers/admin/questions.php:95
+msgid "ADD QUESTION"
+msgstr ""
+
+#: eventplus/app/controllers/admin/questions.php:107
+#: eventplus/app/controllers/admin/questions.php:150
+msgid "Question doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/questions.php:136
+msgid "Edit Question"
+msgstr ""
+
+#: eventplus/app/controllers/admin/questions.php:137
+msgid "Update Question"
+msgstr ""
+
+#: eventplus/app/controllers/admin/attendees.php:95
+#: eventplus/app/controllers/admin/attendees.php:96
+#: eventplus/app/views/admin/layouts/attendees.php:9
+msgid "Add Attendee"
+msgstr ""
+
+#: eventplus/app/controllers/admin/attendees.php:108
+#: eventplus/app/controllers/admin/attendees.php:164
+#: eventplus/app/controllers/admin/attendees.php:185
+#: eventplus/app/controllers/admin/payments.php:87
+msgid "Attendee doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/attendees.php:150
+msgid "Edit Attendee"
+msgstr ""
+
+#: eventplus/app/controllers/admin/attendees.php:151
+msgid "Update Attendee"
+msgstr ""
+
+#: eventplus/app/controllers/admin/attendees.php:172
+msgid "Details Attendee"
+msgstr ""
+
+#: eventplus/app/controllers/admin/events.php:113
+#: eventplus/app/controllers/admin/events.php:158
+#: eventplus/app/controllers/admin/events.php:188
+msgid "Event doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/events.php:139
+#: eventplus/app/views/admin/layouts/questions.php:12
+#: eventplus/app/views/admin/layouts/attendees.php:12
+#: eventplus/app/views/admin/layouts/payments.php:9
+#: eventplus/app/views/admin/layouts/events/items.php:13
+msgid "Edit Event"
+msgstr ""
+
+#: eventplus/app/controllers/admin/events.php:140
+msgid "Update Event"
+msgstr ""
+
+#: eventplus/app/controllers/admin/events.php:165
+msgid "There are currently "
+msgstr ""
+
+#: eventplus/app/controllers/admin/events.php:165
+msgid " attendees registered for this event.  The event cannot be deleted."
+msgstr ""
+
+#: eventplus/app/controllers/admin/payments.php:107
+#: eventplus/app/views/admin/payments/manage.php:124
+msgid "Add Payment"
+msgstr ""
+
+#: eventplus/app/controllers/admin/payments.php:121
+#: eventplus/app/controllers/admin/payments.php:165
+msgid "Payment record doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/payments.php:151
+msgid "Update Payment"
+msgstr ""
+
+#: eventplus/app/controllers/admin/payments.php:187
+msgid "Record doesn't exist."
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:27
+#: eventplus/app/views/front/event/parts/pay.php:71
+msgid "Payment Page for"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:27
+#: eventplus/app/views/front/event/parts/pay.php:71
+msgid "for event"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:30
+#: eventplus/app/views/front/event/parts/pay.php:74
+msgid "Registration Detail Summary:"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:66
+#: eventplus/app/views/front/event/parts/pay.php:113
+msgid "Payments Received:"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:85
+#: eventplus/app/views/front/event/parts/pay.php:123
+msgid "Total Outstanding Payment Due*:"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:91
+#: eventplus/app/views/admin/payments/manage.php:117
+#: eventplus/app/views/front/event/parts/pay.php:129
+msgid "No Payments Received!"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:93
+#: eventplus/app/views/front/event/parts/pay.php:131
+msgid "Total Payment Due*:"
+msgstr ""
+
+#: eventplus/app/views/front/shortcode/payment.php:100
+#: eventplus/app/views/front/event/parts/pay.php:137
+msgid ""
+"*Payments could take several days to post to this page. Please check back in "
+"several days if you made a payment and your payment is not showing at this "
+"time."
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:1
+msgid "Current Categories"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:6
+#: eventplus/app/views/admin/categories/manage.php:17
+#: eventplus/app/views/admin/events/manage.php:18
+msgid "ID"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:7
+#: eventplus/app/views/admin/categories/manage.php:18
+msgid "Name "
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:8
+#: eventplus/app/views/admin/categories/manage.php:19
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:27
+msgid "Identifier"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:9
+#: eventplus/app/views/admin/categories/manage.php:20
+msgid "Shortcode"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:10
+#: eventplus/app/views/admin/categories/manage.php:21
+#: eventplus/app/views/admin/events/manage.php:38
+#: eventplus/app/views/admin/events/manage.php:147
+#: eventplus/app/views/admin/attendees/manage.php:66
+#: eventplus/app/views/admin/attendees/manage.php:112
+#: eventplus/app/views/admin/payments/manage.php:40
+msgid "Action"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:48
+#: eventplus/app/views/admin/events/manage.php:150
+#: eventplus/app/views/admin/questions/manage.php:76
+#: eventplus/app/views/admin/attendees/manage.php:116
+#: eventplus/app/views/admin/payments/manage.php:107
+#: eventplus/app/views/admin/events/items/manage.php:89
+msgid "Edit"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:50
+msgid "Are you sure you want to delete category?"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:50
+#: eventplus/app/views/admin/events/manage.php:152
+#: eventplus/app/views/admin/questions/manage.php:88
+#: eventplus/app/views/admin/attendees/manage.php:121
+#: eventplus/app/views/admin/payments/manage.php:106
+#: eventplus/app/views/admin/events/items/manage.php:94
+msgid "Delete"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/manage.php:60
+msgid "No Record Found!"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:23
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:22
+msgid "Category Name"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:27
+msgid "Unique ID For Category"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:33
+msgid "Do you want to display the category description on the events page?"
 msgstr ""
 
 #: eventplus/app/views/admin/categories/form.php:42
@@ -3299,57 +1249,438 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/confirm.php:264
-msgid "You are on the waiting list."
+#: eventplus/app/views/admin/categories/form.php:49
+#: eventplus/app/views/admin/questions/form.php:64
+#: eventplus/app/views/admin/payments/add_form.php:138
+#: eventplus/app/views/admin/payments/edit_form.php:205
+#: eventplus/app/views/admin/events/items/form.php:123
+#: eventplus/app/views/admin/events/items/coupon_form.php:25
+#: eventplus/app/views/admin/events/form.parts/venue.php:54
+#: eventplus/app/views/admin/events/form.parts/email.php:32
+#: eventplus/app/views/admin/events/form.parts/datetime.php:50
+#: eventplus/app/views/admin/events/form.parts/datetime.php:54
+#: eventplus/app/views/admin/events/form.parts/discounts.php:20
+#: eventplus/app/views/admin/events/form.parts/options.php:74
+#: eventplus/app/views/admin/events/form.parts/options.php:102
+#: eventplus/app/views/admin/events/form.parts/options.php:232
+#: eventplus/app/views/admin/events/form.parts/options.php:264
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:29
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:26
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:144
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:166
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:230
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:252
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:17
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:28
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:82
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:137
+#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:13
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:18
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:16
+msgid "No"
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/confirm.php:267
-msgid "You are registering for"
+#: eventplus/app/views/admin/categories/form.php:53
+msgid "Category Description"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:64
+#: eventplus/app/views/admin/categories/form.php:75
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:172
+msgid "Select color for Calendar Display"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:93
+msgid "Category Background Color"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:106
+msgid "Category Text Color"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:111
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:286
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:327
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:368
+msgid "Black"
+msgstr ""
+
+#: eventplus/app/views/admin/categories/form.php:112
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:293
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:334
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:375
+msgid "White"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:15
+msgid "Sort By"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:17
+msgid "Select"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:19
+msgid "Date"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:22
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:80
+msgid "ASC"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:23
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:88
+msgid "DESC"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:30
+msgid "Event ID"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:31
+#: eventplus/app/views/admin/attendees/details.php:97
+#: eventplus/app/views/admin/events/form.parts/datetime.php:9
+msgid "Start Date"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:32
+#: eventplus/app/views/admin/payments/manage.php:36
+#: eventplus/app/views/admin/events/items/manage.php:35
+msgid "Name"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:33
+msgid "Category"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:34
+msgid "ShortCode"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:35
+#: eventplus/app/views/admin/attendees/edit_form.php:267
+#: eventplus/app/views/admin/attendees/manage.php:65
+#: eventplus/app/views/admin/dashboard/widgets/events.php:29
+msgid "Status"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:36
+#: eventplus/app/views/admin/events/manage.php:139
+#: eventplus/app/views/admin/attendees/edit_form.php:96
+#: eventplus/app/views/admin/attendees/manage.php:62
+#: eventplus/app/views/admin/attendees/details.php:120
+msgid "Attendees"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:37
+#: eventplus/app/views/admin/events/manage.php:134
+msgid "Manage"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:98
+#: eventplus/app/views/admin/dashboard/events.php:48
+#: eventplus/app/views/admin/dashboard/widgets/events.php:81
+msgid "EXPIRED"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:100
+#: eventplus/app/views/admin/dashboard/events.php:50
+#: eventplus/app/views/admin/dashboard/widgets/events.php:84
+msgid "ACTIVE"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:137
+msgid "Fees/Items"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:138
+msgid "Questions"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:151
+msgid "Are you sure you want to copy"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:151
+msgid "Copy"
+msgstr ""
+
+#: eventplus/app/views/admin/events/manage.php:152
+#: eventplus/app/views/admin/questions/manage.php:88
+#: eventplus/app/views/admin/attendees/manage.php:121
+#: eventplus/app/views/admin/events/items/manage.php:94
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:180
+msgid "EXPIRED EVENT"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:182
+msgid "ACTIVE EVENT"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:204
+msgid "EDIT"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:210
+msgid "Description"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:211
+msgid "Event Venue"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:212
+msgid "Event Date/Time"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:213
+msgid "Event Options"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:216
+msgid "Confirmation Mail"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.php:243
+msgid "Please make sure you complete each section before submitting!"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:23
+msgid "Manage Questions"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:25
+msgid "Sort Questions"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:35
+#: eventplus/app/views/admin/questions/manage.php:42
+msgid "Question Id"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:36
+#: eventplus/app/views/admin/questions/manage.php:43
+msgid "Question"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:37
+#: eventplus/app/views/admin/questions/manage.php:44
+#: eventplus/app/views/admin/events/items/manage.php:39
+msgid "Actions"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/manage.php:107
+#: eventplus/app/views/admin/attendees/manage.php:135
+#: eventplus/app/views/admin/payments/manage.php:139
+#: eventplus/app/views/admin/events/items/manage.php:111
+msgid "No records found."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:14
+#: eventplus/app/views/admin/questions/form.php:76
+msgid "Text"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:15
+#: eventplus/app/views/admin/questions/form.php:77
+msgid "Text Area"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:16
+#: eventplus/app/views/admin/questions/form.php:78
+msgid "Single"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:17
+#: eventplus/app/views/admin/questions/form.php:80
+msgid "Multiple"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:18
+msgid "Drop Down"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:35
+msgid "Field Question"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:37
 msgid ""
-"You can point your register now button to an external registration site/page "
-"by selecting yes and entering the url!"
+"Choose a title for your custom field do you have pets? How did you hear "
+"about us?etc"
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/regform.php:20
-msgid "You didn't accept terms and conditions!"
+#: eventplus/app/views/admin/questions/form.php:40
+msgid "Field Type"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab9_done.php:9
-msgid "You have setup your company information. Please click the"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/regform.php:503
-msgid "You must select at least one item!"
-msgstr ""
-
-#: eventplus/app/views/front/event/parts/confirm.php:442
-msgid "You must select at least one registration item."
-msgstr ""
-
-#: eventplus/app/views/admin/settings.php:147
+#: eventplus/app/views/admin/questions/form.php:42
 msgid ""
-"You will be notified by email with directions for completing registration "
-"and payment should a seat become available"
+"Choose the type of field you would like your visitor to fill out:text, "
+"textarea, single radio button, multiple radio buttons and dropdown"
 msgstr ""
 
-#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:13
-msgid "Your Company Name"
+#: eventplus/app/views/admin/questions/form.php:52
+msgid "Field option(for multiple radio and dropdown)"
 msgstr ""
 
-#: eventplus/app/views/front/event/parts/confirmation.php:114
-msgid "Your information has been received."
+#: eventplus/app/views/admin/questions/form.php:53
+msgid ""
+"Create the choices for the visitor separated by comma i.e google, yahoo, "
+"bing etc."
 msgstr ""
 
-#: eventplus/app/views/admin/settings.php:111
-#: eventplus/app/views/admin/settings.php:179
-msgid "Your unique registration ID is: [id]"
+#: eventplus/app/views/admin/questions/form.php:56
+msgid "Do You want this field to be mandatory?"
 msgstr ""
 
-#: eventplus/app/views/admin/events/form.parts/options.php:149
-msgid "Zip or Postal Code"
+#: eventplus/app/views/admin/questions/form.php:67
+msgid "Comments"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:75
+msgid ""
+"Definitions of the fields that you can create for your registration form"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:76
+msgid ""
+"This is generally what I would call short answer questions, typically "
+"consisting of a single sentence. Where the registering person would type in "
+"their response. You do not need to put anything in the Selections field for "
+"this question type."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:77
+msgid ""
+"This is similar to the Text, except you are looking more for an "
+"paragraph/multiple sentence response. You do not need to put anything in the "
+"Selections field for this question type."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:78
+msgid ""
+"This will provide radio button answers where the registering person will "
+"select one of several options. Yes/No, True/False are good examples of this "
+"type of question. Basically a multiple choice question with one possible "
+"choice. When entering this question you will need to provide the list of "
+"choices that will appear. Separate your choices by a comma: True, False etc."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:79
+#: eventplus/app/views/admin/questions/form.php:81
+msgid "Do not provide answer choices that have a comma in the response"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:80
+msgid ""
+"This is similar to Single Type questions but gives them the option of "
+"selecting several of the choices instead of just selecting one item. "
+"Basically a multiple choice question with several  possible choices. When "
+"entering this question you will need to provide the list of choices that "
+"will appear. Separate your choices by a comma: Newspaper, Web, A Friend, "
+"Billboard etc."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:82
+msgid "Dropdown"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/form.php:82
+msgid ""
+"This question type is similar in nature to the Single, exept instead of "
+"providing the choices in radio buttons, it provides them in a drop down box. "
+"This is handy if you have a lot of choices the person needs to choose from, "
+"it prevents them from taking up a lot space on your registration form."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:33
+msgid "ReArrange Questions for display order: "
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:44
+#: eventplus/app/views/admin/events/items/sort.php:66
+msgid "Drag Line Up or Down to ReArrange."
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:48
+msgid "REQUIRED"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:52
+msgid "TYPE"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:53
+msgid "QUESTION"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/sort.php:54
+msgid "RESPONSES"
+msgstr ""
+
+#: eventplus/app/views/admin/questions/landing.php:4
+msgid "Please select event to manage questions"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:43
+#: eventplus/app/views/admin/attendees/edit_form.php:71
+#: eventplus/app/views/admin/attendees/edit_form.php:102
+#: eventplus/app/views/admin/attendees/details.php:68
+#: eventplus/app/views/admin/attendees/details.php:125
+#: eventplus/app/views/front/event/parts/regform.php:399
+#: eventplus/app/views/front/event/parts/confirm.php:415
+msgid "First Name"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:44
+#: eventplus/app/views/admin/attendees/edit_form.php:72
+#: eventplus/app/views/admin/attendees/edit_form.php:109
+#: eventplus/app/views/admin/attendees/details.php:69
+#: eventplus/app/views/admin/attendees/details.php:126
+#: eventplus/app/views/front/event/parts/regform.php:402
+#: eventplus/app/views/front/event/parts/confirm.php:419
+msgid "Last Name"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:45
+#: eventplus/app/views/admin/attendees/edit_form.php:73
+#: eventplus/app/views/admin/attendees/details.php:70
+#: eventplus/app/views/front/event/parts/regform.php:407
+msgid "Email Address"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:47
+#: eventplus/app/views/admin/attendees/edit_form.php:75
+#: eventplus/app/views/admin/attendees/details.php:76
+#: eventplus/app/views/front/event/parts/regform.php:411
+#: eventplus/app/views/admin/events/form.parts/options.php:158
+msgid "Phone Number"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:50
+#: eventplus/app/views/admin/attendees/edit_form.php:78
+#: eventplus/app/views/admin/attendees/details.php:79
+msgid "Address"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:53
+#: eventplus/app/views/admin/attendees/edit_form.php:81
+#: eventplus/app/views/admin/attendees/details.php:82
+#: eventplus/app/views/front/event/parts/regform.php:432
+#: eventplus/app/views/admin/events/form.parts/venue.php:27
+#: eventplus/app/views/admin/events/form.parts/options.php:131
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:34
+msgid "City"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:56
+#: eventplus/app/views/admin/attendees/edit_form.php:84
+#: eventplus/app/views/admin/attendees/details.php:85
+msgid "State/Province"
 msgstr ""
 
 #: eventplus/app/views/admin/attendees/add_form.php:59
@@ -3358,14 +1689,1677 @@ msgstr ""
 msgid "Zip/Postal Code"
 msgstr ""
 
-msgid "Event Category"
+#: eventplus/app/views/admin/attendees/add_form.php:62
+#: eventplus/app/views/admin/attendees/edit_form.php:90
+msgid "Enter coupon code"
 msgstr ""
 
-msgid "Event Coordinator"
+#: eventplus/app/views/admin/attendees/add_form.php:80
+#: eventplus/app/views/admin/attendees/edit_form.php:130
+#: eventplus/app/views/admin/attendees/details.php:145
+#: eventplus/app/views/front/event/parts/regform.php:502
+#: eventplus/app/views/front/event/parts/regform.php:600
+msgid "Registration Fees"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:145
+#: eventplus/app/views/admin/attendees/edit_form.php:255
+#: eventplus/app/views/admin/attendees/details.php:172
+msgid "Registration TOTAL"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:152
+#: eventplus/app/views/admin/attendees/edit_form.php:280
+#: eventplus/app/views/admin/attendees/details.php:184
+#: eventplus/app/views/front/event/parts/regform.php:657
+msgid "This event has reached registration capacity."
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/add_form.php:154
+#: eventplus/app/views/front/event/parts/regform.php:658
+msgid "Please provide your information to be placed on the waiting list."
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/edit_form.php:102
+#: eventplus/app/views/admin/attendees/details.php:125
+#: eventplus/app/views/front/event/parts/confirm.php:412
+msgid "Attendee"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/edit_form.php:131
+#: eventplus/app/views/admin/attendees/details.php:146
+msgid "What type of Registration?"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/edit_form.php:135
+msgid "Wait List"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/edit_form.php:140
+msgid "Standard"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:28
+msgid "Manage Attendees"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:30
+msgid "Delete All"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:40
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:30
+msgid "All"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:59
+msgid "Event Name/Title"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:60
+msgid "People"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:61
+msgid "Registered Name"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:63
+msgid "Email"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:64
+msgid "Phone"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/manage.php:118
+msgid "View"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:72
+#: eventplus/app/views/admin/events/form.parts/options.php:180
+msgid "Company"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:91
+msgid "Coupon code"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:98
+#: eventplus/app/views/admin/events/form.parts/datetime.php:31
+msgid "End Date"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:99
+msgid "Registration Date"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:100
+msgid "Cutom Fields"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:114
+msgid "No records found"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:164
+#: eventplus/app/views/admin/payments/manage.php:37
+#: eventplus/app/views/front/event/parts/regform.php:626
+msgid "Total"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/details.php:167
+#: eventplus/app/views/front/event/parts/regform.php:611
+#: eventplus/app/views/admin/events/items/form.php:17
+msgid "Discount"
+msgstr ""
+
+#: eventplus/app/views/admin/attendees/landing.php:4
+msgid "Please select event to manage attendees"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/events.php:4
+msgid "Add New Event"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/events.php:7
+msgid "View Events"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/events.php:13
+msgid "Next 5 Upcoming Events"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/categories.php:110
+msgid "Category Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/categories.php:114
+msgid "ADD NEW CATEGORY"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/questions.php:5
+msgid "Event Question Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/questions.php:9
+msgid "Add new Question"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/questions.php:16
+msgid "Back to Questions"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/questions.php:21
+#: eventplus/app/views/admin/layouts/attendees.php:21
+#: eventplus/app/views/admin/layouts/payments.php:18
+#: eventplus/app/views/admin/layouts/events/items.php:22
+msgid "View All Events"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/attendees.php:5
+msgid "Event Attendees Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/attendees.php:16
+msgid "Back to Attendees"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events.php:5
+msgid "Event Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events.php:9
+msgid "ADD EVENT"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/payments.php:5
+msgid "Event Payments Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/payments.php:13
+msgid "Back to Payments"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:82
+#: eventplus/app/views/admin/payments/edit_form.php:114
+#: eventplus/app/views/admin/payments/details.php:119
+msgid "Balance Owed:"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:113
+#: eventplus/app/views/admin/payments/edit_form.php:127
+#: eventplus/app/views/admin/payments/details.php:132
+msgid "Payment Received Date"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:114
+#: eventplus/app/views/admin/payments/edit_form.php:131
+#: eventplus/app/views/admin/payments/details.php:136
+msgid "Amount Paid"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:115
+#: eventplus/app/views/admin/payments/edit_form.php:136
+#: eventplus/app/views/admin/payments/details.php:141
+msgid "Payment Type"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:117
+#: eventplus/app/views/admin/payments/edit_form.php:139
+#: eventplus/app/views/admin/payments/edit_form.php:159
+msgid "Full Payment"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:118
+#: eventplus/app/views/admin/payments/edit_form.php:142
+#: eventplus/app/views/admin/payments/edit_form.php:160
+msgid "Partial Payment"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:119
+#: eventplus/app/views/admin/payments/edit_form.php:145
+#: eventplus/app/views/admin/payments/edit_form.php:161
+msgid "Deposit"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:120
+#: eventplus/app/views/admin/payments/edit_form.php:148
+#: eventplus/app/views/admin/payments/edit_form.php:162
+msgid "Donation"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:121
+#: eventplus/app/views/admin/payments/edit_form.php:151
+#: eventplus/app/views/admin/payments/edit_form.php:163
+msgid "Modification"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:122
+#: eventplus/app/views/admin/payments/edit_form.php:154
+#: eventplus/app/views/admin/payments/edit_form.php:164
+msgid "Cancelation"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:123
+#: eventplus/app/views/admin/payments/edit_form.php:157
+#: eventplus/app/views/admin/payments/edit_form.php:165
+msgid "Refund"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:127
+#: eventplus/app/views/admin/payments/edit_form.php:174
+#: eventplus/app/views/admin/payments/edit_form.php:185
+msgid "Online/Credit Card"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:128
+#: eventplus/app/views/admin/payments/edit_form.php:177
+#: eventplus/app/views/admin/payments/edit_form.php:186
+msgid "Check"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:129
+#: eventplus/app/views/admin/payments/edit_form.php:180
+#: eventplus/app/views/admin/payments/edit_form.php:187
+msgid "Cash"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:130
+#: eventplus/app/views/admin/payments/edit_form.php:183
+#: eventplus/app/views/admin/payments/edit_form.php:188
+msgid "Event Credit"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:132
+#: eventplus/app/views/admin/payments/edit_form.php:192
+#: eventplus/app/views/admin/payments/details.php:164
+msgid "Transaction ID"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:136
+msgid "Do you want to send a payment received notice to the payer?"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/add_form.php:163
+msgid "POST PAYMENT"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/edit_form.php:201
+msgid "Do you want to send a revised payment received notice to the payer?"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/edit_form.php:235
+msgid "UPDATE PAYMENT"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/manage.php:23
+msgid "Event Payments"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/manage.php:25
+msgid "Email Payment Reminders"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/manage.php:35
+msgid "# People"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/manage.php:38
+msgid "Order Detail"
+msgstr ""
+
+#: eventplus/app/views/admin/payments/landing.php:4
+msgid "Please select event to manage payments"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/payment.php:26
+msgid ""
+"Please check your email for payment information. Click the link provided in "
+"the registration confirmation."
+msgstr ""
+
+#: eventplus/app/controllers/admin/events/items.php:96
+#: eventplus/app/controllers/admin/events/items.php:97
+msgid "Add Item"
+msgstr ""
+
+#: eventplus/app/controllers/admin/events/items.php:109
+#: eventplus/app/controllers/admin/events/items.php:152
+msgid "Item doesn't exist."
+msgstr ""
+
+#: eventplus/app/controllers/admin/events/items.php:138
+msgid "Edit Item"
+msgstr ""
+
+#: eventplus/app/controllers/admin/events/items.php:139
+msgid "Update Item"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/pay.php:9
+#: eventplus/app/views/front/event/parts/confirm.php:16
+msgid "Failure - please retry!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/pay.php:14
+msgid "Please check your email for payment information."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:9
+#: eventplus/app/views/front/event/parts/confirm.php:3
+msgid "Invalid"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:10
+#: eventplus/app/views/front/event/parts/confirm.php:4
+msgid "Required"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:11
+msgid "Please enter your first name"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:12
+msgid "Please enter your last name"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:13
+msgid "Email format not correct!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:14
+msgid "Please enter your phone number"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:15
+msgid "Please use correct format for your phone number"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:16
+msgid "Please enter your address"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:17
+msgid "Please enter your city"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:18
+msgid "Please enter your state"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:19
+msgid "Please enter your zip/postal code"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:20
+msgid "You didn't accept terms and conditions!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:208
+msgid "Event Location"
 msgstr ""
 
 msgid "Total Seats"
 msgstr ""
 
 msgid "Remaining Seats"
+msgstr ""
+
+
+
+#: eventplus/app/views/front/event/parts/regform.php:274
+#: eventplus/app/views/front/event/parts/regform.php:285
+msgid "FREE"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:304
+msgid "Days"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:305
+msgid "Hours"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:306
+msgid "Minutes"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:307
+msgid "Seconds"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:389
+#: eventplus/app/views/front/event/parts/regform.php:679
+msgid "I accept the terms and conditions"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:419
+msgid "Street/PO Address"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:424
+#: eventplus/app/views/admin/events/form.parts/venue.php:37
+#: eventplus/app/views/admin/events/form.parts/options.php:167
+msgid "Country"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:437
+#: eventplus/app/views/admin/events/form.parts/venue.php:29
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:41
+msgid "State"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:442
+msgid "Postal/Zip Code"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:449
+msgid "Company Name"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:450
+msgid "Company Address"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:451
+msgid "Company City"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:452
+msgid "Company State/Province"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:453
+msgid "Company Postal Code"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:454
+msgid "Company Phone"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:484
+msgid "Enter coupon code for discount"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:506
+msgid "You must select at least one item!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:590
+msgid "No Fees/Items available for todays date!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:605
+msgid "Sales Tax"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:646
+msgid "No Fees Have Been Setup For This Event!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:647
+msgid "Registration for this event can not be taken at this time."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:697
+msgid "Submit"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/regform.php:698
+msgid "Reset"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirmation.php:94
+#: eventplus/app/views/front/event/parts/email/confirmation.php:97
+msgid "A confirmation email has been sent to:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirmation.php:102
+msgid ""
+"At this time, all seats for the event have been taken.  Your information has "
+"been placed on our waiting list.  The waiting list is on a first come, first "
+"serve basis.  You will be notified by email should a seat become available."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirmation.php:114
+msgid "Your information has been received."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirmation.php:117
+msgid ""
+"Congratulations! Transaction has been completed and payment has been "
+"received. Thank you for your payment."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirmation.php:119
+msgid ""
+"Transaction has been completed but payment failed. Please try registering "
+"again."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/list.php:19
+msgid "The list of upcoming events."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/list.php:94
+#: eventplus/app/views/front/widgets/shortcode/event/category.php:89
+#: eventplus/app/views/front/widgets/shortcode/event/list.php:97
+#: eventplus/app/views/front/widgets/shortcode/event/list/expired.php:97
+msgid "Open Seats"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/accordion.php:34
+msgid "&nbsp;&nbsp;&nbsp;&nbsp;Time: "
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:264
+msgid "You are on the waiting list."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "You are registering for"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "person(s)."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:267
+msgid "Please provide the first and last name of each person:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:281
+msgid "Please verify your registration details:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:291
+msgid "Registering Name:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:307
+msgid "Waiting List"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:330
+msgid "Free"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:344
+#: eventplus/app/views/front/event/parts/confirm.php:348
+msgid "Coupon:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:349
+msgid "Invalid Code!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:358
+msgid "Sales Tax:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:367
+msgid "Order Total:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:372
+msgid "Discount:"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:434
+msgid "BACK"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:442
+msgid "You must select at least one registration item."
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:443
+msgid "Please go back and select an item!"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/confirm.php:460
+msgid "Confirmed"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/manage.php:24
+msgid "Manage Items/Cost"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/manage.php:26
+msgid "Sort Items"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/manage.php:36
+msgid "Price"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/manage.php:37
+msgid "Start"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/manage.php:38
+msgid "End"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:15
+msgid "Registration Attendee"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:16
+msgid "Merchandise"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:18
+msgid "Workshop"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:19
+msgid "Meal or Food"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:58
+msgid "What type of Item/Cost is this?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:78
+msgid "Name of Cost/Item"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:84
+msgid "Description of Cost"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:93
+msgid "Available items/cost per registration/order?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:105
+msgid "Value/Cost"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:109
+msgid "Will this be a free item?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:128
+msgid "Custom Currency"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:147
+msgid "Item/Cost Value"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/form.php:158
+msgid "AVAILABILITY TIMES OF COST/ITEM"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/sort.php:33
+msgid "ReArrange Items for display order: "
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:11
+msgid "Coupon Code"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:15
+msgid "Do you want to use a coupon code for this event?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:15
+msgid ""
+"A coupon code is a promotional code you can tie to your event. The code is "
+"valid for a discount off the total registration cost"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:29
+msgid "Enter the Code"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:29
+msgid ""
+"This should be a one word code with no spaces or extra characters. Recommend "
+"ALL CAPS"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:33
+msgid "Discount amount for Coupon Code"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:33
+msgid ""
+"Enter the amount with two decimal places.&nbsp;You MUST put a - sign before "
+"the value, otherwise this will add to the total during calculations. i.e. -"
+"10.00"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/coupon_form.php:42
+msgid "UPDATE COUPON CODE"
+msgstr ""
+
+#: eventplus/app/views/admin/events/items/landing.php:4
+msgid "Please select event to manage items"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:5
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:6
+msgid "Step 1"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:7
+msgid "Event Description"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:12
+msgid "Event Name/Title "
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:12
+msgid "Use a concise but descriptive name"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:19
+msgid "Unique Event Identifier"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:19
+msgid "Provide a short Unique ID for this event. i.e. BOB001"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:29
+msgid "Detailed Event Description"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:29
+msgid ""
+"Provide a detailed description of the event, include key details other than "
+"when and where. Do not use any html code. This is a text only display To "
+"create new display lines just press Enter"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/description.php:50
+msgid "Select one or many categories for an event"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:4
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:10
+#: eventplus/app/views/admin/settings/tabs/tab2.php:10
+msgid "Step 2"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:6
+msgid "Choose your event venue"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:9
+msgid "Event Seating Capacity"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:9
+msgid ""
+"Enter the number of available seats at your event venue. Leave blank if "
+"their is no limit on registrations"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:15
+msgid "Event Location/Venue"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:21
+msgid "Street"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:32
+msgid "Postcode"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:43
+msgid "Use Google Maps On Registration Page"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/venue.php:43
+msgid ""
+"All location information must be complete for Google Map feature to work"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/email.php:17
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:6
+msgid "Step 5"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/email.php:19
+#: eventplus/app/views/admin/events/form.parts/email.php:34
+msgid "Custom Confirmation Email"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/email.php:22
+msgid "Do you want to use a custom email for this event?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/email.php:22
+msgid ""
+"If you have send mail option enabled in the company settings, you can "
+"override the default mail by creating a custom mail for this event."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/email.php:34
+msgid ""
+"Enter the text for the confirmation email. This email will be sent in text "
+"format. See User Manual for data tags"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:4
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:6
+msgid "Step 3"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:6
+msgid "Choose Event's Time"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:15
+msgid "Start Time"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:32
+msgid "End Time"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:48
+msgid "Do you want the event to be recurring?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:63
+msgid "Recurrence Period"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:68
+msgid "Select Period"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:74
+msgid "Weekly"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:79
+msgid "Monthly"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:84
+msgid "Yearly"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:89
+msgid "Repeat number of times"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:89
+msgid "Enter the number of times you want the event to occur."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:93
+msgid "Gaps per repeat"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:93
+msgid "Enter the repetition period"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:96
+msgid "Close Registration on"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:99
+#: eventplus/app/views/admin/events/form.parts/datetime.php:102
+#: eventplus/app/views/admin/events/form.parts/datetime.php:105
+msgid "Start of Event"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/datetime.php:100
+#: eventplus/app/views/admin/events/form.parts/datetime.php:103
+#: eventplus/app/views/admin/events/form.parts/datetime.php:106
+msgid "End of Event"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:6
+msgid "Optional"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:13
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:13
+msgid "Would you like to offer quantity based discounts? "
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/discounts.php:16
+msgid "Use Global Settings"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:5
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:7
+msgid "Step 4"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:7
+msgid "Choose Event Options"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:12
+msgid "Show Registration Button"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:13
+msgid ""
+"If you select yes, then it will show the button and user must click it to "
+"reveal the form. In case of No, registration form will be displayed."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:23
+#: eventplus/app/views/admin/events/form.parts/options.php:40
+#: eventplus/app/views/admin/events/form.parts/options.php:57
+#: eventplus/app/views/admin/events/form.parts/options.php:301
+msgid "No "
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:29
+msgid "Skip Registration Step2"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:30
+msgid "Whether to skip step2 if attendee quantity is 1."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:47
+msgid "Will you accept checks/cash for this event? "
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:47
+msgid ""
+"If you will accept checks or cash, usually when accepting payment at "
+"event/on-site."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:64
+msgid "Are you using an external registration?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:64
+msgid ""
+"You can point your register now button to an external registration site/page "
+"by selecting yes and entering the url!"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:82
+msgid "External registration URL"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:82
+msgid ""
+"Enter the url hyperlink to another webpage or website external registration"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:90
+msgid "Do you wish to disable registration for this event?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:110
+msgid "Default Registration Information"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:110
+msgid ""
+"Choose the fields you would like visitors to fill out when registering for "
+"your event. Note that name and email are mandatory."
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:122
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:20
+msgid "Street Address"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:140
+msgid "State or Province"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:149
+msgid "Zip or Postal Code"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:189
+msgid "Co. Addr"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:198
+msgid "Co. City"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:207
+msgid "Co. State/Prov"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:216
+msgid "Co. Postal"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:222
+msgid "Do you want to display terms and conditions?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:252
+msgid "Do you want to force terms and conditions?"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:253
+msgid ""
+"If yes, registration form will only be displayed once attendee agrees the "
+"terms and conditions"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:281
+msgid "Event Listing Options"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:283
+msgid "More Info URL"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:283
+msgid ""
+"Enter the url hyperlink to another webpage or website with more event "
+"information"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:291
+msgid "Would you like to display countdown timer? Yes  No "
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:308
+msgid "Thumbnail Image URL"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:308
+msgid ""
+"Enter the url to an image you would like displayed next to the event in the "
+"event listings. Size should be 300 x300"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:351
+msgid "Header Image URL"
+msgstr ""
+
+#: eventplus/app/views/admin/events/form.parts/options.php:351
+msgid ""
+"Enter the url of an image you wish displayed above the registration form.  "
+"The image should be at least 700px wide hight does not metter."
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:6
+msgid "Step 8"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:9
+msgid "Tax Configuration"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:12
+msgid "Do you want to charge sales tax"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:34
+msgid "(This option must be enable to charge sales tax)"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:40
+msgid "Sales Tax Rate:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab8_tax.php:42
+msgid "(must be decimal, i.e. .085 )"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:9
+msgid "Choose Pages"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:14
+msgid "Attention"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:16
+msgid "These settings must be configured for the plugin to function correctly."
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:20
+msgid "Main registration page"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:45
+msgid ""
+"This page should contain the {EVRREGIS} filter.&nbsp;This page can be hidden "
+"from navigation, if desired"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:72
+msgid ""
+"Choose if you would like to display events in Ascending or Descending order"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:92
+msgid "Social Icons"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:95
+msgid "Show Social sharing icons in event page?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:107
+msgid "Google Map"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab4_page_config.php:111
+msgid "Add Google map Api key"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:8
+msgid "Captcha Integration"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:10
+msgid "Use Captcha on registration form?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:32
+msgid "Google Captcha site Key?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:42
+msgid "CSS Overrides for registration form?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab3_captcha.php:45
+msgid "Help"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:6
+msgid "Step 7"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:9
+msgid "Choose calendar colors"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:13
+msgid "Calendar Settings"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:20
+msgid "Choose the time format for your events:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:29
+msgid "AM - PM"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:37
+msgid "24 Hours"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:45
+msgid "Choose the date format for your events:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:72
+msgid "Would you like to display amount of seats available?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:94
+msgid "Start Day of Week"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:98
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:105
+msgid "Sunday"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:100
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:108
+msgid "Monday"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:128
+msgid "Would you like to display the category colors in the calendar?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:150
+msgid "Do you want to show add to calendar button?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:174
+msgid ""
+"Click on each field to display the color picker. Click again to close it"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:210
+msgid "Date Picker"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:214
+msgid "Do you want to use the Date selector?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:236
+msgid "Do you want to Show Tool tip on the Calendar?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:259
+msgid "Calendar Date Selector Background Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:277
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:318
+msgid "Selector Text Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:301
+msgid "Calendar Header"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:306
+msgid "Calendar Day Header Background Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:342
+msgid "Current Day Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:347
+msgid "Current Day Background Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:359
+msgid "Current Day Text Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab7_calendar.php:382
+msgid "Description Pop Border Color"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:12
+#: eventplus/app/views/admin/settings/tabs/tab2.php:12
+msgid "Payment Information"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:17
+#: eventplus/app/views/admin/settings/tabs/tab2.php:17
+msgid "Currency Format:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:23
+#: eventplus/app/views/admin/settings/tabs/tab2.php:23
+msgid "Select Currency"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:46
+#: eventplus/app/views/admin/settings/tabs/tab2.php:77
+msgid "Off"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab2_payment.php:50
+#: eventplus/app/views/admin/settings/tabs/tab2.php:81
+msgid "On"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tabdiscount.php:6
+msgid "Step 9"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab9_done.php:6
+msgid "Congratulations"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab9_done.php:9
+msgid "You have setup your company information. Please click the"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab9_done.php:11
+msgid "UPDATE COMPANY SETTINGS"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab9_done.php:13
+msgid "button, below the tabs"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:6
+msgid "Step 6"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:9
+msgid "Wait list Message"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:14
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:39
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:93
+msgid "Example"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab6_waitlist.php:17
+msgid "Waitlist Email Body"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:9
+msgid "Email Confirmation"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:12
+msgid "Do you want to send Registration Confirmation emails?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:33
+msgid "(This option must be enable to send custom mails in events)"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:42
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:103
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:146
+msgid "Email Body"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:66
+msgid "Do you want to send Payment Confirmation emails?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:87
+msgid "(This option must be enable to send payment confrimation emails)"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:98
+msgid "Subject"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:121
+msgid "Do you want to receive email notifications when someone registers?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:142
+msgid "(This option must be enable to send email to admin)"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab5_confirmation.php:170
+msgid "Type your confirmation message below"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:9
+msgid "Contact Information"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:13
+msgid "Your Company Name"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:27
+msgid "Street Address 2"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:48
+msgid "Postal Code"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:55
+msgid "Primary Contact email:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/tab1_contact.php:62
+msgid "Secondary Contact emails(Separated By Commas[,]):"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:7
+msgid "TOTAL PAYMENTS"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:16
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:21
+msgid "progress"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:35
+msgid "TOTAL EVENTS"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:44
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:49
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:100
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:105
+msgid "change"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:63
+msgid "TOTAL CATEGORIES"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:72
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:77
+#: eventplus/app/views/admin/dashboard/widgets/icons.php:91
+msgid "grow"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:7
+msgid "LATEST CATEGORIES"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:8
+msgid "weekly stats..."
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:53
+msgid "No Categoies Found!"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/categories.php:58
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:54
+#: eventplus/app/views/admin/dashboard/widgets/events.php:97
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:48
+msgid "View All"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:7
+msgid "LATEST ATTENDEES"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:20
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:53
+msgid "Attendee Name"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:25
+msgid "Event"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:30
+msgid "Tickets"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/attendees.php:57
+msgid "No Attendees Found!"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/events.php:7
+msgid "Latest Events"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/events.php:17
+msgid "Event Name"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/events.php:25
+msgid "Available Seats"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/events.php:100
+msgid "No Events Found!"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:7
+msgid "LATEST PAYMENTS"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:18
+msgid "Payer"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:22
+msgid "Amount"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:25
+msgid "Item Quantity"
+msgstr ""
+
+#: eventplus/app/views/admin/dashboard/widgets/payments.php:52
+msgid "No Payments Found!"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events/items.php:5
+msgid "Event Items/Cost Management"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events/items.php:6
+msgid "Add tickets to set pricing for your event (Adult, Child, VIP, etc.)"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events/items.php:10
+msgid "Add Cost/Item"
+msgstr ""
+
+#: eventplus/app/views/admin/layouts/events/items.php:17
+msgid "Back to Items"
+msgstr ""
+
+#: eventplus/app/controllers/front/event/parts/confirmation.php:20
+msgid "Invalid event request"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:10
+msgid "Event id not supplied"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:20
+msgid "Attendee List for "
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/attendees/short.php:52
+msgid "Attendee #"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/event/category.php:9
+msgid "Category not supplied"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/event/category.php:23
+msgid "Invalid Category supplied"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/event/grid.php:23
+msgid "Loading..."
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/event/grid.php:24
+msgid "Load More"
+msgstr ""
+
+#: eventplus/app/controllers/front/shortcode/event/grid.php:25
+msgid "No More Entries"
+msgstr ""
+
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:26
+msgid "Search By Title"
+msgstr ""
+
+#: eventplus/app/views/front/widgets/shortcode/event/grid.php:133
+msgid "Read more"
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/email/confirmation.php:57
+msgid ""
+"At this time, all seats for the event have been taken.  \n"
+"        Your information has been placed on our waiting list.  \n"
+"        The waiting list is on a first come, first serve basis.  \n"
+"        You will be notified by email should a seat become available."
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/none.php:3
+msgid "Will you accept checks/cash?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:5
+msgid "Sanbox Mode?"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:7
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:5
+msgid "(used for testing/debug)"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:26
+msgid "Authorized.Net API Login ID"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/authorize.php:34
+msgid "Authorized.Net Txn Key"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:3
+msgid "Use PayPal Sandbox"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:24
+msgid "Paypal Email"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/paypal.php:31
+msgid "PDT Auth Token:"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:4
+msgid "Secret key"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:11
+msgid "Publishable key"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:19
+msgid "Stripe Return Url"
+msgstr ""
+
+#: eventplus/app/views/admin/settings/tabs/payment_fields/stripeactive.php:42
+msgid ""
+"Warning! Stripe will not work as intended. Please activate following PHP "
+"extensions:"
+msgstr ""
+
+#: eventplus/app/views/front/widgets/shortcode/event/popup/events.php:12
+msgid "Time: "
+msgstr ""
+
+#: eventplus/app/views/front/event/parts/inc/form_fields/dropdown.php:5
+msgid "Select One"
+msgstr ""
+
+#. Name of the plugin
+msgid "WP EventsPlus"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Events Plus allows you to easily create and manage your events. Allow "
+"visitors to register and pay online for events, manage attendees, discount "
+"coupons, export attendees list, and much more."
+msgstr ""
+
+#. Author of the plugin
+msgid "wpeventsplus.com"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://wpeventsplus.com/"
 msgstr ""

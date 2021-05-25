@@ -1,4 +1,6 @@
-jQuery(function ($) {
+(function ($) {
+'use strict'; 
+$(document).ready(function () {
 
 	$( '.evr-grid-container' ).each( function() {
 		var oEvrGrid = $( this );
@@ -16,3 +18,4 @@ jQuery(function ($) {
 		} );
 	} );
 });
+}(jQuery));

@@ -150,7 +150,7 @@ class EventPlus_Helpers_Event {
         return $arr_events;
     }
 
-    static function getDiscountPercentage($quantity, $qty_discount_settings) {
+    static function eventplus_getDiscountPercentage($quantity, $qty_discount_settings) {
         $discountPercentage = 0;
         if ($quantity > 0 && is_array($qty_discount_settings) && count($qty_discount_settings) > 0) {
 

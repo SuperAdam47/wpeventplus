@@ -1,4 +1,4 @@
-function checkInternationalPhone(strPhone) {
+function eventplus_checkInternationalPhone(strPhone) {
     var digits = "0123456789";
     var phoneNumberDelimiters = "()- ";
     var validWorldPhoneChars = phoneNumberDelimiters + "+";
@@ -50,7 +50,7 @@ function checkInternationalPhone(strPhone) {
     return (isInteger(s) && s.length >= minDigitsInIPhoneNumber);
 }
 
-function echeck(str) {
+function eventplus_echeck(str) {
     var at = "@";
     var dot = ".";
     var em = "";
@@ -81,7 +81,7 @@ function echeck(str) {
     return true;
 }
 
-function testIsValidObject(objToTest) {
+function eventplus_testIsValidObject(objToTest) {
     if (objToTest == null || objToTest == undefined) {
         return false;
     }
@@ -98,10 +98,10 @@ function jcap() {
     }
 }
 
-function validateConfirmationForm(confForm) {
+function eventplus_validateConfirmationForm(confForm) {
 
-    var oActionMsgContainer = jQuery('#action_message_eplus_container');
-    var oActionMsg = jQuery('#form_action_message_eplus');
+    var oActionMsgContainer = $('#action_message_eplus_container');
+    var oActionMsg = $('#form_action_message_eplus');
 
     oActionMsgContainer.fadeOut();
     oActionMsg.fadeOut();
@@ -137,11 +137,11 @@ function validateConfirmationForm(confForm) {
     return true;
 }
 
-function validateForm(form) {
+function eventplus_validateForm(form) {
     var msg = "";
 
-    var oActionMsgContainer = jQuery('#action_message_eplus_container');
-    var oActionMsg = jQuery('#form_action_message_eplus');
+    var oActionMsgContainer = $('#action_message_eplus_container');
+    var oActionMsg = $('#form_action_message_eplus');
 
     oActionMsgContainer.fadeOut();
     oActionMsg.fadeOut();
@@ -154,7 +154,7 @@ function validateForm(form) {
         msg += "<li>" + validationErrors.lname + "</li>";
         form.lname.focus( );
     }
-    if (echeck(form.email.value) == false) {
+    if (eventplus_echeck(form.email.value) == false) {
         msg += "<li>" + validationErrors.email + "</li>";
     }
     if (form.phone) {
@@ -162,7 +162,7 @@ function validateForm(form) {
             msg += "<li>" + validationErrors.phone + "</li>";
             form.phone.focus( );
         }
-        if (checkInternationalPhone(form.phone.value) == false) {
+        if (eventplus_checkInternationalPhone(form.phone.value) == false) {
             msg += "<li>" + validationErrors.phone_invalid + "</li>";
             form.value = "";
             form.phone.focus();
@@ -268,7 +268,7 @@ function validateForm(form) {
     return true;
 }
 
-function CalculateTotalTax(frm) {
+function eventplus_CalculateTotalTax(frm) {
     var tax_rate = document.getElementById('tax_rate');
 
     if (tax_rate) {
@@ -288,14 +288,14 @@ function CalculateTotalTax(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
-                jQuery('#event_fee_item_message').fadeOut();
-                jQuery('#eplus-data-summary-container').fadeIn();
+                $('#event_fee_item_message').fadeOut();
+                $('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
 
-                jQuery('#event_fee_item_message').fadeIn();
-                jQuery('#eplus-data-summary-container').fadeOut();
+                $('#event_fee_item_message').fadeIn();
+                $('#eplus-data-summary-container').fadeOut();
             }
             if (item_quantity >= 0) {
                 order_total += item_quantity * item_price;
@@ -311,16 +311,16 @@ function CalculateTotalTax(frm) {
         return;
     }
 
-    frm.fees.value = round_decimals(order_total, 2);
+    frm.fees.value = eventplus_round_decimals(order_total, 2);
     tax_total = order_total * tax_rate;
-    frm.tax.value = round_decimals(tax_total, 2);
+    frm.tax.value = eventplus_round_decimals(tax_total, 2);
 
     var grand_total = order_total + tax_total;
 
-    frm.total.value = round_decimals(grand_total, 2);
+    frm.total.value = eventplus_round_decimals(grand_total, 2);
 
     if (item_one) {
-        var discountPercentage = getDiscountPercentage(item_one);
+        var discountPercentage = eventplus_getDiscountPercentage(item_one);
 
         frm.discount.value = 0;
         if (discountPercentage > 0) {
@@ -329,16 +329,16 @@ function CalculateTotalTax(frm) {
 
             if (isNaN(discount) == false) {
                 grand_total = grand_total - discount;
-                frm.discount.value = round_decimals(discount, 2);
+                frm.discount.value = eventplus_round_decimals(discount, 2);
             }
         }
     }
 
-    frm.displaytotal.value = round_decimals(grand_total, 2);
+    frm.displaytotal.value = eventplus_round_decimals(grand_total, 2);
 }
 
 
-function getDiscountPercentage(qty) {
+function eventplus_getDiscountPercentage(qty) {
     var percentage = 0;
     if (qty > 0) {
 
@@ -369,7 +369,7 @@ function getDiscountPercentage(qty) {
 
 }
 
-function CalculateTotal(frm) {
+function eventplus_CalculateTotal(frm) {
 
     var order_total = 0;
     var item_one = 0;
@@ -383,13 +383,13 @@ function CalculateTotal(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
-                jQuery('#event_fee_item_message').fadeOut();
-                jQuery('#eplus-data-summary-container').fadeIn();
+                $('#event_fee_item_message').fadeOut();
+                $('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
-                jQuery('#event_fee_item_message').fadeIn();
-                jQuery('#eplus-data-summary-container').fadeOut();
+                $('#event_fee_item_message').fadeIn();
+                $('#eplus-data-summary-container').fadeOut();
             }
 
             if (item_quantity >= 0) {
@@ -406,11 +406,11 @@ function CalculateTotal(frm) {
         return;
     }
 
-    frm.total.value = round_decimals(order_total, 2);
-    frm.fees.value = round_decimals(order_total, 2);
+    frm.total.value = eventplus_round_decimals(order_total, 2);
+    frm.fees.value = eventplus_round_decimals(order_total, 2);
 
     if (item_one && order_total > 0) {
-        var discountPercentage = getDiscountPercentage(item_one);
+        var discountPercentage = eventplus_getDiscountPercentage(item_one);
 
         frm.discount.value = 0;
         if (discountPercentage > 0) {
@@ -419,23 +419,23 @@ function CalculateTotal(frm) {
 
             if (isNaN(discount) == false) {
                 order_total = order_total - discount;
-                frm.discount.value = round_decimals(discount, 2);
+                frm.discount.value = eventplus_round_decimals(discount, 2);
             }
         }
     }
 
-    frm.displaytotal.value = round_decimals(order_total, 2);
+    frm.displaytotal.value = eventplus_round_decimals(order_total, 2);
 
 }
 
-function round_decimals(original_number, decimals) {
+function eventplus_round_decimals(original_number, decimals) {
     var result1 = original_number * Math.pow(10, decimals);
     var result2 = Math.round(result1);
     var result3 = result2 / Math.pow(10, decimals);
-    return pad_with_zeros(result3, decimals);
+    return eventplus_pad_with_zeros(result3, decimals);
 }
 
-function pad_with_zeros(rounded_value, decimal_places) {
+function eventplus_pad_with_zeros(rounded_value, decimal_places) {
 
     var value_string = rounded_value.toString();
     var decimal_location = value_string.indexOf(".");
@@ -455,40 +455,41 @@ function pad_with_zeros(rounded_value, decimal_places) {
     return value_string;
 }
 
+(function ($) {
+'use strict'; 
+$(document).ready(function () {
 
-jQuery(document).ready(function ($) {
-
-    if (jQuery('.eventplus-ddl-items').val() >= 0) {
-        jQuery('#mySubmit').removeAttr('disabled');
+    if ($('.eventplus-ddl-items').val() >= 0) {
+        $('#mySubmit').removeAttr('disabled');
     }
 
-    if (jQuery('#qty_attendees').length && jQuery('#eventplus_attendee_form_confirm').length) {
-        if (jQuery('#qty_attendees').val() == '1') {
-            jQuery('#eventplus_attendee_form_confirm').submit();
+    if ($('#qty_attendees').length && $('#eventplus_attendee_form_confirm').length) {
+        if ($('#qty_attendees').val() == '1') {
+            $('#eventplus_attendee_form_confirm').submit();
         }
     }
 
-    jQuery('.eventplus-ddl-items').trigger('change');
+    $('.eventplus-ddl-items').trigger('change');
 
-    jQuery('.paypal--sandbox-toggle').on('click', function (e) {
+    $('.paypal--sandbox-toggle').on('click', function (e) {
         e.preventDefault();
-        jQuery('#evplus--sandbox').toggle();
+        $('#evplus--sandbox').toggle();
     });
 
-    jQuery('.offline--details-toggle').on('click', function (e) {
+    $('.offline--details-toggle').on('click', function (e) {
         e.preventDefault();
-        jQuery('#evplus--offline-details').toggle();
+        $('#evplus--offline-details').toggle();
     });
 
-    if (jQuery('#eventplus_register_btn').length) {
-        var oRegisterBtn = jQuery('#eventplus_register_btn');
+    if ($('#eventplus_register_btn').length) {
+        var oRegisterBtn = $('#eventplus_register_btn');
         oRegisterBtn.on('click touchend', function (e) {
             e.preventDefault();
-            jQuery(this).hide();
-            jQuery('#evrplusRegForm').slideDown();
+            $(this).hide();
+            $('#evrplusRegForm').slideDown();
 
-            if (jQuery('.eventplus-registration-actions').length == 1) {
-                jQuery('#eventplus_actions_registration_btns').hide();
+            if ($('.eventplus-registration-actions').length == 1) {
+                $('#eventplus_actions_registration_btns').hide();
             }
         });
 
@@ -499,8 +500,8 @@ jQuery(document).ready(function ($) {
     }
 
 
-    jQuery('.eplus-required').on('change', function () {
-        var oSelf = jQuery(this);
+    $('.eplus-required').on('change', function () {
+        var oSelf = $(this);
         var oParent = oSelf.parent('.fi3ld');
         var oValidationMsg = oParent.find('span.valida8ion-msg');
         if (!oValidationMsg.length) {
@@ -519,7 +520,7 @@ jQuery(document).ready(function ($) {
         } else {
 
             if (oSelf.attr('type') == 'email') {
-                if (echeck(oSelf.val()) == false) {
+                if (eventplus_echeck(oSelf.val()) == false) {
                     oParent.addClass('r3d');
                     oParent.removeClass('gr33n');
                     if (validationErrors) {
@@ -537,7 +538,7 @@ jQuery(document).ready(function ($) {
 
             if (oSelf.hasClass('eplus-phone')) {
 
-                if (checkInternationalPhone(oSelf.val()) == false) {
+                if (eventplus_checkInternationalPhone(oSelf.val()) == false) {
                     oParent.addClass('r3d');
                     oParent.removeClass('gr33n');
                     if (validationErrors) {
@@ -560,15 +561,15 @@ jQuery(document).ready(function ($) {
     });
 
     try {
-        var _endDate = parseInt(jQuery('#evrplus_counter').attr('data-end-date'));
-        var _now = parseInt(jQuery('#evrplus_counter').attr('data-now'));
+        var _endDate = parseInt($('#evrplus_counter').attr('data-end-date'));
+        var _now = parseInt($('#evrplus_counter').attr('data-now'));
         if( _endDate ) {
             var endDate = new Date(_endDate);
 
-            if( jQuery('#evrplus_counter').hasClass('initialize') ) return;
-            jQuery('#evrplus_counter').addClass('initialize');
+            if( $('#evrplus_counter').hasClass('initialize') ) return;
+            $('#evrplus_counter').addClass('initialize');
 
-            jQuery('#evrplus_counter').redCountdown({
+            $('#evrplus_counter').redCountdown({
                 end: $.now() + (((endDate.getTime() * 1000) - $.now()) / 1000),
                 labels: true,
                 style: {
@@ -612,5 +613,4 @@ jQuery(document).ready(function ($) {
        
     }
 });
-
-    
+}(jQuery));

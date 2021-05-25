@@ -484,7 +484,7 @@ if (isset($event_meta_data)) {
                                 <form name="regform" class="evrplus_regform" method="post" 
                                        action="<?php echo evrplus_permalink($company_options['evrplus_page_id']); ?>"  
                                        onSubmit="mySubmit.disabled = true;
-                                        return validateForm(this)">
+                                        return eventplus_validateForm(this)">
 
                                     <?php
                                     $formFieldStyle = ' ';
@@ -646,9 +646,9 @@ if (isset($event_meta_data)) {
                                                                         class="eventplus-ddl-items" 
                                                                         onChange="<?php
                                                                         if( $company_options['use_sales_tax'] == "Y" ) {
-                                                                            echo 'CalculateTotalTax(this.form)';
+                                                                            echo 'eventplus_CalculateTotalTax(this.form)';
                                                                         } else {
-                                                                            echo 'CalculateTotal(this.form)';
+                                                                            echo 'eventplus_CalculateTotal(this.form)';
                                                                         } ?>"
                                                                         >
                                                                     

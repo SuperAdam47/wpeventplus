@@ -203,7 +203,7 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                          Permission is granted to use this script as long as 
                                          this Copyright notice remains in place.*/
 
-                                        function CalculateTotal(frm) {
+                                        function eventplus_CalculateTotal(frm) {
                                             var order_total = 0
 
 
@@ -234,16 +234,16 @@ $questions = $this->wpDb()->get_results("SELECT * from " . get_option('evr_quest
                                             }
 
                                             // Display the total rounded to two decimal places
-                                            frm.total.value = round_decimals(order_total, 2)
+                                            frm.total.value = eventplus_round_decimals(order_total, 2)
                                         }
-                                        function round_decimals(original_number, decimals) {
+                                        function eventplus_round_decimals(original_number, decimals) {
                                             var result1 = original_number * Math.pow(10, decimals)
                                             var result2 = Math.round(result1)
                                             var result3 = result2 / Math.pow(10, decimals)
-                                            return pad_with_zeros(result3, decimals)
+                                            return eventplus_pad_with_zeros(result3, decimals)
                                         }
 
-                                        function pad_with_zeros(rounded_value, decimal_places) {
+                                        function eventplus_pad_with_zeros(rounded_value, decimal_places) {
 
                                             // Convert the number to a string
                                             var value_string = rounded_value.toString()

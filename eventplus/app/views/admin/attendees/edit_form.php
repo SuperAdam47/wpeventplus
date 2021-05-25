@@ -79,7 +79,7 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                 <h3><span><?php echo $form_heading; ?> for <?php echo stripslashes($event_name); ?></span></h3>                 
 
                                 <div class="padding">        
-                                    <form method="post" action="<?php echo $form_url; ?>" onSubmit="return validateForm(this)">
+                                    <form method="post" action="<?php echo $form_url; ?>" onSubmit="return eventplus_validateForm(this)">
                                         <ul class="ssa">
                                             <li><div class="pass1"><label for="fname"><?php _e('First Name', 'evrplus_language'); ?></label></div><div class="pass2"><input type="text" id="fname" name="fname" value="<?php echo $fname; ?>" /></div></li>
                                             <li><div class="pass1"><label for="lname"><?php _e('Last Name', 'evrplus_language'); ?></label></div><div class="pass2"><input type="text" id="lname" name="lname" value="<?php echo $lname; ?>"/></div></li>
@@ -162,7 +162,7 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                                     <li><div class="pass1"><?php echo $ticket_order[$row]['ItemName'] . "    " . $ticket_order[$row]['ItemCurrency'] . " " . $ticket_order[$row]['ItemCost']; ?></div><div class="pass2"><select name="PROD_<?php echo $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost']; ?>" id = "PROD_<?php
                                                 echo
                                                 $ticket_order[$row]['ItemEventID'] . "-" . $ticket_order[$row]['ItemID'] . "_" . $ticket_order[$row]['ItemCost'];
-                                                        ?>" onChange="CalculateTotal(this.form)"  >
+                                                        ?>" onChange="eventplus_CalculateTotal(this.form)"  >
                                                                 <option value="<?php echo $ticket_order[$row]['ItemQty']; ?>"><?php echo $ticket_order[$row]['ItemQty']; ?></option>
                                                                 <option value="0">0</option>
                                                                 <?php
@@ -226,7 +226,7 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                                     <div class="pass1"><?php echo $item_title . "    " . $item_custom_cur . " " . $item_price; ?></div><div class="pass2"><select name="PROD_<?php echo $event_id . "-" . $item_id . "_" . $item_price; ?>" id = "PROD_<?php
                                                 echo
                                                 $event_id . "-" . $item_id . "_" . $item_price;
-                                                        ?>" onChange="CalculateTotal(this.form)"  >
+                                                        ?>" onChange="eventplus_CalculateTotal(this.form)"  >
                                                             <option value="0">0</option>
                                                             <?php
                                                             if ($item_cat == "REG") {
@@ -307,7 +307,7 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                              Permission is granted to use this script as long as 
                                              
                                              this Copyright notice remains in place.*/
-                                            function CalculateTotal(frm) {
+                                            function eventplus_CalculateTotal(frm) {
                                                 var order_total = 0
                                                 // Run through all the form fields
                                                 for (var i = 0; i < frm.elements.length; ++i) {
@@ -328,15 +328,15 @@ $statusOptions = EventPlus_Models_Payments::getPaymentStatusCodes();
                                                     }
                                                 }
                                                 // Display the total rounded to two decimal places
-                                                frm.total.value = round_decimals(order_total, 2)
+                                                frm.total.value = eventplus_round_decimals(order_total, 2)
                                             }
-                                            function round_decimals(original_number, decimals) {
+                                            function eventplus_round_decimals(original_number, decimals) {
                                                 var result1 = original_number * Math.pow(10, decimals)
                                                 var result2 = Math.round(result1)
                                                 var result3 = result2 / Math.pow(10, decimals)
-                                                return pad_with_zeros(result3, decimals)
+                                                return eventplus_pad_with_zeros(result3, decimals)
                                             }
-                                            function pad_with_zeros(rounded_value, decimal_places) {
+                                            function eventplus_pad_with_zeros(rounded_value, decimal_places) {
                                                 // Convert the number to a string
                                                 var value_string = rounded_value.toString()
                                                 // Locate the decimal point

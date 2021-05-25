@@ -4926,8 +4926,8 @@ input[type="radio"] + label:before {
 	}
 	@font-face {
 	    font-family: 'robotothin';
-	    src: url('../../font3/roboto-thin-webfont.eot');
-	    src: url('../../font3/roboto-thin-webfont.eot?#iefix') format('embedded-opentype'), url('../../font3/roboto-thin-webfont.woff') format('woff'), url('../../font3/roboto-thin-webfont.ttf') format('truetype'), url('../../font3/roboto-thin-webfont.svg#robotothin') format('svg');
+	    src: url('../../font/roboto-thin-webfont.eot');
+	    src: url('../../font/roboto-thin-webfont.eot?#iefix') format('embedded-opentype'), url('../../font/roboto-thin-webfont.woff') format('woff'), url('../../font/roboto-thin-webfont.ttf') format('truetype'), url('../../font/roboto-thin-webfont.svg#robotothin') format('svg');
 	    font-weight: normal;
 	    font-style: normal;
 	}

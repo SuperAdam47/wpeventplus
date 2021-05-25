@@ -1,48 +1,43 @@
-
-function confirmDelete() {
-    if (confirm('Are you sure want to delete?')) {
-
-    }
-}
-
-jQuery(document).ready(function ($) {
-    jQuery('.paypal--sandbox-toggle').on('click', function (e) {
+(function ($) {
+'use strict'; 
+$(document).ready(function () {
+    $('.paypal--sandbox-toggle').on('click', function (e) {
         e.preventDefault();
-        jQuery('#evplus--sandbox').toggle();
+        $('#evplus--sandbox').toggle();
     });
 
-    jQuery('.offline--details-toggle').on('click', function (e) {
+    $('.offline--details-toggle').on('click', function (e) {
         e.preventDefault();
-        jQuery('#evplus--offline-details').toggle();
+        $('#evplus--offline-details').toggle();
     });
 
-    jQuery('#eventplus_terms_cbox').on('click', function (e) {
-        var oCbox = jQuery(this);
+    $('#eventplus_terms_cbox').on('click', function (e) {
+        var oCbox = $(this);
 
   
         if (oCbox.is(':checked') || oCbox.prop('checked')) {
-            jQuery('#eventplus_form_fields').fadeIn();
-            jQuery('html, body').animate({
+            $('#eventplus_form_fields').fadeIn();
+            $('html, body').animate({
                 scrollTop: $("#eventplus_form_fields").offset().top - 150
             }, 500);
         } else {
-            jQuery('#eventplus_form_fields').fadeOut();
+            $('#eventplus_form_fields').fadeOut();
         }
 
     });
 
-    if (jQuery('#eventplus_terms_cbox').length) {
-        jQuery('#eventplus_terms_cbox').trigger('click');
+    if ($('#eventplus_terms_cbox').length) {
+        $('#eventplus_terms_cbox').trigger('click');
     }
 
 
 
-    if (jQuery('#eventplus_register_btn').length) {
-        var oRegisterBtn = jQuery('#eventplus_register_btn');
+    if ($('#eventplus_register_btn').length) {
+        var oRegisterBtn = $('#eventplus_register_btn');
         oRegisterBtn.on('click touchend', function (e) {
             e.preventDefault();
-            jQuery(this).hide();
-            jQuery('#evrplusRegForm').slideDown();
+            $(this).hide();
+            $('#evrplusRegForm').slideDown();
         });
 
         if (oRegisterBtn.attr('data-show-form-default') == '1') {
@@ -51,29 +46,30 @@ jQuery(document).ready(function ($) {
     }
 
 
-    jQuery('a.poplight').on('click',function () {
-        var popID = jQuery(this).attr('rel');
-        var popURL = jQuery(this).attr('href');
+    $('a.poplight').on('click',function () {
+        var popID = $(this).attr('rel');
+        var popURL = $(this).attr('href');
 
         var query = popURL.split('?');
         var dim = query[1].split('&');
         var popWidth = dim[0].split('=')[1];
 
-        jQuery('#' + popID).fadeIn().css({'width': Number(popWidth)}).prepend('<a href="#" class="close"><img src="/wp-content/plugins/eventsplus/images/btn-close.png" class="btn_close" title="Close Window" alt="Close" /></a>');
+        $('#' + popID).fadeIn().css({'width': Number(popWidth)}).prepend('<a href="#" class="close"><img src="/wp-content/plugins/eventsplus/images/btn-close.png" class="btn_close" title="Close Window" alt="Close" /></a>');
 
 
-        var popMargTop = (jQuery('#' + popID).height() + 80) / 2;
-        var popMargLeft = (jQuery('#' + popID).width() + 80) / 2;
+        var popMargTop = ($('#' + popID).height() + 80) / 2;
+        var popMargLeft = ($('#' + popID).width() + 80) / 2;
 
 
-        jQuery('#' + popID).css({
+        $('#' + popID).css({
             'margin-top': -popMargTop,
             'margin-left': -popMargLeft
         });
 
-        jQuery('body').append('<div id="fade"></div>');
-        jQuery('#fade').css({'filter': 'alpha(opacity=80)'}).fadeIn();
+        $('body').append('<div id="fade"></div>');
+        $('#fade').css({'filter': 'alpha(opacity=80)'}).fadeIn();
         return false;
     });
 
 });
+}(jQuery));
