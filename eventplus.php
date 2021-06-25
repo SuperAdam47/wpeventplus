@@ -29,6 +29,7 @@ if( !class_exists('EventPlus_Plugin') ){
 
     class EventPlus_Plugin extends EventPlus_Abstract_Plugin {
 
+
         protected $_plugin_title = 'Events+';
         protected $_build_version = '6.00.33';
         protected $_plugin_version = EVENT_PLUS_PLUS_V;

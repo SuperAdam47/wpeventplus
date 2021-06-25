@@ -62,7 +62,7 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
 
                 $email_body = $message_top . $email_content . $message_bottom;
 
-                 $headers = array(
+                $headers = array(
                         'From: "' . $this->company_options['company'] . '" <' . $this->company_options['company_email'] . ">",
                         "Content-Type: text/html; charset=UTF-8"
                     );
@@ -72,6 +72,7 @@ class EventPlus_Helpers_Mail_Registration extends EventPlus_Helpers_Mail {
                 $mail_subject = $event_name;
 
                $this->boolConfirmation = $this->send_wp_mail($this->attendeeRow['email'], stripslashes($mail_subject), html_entity_decode( str_replace( "??", "?", $email_body ) ), $headers);
+
             }
         }
     }
