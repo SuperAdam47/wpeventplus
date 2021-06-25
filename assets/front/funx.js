@@ -100,8 +100,8 @@ function jcap() {
 
 function eventplus_validateConfirmationForm(confForm) {
 
-    var oActionMsgContainer = $('#action_message_eplus_container');
-    var oActionMsg = $('#form_action_message_eplus');
+    var oActionMsgContainer = jQuery('#action_message_eplus_container');
+    var oActionMsg = jQuery('#form_action_message_eplus');
 
     oActionMsgContainer.fadeOut();
     oActionMsg.fadeOut();
@@ -140,8 +140,8 @@ function eventplus_validateConfirmationForm(confForm) {
 function eventplus_validateForm(form) {
     var msg = "";
 
-    var oActionMsgContainer = $('#action_message_eplus_container');
-    var oActionMsg = $('#form_action_message_eplus');
+    var oActionMsgContainer = jQuery('#action_message_eplus_container');
+    var oActionMsg = jQuery('#form_action_message_eplus');
 
     oActionMsgContainer.fadeOut();
     oActionMsg.fadeOut();
@@ -288,14 +288,14 @@ function eventplus_CalculateTotalTax(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
-                $('#event_fee_item_message').fadeOut();
-                $('#eplus-data-summary-container').fadeIn();
+                jQuery('#event_fee_item_message').fadeOut();
+                jQuery('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
 
-                $('#event_fee_item_message').fadeIn();
-                $('#eplus-data-summary-container').fadeOut();
+                jQuery('#event_fee_item_message').fadeIn();
+                jQuery('#eplus-data-summary-container').fadeOut();
             }
             if (item_quantity >= 0) {
                 order_total += item_quantity * item_price;
@@ -383,13 +383,13 @@ function eventplus_CalculateTotal(frm) {
             item_one = item_one + item_quantity;
             if (item_one > 0) {
                 frm.mySubmit.disabled = false;
-                $('#event_fee_item_message').fadeOut();
-                $('#eplus-data-summary-container').fadeIn();
+                jQuery('#event_fee_item_message').fadeOut();
+                jQuery('#eplus-data-summary-container').fadeIn();
             }
             else if (item_one <= 0) {
                 frm.mySubmit.disabled = true;
-                $('#event_fee_item_message').fadeIn();
-                $('#eplus-data-summary-container').fadeOut();
+                jQuery('#event_fee_item_message').fadeIn();
+                jQuery('#eplus-data-summary-container').fadeOut();
             }
 
             if (item_quantity >= 0) {
