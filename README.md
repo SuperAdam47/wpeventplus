@@ -1,1 +1,1 @@
-# wpeventplus
+# wpeventplus wordpress plugin
